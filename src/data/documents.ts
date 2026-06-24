@@ -79,10 +79,11 @@ function claimIdsInBlock(block: Block): string[] {
 }
 
 /**
- * Dev-only check: every referenced claimId resolves in `claims`, and every claim's
- * sourceId resolves in `sources`. Throws on the first dangling reference.
+ * Every referenced claimId resolves in `claims`, and every claim's sourceId resolves
+ * in `sources`. Throws on the first dangling reference. Runs in dev (below) and is
+ * exercised by the test suite.
  */
-function assertReferentialIntegrity(doc: RoundtableDocument): void {
+export function assertReferentialIntegrity(doc: RoundtableDocument): void {
   const referenced = new Set<string>()
   for (const paragraph of doc.intro) {
     for (const node of paragraph) if (node.type === 'cite') referenced.add(node.claimId)
