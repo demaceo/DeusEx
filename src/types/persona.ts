@@ -21,4 +21,10 @@ export interface Persona {
   color: PersonaColor
   /** Emoji rendered in the speaker icon, e.g. "💻". */
   icon: string
+  /** Short professional title shown in the profile card. */
+  role: string
+  /** One-line "what they care about" tagline. */
+  focus: string
+  /** One- or two-sentence description of the persona's viewpoint. */
+  bio: string
 }
