@@ -21,8 +21,11 @@ describe('BlockRenderer chart dispatch', () => {
       </DocumentProvider>,
     )
 
-    // The figure resolves once the lazy chunk loads.
-    const figure = await screen.findByRole('img')
+    // The figure resolves once the lazy chunk loads. Allow generous headroom:
+    // Vitest transforms the heavy Recharts chunk cold on each run, which can
+    // exceed findByRole's default 1s timeout on a busy machine (a load-dependent
+    // flake), even though the import itself always resolves.
+    const figure = await screen.findByRole('img', {}, { timeout: 15000 })
     expect(figure).toHaveAttribute('aria-label')
     // Part I's charts all rest on verified claims, so the status surfaces.
     expect(figure).toHaveAttribute('data-verification', 'verified')
