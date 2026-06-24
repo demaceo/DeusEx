@@ -35,8 +35,12 @@ function renderMasthead() {
 describe('Masthead navigation arrows', () => {
   it('renders prev/next arrows linking to the adjacent parts with accessible labels', () => {
     renderMasthead()
-    const prevLink = screen.getByRole('link', { name: /previous part: part iii/i })
-    const nextLink = screen.getByRole('link', { name: /next part: part ii/i })
+    const prevLink = screen.getByRole('link', {
+      name: "Previous part: Part III — What It's Actually Getting Right",
+    })
+    const nextLink = screen.getByRole('link', {
+      name: "Next part: Part II — What's Actually Being Done",
+    })
     expect(prevLink).toHaveAttribute('href', '/getting-right')
     expect(nextLink).toHaveAttribute('href', '/whats-being-done')
   })

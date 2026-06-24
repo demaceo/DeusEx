@@ -77,7 +77,11 @@ describe('getAdjacentParts (wrap-around series navigation)', () => {
   it('returns direct neighbors for the middle part', () => {
     const { prev, next } = getAdjacentParts('part-ii')
     expect(prev.slug).toBe('real-costs')
-    expect(next.slug).toBe('getting-right')
+    expect(next).toEqual({
+      slug: 'getting-right',
+      partLabel: 'Part III',
+      navTitle: "What It's Actually Getting Right",
+    })
   })
 
   it('wraps forward from Part III back to Part I', () => {

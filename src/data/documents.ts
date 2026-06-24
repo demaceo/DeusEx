@@ -21,6 +21,7 @@ export interface DocumentEntry {
   blurb: string
 }
 
+// Array order defines the series and navigation sequence — reordering changes prev/next navigation.
 export const DOCUMENTS: DocumentEntry[] = [
   {
     doc: partI,
