@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { BlockRenderer } from '../components/BlockRenderer'
 import { ChapterDivider } from '../components/ChapterDivider'
@@ -10,6 +11,7 @@ import { SectionHeader } from '../components/SectionHeader'
 import { SourcesSection } from '../components/SourcesSection'
 import { VerdictBox } from '../components/VerdictBox'
 import { VerificationNotice } from '../components/VerificationNotice'
+import { getAdjacentParts } from '../data/documents'
 import type { RoundtableDocument } from '../types/document'
 
 interface RoundtablePageProps {
@@ -18,9 +20,15 @@ interface RoundtablePageProps {
 
 /** Renders one full roundtable document from data. One page, three data objects. */
 export function RoundtablePage({ document }: RoundtablePageProps) {
+  const { prev, next } = getAdjacentParts(document.id)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [document.id])
+
   return (
     <DocumentProvider claims={document.claims}>
-      <Masthead masthead={document.masthead} />
+      <Masthead masthead={document.masthead} prev={prev} next={next} />
       <PersonasBar />
       {document.companion ? <CompanionBanner banner={document.companion} /> : null}
 

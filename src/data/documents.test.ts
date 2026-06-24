@@ -3,6 +3,7 @@ import {
   DOCUMENTS,
   DOCUMENTS_BY_SLUG,
   assertReferentialIntegrity,
+  getAdjacentParts,
   getDocumentBySlug,
 } from './documents'
 import type { ChartSpec, RoundtableDocument } from '../types/document'
@@ -55,5 +56,46 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('$id content integrity', (doc
         expect(doc.claims[id]?.verificationStatus, `${chart.title} → ${id}`).toBe('verified')
       }
     }
+  })
+})
+
+describe('getAdjacentParts (wrap-around series navigation)', () => {
+  it('wraps backward from Part I to Part III and forward to Part II', () => {
+    const { prev, next } = getAdjacentParts('part-i')
+    expect(prev).toEqual({
+      slug: 'getting-right',
+      partLabel: 'Part III',
+      navTitle: "What It's Actually Getting Right",
+    })
+    expect(next).toEqual({
+      slug: 'whats-being-done',
+      partLabel: 'Part II',
+      navTitle: "What's Actually Being Done",
+    })
+  })
+
+  it('returns direct neighbors for the middle part', () => {
+    const { prev, next } = getAdjacentParts('part-ii')
+    expect(prev.slug).toBe('real-costs')
+    expect(next).toEqual({
+      slug: 'getting-right',
+      partLabel: 'Part III',
+      navTitle: "What It's Actually Getting Right",
+    })
+  })
+
+  it('wraps forward from Part III back to Part I', () => {
+    const { prev, next } = getAdjacentParts('part-iii')
+    expect(prev.slug).toBe('whats-being-done')
+    expect(next).toEqual({
+      slug: 'real-costs',
+      partLabel: 'Part I',
+      navTitle: 'A Roundtable on Real Costs',
+    })
+  })
+
+  it('throws on an unknown document id', () => {
+    // @ts-expect-error exercising the runtime guard with an invalid id
+    expect(() => getAdjacentParts('part-iv')).toThrow()
   })
 })

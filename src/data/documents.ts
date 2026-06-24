@@ -6,7 +6,7 @@
  * future verification pass.
  */
 
-import type { Block, RoundtableDocument } from '../types/document'
+import type { Block, DocumentId, RoundtableDocument } from '../types/document'
 import { partI } from './parts/part-i'
 import { partII } from './parts/part-ii'
 import { partIII } from './parts/part-iii'
@@ -21,6 +21,7 @@ export interface DocumentEntry {
   blurb: string
 }
 
+// Array order defines the series and navigation sequence — reordering changes prev/next navigation.
 export const DOCUMENTS: DocumentEntry[] = [
   {
     doc: partI,
@@ -49,6 +50,37 @@ export const DOCUMENTS_BY_SLUG: Record<string, RoundtableDocument> = Object.from
 export function getDocumentBySlug(slug: string | undefined): RoundtableDocument | undefined {
   if (!slug) return undefined
   return DOCUMENTS_BY_SLUG[slug]
+}
+
+/** A neighboring document, projected for masthead navigation. */
+export interface PartNavTarget {
+  slug: string
+  partLabel: string
+  navTitle: string
+}
+
+/**
+ * The previous and next documents in series order, wrapping around at the ends
+ * (Part I's prev is Part III; Part III's next is Part I). Throws if `id` is unknown.
+ */
+export function getAdjacentParts(id: DocumentId): {
+  prev: PartNavTarget
+  next: PartNavTarget
+} {
+  const n = DOCUMENTS.length
+  const i = DOCUMENTS.findIndex((entry) => entry.doc.id === id)
+  if (i === -1) {
+    throw new Error(`getAdjacentParts: unknown document id "${id}"`)
+  }
+  const toTarget = (entry: DocumentEntry): PartNavTarget => ({
+    slug: entry.doc.slug,
+    partLabel: entry.partLabel,
+    navTitle: entry.navTitle,
+  })
+  return {
+    prev: toTarget(DOCUMENTS[(i - 1 + n) % n]),
+    next: toTarget(DOCUMENTS[(i + 1) % n]),
+  }
 }
 
 /** Collect every claimId referenced anywhere in a block (cites + stat boxes). */
