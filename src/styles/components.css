@@ -44,10 +44,54 @@
   margin-top: 0.1rem;
 }
 
+.verification-notice__badge[data-state='checked'] {
+  background: var(--c-optimist);
+}
+
+.verification-notice__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
 .verification-notice p {
   font-size: 0.85rem;
   line-height: 1.6;
   color: var(--muted);
+}
+
+.verification-notice__counts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+}
+
+.verification-notice__counts li {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.45rem;
+  border-radius: 2px;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+}
+
+.verification-notice__counts li[data-verification='verified'] {
+  color: var(--c-optimist);
+  border-color: var(--c-optimist);
+  background: rgba(39, 174, 96, 0.08);
+}
+.verification-notice__counts li[data-verification='disputed'] {
+  color: var(--c-labor);
+  border-color: var(--c-labor);
+  background: rgba(211, 84, 0, 0.08);
+}
+.verification-notice__counts li[data-verification='unverified'] {
+  color: var(--muted);
+  border-color: var(--muted);
+  background: rgba(107, 99, 85, 0.08);
 }
 
 /* ─── INTRO BLOCK ─────────────────────────────────────────────────── */

@@ -29,7 +29,7 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
           <Link to="/">← The AI Reckoning — series index</Link>
         </nav>
 
-        <VerificationNotice />
+        <VerificationNotice claims={document.claims} />
         <IntroBlock paragraphs={document.intro} />
 
         {document.sections.map((section, i) => (
