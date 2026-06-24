@@ -84,6 +84,24 @@ export const partI: RoundtableDocument = {
           },
         },
         {
+          type: 'chart',
+          data: {
+            kind: 'bar',
+            labelTop: 'Energy · Global data centers',
+            title: 'Electricity demand set to more than double',
+            subtitle: "Global data-center electricity in 2025 vs. the IEA's projection for 2030.",
+            unit: 'TWh',
+            claimIds: ['s-i-dc-electricity-2025', 's-i-iea-projected-2030'],
+            ariaLabel:
+              'Bar chart: global data-center electricity rises from 460 terawatt-hours in 2025 to a projected 945 terawatt-hours in 2030.',
+            source: 'IEA, via the figures cited above.',
+            data: [
+              { label: '2025', value: 460, variant: 'navy' },
+              { label: '2030 (proj.)', value: 945, variant: 'accent' },
+            ],
+          },
+        },
+        {
           type: 'debate',
           data: {
             personaId: 'everyday-person',
@@ -313,6 +331,26 @@ export const partI: RoundtableDocument = {
           },
         },
         {
+          type: 'chart',
+          data: {
+            kind: 'donut',
+            labelTop: 'Water · 560 billion liters, 2023',
+            title: "Two-thirds of AI's water is spent making the power",
+            subtitle:
+              'Global data-center water consumption in 2023, split between direct cooling, the water embedded in the electricity it draws, and chip manufacturing.',
+            unit: 'B L',
+            claimIds: ['s-i-global-water-2023'],
+            ariaLabel:
+              'Donut chart: of 560 billion liters of global data-center water use in 2023, 373 billion is indirect (electricity generation), 140 billion is direct cooling, and 47 billion is manufacturing.',
+            source: 'IEA global data-centre water estimate, 2023.',
+            data: [
+              { label: 'Indirect (electricity)', value: 373, variant: 'navy' },
+              { label: 'Direct (cooling)', value: 140, variant: 'policy' },
+              { label: 'Manufacturing', value: 47, variant: 'gold' },
+            ],
+          },
+        },
+        {
           type: 'debate',
           data: {
             personaId: 'everyday-person',
@@ -359,6 +397,24 @@ export const partI: RoundtableDocument = {
                 ],
               ],
             },
+          },
+        },
+        {
+          type: 'chart',
+          data: {
+            kind: 'bar',
+            labelTop: 'Water · U.S. data centers',
+            title: 'U.S. data-center water use is on track to double',
+            subtitle: 'Annual consumption in 2023 vs. the projected ~2× by 2028.',
+            unit: 'B gal',
+            claimIds: ['s-i-us-water-annual', 'c-i-pew-us-water'],
+            ariaLabel:
+              'Bar chart: U.S. data-center water use of 228 billion gallons in 2023, projected to roughly double to about 456 billion gallons by 2028.',
+            source: 'Front and Centered / Pew Research, 2025.',
+            data: [
+              { label: '2023', value: 228, variant: 'navy' },
+              { label: '2028 (proj.)', value: 456, variant: 'accent' },
+            ],
           },
         },
         {
@@ -493,6 +549,27 @@ export const partI: RoundtableDocument = {
                 ],
               ],
             },
+          },
+        },
+        {
+          type: 'chart',
+          data: {
+            kind: 'bar',
+            orientation: 'horizontal',
+            labelTop: 'Labor · Data-annotation wages',
+            title: 'The same work, a fraction of the pay',
+            subtitle:
+              'Hourly pay for data annotation: Kenyan workers vs. U.S.-based annotators (a $10–$25/hr range).',
+            unit: '$/hr',
+            claimIds: ['c-i-kenya-2-dollars', 'c-i-us-annotator-wage'],
+            ariaLabel:
+              'Horizontal bar chart: data annotators in Kenya earn about $2 per hour, compared with $10 to $25 per hour for U.S.-based annotators doing the same work.',
+            source: 'Privacy International, 2024; AI Base reporting, 2025.',
+            data: [
+              { label: 'Kenya', value: 2, variant: 'labor' },
+              { label: 'U.S. (low)', value: 10, variant: 'navy' },
+              { label: 'U.S. (high)', value: 25, variant: 'navy' },
+            ],
           },
         },
         {
