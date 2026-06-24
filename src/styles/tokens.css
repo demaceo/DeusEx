@@ -1,0 +1,70 @@
+/* ─── DESIGN TOKENS ──────────────────────────────────────────────
+   Single source of truth for the shared "AI Reckoning" design system.
+   Ported verbatim from the three source documents (they were identical). */
+
+:root {
+  --ink: #0f0e0c;
+  --paper: #f5f0e8;
+  --accent: #c0392b;
+  --navy: #1a3a5c;
+  --gold: #b8860b;
+  --muted: #6b6355;
+  --rule: #d4cfc4;
+  --panel: #ede8dc;
+  --white: #ffffff;
+
+  /* Persona colors */
+  --c-optimist: #27ae60;
+  --c-environ: #16a085;
+  --c-labor: #d35400;
+  --c-policy: #2980b9;
+  --c-everyday: #8e44ad;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* Fonts */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+}
+
+/* Persona color resolution. Components set data-persona; CSS maps it to a color.
+   --persona-color is consumed by speaker icons, dots, and bubble top borders. */
+[data-persona='tech-optimist'] {
+  --persona-color: var(--c-optimist);
+}
+[data-persona='environmentalist'] {
+  --persona-color: var(--c-environ);
+}
+[data-persona='labor-advocate'] {
+  --persona-color: var(--c-labor);
+}
+[data-persona='policy-realist'] {
+  --persona-color: var(--c-policy);
+}
+[data-persona='everyday-person'] {
+  --persona-color: var(--c-everyday);
+}
+
+/* Masthead bottom-accent resolution (data-accent on .masthead). */
+[data-accent='gold'] {
+  --masthead-accent: var(--gold);
+}
+[data-accent='accent'] {
+  --masthead-accent: var(--accent);
+}
+[data-accent='green'] {
+  --masthead-accent: var(--c-optimist);
+}
+[data-accent='teal'] {
+  --masthead-accent: var(--c-environ);
+}
+[data-accent='orange'] {
+  --masthead-accent: var(--c-labor);
+}
+[data-accent='blue'] {
+  --masthead-accent: var(--c-policy);
+}
+[data-accent='purple'] {
+  --masthead-accent: var(--c-everyday);
+}
