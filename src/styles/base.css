@@ -37,8 +37,11 @@ a {
   color: var(--paper);
   padding: 3.5rem 2rem 2.5rem;
   text-align: center;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   overflow: hidden;
+  transition: padding 0.3s ease;
 }
 
 /* scan-line texture */
@@ -106,6 +109,112 @@ a {
   text-transform: uppercase;
   color: rgba(245, 240, 232, 0.35);
   margin-top: 1.6rem;
+}
+
+/* horizontal padding so the centered text never collides with the edge arrows */
+.masthead-body {
+  padding: 0 3.25rem;
+}
+
+.masthead h1 {
+  transition: font-size 0.3s ease;
+}
+
+/* collapsible lines animate to zero height/opacity when condensed */
+.masthead .overline,
+.masthead .subtitle,
+.masthead .date-line {
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.25s ease,
+    margin 0.3s ease;
+}
+.masthead .overline,
+.masthead .date-line {
+  max-height: 3rem;
+}
+.masthead .subtitle {
+  max-height: 10rem;
+}
+
+/* ── condensed state ── */
+.masthead[data-collapsed='true'] {
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+.masthead[data-collapsed='true'] h1 {
+  font-size: clamp(1rem, 3vw, 1.45rem);
+  margin-bottom: 0;
+}
+.masthead[data-collapsed='true'] .overline,
+.masthead[data-collapsed='true'] .subtitle,
+.masthead[data-collapsed='true'] .date-line {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ── navigation arrows ── */
+.masthead-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: rgba(245, 240, 232, 0.55);
+  background: transparent;
+  z-index: 2;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+.masthead-nav--prev {
+  left: 1rem;
+}
+.masthead-nav--next {
+  right: 1rem;
+}
+.masthead-nav:hover,
+.masthead-nav:focus-visible {
+  color: var(--masthead-accent, var(--accent));
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+}
+.masthead-nav:focus-visible {
+  box-shadow: 0 0 0 2px var(--masthead-accent, var(--accent));
+}
+
+@media (max-width: 640px) {
+  .masthead-body {
+    padding: 0 2.75rem;
+  }
+  .masthead-nav {
+    width: 40px;
+    height: 40px;
+  }
+  .masthead-nav--prev {
+    left: 0.35rem;
+  }
+  .masthead-nav--next {
+    right: 0.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead,
+  .masthead h1,
+  .masthead .overline,
+  .masthead .subtitle,
+  .masthead .date-line,
+  .masthead-nav {
+    transition: none;
+  }
 }
 
 /* ─── PERSONAS BAR ────────────────────────────────────────────────── */
