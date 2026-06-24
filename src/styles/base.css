@@ -1,0 +1,180 @@
+/* ─── RESET + BASE ───────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.78;
+}
+
+a {
+  color: inherit;
+}
+
+/* ─── LAYOUT ──────────────────────────────────────────────────────── */
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ─── MASTHEAD ────────────────────────────────────────────────────── */
+.masthead {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3.5rem 2rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* scan-line texture */
+.masthead::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(255, 255, 255, 0.018) 3px,
+    rgba(255, 255, 255, 0.018) 4px
+  );
+  pointer-events: none;
+}
+
+/* bottom accent stripe — color from data-accent (--masthead-accent) */
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--masthead-accent, var(--accent));
+}
+
+.masthead .overline {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--masthead-accent, var(--accent));
+  margin-bottom: 1.1rem;
+}
+
+.masthead h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 3.75rem);
+  font-weight: 900;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.masthead h1 em {
+  font-style: italic;
+  color: var(--masthead-accent, var(--accent));
+}
+
+.masthead .subtitle {
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(245, 240, 232, 0.65);
+  max-width: 580px;
+  margin: 0.6rem auto 0;
+  line-height: 1.7;
+}
+
+.masthead .date-line {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.35);
+  margin-top: 1.6rem;
+}
+
+/* ─── PERSONAS BAR ────────────────────────────────────────────────── */
+.personas-bar {
+  background: var(--ink);
+  padding: 1.1rem 2rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+  border-bottom: 3px solid var(--navy);
+}
+
+.persona-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(245, 240, 232, 0.15);
+  border-radius: 2px;
+  transition:
+    border-color 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+
+.persona-tag:hover {
+  border-color: rgba(245, 240, 232, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.persona-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--persona-color, var(--accent));
+}
+
+.persona-tag span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.7);
+}
+
+/* ─── COMPANION BANNER ────────────────────────────────────────────── */
+.companion-banner {
+  background: var(--navy);
+  padding: 0.6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border-bottom: 2px solid var(--gold);
+}
+
+.companion-banner::before {
+  content: '←';
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gold);
+  opacity: 0.8;
+}
+
+.companion-banner span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.75);
+}

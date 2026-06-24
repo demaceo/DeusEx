@@ -1,75 +1,43 @@
-# React + TypeScript + Vite
+# The AI Reckoning
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React + TypeScript site that presents **The AI Reckoning** — a three-part roundtable
+series in which five recurring voices (Tech Optimist, Environmentalist, Labor Advocate, Policy
+Realist, and an Everyday Person) debate artificial intelligence:
 
-Currently, two official plugins are available:
+1. **Part I — A Roundtable on Real Costs** (`/real-costs`) — energy, water, labor, regulation
+2. **Part II — What's Actually Being Done** (`/whats-being-done`) — responses already underway
+3. **Part III — What It's Actually Getting Right** (`/getting-right`) — documented positive outcomes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How it's built (DRY by design)
 
-## React Compiler
+The three documents share one design system, so the site is built from **content-as-data + one
+shared component kit**, not three hand-maintained pages:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- `src/types/` — the content model (`RoundtableDocument`, `Block`, `Claim`, `InlineNode`, …).
+- `src/data/parts/part-*.ts` — each document as typed data; `src/data/documents.ts` is the slug
+  registry.
+- `src/components/` — one set of presentational components (Masthead, DebateEntry, StatGrid,
+  Citation, …) rendered for all three documents.
+- `src/styles/` — `tokens.css` is the single source of truth for the design system.
 
-Note: This will impact Vite dev & build performances.
+## Verification of statistics
 
-## Expanding the ESLint configuration
+Every statistic and citation is an individually-addressable **`Claim`** in a per-document
+registry, each carrying a `verificationStatus` (`pending` / `verified` / `disputed` /
+`unverified`) and a slot for a real source URL. Today everything is `pending` and the site
+visibly flags figures as **not yet independently verified** — actual fact-checking against
+primary sources is a dedicated later pass. A dev-time referential-integrity check
+(`src/data/documents.ts`) ensures no claim or source reference dangles.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Develop
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+pnpm dev        # http://localhost:5173
+pnpm build      # tsc -b && vite build
+pnpm lint
+pnpm preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Deployed on Vercel; `vercel.json` adds an SPA rewrite so deep links (e.g. `/getting-right`)
+resolve to the app.
