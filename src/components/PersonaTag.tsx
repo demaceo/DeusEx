@@ -11,6 +11,7 @@ interface PersonaTagProps {
  */
 export function PersonaTag({ persona }: PersonaTagProps) {
   const tooltipId = `persona-profile-${persona.id}`
+  const Icon = persona.icon
   return (
     <div className="persona-tag-wrap" data-persona={persona.id}>
       <button type="button" className="persona-tag" aria-describedby={tooltipId}>
@@ -20,7 +21,7 @@ export function PersonaTag({ persona }: PersonaTagProps) {
       <div className="persona-profile" role="tooltip" id={tooltipId}>
         <div className="persona-profile__header">
           <span className="persona-profile__icon" aria-hidden="true">
-            {persona.icon}
+            <Icon size={18} strokeWidth={1.75} />
           </span>
           <span className="persona-profile__heading">
             <span className="persona-profile__name">{persona.name}</span>

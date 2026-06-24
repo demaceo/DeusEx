@@ -23,4 +23,9 @@ describe('PersonasBar persona profiles', () => {
       expect(button).toHaveAttribute('aria-describedby', `persona-profile-${id}`)
     }
   })
+
+  it('renders an icon (svg, not emoji) in each persona profile', () => {
+    const { container } = render(<PersonasBar />)
+    expect(container.querySelectorAll('svg')).toHaveLength(PERSONA_ORDER.length)
+  })
 })

@@ -77,7 +77,7 @@ export type Block =
 export interface Section {
   header: SectionHeader
   blocks: Block[]
-  /** Render a ✦✦✦ chapter divider above this section's header. */
+  /** Render a "* * *" chapter divider above this section's header. */
   dividerBefore?: boolean
 }
 
