@@ -315,8 +315,7 @@ export const partIII: RoundtableDocument = {
                   { type: 'cite', claimId: 'c-iii-promptbuddy-700m' },
                   {
                     type: 'text',
-                    value:
-                      ' Failed candidates are being caught 70% earlier in development.',
+                    value: ' Failed candidates are being caught 70% earlier in development.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-70pct' },
                 ],
@@ -456,8 +455,7 @@ export const partIII: RoundtableDocument = {
                 labelTop: 'WeatherNext 2 speed',
                 value: '8×',
                 size: 'large',
-                description:
-                  'Faster than prior forecasting models, at up to 1-hour resolution',
+                description: 'Faster than prior forecasting models, at up to 1-hour resolution',
                 claimId: 's-iii-weathernext-8x',
               },
             ],
@@ -666,7 +664,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'This isn\'t a marginal improvement. The authors note that the difference was statistically significant at a probability below one in one hundred million. And crucially, the AI tutor was designed according to research-based pedagogical principles — it was not simply a chatbot but a deliberately engineered learning system. The implication is that when AI tutoring is built carefully, it can deliver one-on-one tutoring quality at any scale. For a student in an under-resourced school with 35 people in the class and an overwhelmed teacher, that access to personalized instruction has never existed before. Brookings Institute research in 2026 identified AI tutoring as particularly valuable for novice teachers assigned to challenging environments and for under-resourced schools where human support is scarce.',
+                      "This isn't a marginal improvement. The authors note that the difference was statistically significant at a probability below one in one hundred million. And crucially, the AI tutor was designed according to research-based pedagogical principles — it was not simply a chatbot but a deliberately engineered learning system. The implication is that when AI tutoring is built carefully, it can deliver one-on-one tutoring quality at any scale. For a student in an under-resourced school with 35 people in the class and an overwhelmed teacher, that access to personalized instruction has never existed before. Brookings Institute research in 2026 identified AI tutoring as particularly valuable for novice teachers assigned to challenging environments and for under-resourced schools where human support is scarce.",
                   },
                   { type: 'cite', claimId: 'c-iii-brookings' },
                 ],
@@ -1259,8 +1257,7 @@ export const partIII: RoundtableDocument = {
     'c-iii-farmonaut-yields': {
       id: 'c-iii-farmonaut-yields',
       kind: 'citation',
-      claimText:
-        '[Farmonaut / Journal of Agriculture and Food Research, 2025]',
+      claimText: '[Farmonaut / Journal of Agriculture and Food Research, 2025]',
       sourceId: 'src-farmonaut',
       verificationStatus: 'pending',
     },
@@ -1274,8 +1271,7 @@ export const partIII: RoundtableDocument = {
     'c-iii-harvard-rct': {
       id: 'c-iii-harvard-rct',
       kind: 'citation',
-      claimText:
-        '[Kestin et al., Scientific Reports, June 2025; ET&C Journal, November 2025]',
+      claimText: '[Kestin et al., Scientific Reports, June 2025; ET&C Journal, November 2025]',
       sourceId: 'src-kestin',
       verificationStatus: 'pending',
     },

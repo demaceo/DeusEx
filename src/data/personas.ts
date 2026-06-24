@@ -10,7 +10,12 @@ export const PERSONAS: Record<PersonaId, Persona> = {
   environmentalist: { id: 'environmentalist', name: 'Environmentalist', color: 'teal', icon: '🌿' },
   'labor-advocate': { id: 'labor-advocate', name: 'Labor Advocate', color: 'orange', icon: '✊' },
   'policy-realist': { id: 'policy-realist', name: 'Policy Realist', color: 'blue', icon: '⚖️' },
-  'everyday-person': { id: 'everyday-person', name: 'Everyday Person', color: 'purple', icon: '🧓' },
+  'everyday-person': {
+    id: 'everyday-person',
+    name: 'Everyday Person',
+    color: 'purple',
+    icon: '🧓',
+  },
 }
 
 /** Stable display order for the personas bar. */

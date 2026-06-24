@@ -22,8 +22,18 @@ export interface DocumentEntry {
 }
 
 export const DOCUMENTS: DocumentEntry[] = [
-  { doc: partI, partLabel: 'Part I', navTitle: 'A Roundtable on Real Costs', blurb: partI.masthead.subtitle },
-  { doc: partII, partLabel: 'Part II', navTitle: "What's Actually Being Done", blurb: partII.masthead.subtitle },
+  {
+    doc: partI,
+    partLabel: 'Part I',
+    navTitle: 'A Roundtable on Real Costs',
+    blurb: partI.masthead.subtitle,
+  },
+  {
+    doc: partII,
+    partLabel: 'Part II',
+    navTitle: "What's Actually Being Done",
+    blurb: partII.masthead.subtitle,
+  },
   {
     doc: partIII,
     partLabel: 'Part III',
@@ -92,7 +102,9 @@ function assertReferentialIntegrity(doc: RoundtableDocument): void {
   }
   for (const claim of Object.values(doc.claims)) {
     if (claim.sourceId && !doc.sources.some((s) => s.id === claim.sourceId)) {
-      throw new Error(`[${doc.id}] claim "${claim.id}" references unknown source "${claim.sourceId}"`)
+      throw new Error(
+        `[${doc.id}] claim "${claim.id}" references unknown source "${claim.sourceId}"`,
+      )
     }
   }
 }

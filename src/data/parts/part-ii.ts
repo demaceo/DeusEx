@@ -447,7 +447,8 @@ export const partII: RoundtableDocument = {
                 labelTop: 'Nairobi High Court',
                 value: '180+',
                 size: 'large',
-                description: 'Kenyan workers cleared to take Meta to trial — landmark jurisdictional ruling',
+                description:
+                  'Kenyan workers cleared to take Meta to trial — landmark jurisdictional ruling',
                 claimId: 's-ii-nairobi-high-court',
               },
               {
@@ -463,7 +464,8 @@ export const partII: RoundtableDocument = {
                 labelTop: 'Countermovement',
                 value: '2024–25',
                 size: 'medium',
-                description: "Kenya's president signaled legislation to restrict lawsuits against foreign outsourcers",
+                description:
+                  "Kenya's president signaled legislation to restrict lawsuits against foreign outsourcers",
                 claimId: 's-ii-countermovement',
               },
             ],
@@ -587,7 +589,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' The same workers. The same supply chain. The same dynamic — now with a privacy violation layered on top. We\'re winning individual battles while the system generating the problem continues to scale.',
+                      " The same workers. The same supply chain. The same dynamic — now with a privacy violation layered on top. We're winning individual battles while the system generating the problem continues to scale.",
                   },
                 ],
               ],
@@ -629,7 +631,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'They do. But court cases move on timescales of years, and workers need protection on timescales of paychecks. The Teleperformance-Colombia agreement is meaningful precisely because it didn\'t wait for a court — it was a negotiated settlement driven by a government investigation. That model — regulatory investigation leading to binding agreement — is faster than litigation and more durable than voluntary pledges. The problem is it requires governments with both the will and the jurisdiction to act, and in most countries where this labor is concentrated, that combination is inconsistent.',
+                      "They do. But court cases move on timescales of years, and workers need protection on timescales of paychecks. The Teleperformance-Colombia agreement is meaningful precisely because it didn't wait for a court — it was a negotiated settlement driven by a government investigation. That model — regulatory investigation leading to binding agreement — is faster than litigation and more durable than voluntary pledges. The problem is it requires governments with both the will and the jurisdiction to act, and in most countries where this labor is concentrated, that combination is inconsistent.",
                   },
                 ],
               ],
@@ -659,7 +661,8 @@ export const partII: RoundtableDocument = {
                 labelTop: 'EU AI Act — in force',
                 value: 'Feb 2025',
                 size: 'medium',
-                description: 'Prohibited uses now enforceable: social scoring, manipulative AI, real-time public biometrics',
+                description:
+                  'Prohibited uses now enforceable: social scoring, manipulative AI, real-time public biometrics',
                 claimId: 's-ii-eu-ai-act-in-force',
               },
               {
@@ -675,7 +678,8 @@ export const partII: RoundtableDocument = {
                 labelTop: 'High-risk AI deadline',
                 value: 'Aug 2026',
                 size: 'medium',
-                description: 'May slip to Dec 2027 under EU Digital Omnibus — trilogue failed April 28',
+                description:
+                  'May slip to Dec 2027 under EU Digital Omnibus — trilogue failed April 28',
                 claimId: 's-ii-high-risk-deadline',
               },
             ],
@@ -762,7 +766,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The complication: the December 2025 federal executive order explicitly named the Colorado AI Act as an example of excessive regulation and directed agencies to evaluate and potentially challenge state laws conflicting with the administration\'s deregulatory posture.',
+                      "The complication: the December 2025 federal executive order explicitly named the Colorado AI Act as an example of excessive regulation and directed agencies to evaluate and potentially challenge state laws conflicting with the administration's deregulatory posture.",
                   },
                   { type: 'cite', claimId: 'c-ii-king-spalding-jan-2026' },
                   {
@@ -802,7 +806,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Worth noting that none of the passed U.S. legislation addresses energy or water at all. Colorado, California, Texas, Illinois — all of it focuses on algorithmic discrimination and transparency in automated decision-making. The environmental costs of AI have no binding regulatory framework in the United States. No mandatory energy disclosure. No water usage limits. The EU AI Act\'s environmental provisions are also limited. We have more legal structure around whether an AI hiring tool discriminates than around whether the data center running it is depleting an aquifer.',
+                      "Worth noting that none of the passed U.S. legislation addresses energy or water at all. Colorado, California, Texas, Illinois — all of it focuses on algorithmic discrimination and transparency in automated decision-making. The environmental costs of AI have no binding regulatory framework in the United States. No mandatory energy disclosure. No water usage limits. The EU AI Act's environmental provisions are also limited. We have more legal structure around whether an AI hiring tool discriminates than around whether the data center running it is depleting an aquifer.",
                   },
                 ],
               ],
@@ -819,7 +823,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'So we have real laws in Europe and real laws in some states. That\'s more than I expected. But none of it covers the electricity and water problems?',
+                      "So we have real laws in Europe and real laws in some states. That's more than I expected. But none of it covers the electricity and water problems?",
                   },
                 ],
               ],
@@ -935,7 +939,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The regulatory picture is more developed than most people realize, and less comprehensive than it needs to be. The EU AI Act is real law with real fines and a real timeline, even if slipping. More than a dozen U.S. states have enacted binding AI rules in two years. Courts are establishing precedents through litigation that legislation hasn\'t reached. None of it is coordinated. None of it covers environmental costs. And the most powerful AI actors operate in the jurisdiction — the United States — that is currently the most actively resistant to binding accountability. That\'s the honest position of where governance stands in May 2026.',
+                      "The regulatory picture is more developed than most people realize, and less comprehensive than it needs to be. The EU AI Act is real law with real fines and a real timeline, even if slipping. More than a dozen U.S. states have enacted binding AI rules in two years. Courts are establishing precedents through litigation that legislation hasn't reached. None of it is coordinated. None of it covers environmental costs. And the most powerful AI actors operate in the jurisdiction — the United States — that is currently the most actively resistant to binding accountability. That's the honest position of where governance stands in May 2026.",
                   },
                 ],
               ],
@@ -971,7 +975,8 @@ export const partII: RoundtableDocument = {
     {
       id: 'src-ttms-iea',
       title: 'TTMS / IEA Analysis (May 2026)',
-      description: 'Renewables at 22%/yr growth; projected to cover ~half of additional demand by 2030.',
+      description:
+        'Renewables at 22%/yr growth; projected to cover ~half of additional demand by 2030.',
     },
     {
       id: 'src-fortune',
@@ -987,17 +992,20 @@ export const partII: RoundtableDocument = {
     {
       id: 'src-introl-commonfund',
       title: 'Introl / Commonfund (2025)',
-      description: 'Microsoft–Constellation 20-year PPA, $16B, 835 MW Three Mile Island restart targeting 2028.',
+      description:
+        'Microsoft–Constellation 20-year PPA, $16B, 835 MW Three Mile Island restart targeting 2028.',
     },
     {
       id: 'src-enkiai-commonfund',
       title: 'Enkiai / Commonfund (2025–2026)',
-      description: 'Amazon $20B+ Susquehanna campus; Meta–Vistra January 2026 agreement with SMR option.',
+      description:
+        'Amazon $20B+ Susquehanna campus; Meta–Vistra January 2026 agreement with SMR option.',
     },
     {
       id: 'src-ieee-spectrum',
       title: 'IEEE Spectrum (December 2024)',
-      description: 'Amazon regulator rejection on expanded nuclear access; Google–Kairos Power SMR deal.',
+      description:
+        'Amazon regulator rejection on expanded nuclear access; Google–Kairos Power SMR deal.',
     },
     {
       id: 'src-trellis',
@@ -1043,22 +1051,26 @@ export const partII: RoundtableDocument = {
     {
       id: 'src-classaction',
       title: 'ClassAction.org / Business & Human Rights Centre (March 2026)',
-      description: 'U.S. class action against Meta — AI glasses footage reviewed by Kenyan workers.',
+      description:
+        'U.S. class action against Meta — AI glasses footage reviewed by Kenyan workers.',
     },
     {
       id: 'src-somo',
       title: 'SOMO (March 2026)',
-      description: "Big Tech's 30+ intermediary companies; accountability gaps in AI labor supply chains.",
+      description:
+        "Big Tech's 30+ intermediary companies; accountability gaps in AI labor supply chains.",
     },
     {
       id: 'src-secure-privacy',
       title: 'Secure Privacy / Legal Nodes (2026)',
-      description: 'EU AI Act: prohibited uses Feb 2025; GPAI obligations Aug 2025; high-risk deadline Aug 2026.',
+      description:
+        'EU AI Act: prohibited uses Feb 2025; GPAI obligations Aug 2025; high-risk deadline Aug 2026.',
     },
     {
       id: 'src-dla-piper-iapp',
       title: 'DLA Piper GENIE / IAPP (April–May 2026)',
-      description: 'EU Digital Omnibus; April 28 trilogue failure; possible delay to December 2027.',
+      description:
+        'EU Digital Omnibus; April 28 trilogue failure; possible delay to December 2027.',
     },
     {
       id: 'src-baker-botts-king-spalding',
@@ -1069,7 +1081,8 @@ export const partII: RoundtableDocument = {
     {
       id: 'src-stackcyber',
       title: 'StackCyber AI Laws Tracker (2026)',
-      description: 'Workday class action certified; vendor liability for discriminatory AI established.',
+      description:
+        'Workday class action certified; vendor liability for discriminatory AI established.',
     },
   ],
   claims: {
