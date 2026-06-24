@@ -219,7 +219,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " In the U.S., President Trump's December 2025 executive order moved in the opposite direction, declaring that \"U.S. AI companies must be free to innovate without cumbersome regulation,\" and actively working to preempt state-level AI laws.",
+                      ' In the U.S., President Trump\'s December 2025 executive order moved in the opposite direction, declaring that "U.S. AI companies must be free to innovate without cumbersome regulation," and actively working to preempt state-level AI laws.',
                   },
                   { type: 'cite', claimId: 'c-i-eo-14365-innovate' },
                   {
@@ -259,7 +259,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Yes — that\'s correct, and it\'s one of the most concrete and immediate harms for ordinary people. Northern Virginia, known as "Data Center Alley," has the world\'s highest concentration of these facilities. The surge in data center energy demand caused an 800% spike in energy prices during the 2024 capacity auction for the regional grid.',
+                      "Yes — that's correct, and it's one of the most concrete and immediate harms for ordinary people. Northern Virginia, known as \"Data Center Alley,\" has the world's highest concentration of these facilities. The surge in data center energy demand caused an 800% spike in energy prices during the 2024 capacity auction for the regional grid.",
                   },
                   { type: 'cite', claimId: 'c-i-ansi-price-surge' },
                   {
@@ -648,7 +648,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That argument has been used to delay climate action for forty years. "Don\'t regulate us, or the other guy will pollute more" is not an ethical framework. It\'s a race to the bottom with a plausible-sounding narrative. The 800% energy price surge in Virginia, the water stress in Nevada, the CO₂ from data centers — those don\'t pause because of geopolitical competition.',
+                      "That argument has been used to delay climate action for forty years. \"Don't regulate us, or the other guy will pollute more\" is not an ethical framework. It's a race to the bottom with a plausible-sounding narrative. The 800% energy price surge in Virginia, the water stress in Nevada, the CO₂ from data centers — those don't pause because of geopolitical competition.",
                   },
                   { type: 'cite', claimId: 'c-i-ansi-stanford-combined' },
                 ],
@@ -723,7 +723,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I\'ll close by saying: I think this technology is genuinely transformative and that managed well, it can improve billions of lives. But this conversation has sharpened something for me. "Managed well" requires transparency that doesn\'t currently exist, labor standards that aren\'t currently enforced, and energy practices that aren\'t currently mandated. Good intentions from industry leaders aren\'t enough. The people in this room — including the one who just learned about all this — need to be part of the conversation that shapes what comes next.',
+                      "I'll close by saying: I think this technology is genuinely transformative and that managed well, it can improve billions of lives. But this conversation has sharpened something for me. \"Managed well\" requires transparency that doesn't currently exist, labor standards that aren't currently enforced, and energy practices that aren't currently mandated. Good intentions from industry leaders aren't enough. The people in this room — including the one who just learned about all this — need to be part of the conversation that shapes what comes next.",
                   },
                 ],
               ],
@@ -743,8 +743,7 @@ export const partI: RoundtableDocument = {
     {
       id: 'src-iea',
       title: 'IEA — Energy and AI Report (April 2025)',
-      description:
-        'Global data center electricity projections and AI energy intensity estimates.',
+      description: 'Global data center electricity projections and AI energy intensity estimates.',
     },
     {
       id: 'src-mit-tech-review',
@@ -754,8 +753,7 @@ export const partI: RoundtableDocument = {
     {
       id: 'src-wef',
       title: 'World Economic Forum (December 2025)',
-      description:
-        'Data center demand doubling projections; ChatGPT training CO₂ equivalence.',
+      description: 'Data center demand doubling projections; ChatGPT training CO₂ equivalence.',
     },
     {
       id: 'src-ansi',
@@ -765,8 +763,7 @@ export const partI: RoundtableDocument = {
     {
       id: 'src-consumer-reports',
       title: 'Consumer Reports (March 2026)',
-      description:
-        'Virginia data centers = 40% of state electricity; data center buildout scale.',
+      description: 'Virginia data centers = 40% of state electricity; data center buildout scale.',
     },
     {
       id: 'src-microsoft',
@@ -801,7 +798,8 @@ export const partI: RoundtableDocument = {
     {
       id: 'src-somo',
       title: 'SOMO Report (March 2026)',
-      description: "Big Tech's use of 30+ intermediary labor companies; worker conditions globally.",
+      description:
+        "Big Tech's use of 30+ intermediary labor companies; worker conditions globally.",
     },
     {
       id: 'src-equal-times',

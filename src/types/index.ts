@@ -1,12 +1,5 @@
 /** Type-only re-export barrel. */
-export type {
-  Claim,
-  ClaimKind,
-  InlineNode,
-  Paragraph,
-  Source,
-  VerificationStatus,
-} from './content'
+export type { Claim, ClaimKind, InlineNode, Paragraph, Source, VerificationStatus } from './content'
 export type { Persona, PersonaColor, PersonaId } from './persona'
 export type {
   Block,

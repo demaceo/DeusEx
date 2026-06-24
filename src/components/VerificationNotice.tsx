@@ -8,9 +8,9 @@ export function VerificationNotice() {
     <aside className="verification-notice" role="note">
       <span className="verification-notice__badge">Pending verification</span>
       <p>
-        The statistics and citations below are transcribed from the source documents and
-        are <strong>pending independent verification</strong>. Figures should not be treated
-        as confirmed until each has been checked against a primary source.
+        The statistics and citations below are transcribed from the source documents and are{' '}
+        <strong>pending independent verification</strong>. Figures should not be treated as
+        confirmed until each has been checked against a primary source.
       </p>
     </aside>
   )

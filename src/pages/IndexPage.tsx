@@ -12,9 +12,9 @@ export function IndexPage() {
           The <em>AI Reckoning</em>
         </h1>
         <p className="subtitle">
-          A five-voice roundtable series on artificial intelligence — its real costs, the
-          responses underway, and what it is genuinely getting right. Grounded in cited evidence,
-          not speculation.
+          A five-voice roundtable series on artificial intelligence — its real costs, the responses
+          underway, and what it is genuinely getting right. Grounded in cited evidence, not
+          speculation.
         </p>
       </header>
 
