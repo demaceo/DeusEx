@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { BlockRenderer } from '../components/BlockRenderer'
 import { ChapterDivider } from '../components/ChapterDivider'
@@ -20,6 +21,10 @@ interface RoundtablePageProps {
 /** Renders one full roundtable document from data. One page, three data objects. */
 export function RoundtablePage({ document }: RoundtablePageProps) {
   const { prev, next } = getAdjacentParts(document.id)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [document.id])
 
   return (
     <DocumentProvider claims={document.claims}>

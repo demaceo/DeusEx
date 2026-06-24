@@ -1,7 +1,9 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { DOCUMENTS } from '../data/documents'
+import { partI } from '../data/parts/part-i'
+import { partII } from '../data/parts/part-ii'
 import { summarizeClaimStatuses } from '../data/claimSummary'
 import { RoundtablePage } from './RoundtablePage'
 
@@ -34,5 +36,28 @@ describe('verification notice reflects claim statuses', () => {
       expect(screen.getByText('Fact-checked')).toBeInTheDocument()
       expect(screen.getByText(`${summary.verified} verified`)).toBeInTheDocument()
     })
+  })
+})
+
+describe('RoundtablePage scroll-to-top', () => {
+  it('scrolls to the top on mount and when the document changes', () => {
+    const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+
+    const { rerender } = render(
+      <MemoryRouter>
+        <RoundtablePage document={partI} />
+      </MemoryRouter>,
+    )
+    expect(scrollTo).toHaveBeenCalledWith(0, 0)
+
+    scrollTo.mockClear()
+    rerender(
+      <MemoryRouter>
+        <RoundtablePage document={partII} />
+      </MemoryRouter>,
+    )
+    expect(scrollTo).toHaveBeenCalledWith(0, 0)
+
+    scrollTo.mockRestore()
   })
 })
