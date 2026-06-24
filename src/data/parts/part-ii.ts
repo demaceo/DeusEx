@@ -145,6 +145,27 @@ export const partII: RoundtableDocument = {
           },
         },
         {
+          type: 'chart',
+          data: {
+            kind: 'line',
+            area: true,
+            variant: 'optimist',
+            labelTop: 'Energy · Renewable share',
+            title: 'Renewables powered 58% of data centers in 2025',
+            subtitle:
+              'Share of data-center power from renewables — up 8 points year-on-year, with the IEA projecting ~22%/yr growth through 2030.',
+            unit: '%',
+            claimIds: ['s-ii-renewables-share', 'c-ii-sp-global-apr-2026'],
+            ariaLabel:
+              'Line chart: renewables rose from 50% of data-center power in 2024 to 58% in 2025.',
+            source: 'S&P Global, April 2026.',
+            data: [
+              { label: '2024', value: 50 },
+              { label: '2025', value: 58 },
+            ],
+          },
+        },
+        {
           type: 'debate',
           data: {
             personaId: 'environmentalist',
@@ -190,6 +211,28 @@ export const partII: RoundtableDocument = {
                 ],
               ],
             },
+          },
+        },
+        {
+          type: 'chart',
+          data: {
+            kind: 'bar',
+            variant: 'labor',
+            labelTop: 'Energy · The emissions paradox',
+            title: 'Emissions rose even as clean-energy buying hit records',
+            subtitle:
+              'Increase in each company’s total emissions since it pledged net zero, 2024–2025.',
+            unit: '%',
+            claimIds: ['c-ii-fortune-mar-2026'],
+            ariaLabel:
+              'Bar chart: emissions since net-zero pledges rose 23% at Microsoft, 33% at Amazon, about 50% at Google, and more than 60% at Meta.',
+            source: 'Fortune, March 2026.',
+            data: [
+              { label: 'Microsoft', value: 23 },
+              { label: 'Amazon', value: 33 },
+              { label: 'Google', value: 50 },
+              { label: 'Meta', value: 60 },
+            ],
           },
         },
         {
@@ -258,6 +301,26 @@ export const partII: RoundtableDocument = {
           },
         },
         {
+          type: 'chart',
+          data: {
+            kind: 'donut',
+            variant: 'navy',
+            labelTop: 'Energy · 2024 clean-energy PPAs',
+            title: "Five companies signed 43% of the world's clean-energy deals",
+            subtitle:
+              "Big Tech's share of all clean-energy power purchase agreements signed globally in 2024.",
+            unit: '%',
+            claimIds: ['c-ii-brookings-apr-2026'],
+            ariaLabel:
+              'Donut chart: Big Tech accounted for 43% of all clean-energy power purchase agreements signed globally in 2024; the rest of the market accounted for 57%.',
+            source: 'Brookings, April 2026.',
+            data: [
+              { label: 'Big Tech', value: 43, variant: 'accent' },
+              { label: 'Rest of market', value: 57, variant: 'navy' },
+            ],
+          },
+        },
+        {
           type: 'pullquote',
           data: {
             text: '"Tech companies are allowing — implicitly or explicitly — an enormous increase in fossil fuel dependence under their watch and because of their actions."',
@@ -299,6 +362,26 @@ export const partII: RoundtableDocument = {
                 description: 'Megalitres — highest among major hyperscalers',
                 claimId: 's-ii-google-2023-consumption',
               },
+            ],
+          },
+        },
+        {
+          type: 'chart',
+          data: {
+            kind: 'line',
+            variant: 'environ',
+            labelTop: 'Water · Microsoft efficiency',
+            title: 'Microsoft cut its water-per-kWh by 39%',
+            subtitle:
+              'Water-use effectiveness (WUE) in 2021 vs. 2024 — liters of water per kilowatt-hour. Lower is better.',
+            unit: 'L/kWh',
+            claimIds: ['s-ii-microsoft-wue'],
+            ariaLabel:
+              'Line chart: Microsoft water-use effectiveness fell from 0.49 liters per kilowatt-hour in 2021 to 0.30 in 2024, a 39% improvement.',
+            source: 'Microsoft environmental reporting, FY2024.',
+            data: [
+              { label: '2021', value: 0.49 },
+              { label: '2024', value: 0.3 },
             ],
           },
         },

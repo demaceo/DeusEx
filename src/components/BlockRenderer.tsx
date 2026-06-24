@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import type { Block } from '../types/document'
 import { ChapterDivider } from './ChapterDivider'
 import { DebateEntry } from './DebateEntry'
@@ -6,6 +7,10 @@ import { Pullquote } from './Pullquote'
 import { StatGrid } from './StatGrid'
 import { SummaryList } from './SummaryList'
 import { VerdictBox } from './VerdictBox'
+
+// Recharts is heavy and only appears on document pages, so it's code-split out of
+// the main bundle and loaded on demand; the landing page never pays for it.
+const ChartBlock = lazy(() => import('./ChartBlock').then((m) => ({ default: m.ChartBlock })))
 
 interface BlockRendererProps {
   block: Block
@@ -26,6 +31,14 @@ export function BlockRenderer({ block }: BlockRendererProps) {
       return <ChapterDivider />
     case 'summaryList':
       return <SummaryList summary={block.data} />
+    case 'chart':
+      return (
+        <Suspense
+          fallback={<div className="chart-block chart-block--loading" aria-hidden="true" />}
+        >
+          <ChartBlock chart={block.data} />
+        </Suspense>
+      )
     case 'prose':
       return (
         <div className="prose-block">

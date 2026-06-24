@@ -5,6 +5,18 @@ import {
   assertReferentialIntegrity,
   getDocumentBySlug,
 } from './documents'
+import type { ChartSpec, RoundtableDocument } from '../types/document'
+
+/** Every chart block in a document, in render order. */
+function chartsIn(doc: RoundtableDocument): ChartSpec[] {
+  const charts: ChartSpec[] = []
+  for (const section of doc.sections) {
+    for (const block of section.blocks) {
+      if (block.type === 'chart') charts.push(block.data)
+    }
+  }
+  return charts
+}
 
 describe('document registry', () => {
   it('exposes three documents with unique slugs', () => {
@@ -32,5 +44,16 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('$id content integrity', (doc
 
   it('every referenced claim and source resolves', () => {
     expect(() => assertReferentialIntegrity(doc)).not.toThrow()
+  })
+
+  it('charts rest only on verified claims', () => {
+    const charts = chartsIn(doc)
+    expect(charts.length).toBe(4)
+    for (const chart of charts) {
+      expect(chart.claimIds?.length ?? 0).toBeGreaterThan(0)
+      for (const id of chart.claimIds ?? []) {
+        expect(doc.claims[id]?.verificationStatus, `${chart.title} → ${id}`).toBe('verified')
+      }
+    }
   })
 })

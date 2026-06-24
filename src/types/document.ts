@@ -62,6 +62,66 @@ export interface SummaryList {
 }
 
 /**
+ * Color keys for chart series/segments. Mirror the persona + brand tokens in
+ * `tokens.css` so charts speak the same visual language as the rest of the kit.
+ * Resolved to hex by `variantColor` in `components/chartTheme.ts`.
+ */
+export type ChartVariant = 'accent' | 'navy' | 'gold' | 'optimist' | 'environ' | 'labor' | 'policy'
+
+/** A single category/point: one bar, one line vertex, or one donut segment. */
+export interface ChartDatum {
+  /** Axis tick / segment label, e.g. "2025" or "Kenya". */
+  label: string
+  value: number
+  /** Per-datum color override (e.g. one highlighted bar). Falls back to chart default. */
+  variant?: ChartVariant
+}
+
+/** One series in a {@link StackedBarChartSpec}, keyed into each row's data. */
+export interface ChartSeries {
+  /** Row key holding this series' value, e.g. "top10". */
+  key: string
+  /** Legend label, e.g. "Top 10% of universities". */
+  label: string
+  variant?: ChartVariant
+}
+
+/** Fields shared by every chart kind. */
+export interface ChartBase {
+  /** Mono uppercase eyebrow above the title, e.g. "Energy · Projected demand". */
+  labelTop?: string
+  /** Serif figure title. */
+  title: string
+  /** One-line takeaway; also carries ranges/effect-sizes that aren't plotted points. */
+  subtitle?: string
+  /** Mono caption / source line under the chart. */
+  source?: string
+  /** Verified claims backing the plotted data — drive the verification status dot. */
+  claimIds?: string[]
+  /** Screen-reader description of what the chart shows. */
+  ariaLabel: string
+  /** Value suffix for axis ticks and tooltips, e.g. "TWh", "%", "L/kWh". */
+  unit?: string
+  /** Default series/bar color when a datum sets no `variant`. Defaults to accent. */
+  variant?: ChartVariant
+}
+
+/**
+ * A chart, expressed as data (never JSX) so it lives in the part files like every
+ * other block. The union is discriminated by `kind`; `ChartBlock` renders each.
+ */
+export type ChartSpec =
+  | (ChartBase & { kind: 'bar'; orientation?: 'vertical' | 'horizontal'; data: ChartDatum[] })
+  | (ChartBase & { kind: 'line'; area?: boolean; data: ChartDatum[] })
+  | (ChartBase & { kind: 'donut'; data: ChartDatum[] })
+  | (ChartBase & {
+      kind: 'stackedBar'
+      series: ChartSeries[]
+      /** One row per category; each row holds `label` plus a number under each series key. */
+      data: Array<{ label: string } & Record<string, number | string>>
+    })
+
+/**
  * A heterogeneous content block. The union preserves arbitrary source ordering;
  * `BlockRenderer` switches over `type` exhaustively.
  */
@@ -73,6 +133,7 @@ export type Block =
   | { type: 'divider' }
   | { type: 'prose'; data: { paragraphs: Paragraph[] } }
   | { type: 'summaryList'; data: SummaryList }
+  | { type: 'chart'; data: ChartSpec }
 
 export interface Section {
   header: SectionHeader

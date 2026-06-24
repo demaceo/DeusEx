@@ -195,6 +195,29 @@ export const partIII: RoundtableDocument = {
           },
         },
         {
+          type: 'chart',
+          data: {
+            kind: 'stackedBar',
+            labelTop: 'Science · Before AlphaFold',
+            title: 'A handful of universities once held most of the field',
+            subtitle:
+              'Share of protein-research output before AlphaFold opened its data — open access is now measurably reducing this concentration.',
+            unit: '%',
+            claimIds: ['c-iii-biorxiv-concentration'],
+            ariaLabel:
+              'Stacked bar chart: before AlphaFold, the top 10% of universities published 55% of protein-research articles and held 50% of grants, with all other universities accounting for the remaining 45% and 50%.',
+            source: 'bioRxiv preprint, February 2025.',
+            series: [
+              { key: 'top10', label: 'Top 10% of universities', variant: 'accent' },
+              { key: 'rest', label: 'All other universities', variant: 'navy' },
+            ],
+            data: [
+              { label: 'Articles', top10: 55, rest: 45 },
+              { label: 'Grants', top10: 50, rest: 50 },
+            ],
+          },
+        },
+        {
           type: 'debate',
           data: {
             personaId: 'everyday-person',
@@ -284,6 +307,27 @@ export const partIII: RoundtableDocument = {
                   'Average per-patient treatment cost savings when AI screening catches cancer earlier',
                 claimId: 's-iii-cancer-detection-150k',
               },
+            ],
+          },
+        },
+        {
+          type: 'chart',
+          data: {
+            kind: 'bar',
+            orientation: 'horizontal',
+            variant: 'environ',
+            labelTop: 'Medicine · Preclinical testing',
+            title: 'AI compresses preclinical testing from years to months',
+            subtitle:
+              'Time to complete preclinical drug testing: the traditional pipeline vs. AI-assisted (48 vs. 18 months).',
+            unit: 'mo',
+            claimIds: ['s-iii-preclinical-timeline'],
+            ariaLabel:
+              'Horizontal bar chart: preclinical drug testing takes about 48 months traditionally, compressed to about 18 months with AI assistance.',
+            source: 'Preclinical-timeline research cited in Sources.',
+            data: [
+              { label: 'Traditional', value: 48, variant: 'navy' },
+              { label: 'AI-assisted', value: 18, variant: 'environ' },
             ],
           },
         },
@@ -458,6 +502,28 @@ export const partIII: RoundtableDocument = {
                 description: 'Faster than prior forecasting models, at up to 1-hour resolution',
                 claimId: 's-iii-weathernext-8x',
               },
+            ],
+          },
+        },
+        {
+          type: 'chart',
+          data: {
+            kind: 'line',
+            area: true,
+            variant: 'optimist',
+            labelTop: 'Climate · Flood forecasting reach',
+            title: 'From one country to 150 in seven years',
+            subtitle:
+              "Countries covered by Google's AI flood forecasting, which now protects over 2 billion people — from a 2018 pilot in India's Patna region.",
+            unit: 'countries',
+            claimIds: ['s-iii-flood-2b', 'c-iii-flood-2b'],
+            ariaLabel:
+              'Area chart: Google AI flood forecasting expanded from a 2018 pilot in one country to about 80 countries, and to 150 countries covering over 2 billion people by 2025.',
+            source: 'Google Research, 2025; EcoSkills Academy, 2025.',
+            data: [
+              { label: '2018', value: 1 },
+              { label: '~2024', value: 80 },
+              { label: '2025', value: 150 },
             ],
           },
         },
@@ -670,6 +736,25 @@ export const partIII: RoundtableDocument = {
                 ],
               ],
             },
+          },
+        },
+        {
+          type: 'chart',
+          data: {
+            kind: 'bar',
+            variant: 'optimist',
+            labelTop: 'Education · Harvard RCT (n = 194)',
+            title: 'Students learned more with an AI tutor',
+            subtitle:
+              'Median physics post-test score: AI tutor vs. in-class active learning. Effect size 0.73–1.3 SD; p < 10⁻⁸.',
+            claimIds: ['s-iii-harvard-effect-size', 'c-iii-harvard-rct'],
+            ariaLabel:
+              'Bar chart: in a Harvard randomized controlled trial of 194 students, the AI-tutored group scored a median of 4.5 on the post-test versus 3.5 for the active-learning classroom group.',
+            source: 'Kestin et al., Scientific Reports, June 2025.',
+            data: [
+              { label: 'AI tutor', value: 4.5, variant: 'optimist' },
+              { label: 'Active-learning class', value: 3.5, variant: 'navy' },
+            ],
           },
         },
         {

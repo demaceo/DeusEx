@@ -72,6 +72,9 @@ function claimIdsInBlock(block: Block): string[] {
     case 'prose':
       collectParagraphs(block.data.paragraphs)
       break
+    case 'chart':
+      if (block.data.claimIds) ids.push(...block.data.claimIds)
+      break
     default:
       break
   }
