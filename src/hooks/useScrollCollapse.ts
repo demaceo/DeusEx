@@ -24,9 +24,6 @@ export function useScrollCollapse(threshold = 80): boolean {
       window.requestAnimationFrame(update)
     }
 
-    // Sync once in case the page mounted already scrolled (refresh / back-nav).
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setCollapsed(window.scrollY > threshold)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [threshold])
