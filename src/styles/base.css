@@ -119,6 +119,11 @@ a {
   border-bottom: 3px solid var(--navy);
 }
 
+.persona-tag-wrap {
+  position: relative;
+  display: flex;
+}
+
 .persona-tag {
   display: flex;
   align-items: center;
@@ -126,6 +131,10 @@ a {
   padding: 0.3rem 0.85rem;
   border: 1px solid rgba(245, 240, 232, 0.15);
   border-radius: 2px;
+  /* button reset */
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
   transition:
     border-color 0.2s var(--ease),
     background 0.2s var(--ease);
@@ -136,6 +145,11 @@ a {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.persona-tag:focus-visible {
+  outline: 2px solid var(--persona-color, var(--accent));
+  outline-offset: 2px;
+}
+
 .persona-dot {
   width: 8px;
   height: 8px;
@@ -144,12 +158,116 @@ a {
   background: var(--persona-color, var(--accent));
 }
 
-.persona-tag span {
+.persona-tag__name {
   font-family: var(--font-mono);
   font-size: 0.62rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(245, 240, 232, 0.7);
+}
+
+/* ─── PERSONA PROFILE (hover/focus floating card) ─────────────────── */
+.persona-profile {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  width: min(280px, 78vw);
+  padding: 0.9rem 1rem 1rem;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--persona-color, var(--accent));
+  border-radius: 3px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-4px);
+  transition:
+    opacity 0.16s var(--ease),
+    transform 0.16s var(--ease);
+  z-index: 60;
+}
+
+.persona-tag-wrap:hover .persona-profile,
+.persona-tag-wrap:focus-within .persona-profile {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* little arrow pointing up at the chip */
+.persona-profile::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-bottom-color: var(--persona-color, var(--accent));
+}
+
+.persona-profile__header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.persona-profile__icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--persona-color, var(--accent));
+  color: var(--white);
+}
+
+.persona-profile__heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.persona-profile__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.persona-profile__role {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.18rem;
+}
+
+.persona-profile__focus {
+  font-style: italic;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.persona-profile__bio {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .persona-profile {
+    transition: none;
+  }
 }
 
 /* ─── COMPANION BANNER ────────────────────────────────────────────── */
@@ -161,14 +279,6 @@ a {
   justify-content: center;
   gap: 0.75rem;
   border-bottom: 2px solid var(--gold);
-}
-
-.companion-banner::before {
-  content: '←';
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--gold);
-  opacity: 0.8;
 }
 
 .companion-banner span {

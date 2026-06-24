@@ -4,6 +4,8 @@
  * a {@link PersonaId} only — never re-declaring name/color/icon.
  */
 
+import type { LucideIcon } from 'lucide-react'
+
 export type PersonaId =
   | 'tech-optimist'
   | 'environmentalist'
@@ -19,6 +21,12 @@ export interface Persona {
   /** Display name, e.g. "Tech Optimist". */
   name: string
   color: PersonaColor
-  /** Emoji rendered in the speaker icon, e.g. "💻". */
-  icon: string
+  /** Lucide icon component rendered in the speaker disc and profile card. */
+  icon: LucideIcon
+  /** Short professional title shown in the profile card. */
+  role: string
+  /** One-line "what they care about" tagline. */
+  focus: string
+  /** One- or two-sentence description of the persona's viewpoint. */
+  bio: string
 }

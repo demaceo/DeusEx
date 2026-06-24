@@ -8,11 +8,12 @@ interface DebateEntryProps {
 
 export function DebateEntry({ entry }: DebateEntryProps) {
   const persona = PERSONAS[entry.personaId]
+  const Icon = persona.icon
   return (
     <div className="debate-entry">
       <div className="speaker-card">
         <div className="speaker-icon" data-persona={persona.id} aria-hidden="true">
-          {persona.icon}
+          <Icon size={22} strokeWidth={1.75} />
         </div>
         <div className="speaker-name">{persona.name}</div>
       </div>
