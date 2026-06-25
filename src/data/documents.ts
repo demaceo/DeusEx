@@ -10,6 +10,7 @@ import type { Block, DocumentId, RoundtableDocument } from '../types/document'
 import { partI } from './parts/part-i'
 import { partII } from './parts/part-ii'
 import { partIII } from './parts/part-iii'
+import { partIV } from './parts/part-iv'
 
 export interface DocumentEntry {
   doc: RoundtableDocument
@@ -40,6 +41,12 @@ export const DOCUMENTS: DocumentEntry[] = [
     partLabel: 'Part III',
     navTitle: "What It's Actually Getting Right",
     blurb: partIII.masthead.subtitle,
+  },
+  {
+    doc: partIV,
+    partLabel: 'Part IV',
+    navTitle: "The Race We're In",
+    blurb: partIV.masthead.subtitle,
   },
 ]
 

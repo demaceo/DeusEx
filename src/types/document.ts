@@ -62,6 +62,20 @@ export interface SummaryList {
 }
 
 /**
+ * A "Systems Framing" callout that performs the diagnostic pivot:
+ * incentive race → coordination trap → governance off-ramp.
+ * Rendered as a visually distinct aside, not a debate bubble.
+ */
+export interface IncentiveAudit {
+  /** The competitive dynamic being named — what everyone is racing toward. */
+  race: string
+  /** Why no single actor can exit the race unilaterally. */
+  trap: string
+  /** The coordination or governance intervention that changes the incentive. */
+  intervention: string
+}
+
+/**
  * Color keys for chart series/segments. Mirror the persona + brand tokens in
  * `tokens.css` so charts speak the same visual language as the rest of the kit.
  * Resolved to hex by `variantColor` in `components/chartTheme.ts`.
@@ -134,6 +148,7 @@ export type Block =
   | { type: 'prose'; data: { paragraphs: Paragraph[] } }
   | { type: 'summaryList'; data: SummaryList }
   | { type: 'chart'; data: ChartSpec }
+  | { type: 'incentiveAudit'; data: IncentiveAudit }
 
 export interface Section {
   header: SectionHeader
@@ -166,7 +181,7 @@ export interface CompanionBanner {
   text: string
 }
 
-export type DocumentId = 'part-i' | 'part-ii' | 'part-iii'
+export type DocumentId = 'part-i' | 'part-ii' | 'part-iii' | 'part-iv'
 
 export interface RoundtableDocument {
   id: DocumentId

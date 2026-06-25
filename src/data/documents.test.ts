@@ -20,12 +20,12 @@ function chartsIn(doc: RoundtableDocument): ChartSpec[] {
 }
 
 describe('document registry', () => {
-  it('exposes three documents with unique slugs', () => {
-    expect(DOCUMENTS).toHaveLength(3)
+  it('exposes four documents with unique slugs', () => {
+    expect(DOCUMENTS).toHaveLength(4)
     const slugs = DOCUMENTS.map((entry) => entry.doc.slug)
-    expect(new Set(slugs).size).toBe(3)
+    expect(new Set(slugs).size).toBe(4)
     expect(slugs).toEqual(
-      expect.arrayContaining(['real-costs', 'whats-being-done', 'getting-right']),
+      expect.arrayContaining(['real-costs', 'whats-being-done', 'getting-right', 'the-race']),
     )
   })
 
@@ -60,12 +60,12 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('$id content integrity', (doc
 })
 
 describe('getAdjacentParts (wrap-around series navigation)', () => {
-  it('wraps backward from Part I to Part III and forward to Part II', () => {
+  it('wraps backward from Part I to Part IV and forward to Part II', () => {
     const { prev, next } = getAdjacentParts('part-i')
     expect(prev).toEqual({
-      slug: 'getting-right',
-      partLabel: 'Part III',
-      navTitle: "What It's Actually Getting Right",
+      slug: 'the-race',
+      partLabel: 'Part IV',
+      navTitle: "The Race We're In",
     })
     expect(next).toEqual({
       slug: 'whats-being-done',
@@ -84,9 +84,19 @@ describe('getAdjacentParts (wrap-around series navigation)', () => {
     })
   })
 
-  it('wraps forward from Part III back to Part I', () => {
+  it('returns Part IV as next from Part III', () => {
     const { prev, next } = getAdjacentParts('part-iii')
     expect(prev.slug).toBe('whats-being-done')
+    expect(next).toEqual({
+      slug: 'the-race',
+      partLabel: 'Part IV',
+      navTitle: "The Race We're In",
+    })
+  })
+
+  it('wraps forward from Part IV back to Part I', () => {
+    const { prev, next } = getAdjacentParts('part-iv')
+    expect(prev.slug).toBe('getting-right')
     expect(next).toEqual({
       slug: 'real-costs',
       partLabel: 'Part I',
@@ -96,6 +106,6 @@ describe('getAdjacentParts (wrap-around series navigation)', () => {
 
   it('throws on an unknown document id', () => {
     // @ts-expect-error exercising the runtime guard with an invalid id
-    expect(() => getAdjacentParts('part-iv')).toThrow()
+    expect(() => getAdjacentParts('part-v')).toThrow()
   })
 })

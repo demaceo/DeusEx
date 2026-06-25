@@ -1033,3 +1033,58 @@ cite[data-verification='unverified'] {
   text-transform: uppercase;
   color: var(--accent);
 }
+
+/* ─── INCENTIVE AUDIT (Systems Framing callout) ──────────────────── */
+.incentive-audit {
+  margin: 1.75rem 0;
+  padding: 1.1rem 1.4rem 1.1rem 1.5rem;
+  border-left: 4px solid var(--c-systems);
+  background: rgba(230, 160, 23, 0.06);
+}
+
+.incentive-audit__eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-systems);
+  margin-bottom: 0.85rem;
+}
+
+.incentive-audit__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.incentive-audit__row {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+}
+
+.incentive-audit__row dt {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.incentive-audit__row dd {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0;
+}
+
+@media (max-width: 580px) {
+  .incentive-audit__row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}

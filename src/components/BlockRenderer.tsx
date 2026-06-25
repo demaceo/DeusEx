@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import type { Block } from '../types/document'
 import { ChapterDivider } from './ChapterDivider'
 import { DebateEntry } from './DebateEntry'
+import { IncentiveAudit } from './IncentiveAudit'
 import { ParagraphView } from './ParagraphView'
 import { Pullquote } from './Pullquote'
 import { StatGrid } from './StatGrid'
@@ -31,6 +32,8 @@ export function BlockRenderer({ block }: BlockRendererProps) {
       return <ChapterDivider />
     case 'summaryList':
       return <SummaryList summary={block.data} />
+    case 'incentiveAudit':
+      return <IncentiveAudit audit={block.data} />
     case 'chart':
       return (
         <Suspense
