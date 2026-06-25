@@ -3,7 +3,7 @@
  * Documents reference a PersonaId; components resolve the full Persona via context.
  */
 
-import { Cpu, HardHat, Leaf, Scale, UserRound } from 'lucide-react'
+import { Cpu, HardHat, Leaf, Network, Scale, UserRound } from 'lucide-react'
 import type { Persona, PersonaId } from '../types/persona'
 
 export const PERSONAS: Record<PersonaId, Persona> = {
@@ -52,6 +52,15 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     focus: 'Encountering AI for the first time',
     bio: 'Uses a smartphone and watches the news, but AI was never part of her daily vocabulary — until lately.',
   },
+  'systems-humanist': {
+    id: 'systems-humanist',
+    name: 'Systems Humanist',
+    color: 'amber',
+    icon: Network,
+    role: 'Technology ethicist & coordination researcher',
+    focus: 'Incentive structures, not just symptoms',
+    bio: "Argues that AI's harms aren't accidents or bad actors — they're the predictable output of misaligned races no single player can stop alone. The fix is coordination, not blame.",
+  },
 }
 
 /** Stable display order for the personas bar. */
@@ -61,4 +70,5 @@ export const PERSONA_ORDER: PersonaId[] = [
   'labor-advocate',
   'policy-realist',
   'everyday-person',
+  'systems-humanist',
 ]
