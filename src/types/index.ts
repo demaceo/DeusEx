@@ -6,6 +6,7 @@ export type {
   CompanionBanner,
   DebateEntry,
   DocumentId,
+  IncentiveAudit,
   Masthead,
   Pullquote,
   RoundtableDocument,

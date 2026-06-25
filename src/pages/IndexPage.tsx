@@ -23,7 +23,7 @@ export function IndexPage() {
       <div className="container">
         <div className="index-intro">
           <p>
-            Three documents, one recurring panel. Read them in order, or jump to whichever question
+            Four documents, one recurring panel. Read them in order, or jump to whichever question
             you care about most.
           </p>
         </div>

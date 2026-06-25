@@ -72,3 +72,6 @@
 [data-accent='purple'] {
   --masthead-accent: var(--c-everyday);
 }
+[data-accent='amber'] {
+  --masthead-accent: var(--c-systems);
+}
