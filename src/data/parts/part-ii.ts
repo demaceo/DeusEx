@@ -221,7 +221,7 @@ export const partII: RoundtableDocument = {
             labelTop: 'Energy · The emissions paradox',
             title: 'Emissions rose even as clean-energy buying hit records',
             subtitle:
-              'Increase in each company’s total emissions since it pledged net zero, 2024–2025.',
+              "Increase in each company's total emissions since it pledged net zero, 2024–2025.",
             unit: '%',
             claimIds: ['c-ii-fortune-mar-2026'],
             ariaLabel:

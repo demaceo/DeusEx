@@ -3,7 +3,7 @@
 A small React + TypeScript site that presents **The AI Reckoning** — a roundtable series in which
 recurring voices (Tech Optimist, Environmentalist, Labor Advocate, Policy Realist, an Everyday
 Person, a Systems Humanist, a Skeptic, an Artist, an Accelerationist, a Safety Researcher, a Young
-Person, and a Clinician) debate artificial intelligence:
+Person, a Clinician, and an Economist) debate artificial intelligence:
 
 1. **Part I — A Roundtable on Real Costs** (`/real-costs`) — energy, water, labor, regulation
 2. **Part II — What's Actually Being Done** (`/whats-being-done`) — responses already underway
@@ -12,6 +12,8 @@ Person, and a Clinician) debate artificial intelligence:
 5. **Part V — The Reality Problem** (`/the-reality-problem`) — truth, synthetic media, trust
 6. **Part VI — The Tail Risk** (`/the-tail-risk`) — safety, alignment, existential stakes
 7. **Part VII — Machines We Talk To** (`/machines-we-talk-to`) — AI companions, loneliness, kids
+8. **Part VIII — Whose Intelligence?** (`/whose-intelligence`) — power, compute, capital, geopolitics
+9. **Part IX — The Creativity Question** (`/the-creativity-question`) — copyright, culture, authorship
 
 ## Reading features
 
@@ -31,7 +33,7 @@ shared component kit**, not hand-maintained pages:
 - `src/data/parts/part-*.ts` — each document as typed data; `src/data/documents.ts` is the slug
   registry.
 - `src/components/` — one set of presentational components (Masthead, DebateEntry, StatGrid,
-  Citation, …) rendered for all three documents.
+  Citation, …) rendered for every document.
 - `src/styles/` — `tokens.css` is the single source of truth for the design system.
 
 ## Verification of statistics

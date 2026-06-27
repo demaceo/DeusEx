@@ -1,5 +1,5 @@
 /**
- * The five recurring debate personas. They are shared across all three documents,
+ * The recurring debate personas. They are shared across every document,
  * so they are declared once (see `src/data/personas.ts`) and documents reference
  * a {@link PersonaId} only — never re-declaring name/color/icon.
  */
@@ -19,6 +19,7 @@ export type PersonaId =
   | 'safety-researcher'
   | 'young-person'
   | 'clinician'
+  | 'economist'
 
 /** Maps to a CSS custom property (--c-optimist, --c-environ, ...) via data-attribute. */
 export type PersonaColor =
@@ -34,6 +35,7 @@ export type PersonaColor =
   | 'indigo'
   | 'cyan'
   | 'clay'
+  | 'bronze'
 
 export interface Persona {
   id: PersonaId

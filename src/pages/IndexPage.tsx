@@ -15,7 +15,7 @@ export function IndexPage() {
         <p className="subtitle">
           A recurring-roundtable series on artificial intelligence — its real costs, the responses
           underway, what it is genuinely getting right, and the harder questions of race, truth,
-          safety, and intimacy. Grounded in cited evidence, not speculation.
+          safety, intimacy, ownership, and culture. Grounded in cited evidence, not speculation.
         </p>
       </header>
 
@@ -24,7 +24,7 @@ export function IndexPage() {
       <div className="container">
         <div className="index-intro">
           <p>
-            Seven documents, one recurring panel. Read them in order, or jump to whichever question
+            Nine documents, one recurring panel. Read them in order, or jump to whichever question
             you care about most. Every figure is a checkable claim —{' '}
             <Link to="/verification">see the evidence ledger</Link>.
           </p>

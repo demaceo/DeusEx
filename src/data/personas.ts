@@ -1,5 +1,5 @@
 /**
- * The five debate personas — declared once and shared by all three documents.
+ * The recurring debate personas — declared once and shared by every document.
  * Documents reference a PersonaId; components resolve the full Persona via context.
  */
 
@@ -7,6 +7,7 @@ import {
   Cpu,
   HardHat,
   Leaf,
+  LineChart,
   Network,
   Palette,
   Rocket,
@@ -128,6 +129,15 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     focus: 'What it does to real people, measured carefully',
     bio: 'Sees patients who lean on AI companions for support. Holds both truths: these tools genuinely help some people, and they can deepen isolation or substitute for care that a person actually needs.',
   },
+  economist: {
+    id: 'economist',
+    name: 'Economist',
+    color: 'bronze',
+    icon: LineChart,
+    role: 'Political economist',
+    focus: 'Follow the compute, the capital, and the power',
+    bio: 'Tracks who owns the chips, the capital, and the data — and who captures the gains. Argues that the deciding question about AI is not what it can do but who controls the means to build it.',
+  },
 }
 
 /** Stable display order for the personas bar. */
@@ -144,4 +154,5 @@ export const PERSONA_ORDER: PersonaId[] = [
   'safety-researcher',
   'young-person',
   'clinician',
+  'economist',
 ]

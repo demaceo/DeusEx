@@ -26,6 +26,7 @@
   --c-safety: #3b3bb0;
   --c-young: #0e9aa7;
   --c-clinician: #a0562d;
+  --c-economist: #8a6d1f;
 
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
@@ -73,6 +74,9 @@
 [data-persona='clinician'] {
   --persona-color: var(--c-clinician);
 }
+[data-persona='economist'] {
+  --persona-color: var(--c-economist);
+}
 
 /* Masthead bottom-accent resolution (data-accent on .masthead). */
 [data-accent='gold'] {
@@ -116,4 +120,7 @@
 }
 [data-accent='clay'] {
   --masthead-accent: var(--c-clinician);
+}
+[data-accent='bronze'] {
+  --masthead-accent: var(--c-economist);
 }

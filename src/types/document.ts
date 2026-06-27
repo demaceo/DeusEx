@@ -168,7 +168,7 @@ export interface Masthead {
   /**
    * The headline as ordered lines of spans. Each inner array is one line (a
    * source `<br>`); spans with `em: true` render in the accent italic. This keeps
-   * all three documents' differing title layouts faithful with one model.
+   * every document's differing title layout faithful with one model.
    */
   titleLines: TitleSpan[][]
   subtitle: string
@@ -189,6 +189,8 @@ export type DocumentId =
   | 'part-v'
   | 'part-vi'
   | 'part-vii'
+  | 'part-viii'
+  | 'part-ix'
 
 export interface RoundtableDocument {
   id: DocumentId
