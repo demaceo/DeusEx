@@ -22,10 +22,10 @@ function chartsIn(doc: RoundtableDocument): ChartSpec[] {
 }
 
 describe('document registry', () => {
-  it('exposes seven documents with unique slugs', () => {
-    expect(DOCUMENTS).toHaveLength(7)
+  it('exposes nine documents with unique slugs', () => {
+    expect(DOCUMENTS).toHaveLength(9)
     const slugs = DOCUMENTS.map((entry) => entry.doc.slug)
-    expect(new Set(slugs).size).toBe(7)
+    expect(new Set(slugs).size).toBe(9)
     expect(slugs).toEqual(
       expect.arrayContaining([
         'real-costs',
@@ -35,6 +35,8 @@ describe('document registry', () => {
         'the-reality-problem',
         'the-tail-risk',
         'machines-we-talk-to',
+        'whose-intelligence',
+        'the-creativity-question',
       ]),
     )
   })
@@ -89,12 +91,12 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('$id content integrity', (doc
 })
 
 describe('getAdjacentParts (wrap-around series navigation)', () => {
-  it('wraps backward from Part I to Part VII and forward to Part II', () => {
+  it('wraps backward from Part I to Part IX and forward to Part II', () => {
     const { prev, next } = getAdjacentParts('part-i')
     expect(prev).toEqual({
-      slug: 'machines-we-talk-to',
-      partLabel: 'Part VII',
-      navTitle: 'Machines We Talk To',
+      slug: 'the-creativity-question',
+      partLabel: 'Part IX',
+      navTitle: 'The Creativity Question',
     })
     expect(next).toEqual({
       slug: 'whats-being-done',
@@ -153,9 +155,29 @@ describe('getAdjacentParts (wrap-around series navigation)', () => {
     })
   })
 
-  it('wraps forward from Part VII back to Part I', () => {
+  it('returns Part VIII as next from Part VII', () => {
     const { prev, next } = getAdjacentParts('part-vii')
     expect(prev.slug).toBe('the-tail-risk')
+    expect(next).toEqual({
+      slug: 'whose-intelligence',
+      partLabel: 'Part VIII',
+      navTitle: 'Whose Intelligence?',
+    })
+  })
+
+  it('returns Part IX as next from Part VIII', () => {
+    const { prev, next } = getAdjacentParts('part-viii')
+    expect(prev.slug).toBe('machines-we-talk-to')
+    expect(next).toEqual({
+      slug: 'the-creativity-question',
+      partLabel: 'Part IX',
+      navTitle: 'The Creativity Question',
+    })
+  })
+
+  it('wraps forward from Part IX back to Part I', () => {
+    const { prev, next } = getAdjacentParts('part-ix')
+    expect(prev.slug).toBe('whose-intelligence')
     expect(next).toEqual({
       slug: 'real-costs',
       partLabel: 'Part I',

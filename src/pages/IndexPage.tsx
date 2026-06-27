@@ -24,7 +24,7 @@ export function IndexPage() {
       <div className="container">
         <div className="index-intro">
           <p>
-            Seven documents, one recurring panel. Read them in order, or jump to whichever question
+            Nine documents, one recurring panel. Read them in order, or jump to whichever question
             you care about most. Every figure is a checkable claim —{' '}
             <Link to="/verification">see the evidence ledger</Link>.
           </p>

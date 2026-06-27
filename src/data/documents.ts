@@ -16,6 +16,8 @@ import { partIV } from './parts/part-iv'
 import { partV } from './parts/part-v'
 import { partVI } from './parts/part-vi'
 import { partVII } from './parts/part-vii'
+import { partVIII } from './parts/part-viii'
+import { partIX } from './parts/part-ix'
 
 export interface DocumentEntry {
   doc: RoundtableDocument
@@ -70,6 +72,18 @@ export const DOCUMENTS: DocumentEntry[] = [
     partLabel: 'Part VII',
     navTitle: 'Machines We Talk To',
     blurb: partVII.masthead.subtitle,
+  },
+  {
+    doc: partVIII,
+    partLabel: 'Part VIII',
+    navTitle: 'Whose Intelligence?',
+    blurb: partVIII.masthead.subtitle,
+  },
+  {
+    doc: partIX,
+    partLabel: 'Part IX',
+    navTitle: 'The Creativity Question',
+    blurb: partIX.masthead.subtitle,
   },
 ]
 
