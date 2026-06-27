@@ -88,7 +88,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' Mine were in there. So were my friends’. Nobody emailed us. The defense I keep hearing is that it was “publicly available” — but publicly visible has never meant free to take. A shop window is public. That does not make the clothes free.',
+                      ' Mine were in there. So were my friends\'. Nobody emailed us. The defense I keep hearing is that it was "publicly available" — but publicly visible has never meant free to take. A shop window is public. That does not make the clothes free.',
                   },
                 ],
               ],
@@ -105,7 +105,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to be careful and fair here, because the engineering reality matters. A model does not store your images; it learns statistical patterns from them, the way an art student learns by studying thousands of paintings. We do not say a student who studied Picasso owes the estate when they paint. The scale is unprecedented, I grant that — but “a machine learned from public examples” is not obviously theft, legally or morally.',
+                      'I want to be careful and fair here, because the engineering reality matters. A model does not store your images; it learns statistical patterns from them, the way an art student learns by studying thousands of paintings. We do not say a student who studied Picasso owes the estate when they paint. The scale is unprecedented, I grant that — but "a machine learned from public examples" is not obviously theft, legally or morally.',
                   },
                 ],
               ],
@@ -122,7 +122,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The art-student analogy is the most overused sentence in this entire debate, and it breaks on two points. A student cannot study ten thousand of my pieces overnight and then flood the market with a thousand near-substitutes a day, undercutting me on the exact aesthetic I spent twenty years building. And a student is a person taking part in culture. A company ingesting my life’s work to build a product that competes with me is not a student. It is a competitor that used my own output as the fuel.',
+                      "The art-student analogy is the most overused sentence in this entire debate, and it breaks on two points. A student cannot study ten thousand of my pieces overnight and then flood the market with a thousand near-substitutes a day, undercutting me on the exact aesthetic I spent twenty years building. And a student is a person taking part in culture. A company ingesting my life's work to build a product that competes with me is not a student. It is a competitor that used my own output as the fuel.",
                   },
                 ],
               ],
@@ -139,7 +139,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I’ll concede more here than I usually do. I came in expecting an overblown panic, and the consent problem is real — “it was on the internet” is doing an enormous amount of unearned work. Where I stay skeptical is the leap from “this is unfair” to “this is illegal” to “this can be stopped.” Three different claims. The first is strong. The second is being fought in court right now. The third may simply be beyond reach.',
+                      'I\'ll concede more here than I usually do. I came in expecting an overblown panic, and the consent problem is real — "it was on the internet" is doing an enormous amount of unearned work. Where I stay skeptical is the leap from "this is unfair" to "this is illegal" to "this can be stopped." Three different claims. The first is strong. The second is being fought in court right now. The third may simply be beyond reach.',
                   },
                 ],
               ],
@@ -187,7 +187,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Legally, none of this is settled, and anyone who tells you otherwise is selling something. The central US question is fair use — whether training is a “transformative” use of copyrighted work. That doctrine weighs, among other things, the effect on the market for the original. The New York Times sued OpenAI and Microsoft in December 2023 on exactly this ground.',
+                      'Legally, none of this is settled, and anyone who tells you otherwise is selling something. The central US question is fair use — whether training is a "transformative" use of copyrighted work. That doctrine weighs, among other things, the effect on the market for the original. The New York Times sued OpenAI and Microsoft in December 2023 on exactly this ground.',
                   },
                   { type: 'cite', claimId: 'c-ix-nyt-suit' },
                   {
@@ -228,7 +228,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Notice the move, though — “democratizing creativity.” It is generous about access and silent about volume. Within a year of release, people had generated more than fifteen billion AI images.',
+                      'Notice the move, though — "democratizing creativity." It is generous about access and silent about volume. Within a year of release, people had generated more than fifteen billion AI images.',
                   },
                   { type: 'cite', claimId: 'c-ix-images-made' },
                   {
@@ -307,7 +307,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And creative work has always been undervalued precisely because people love doing it — “do it for the exposure” is the oldest wage suppression there is. AI supercharges that. When a client can get a passable logo for free, the floor under the illustrator who needs to eat falls out. The 2023 Hollywood writers’ strike won real guardrails on AI in their contracts. Most creative workers have no union and no contract to negotiate.',
+                      'And creative work has always been undervalued precisely because people love doing it — "do it for the exposure" is the oldest wage suppression there is. AI supercharges that. When a client can get a passable logo for free, the floor under the illustrator who needs to eat falls out. The 2023 Hollywood writers\' strike won real guardrails on AI in their contracts. Most creative workers have no union and no contract to negotiate.',
                   },
                 ],
               ],
@@ -324,7 +324,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I have to be honest, because I think I am the customer you are worried about. I used one of these tools to make a card for my granddaughter’s birthday, and it was lovely, and it was free. I did not think of it as taking work from anyone. Now I am wondering how many small kindnesses like mine add up to someone losing a living.',
+                      "I have to be honest, because I think I am the customer you are worried about. I used one of these tools to make a card for my granddaughter's birthday, and it was lovely, and it was free. I did not think of it as taking work from anyone. Now I am wondering how many small kindnesses like mine add up to someone losing a living.",
                   },
                 ],
               ],
@@ -341,7 +341,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Thank you for saying that — and please don’t carry it as guilt. You are not the villain; the card is not the problem. The problem is a system that took our work to build the tool and then routed every cent of the value to the company that made it, with nothing flowing back to the people it learned from. Fix that, and your birthday card and my career can both exist. That is the whole fight: not banning the tool, but reconnecting it to the people it was built on.',
+                      "Thank you for saying that — and please don't carry it as guilt. You are not the villain; the card is not the problem. The problem is a system that took our work to build the tool and then routed every cent of the value to the company that made it, with nothing flowing back to the people it learned from. Fix that, and your birthday card and my career can both exist. That is the whole fight: not banning the tool, but reconnecting it to the people it was built on.",
                   },
                 ],
               ],
@@ -570,7 +570,7 @@ export const partIX: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://societyofauthors.org/2024/04/11/new-survey-of-authors-and-illustrators-on-ai/',
-      note: 'The Society of Authors’ 2024 survey reported that roughly a quarter (~26%) of illustrators said they had lost work due to generative AI; about 37% of translators reported the same.',
+      note: "The Society of Authors' 2024 survey reported that roughly a quarter (~26%) of illustrators said they had lost work due to generative AI; about 37% of translators reported the same.",
       lastCheckedISO: '2026-06-27',
     },
     's-ix-images-made': {

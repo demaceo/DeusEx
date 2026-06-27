@@ -137,7 +137,7 @@ export const partVII: RoundtableDocument = {
             labelTop: 'Teen Adoption · Common Sense Media',
             title: 'How Many Teens Use AI Companions?',
             subtitle:
-              'In Common Sense Media’s 2025 study of U.S. teens, 72% had used an AI companion and 52% qualified as regular users.',
+              "In Common Sense Media's 2025 study of U.S. teens, 72% had used an AI companion and 52% qualified as regular users.",
             source: 'Common Sense Media — Talk, Trust, and Trade-Offs (2025)',
             claimIds: ['c-vii-teen-usage'],
             ariaLabel:
@@ -475,7 +475,7 @@ export const partVII: RoundtableDocument = {
       id: 'src-surgeon-general-loneliness',
       title: 'U.S. Surgeon General — Our Epidemic of Loneliness and Isolation (2023)',
       description:
-        'Surgeon General’s Advisory documenting a loneliness epidemic and equating chronic social disconnection’s mortality risk with smoking up to 15 cigarettes a day.',
+        "Surgeon General's Advisory documenting a loneliness epidemic and equating chronic social disconnection's mortality risk with smoking up to 15 cigarettes a day.",
       url: 'https://www.hhs.gov/surgeongeneral/priorities/connection/index.html',
     },
     {
@@ -550,7 +550,7 @@ export const partVII: RoundtableDocument = {
       sourceId: 'src-surgeon-general-loneliness',
       verificationStatus: 'verified',
       verifiedUrl: 'https://www.hhs.gov/surgeongeneral/priorities/connection/index.html',
-      note: 'Donut reflects the advisory’s statement that ~50% of U.S. adults reported experiencing loneliness. Shown as a 50/50 split for illustration.',
+      note: "Donut reflects the advisory's statement that ~50% of U.S. adults reported experiencing loneliness. Shown as a 50/50 split for illustration.",
       lastCheckedISO: '2026-06-27',
     },
     'c-vii-satisfaction': {

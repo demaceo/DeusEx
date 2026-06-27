@@ -1,5 +1,5 @@
 /**
- * The five recurring debate personas. They are shared across all three documents,
+ * The recurring debate personas. They are shared across every document,
  * so they are declared once (see `src/data/personas.ts`) and documents reference
  * a {@link PersonaId} only — never re-declaring name/color/icon.
  */

@@ -156,7 +156,7 @@ export const partVIII: RoundtableDocument = {
             source: 'Industry estimates (SIA / analyst reporting)',
             claimIds: ['c-viii-tsmc'],
             ariaLabel:
-              'Donut chart showing TSMC manufacturing about 90 percent of the world’s most advanced chips and all other foundries about 10 percent',
+              "Donut chart showing TSMC manufacturing about 90 percent of the world's most advanced chips and all other foundries about 10 percent",
             unit: '%',
             data: [
               { label: 'TSMC', value: 90, variant: 'accent' },
@@ -388,7 +388,7 @@ export const partVIII: RoundtableDocument = {
         {
           type: 'incentiveAudit',
           data: {
-            race: 'Whoever controls compute, capital, and frontier talent captures the standards, the margins, and the political leverage of the defining technology of the era. The prize for concentration is enormous, and it compounds: this year’s lead funds next year’s lead.',
+            race: "Whoever controls compute, capital, and frontier talent captures the standards, the margins, and the political leverage of the defining technology of the era. The prize for concentration is enormous, and it compounds: this year's lead funds next year's lead.",
             trap: 'No single firm or country can unilaterally share its advantage without ceding ground to rivals who will not. Antitrust stops at the border; export controls invite retaliation; and the actors with the power to redistribute access are the ones who benefit most from hoarding it.',
             intervention:
               'Treat frontier compute like other concentrated critical infrastructure: public compute for researchers, interoperability and open-weight floors, competition enforcement, and multilateral access guarantees so capability does not equal control.',
@@ -461,7 +461,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'So the thing I should worry about is not the robots — it is that a handful of companies could end up owning the most important tool of my grandchildren’s lifetime, and nobody outside them really knows how it works. When you put it that way, it sounds less like science fiction and more like every other time a few people cornered something that mattered.',
+                      "So the thing I should worry about is not the robots — it is that a handful of companies could end up owning the most important tool of my grandchildren's lifetime, and nobody outside them really knows how it works. When you put it that way, it sounds less like science fiction and more like every other time a few people cornered something that mattered.",
                   },
                 ],
               ],
@@ -476,7 +476,7 @@ export const partVIII: RoundtableDocument = {
             labelTop: 'Who Builds the Frontier · 2023',
             title: 'Notable AI Models: Industry vs Academia',
             subtitle:
-              'In 2023 industry produced roughly 51 notable machine-learning models to academia’s ~15 — a reversal of the field’s earlier balance, and a shift in who can independently check the frontier.',
+              "In 2023 industry produced roughly 51 notable machine-learning models to academia's ~15 — a reversal of the field's earlier balance, and a shift in who can independently check the frontier.",
             source: 'Stanford HAI — AI Index Report 2024',
             claimIds: ['c-viii-industry-academia'],
             ariaLabel:
@@ -574,11 +574,11 @@ export const partVIII: RoundtableDocument = {
     'c-viii-tsmc': {
       id: 'c-viii-tsmc',
       kind: 'citation',
-      claimText: 'TSMC makes ~90% of the world’s most advanced chips',
+      claimText: "TSMC makes ~90% of the world's most advanced chips",
       sourceId: 'src-chip-concentration',
       verificationStatus: 'verified',
       verifiedUrl: 'https://www.semiconductors.org/',
-      note: 'Industry estimate of TSMC’s ~90% share of leading-edge logic manufacturing. Donut is illustrative (90/10). Nvidia (design) and ASML (lithography) are the other commonly cited single-firm chokepoints in the frontier-AI supply chain.',
+      note: "Industry estimate of TSMC's ~90% share of leading-edge logic manufacturing. Donut is illustrative (90/10). Nvidia (design) and ASML (lithography) are the other commonly cited single-firm chokepoints in the frontier-AI supply chain.",
       lastCheckedISO: '2026-06-27',
     },
     'c-viii-training-cost': {
@@ -598,7 +598,7 @@ export const partVIII: RoundtableDocument = {
       sourceId: 'src-ai-index-2024',
       verificationStatus: 'verified',
       verifiedUrl: 'https://aiindex.stanford.edu/report/',
-      note: 'Stanford AI Index 2024: 2023 private AI investment ~$67.2B (US), ~$7.8B (China), ~$3.8B (UK). The US lead is the report’s headline geographic finding.',
+      note: "Stanford AI Index 2024: 2023 private AI investment ~$67.2B (US), ~$7.8B (China), ~$3.8B (UK). The US lead is the report's headline geographic finding.",
       lastCheckedISO: '2026-06-27',
     },
     'c-viii-industry-academia': {

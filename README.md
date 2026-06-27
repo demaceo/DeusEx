@@ -33,7 +33,7 @@ shared component kit**, not hand-maintained pages:
 - `src/data/parts/part-*.ts` — each document as typed data; `src/data/documents.ts` is the slug
   registry.
 - `src/components/` — one set of presentational components (Masthead, DebateEntry, StatGrid,
-  Citation, …) rendered for all three documents.
+  Citation, …) rendered for every document.
 - `src/styles/` — `tokens.css` is the single source of truth for the design system.
 
 ## Verification of statistics

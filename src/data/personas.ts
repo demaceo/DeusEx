@@ -1,5 +1,5 @@
 /**
- * The five debate personas — declared once and shared by all three documents.
+ * The recurring debate personas — declared once and shared by every document.
  * Documents reference a PersonaId; components resolve the full Persona via context.
  */
 
