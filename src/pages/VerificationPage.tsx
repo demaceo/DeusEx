@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useMemo } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { DOCUMENTS } from '../data/documents'
 import { summarizeClaimStatuses, type ClaimStatusSummary } from '../data/claimSummary'
 import type { Claim, Source, VerificationStatus } from '../types/content'
@@ -7,6 +7,17 @@ import type { Claim, Source, VerificationStatus } from '../types/content'
 type Filter = 'all' | VerificationStatus
 
 const STATUSES: VerificationStatus[] = ['verified', 'disputed', 'unverified', 'pending']
+
+const FILTERS: Filter[] = ['all', ...STATUSES]
+
+function parseFilter(raw: string | null): Filter {
+  return raw && (FILTERS as string[]).includes(raw) ? (raw as Filter) : 'all'
+}
+
+/** The count a filter would match, for its chip badge. */
+function filterCount(summary: ClaimStatusSummary, f: Filter): number {
+  return f === 'all' ? summary.total : summary[f]
+}
 
 const STATUS_LABEL: Record<VerificationStatus, string> = {
   verified: 'Verified',
@@ -61,7 +72,12 @@ function sourceUrl(claim: Claim, sources: Source[]): string | undefined {
  * with a status filter and per-claim source links. Read-only projection over DOCUMENTS.
  */
 export function VerificationPage() {
-  const [filter, setFilter] = useState<Filter>('all')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const filter = parseFilter(searchParams.get('status'))
+
+  const setFilter = (f: Filter) => {
+    setSearchParams(f === 'all' ? {} : { status: f }, { replace: true })
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -112,18 +128,23 @@ export function VerificationPage() {
         </nav>
 
         <div className="vp-filters" role="group" aria-label="Filter claims by status">
-          {(['all', ...STATUSES] as Filter[]).map((f) => (
-            <button
-              key={f}
-              type="button"
-              className="vp-filter"
-              data-active={filter === f}
-              data-verification={f === 'all' ? undefined : f}
-              onClick={() => setFilter(f)}
-            >
-              {f === 'all' ? 'All claims' : STATUS_LABEL[f]}
-            </button>
-          ))}
+          {FILTERS.map((f) => {
+            const count = filterCount(aggregate, f)
+            return (
+              <button
+                key={f}
+                type="button"
+                className="vp-filter"
+                data-active={filter === f}
+                data-verification={f === 'all' ? undefined : f}
+                disabled={count === 0}
+                onClick={() => setFilter(f)}
+              >
+                {f === 'all' ? 'All claims' : STATUS_LABEL[f]}
+                <span className="vp-filter__count">{count}</span>
+              </button>
+            )
+          })}
         </div>
 
         {perDoc.map(({ entry, summary, claims }) => {
@@ -135,6 +156,11 @@ export function VerificationPage() {
                   <Link to={`/${entry.doc.slug}`}>
                     {entry.partLabel} — {entry.navTitle}
                   </Link>
+                  {filter !== 'all' ? (
+                    <span className="vp-doc__shown">
+                      {shown.length} {STATUS_LABEL[filter].toLowerCase()}
+                    </span>
+                  ) : null}
                 </h2>
                 <SummaryMeter summary={summary} />
               </div>

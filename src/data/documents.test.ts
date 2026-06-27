@@ -5,7 +5,9 @@ import {
   assertReferentialIntegrity,
   getAdjacentParts,
   getDocumentBySlug,
+  personasInDocument,
 } from './documents'
+import { PERSONA_ORDER } from './personas'
 import type { ChartSpec, RoundtableDocument } from '../types/document'
 
 /** Every chart block in a document, in render order. */
@@ -20,10 +22,10 @@ function chartsIn(doc: RoundtableDocument): ChartSpec[] {
 }
 
 describe('document registry', () => {
-  it('exposes five documents with unique slugs', () => {
-    expect(DOCUMENTS).toHaveLength(5)
+  it('exposes seven documents with unique slugs', () => {
+    expect(DOCUMENTS).toHaveLength(7)
     const slugs = DOCUMENTS.map((entry) => entry.doc.slug)
-    expect(new Set(slugs).size).toBe(5)
+    expect(new Set(slugs).size).toBe(7)
     expect(slugs).toEqual(
       expect.arrayContaining([
         'real-costs',
@@ -31,6 +33,8 @@ describe('document registry', () => {
         'getting-right',
         'the-race',
         'the-reality-problem',
+        'the-tail-risk',
+        'machines-we-talk-to',
       ]),
     )
   })
@@ -40,6 +44,25 @@ describe('document registry', () => {
     expect(DOCUMENTS_BY_SLUG['getting-right'].id).toBe('part-iii')
     expect(getDocumentBySlug('does-not-exist')).toBeUndefined()
     expect(getDocumentBySlug(undefined)).toBeUndefined()
+  })
+})
+
+describe.each(DOCUMENTS.map((entry) => entry.doc))('$id personasInDocument', (doc) => {
+  it('returns the speaking personas, in canonical order, as a subset of the cast', () => {
+    const used = personasInDocument(doc)
+    expect(used.length).toBeGreaterThan(0)
+    expect(used.length).toBeLessThanOrEqual(PERSONA_ORDER.length)
+    // Ordered by PERSONA_ORDER.
+    const expectedOrder = PERSONA_ORDER.filter((id) => used.includes(id))
+    expect(used).toEqual(expectedOrder)
+    // Every returned persona actually speaks in the document.
+    const speaking = new Set<string>()
+    for (const section of doc.sections) {
+      for (const block of section.blocks) {
+        if (block.type === 'debate') speaking.add(block.data.personaId)
+      }
+    }
+    for (const id of used) expect(speaking.has(id)).toBe(true)
   })
 })
 
@@ -66,12 +89,12 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('$id content integrity', (doc
 })
 
 describe('getAdjacentParts (wrap-around series navigation)', () => {
-  it('wraps backward from Part I to Part V and forward to Part II', () => {
+  it('wraps backward from Part I to Part VII and forward to Part II', () => {
     const { prev, next } = getAdjacentParts('part-i')
     expect(prev).toEqual({
-      slug: 'the-reality-problem',
-      partLabel: 'Part V',
-      navTitle: 'The Reality Problem',
+      slug: 'machines-we-talk-to',
+      partLabel: 'Part VII',
+      navTitle: 'Machines We Talk To',
     })
     expect(next).toEqual({
       slug: 'whats-being-done',
@@ -110,9 +133,29 @@ describe('getAdjacentParts (wrap-around series navigation)', () => {
     })
   })
 
-  it('wraps forward from Part V back to Part I', () => {
+  it('returns Part VI as next from Part V', () => {
     const { prev, next } = getAdjacentParts('part-v')
     expect(prev.slug).toBe('the-race')
+    expect(next).toEqual({
+      slug: 'the-tail-risk',
+      partLabel: 'Part VI',
+      navTitle: 'The Tail Risk',
+    })
+  })
+
+  it('returns Part VII as next from Part VI', () => {
+    const { prev, next } = getAdjacentParts('part-vi')
+    expect(prev.slug).toBe('the-reality-problem')
+    expect(next).toEqual({
+      slug: 'machines-we-talk-to',
+      partLabel: 'Part VII',
+      navTitle: 'Machines We Talk To',
+    })
+  })
+
+  it('wraps forward from Part VII back to Part I', () => {
+    const { prev, next } = getAdjacentParts('part-vii')
+    expect(prev.slug).toBe('the-tail-risk')
     expect(next).toEqual({
       slug: 'real-costs',
       partLabel: 'Part I',

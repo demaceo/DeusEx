@@ -3,7 +3,20 @@
  * Documents reference a PersonaId; components resolve the full Persona via context.
  */
 
-import { Cpu, HardHat, Leaf, Network, Palette, Scale, ScanSearch, UserRound } from 'lucide-react'
+import {
+  Cpu,
+  HardHat,
+  Leaf,
+  Network,
+  Palette,
+  Rocket,
+  Scale,
+  ScanSearch,
+  ShieldAlert,
+  Smartphone,
+  Stethoscope,
+  UserRound,
+} from 'lucide-react'
 import type { Persona, PersonaId } from '../types/persona'
 
 export const PERSONAS: Record<PersonaId, Persona> = {
@@ -79,6 +92,42 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     focus: 'What it costs the people who make culture',
     bio: 'Found her catalogue in a training set she never consented to. Speaks for the creators whose work became raw material — and asks what authorship is worth when anything can be synthesized.',
   },
+  accelerationist: {
+    id: 'accelerationist',
+    name: 'Accelerationist',
+    color: 'flame',
+    icon: Rocket,
+    role: 'Founder & e/acc advocate',
+    focus: 'The cost of slowing down is invisible — and huge',
+    bio: 'Believes the greatest risk is moving too slowly: every year of delay is a year of cures, abundance, and discovery forgone. Treats most doom scenarios as unfalsifiable and the upside as concrete.',
+  },
+  'safety-researcher': {
+    id: 'safety-researcher',
+    name: 'Safety Researcher',
+    color: 'indigo',
+    icon: ShieldAlert,
+    role: 'AI alignment researcher',
+    focus: 'Low-probability, high-stakes outcomes deserve weight',
+    bio: 'Works on making advanced systems controllable and honest. Argues that even a small chance of catastrophic, irreversible failure is worth serious precaution — not because doom is certain, but because mistakes may not be undoable.',
+  },
+  'young-person': {
+    id: 'young-person',
+    name: 'Young Person',
+    color: 'cyan',
+    icon: Smartphone,
+    role: 'University student, early 20s',
+    focus: 'Grew up with this — it is not a novelty',
+    bio: 'Has talked to chatbots since high school and watched friends form real attachments to them. Sees the comfort and the cost up close, and bristles when older voices treat it as someone else’s experiment.',
+  },
+  clinician: {
+    id: 'clinician',
+    name: 'Clinician',
+    color: 'clay',
+    icon: Stethoscope,
+    role: 'Clinical psychologist',
+    focus: 'What it does to real people, measured carefully',
+    bio: 'Sees patients who lean on AI companions for support. Holds both truths: these tools genuinely help some people, and they can deepen isolation or substitute for care that a person actually needs.',
+  },
 }
 
 /** Stable display order for the personas bar. */
@@ -91,4 +140,8 @@ export const PERSONA_ORDER: PersonaId[] = [
   'systems-humanist',
   'skeptic',
   'artist',
+  'accelerationist',
+  'safety-researcher',
+  'young-person',
+  'clinician',
 ]

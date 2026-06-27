@@ -1,20 +1,26 @@
 import { describe, it, expect } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { DOCUMENTS } from '../data/documents'
+import { summarizeClaimStatuses } from '../data/claimSummary'
 import { VerificationPage } from './VerificationPage'
 
-function renderPage() {
+function renderAt(path = '/verification') {
   return render(
-    <MemoryRouter>
+    <MemoryRouter initialEntries={[path]}>
       <VerificationPage />
     </MemoryRouter>,
   )
 }
 
+const aggregateTotal = DOCUMENTS.reduce(
+  (n, entry) => n + summarizeClaimStatuses(entry.doc.claims).total,
+  0,
+)
+
 describe('VerificationPage', () => {
   it('links to every document in the series', () => {
-    renderPage()
+    renderAt()
     for (const entry of DOCUMENTS) {
       const link = screen.getByRole('link', {
         name: new RegExp(`${entry.partLabel} — ${entry.navTitle}`, 'i'),
@@ -23,10 +29,16 @@ describe('VerificationPage', () => {
     }
   })
 
-  it('filters claims by status — no document has pending claims', () => {
-    renderPage()
-    fireEvent.click(screen.getByRole('button', { name: /^pending$/i }))
-    // Every document is fully checked, so each renders an empty-state row.
+  it('shows a count on each filter chip', () => {
+    renderAt()
+    // The "All claims" chip carries the series-wide total.
+    const allChip = screen.getByRole('button', { name: /all claims/i })
+    expect(allChip).toHaveTextContent(String(aggregateTotal))
+  })
+
+  it('honors a ?status= filter from the URL', () => {
+    // No document has pending claims, so a pending deep-link empties every section.
+    renderAt('/verification?status=pending')
     expect(screen.getAllByText(/no pending claims here/i)).toHaveLength(DOCUMENTS.length)
   })
 })

@@ -222,10 +222,34 @@ a {
   background: var(--ink);
   padding: 1.1rem 2rem 1.25rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 3px solid var(--navy);
+}
+
+.personas-bar__label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.5);
+}
+
+.personas-bar__tags {
+  display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
   justify-content: center;
-  border-bottom: 3px solid var(--navy);
+}
+
+@media (max-width: 380px) {
+  .personas-bar__tags {
+    gap: 0.4rem;
+  }
+  .persona-tag {
+    padding: 0.28rem 0.6rem;
+  }
 }
 
 .persona-tag-wrap {

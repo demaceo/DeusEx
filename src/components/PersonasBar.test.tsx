@@ -40,4 +40,16 @@ describe('PersonasBar persona profiles', () => {
     )
     expect(container.querySelectorAll('svg')).toHaveLength(PERSONA_ORDER.length)
   })
+
+  it('shows only the given subset of personas when personaIds is passed', () => {
+    render(
+      <MemoryRouter>
+        <PersonasBar personaIds={['skeptic', 'artist']} label="The panel" />
+      </MemoryRouter>,
+    )
+    expect(screen.getAllByRole('tooltip')).toHaveLength(2)
+    expect(screen.getByText('The panel')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /skeptic/i })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /tech optimist/i })).not.toBeInTheDocument()
+  })
 })

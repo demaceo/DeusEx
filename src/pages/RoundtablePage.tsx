@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { BlockRenderer } from '../components/BlockRenderer'
 import { ChapterDivider } from '../components/ChapterDivider'
@@ -8,20 +8,39 @@ import { ClaimDrawerProvider } from '../components/EvidenceDrawer'
 import { IntroBlock } from '../components/IntroBlock'
 import { Masthead } from '../components/Masthead'
 import { PersonasBar } from '../components/PersonasBar'
+import { ReadingProgress } from '../components/ReadingProgress'
+import { RoundNav, type RoundNavItem } from '../components/RoundNav'
 import { SectionHeader } from '../components/SectionHeader'
+import { SeriesFooter } from '../components/SeriesFooter'
 import { SourcesSection } from '../components/SourcesSection'
 import { VerdictBox } from '../components/VerdictBox'
 import { VerificationNotice } from '../components/VerificationNotice'
-import { getAdjacentParts } from '../data/documents'
+import { getAdjacentParts, personasInDocument } from '../data/documents'
+import { estimateReadingTime } from '../data/readingTime'
 import type { RoundtableDocument } from '../types/document'
 
 interface RoundtablePageProps {
   document: RoundtableDocument
 }
 
-/** Renders one full roundtable document from data. One page, three data objects. */
+/** Stable id for a section, used for the round navigator and aria-labelledby. */
+const sectionId = (i: number) => `round-${i + 1}`
+
+/** Renders one full roundtable document from data. One page, many data objects. */
 export function RoundtablePage({ document }: RoundtablePageProps) {
   const { prev, next } = getAdjacentParts(document.id)
+
+  const personaIds = useMemo(() => personasInDocument(document), [document])
+  const readingMinutes = useMemo(() => estimateReadingTime(document), [document])
+  const navItems = useMemo<RoundNavItem[]>(
+    () =>
+      document.sections.map((section, i) => ({
+        id: sectionId(i),
+        label: section.header.roundLabel,
+        title: section.header.title,
+      })),
+    [document],
+  )
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -31,8 +50,11 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
     <DocumentProvider claims={document.claims} sources={document.sources}>
       <ClaimDrawerProvider>
         <Masthead masthead={document.masthead} prev={prev} next={next} />
-        <PersonasBar />
+        <ReadingProgress />
+        <PersonasBar personaIds={personaIds} label="The panel" />
         {document.companion ? <CompanionBanner banner={document.companion} /> : null}
+
+        <RoundNav items={navItems} />
 
         <div className="container">
           <nav className="series-nav">
@@ -41,22 +63,33 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
           </nav>
 
           <VerificationNotice claims={document.claims} />
+          <p className="reading-time">
+            {readingMinutes} min read · {navItems.length} rounds
+          </p>
           <IntroBlock paragraphs={document.intro} />
 
-          {document.sections.map((section, i) => (
-            <section key={i}>
-              {section.dividerBefore ? <ChapterDivider /> : null}
-              <SectionHeader header={section.header} />
-              {section.blocks.map((block, j) => (
-                <BlockRenderer key={j} block={block} />
-              ))}
-            </section>
-          ))}
+          {document.sections.map((section, i) => {
+            const id = sectionId(i)
+            return (
+              <section
+                key={i}
+                id={id}
+                aria-labelledby={section.header.title ? `${id}-title` : undefined}
+              >
+                {section.dividerBefore ? <ChapterDivider /> : null}
+                <SectionHeader header={section.header} headingId={`${id}-title`} />
+                {section.blocks.map((block, j) => (
+                  <BlockRenderer key={j} block={block} />
+                ))}
+              </section>
+            )
+          })}
 
           {document.closing ? <VerdictBox verdict={document.closing} /> : null}
         </div>
 
         <SourcesSection sources={document.sources} />
+        <SeriesFooter prev={prev} next={next} />
       </ClaimDrawerProvider>
     </DocumentProvider>
   )

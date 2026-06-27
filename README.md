@@ -2,13 +2,16 @@
 
 A small React + TypeScript site that presents **The AI Reckoning** — a roundtable series in which
 recurring voices (Tech Optimist, Environmentalist, Labor Advocate, Policy Realist, an Everyday
-Person, a Systems Humanist, a Skeptic, and an Artist) debate artificial intelligence:
+Person, a Systems Humanist, a Skeptic, an Artist, an Accelerationist, a Safety Researcher, a Young
+Person, and a Clinician) debate artificial intelligence:
 
 1. **Part I — A Roundtable on Real Costs** (`/real-costs`) — energy, water, labor, regulation
 2. **Part II — What's Actually Being Done** (`/whats-being-done`) — responses already underway
 3. **Part III — What It's Actually Getting Right** (`/getting-right`) — documented positive outcomes
 4. **Part IV — The Race We're In** (`/the-race`) — incentives, coordination, governance
 5. **Part V — The Reality Problem** (`/the-reality-problem`) — truth, synthetic media, trust
+6. **Part VI — The Tail Risk** (`/the-tail-risk`) — safety, alignment, existential stakes
+7. **Part VII — Machines We Talk To** (`/machines-we-talk-to`) — AI companions, loneliness, kids
 
 ## Reading features
 
