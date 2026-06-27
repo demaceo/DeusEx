@@ -22,10 +22,10 @@ function chartsIn(doc: RoundtableDocument): ChartSpec[] {
 }
 
 describe('document registry', () => {
-  it('exposes nine documents with unique slugs', () => {
-    expect(DOCUMENTS).toHaveLength(9)
+  it('exposes eleven documents with unique slugs', () => {
+    expect(DOCUMENTS).toHaveLength(11)
     const slugs = DOCUMENTS.map((entry) => entry.doc.slug)
-    expect(new Set(slugs).size).toBe(9)
+    expect(new Set(slugs).size).toBe(11)
     expect(slugs).toEqual(
       expect.arrayContaining([
         'real-costs',
@@ -37,6 +37,8 @@ describe('document registry', () => {
         'machines-we-talk-to',
         'whose-intelligence',
         'the-creativity-question',
+        'pattern-and-prejudice',
+        'the-ground-it-comes-from',
       ]),
     )
   })
@@ -91,12 +93,12 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('$id content integrity', (doc
 })
 
 describe('getAdjacentParts (wrap-around series navigation)', () => {
-  it('wraps backward from Part I to Part IX and forward to Part II', () => {
+  it('wraps backward from Part I to Part XI and forward to Part II', () => {
     const { prev, next } = getAdjacentParts('part-i')
     expect(prev).toEqual({
-      slug: 'the-creativity-question',
-      partLabel: 'Part IX',
-      navTitle: 'The Creativity Question',
+      slug: 'the-ground-it-comes-from',
+      partLabel: 'Part XI',
+      navTitle: 'The Ground It Comes From',
     })
     expect(next).toEqual({
       slug: 'whats-being-done',
@@ -175,9 +177,29 @@ describe('getAdjacentParts (wrap-around series navigation)', () => {
     })
   })
 
-  it('wraps forward from Part IX back to Part I', () => {
+  it('returns Part X as next from Part IX', () => {
     const { prev, next } = getAdjacentParts('part-ix')
     expect(prev.slug).toBe('whose-intelligence')
+    expect(next).toEqual({
+      slug: 'pattern-and-prejudice',
+      partLabel: 'Part X',
+      navTitle: 'Pattern and Prejudice',
+    })
+  })
+
+  it('returns Part XI as next from Part X', () => {
+    const { prev, next } = getAdjacentParts('part-x')
+    expect(prev.slug).toBe('the-creativity-question')
+    expect(next).toEqual({
+      slug: 'the-ground-it-comes-from',
+      partLabel: 'Part XI',
+      navTitle: 'The Ground It Comes From',
+    })
+  })
+
+  it('wraps forward from Part XI back to Part I', () => {
+    const { prev, next } = getAdjacentParts('part-xi')
+    expect(prev.slug).toBe('pattern-and-prejudice')
     expect(next).toEqual({
       slug: 'real-costs',
       partLabel: 'Part I',

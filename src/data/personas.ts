@@ -8,10 +8,12 @@ import {
   HardHat,
   Leaf,
   LineChart,
+  Mountain,
   Network,
   Palette,
   Rocket,
   Scale,
+  ScanFace,
   ScanSearch,
   ShieldAlert,
   Smartphone,
@@ -138,6 +140,24 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     focus: 'Follow the compute, the capital, and the power',
     bio: 'Tracks who owns the chips, the capital, and the data — and who captures the gains. Argues that the deciding question about AI is not what it can do but who controls the means to build it.',
   },
+  'equity-researcher': {
+    id: 'equity-researcher',
+    name: 'Equity Researcher',
+    color: 'violet',
+    icon: ScanFace,
+    role: 'Algorithmic-justice researcher',
+    focus: 'Who the system fails, and who it was built to see',
+    bio: 'Audits AI systems for the discrimination they encode against people of color and other marginalized groups. Argues that a model trained on an unjust past will reproduce it at scale unless someone forces it not to.',
+  },
+  'land-defender': {
+    id: 'land-defender',
+    name: 'Land Defender',
+    color: 'umber',
+    icon: Mountain,
+    role: 'Community organizer in an extraction zone',
+    focus: 'The earth and the people the supply chain runs through',
+    bio: 'Lives where the minerals come from. Speaks first-hand for the communities whose land, water, and labor are consumed to build the hardware — and who see the least of what it produces.',
+  },
 }
 
 /** Stable display order for the personas bar. */
@@ -155,4 +175,6 @@ export const PERSONA_ORDER: PersonaId[] = [
   'young-person',
   'clinician',
   'economist',
+  'equity-researcher',
+  'land-defender',
 ]

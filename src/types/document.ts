@@ -191,6 +191,8 @@ export type DocumentId =
   | 'part-vii'
   | 'part-viii'
   | 'part-ix'
+  | 'part-x'
+  | 'part-xi'
 
 export interface RoundtableDocument {
   id: DocumentId

@@ -20,6 +20,8 @@ export type PersonaId =
   | 'young-person'
   | 'clinician'
   | 'economist'
+  | 'equity-researcher'
+  | 'land-defender'
 
 /** Maps to a CSS custom property (--c-optimist, --c-environ, ...) via data-attribute. */
 export type PersonaColor =
@@ -36,6 +38,8 @@ export type PersonaColor =
   | 'cyan'
   | 'clay'
   | 'bronze'
+  | 'violet'
+  | 'umber'
 
 export interface Persona {
   id: PersonaId

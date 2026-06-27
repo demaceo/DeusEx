@@ -15,7 +15,8 @@ export function IndexPage() {
         <p className="subtitle">
           A recurring-roundtable series on artificial intelligence — its real costs, the responses
           underway, what it is genuinely getting right, and the harder questions of race, truth,
-          safety, intimacy, ownership, and culture. Grounded in cited evidence, not speculation.
+          safety, intimacy, ownership, culture, bias, and extraction. Grounded in cited evidence,
+          not speculation.
         </p>
       </header>
 
