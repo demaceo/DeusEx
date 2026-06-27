@@ -8,6 +8,7 @@
 
 import type { Block, DocumentId, RoundtableDocument, SpeechBubble } from '../types/document'
 import type { PersonaId } from '../types/persona'
+import { PERSONA_ORDER } from './personas'
 import { partI } from './parts/part-i'
 import { partII } from './parts/part-ii'
 import { partIII } from './parts/part-iii'
@@ -172,6 +173,21 @@ export function assertReferentialIntegrity(doc: RoundtableDocument): void {
       )
     }
   }
+}
+
+/**
+ * The personas that actually speak in a document, in `PERSONA_ORDER`. Lets the
+ * personas bar show only the voices present in the piece the reader is on, rather
+ * than the full series cast.
+ */
+export function personasInDocument(doc: RoundtableDocument): PersonaId[] {
+  const present = new Set<PersonaId>()
+  for (const section of doc.sections) {
+    for (const block of section.blocks) {
+      if (block.type === 'debate') present.add(block.data.personaId)
+    }
+  }
+  return PERSONA_ORDER.filter((id) => present.has(id))
 }
 
 /** One persona's contributions within a single document, in render order. */

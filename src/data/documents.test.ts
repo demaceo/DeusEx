@@ -5,7 +5,9 @@ import {
   assertReferentialIntegrity,
   getAdjacentParts,
   getDocumentBySlug,
+  personasInDocument,
 } from './documents'
+import { PERSONA_ORDER } from './personas'
 import type { ChartSpec, RoundtableDocument } from '../types/document'
 
 /** Every chart block in a document, in render order. */
@@ -42,6 +44,25 @@ describe('document registry', () => {
     expect(DOCUMENTS_BY_SLUG['getting-right'].id).toBe('part-iii')
     expect(getDocumentBySlug('does-not-exist')).toBeUndefined()
     expect(getDocumentBySlug(undefined)).toBeUndefined()
+  })
+})
+
+describe.each(DOCUMENTS.map((entry) => entry.doc))('$id personasInDocument', (doc) => {
+  it('returns the speaking personas, in canonical order, as a subset of the cast', () => {
+    const used = personasInDocument(doc)
+    expect(used.length).toBeGreaterThan(0)
+    expect(used.length).toBeLessThanOrEqual(PERSONA_ORDER.length)
+    // Ordered by PERSONA_ORDER.
+    const expectedOrder = PERSONA_ORDER.filter((id) => used.includes(id))
+    expect(used).toEqual(expectedOrder)
+    // Every returned persona actually speaks in the document.
+    const speaking = new Set<string>()
+    for (const section of doc.sections) {
+      for (const block of section.blocks) {
+        if (block.type === 'debate') speaking.add(block.data.personaId)
+      }
+    }
+    for (const id of used) expect(speaking.has(id)).toBe(true)
   })
 })
 

@@ -8,6 +8,9 @@ interface ActiveEvidence {
   source?: Source
 }
 
+const FOCUSABLE =
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"]), input, select, textarea'
+
 const STATUS_LABEL: Record<Claim['verificationStatus'], string> = {
   pending: 'Pending',
   verified: 'Verified',
@@ -28,8 +31,19 @@ const KIND_LABEL: Record<Claim['kind'], string> = {
  */
 export function ClaimDrawerProvider({ children }: { children: ReactNode }) {
   const [active, setActive] = useState<ActiveEvidence | null>(null)
-  const open = useCallback((claim: Claim, source?: Source) => setActive({ claim, source }), [])
-  const close = useCallback(() => setActive(null), [])
+  // The element that opened the drawer, so focus returns there on close.
+  const triggerRef = useRef<HTMLElement | null>(null)
+
+  const open = useCallback((claim: Claim, source?: Source) => {
+    triggerRef.current = (document.activeElement as HTMLElement) ?? null
+    setActive({ claim, source })
+  }, [])
+
+  const close = useCallback(() => {
+    setActive(null)
+    triggerRef.current?.focus()
+    triggerRef.current = null
+  }, [])
 
   return (
     <ClaimDrawerContext value={{ open }}>
@@ -46,15 +60,41 @@ interface EvidenceDrawerProps {
 
 function EvidenceDrawer({ active, onClose }: EvidenceDrawerProps) {
   const closeRef = useRef<HTMLButtonElement>(null)
+  const drawerRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     if (!active) return
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') {
+        onClose()
+        return
+      }
+      if (e.key !== 'Tab') return
+      // Trap focus within the drawer.
+      const focusables = drawerRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE)
+      if (!focusables || focusables.length === 0) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
     }
+
+    // Lock body scroll while the drawer is open; restore on close.
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     document.addEventListener('keydown', onKey)
     closeRef.current?.focus()
-    return () => document.removeEventListener('keydown', onKey)
+
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = prevOverflow
+    }
   }, [active, onClose])
 
   if (!active) return null
@@ -70,6 +110,7 @@ function EvidenceDrawer({ active, onClose }: EvidenceDrawerProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
+        ref={drawerRef}
         onClick={(e) => e.stopPropagation()}
       >
         <header className="evidence-drawer__head">

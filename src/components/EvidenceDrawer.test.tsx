@@ -58,4 +58,27 @@ describe('EvidenceDrawer', () => {
     fireEvent.click(screen.getByRole('button', { name: /close evidence panel/i }))
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
+
+  it('locks body scroll while open and restores it on close', () => {
+    renderCitation()
+    expect(document.body.style.overflow).toBe('')
+
+    fireEvent.click(screen.getByText('A checkable assertion'))
+    expect(document.body.style.overflow).toBe('hidden')
+
+    fireEvent.click(screen.getByRole('button', { name: /close evidence panel/i }))
+    expect(document.body.style.overflow).toBe('')
+  })
+
+  it('restores focus to the triggering element on close', () => {
+    renderCitation()
+    const trigger = screen.getByText('A checkable assertion')
+
+    trigger.focus()
+    fireEvent.click(trigger)
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: /close evidence panel/i }))
+    expect(trigger).toHaveFocus()
+  })
 })
