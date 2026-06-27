@@ -4,6 +4,7 @@ import { BlockRenderer } from '../components/BlockRenderer'
 import { ChapterDivider } from '../components/ChapterDivider'
 import { CompanionBanner } from '../components/CompanionBanner'
 import { DocumentProvider } from '../components/DocumentProvider'
+import { ClaimDrawerProvider } from '../components/EvidenceDrawer'
 import { IntroBlock } from '../components/IntroBlock'
 import { Masthead } from '../components/Masthead'
 import { PersonasBar } from '../components/PersonasBar'
@@ -27,33 +28,36 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
   }, [document.id])
 
   return (
-    <DocumentProvider claims={document.claims}>
-      <Masthead masthead={document.masthead} prev={prev} next={next} />
-      <PersonasBar />
-      {document.companion ? <CompanionBanner banner={document.companion} /> : null}
+    <DocumentProvider claims={document.claims} sources={document.sources}>
+      <ClaimDrawerProvider>
+        <Masthead masthead={document.masthead} prev={prev} next={next} />
+        <PersonasBar />
+        {document.companion ? <CompanionBanner banner={document.companion} /> : null}
 
-      <div className="container">
-        <nav className="series-nav">
-          <Link to="/">← The AI Reckoning — series index</Link>
-        </nav>
+        <div className="container">
+          <nav className="series-nav">
+            <Link to="/">← The AI Reckoning — series index</Link>
+            <Link to="/verification">Verification status →</Link>
+          </nav>
 
-        <VerificationNotice claims={document.claims} />
-        <IntroBlock paragraphs={document.intro} />
+          <VerificationNotice claims={document.claims} />
+          <IntroBlock paragraphs={document.intro} />
 
-        {document.sections.map((section, i) => (
-          <section key={i}>
-            {section.dividerBefore ? <ChapterDivider /> : null}
-            <SectionHeader header={section.header} />
-            {section.blocks.map((block, j) => (
-              <BlockRenderer key={j} block={block} />
-            ))}
-          </section>
-        ))}
+          {document.sections.map((section, i) => (
+            <section key={i}>
+              {section.dividerBefore ? <ChapterDivider /> : null}
+              <SectionHeader header={section.header} />
+              {section.blocks.map((block, j) => (
+                <BlockRenderer key={j} block={block} />
+              ))}
+            </section>
+          ))}
 
-        {document.closing ? <VerdictBox verdict={document.closing} /> : null}
-      </div>
+          {document.closing ? <VerdictBox verdict={document.closing} /> : null}
+        </div>
 
-      <SourcesSection sources={document.sources} />
+        <SourcesSection sources={document.sources} />
+      </ClaimDrawerProvider>
     </DocumentProvider>
   )
 }

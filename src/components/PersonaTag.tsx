@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { Persona } from '../types/persona'
 
 interface PersonaTagProps {
@@ -30,6 +31,9 @@ export function PersonaTag({ persona }: PersonaTagProps) {
         </div>
         <p className="persona-profile__focus">{persona.focus}</p>
         <p className="persona-profile__bio">{persona.bio}</p>
+        <Link className="persona-profile__thread" to={`/voices/${persona.id}`}>
+          Follow this voice →
+        </Link>
       </div>
     </div>
   )

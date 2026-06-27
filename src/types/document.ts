@@ -181,7 +181,7 @@ export interface CompanionBanner {
   text: string
 }
 
-export type DocumentId = 'part-i' | 'part-ii' | 'part-iii' | 'part-iv'
+export type DocumentId = 'part-i' | 'part-ii' | 'part-iii' | 'part-iv' | 'part-v'
 
 export interface RoundtableDocument {
   id: DocumentId

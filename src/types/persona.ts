@@ -13,9 +13,19 @@ export type PersonaId =
   | 'policy-realist'
   | 'everyday-person'
   | 'systems-humanist'
+  | 'skeptic'
+  | 'artist'
 
 /** Maps to a CSS custom property (--c-optimist, --c-environ, ...) via data-attribute. */
-export type PersonaColor = 'green' | 'teal' | 'orange' | 'blue' | 'purple' | 'amber'
+export type PersonaColor =
+  | 'green'
+  | 'teal'
+  | 'orange'
+  | 'blue'
+  | 'purple'
+  | 'amber'
+  | 'slate'
+  | 'rose'
 
 export interface Persona {
   id: PersonaId

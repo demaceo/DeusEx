@@ -6,11 +6,13 @@
  * future verification pass.
  */
 
-import type { Block, DocumentId, RoundtableDocument } from '../types/document'
+import type { Block, DocumentId, RoundtableDocument, SpeechBubble } from '../types/document'
+import type { PersonaId } from '../types/persona'
 import { partI } from './parts/part-i'
 import { partII } from './parts/part-ii'
 import { partIII } from './parts/part-iii'
 import { partIV } from './parts/part-iv'
+import { partV } from './parts/part-v'
 
 export interface DocumentEntry {
   doc: RoundtableDocument
@@ -47,6 +49,12 @@ export const DOCUMENTS: DocumentEntry[] = [
     partLabel: 'Part IV',
     navTitle: "The Race We're In",
     blurb: partIV.masthead.subtitle,
+  },
+  {
+    doc: partV,
+    partLabel: 'Part V',
+    navTitle: 'The Reality Problem',
+    blurb: partV.masthead.subtitle,
   },
 ]
 
@@ -150,6 +158,54 @@ export function assertReferentialIntegrity(doc: RoundtableDocument): void {
       )
     }
   }
+}
+
+/** One persona's contributions within a single document, in render order. */
+export interface PersonaThreadEntry {
+  /** e.g. "Round II" or "Round II · Water Usage". */
+  roundLabel: string
+  bubble: SpeechBubble
+}
+
+/** All of a persona's debate bubbles in one document, with the document's context. */
+export interface PersonaThreadGroup {
+  doc: RoundtableDocument
+  partLabel: string
+  navTitle: string
+  entries: PersonaThreadEntry[]
+}
+
+/**
+ * Collect every `debate` bubble a persona speaks across the whole series, grouped
+ * by document in series order. Powers the `/voices/:personaId` thread view — a
+ * pure projection over {@link DOCUMENTS}, so it stays in sync as parts are added.
+ * Each group carries its source document so claims resolve against the right registry.
+ */
+export function getPersonaThread(personaId: PersonaId): PersonaThreadGroup[] {
+  const groups: PersonaThreadGroup[] = []
+  for (const entry of DOCUMENTS) {
+    const entries: PersonaThreadEntry[] = []
+    for (const section of entry.doc.sections) {
+      for (const block of section.blocks) {
+        if (block.type === 'debate' && block.data.personaId === personaId) {
+          const { roundLabel, title } = section.header
+          entries.push({
+            roundLabel: title ? `${roundLabel} · ${title}` : roundLabel,
+            bubble: block.data.bubble,
+          })
+        }
+      }
+    }
+    if (entries.length > 0) {
+      groups.push({
+        doc: entry.doc,
+        partLabel: entry.partLabel,
+        navTitle: entry.navTitle,
+        entries,
+      })
+    }
+  }
+  return groups
 }
 
 if (import.meta.env.DEV) {

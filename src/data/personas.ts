@@ -3,7 +3,7 @@
  * Documents reference a PersonaId; components resolve the full Persona via context.
  */
 
-import { Cpu, HardHat, Leaf, Network, Scale, UserRound } from 'lucide-react'
+import { Cpu, HardHat, Leaf, Network, Palette, Scale, ScanSearch, UserRound } from 'lucide-react'
 import type { Persona, PersonaId } from '../types/persona'
 
 export const PERSONAS: Record<PersonaId, Persona> = {
@@ -61,6 +61,24 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     focus: 'Incentive structures, not just symptoms',
     bio: "Argues that AI's harms aren't accidents or bad actors — they're the predictable output of misaligned races no single player can stop alone. The fix is coordination, not blame.",
   },
+  skeptic: {
+    id: 'skeptic',
+    name: 'Skeptic',
+    color: 'slate',
+    icon: ScanSearch,
+    role: 'Veteran technology reporter',
+    focus: 'Cut the hype; show me the evidence',
+    bio: 'Has covered three tech bubbles and treats every breathless claim — boom or doom — as a number to be checked. Suspects much of the "reckoning" is marketing in both directions.',
+  },
+  artist: {
+    id: 'artist',
+    name: 'Artist',
+    color: 'rose',
+    icon: Palette,
+    role: 'Working illustrator & musician',
+    focus: 'What it costs the people who make culture',
+    bio: 'Found her catalogue in a training set she never consented to. Speaks for the creators whose work became raw material — and asks what authorship is worth when anything can be synthesized.',
+  },
 }
 
 /** Stable display order for the personas bar. */
@@ -71,4 +89,6 @@ export const PERSONA_ORDER: PersonaId[] = [
   'policy-realist',
   'everyday-person',
   'systems-humanist',
+  'skeptic',
+  'artist',
 ]

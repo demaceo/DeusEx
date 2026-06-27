@@ -12,12 +12,19 @@ describe('IndexPage', () => {
       </MemoryRouter>,
     )
 
-    const links = screen.getAllByRole('link')
-    expect(links).toHaveLength(DOCUMENTS.length)
-
     for (const entry of DOCUMENTS) {
       const link = screen.getByRole('link', { name: new RegExp(entry.navTitle, 'i') })
       expect(link).toHaveAttribute('href', `/${entry.doc.slug}`)
     }
+  })
+
+  it('links to the verification ledger', () => {
+    render(
+      <MemoryRouter>
+        <IndexPage />
+      </MemoryRouter>,
+    )
+    const link = screen.getByRole('link', { name: /evidence ledger/i })
+    expect(link).toHaveAttribute('href', '/verification')
   })
 })
