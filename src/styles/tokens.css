@@ -20,6 +20,8 @@
   --c-policy: #2980b9;
   --c-everyday: #8e44ad;
   --c-systems: #e6a017;
+  --c-skeptic: #5a6b7b;
+  --c-artist: #c0397a;
 
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
@@ -49,6 +51,12 @@
 [data-persona='systems-humanist'] {
   --persona-color: var(--c-systems);
 }
+[data-persona='skeptic'] {
+  --persona-color: var(--c-skeptic);
+}
+[data-persona='artist'] {
+  --persona-color: var(--c-artist);
+}
 
 /* Masthead bottom-accent resolution (data-accent on .masthead). */
 [data-accent='gold'] {
@@ -74,4 +82,10 @@
 }
 [data-accent='amber'] {
   --masthead-accent: var(--c-systems);
+}
+[data-accent='slate'] {
+  --masthead-accent: var(--c-skeptic);
+}
+[data-accent='rose'] {
+  --masthead-accent: var(--c-artist);
 }

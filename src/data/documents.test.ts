@@ -20,12 +20,18 @@ function chartsIn(doc: RoundtableDocument): ChartSpec[] {
 }
 
 describe('document registry', () => {
-  it('exposes four documents with unique slugs', () => {
-    expect(DOCUMENTS).toHaveLength(4)
+  it('exposes five documents with unique slugs', () => {
+    expect(DOCUMENTS).toHaveLength(5)
     const slugs = DOCUMENTS.map((entry) => entry.doc.slug)
-    expect(new Set(slugs).size).toBe(4)
+    expect(new Set(slugs).size).toBe(5)
     expect(slugs).toEqual(
-      expect.arrayContaining(['real-costs', 'whats-being-done', 'getting-right', 'the-race']),
+      expect.arrayContaining([
+        'real-costs',
+        'whats-being-done',
+        'getting-right',
+        'the-race',
+        'the-reality-problem',
+      ]),
     )
   })
 
@@ -60,12 +66,12 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('$id content integrity', (doc
 })
 
 describe('getAdjacentParts (wrap-around series navigation)', () => {
-  it('wraps backward from Part I to Part IV and forward to Part II', () => {
+  it('wraps backward from Part I to Part V and forward to Part II', () => {
     const { prev, next } = getAdjacentParts('part-i')
     expect(prev).toEqual({
-      slug: 'the-race',
-      partLabel: 'Part IV',
-      navTitle: "The Race We're In",
+      slug: 'the-reality-problem',
+      partLabel: 'Part V',
+      navTitle: 'The Reality Problem',
     })
     expect(next).toEqual({
       slug: 'whats-being-done',
@@ -94,9 +100,19 @@ describe('getAdjacentParts (wrap-around series navigation)', () => {
     })
   })
 
-  it('wraps forward from Part IV back to Part I', () => {
+  it('returns Part V as next from Part IV', () => {
     const { prev, next } = getAdjacentParts('part-iv')
     expect(prev.slug).toBe('getting-right')
+    expect(next).toEqual({
+      slug: 'the-reality-problem',
+      partLabel: 'Part V',
+      navTitle: 'The Reality Problem',
+    })
+  })
+
+  it('wraps forward from Part V back to Part I', () => {
+    const { prev, next } = getAdjacentParts('part-v')
+    expect(prev.slug).toBe('the-race')
     expect(next).toEqual({
       slug: 'real-costs',
       partLabel: 'Part I',
@@ -106,6 +122,6 @@ describe('getAdjacentParts (wrap-around series navigation)', () => {
 
   it('throws on an unknown document id', () => {
     // @ts-expect-error exercising the runtime guard with an invalid id
-    expect(() => getAdjacentParts('part-v')).toThrow()
+    expect(() => getAdjacentParts('part-unknown')).toThrow()
   })
 })
