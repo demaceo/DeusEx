@@ -12,9 +12,9 @@ export function IndexPage() {
           The <em>AI Reckoning</em>
         </h1>
         <p className="subtitle">
-          A five-voice roundtable series on artificial intelligence — its real costs, the responses
-          underway, and what it is genuinely getting right. Grounded in cited evidence, not
-          speculation.
+          A recurring-roundtable series on artificial intelligence — its real costs, the responses
+          underway, what it is genuinely getting right, and the harder questions of race, truth,
+          safety, and intimacy. Grounded in cited evidence, not speculation.
         </p>
       </header>
 
@@ -23,7 +23,7 @@ export function IndexPage() {
       <div className="container">
         <div className="index-intro">
           <p>
-            Five documents, one recurring panel. Read them in order, or jump to whichever question
+            Seven documents, one recurring panel. Read them in order, or jump to whichever question
             you care about most. Every figure is a checkable claim —{' '}
             <Link to="/verification">see the evidence ledger</Link>.
           </p>
