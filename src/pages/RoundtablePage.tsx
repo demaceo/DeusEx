@@ -8,6 +8,7 @@ import { ClaimDrawerProvider } from '../components/EvidenceDrawer'
 import { IntroBlock } from '../components/IntroBlock'
 import { Masthead } from '../components/Masthead'
 import { PersonasBar } from '../components/PersonasBar'
+import { PodcastPlayer } from '../components/PodcastPlayer'
 import { ReadingProgress } from '../components/ReadingProgress'
 import { RoundNav, type RoundNavItem } from '../components/RoundNav'
 import { SectionHeader } from '../components/SectionHeader'
@@ -17,6 +18,7 @@ import { VerdictBox } from '../components/VerdictBox'
 import { VerificationNotice } from '../components/VerificationNotice'
 import { getAdjacentParts, personasInDocument } from '../data/documents'
 import { estimateReadingTime } from '../data/readingTime'
+import { usePodcastPlayer } from '../hooks/usePodcastPlayer'
 import type { RoundtableDocument } from '../types/document'
 
 interface RoundtablePageProps {
@@ -29,6 +31,7 @@ const sectionId = (i: number) => `round-${i + 1}`
 /** Renders one full roundtable document from data. One page, many data objects. */
 export function RoundtablePage({ document }: RoundtablePageProps) {
   const { prev, next } = getAdjacentParts(document.id)
+  const player = usePodcastPlayer(document.id)
 
   const personaIds = useMemo(() => personasInDocument(document), [document])
   const readingMinutes = useMemo(() => estimateReadingTime(document), [document])
@@ -49,8 +52,18 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
   return (
     <DocumentProvider claims={document.claims} sources={document.sources}>
       <ClaimDrawerProvider>
-        <Masthead masthead={document.masthead} prev={prev} next={next} />
+        <Masthead
+          masthead={document.masthead}
+          prev={prev}
+          next={next}
+          audio={{
+            hasEpisode: player.hasEpisode,
+            isPlaying: player.isPlaying,
+            onToggle: player.toggle,
+          }}
+        />
         <ReadingProgress />
+        <PodcastPlayer player={player} />
         <PersonasBar personaIds={personaIds} label="The panel" />
         {document.companion ? <CompanionBanner banner={document.companion} /> : null}
 
