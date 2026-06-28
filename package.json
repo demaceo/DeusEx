@@ -14,7 +14,7 @@
     "test:watch": "vitest",
     "preview": "vite preview",
     "podcast:generate": "node --import tsx scripts/generate-podcast.ts",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "dependencies": {
     "lucide-react": "^1.21.0",
