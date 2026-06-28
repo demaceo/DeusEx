@@ -121,4 +121,14 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     settings: { ...BASE, stability: 0.6, style: 0.25 },
     characterNote: 'Political economist. Measured, dry, follows the incentives.',
   },
+  'equity-researcher': {
+    voiceId: 'pMsXgVXv3BLzUgSXRplE', // Serena — pleasant, articulate female
+    settings: { ...BASE, stability: 0.5, style: 0.35 },
+    characterNote: 'Algorithmic-justice researcher. Sharp, principled, insistent.',
+  },
+  'land-defender': {
+    voiceId: 'CYw3kZ02Hs0563khs1Fj', // Dave — grounded, conversational male
+    settings: { ...BASE, stability: 0.45, style: 0.4 },
+    characterNote: 'Community organizer in an extraction zone. Grounded, plainspoken, resolute.',
+  },
 }
