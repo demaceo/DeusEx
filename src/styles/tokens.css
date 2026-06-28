@@ -27,6 +27,8 @@
   --c-young: #0e9aa7;
   --c-clinician: #a0562d;
   --c-economist: #8a6d1f;
+  --c-equity: #7c3aed;
+  --c-land: #6b4423;
 
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
@@ -77,6 +79,12 @@
 [data-persona='economist'] {
   --persona-color: var(--c-economist);
 }
+[data-persona='equity-researcher'] {
+  --persona-color: var(--c-equity);
+}
+[data-persona='land-defender'] {
+  --persona-color: var(--c-land);
+}
 
 /* Masthead bottom-accent resolution (data-accent on .masthead). */
 [data-accent='gold'] {
@@ -123,4 +131,10 @@
 }
 [data-accent='bronze'] {
   --masthead-accent: var(--c-economist);
+}
+[data-accent='violet'] {
+  --masthead-accent: var(--c-equity);
+}
+[data-accent='umber'] {
+  --masthead-accent: var(--c-land);
 }

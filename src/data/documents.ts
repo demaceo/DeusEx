@@ -18,6 +18,8 @@ import { partVI } from './parts/part-vi'
 import { partVII } from './parts/part-vii'
 import { partVIII } from './parts/part-viii'
 import { partIX } from './parts/part-ix'
+import { partX } from './parts/part-x'
+import { partXI } from './parts/part-xi'
 
 export interface DocumentEntry {
   doc: RoundtableDocument
@@ -84,6 +86,18 @@ export const DOCUMENTS: DocumentEntry[] = [
     partLabel: 'Part IX',
     navTitle: 'The Creativity Question',
     blurb: partIX.masthead.subtitle,
+  },
+  {
+    doc: partX,
+    partLabel: 'Part X',
+    navTitle: 'Pattern and Prejudice',
+    blurb: partX.masthead.subtitle,
+  },
+  {
+    doc: partXI,
+    partLabel: 'Part XI',
+    navTitle: 'The Ground It Comes From',
+    blurb: partXI.masthead.subtitle,
   },
 ]
 

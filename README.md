@@ -3,7 +3,8 @@
 A small React + TypeScript site that presents **The AI Reckoning** — a roundtable series in which
 recurring voices (Tech Optimist, Environmentalist, Labor Advocate, Policy Realist, an Everyday
 Person, a Systems Humanist, a Skeptic, an Artist, an Accelerationist, a Safety Researcher, a Young
-Person, a Clinician, and an Economist) debate artificial intelligence:
+Person, a Clinician, an Economist, an Equity Researcher, and a Land Defender) debate artificial
+intelligence:
 
 1. **Part I — A Roundtable on Real Costs** (`/real-costs`) — energy, water, labor, regulation
 2. **Part II — What's Actually Being Done** (`/whats-being-done`) — responses already underway
@@ -14,6 +15,8 @@ Person, a Clinician, and an Economist) debate artificial intelligence:
 7. **Part VII — Machines We Talk To** (`/machines-we-talk-to`) — AI companions, loneliness, kids
 8. **Part VIII — Whose Intelligence?** (`/whose-intelligence`) — power, compute, capital, geopolitics
 9. **Part IX — The Creativity Question** (`/the-creativity-question`) — copyright, culture, authorship
+10. **Part X — Pattern and Prejudice** (`/pattern-and-prejudice`) — algorithmic racial bias, fairness
+11. **Part XI — The Ground It Comes From** (`/the-ground-it-comes-from`) — minerals, water, e-waste
 
 ## Reading features
 
