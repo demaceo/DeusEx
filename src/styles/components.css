@@ -1580,10 +1580,13 @@ cite[role='button']:focus-visible,
   .round-nav {
     display: block;
     position: fixed;
+    /* Biased below dead-centre so the rail clears the tall hero masthead at the
+       top of the page; once scrolled it settles into the lower-middle margin. */
     top: 50%;
     left: calc(50% - 620px);
     width: 180px;
     transform: translateY(-50%);
+    margin-top: 6rem;
     z-index: 40;
   }
 }
