@@ -103,21 +103,25 @@ export async function adaptScript(turns: Turn[], opts: AdaptOptions = {}): Promi
     2,
   )
 
-  const response = await client.messages.create({
-    model: opts.model ?? MODEL,
-    max_tokens: 32000,
-    thinking: { type: 'adaptive' },
-    output_config: {
-      format: { type: 'json_schema', schema: SCRIPT_SCHEMA, name: 'podcast_script' },
-    },
-    system: buildSystemPrompt(speakers),
-    messages: [
-      {
-        role: 'user',
-        content: `Adapt these ${turns.length} turns into a spoken podcast script. Preserve all facts and figures verbatim.\n\n${userPayload}`,
+  // Stream the request: with a large max_tokens + adaptive thinking the SDK
+  // refuses a non-streaming call that could exceed its 10-minute timeout.
+  const response = await client.messages
+    .stream({
+      model: opts.model ?? MODEL,
+      max_tokens: 32000,
+      thinking: { type: 'adaptive' },
+      output_config: {
+        format: { type: 'json_schema', schema: SCRIPT_SCHEMA, name: 'podcast_script' },
       },
-    ],
-  })
+      system: buildSystemPrompt(speakers),
+      messages: [
+        {
+          role: 'user',
+          content: `Adapt these ${turns.length} turns into a spoken podcast script. Preserve all facts and figures verbatim.\n\n${userPayload}`,
+        },
+      ],
+    })
+    .finalMessage()
 
   const textBlock = response.content.find((b) => b.type === 'text')
   if (!textBlock || textBlock.type !== 'text') {
