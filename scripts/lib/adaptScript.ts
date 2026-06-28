@@ -111,7 +111,7 @@ export async function adaptScript(turns: Turn[], opts: AdaptOptions = {}): Promi
       max_tokens: 32000,
       thinking: { type: 'adaptive' },
       output_config: {
-        format: { type: 'json_schema', schema: SCRIPT_SCHEMA, name: 'podcast_script' },
+        format: { type: 'json_schema', schema: SCRIPT_SCHEMA },
       },
       system: buildSystemPrompt(speakers),
       messages: [
