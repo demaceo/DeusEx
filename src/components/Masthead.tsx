@@ -34,24 +34,32 @@ export function Masthead({ masthead, prev, next, audio }: MastheadProps) {
       <div className="masthead-body">
         <p className="overline">{masthead.overline}</p>
         <h1>
-          <Link
-            className="masthead-title-link"
-            to="/"
-            aria-label="The AI Reckoning — return to the series index"
-          >
-            {masthead.titleLines.map((line, lineIndex) => (
+          {masthead.titleLines.map((line, lineIndex) => {
+            const spans = line.map((span, spanIndex) =>
+              span.em ? (
+                <em key={spanIndex}>{span.text}</em>
+              ) : (
+                <Fragment key={spanIndex}>{span.text}</Fragment>
+              ),
+            )
+            return (
               <Fragment key={lineIndex}>
                 {lineIndex > 0 ? <br /> : null}
-                {line.map((span, spanIndex) =>
-                  span.em ? (
-                    <em key={spanIndex}>{span.text}</em>
-                  ) : (
-                    <Fragment key={spanIndex}>{span.text}</Fragment>
-                  ),
+                {/* Only the series-label line ("The AI Reckoning:") links home. */}
+                {lineIndex === 0 ? (
+                  <Link
+                    className="masthead-title-link"
+                    to="/"
+                    aria-label="The AI Reckoning — return to the series index"
+                  >
+                    {spans}
+                  </Link>
+                ) : (
+                  spans
                 )}
               </Fragment>
-            ))}
-          </Link>
+            )
+          })}
         </h1>
         <p className="subtitle">{masthead.subtitle}</p>
         <p className="date-line">{masthead.dateLine}</p>
