@@ -15,11 +15,13 @@ pnpm test:watch     # vitest interactive watch mode
 ```
 
 Run a single test file:
+
 ```bash
 pnpm vitest run src/path/to/file.test.ts
 ```
 
 Podcast generation (build-time, maintainer-only — needs API keys in `.env.local`):
+
 ```bash
 pnpm podcast:generate -- --slug=real-costs --dry-run   # Claude rewrite only, no TTS spend
 pnpm podcast:generate -- --slug=real-costs             # full synth + write assets
@@ -37,13 +39,13 @@ Three files define the entire domain:
 
 - **`content.ts`** — `Claim`, `Source`, `VerificationStatus` (`pending | verified | disputed | unverified`), `InlineNode` (text | cite), `Paragraph` (ordered `InlineNode[]`). The `Claim` is the unit of future fact-checking; every statistic and citation is one.
 - **`document.ts`** — `Block` (discriminated union of all renderable content types), `Section`, `RoundtableDocument` (the top-level shape), `ChartSpec`, `StatBox`, and all supporting interfaces.
-- **`persona.ts`** — `PersonaId`, `PersonaColor`, `Persona`. Eight personas (`tech-optimist` … `artist`) are declared once in `src/data/personas.ts`; part files reference only `PersonaId`.
+- **`persona.ts`** — `PersonaId`, `PersonaColor`, `Persona`. The recurring personas (14 as of Part XI: `tech-optimist`, `environmentalist`, … `equity-researcher`, `land-defender`) are declared once in `src/data/personas.ts`; part files reference only `PersonaId`.
 
 ### Data (`src/data/`)
 
 - **`parts/part-{i–xi}.ts`** — each roundtable document as a fully-typed `RoundtableDocument` literal (eleven parts, using lowercase roman numerals). Every statistic is a `Claim` entry; every citation is an `InlineNode` of type `cite` referencing a `claimId`.
 - **`documents.ts`** — the slug registry (`DOCUMENTS`, `DOCUMENTS_BY_SLUG`), navigation helpers (`getAdjacentParts`), persona thread projection (`getPersonaThread`), and **`assertReferentialIntegrity`** — a dev-time check (and test fixture) that throws on any dangling `claimId` or `sourceId`. This runs automatically in dev via `import.meta.env.DEV`.
-- **`personas.ts`** — the authoritative eight `Persona` objects. **`personaVoices.ts`** — ElevenLabs voice casting per persona, used only by the podcast generator.
+- **`personas.ts`** — the authoritative `Persona` objects (one per `PersonaId`). **`personaVoices.ts`** — ElevenLabs voice casting per persona, used only by the podcast generator; it must have an entry for every `PersonaId` (`Record<PersonaId, VoiceCasting>`), so adding a persona requires adding its casting here or `tsc` fails.
 - **`audioEpisodes.ts`** — runtime access to generated podcast episodes. Fetches the `public/audio/episodes.json` manifest (cached) and exposes `getEpisode(documentId)` / `getTranscript(episode)`; the play control only appears for parts present in the manifest.
 
 ### Components (`src/components/`)
@@ -72,13 +74,13 @@ The shipped app contains **no API keys and makes no TTS/LLM calls** — it only 
 
 The route table lives in **`src/routes.tsx`** (single source of truth, used by `App` and by tests). Note `/:slug` is matched last so the static routes win.
 
-| Route | Page |
-|---|---|
-| `/` | `IndexPage` — series landing with document cards |
-| `/verification` | `VerificationPage` — claim status dashboard |
+| Route                | Page                                                         |
+| -------------------- | ------------------------------------------------------------ |
+| `/`                  | `IndexPage` — series landing with document cards             |
+| `/verification`      | `VerificationPage` — claim status dashboard                  |
 | `/voices/:personaId` | `PersonaThreadPage` — one persona's bubbles across all parts |
-| `/:slug` | `DocumentRoute` → `RoundtablePage` |
-| `*` | `NotFound` |
+| `/:slug`             | `DocumentRoute` → `RoundtablePage`                           |
+| `*`                  | `NotFound`                                                   |
 
 ### Key invariants
 
