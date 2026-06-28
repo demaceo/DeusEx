@@ -1,1 +1,9 @@
-{}
+{
+  "part-i": {
+    "slug": "real-costs",
+    "title": "The AI Reckoning: — A Roundtable on Real Costs",
+    "src": "/audio/part-i.mp3",
+    "durationSec": 1137.9,
+    "transcript": "/audio/part-i.transcript.json"
+  }
+}
