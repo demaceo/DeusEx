@@ -19,7 +19,12 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import 'dotenv/config'
+import dotenv from 'dotenv'
+
+// Load secrets from the repo root. `.env.local` is the documented, gitignored
+// (*.local) target; `.env` is a fallback. Earlier paths win in dotenv.
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
+dotenv.config({ path: [resolve(ROOT, '.env.local'), resolve(ROOT, '.env')], quiet: true })
 
 import { HOST_VOICE, PERSONA_VOICES } from '../src/data/personaVoices'
 import type { RoundtableDocument } from '../src/types/document'
