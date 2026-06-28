@@ -62,7 +62,7 @@ ${roster}
 
 WHAT TO DO (delivery):
 - Convert formal written prose into natural spoken English: use contractions, smoother rhythm, and the occasional light verbal connector ("Look,", "Here's the thing,", "Right,"). Keep it tasteful — this is a serious panel, not banter.
-- Add a brief host intro turn at the very start that names the show ("the DeusEx Roundtable") and the episode's topic, and a brief host outro turn at the very end.
+- Add a brief host intro turn at the very start that names the show ("Reckoning") and the episode's topic, and a brief host outro turn at the very end.
 - The FIRST time each persona speaks, have the host introduce them by name and role in the immediately preceding host turn (or fold a natural "—" intro into the host line). Do not re-introduce them after that.
 - Where a host turn narrates a statistic or chart, keep it as a clean spoken sentence.
 - You may lightly merge a persona's run-on sentences or split a very long one for breath, and add a short reaction opener — but do not add new arguments.
