@@ -47,4 +47,30 @@ describe('useScrollCollapse', () => {
     const { result } = renderHook(() => useScrollCollapse(80))
     expect(result.current).toBe(true)
   })
+
+  it('holds state inside the hysteresis dead band to avoid flicker', () => {
+    // Collapse at 120, expand only below 60 — between the two, state must not flip.
+    const { result } = renderHook(() => useScrollCollapse(120, 60))
+
+    act(() => {
+      setScrollY(130)
+      window.dispatchEvent(new Event('scroll'))
+    })
+    expect(result.current).toBe(true)
+
+    // Drift back up into the dead band (60–120): a single threshold would re-expand
+    // here and oscillate. Hysteresis keeps it collapsed.
+    act(() => {
+      setScrollY(90)
+      window.dispatchEvent(new Event('scroll'))
+    })
+    expect(result.current).toBe(true)
+
+    // Only once below the lower threshold does it expand again.
+    act(() => {
+      setScrollY(40)
+      window.dispatchEvent(new Event('scroll'))
+    })
+    expect(result.current).toBe(false)
+  })
 })
