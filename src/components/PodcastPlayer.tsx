@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { Headphones, Pause, Play } from 'lucide-react'
 import { PERSONAS } from '../data/personas'
 import type { EpisodeSpeaker } from '../data/audioEpisodes'
@@ -26,11 +27,21 @@ function speakerInfo(speaker: EpisodeSpeaker | null): {
 }
 
 /**
- * Sticky podcast player bar. Rendered once per Roundtable page when an episode
- * exists and the listener has engaged playback. Shows the current speaker
- * (synced via the transcript), a scrubber, time, and a playback-speed toggle.
+ * Sticky podcast player bar. Two states:
+ * - Idle (episode exists, not yet active): compact "Listen to this Roundtable" bar.
+ * - Active: full bar with speaker display, scrubber, time, and speed.
+ *
+ * The scrubber uses pointer events to bracket drag gestures. While dragging,
+ * local `scrubbingAt` state drives the thumb so the controlled input doesn't
+ * fight the audio element's timeupdate stream. The seek commits only on release.
  */
 export function PodcastPlayer({ player }: PodcastPlayerProps) {
+  // Local scrubbing state: null = not scrubbing; number = visual thumb position.
+  const [scrubbingAt, setScrubbingAt] = useState<number | null>(null)
+  // Ref mirrors scrubbing state so onChange can read it synchronously (avoiding
+  // the batched-update race between onPointerDown and onChange).
+  const isDragging = useRef(false)
+
   if (!player.episode) return null
 
   if (!player.isActive) {
@@ -57,6 +68,8 @@ export function PodcastPlayer({ player }: PodcastPlayerProps) {
   }
 
   const { name, persona, Icon } = speakerInfo(player.currentSpeaker)
+  const displayTime = scrubbingAt ?? Math.min(player.currentTime, player.duration || 0)
+  const maxTime = player.duration || 0
 
   return (
     <div className="podcast-player" role="region" aria-label="Roundtable podcast player">
@@ -86,11 +99,38 @@ export function PodcastPlayer({ player }: PodcastPlayerProps) {
         type="range"
         className="podcast-player__scrubber"
         min={0}
-        max={player.duration || 0}
+        max={maxTime}
         step={0.1}
-        value={Math.min(player.currentTime, player.duration || 0)}
-        onChange={(e) => player.seek(Number(e.target.value))}
+        value={displayTime}
         aria-label="Seek"
+        aria-valuetext={`${formatTime(displayTime)} of ${formatTime(maxTime)}`}
+        onPointerDown={() => {
+          isDragging.current = true
+          player.scrubStart()
+          setScrubbingAt(player.currentTime)
+        }}
+        onChange={(e) => {
+          const v = Number(e.target.value)
+          if (isDragging.current) {
+            // Pointer drag — update visual position only; seek commits on release.
+            setScrubbingAt(v)
+          } else {
+            // Keyboard arrow — seek immediately (no gesture to bracket).
+            player.seek(v)
+          }
+        }}
+        onPointerUp={(e) => {
+          const v = Number((e.target as HTMLInputElement).value)
+          isDragging.current = false
+          setScrubbingAt(null)
+          player.scrubEnd(v)
+        }}
+        onPointerCancel={() => {
+          // Cancelled gesture (e.g. touch interrupted) — restore without seeking.
+          isDragging.current = false
+          setScrubbingAt(null)
+          player.scrubEnd(player.currentTime)
+        }}
       />
 
       <span className="podcast-player__time" aria-hidden>
@@ -101,7 +141,7 @@ export function PodcastPlayer({ player }: PodcastPlayerProps) {
         type="button"
         className="podcast-player__rate"
         onClick={player.cycleRate}
-        aria-label={`Playback speed ${player.rate}×`}
+        aria-label={`Playback speed ${player.rate}×. Click to change.`}
       >
         {player.rate}×
       </button>
