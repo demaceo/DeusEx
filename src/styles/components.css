@@ -332,7 +332,7 @@
   display: flex;
   gap: 1rem;
   align-items: flex-start;
-  width: 62%;
+  width: 80%;
   padding: 0.5rem 0 1.1rem;
 }
 .debate-entry[data-stance='optimist'] {
@@ -343,7 +343,7 @@
   flex-direction: row-reverse;
 }
 .debate-entry[data-stance='neutral'] {
-  width: 72%;
+  width: 90%;
   margin: 0 auto;
 }
 /* Continuation turn (same speaker as the previous): tuck it under, no avatar. */
