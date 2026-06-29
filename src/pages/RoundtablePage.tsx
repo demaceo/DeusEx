@@ -61,16 +61,7 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
   return (
     <DocumentProvider claims={document.claims} sources={document.sources}>
       <ClaimDrawerProvider>
-        <Masthead
-          masthead={document.masthead}
-          prev={prev}
-          next={next}
-          audio={{
-            hasEpisode: player.hasEpisode,
-            isPlaying: player.isPlaying,
-            onToggle: player.toggle,
-          }}
-        />
+        <Masthead masthead={document.masthead} prev={prev} next={next} />
         <ReadingProgress />
         <PodcastPlayer player={player} />
         <PersonasBar personaIds={personaIds} label="The panel" />

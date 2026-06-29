@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import { ChevronLeft, ChevronRight, Headphones, Pause, Play } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useScrollCollapse } from '../hooks/useScrollCollapse'
 import type { PartNavTarget } from '../data/documents'
 import type { Masthead as MastheadData } from '../types/document'
@@ -9,15 +9,9 @@ interface MastheadProps {
   masthead: MastheadData
   prev: PartNavTarget
   next: PartNavTarget
-  /** Audio-podcast controls. Omitted (or hasEpisode=false) hides the play button. */
-  audio?: {
-    hasEpisode: boolean
-    isPlaying: boolean
-    onToggle: () => void
-  }
 }
 
-export function Masthead({ masthead, prev, next, audio }: MastheadProps) {
+export function Masthead({ masthead, prev, next }: MastheadProps) {
   const collapsed = useScrollCollapse()
 
   return (
@@ -62,23 +56,6 @@ export function Masthead({ masthead, prev, next, audio }: MastheadProps) {
           })}
         </h1>
         <p className="subtitle">{masthead.subtitle}</p>
-        {audio && audio.hasEpisode ? (
-          <button
-            type="button"
-            className="masthead-listen"
-            onClick={audio.onToggle}
-            aria-label={audio.isPlaying ? 'Pause the audio podcast' : 'Listen to the audio podcast'}
-            aria-pressed={audio.isPlaying}
-          >
-            <span className="masthead-listen__icon" aria-hidden>
-              {audio.isPlaying ? <Pause size={16} /> : <Play size={16} />}
-            </span>
-            <Headphones size={15} aria-hidden />
-            <span className="masthead-listen__label">
-              {audio.isPlaying ? 'Pause episode' : 'Listen to this Roundtable'}
-            </span>
-          </button>
-        ) : null}
       </div>
 
       <Link
