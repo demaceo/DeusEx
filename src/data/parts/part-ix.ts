@@ -377,6 +377,7 @@ export const partIX: RoundtableDocument = {
     // ─────────────────────────────────────────────────────────
     {
       header: { roundLabel: 'Round IV', title: 'What Authorship Is Worth' },
+      stanceOverride: { 'tech-optimist': 'neutral' },
       dividerBefore: true,
       blocks: [
         {

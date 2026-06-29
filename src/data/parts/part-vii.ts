@@ -267,6 +267,7 @@ export const partVII: RoundtableDocument = {
     // ─────────────────────────────────────────────────────────
     {
       header: { roundLabel: 'Round III', title: 'Children & Teens' },
+      stanceOverride: { 'policy-realist': 'critic' },
       dividerBefore: true,
       blocks: [
         {
