@@ -1,4 +1,4 @@
-import { Pause, Play } from 'lucide-react'
+import { Headphones, Pause, Play } from 'lucide-react'
 import { PERSONAS } from '../data/personas'
 import type { EpisodeSpeaker } from '../data/audioEpisodes'
 import type { PodcastPlayer as PodcastPlayerState } from '../hooks/usePodcastPlayer'
@@ -31,7 +31,30 @@ function speakerInfo(speaker: EpisodeSpeaker | null): {
  * (synced via the transcript), a scrubber, time, and a playback-speed toggle.
  */
 export function PodcastPlayer({ player }: PodcastPlayerProps) {
-  if (!player.isActive || !player.episode) return null
+  if (!player.episode) return null
+
+  if (!player.isActive) {
+    return (
+      <div
+        className="podcast-player podcast-player--idle"
+        role="region"
+        aria-label="Roundtable podcast player"
+      >
+        <button
+          type="button"
+          className="podcast-player__toggle"
+          onClick={player.toggle}
+          aria-label="Listen to the audio podcast"
+        >
+          <Play size={20} aria-hidden />
+        </button>
+        <span className="podcast-player__idle-label">
+          <Headphones size={14} aria-hidden />
+          Listen to this Roundtable
+        </span>
+      </div>
+    )
+  }
 
   const { name, persona, Icon } = speakerInfo(player.currentSpeaker)
 
