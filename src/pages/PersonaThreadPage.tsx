@@ -90,6 +90,9 @@ export function PersonaThreadPage() {
                 </li>
               ))}
             </ul>
+            <p className="voice-crossings__more">
+              <Link to="/voices">See where every voice broke from type →</Link>
+            </p>
           </section>
         ) : null}
 

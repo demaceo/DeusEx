@@ -330,6 +330,24 @@ export function getPersonaCrossings(personaId: PersonaId): PersonaCrossing[] {
   return out
 }
 
+/** A persona paired with their crossings — the unit of the series-wide overview. */
+export interface PersonaCrossings {
+  personaId: PersonaId
+  crossings: PersonaCrossing[]
+}
+
+/**
+ * Every persona's crossings across the series, in `PERSONA_ORDER` (entries with
+ * no crossings are kept, so the overview can list who "held their line"). Powers
+ * the `/voices` series-wide map.
+ */
+export function getAllCrossings(): PersonaCrossings[] {
+  return PERSONA_ORDER.map((personaId) => ({
+    personaId,
+    crossings: getPersonaCrossings(personaId),
+  }))
+}
+
 if (import.meta.env.DEV) {
   for (const entry of DOCUMENTS) assertReferentialIntegrity(entry.doc)
 }

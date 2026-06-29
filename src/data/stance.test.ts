@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getPersonaCrossings } from './documents'
+import { getAllCrossings, getPersonaCrossings } from './documents'
 import { PERSONA_ORDER, PERSONAS } from './personas'
 import { resolveStance } from './stance'
 
@@ -44,5 +44,18 @@ describe('getPersonaCrossings', () => {
         expect(crossing.partLabel).toMatch(/^Part /)
       }
     }
+  })
+})
+
+describe('getAllCrossings', () => {
+  it('covers every persona and matches getPersonaCrossings', () => {
+    const all = getAllCrossings()
+    expect(all.length).toBe(PERSONA_ORDER.length)
+    for (const { personaId, crossings } of all) {
+      expect(crossings).toEqual(getPersonaCrossings(personaId))
+    }
+    // The series has both voices that broke from type and voices that held the line.
+    expect(all.some((v) => v.crossings.length > 0)).toBe(true)
+    expect(all.some((v) => v.crossings.length === 0)).toBe(true)
   })
 })
