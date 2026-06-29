@@ -83,7 +83,12 @@ export function PodcastPlayer({ player }: PodcastPlayerProps) {
         {player.isPlaying ? <Pause size={20} aria-hidden /> : <Play size={20} aria-hidden />}
       </button>
 
-      <div className="podcast-player__now" data-persona={persona}>
+      <div
+        className="podcast-player__now"
+        data-persona={persona}
+        aria-live="polite"
+        aria-atomic="true"
+      >
         {Icon ? (
           <span className="podcast-player__speaker-icon" aria-hidden>
             <Icon size={16} strokeWidth={1.75} />
@@ -134,7 +139,7 @@ export function PodcastPlayer({ player }: PodcastPlayerProps) {
       />
 
       <span className="podcast-player__time" aria-hidden>
-        {formatTime(player.currentTime)} / {formatTime(player.duration)}
+        {formatTime(displayTime)} / {formatTime(maxTime)}
       </span>
 
       <button
