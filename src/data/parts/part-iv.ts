@@ -258,6 +258,19 @@ export const partIV: RoundtableDocument = {
                   },
                   { type: 'cite', claimId: 'c-iv-nuclear-states-2024' },
                 ],
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'And the contemporary version of this argument is already being worked out in detail. Researchers like Tim Fist and Janet Egan argue that the US and China could agree on a narrow set of AI red lines — bioweapons assistance, offensive cyber, recursive self-improvement — but only if verification technology makes compliance checkable, exactly as it was for nuclear material.',
+                  },
+                  { type: 'cite', claimId: 'c-iv-ai-red-lines' },
+                  {
+                    type: 'text',
+                    value:
+                      ' The hard part was never the political will alone. It was building the instruments that let adversaries trust each other without having to.',
+                  },
+                ],
               ],
             },
           },
@@ -634,6 +647,13 @@ export const partIV: RoundtableDocument = {
         'Ministerial statement from the Seoul AI Safety Summit on international cooperation on AI safety and frontier AI governance.',
       url: 'https://www.gov.uk/government/publications/seoul-ministerial-statement-for-advancing-ai-safety-international-collaboration-and-capacity-building',
     },
+    {
+      id: 'src-yua-treaties',
+      title: 'Your Undivided Attention — "We Need AI Treaties" (June 2026)',
+      description:
+        'Center for Humane Technology podcast episode with Tim Fist (Institute for Progress) and Janet Egan (CNAS) on AI red lines and verification technology as the prerequisite for enforceable international AI agreements.',
+      url: 'https://www.humanetech.com/podcast/we-need-ai-treaties-this-is-how-we-get-them',
+    },
   ],
 
   claims: {
@@ -764,6 +784,17 @@ export const partIV: RoundtableDocument = {
         'https://www.whitehouse.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/',
       note: 'Amazon, Anthropic, Google, Inflection AI, Meta, Microsoft, and OpenAI signed voluntary commitments at the White House on 21 July 2023. Commitments include pre-deployment red-teaming, safety information sharing, and investment in AI cybersecurity.',
       lastCheckedISO: '2026-06-25',
+    },
+    'c-iv-ai-red-lines': {
+      id: 'c-iv-ai-red-lines',
+      kind: 'citation',
+      claimText:
+        'Tim Fist and Janet Egan argue US–China AI red lines depend on verification technology',
+      sourceId: 'src-yua-treaties',
+      verificationStatus: 'verified',
+      verifiedUrl: 'https://www.humanetech.com/podcast/we-need-ai-treaties-this-is-how-we-get-them',
+      note: 'YUA Ep. 136 (18 June 2026): Tim Fist (Institute for Progress) and Janet Egan (CNAS) argue that enforceable AI agreements on red lines — bioweapons, offensive cyber, recursive self-improvement — require verification technology, drawing the explicit parallel to ~60 years of nuclear arms-control verification (warhead, enrichment, and civilian-vs-weapons verification). The episode names verification, not political will alone, as the central obstacle.',
+      lastCheckedISO: '2026-06-29',
     },
   },
 }
