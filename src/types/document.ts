@@ -5,7 +5,7 @@
  */
 
 import type { Claim, Paragraph, Source } from './content'
-import type { PersonaColor, PersonaId } from './persona'
+import type { PersonaColor, PersonaId, PersonaStance } from './persona'
 
 /** Stat-box color variants. Part I uses the base (no variant); II/III use these. */
 export type StatVariant = 'positive' | 'teal' | 'blue' | 'neutral' | 'caution'
@@ -35,6 +35,12 @@ export interface SpeechBubble {
 export interface DebateEntry {
   personaId: PersonaId
   bubble: SpeechBubble
+  /**
+   * Overrides the speaker's default {@link Persona.stance} for this one turn,
+   * for the rare case where a persona argues the other side. Optional — turns
+   * fall back to the persona's stance when omitted.
+   */
+  stance?: PersonaStance
 }
 
 export interface Pullquote {

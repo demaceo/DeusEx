@@ -31,6 +31,8 @@
   --c-land: #6b4423;
 
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Per-turn delay step for the debate stage's staggered scroll reveal. */
+  --stagger-step: 60ms;
 
   /* Fonts */
   --font-display: 'Playfair Display', Georgia, serif;

@@ -41,6 +41,14 @@ export type PersonaColor =
   | 'violet'
   | 'umber'
 
+/**
+ * Which camp a persona argues from, used to place their turns on the debate
+ * stage: `optimist` sits left of the center axis, `critic` right, `neutral`
+ * centered. A persona's stance is its default lean across the series; an
+ * individual turn may override it via {@link DebateEntry.stance}.
+ */
+export type PersonaStance = 'optimist' | 'critic' | 'neutral'
+
 export interface Persona {
   id: PersonaId
   /** Display name, e.g. "Tech Optimist". */
@@ -48,6 +56,8 @@ export interface Persona {
   color: PersonaColor
   /** Lucide icon component rendered in the speaker disc and profile card. */
   icon: LucideIcon
+  /** Default debate camp; positions the speaker on the stage. */
+  stance: PersonaStance
   /** Short professional title shown in the profile card. */
   role: string
   /** One-line "what they care about" tagline. */

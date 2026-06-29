@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { BlockRenderer } from '../components/BlockRenderer'
 import { ChapterDivider } from '../components/ChapterDivider'
 import { CompanionBanner } from '../components/CompanionBanner'
+import { DebateThread } from '../components/DebateThread'
 import { DocumentProvider } from '../components/DocumentProvider'
 import { ClaimDrawerProvider } from '../components/EvidenceDrawer'
 import { IntroBlock } from '../components/IntroBlock'
@@ -17,6 +18,7 @@ import { SourcesSection } from '../components/SourcesSection'
 import { VerdictBox } from '../components/VerdictBox'
 import { VerificationNotice } from '../components/VerificationNotice'
 import { getAdjacentParts, personasInDocument } from '../data/documents'
+import { groupBlocks } from '../data/groupBlocks'
 import { estimateReadingTime } from '../data/readingTime'
 import { usePodcastPlayer } from '../hooks/usePodcastPlayer'
 import type { RoundtableDocument } from '../types/document'
@@ -35,6 +37,13 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
 
   const personaIds = useMemo(() => personasInDocument(document), [document])
   const readingMinutes = useMemo(() => estimateReadingTime(document), [document])
+  // Coalesce runs of consecutive debate turns into threads once per document, so
+  // the stage can render them as one exchange (and the grouping stays stable
+  // across re-renders for DebateThread's scroll observers).
+  const groupedSections = useMemo(
+    () => document.sections.map((section) => groupBlocks(section.blocks)),
+    [document],
+  )
   const navItems = useMemo<RoundNavItem[]>(
     () =>
       document.sections.map((section, i) => ({
@@ -91,9 +100,13 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
               >
                 {section.dividerBefore ? <ChapterDivider /> : null}
                 <SectionHeader header={section.header} headingId={`${id}-title`} />
-                {section.blocks.map((block, j) => (
-                  <BlockRenderer key={j} block={block} />
-                ))}
+                {groupedSections[i].map((group, j) =>
+                  group.kind === 'debateThread' ? (
+                    <DebateThread key={j} turns={group.turns} />
+                  ) : (
+                    <BlockRenderer key={j} block={group.block} />
+                  ),
+                )}
               </section>
             )
           })}
