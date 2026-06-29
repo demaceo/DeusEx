@@ -283,6 +283,40 @@ a {
   .masthead-nav--next {
     right: 0.35rem;
   }
+
+  /* Tighter expanded-state padding — reduces header from ~55% to ~35% of screen */
+  .masthead {
+    padding-top: 1.75rem;
+    padding-bottom: 1.5rem;
+  }
+
+  /* Modestly smaller h1 + tighter metadata spacing */
+  .masthead h1 {
+    font-size: clamp(1.75rem, 7.5vw, 2.5rem);
+    margin-bottom: 0.4rem;
+  }
+  .masthead .subtitle {
+    font-size: 0.9rem;
+  }
+  .masthead .overline {
+    margin-bottom: 0.75rem;
+  }
+  .masthead .date-line {
+    margin-top: 1rem;
+  }
+
+  /* Single-line collapsed title — shows "The AI Reckoning:" only; <br> acts as clip point */
+  .masthead[data-collapsed='true'] h1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Hide in-header podcast pill — idle bar at bottom handles discovery on mobile */
+  .masthead-listen {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
