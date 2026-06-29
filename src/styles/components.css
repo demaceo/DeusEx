@@ -1981,6 +1981,17 @@ cite[role='button']:focus-visible::after {
   outline: none;
 }
 
+.podcast-player__idle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.6);
+}
+
 @media (max-width: 640px) {
   .podcast-player__now {
     min-width: 0;
