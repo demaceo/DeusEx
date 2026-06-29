@@ -172,6 +172,7 @@ export const partVI: RoundtableDocument = {
     // ─────────────────────────────────────────────────────────
     {
       header: { roundLabel: 'Round II', title: 'The Case for Speed' },
+      stanceOverride: { 'policy-realist': 'critic' },
       dividerBefore: true,
       blocks: [
         {
