@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react'
 import { PERSONAS } from '../data/personas'
+import { CONCESSION_LABEL, STANCE_LABEL } from '../data/stance'
 import type { DebateEntry as DebateEntryData } from '../types/document'
 import type { PersonaId, PersonaStance } from '../types/persona'
 import { SpeechBubble } from './SpeechBubble'
@@ -14,19 +15,6 @@ interface DebateEntryProps {
   previousPersonaId?: PersonaId
   /** Position within the thread; drives the staggered reveal delay. */
   turnIndex?: number
-}
-
-const STANCE_LABEL: Record<PersonaStance, string> = {
-  optimist: 'Optimistic',
-  critic: 'Critical',
-  neutral: 'Neutral',
-}
-
-/** Badge shown when a turn argues off the speaker's default camp. */
-const CONCESSION_LABEL: Record<PersonaStance, string> = {
-  optimist: 'Takes the optimistic side',
-  critic: 'Takes the critical side',
-  neutral: 'Finds common ground',
 }
 
 /**

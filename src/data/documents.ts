@@ -6,9 +6,16 @@
  * future verification pass.
  */
 
-import type { Block, DocumentId, RoundtableDocument, SpeechBubble } from '../types/document'
-import type { PersonaId } from '../types/persona'
-import { PERSONA_ORDER } from './personas'
+import type {
+  Block,
+  DebateEntry,
+  DocumentId,
+  RoundtableDocument,
+  SpeechBubble,
+} from '../types/document'
+import type { PersonaId, PersonaStance } from '../types/persona'
+import { PERSONA_ORDER, PERSONAS } from './personas'
+import { resolveStance } from './stance'
 import { partI } from './parts/part-i'
 import { partII } from './parts/part-ii'
 import { partIII } from './parts/part-iii'
@@ -264,6 +271,63 @@ export function getPersonaThread(personaId: PersonaId): PersonaThreadGroup[] {
     }
   }
   return groups
+}
+
+/** First-paragraph plain text of a bubble, trimmed to a short preview. */
+function excerptFromBubble(bubble: SpeechBubble, max = 150): string {
+  const first = bubble.paragraphs[0] ?? []
+  let text = ''
+  for (const node of first) if (node.type === 'text') text += node.value
+  text = text.trim()
+  return text.length > max ? `${text.slice(0, max).trimEnd()}…` : text
+}
+
+/** A round in which a persona argued off their default camp. */
+export interface PersonaCrossing {
+  slug: string
+  partLabel: string
+  navTitle: string
+  /** e.g. "Round II · Water Usage". */
+  roundLabel: string
+  /** The camp argued here (differs from the persona's default). */
+  stance: PersonaStance
+  /** Short preview of the off-camp turn. */
+  excerpt: string
+}
+
+/**
+ * Every round where a persona "broke from type" — argued a stance different from
+ * their default {@link Persona.stance} — across the whole series, in order. One
+ * entry per round (a round with several off-camp turns surfaces once, from the
+ * first such turn). Powers the "where this voice broke from type" view; a pure
+ * projection over {@link DOCUMENTS}, sharing {@link resolveStance} with the stage.
+ */
+export function getPersonaCrossings(personaId: PersonaId): PersonaCrossing[] {
+  const out: PersonaCrossing[] = []
+  const defaultStance = PERSONAS[personaId].stance
+  for (const entry of DOCUMENTS) {
+    for (const section of entry.doc.sections) {
+      let crossing: DebateEntry | undefined
+      for (const block of section.blocks) {
+        if (block.type !== 'debate' || block.data.personaId !== personaId) continue
+        if (resolveStance(personaId, block.data.stance, section.stanceOverride) !== defaultStance) {
+          crossing = block.data
+          break
+        }
+      }
+      if (!crossing) continue
+      const { roundLabel, title } = section.header
+      out.push({
+        slug: entry.doc.slug,
+        partLabel: entry.partLabel,
+        navTitle: entry.navTitle,
+        roundLabel: title ? `${roundLabel} · ${title}` : roundLabel,
+        stance: resolveStance(personaId, crossing.stance, section.stanceOverride),
+        excerpt: excerptFromBubble(crossing.bubble),
+      })
+    }
+  }
+  return out
 }
 
 if (import.meta.env.DEV) {
