@@ -89,6 +89,9 @@ export function DebateThread({ turns, stanceOverride }: DebateThreadProps) {
     }
   }, [turns])
 
+  const resolveStance = (turn: DebateEntryData): PersonaStance =>
+    turn.stance ?? stanceOverride?.[turn.personaId] ?? PERSONAS[turn.personaId].stance
+
   return (
     <div className="debate-stage" role="list" ref={stageRef}>
       {showAxis ? (
@@ -104,14 +107,17 @@ export function DebateThread({ turns, stanceOverride }: DebateThreadProps) {
 
       {turns.map((turn, i) => {
         const prev = i > 0 ? turns[i - 1] : undefined
-        const isFirstOfSpeaker = !prev || prev.personaId !== turn.personaId
+        const stance = resolveStance(turn)
+        // Start a fresh speaker block when the speaker changes OR when the same
+        // speaker crosses the axis (a per-turn concession) — so the flipped turn
+        // gets its own avatar on the new side, not a dangling continuation dot.
+        const isFirstOfSpeaker =
+          !prev || prev.personaId !== turn.personaId || resolveStance(prev) !== stance
         return (
           <DebateEntry
             key={i}
             entry={turn}
-            stance={
-              turn.stance ?? stanceOverride?.[turn.personaId] ?? PERSONAS[turn.personaId].stance
-            }
+            stance={stance}
             isFirstOfSpeaker={isFirstOfSpeaker}
             previousPersonaId={prev?.personaId}
             turnIndex={i}

@@ -133,6 +133,7 @@ export const partIX: RoundtableDocument = {
           type: 'debate',
           data: {
             personaId: 'skeptic',
+            stance: 'neutral',
             bubble: {
               paragraphs: [
                 [
@@ -205,6 +206,7 @@ export const partIX: RoundtableDocument = {
           type: 'debate',
           data: {
             personaId: 'tech-optimist',
+            stance: 'neutral',
             bubble: {
               paragraphs: [
                 [

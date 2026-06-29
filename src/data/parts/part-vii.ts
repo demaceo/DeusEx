@@ -164,6 +164,7 @@ export const partVII: RoundtableDocument = {
           type: 'debate',
           data: {
             personaId: 'clinician',
+            stance: 'neutral',
             bubble: {
               paragraphs: [
                 [
