@@ -8,7 +8,7 @@ import {
 } from '../data/audioEpisodes'
 import type { DocumentId } from '../types/document'
 
-const PLAYBACK_RATES = [1, 1.25, 1.5] as const
+const PLAYBACK_RATES = [1, 1.25, 1.5, 2] as const
 export type PlaybackRate = (typeof PLAYBACK_RATES)[number]
 
 export interface PodcastPlayer {
@@ -25,14 +25,22 @@ export interface PodcastPlayer {
   currentSpeaker: EpisodeSpeaker | null
   toggle: () => void
   seek: (seconds: number) => void
+  /** Call before a scrub gesture starts — suppresses timeupdate jitter. */
+  scrubStart: () => void
+  /** Call when a scrub gesture ends — commits the final seek position. */
+  scrubEnd: (seconds: number) => void
   cycleRate: () => void
 }
 
 /**
  * Owns a single HTMLAudioElement for the current document's episode and exposes
  * declarative playback state. The transcript sidecar is loaded lazily on first
- * play to resolve the current speaker. Mirrors the project's hooks convention
- * (rAF-free here — `timeupdate` fires often enough for a scrubber + speaker tag).
+ * play to resolve the current speaker.
+ *
+ * Scrub gesture (pointer drag on the range input) is split into scrubStart /
+ * scrubEnd so the component can suppress timeupdate state updates while the
+ * user is dragging — otherwise the controlled input fights the audio element's
+ * own position updates and the thumb jumps around.
  */
 export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
   const [episode, setEpisode] = useState<AudioEpisode | null>(null)
@@ -44,10 +52,11 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
   const [rate, setRate] = useState<PlaybackRate>(1)
 
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  // True while the user is dragging the scrubber. Suppresses timeupdate so the
+  // controlled input thumb doesn't fight the drag gesture.
+  const isScrubbingRef = useRef(false)
 
   // Resolve the episode for this document; reset everything when it changes.
-  // State is reset inside the async resolution (not synchronously in the effect
-  // body) and the previous audio element is torn down in cleanup.
   useEffect(() => {
     let cancelled = false
     getEpisode(documentId).then((ep) => {
@@ -72,7 +81,9 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
     const audio = new Audio(episode.src)
     audio.preload = 'metadata'
     audio.playbackRate = rate
-    audio.addEventListener('timeupdate', () => setCurrentTime(audio.currentTime))
+    audio.addEventListener('timeupdate', () => {
+      if (!isScrubbingRef.current) setCurrentTime(audio.currentTime)
+    })
     audio.addEventListener('durationchange', () => setDuration(audio.duration || 0))
     audio.addEventListener('play', () => setIsPlaying(true))
     audio.addEventListener('pause', () => setIsPlaying(false))
@@ -97,6 +108,18 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
   }, [cues, ensureAudio, episode])
 
   const seek = useCallback((seconds: number) => {
+    const audio = audioRef.current
+    if (!audio) return
+    audio.currentTime = seconds
+    setCurrentTime(seconds)
+  }, [])
+
+  const scrubStart = useCallback(() => {
+    isScrubbingRef.current = true
+  }, [])
+
+  const scrubEnd = useCallback((seconds: number) => {
+    isScrubbingRef.current = false
     const audio = audioRef.current
     if (!audio) return
     audio.currentTime = seconds
@@ -129,6 +152,8 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
     currentSpeaker,
     toggle,
     seek,
+    scrubStart,
+    scrubEnd,
     cycleRate,
   }
 }
