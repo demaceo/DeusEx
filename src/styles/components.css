@@ -1843,6 +1843,127 @@ cite[role='button']:focus-visible,
   line-height: 1.6;
   color: var(--ink);
 }
+.voice-crossings__more {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.voice-crossings__more a {
+  color: var(--persona-color, var(--accent));
+  text-decoration: none;
+}
+.voice-crossings__more a:hover {
+  text-decoration: underline;
+}
+
+/* ─── /voices — series-wide crossings overview ────────────────────── */
+.crossings-hero {
+  text-align: center;
+  padding: 3rem 2rem 2.25rem;
+  background: var(--panel);
+  border-bottom: 4px solid var(--accent);
+}
+.crossings-hero .overline {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.crossings-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 900;
+  color: var(--ink);
+  margin: 0.4rem 0;
+}
+.crossings-hero .subtitle {
+  max-width: 620px;
+  margin: 0.6rem auto 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.crossings-hero__count {
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.crossings-voice {
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--rule);
+}
+.crossings-voice__head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+.crossings-voice__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--persona-color, var(--accent));
+  color: var(--white);
+  flex-shrink: 0;
+}
+.crossings-voice__name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  text-decoration: none;
+}
+.crossings-voice__name:hover {
+  color: var(--persona-color, var(--accent));
+}
+.crossings-voice__usual {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.crossings-voice__list {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.crossing--compact {
+  padding: 0.7rem 0.9rem;
+}
+.crossing--compact .crossing__where {
+  margin-bottom: 0;
+}
+.crossings-held {
+  margin: 1.75rem 0 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.crossings-held__label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
 
 /* ─── READING PROGRESS BAR ────────────────────────────────────────── */
 .reading-progress {

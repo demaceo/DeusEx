@@ -52,7 +52,8 @@ export function IndexPage() {
             The Panel
           </h2>
           <p className="panel-section__intro">
-            Follow any voice across the whole series — every argument they make, in one thread.
+            Follow any voice across the whole series — every argument they make, in one thread. Or
+            see <Link to="/voices">where each voice broke from type</Link>.
           </p>
           <ul className="panel-grid">
             {PERSONA_ORDER.map((id) => {
