@@ -20,14 +20,14 @@ export const partIV: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Three conversations. Five voices. A great deal of evidence about what AI costs, what governments and companies are doing about it, and what is genuinely working. And yet: the energy use keeps climbing, the labor conditions remain largely unaddressed, and the regulatory frameworks are still catching up to systems already deployed at scale.',
+          'No one started this race. It emerged from the same logic that has driven every arms race in history: the fear that stopping means losing. Once that calculus locks in, the question of whether to run dissolves into the question of how fast. What this conversation asks is whether that logic is as unbreakable as it appears — and what it would actually cost to find out.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'This document asks why. Not why any individual company behaves the way it does — that question has been answered, and the answer is not malice. It asks why the overall trajectory persists even when the harms are visible, the evidence is solid, and many of the actors genuinely want to do better. The answer has a name: a race. And races have a specific logic — one that only coordination can change.',
+          "There is a name for this. Economists call it a prisoner's dilemma; strategists call it an arms race; historians call it what happens to every transformative technology that arrives before the institutions designed to govern it. The actors in this conversation know the name, know the logic, and find themselves running anyway — which is the most honest thing any of them has to say.",
       },
     ],
   ],

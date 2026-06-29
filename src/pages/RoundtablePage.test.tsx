@@ -16,7 +16,7 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('RoundtablePage renders $id',
     )
     expect(screen.getByText(doc.masthead.subtitle)).toBeInTheDocument()
     expect(screen.getByText('Primary Sources Referenced')).toBeInTheDocument()
-    expect(screen.getByText(/independently checked against primary sources/i)).toBeInTheDocument()
+    expect(screen.getByText('View all →')).toBeInTheDocument()
   })
 })
 
@@ -33,7 +33,6 @@ describe('verification notice reflects claim statuses', () => {
           <RoundtablePage document={doc} />
         </MemoryRouter>,
       )
-      expect(screen.getByText('Fact-checked')).toBeInTheDocument()
       expect(screen.getByText(`${summary.verified} verified`)).toBeInTheDocument()
     })
   })

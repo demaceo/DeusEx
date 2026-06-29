@@ -20,7 +20,7 @@ export const partI: RoundtableDocument = {
       {
         type: 'text',
         value:
-          "This document stages a structured, evidence-based conversation among five distinct voices — each representing a real and legitimate perspective on AI's present-day ethical dilemmas. Every factual claim is cited. No science fiction. No speculation. Just the messy, consequential present.",
+          "Progress has always had a receipt. We are only now squinting at the fine print on this one — the megawatts, the gallons, the warehouses full of workers sorting the machine's mistakes, the communities downstream from its thirst. The question is not whether the costs are real. They are. The question is who is being asked to pay them.",
       },
     ],
   ],

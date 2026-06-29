@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { BlockRenderer } from '../components/BlockRenderer'
 import { ChapterDivider } from '../components/ChapterDivider'
-import { CompanionBanner } from '../components/CompanionBanner'
+import { DebateNavFAB } from '../components/DebateNavFAB'
 import { DebateThread } from '../components/DebateThread'
 import { DocumentProvider } from '../components/DocumentProvider'
 import { ClaimDrawerProvider } from '../components/EvidenceDrawer'
@@ -61,22 +61,13 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
   return (
     <DocumentProvider claims={document.claims} sources={document.sources}>
       <ClaimDrawerProvider>
-        <Masthead
-          masthead={document.masthead}
-          prev={prev}
-          next={next}
-          audio={{
-            hasEpisode: player.hasEpisode,
-            isPlaying: player.isPlaying,
-            onToggle: player.toggle,
-          }}
-        />
+        <Masthead masthead={document.masthead} prev={prev} next={next} />
         <ReadingProgress />
         <PodcastPlayer player={player} />
         <PersonasBar personaIds={personaIds} label="The panel" />
-        {document.companion ? <CompanionBanner banner={document.companion} /> : null}
 
         <RoundNav items={navItems} />
+        <DebateNavFAB />
 
         <div className="container">
           <nav className="series-nav">
@@ -84,11 +75,11 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
             <Link to="/verification">Verification status →</Link>
           </nav>
 
-          <VerificationNotice claims={document.claims} />
           <p className="reading-time">
             {readingMinutes} min read · {navItems.length} rounds
           </p>
           <IntroBlock paragraphs={document.intro} />
+          <VerificationNotice claims={document.claims} />
 
           {document.sections.map((section, i) => {
             const id = sectionId(i)

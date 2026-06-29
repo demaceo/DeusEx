@@ -23,7 +23,7 @@ export const partIII: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Two documents have examined the costs and the responses. This one examines what is genuinely working — outcomes that are documented, peer-reviewed, or otherwise verifiable. The panel holds the same critical standard it applied to the problems. Optimism without evidence is still just marketing.',
+          'It is not a concession to admit that something works. Science advances. Diseases yield. Floods are predicted. Children in under-resourced classrooms gain months of ground. The honest reckoning includes this — not as absolution for the costs, but as the other half of the ledger, without which none of the difficult tradeoffs can be weighed.',
       },
     ],
   ],

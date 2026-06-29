@@ -23,7 +23,7 @@ export const partII: RoundtableDocument = {
       {
         type: 'text',
         value:
-          "The problems are documented. The question now is: what's happening in response? This conversation examines concrete actions — legislation that has actually passed, technologies actively deployed, lawsuits that have advanced, and deals already signed. Where the response falls short, the panel says so directly.",
+          'Every reckoning produces its own industry of response — press releases, pledges, frameworks, legislation caught mid-draft. Some of it is theater. Some of it bites. Knowing the difference requires looking past the announcement to the action, and past the action to whether it actually changed anything. That is what this conversation is for.',
       },
     ],
   ],
