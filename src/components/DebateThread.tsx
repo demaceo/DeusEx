@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from 'react'
-import { PERSONAS } from '../data/personas'
+import { resolveStance } from '../data/stance'
 import type { DebateEntry as DebateEntryData } from '../types/document'
 import type { PersonaId, PersonaStance } from '../types/persona'
 import { DebateEntry } from './DebateEntry'
@@ -89,9 +89,6 @@ export function DebateThread({ turns, stanceOverride }: DebateThreadProps) {
     }
   }, [turns])
 
-  const resolveStance = (turn: DebateEntryData): PersonaStance =>
-    turn.stance ?? stanceOverride?.[turn.personaId] ?? PERSONAS[turn.personaId].stance
-
   return (
     <div className="debate-stage" role="list" ref={stageRef}>
       {showAxis ? (
@@ -107,12 +104,14 @@ export function DebateThread({ turns, stanceOverride }: DebateThreadProps) {
 
       {turns.map((turn, i) => {
         const prev = i > 0 ? turns[i - 1] : undefined
-        const stance = resolveStance(turn)
+        const stance = resolveStance(turn.personaId, turn.stance, stanceOverride)
         // Start a fresh speaker block when the speaker changes OR when the same
         // speaker crosses the axis (a per-turn concession) — so the flipped turn
         // gets its own avatar on the new side, not a dangling continuation dot.
         const isFirstOfSpeaker =
-          !prev || prev.personaId !== turn.personaId || resolveStance(prev) !== stance
+          !prev ||
+          prev.personaId !== turn.personaId ||
+          resolveStance(prev.personaId, prev.stance, stanceOverride) !== stance
         return (
           <DebateEntry
             key={i}

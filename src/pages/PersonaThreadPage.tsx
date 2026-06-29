@@ -3,8 +3,9 @@ import { Link, useParams } from 'react-router-dom'
 import { DocumentProvider } from '../components/DocumentProvider'
 import { ClaimDrawerProvider } from '../components/EvidenceDrawer'
 import { SpeechBubble } from '../components/SpeechBubble'
-import { getPersonaThread } from '../data/documents'
+import { getPersonaCrossings, getPersonaThread } from '../data/documents'
 import { PERSONAS } from '../data/personas'
+import { CONCESSION_LABEL, STANCE_LABEL } from '../data/stance'
 import type { PersonaId } from '../types/persona'
 import { NotFound } from './NotFound'
 
@@ -29,8 +30,13 @@ export function PersonaThreadPage() {
 
   const persona = PERSONAS[personaId]
   const groups = getPersonaThread(personaId)
+  const crossings = getPersonaCrossings(personaId)
   const Icon = persona.icon
   const total = groups.reduce((n, g) => n + g.entries.length, 0)
+  const usualStance =
+    persona.stance === 'neutral'
+      ? 'usually holds the center'
+      : `usually argues the ${STANCE_LABEL[persona.stance].toLowerCase()} side`
 
   return (
     <ClaimDrawerProvider>
@@ -52,6 +58,40 @@ export function PersonaThreadPage() {
         <nav className="series-nav">
           <Link to="/">← The AI Reckoning — series index</Link>
         </nav>
+
+        {crossings.length > 0 ? (
+          <section className="voice-crossings" aria-labelledby="crossings-title">
+            <h2 id="crossings-title" className="voice-crossings__title">
+              Where {persona.name} broke from type
+            </h2>
+            <p className="voice-crossings__lead">
+              {persona.name} {usualStance} —{' '}
+              {crossings.length === 1 ? 'one round' : `${crossings.length} rounds`} where the
+              position shifts with the subject.
+            </p>
+            <ul className="voice-crossings__list">
+              {crossings.map((crossing, i) => (
+                <li key={i}>
+                  <Link
+                    className="crossing"
+                    to={`/${crossing.slug}`}
+                    data-persona={persona.id}
+                    data-stance={crossing.stance}
+                  >
+                    <span className="crossing__move">
+                      <span aria-hidden="true">↔ </span>
+                      {CONCESSION_LABEL[crossing.stance]}
+                    </span>
+                    <span className="crossing__where">
+                      {crossing.partLabel} · {crossing.roundLabel}
+                    </span>
+                    <span className="crossing__excerpt">“{crossing.excerpt}”</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         {groups.length === 0 ? (
           <p className="vp-empty">This voice has not yet spoken in the series.</p>
