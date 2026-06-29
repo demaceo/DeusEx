@@ -1,11 +1,14 @@
 import { useLayoutEffect, useRef } from 'react'
 import { PERSONAS } from '../data/personas'
 import type { DebateEntry as DebateEntryData } from '../types/document'
+import type { PersonaId, PersonaStance } from '../types/persona'
 import { DebateEntry } from './DebateEntry'
 
 interface DebateThreadProps {
   /** A run of consecutive debate turns, in order (from `groupBlocks`). */
   turns: DebateEntryData[]
+  /** Per-subject stance overrides for this round (see `Section.stanceOverride`). */
+  stanceOverride?: Partial<Record<PersonaId, PersonaStance>>
 }
 
 /**
@@ -16,7 +19,7 @@ interface DebateThreadProps {
  * threads never re-render. All motion is opt-in (`data-animate`), so without JS
  * or under `prefers-reduced-motion` every turn is simply shown in place.
  */
-export function DebateThread({ turns }: DebateThreadProps) {
+export function DebateThread({ turns, stanceOverride }: DebateThreadProps) {
   const stageRef = useRef<HTMLDivElement>(null)
   const showAxis = turns.length > 1
 
@@ -106,7 +109,9 @@ export function DebateThread({ turns }: DebateThreadProps) {
           <DebateEntry
             key={i}
             entry={turn}
-            stance={turn.stance ?? PERSONAS[turn.personaId].stance}
+            stance={
+              turn.stance ?? stanceOverride?.[turn.personaId] ?? PERSONAS[turn.personaId].stance
+            }
             isFirstOfSpeaker={isFirstOfSpeaker}
             previousPersonaId={prev?.personaId}
             turnIndex={i}

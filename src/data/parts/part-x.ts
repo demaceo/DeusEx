@@ -402,6 +402,7 @@ export const partX: RoundtableDocument = {
     // ─────────────────────────────────────────────────────────
     {
       header: { roundLabel: 'Round IV', title: 'Debiasing and Its Limits' },
+      stanceOverride: { 'equity-researcher': 'neutral' },
       dividerBefore: true,
       blocks: [
         {

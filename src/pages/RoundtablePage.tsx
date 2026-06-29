@@ -102,7 +102,11 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
                 <SectionHeader header={section.header} headingId={`${id}-title`} />
                 {groupedSections[i].map((group, j) =>
                   group.kind === 'debateThread' ? (
-                    <DebateThread key={j} turns={group.turns} />
+                    <DebateThread
+                      key={j}
+                      turns={group.turns}
+                      stanceOverride={section.stanceOverride}
+                    />
                   ) : (
                     <BlockRenderer key={j} block={group.block} />
                   ),
