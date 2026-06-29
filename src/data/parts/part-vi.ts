@@ -390,6 +390,7 @@ export const partVI: RoundtableDocument = {
     // ─────────────────────────────────────────────────────────
     {
       header: { roundLabel: 'Round IV', title: 'Reasonable Precaution' },
+      stanceOverride: { accelerationist: 'neutral' },
       dividerBefore: true,
       blocks: [
         {

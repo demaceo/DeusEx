@@ -285,6 +285,7 @@ export const partV: RoundtableDocument = {
     // ─────────────────────────────────────────────────────────
     {
       header: { roundLabel: 'Round III', title: 'Model Collapse & the Polluted Well' },
+      stanceOverride: { skeptic: 'neutral' },
       dividerBefore: true,
       blocks: [
         {

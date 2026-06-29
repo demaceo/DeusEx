@@ -383,6 +383,7 @@ export const partXI: RoundtableDocument = {
     // ─────────────────────────────────────────────────────────
     {
       header: { roundLabel: 'Round IV', title: 'Closing the Loop' },
+      stanceOverride: { economist: 'optimist' },
       dividerBefore: true,
       blocks: [
         {

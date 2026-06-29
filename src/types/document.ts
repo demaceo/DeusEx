@@ -161,6 +161,14 @@ export interface Section {
   blocks: Block[]
   /** Render a "* * *" chapter divider above this section's header. */
   dividerBefore?: boolean
+  /**
+   * Subject-dependent stance: place a persona in a different camp for this round
+   * than their default {@link Persona.stance}. The series' framing varies by
+   * topic, so a normally-critical voice may argue the optimist side on a subject
+   * the writing supports it (e.g. the environmentalist on AI for climate
+   * adaptation). A per-turn {@link DebateEntry.stance} still takes precedence.
+   */
+  stanceOverride?: Partial<Record<PersonaId, PersonaStance>>
 }
 
 /** One run within a title line; `em` marks the italic/accent portion. */
