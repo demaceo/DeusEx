@@ -20,14 +20,14 @@ export const partVIII: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Earlier parts of this series treated AI as a capability — something that uses energy, makes images, runs a race. This one treats it as an industry, and asks the question economists ask of any industry: who controls the inputs, and who keeps the profits? The answer turns out to be unusually concentrated. Frontier AI rests on a tiny number of chip fabs, a handful of companies with the capital to train it, and a geography of investment dominated by two countries.',
+          'Every transformative technology, eventually, becomes a monopoly. Or close enough. Steam, oil, steel, bandwidth — each consolidated into the hands of a few before anyone had built the institutions to govern it. Intelligence is the input to every other decision now. The question this conversation asks is the one that came too late for every technology before it: who should own it, and what happens to everyone else if they do not?',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'A new voice leads this conversation: an Economist who tracks the compute, the capital, and the data, and who argues that the deciding question about AI is not what it can do but who can afford to make it do anything at all. The risk this part examines is not a rogue machine or a polluted feed. It is older and more familiar: that a general-purpose technology with the power to reshape every economy ends up owned by very few.',
+          'A new voice leads this conversation: the Economist who tracks the compute, the capital, and the data flows, and who argues that the deciding question is not what AI can do but who can afford to make it do anything at all. The risk here is not a rogue machine. It is older and more familiar: that a general-purpose technology with the power to reshape every economy ends up in the hands of the very few — and stays there.',
       },
     ],
   ],

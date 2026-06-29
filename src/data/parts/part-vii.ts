@@ -20,14 +20,14 @@ export const partVII: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Most of this series has treated AI as something done to us — a system that burns power, displaces labor, fabricates media, runs a race. This part treats it as something we reach for. Tens of millions of people now talk to AI companions: apps designed to listen, remember, flatter, and never leave. For some they are a lifeline. For others they are a habit that quietly replaces the harder work of human connection.',
+          'Loneliness has no algorithm, yet here we are. Tens of millions of people are now confiding in machines that remember everything and judge nothing, that are always available and never tired. Whether that is a gift or a warning depends entirely on what you think connection is for — and whether a perfect simulation of being heard is the same thing as actually being heard.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'Two new voices anchor the conversation. A Young Person who has talked to chatbots since high school and watched friends form real attachments to them. And a Clinician who sees, in her practice, both truths at once: that these tools genuinely help some people, and that they can deepen the isolation they appear to soothe. The question is not whether the machines work. It is what they are doing to us while they do.',
+          'Two new voices anchor the conversation. The Young Person has talked to chatbots since high school and watched friends form real attachments to them. The Clinician sees both truths at once, in the same practice, sometimes in the same session: that these tools genuinely help some people, and that they can deepen the isolation they appear to soothe. What she cannot yet tell is which patient she is looking at.',
       },
     ],
   ],

@@ -20,14 +20,14 @@ export const partV: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Every previous conversation in this series assumed a shared floor: that we could look at the same evidence and argue about what it meant. This document asks what happens when that floor itself starts to give way. Generative models can now produce text, images, audio, and video that most people cannot distinguish from the real thing — at a volume and cost that change the economics of deception entirely.',
+          'Truth has always been contested. What is new is not the lie but its cost. When fabrication is cheap and distribution is instant, the asymmetry that once protected shared reality collapses. Any story can be planted, any image forged, any voice cloned — not by governments with armies of forgers, but by anyone with a browser and an afternoon. The question is not whether you believe it. It is whether the institutions of democratic life can survive the point at which most people cannot tell.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'Two new voices join the table. A Skeptic who has covered enough technology panics to distrust every breathless claim — including the doom-laden ones. And an Artist who found her own work inside a training set, and who asks what authorship means when anything can be synthesized. The question is not only whether we can still tell true from false. It is whether, in a world of plausible fakes, truth still pays.',
+          'Two new voices join the table. The Skeptic has survived enough technology panics to distrust every breathless claim, including this one. The Artist found her own catalogue inside a training set she never agreed to, and asks what authorship means when anything can be synthesized. Together they raise the question the others have been avoiding: in a world of plausible fakes, does truth still have a price advantage?',
       },
     ],
   ],

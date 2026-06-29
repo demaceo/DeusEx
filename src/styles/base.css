@@ -130,15 +130,6 @@ a {
   line-height: 1.7;
 }
 
-.masthead .date-line {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(245, 240, 232, 0.35);
-  margin-top: 1.6rem;
-}
-
 /* horizontal padding so the centered text never collides with the edge arrows */
 .masthead-body {
   padding: 0 3.25rem;
@@ -150,16 +141,14 @@ a {
 
 /* collapsible lines animate to zero height/opacity when condensed */
 .masthead .overline,
-.masthead .subtitle,
-.masthead .date-line {
+.masthead .subtitle {
   overflow: hidden;
   transition:
     max-height 0.3s ease,
     opacity 0.25s ease,
     margin 0.3s ease;
 }
-.masthead .overline,
-.masthead .date-line {
+.masthead .overline {
   max-height: 3rem;
 }
 .masthead .subtitle {
@@ -176,8 +165,7 @@ a {
   margin-bottom: 0;
 }
 .masthead[data-collapsed='true'] .overline,
-.masthead[data-collapsed='true'] .subtitle,
-.masthead[data-collapsed='true'] .date-line {
+.masthead[data-collapsed='true'] .subtitle {
   max-height: 0;
   opacity: 0;
   margin-top: 0;
@@ -301,9 +289,6 @@ a {
   .masthead .overline {
     margin-bottom: 0.75rem;
   }
-  .masthead .date-line {
-    margin-top: 1rem;
-  }
 
   /* Single-line collapsed title — shows "The AI Reckoning:" only; <br> acts as clip point */
   .masthead[data-collapsed='true'] h1 {
@@ -324,7 +309,6 @@ a {
   .masthead h1,
   .masthead .overline,
   .masthead .subtitle,
-  .masthead .date-line,
   .masthead-nav,
   .masthead-title-link {
     transition: none;
@@ -515,23 +499,4 @@ a {
   .persona-profile {
     transition: none;
   }
-}
-
-/* ─── COMPANION BANNER ────────────────────────────────────────────── */
-.companion-banner {
-  background: var(--navy);
-  padding: 0.6rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  border-bottom: 2px solid var(--gold);
-}
-
-.companion-banner span {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(245, 240, 232, 0.75);
 }

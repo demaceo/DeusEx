@@ -20,14 +20,14 @@ export const partVI: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'There is a conversation the previous five parts kept gesturing toward and then stepping around: the possibility that advanced AI could fail not in the ordinary way — a biased model, a lost job, a polluted information stream — but catastrophically, at a scale that is hard to undo. It is the hardest topic in the field because the evidence is, by nature, about something that has not happened.',
+          'The things most worth arguing about are the ones we have no precedent for. Every institution, every intuition, every risk model we have was built on a history of surviving what came before. This conversation asks about the category of failure that sits outside that history — where the downside cannot be undone, and the evidence arrives, if it arrives at all, only once.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'Two new voices sharpen the disagreement. An Accelerationist who believes the real danger is moving too slowly — that every year of caution is a year of cures and discovery forgone. And a Safety Researcher who works on keeping advanced systems controllable, and who argues that a small chance of an irreversible mistake deserves serious weight. This is not a debate between doom and denial. It is a debate about how to act when reasonable, informed people put very different numbers on the same unknown.',
+          'Two new voices sharpen the disagreement. The Accelerationist believes the real danger is moving too slowly — that every year of caution is a year of cures and discovery forgone. The Safety Researcher keeps asking what it would look like if we were wrong. Together they illuminate the oldest question in ethics under uncertainty: when the cost of a mistake is irreversible, how much caution is enough — and who gets to decide?',
       },
     ],
   ],

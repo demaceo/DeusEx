@@ -41,6 +41,10 @@ export function PodcastPlayer({ player }: PodcastPlayerProps) {
   // Ref mirrors scrubbing state so onChange can read it synchronously (avoiding
   // the batched-update race between onPointerDown and onChange).
   const isDragging = useRef(false)
+  // Tracks the latest drag position so onPointerUp can commit the correct value
+  // instead of reading e.target.value, which may lag behind React's controlled
+  // input batching.
+  const pendingScrubRef = useRef<number>(0)
 
   if (!player.episode) return null
 
@@ -118,14 +122,15 @@ export function PodcastPlayer({ player }: PodcastPlayerProps) {
           const v = Number(e.target.value)
           if (isDragging.current) {
             // Pointer drag — update visual position only; seek commits on release.
+            pendingScrubRef.current = v
             setScrubbingAt(v)
           } else {
             // Keyboard arrow — seek immediately (no gesture to bracket).
             player.seek(v)
           }
         }}
-        onPointerUp={(e) => {
-          const v = Number((e.target as HTMLInputElement).value)
+        onPointerUp={() => {
+          const v = pendingScrubRef.current
           isDragging.current = false
           setScrubbingAt(null)
           player.scrubEnd(v)

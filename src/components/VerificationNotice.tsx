@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import { ShieldCheck } from 'lucide-react'
 import type { Claim } from '../types/content'
 import { summarizeClaimStatuses } from '../data/claimSummary'
 
@@ -5,35 +7,23 @@ interface VerificationNoticeProps {
   claims: Record<string, Claim>
 }
 
-/**
- * Document-aware verification banner. Surfaces how many of this document's
- * statistics and citations have been independently checked against primary
- * sources (verified / disputed / unverified) versus still pending. The inline
- * citation and stat-box colors reflect the same per-claim status.
- */
 export function VerificationNotice({ claims }: VerificationNoticeProps) {
   const s = summarizeClaimStatuses(claims)
-  const allChecked = s.total > 0 && s.pending === 0
 
   return (
-    <aside className="verification-notice" role="note">
-      <span className="verification-notice__badge" data-state={allChecked ? 'checked' : 'pending'}>
-        {allChecked ? 'Fact-checked' : 'Verification in progress'}
+    <div className="verification-notice" role="note" aria-label="Claim verification status">
+      <ShieldCheck size={13} className="verification-notice__icon" aria-hidden />
+      <span className="verification-notice__counts">
+        <span data-verification="verified">{s.verified} verified</span>
+        {s.disputed > 0 ? <span data-verification="disputed">{s.disputed} disputed</span> : null}
+        {s.unverified > 0 ? (
+          <span data-verification="unverified">{s.unverified} unverified</span>
+        ) : null}
+        {s.pending > 0 ? <span data-verification="pending">{s.pending} pending</span> : null}
       </span>
-      <div className="verification-notice__body">
-        <p>
-          {allChecked
-            ? `This document’s ${s.total} statistics and citations have been independently checked against primary sources.`
-            : 'This document’s statistics and citations are still being independently checked against primary sources, and should not be treated as confirmed until they are.'}{' '}
-          Hover any citation for its status; verified sources link out in the list below.
-        </p>
-        <ul className="verification-notice__counts">
-          <li data-verification="verified">{s.verified} verified</li>
-          <li data-verification="disputed">{s.disputed} disputed</li>
-          <li data-verification="unverified">{s.unverified} unverified</li>
-          {s.pending > 0 ? <li data-verification="pending">{s.pending} pending</li> : null}
-        </ul>
-      </div>
-    </aside>
+      <Link to="/verification" className="verification-notice__link">
+        View all →
+      </Link>
+    </div>
   )
 }

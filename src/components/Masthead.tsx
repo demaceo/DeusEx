@@ -62,7 +62,6 @@ export function Masthead({ masthead, prev, next, audio }: MastheadProps) {
           })}
         </h1>
         <p className="subtitle">{masthead.subtitle}</p>
-        <p className="date-line">{masthead.dateLine}</p>
         {audio && audio.hasEpisode ? (
           <button
             type="button"

@@ -20,14 +20,14 @@ export const partXI: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Intelligence, in the form we have built it, is a physical thing. Before a model can be trained it must be manufactured, and manufacturing reaches into the earth: cobalt and lithium for the batteries and power systems, rare earths for the magnets, silicon and copper and water for the chips and the cooling. Part I counted the electricity and the water at the data center. This part follows the supply chain upstream, to the places where the material itself is torn out of the ground — and downstream, to where the hardware goes to die.',
+          'Before the electricity, before the server, before the chip — there is the mine. There is the refinery. There is the hand that does the separating, and the lung that fills with the dust. The intelligence that arrives cleanly through a browser was assembled, over decades, from the earth up. This conversation follows the wire back to where it starts, and asks what was left behind there.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'A new voice anchors this conversation: a Land Defender who lives where the minerals come from, and who speaks first-hand for the communities whose water, soil, and labor are consumed to build the machines — and who see the least of what those machines produce. The question this part asks is the oldest one in environmental justice, in a new form: who bears the physical cost of a technology, and who gets the benefit?',
+          'A new voice anchors this conversation: the Land Defender, who lives where the minerals come from and speaks first-hand for the communities whose water, soil, and labor are consumed to build the machines — and who see the least of what those machines produce. The question is the oldest one in the language of environmental justice, appearing here in a new form: who bears the cost, and who gets to use the thing it built?',
       },
     ],
   ],

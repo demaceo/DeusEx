@@ -20,14 +20,14 @@ export const partX: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'An algorithm has no opinions. That is exactly the problem. It finds patterns in the data it is given, and the data we have is a ledger of human history — who got hired, who got loans, who got arrested, whose face the cameras were built to see. Trained on that record, a model does not invent prejudice. It learns ours, launders it through the appearance of mathematical neutrality, and applies it at a scale and speed no biased human ever could.',
+          'A mirror shows the room. That is all it does — and that is the problem. The data these systems were trained on is a faithful record of a world already sorted by race, gender, class, and history. The model did not introduce the bias. It learned it, optimized for it, and now delivers it at a scale and speed that exceeds anything a biased human could manage alone. The question is what we do with a mirror that faithfully reflects a past we said we were trying to leave behind.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'A new voice leads this conversation: an Equity Researcher who audits these systems for the discrimination they encode against people of color and other marginalized groups. The debate around her is not whether bias exists — that is measured and documented — but where it comes from, whether it can be engineered away, and what it means that the people most harmed are rarely the ones in the room when the system is built.',
+          'A new voice leads this conversation: the Equity Researcher who audits these systems for the discrimination they encode and the communities they leave behind. The debate around her is not whether bias exists — that is measured and documented. It is whether bias is a bug that can be patched, or a feature of any system trained on a world that was never fair — and who gets to decide which it is.',
       },
     ],
   ],

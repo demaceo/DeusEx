@@ -20,14 +20,14 @@ export const partIX: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Generative models learned to make culture the only way anyone could teach them: by ingesting culture — billions of images, songs, and sentences made by people. Most of those people did not consent, were not paid, and in many cases did not know it had happened. Now the same models produce work in their styles, at a scale and price no human can match. This part asks what that does to the value of human creativity, and what, if anything, is owed for the material it was built on.',
+          'Every great artistic tradition has been built on borrowing. Influence, homage, style — these have always been the vocabulary of originality. What is new is not the borrowing but the scale: billions of human works ingested without consent, and a machine that can produce infinite variations of them for free. Whether that is a natural extension of how culture has always worked, or a theft of what makes culture worth making, is the argument this conversation cannot avoid.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'The Artist who joined the table back in Part V leads this one. She found her own catalogue inside a training set she never agreed to, and she speaks for the illustrators, writers, musicians, and translators whose work became raw material. Around her the debate is genuinely hard: a Tech Optimist who sees transformation, a Policy Realist tracing a copyright system improvising in real time, and an Economist asking what a market for human-made work even looks like now.',
+          'The Artist leads this one. She found her own catalogue inside a training set she never agreed to, and she speaks for the illustrators, writers, musicians, and translators whose work became raw material. Around her the debate is genuinely hard: the Tech Optimist sees transformation, the Policy Realist is watching a copyright system improvise in real time, and the Economist asks the question no one wants to answer — what does a market for human-made work look like now?',
       },
     ],
   ],
