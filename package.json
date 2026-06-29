@@ -13,6 +13,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "preview": "vite preview",
+    "podcast:generate": "node --import tsx scripts/generate-podcast.ts",
     "prepare": "husky"
   },
   "dependencies": {
@@ -23,6 +24,7 @@
     "recharts": "^3.9.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.69.0",
     "@babel/core": "^7.29.0",
     "@eslint/js": "^10.0.1",
     "@rolldown/plugin-babel": "^0.2.3",
@@ -35,6 +37,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "babel-plugin-react-compiler": "^1.0.0",
+    "dotenv": "^17.0.0",
     "eslint": "^10.3.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-hooks": "^7.1.1",
@@ -44,6 +47,7 @@
     "jsdom": "^29.1.1",
     "lint-staged": "^17.0.8",
     "prettier": "^3.8.4",
+    "tsx": "^4.20.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.12",

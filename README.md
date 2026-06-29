@@ -1,23 +1,42 @@
 # The AI Reckoning
 
-A small React + TypeScript site that presents **The AI Reckoning** — a three-part roundtable
-series in which five recurring voices (Tech Optimist, Environmentalist, Labor Advocate, Policy
-Realist, and an Everyday Person) debate artificial intelligence:
+A small React + TypeScript site that presents **The AI Reckoning** — a roundtable series in which
+recurring voices (Tech Optimist, Environmentalist, Labor Advocate, Policy Realist, an Everyday
+Person, a Systems Humanist, a Skeptic, an Artist, an Accelerationist, a Safety Researcher, a Young
+Person, a Clinician, an Economist, an Equity Researcher, and a Land Defender) debate artificial
+intelligence:
 
 1. **Part I — A Roundtable on Real Costs** (`/real-costs`) — energy, water, labor, regulation
 2. **Part II — What's Actually Being Done** (`/whats-being-done`) — responses already underway
 3. **Part III — What It's Actually Getting Right** (`/getting-right`) — documented positive outcomes
+4. **Part IV — The Race We're In** (`/the-race`) — incentives, coordination, governance
+5. **Part V — The Reality Problem** (`/the-reality-problem`) — truth, synthetic media, trust
+6. **Part VI — The Tail Risk** (`/the-tail-risk`) — safety, alignment, existential stakes
+7. **Part VII — Machines We Talk To** (`/machines-we-talk-to`) — AI companions, loneliness, kids
+8. **Part VIII — Whose Intelligence?** (`/whose-intelligence`) — power, compute, capital, geopolitics
+9. **Part IX — The Creativity Question** (`/the-creativity-question`) — copyright, culture, authorship
+10. **Part X — Pattern and Prejudice** (`/pattern-and-prejudice`) — algorithmic racial bias, fairness
+11. **Part XI — The Ground It Comes From** (`/the-ground-it-comes-from`) — minerals, water, e-waste
+
+## Reading features
+
+- **Evidence drawer** — click any statistic or citation to open a panel with its source, verified
+  URL, reviewer note, and last-checked date (the full `Claim` behind the figure).
+- **Evidence ledger** (`/verification`) — a series-wide verification dashboard tallying how many of
+  each document's claims are verified, with a status filter and links to primary sources.
+- **Follow a voice** (`/voices/:personaId`) — one persona's complete arc collected from every
+  debate bubble they speak across the series.
 
 ## How it's built (DRY by design)
 
-The three documents share one design system, so the site is built from **content-as-data + one
-shared component kit**, not three hand-maintained pages:
+All documents share one design system, so the site is built from **content-as-data + one
+shared component kit**, not hand-maintained pages:
 
 - `src/types/` — the content model (`RoundtableDocument`, `Block`, `Claim`, `InlineNode`, …).
 - `src/data/parts/part-*.ts` — each document as typed data; `src/data/documents.ts` is the slug
   registry.
 - `src/components/` — one set of presentational components (Masthead, DebateEntry, StatGrid,
-  Citation, …) rendered for all three documents.
+  Citation, …) rendered for every document.
 - `src/styles/` — `tokens.css` is the single source of truth for the design system.
 
 ## Verification of statistics

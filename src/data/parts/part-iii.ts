@@ -33,6 +33,7 @@ export const partIII: RoundtableDocument = {
     // ─────────────────────────────────────────────────────────
     {
       header: { roundLabel: 'Round I', title: 'Biology & Scientific Discovery' },
+      stanceOverride: { environmentalist: 'optimist', 'labor-advocate': 'neutral' },
       blocks: [
         {
           type: 'statGrid',
@@ -274,6 +275,7 @@ export const partIII: RoundtableDocument = {
         roundLabel: 'Round II',
         title: 'Medicine, Health & Early Detection',
       },
+      stanceOverride: { environmentalist: 'optimist', 'labor-advocate': 'neutral' },
       dividerBefore: true,
       blocks: [
         {
@@ -470,6 +472,7 @@ export const partIII: RoundtableDocument = {
         roundLabel: 'Round III',
         title: 'Climate, Weather & Disaster Preparedness',
       },
+      stanceOverride: { environmentalist: 'optimist', 'labor-advocate': 'neutral' },
       dividerBefore: true,
       blocks: [
         {
@@ -676,6 +679,7 @@ export const partIII: RoundtableDocument = {
         roundLabel: 'Round IV',
         title: 'Education, Accessibility & Daily Life',
       },
+      stanceOverride: { environmentalist: 'optimist', 'labor-advocate': 'neutral' },
       dividerBefore: true,
       blocks: [
         {

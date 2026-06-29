@@ -21,7 +21,7 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('RoundtablePage renders $id',
 })
 
 describe('verification notice reflects claim statuses', () => {
-  // All three documents have now been fact-checked (no pending claims).
+  // Every document has been fact-checked (no pending claims).
   describe.each(DOCUMENTS.map((entry) => entry.doc))('document $id is fully checked', (doc) => {
     it('shows as fact-checked with a verified count', () => {
       const summary = summarizeClaimStatuses(doc.claims)

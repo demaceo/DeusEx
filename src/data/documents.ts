@@ -6,11 +6,27 @@
  * future verification pass.
  */
 
-import type { Block, DocumentId, RoundtableDocument } from '../types/document'
+import type {
+  Block,
+  DebateEntry,
+  DocumentId,
+  RoundtableDocument,
+  SpeechBubble,
+} from '../types/document'
+import type { PersonaId, PersonaStance } from '../types/persona'
+import { PERSONA_ORDER, PERSONAS } from './personas'
+import { resolveStance } from './stance'
 import { partI } from './parts/part-i'
 import { partII } from './parts/part-ii'
 import { partIII } from './parts/part-iii'
 import { partIV } from './parts/part-iv'
+import { partV } from './parts/part-v'
+import { partVI } from './parts/part-vi'
+import { partVII } from './parts/part-vii'
+import { partVIII } from './parts/part-viii'
+import { partIX } from './parts/part-ix'
+import { partX } from './parts/part-x'
+import { partXI } from './parts/part-xi'
 
 export interface DocumentEntry {
   doc: RoundtableDocument
@@ -47,6 +63,48 @@ export const DOCUMENTS: DocumentEntry[] = [
     partLabel: 'Part IV',
     navTitle: "The Race We're In",
     blurb: partIV.masthead.subtitle,
+  },
+  {
+    doc: partV,
+    partLabel: 'Part V',
+    navTitle: 'The Reality Problem',
+    blurb: partV.masthead.subtitle,
+  },
+  {
+    doc: partVI,
+    partLabel: 'Part VI',
+    navTitle: 'The Tail Risk',
+    blurb: partVI.masthead.subtitle,
+  },
+  {
+    doc: partVII,
+    partLabel: 'Part VII',
+    navTitle: 'Machines We Talk To',
+    blurb: partVII.masthead.subtitle,
+  },
+  {
+    doc: partVIII,
+    partLabel: 'Part VIII',
+    navTitle: 'Whose Intelligence?',
+    blurb: partVIII.masthead.subtitle,
+  },
+  {
+    doc: partIX,
+    partLabel: 'Part IX',
+    navTitle: 'The Creativity Question',
+    blurb: partIX.masthead.subtitle,
+  },
+  {
+    doc: partX,
+    partLabel: 'Part X',
+    navTitle: 'Pattern and Prejudice',
+    blurb: partX.masthead.subtitle,
+  },
+  {
+    doc: partXI,
+    partLabel: 'Part XI',
+    navTitle: 'The Ground It Comes From',
+    blurb: partXI.masthead.subtitle,
   },
 ]
 
@@ -150,6 +208,144 @@ export function assertReferentialIntegrity(doc: RoundtableDocument): void {
       )
     }
   }
+}
+
+/**
+ * The personas that actually speak in a document, in `PERSONA_ORDER`. Lets the
+ * personas bar show only the voices present in the piece the reader is on, rather
+ * than the full series cast.
+ */
+export function personasInDocument(doc: RoundtableDocument): PersonaId[] {
+  const present = new Set<PersonaId>()
+  for (const section of doc.sections) {
+    for (const block of section.blocks) {
+      if (block.type === 'debate') present.add(block.data.personaId)
+    }
+  }
+  return PERSONA_ORDER.filter((id) => present.has(id))
+}
+
+/** One persona's contributions within a single document, in render order. */
+export interface PersonaThreadEntry {
+  /** e.g. "Round II" or "Round II · Water Usage". */
+  roundLabel: string
+  bubble: SpeechBubble
+}
+
+/** All of a persona's debate bubbles in one document, with the document's context. */
+export interface PersonaThreadGroup {
+  doc: RoundtableDocument
+  partLabel: string
+  navTitle: string
+  entries: PersonaThreadEntry[]
+}
+
+/**
+ * Collect every `debate` bubble a persona speaks across the whole series, grouped
+ * by document in series order. Powers the `/voices/:personaId` thread view — a
+ * pure projection over {@link DOCUMENTS}, so it stays in sync as parts are added.
+ * Each group carries its source document so claims resolve against the right registry.
+ */
+export function getPersonaThread(personaId: PersonaId): PersonaThreadGroup[] {
+  const groups: PersonaThreadGroup[] = []
+  for (const entry of DOCUMENTS) {
+    const entries: PersonaThreadEntry[] = []
+    for (const section of entry.doc.sections) {
+      for (const block of section.blocks) {
+        if (block.type === 'debate' && block.data.personaId === personaId) {
+          const { roundLabel, title } = section.header
+          entries.push({
+            roundLabel: title ? `${roundLabel} · ${title}` : roundLabel,
+            bubble: block.data.bubble,
+          })
+        }
+      }
+    }
+    if (entries.length > 0) {
+      groups.push({
+        doc: entry.doc,
+        partLabel: entry.partLabel,
+        navTitle: entry.navTitle,
+        entries,
+      })
+    }
+  }
+  return groups
+}
+
+/** First-paragraph plain text of a bubble, trimmed to a short preview. */
+function excerptFromBubble(bubble: SpeechBubble, max = 150): string {
+  const first = bubble.paragraphs[0] ?? []
+  let text = ''
+  for (const node of first) if (node.type === 'text') text += node.value
+  text = text.trim()
+  return text.length > max ? `${text.slice(0, max).trimEnd()}…` : text
+}
+
+/** A round in which a persona argued off their default camp. */
+export interface PersonaCrossing {
+  slug: string
+  partLabel: string
+  navTitle: string
+  /** e.g. "Round II · Water Usage". */
+  roundLabel: string
+  /** The camp argued here (differs from the persona's default). */
+  stance: PersonaStance
+  /** Short preview of the off-camp turn. */
+  excerpt: string
+}
+
+/**
+ * Every round where a persona "broke from type" — argued a stance different from
+ * their default {@link Persona.stance} — across the whole series, in order. One
+ * entry per round (a round with several off-camp turns surfaces once, from the
+ * first such turn). Powers the "where this voice broke from type" view; a pure
+ * projection over {@link DOCUMENTS}, sharing {@link resolveStance} with the stage.
+ */
+export function getPersonaCrossings(personaId: PersonaId): PersonaCrossing[] {
+  const out: PersonaCrossing[] = []
+  const defaultStance = PERSONAS[personaId].stance
+  for (const entry of DOCUMENTS) {
+    for (const section of entry.doc.sections) {
+      let crossing: DebateEntry | undefined
+      for (const block of section.blocks) {
+        if (block.type !== 'debate' || block.data.personaId !== personaId) continue
+        if (resolveStance(personaId, block.data.stance, section.stanceOverride) !== defaultStance) {
+          crossing = block.data
+          break
+        }
+      }
+      if (!crossing) continue
+      const { roundLabel, title } = section.header
+      out.push({
+        slug: entry.doc.slug,
+        partLabel: entry.partLabel,
+        navTitle: entry.navTitle,
+        roundLabel: title ? `${roundLabel} · ${title}` : roundLabel,
+        stance: resolveStance(personaId, crossing.stance, section.stanceOverride),
+        excerpt: excerptFromBubble(crossing.bubble),
+      })
+    }
+  }
+  return out
+}
+
+/** A persona paired with their crossings — the unit of the series-wide overview. */
+export interface PersonaCrossings {
+  personaId: PersonaId
+  crossings: PersonaCrossing[]
+}
+
+/**
+ * Every persona's crossings across the series, in `PERSONA_ORDER` (entries with
+ * no crossings are kept, so the overview can list who "held their line"). Powers
+ * the `/voices` series-wide map.
+ */
+export function getAllCrossings(): PersonaCrossings[] {
+  return PERSONA_ORDER.map((personaId) => ({
+    personaId,
+    crossings: getPersonaCrossings(personaId),
+  }))
 }
 
 if (import.meta.env.DEV) {

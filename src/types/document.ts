@@ -5,7 +5,7 @@
  */
 
 import type { Claim, Paragraph, Source } from './content'
-import type { PersonaColor, PersonaId } from './persona'
+import type { PersonaColor, PersonaId, PersonaStance } from './persona'
 
 /** Stat-box color variants. Part I uses the base (no variant); II/III use these. */
 export type StatVariant = 'positive' | 'teal' | 'blue' | 'neutral' | 'caution'
@@ -35,6 +35,12 @@ export interface SpeechBubble {
 export interface DebateEntry {
   personaId: PersonaId
   bubble: SpeechBubble
+  /**
+   * Overrides the speaker's default {@link Persona.stance} for this one turn,
+   * for the rare case where a persona argues the other side. Optional — turns
+   * fall back to the persona's stance when omitted.
+   */
+  stance?: PersonaStance
 }
 
 export interface Pullquote {
@@ -155,6 +161,14 @@ export interface Section {
   blocks: Block[]
   /** Render a "* * *" chapter divider above this section's header. */
   dividerBefore?: boolean
+  /**
+   * Subject-dependent stance: place a persona in a different camp for this round
+   * than their default {@link Persona.stance}. The series' framing varies by
+   * topic, so a normally-critical voice may argue the optimist side on a subject
+   * the writing supports it (e.g. the environmentalist on AI for climate
+   * adaptation). A per-turn {@link DebateEntry.stance} still takes precedence.
+   */
+  stanceOverride?: Partial<Record<PersonaId, PersonaStance>>
 }
 
 /** One run within a title line; `em` marks the italic/accent portion. */
@@ -168,7 +182,7 @@ export interface Masthead {
   /**
    * The headline as ordered lines of spans. Each inner array is one line (a
    * source `<br>`); spans with `em: true` render in the accent italic. This keeps
-   * all three documents' differing title layouts faithful with one model.
+   * every document's differing title layout faithful with one model.
    */
   titleLines: TitleSpan[][]
   subtitle: string
@@ -181,7 +195,18 @@ export interface CompanionBanner {
   text: string
 }
 
-export type DocumentId = 'part-i' | 'part-ii' | 'part-iii' | 'part-iv'
+export type DocumentId =
+  | 'part-i'
+  | 'part-ii'
+  | 'part-iii'
+  | 'part-iv'
+  | 'part-v'
+  | 'part-vi'
+  | 'part-vii'
+  | 'part-viii'
+  | 'part-ix'
+  | 'part-x'
+  | 'part-xi'
 
 export interface RoundtableDocument {
   id: DocumentId

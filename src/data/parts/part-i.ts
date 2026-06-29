@@ -653,6 +653,7 @@ export const partI: RoundtableDocument = {
     },
     {
       header: { roundLabel: 'Round IV', title: 'Power, Accountability & Regulation' },
+      stanceOverride: { 'tech-optimist': 'neutral' },
       dividerBefore: true,
       blocks: [
         {

@@ -10,6 +10,11 @@
 
 html {
   scroll-behavior: smooth;
+  /* The sticky masthead changes its in-flow height as it condenses on scroll.
+     Scroll-anchoring would compensate by nudging scrollY back, which fights the
+     collapse threshold and makes the header stutter/flicker. Opt out so the
+     header collapses once, cleanly, as the user scrolls. */
+  overflow-anchor: none;
 }
 
 body {
@@ -91,6 +96,29 @@ a {
 .masthead h1 em {
   font-style: italic;
   color: var(--masthead-accent, var(--accent));
+}
+
+/* Title links home. Styling stays subtle — inherits the display type, no default
+   underline; on hover a thin accent underline rides well below the baseline. */
+.masthead-title-link {
+  color: inherit;
+  /* Underline always present but transparent, so the accent can fade in on hover
+     without the text reflowing. */
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s var(--ease);
+}
+.masthead-title-link:hover {
+  text-decoration-color: var(--masthead-accent, var(--accent));
+}
+.masthead-title-link:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-decoration-color: var(--masthead-accent, var(--accent));
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px var(--masthead-accent, var(--accent));
 }
 
 .masthead .subtitle {
@@ -190,6 +218,57 @@ a {
   box-shadow: 0 0 0 2px var(--masthead-accent, var(--accent));
 }
 
+/* ── "Listen to this Roundtable" pill ── */
+.masthead-listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  padding: 0.45rem 0.9rem 0.45rem 0.55rem;
+  border: 1px solid rgba(245, 240, 232, 0.25);
+  border-radius: 999px;
+  color: rgba(245, 240, 232, 0.85);
+  background: rgba(255, 255, 255, 0.04);
+  font: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    max-height 0.3s ease,
+    opacity 0.25s ease,
+    margin 0.3s ease;
+  max-height: 3rem;
+}
+.masthead-listen:hover,
+.masthead-listen:focus-visible {
+  color: var(--masthead-accent, var(--accent));
+  border-color: var(--masthead-accent, var(--accent));
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+.masthead-listen__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--masthead-accent, var(--accent));
+  color: #16110c;
+}
+.masthead[data-collapsed='true'] .masthead-listen {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-width: 0;
+}
+
 @media (max-width: 640px) {
   .masthead-body {
     padding: 0 2.75rem;
@@ -204,6 +283,40 @@ a {
   .masthead-nav--next {
     right: 0.35rem;
   }
+
+  /* Tighter expanded-state padding — reduces header from ~55% to ~35% of screen */
+  .masthead {
+    padding-top: 1.75rem;
+    padding-bottom: 1.5rem;
+  }
+
+  /* Modestly smaller h1 + tighter metadata spacing */
+  .masthead h1 {
+    font-size: clamp(1.75rem, 7.5vw, 2.5rem);
+    margin-bottom: 0.4rem;
+  }
+  .masthead .subtitle {
+    font-size: 0.9rem;
+  }
+  .masthead .overline {
+    margin-bottom: 0.75rem;
+  }
+  .masthead .date-line {
+    margin-top: 1rem;
+  }
+
+  /* Single-line collapsed title — shows "The AI Reckoning:" only; <br> acts as clip point */
+  .masthead[data-collapsed='true'] h1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Hide in-header podcast pill — idle bar at bottom handles discovery on mobile */
+  .masthead-listen {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -212,7 +325,8 @@ a {
   .masthead .overline,
   .masthead .subtitle,
   .masthead .date-line,
-  .masthead-nav {
+  .masthead-nav,
+  .masthead-title-link {
     transition: none;
   }
 }
@@ -222,10 +336,34 @@ a {
   background: var(--ink);
   padding: 1.1rem 2rem 1.25rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 3px solid var(--navy);
+}
+
+.personas-bar__label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.5);
+}
+
+.personas-bar__tags {
+  display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
   justify-content: center;
-  border-bottom: 3px solid var(--navy);
+}
+
+@media (max-width: 380px) {
+  .personas-bar__tags {
+    gap: 0.4rem;
+  }
+  .persona-tag {
+    padding: 0.28rem 0.6rem;
+  }
 }
 
 .persona-tag-wrap {

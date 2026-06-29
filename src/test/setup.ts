@@ -13,8 +13,25 @@ if (!('ResizeObserver' in globalThis)) {
   }
 }
 
+// jsdom lacks IntersectionObserver, used by the round navigator's active-section hook.
+if (!('IntersectionObserver' in globalThis)) {
+  globalThis.IntersectionObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+    takeRecords() {
+      return []
+    }
+    root = null
+    rootMargin = ''
+    thresholds = []
+  } as unknown as typeof IntersectionObserver
+}
+
 // jsdom doesn't implement scrollTo; stub it so scroll-to-top effects are no-ops.
 window.scrollTo = (() => {}) as typeof window.scrollTo
+// jsdom doesn't implement Element.scrollIntoView; stub it for the round navigator.
+Element.prototype.scrollIntoView = () => {}
 
 // Tests run with globals: false, so register cleanup manually.
 afterEach(() => {
