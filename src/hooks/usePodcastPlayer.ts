@@ -72,6 +72,12 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
       cancelled = true
       audioRef.current?.pause()
       audioRef.current = null
+      // Immediately hide the player bar when the document changes so it
+      // doesn't linger while the next episode manifest fetch is in-flight.
+      // (The full state reset follows after getEpisode resolves above.)
+      setIsActive(false)
+      setIsPlaying(false)
+      setEpisode(null)
     }
   }, [documentId])
 
@@ -101,7 +107,12 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
     setIsActive(true)
     if (audio.paused) {
       if (!cues && episode) getTranscript(episode).then((t) => setCues(t?.cues ?? []))
-      void audio.play()
+      audio.play().catch(() => {
+        // Play was rejected (e.g. browser autoplay policy). If the audio still
+        // hasn't started, retract the active state so the bar doesn't show
+        // as engaged when nothing is actually playing.
+        if (audio.paused) setIsActive(false)
+      })
     } else {
       audio.pause()
     }
