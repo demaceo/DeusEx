@@ -459,6 +459,30 @@
   font-weight: 600;
 }
 
+/* Badge marking a turn where the speaker argues off their usual camp. */
+.debate-concession {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--persona-color, var(--accent));
+  background: var(--panel);
+  background: color-mix(in srgb, var(--persona-color, var(--accent)) 12%, transparent);
+  border: 1px solid var(--rule);
+  border-color: color-mix(in srgb, var(--persona-color, var(--accent)) 32%, transparent);
+  border-radius: 999px;
+  padding: 0.14rem 0.55rem;
+  margin: 0 0 0.5rem;
+}
+.debate-entry[data-stance='critic'] .debate-concession {
+  margin-left: auto;
+}
+
 /* Generic visually-hidden utility (speaker attribution on continuation turns). */
 .sr-only {
   position: absolute;
@@ -589,6 +613,9 @@
   }
   .debate-entry[data-stance='critic'] .debate-reply {
     text-align: left;
+  }
+  .debate-entry[data-stance='critic'] .debate-concession {
+    margin-left: 0;
   }
 
   /* Position no longer conveys the camp once stacked, so show the chip. */

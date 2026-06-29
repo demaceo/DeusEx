@@ -22,6 +22,13 @@ const STANCE_LABEL: Record<PersonaStance, string> = {
   neutral: 'Neutral',
 }
 
+/** Badge shown when a turn argues off the speaker's default camp. */
+const CONCESSION_LABEL: Record<PersonaStance, string> = {
+  optimist: 'Takes the optimistic side',
+  critic: 'Takes the critical side',
+  neutral: 'Finds common ground',
+}
+
 /**
  * One debate turn, positioned on the stage by its {@link PersonaStance}. Renders
  * the speaker's avatar, name and role only on the first turn of a run; later
@@ -39,6 +46,8 @@ export function DebateEntry({
   const persona = PERSONAS[entry.personaId]
   const Icon = persona.icon
   const resolvedStance = stance ?? persona.stance
+  // This turn argues off the speaker's usual camp — flag it once, on entry.
+  const isConcession = isFirstOfSpeaker && resolvedStance !== persona.stance
   const repliedTo =
     previousPersonaId && previousPersonaId !== entry.personaId
       ? PERSONAS[previousPersonaId]
@@ -75,6 +84,13 @@ export function DebateEntry({
         ) : (
           <span className="sr-only">{persona.name} continues:</span>
         )}
+
+        {isConcession ? (
+          <p className="debate-concession">
+            <span aria-hidden="true">↔ </span>
+            {CONCESSION_LABEL[resolvedStance]}
+          </p>
+        ) : null}
 
         {repliedTo ? (
           <p className="debate-reply">
