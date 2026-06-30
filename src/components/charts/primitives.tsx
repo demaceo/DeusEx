@@ -94,6 +94,9 @@ export function ReferenceMarker({
           x={x1}
           y={yy - 5}
           textAnchor="end"
+          stroke={CHART_COLORS.white}
+          strokeWidth={3}
+          paintOrder="stroke"
           style={{ fontFamily: CHART_FONT.mono, fontSize: 10, fill: color, fontWeight: 600 }}
         >
           {label} {fmt(value, unit)}

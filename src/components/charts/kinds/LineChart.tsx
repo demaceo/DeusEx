@@ -73,9 +73,9 @@ export function LineChart({ chart, width, height }: KindProps) {
                 opacity={0.6}
               />
               <text
-                x={(px(data[firstProjected - 1]) + innerW) / 2}
+                x={px(data[firstProjected - 1]) + 8}
                 y={12}
-                textAnchor="middle"
+                textAnchor="start"
                 style={{ ...AXIS_TEXT, fontSize: 9, letterSpacing: '0.1em' }}
               >
                 PROJECTED
@@ -162,6 +162,9 @@ export function LineChart({ chart, width, height }: KindProps) {
                   x={px(d)}
                   y={py(d) + 32}
                   textAnchor="middle"
+                  stroke={CHART_COLORS.white}
+                  strokeWidth={3}
+                  paintOrder="stroke"
                   style={{ ...AXIS_TEXT, fill: CHART_COLORS.ink, fontWeight: 600 }}
                 >
                   {a.text}
