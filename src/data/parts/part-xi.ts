@@ -151,7 +151,7 @@ export const partXI: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'donut',
+            kind: 'waffle',
             labelTop: 'Cobalt · USGS',
             title: 'Where the Cobalt Comes From',
             subtitle:
@@ -159,7 +159,7 @@ export const partXI: RoundtableDocument = {
             source: 'US Geological Survey — Mineral Commodity Summaries (Cobalt)',
             claimIds: ['c-xi-cobalt'],
             ariaLabel:
-              'Donut chart showing the Democratic Republic of the Congo supplying about 70 percent of mined cobalt and the rest of the world about 30 percent',
+              'Grid of 100 cells showing the Democratic Republic of the Congo supplying about 70 of every 100 units of mined cobalt and the rest of the world about 30',
             unit: '%',
             data: [
               { label: 'DR Congo', value: 70, variant: 'accent' },
@@ -467,6 +467,8 @@ export const partXI: RoundtableDocument = {
           type: 'chart',
           data: {
             kind: 'line',
+            area: true,
+            band: true,
             labelTop: 'E-Waste · Trajectory',
             title: 'The Pile Keeps Growing',
             subtitle:
@@ -477,11 +479,12 @@ export const partXI: RoundtableDocument = {
               'Line chart showing global e-waste rising from about 44 million tonnes in 2014 to 62 million in 2022 and a projected 82 million tonnes by 2030',
             unit: 'Mt',
             variant: 'navy',
+            annotations: [{ at: '2022', text: 'Only ~22% recycled' }],
             data: [
               { label: '2014', value: 44 },
               { label: '2019', value: 54 },
               { label: '2022', value: 62 },
-              { label: '2030', value: 82 },
+              { label: '2030', value: 82, projected: true },
             ],
           },
         },

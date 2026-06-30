@@ -745,20 +745,19 @@ export const partIII: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'bar',
+            kind: 'bullet',
             variant: 'optimist',
+            target: 3.5,
+            targetLabel: 'Active-learning class',
             labelTop: 'Education · Harvard RCT (n = 194)',
             title: 'Students learned more with an AI tutor',
             subtitle:
-              'Median physics post-test score: AI tutor vs. in-class active learning. Effect size 0.73–1.3 SD; p < 10⁻⁸.',
+              'Median physics post-test score: AI tutor vs. the in-class active-learning baseline. Effect size 0.73–1.3 SD; p < 10⁻⁸.',
             claimIds: ['s-iii-harvard-effect-size', 'c-iii-harvard-rct'],
             ariaLabel:
-              'Bar chart: in a Harvard randomized controlled trial of 194 students, the AI-tutored group scored a median of 4.5 on the post-test versus 3.5 for the active-learning classroom group.',
+              'Bullet chart: in a Harvard randomized controlled trial of 194 students, the AI-tutored group scored a median of 4.5 on the post-test, above the active-learning classroom baseline of 3.5.',
             source: 'Kestin et al., Scientific Reports, June 2025.',
-            data: [
-              { label: 'AI tutor', value: 4.5, variant: 'optimist' },
-              { label: 'Active-learning class', value: 3.5, variant: 'navy' },
-            ],
+            data: [{ label: 'AI tutor', value: 4.5, variant: 'optimist' }],
           },
         },
         {

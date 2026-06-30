@@ -95,6 +95,24 @@ export interface ChartDatum {
   value: number
   /** Per-datum color override (e.g. one highlighted bar). Falls back to chart default. */
   variant?: ChartVariant
+  /** Marks this point as a projection: dashed line, hollow dot, faded/banded fill. */
+  projected?: boolean
+}
+
+/**
+ * One plotted country/region on a {@link ChartSpec} world map. The centroid is
+ * looked up by `iso` (numeric ISO 3166-1, matching the basemap), never stored here.
+ * Carries either a single `value` (static map) or per-year `values` (time scrubber).
+ */
+export interface WorldMapDatum {
+  /** Display label for the tooltip + accessible table, e.g. "United States". */
+  label: string
+  /** Numeric ISO 3166-1 code as a string ("840") — joins the centroid table. */
+  iso: string
+  /** Single-frame value. Used when the map has no `years`. */
+  value?: number
+  /** Per-year values keyed by year label, e.g. `{ "2025": 5381 }`. Used with `years`. */
+  values?: Record<string, number>
 }
 
 /** One series in a {@link StackedBarChartSpec}, keyed into each row's data. */
@@ -124,6 +142,16 @@ export interface ChartBase {
   unit?: string
   /** Default series/bar color when a datum sets no `variant`. Defaults to accent. */
   variant?: ChartVariant
+  /**
+   * Wide-screen layout. `split` floats the legend/aside into a side rail next to
+   * the chart canvas; `inline` stacks it below. Defaults per-kind (donut/stacked
+   * default to `split`, others to `inline`).
+   */
+  layout?: 'inline' | 'split'
+  /** A baseline/threshold drawn as a dashed reference line (bar/line/stackedBar). */
+  reference?: { value: number; label?: string; variant?: ChartVariant }
+  /** Keyed point callouts (line/bar); `at` matches a datum `label`. */
+  annotations?: Array<{ at: string; text: string }>
 }
 
 /**
@@ -132,13 +160,67 @@ export interface ChartBase {
  */
 export type ChartSpec =
   | (ChartBase & { kind: 'bar'; orientation?: 'vertical' | 'horizontal'; data: ChartDatum[] })
-  | (ChartBase & { kind: 'line'; area?: boolean; data: ChartDatum[] })
-  | (ChartBase & { kind: 'donut'; data: ChartDatum[] })
+  | (ChartBase & { kind: 'line'; area?: boolean; band?: boolean; data: ChartDatum[] })
+  | (ChartBase & {
+      kind: 'donut'
+      data: ChartDatum[]
+      /** Which segment's figure fills the gauge center. Defaults to the largest. */
+      centerIndex?: number
+    })
   | (ChartBase & {
       kind: 'stackedBar'
       series: ChartSeries[]
       /** One row per category; each row holds `label` plus a number under each series key. */
       data: Array<{ label: string } & Record<string, number | string>>
+    })
+  // ── Sparse-data-friendly kinds (opt-in for the starkest charts) ──
+  | (ChartBase & {
+      kind: 'comparison'
+      /** Exactly two ordered points: [before, after]. The change is the message. */
+      data: [ChartDatum, ChartDatum]
+      /** Override the auto-computed delta badge text (e.g. "×43"). */
+      deltaLabel?: string
+    })
+  | (ChartBase & {
+      kind: 'waffle'
+      /** Segments filling a grid; values are counts out of `total`. */
+      data: ChartDatum[]
+      /** Cells in the grid (default 100 → a 10×10 percent waffle). */
+      total?: number
+    })
+  | (ChartBase & {
+      kind: 'lollipop'
+      orientation?: 'vertical' | 'horizontal'
+      data: ChartDatum[]
+    })
+  | (ChartBase & {
+      kind: 'pictogram'
+      /** Segments tallying icons out of `total`. */
+      data: ChartDatum[]
+      /** Icons in the array (default 100). */
+      total?: number
+      /** Lucide icon name driving the glyph (default "user"). */
+      icon?: 'user' | 'droplet' | 'dollar' | 'zap' | 'leaf' | 'cpu'
+    })
+  | (ChartBase & {
+      kind: 'bullet'
+      /** One or more measures plotted against the shared `target`. */
+      data: ChartDatum[]
+      /** Target/threshold the measures are judged against. */
+      target: number
+      /** Marker caption (default "Target"); e.g. "Baseline" for a control value. */
+      targetLabel?: string
+    })
+  | (ChartBase & {
+      kind: 'worldMap'
+      /** One row per plotted country/region (bubble at its centroid). */
+      data: WorldMapDatum[]
+      /** Ordered frames for the time scrubber, e.g. ["2020 (est.)","2025","2030 (proj.)"].
+       *  2 entries → a toggle; 3+ → a slider. Omit for a static single-value map. */
+      years?: string[]
+      /** Bubble radius-scale max override; defaults to the max value across all frames
+       *  (a shared domain so bubbles visibly grow between years). */
+      domainMax?: number
     })
 
 /**

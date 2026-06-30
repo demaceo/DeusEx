@@ -86,18 +86,116 @@ export const partI: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'bar',
+            kind: 'comparison',
             labelTop: 'Energy · Global data centers',
             title: 'Electricity demand set to more than double',
             subtitle: "Global data-center electricity in 2025 vs. the IEA's projection for 2030.",
             unit: 'TWh',
             claimIds: ['s-i-dc-electricity-2025', 's-i-iea-projected-2030'],
             ariaLabel:
-              'Bar chart: global data-center electricity rises from 460 terawatt-hours in 2025 to a projected 945 terawatt-hours in 2030.',
+              'Comparison: global data-center electricity rises from 460 terawatt-hours in 2025 to a projected 945 terawatt-hours in 2030.',
             source: 'IEA, via the figures cited above.',
             data: [
               { label: '2025', value: 460, variant: 'navy' },
               { label: '2030 (proj.)', value: 945, variant: 'accent' },
+            ],
+          },
+        },
+        {
+          type: 'chart',
+          data: {
+            kind: 'worldMap',
+            labelTop: 'Infrastructure · Global footprint',
+            title: 'Where the world builds its data centers',
+            subtitle:
+              "The US holds nearly half. Bubbles are data centers per country (Cloudscene, 2025); the 2020 and 2030 frames scale today's distribution by the build-out's pace (Synergy, IEA) — fastest in the US and China.",
+            source:
+              'Cloudscene (2025); Synergy Research; IEA, Energy and AI (2025). 2020 (est.) and 2030 (proj.) figures are modeled from cited growth rates, not measured counts.',
+            claimIds: ['c-i-dc-count'],
+            ariaLabel:
+              'World map of data centers by country across 2020, 2025 and 2030. The United States dominates with about 5,400 facilities in 2025 — roughly 46% of the global total — and its bubble grows fastest toward 2030, with China second.',
+            years: ['2020 (est.)', '2025', '2030 (proj.)'],
+            data: [
+              {
+                iso: '840',
+                label: 'United States',
+                values: { '2020 (est.)': 2714, '2025': 5427, '2030 (proj.)': 10854 },
+              },
+              {
+                iso: '156',
+                label: 'China',
+                values: { '2020 (est.)': 225, '2025': 449, '2030 (proj.)': 898 },
+              },
+              {
+                iso: '276',
+                label: 'Germany',
+                values: { '2020 (est.)': 317, '2025': 529, '2030 (proj.)': 794 },
+              },
+              {
+                iso: '826',
+                label: 'United Kingdom',
+                values: { '2020 (est.)': 314, '2025': 523, '2030 (proj.)': 785 },
+              },
+              {
+                iso: '124',
+                label: 'Canada',
+                values: { '2020 (est.)': 202, '2025': 337, '2030 (proj.)': 506 },
+              },
+              {
+                iso: '250',
+                label: 'France',
+                values: { '2020 (est.)': 193, '2025': 322, '2030 (proj.)': 483 },
+              },
+              {
+                iso: '36',
+                label: 'Australia',
+                values: { '2020 (est.)': 188, '2025': 314, '2030 (proj.)': 471 },
+              },
+              {
+                iso: '528',
+                label: 'Netherlands',
+                values: { '2020 (est.)': 179, '2025': 298, '2030 (proj.)': 447 },
+              },
+              {
+                iso: '643',
+                label: 'Russia',
+                values: { '2020 (est.)': 151, '2025': 251, '2030 (proj.)': 377 },
+              },
+              {
+                iso: '392',
+                label: 'Japan',
+                values: { '2020 (est.)': 133, '2025': 222, '2030 (proj.)': 333 },
+              },
+              {
+                iso: '380',
+                label: 'Italy',
+                values: { '2020 (est.)': 101, '2025': 168, '2030 (proj.)': 252 },
+              },
+              {
+                iso: '356',
+                label: 'India',
+                values: { '2020 (est.)': 92, '2025': 153, '2030 (proj.)': 230 },
+              },
+              {
+                iso: '616',
+                label: 'Poland',
+                values: { '2020 (est.)': 86, '2025': 144, '2030 (proj.)': 216 },
+              },
+              {
+                iso: '756',
+                label: 'Switzerland',
+                values: { '2020 (est.)': 73, '2025': 121, '2030 (proj.)': 182 },
+              },
+              {
+                iso: '702',
+                label: 'Singapore',
+                values: { '2020 (est.)': 59, '2025': 99, '2030 (proj.)': 149 },
+              },
+              {
+                iso: '752',
+                label: 'Sweden',
+                values: { '2020 (est.)': 57, '2025': 95, '2030 (proj.)': 143 },
+              },
             ],
           },
         },
@@ -922,8 +1020,33 @@ export const partI: RoundtableDocument = {
       title: 'Squire Patton Boggs / Pillsbury Law (2025)',
       description: 'Comparative global regulatory analysis; U.S. vs. EU divergence.',
     },
+    {
+      id: 'src-cloudscene-dc',
+      url: 'https://www.cloudscene.com/',
+      title: 'Cloudscene — Global Data Center Database (2025)',
+      description:
+        'Per-country data-center counts: United States ~5,400 (~46% of the global ~11,800).',
+    },
+    {
+      id: 'src-iea-synergy-growth',
+      url: 'https://www.iea.org/reports/energy-and-ai',
+      title: 'IEA, Energy and AI (2025); Synergy Research Group',
+      description:
+        'Data-center capacity doubling roughly every four years; electricity demand more than doubling to 2030, led by the US and China.',
+    },
   ],
   claims: {
+    // Data-center geography — Round I world map
+    'c-i-dc-count': {
+      id: 'c-i-dc-count',
+      kind: 'statistic',
+      claimText: 'The US hosts ~5,400 data centers — about 46% of the global ~11,800.',
+      sourceId: 'src-cloudscene-dc',
+      verificationStatus: 'verified',
+      verifiedUrl: 'https://www.cargoson.com/en/blog/number-of-data-centers-by-country',
+      note: 'Cloudscene (2025) per-country counts: US 5,427; Germany 529; UK 523; China 449. US ≈46% of ~11,800 global facilities.',
+      lastCheckedISO: '2026-06-30',
+    },
     // Statistics — Round I stat grid
     's-i-dc-electricity-2025': {
       id: 's-i-dc-electricity-2025',

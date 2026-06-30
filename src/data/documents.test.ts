@@ -82,7 +82,8 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('$id content integrity', (doc
 
   it('charts rest only on verified claims', () => {
     const charts = chartsIn(doc)
-    expect(charts.length).toBe(4)
+    // Part I carries an extra chart — the data-center world map.
+    expect(charts.length).toBe(doc.id === 'part-i' ? 5 : 4)
     for (const chart of charts) {
       expect(chart.claimIds?.length ?? 0).toBeGreaterThan(0)
       for (const id of chart.claimIds ?? []) {

@@ -186,6 +186,7 @@ export const partIV: RoundtableDocument = {
               'Bar chart showing global AI patent applications growing from 15,317 in 2015 to 71,423 in 2021',
             unit: 'K',
             variant: 'accent',
+            reference: { value: 15.3, label: '2015 baseline' },
             data: [
               { label: '2015', value: 15.3 },
               { label: '2016', value: 19.3 },

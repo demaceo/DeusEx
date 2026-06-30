@@ -742,8 +742,203 @@ cite[data-verification='unverified'] {
   color: var(--muted);
 }
 
+/* Body wraps the canvas and (for donut/stacked) a legend rail. Block by default
+   so the chart reads full-width; donut/stacked split into a side rail on wide
+   screens (see the min-width rule below) to kill horizontal whitespace. */
+.chart-block__body {
+  display: block;
+}
+
 .chart-block__canvas {
+  position: relative;
   width: 100%;
+}
+
+/* The rendered SVG fills the measured canvas exactly (width is passed in px). */
+.chart-block__canvas svg {
+  display: block;
+}
+
+/* Interactive marks invite hover without shifting layout. */
+.chart-block__canvas path,
+.chart-block__canvas circle {
+  transition: opacity var(--ease) 0.15s;
+}
+.chart-block__canvas:hover path:hover,
+.chart-block__canvas:hover circle:hover {
+  opacity: 0.85;
+}
+
+.chart-block__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Donut/stacked float their legend into a right-hand rail on wide screens. */
+@media (min-width: 720px) {
+  .chart-block[data-layout='split'] .chart-block__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(150px, 0.85fr);
+    gap: 1.4rem;
+    align-items: center;
+  }
+  .chart-block[data-layout='split'] .chart-block__aside .chart-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    border-top: none;
+  }
+}
+
+/* ─── DONUT GAUGE CENTER ──────────────────────────────────────────── */
+.chart-donut__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.chart-donut__figure {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1;
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  color: var(--ink);
+}
+
+.chart-donut__caption {
+  margin-top: 0.35rem;
+  max-width: 9rem;
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+/* ─── PICTOGRAM (isotype icon grid) ───────────────────────────────── */
+.chart-pictogram {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 3px;
+  width: 100%;
+  height: 100%;
+}
+.chart-pictogram svg {
+  display: block;
+}
+
+/* ─── WORLD MAP ───────────────────────────────────────────────────── */
+.chart-worldmap__bubble {
+  transition: r 0.5s var(--ease);
+}
+
+.chart-worldmap__scrubber {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  height: 44px;
+  padding-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+}
+.chart-worldmap__scrubber input[type='range'] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.chart-worldmap__year {
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  min-width: 6rem;
+  text-align: right;
+}
+.chart-worldmap__play {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--accent);
+  font-size: 0.58rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.chart-worldmap__play:hover {
+  background: var(--panel);
+}
+.chart-worldmap__toggle {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.chart-worldmap__toggle button {
+  border: 0;
+  background: var(--white);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+}
+.chart-worldmap__toggle button[data-active='true'] {
+  background: var(--accent);
+  color: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-worldmap__bubble {
+    transition: none;
+  }
+}
+
+/* ─── DELTA CHIP (auto change badge on 2-point bars) ──────────────── */
+/* Brand-accent (not red=bad / green=good — the arrow alone conveys direction, so
+   the chip stays neutral about whether a change is good news). */
+.chart-delta-chip {
+  position: absolute;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.12rem 0.5rem;
+  border-radius: 2px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: var(--white);
+  white-space: nowrap;
+}
+.chart-delta-chip[data-sign='flat'] {
+  border-color: var(--muted);
+  color: var(--muted);
+}
+
+/* Larger chip used on the comparison slope. */
+.chart-delta-chip--lg {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.65rem;
+  box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 /* Placeholder shown while the lazily-loaded chart chunk arrives — reserves height
@@ -752,12 +947,6 @@ cite[data-verification='unverified'] {
   min-height: 360px;
   border-top-color: var(--rule);
   background: var(--panel);
-}
-
-/* Recharts text inherits the editorial mono face. */
-.chart-block .recharts-text,
-.chart-block .recharts-cartesian-axis-tick text {
-  font-family: var(--font-mono);
 }
 
 /* ─── CHART LEGEND ────────────────────────────────────────────────── */
@@ -824,6 +1013,30 @@ cite[data-verification='unverified'] {
   vertical-align: middle;
 }
 
+/* Quiet "View evidence" button opening the claim drawer, mirroring the stat box. */
+.chart-block__evidence {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.7;
+  transition: opacity 0.15s var(--ease);
+}
+.chart-block__evidence::after {
+  content: ' →';
+}
+.chart-block__evidence:hover,
+.chart-block__evidence:focus-visible {
+  opacity: 1;
+}
+
 /* Verification accent dot, matching the StatBox pattern. */
 .chart-block[data-verification]::before {
   content: '';
@@ -854,6 +1067,15 @@ cite[data-verification='unverified'] {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+/* Hover tooltip positioned within the (relative) canvas; centered above its mark. */
+.chart-tooltip--floating {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 10px));
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 3;
 }
 
 .chart-tooltip__label {
@@ -893,12 +1115,45 @@ cite[data-verification='unverified'] {
   border: 0;
 }
 
+/* ─── CHART MOTION ────────────────────────────────────────────────── */
+.chart-block {
+  transition:
+    transform var(--ease) 0.2s,
+    box-shadow var(--ease) 0.2s;
+}
+.chart-block:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    1px 3px 0 rgba(0, 0, 0, 0.05),
+    4px 7px 0 rgba(0, 0, 0, 0.03);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .chart-block__canvas {
+    animation: chart-rise 0.5s var(--ease) both;
+  }
+  @keyframes chart-rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 @media (max-width: 580px) {
   .chart-block {
     padding: 1.1rem 1rem 1rem;
   }
   .chart-block__title {
     font-size: 1.1rem;
+  }
+  /* Stacked single-column below the split breakpoint already; keep legend inline. */
+  .chart-block[data-layout='split'] .chart-block__aside .chart-legend {
+    flex-direction: row;
   }
 }
 

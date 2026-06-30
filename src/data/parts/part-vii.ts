@@ -244,7 +244,8 @@ export const partVII: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'donut',
+            kind: 'pictogram',
+            icon: 'user',
             labelTop: 'Public Health · Surgeon General',
             title: 'A Population Already Lonely',
             subtitle:
@@ -252,7 +253,7 @@ export const partVII: RoundtableDocument = {
             source: 'U.S. Surgeon General — Our Epidemic of Loneliness and Isolation (2023)',
             claimIds: ['c-vii-loneliness-half'],
             ariaLabel:
-              'Donut chart showing about 50 percent of U.S. adults reported experiencing loneliness',
+              'Grid of 100 person icons showing about 50 of every 100 U.S. adults reported experiencing loneliness',
             unit: '%',
             data: [
               { label: 'Reported loneliness', value: 50, variant: 'accent' },

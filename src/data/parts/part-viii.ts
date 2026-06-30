@@ -356,7 +356,7 @@ export const partVIII: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'bar',
+            kind: 'lollipop',
             orientation: 'horizontal',
             labelTop: 'Private AI Investment · 2023',
             title: 'Where the Capital Is',
@@ -365,7 +365,7 @@ export const partVIII: RoundtableDocument = {
             source: 'Stanford HAI — AI Index Report 2024',
             claimIds: ['c-viii-investment-geo'],
             ariaLabel:
-              'Horizontal bar chart of 2023 private AI investment: United States about 67 billion dollars, China about 8 billion, United Kingdom about 4 billion',
+              'Lollipop chart of 2023 private AI investment: United States about 67 billion dollars, China about 8 billion, United Kingdom about 4 billion',
             unit: '$B',
             variant: 'navy',
             data: [

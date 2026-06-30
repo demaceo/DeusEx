@@ -28,6 +28,20 @@ if (!('IntersectionObserver' in globalThis)) {
   } as unknown as typeof IntersectionObserver
 }
 
+// jsdom lacks matchMedia, used by usePrefersReducedMotion (world-map autoplay gate).
+if (typeof window.matchMedia !== 'function') {
+  window.matchMedia = ((query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    addListener: () => {},
+    removeListener: () => {},
+    dispatchEvent: () => false,
+  })) as unknown as typeof window.matchMedia
+}
+
 // jsdom doesn't implement scrollTo; stub it so scroll-to-top effects are no-ops.
 window.scrollTo = (() => {}) as typeof window.scrollTo
 // jsdom doesn't implement Element.scrollIntoView; stub it for the round navigator.
