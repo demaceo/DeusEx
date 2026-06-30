@@ -1,211 +1,211 @@
 {
   "slug": "real-costs",
   "documentId": "part-i",
-  "durationMs": 1107776,
+  "durationMs": 1093797,
   "cues": [
     {
       "speaker": "host",
-      "text": "Welcome to Reckoning, the show where we sit down with people who don't agree and try to make sense of the present. Today's episode: the real, right-now ethics of artificial intelligence. Not the science fiction — the messy, consequential present. Everything our panelists cite has been fact-checked. No speculation. Just what's actually happening.",
+      "text": "Welcome to Reckoning, the show where we read the fine print on the things we're told are progress. I'm your host. Today: the real bill for artificial intelligence — the megawatts, the gallons, the warehouses full of workers sorting the machine's mistakes, the communities downstream from its thirst. The question isn't whether the costs are real. They are. The question is who's being asked to pay them.",
       "startMs": 0,
-      "endMs": 25356
+      "endMs": 25913
     },
     {
       "speaker": "host",
-      "text": "Let me introduce who's at the table. We've got the Tech Optimist — a senior engineer at a major AI lab who believes the technology's benefits outweigh its costs, and that innovation will solve the problems it creates. The Environmentalist — a climate researcher and policy advocate focused on the concrete, measurable environmental damage being done right now. The Labor Advocate — a researcher and organizer who documents the hidden human cost of AI supply chains, particularly in the Global South. The Policy Realist — a former regulatory attorney who follows the law closely and believes structural governance reform is the only real solution. And the Everyday Person — a retired schoolteacher in her late sixties. She uses a smartphone, she watches the news, but AI was never part of her daily vocabulary — until lately.",
-      "startMs": 25356,
-      "endMs": 79690
+      "text": "Let me introduce who's at the table. First, the Tech Optimist — a senior engineer at a major AI lab who believes the technology's benefits outweigh its costs, and that innovation will solve the problems it creates. The Environmentalist — a climate researcher and policy advocate focused on the concrete, measurable environmental damage being done right now. The Labor Advocate — a researcher and organizer who documents the hidden human cost of AI supply chains, particularly in the Global South. The Policy Realist — a former regulatory attorney who follows the law closely, and believes structural governance reform is the only real solution. And the Everyday Person — a retired schoolteacher in her late 60s. She uses a smartphone and watches the news, but AI was never part of her daily vocabulary — until lately.",
+      "startMs": 25913,
+      "endMs": 83452
     },
     {
       "speaker": "host",
-      "text": "Let me set the table with a few numbers. Global data center electricity in 2025: 460 terawatt-hours. The IEA's projected demand by 2030: 945 terawatt-hours. And an estimated 552 tons of CO₂ from training one large language model — that's the GPT-3 era baseline.",
-      "startMs": 79690,
-      "endMs": 103374
+      "text": "A few numbers to set the stage. Global data center electricity in 2025: 460 terawatt-hours. The IEA's projected demand by 2030: 945 terawatt-hours. And the estimated CO₂ from training one large language model, on a GPT-3 era baseline: 552 tons.",
+      "startMs": 83452,
+      "endMs": 106579
     },
     {
       "speaker": "host",
-      "text": "So electricity demand is set to more than double — global data-center electricity in 2025 versus the IEA's projection for 2030. Let's start with our Everyday Person.",
-      "startMs": 103374,
-      "endMs": 114380
+      "text": "Put plainly — global data-center electricity is set to more than double between 2025 and the IEA's 2030 projection.",
+      "startMs": 106579,
+      "endMs": 115403
     },
     {
       "speaker": "everyday-person",
-      "text": "You know, I saw something on the news about AI using as much electricity as a whole country. Is that actually true? I use my phone to ask questions sometimes — I didn't think there was anything wrong with that. Am I part of the problem?",
-      "startMs": 114380,
-      "endMs": 130355
+      "text": "You know, I saw something on the news about AI using as much electricity as a whole country. Is that actually true? I use my phone to ask it questions sometimes — I didn't think there was anything wrong with that. Am I part of the problem?",
+      "startMs": 115403,
+      "endMs": 131750
     },
     {
       "speaker": "tech-optimist",
-      "text": "Honestly, that framing is a bit misleading. Yes, the numbers are large in absolute terms, but context matters. Global data centers consumed roughly 460 terawatt-hours in 2025 — about 1.8% of total world electricity. That's significant, but so is what it enables: climate modeling, drug discovery, real-time translation, accessibility tools for people with disabilities. And look, individual queries aren't the issue. The real energy intensity sits in model training. A single GPT-4-scale training run uses about 50 gigawatt-hours. But that's a one-time cost spread across billions of daily uses. And the renewable energy transition in the tech sector is accelerating faster than almost any other industry. Microsoft, Google, and Amazon have made prominent public pledges toward 100% renewable energy — and the industry's investing billions to back them up.",
-      "startMs": 130355,
-      "endMs": 195278
+      "text": "That framing's a little misleading, honestly. Yes, the numbers are large in absolute terms — but context matters. Global data centers used roughly 460 terawatt-hours in 2025. That's about 1.8% of total world electricity. Significant, sure — but so is what it enables: climate modeling, drug discovery, real-time translation, accessibility tools for people with disabilities. And individual queries aren't the issue. The real energy intensity is in model training. A single GPT-4-scale training run uses about 50 gigawatt-hours — but that's a one-time cost, spread across billions of daily uses. And the renewable transition in tech is accelerating faster than almost any other industry. Microsoft, Google, and Amazon have all made prominent public pledges toward 100% renewable energy — and they're investing billions to back them up.",
+      "startMs": 131750,
+      "endMs": 195651
     },
     {
       "speaker": "environmentalist",
-      "text": "Let me push back on those \"pledges.\" Google, Microsoft, and Amazon have made those promises — and they've simultaneously seen their emissions rise. Microsoft reported a 34% increase in water consumption between 2022 and 2024. Their carbon emissions have gone up, not down, since they pledged net zero. Pledges without enforcement mechanisms are just marketing. The infrastructure buildout is outpacing the clean energy transition by a wide margin. And that 1.8% figure? It's a snapshot. The IEA projects data center electricity demand will more than double, to 945 TWh by 2030. Training a single large-scale model generates an estimated 552 tons of CO₂ — equivalent to the annual carbon footprint of 121 American households — and that figure dates to the GPT-3 generation. Modern frontier models are believed to be considerably higher, though companies don't disclose it. We're building an industry whose carbon costs rival small nations, and we're doing it with fossil-heavy grids in many regions. Data centers draw from electricity grids whose carbon intensity runs significantly higher than the U.S. average — because many are sited in regions where coal and gas still dominate the local mix. Where you build matters enormously. And most companies aren't being transparent about where they're building or what energy mix they're drawing from.",
-      "startMs": 195278,
-      "endMs": 294102
+      "text": "Let me push back on that word, \"pledges.\" Google, Microsoft, and Amazon made those promises — and at the same time, their emissions have gone up. Microsoft reported a 34% increase in water consumption between 2022 and 2024. Their carbon emissions have risen, not fallen, since they pledged net zero. Pledges without enforcement are marketing. The buildout is outpacing the clean energy transition by a wide margin. And that 1.8% figure is just a snapshot. The IEA projects data center electricity demand will more than double, to 945 terawatt-hours by 2030. Training one large-scale model generates an estimated 552 tons of CO₂ — the annual carbon footprint of 121 American households — and that figure dates back to the GPT-3 generation. Modern frontier models are believed to be considerably higher, though companies don't disclose it. We're building an industry whose carbon costs rival small nations, and in many regions we're doing it on fossil-heavy grids. These data centers draw from grids whose carbon intensity runs well above the U.S. average — because they're often sited where coal and gas still dominate. Where you build matters enormously. And most companies aren't transparent about where they're building, or what energy mix they're drawing from.",
+      "startMs": 195651,
+      "endMs": 282865
     },
     {
       "speaker": "policy-realist",
-      "text": "And here's the thing — the reason we're even having this debate is that there are no binding disclosure requirements. Most major AI providers don't publish enough information for independent researchers to verify their energy use or carbon footprint. We're debating estimates — and that's by design. Now, the EU AI Act, adopted in March 2024, begins to address transparency for high-risk AI systems — but its energy provisions are limited. And in the U.S., President Trump's December 2025 executive order moved in the opposite direction, declaring that \"U.S. AI companies must be free to innovate without cumbersome regulation,\" and actively working to preempt state-level AI laws. So the regulatory environment is fragmenting precisely when we need coordination.",
-      "startMs": 294102,
-      "endMs": 341238
+      "text": "The reason we're even able to argue about this is that there are no binding disclosure requirements. Most major AI providers don't publish enough for independent researchers to verify their energy use or carbon footprint. We're debating estimates — and that's by design. The EU AI Act, adopted in March 2024, begins to address transparency for high-risk systems, but its energy provisions are limited. And in the U.S., President Trump's December 2025 executive order went the other way — declaring that \"U.S. AI companies must be free to innovate without cumbersome regulation,\" and actively working to preempt state-level AI laws. So the regulatory environment is fragmenting at exactly the moment we need coordination.",
+      "startMs": 282865,
+      "endMs": 328654
     },
     {
       "speaker": "everyday-person",
       "text": "So my electricity bill might actually go up because of all this? I read something about that. In Virginia, they said energy prices jumped some enormous amount because of all the data centers there.",
-      "startMs": 341238,
-      "endMs": 354706
+      "startMs": 328654,
+      "endMs": 343933
     },
     {
       "speaker": "environmentalist",
-      "text": "Yes — that's correct, and it's one of the most concrete, immediate harms for ordinary people. Northern Virginia, known as \"Data Center Alley,\" has the world's highest concentration of these facilities. The surge in data center energy demand caused an 800% spike in energy prices during the 2024 capacity auction for the regional grid. That's expected to raise residential electricity rates across 13 states by 20% in summer 2026, and by 30% to 60% by 2030. This isn't abstract. This is your utility bill.",
-      "startMs": 354706,
-      "endMs": 393576
+      "text": "Yes — that's correct, and it's one of the most concrete, immediate harms for ordinary people. Northern Virginia — they call it \"Data Center Alley\" — has the world's highest concentration of these facilities. The surge in demand caused an 800% spike in energy prices during the 2024 capacity auction for the regional grid. That's expected to raise residential electricity rates across 13 states by 20% in summer 2026, and by 30 to 60% by 2030. This isn't abstract. This is your utility bill.",
+      "startMs": 343933,
+      "endMs": 380063
     },
     {
       "speaker": "host",
-      "text": "And to put a finer point on it — quoting Consumer Reports from March 2026, citing Data Center Map and Bloomberg: \"In 2024, data centers accounted for almost 40 percent of all electricity used in Virginia.\"",
-      "startMs": 393576,
-      "endMs": 408019
+      "text": "As Consumer Reports put it in March 2026, citing Data Center Map and Bloomberg: \"In 2024, data centers accounted for almost 40 percent of all electricity used in Virginia.\"",
+      "startMs": 380063,
+      "endMs": 393066
     },
     {
       "speaker": "host",
-      "text": "Now let's talk water. By the numbers: U.S. data centers use 228 billion gallons annually. The average data center uses 300,000 gallons per day. And globally, the IEA puts data center water use at 560 billion liters in 2023.",
-      "startMs": 408019,
-      "endMs": 426920
+      "text": "Now to water. U.S. data centers use 228 billion gallons annually. The average single data center uses 300,000 gallons a day. And globally, in 2023, the IEA puts data center water use at 560 billion liters.",
+      "startMs": 393066,
+      "endMs": 410620
     },
     {
       "speaker": "host",
-      "text": "And here's a striking detail — two-thirds of AI's water is spent making the power. That 2023 global figure splits between direct cooling, the water embedded in the electricity it draws, and chip manufacturing.",
-      "startMs": 426920,
-      "endMs": 442477
+      "text": "And here's the striking part — roughly two-thirds of AI's water is spent making the power. That 2023 global figure splits between direct cooling, the water embedded in the electricity it draws, and chip manufacturing.",
+      "startMs": 410620,
+      "endMs": 425667
     },
     {
       "speaker": "everyday-person",
-      "text": "Water? I hadn't even thought about water. Like — these buildings are using drinking water? Why?",
-      "startMs": 442477,
-      "endMs": 448654
+      "text": "Water? Now, help me understand — I hadn't even thought about water. These buildings are using drinking water? Why?",
+      "startMs": 425667,
+      "endMs": 432540
     },
     {
       "speaker": "environmentalist",
-      "text": "Servers generate enormous heat, and most facilities use water-based cooling systems to keep them from overheating — often drawing from local municipal water supplies, sometimes potable water. The average data center uses 300,000 gallons of water per day. Here in the United States, data centers now consume 228 billion gallons of water per year. And that figure's expected to double by 2028. That's six times the annual water use of the city of Seattle. And many of these facilities are being built in the American West — where we already have severe, worsening droughts. Stanford University researchers, in April 2025, documented data centers actively competing with communities for scarce water resources across Nevada, Arizona, and California.",
-      "startMs": 448654,
-      "endMs": 500435
+      "text": "Servers generate enormous heat, and most facilities use water-based cooling to keep them from overheating — often drawing from local municipal supplies, sometimes potable water. The average data center uses 300,000 gallons a day. In the U.S., data centers now consume 228 billion gallons of water a year — and that's expected to double by 2028. That's six times the annual water use of the city of Seattle. And a lot of these facilities are being built in the American West, where we already have severe, worsening droughts. Stanford researchers, back in April 2025, documented data centers actively competing with communities for scarce water across Nevada, Arizona, and California.",
+      "startMs": 432540,
+      "endMs": 481674
     },
     {
       "speaker": "host",
-      "text": "So U.S. data-center water use is on track to double — annual consumption in 2023 versus the projected roughly two-times figure by 2028.",
-      "startMs": 500435,
-      "endMs": 509816
+      "text": "So U.S. data-center water use is on track to double — from its 2023 level to roughly twice that by 2028.",
+      "startMs": 481674,
+      "endMs": 489151
     },
     {
       "speaker": "tech-optimist",
-      "text": "There's a real tension here that deserves honest acknowledgment. Water-based cooling is actually more energy efficient than air-based cooling — so reducing water use can increase electricity use, and vice versa. Cooling systems account for 20% to 40% of total data center energy. The industry is actively developing closed-loop cooling and direct liquid cooling systems — technologies that can reduce cooling energy consumption by up to 50% compared to conventional approaches, according to peer-reviewed environmental impact research. So the solutions exist — but I'll admit, adoption is slower than it should be, and the buildout is currently outpacing the efficiency improvements.",
-      "startMs": 509816,
-      "endMs": 558995
+      "text": "There's a real tension here, and it deserves honest acknowledgment. Water-based cooling is more energy efficient than air-based cooling — so reducing water use can actually increase electricity use, and vice versa. Cooling accounts for 20 to 40% of total data center energy. The industry is developing closed-loop and direct liquid cooling — technologies that, according to peer-reviewed environmental impact research, can cut cooling energy consumption by up to 50% compared to conventional approaches. The solutions exist. But I'll admit it — adoption is slower than it should be, and right now the buildout is outpacing the efficiency gains.",
+      "startMs": 489151,
+      "endMs": 537170
     },
     {
       "speaker": "policy-realist",
-      "text": "Right, but the solutions existing and the solutions being deployed are two different things. Nixon Peabody's September 2025 legal analysis found that companies face almost no binding legal obligations around water disclosure or usage limits for data centers. And MSCI's analysis of water scarcity risk found that data centers are increasingly sited in regions projected to experience 15 to 35 more days of water scarcity annually by 2050 — and the companies aren't legally required to factor that in.",
-      "startMs": 558995,
-      "endMs": 592432
+      "text": "The solutions existing and the solutions being deployed — those are two different things. Nixon Peabody's September 2025 legal analysis found that companies face almost no binding legal obligations around water disclosure or usage limits for data centers. And MSCI's analysis of water scarcity risk found these facilities are increasingly sited in regions projected to see 15 to 35 more days of water scarcity a year by 2050 — and the companies aren't legally required to factor that in at all.",
+      "startMs": 537170,
+      "endMs": 570978
     },
     {
       "speaker": "host",
-      "text": "On that point, MSCI Sustainability and Climate Research, 2025: \"Water and energy efficiency goals often pull in opposite directions: water-based cooling can be more energy efficient but increases water consumption, while air-based cooling systems conserve water but require more electricity. The optimal balance is highly location specific.\"",
-      "startMs": 592432,
-      "endMs": 615466
+      "text": "As MSCI's Sustainability and Climate Research team noted in 2025: \"Water and energy efficiency goals often pull in opposite directions: water-based cooling can be more energy efficient but increases water consumption, while air-based cooling systems conserve water but require more electricity. The optimal balance is highly location specific.\"",
+      "startMs": 570978,
+      "endMs": 594012
     },
     {
       "speaker": "everyday-person",
-      "text": "I thought AI was made by, like, engineers and programmers. Are there a lot of regular people involved in building it?",
-      "startMs": 615466,
-      "endMs": 622850
+      "text": "Now, I thought AI was made by, well — engineers and programmers. Are there a lot of regular people involved in building it?",
+      "startMs": 594012,
+      "endMs": 602511
     },
     {
       "speaker": "host",
-      "text": "For that, let's bring in our Labor Advocate.",
-      "startMs": 622850,
-      "endMs": 625033
+      "text": "That question goes to our Labor Advocate — a researcher and organizer documenting the people behind the machine.",
+      "startMs": 602511,
+      "endMs": 608827
     },
     {
       "speaker": "labor-advocate",
-      "text": "Hundreds of thousands of them. Before any AI model can learn, humans have to label the data it trains on — categorizing images, flagging harmful content, rating responses, teaching the machine what's appropriate. It's called data annotation and content moderation, and it's largely invisible labor concentrated in the Global South. In Kenya, data workers earning as little as $2 an hour are labeling content for companies as large as OpenAI — sometimes spending eight-hour days reviewing graphic violence, child abuse imagery, and other traumatic material. In their own words, in a 2024 open letter to President Biden: \"Our work involves watching murder and beheadings, child abuse and rape, pornography and bestiality, often for more than 8 hours a day.\" For less than $2 an hour. Without adequate mental health support. And in the Philippines, workers employed by Scale AI — which provides data labeling for Google — were found in 2025 to be paid below the legal minimum wage, with no health insurance or paid leave. Meanwhile, a U.S.-based annotator doing the same work earns $10 to $25 an hour.",
-      "startMs": 625033,
-      "endMs": 710064
+      "text": "Hundreds of thousands of them. Before any AI model can learn, humans have to label the data it trains on — categorizing images, flagging harmful content, rating responses, teaching the machine what's appropriate. It's called data annotation and content moderation, and it's largely invisible labor, concentrated in the Global South. In Kenya, data workers earning as little as $2 an hour are labeling content for companies as large as OpenAI — sometimes spending eight-hour days reviewing graphic violence, child abuse imagery, and other traumatic material. In their own words, in a 2024 open letter to President Biden: \"Our work involves watching murder and beheadings, child abuse and rape, pornography and bestiality, often for more than 8 hours a day.\" For less than $2 an hour. Without adequate mental health support. In the Philippines, workers employed by Scale AI — which provides data labeling for Google — were found in 2025 to be paid below the legal minimum wage, with no health insurance and no paid leave. Meanwhile, a U.S.-based annotator doing the very same work earns $10 to $25 an hour.",
+      "startMs": 608827,
+      "endMs": 694044
     },
     {
       "speaker": "host",
-      "text": "The same work, a fraction of the pay — hourly pay for data annotation: Kenyan workers versus U.S.-based annotators, in that $10-to-$25-an-hour range.",
-      "startMs": 710064,
-      "endMs": 719723
+      "text": "The same work, a fraction of the pay — Kenyan data workers at as little as $2 an hour, against a U.S. range of $10 to $25 an hour.",
+      "startMs": 694044,
+      "endMs": 704121
     },
     {
       "speaker": "everyday-person",
-      "text": "That's... I didn't know that at all. So when I use one of these AI tools, someone somewhere had to sit and watch terrible things to help train it? That feels wrong.",
-      "startMs": 719723,
-      "endMs": 729986
+      "text": "That's... I didn't know that at all. So when I use one of these AI tools, someone, somewhere, had to sit and watch terrible things to help train it? That feels wrong.",
+      "startMs": 704121,
+      "endMs": 715452
     },
     {
       "speaker": "tech-optimist",
-      "text": "I don't want to minimize this, because the labor conditions described are genuinely unacceptable. But the solution is worker protection and fair pay — not halting the technology. In Kenya, youth unemployment is over 12%. Digital labor platforms represent one of the only growing employment sectors accessible to young Kenyans. What those workers deserve is legal protections, fair wages, and real mental health support — not for the jobs to disappear.",
-      "startMs": 729986,
-      "endMs": 761937
+      "text": "I don't want to minimize this, because the labor conditions being described are genuinely unacceptable. But the solution is worker protection and fair pay — not halting the technology. In Kenya, youth unemployment is over 12%. Digital labor platforms are one of the only growing employment sectors accessible to young Kenyans. What those workers deserve is legal protection, fair wages, and real mental health support — not for the jobs to vanish.",
+      "startMs": 715452,
+      "endMs": 748238
     },
     {
       "speaker": "labor-advocate",
-      "text": "Agreed — and I'd add that Amazon, Google, Meta, Microsoft, and Nvidia collectively use at least 30 intermediary companies to insulate themselves from direct accountability for how these workers are treated. The \"we didn't directly employ them\" defense is legal cover. When Remotasks — one of these intermediary platforms — shut down its Kenya operations in March 2024, it sent workers a few hours' notice via email. No severance. No transition. Just gone. And in February 2025, Kenyan data workers formed the Data Labelers Association specifically to challenge what they call \"systemic injustices.\" 339 members joined in its first week. These workers are organizing because no law protects them and no corporation is volunteering accountability.",
-      "startMs": 761937,
-      "endMs": 818502
+      "text": "Agreed — and let's be honest about the structure here. Amazon, Google, Meta, Microsoft, and Nvidia collectively use at least 30 intermediary companies to insulate themselves from direct accountability for how these workers are treated. The \"we didn't directly employ them\" line is legal cover. When Remotasks — one of those intermediaries — shut down its Kenya operations in March 2024, it gave workers a few hours' notice by email. No severance. No transition. Just gone. So in February 2025, Kenyan data workers formed the Data Labelers Association, specifically to challenge what they call \"systemic injustices.\" 339 members joined in the first week. They're organizing because no law protects them, and no corporation is volunteering accountability.",
+      "startMs": 748238,
+      "endMs": 805731
     },
     {
       "speaker": "policy-realist",
-      "text": "And look, all of the problems we've discussed — energy opacity, water exploitation, labor abuse — they share one root cause: the absence of binding rules with real enforcement. Let me lay out where the law actually stands. The EU AI Act, adopted March 2024, is the world's most comprehensive binding AI law. It classifies AI systems by risk level and imposes transparency requirements, third-party audits, and human oversight mandates for high-risk systems. And it does apply to non-EU companies deploying AI in Europe. In the United States, the picture's fragmented. More than 1,000 AI-related bills were introduced across U.S. states in 2024 and 2025. California, Colorado, New York, and Illinois each moved toward their own frameworks. But President Trump's December 11, 2025 executive order declared the policy of the administration is \"AI dominance through a minimally burdensome national policy framework,\" and directed federal agencies to challenge state-level AI regulations — even threatening to withhold federal funding from states whose laws \"conflict\" with the administration's approach.",
-      "startMs": 818502,
-      "endMs": 890344
+      "text": "And all of these problems — energy opacity, water exploitation, labor abuse — share one root cause: the absence of binding rules with real enforcement. Let me lay out where the law actually stands. The EU AI Act, adopted March 2024, is the world's most comprehensive binding AI law. It classifies systems by risk level and imposes transparency requirements, third-party audits, and human oversight mandates for high-risk systems. And it does apply to non-EU companies deploying AI in Europe. In the United States, the picture is fragmented. More than 1,000 AI-related bills were introduced across U.S. states in 2024 and 2025. California, Colorado, New York, and Illinois each moved toward their own frameworks. But President Trump's December 11, 2025 executive order declared the administration's policy is \"AI dominance through a minimally burdensome national policy framework,\" and directed federal agencies to challenge state-level AI regulations — even threatening to withhold federal funding from states whose laws \"conflict\" with the administration's approach.",
+      "startMs": 805731,
+      "endMs": 877991
     },
     {
       "speaker": "tech-optimist",
-      "text": "I'm not going to defend every policy decision, but I will defend the underlying principle: heavy-handed regulation risks exporting AI development to jurisdictions with fewer protections — not more. China isn't pausing for ethics reviews. The EU's strict approach, well-intentioned as it is, may have already slowed European AI competitiveness. And the strongest argument for voluntary standards and market incentives isn't that accountability doesn't matter — it's that badly designed mandates can produce compliance theater while the real innovation and the real harms move offshore. What we need is smart, targeted rules — not a regulatory race between Washington and Brussels to see who can write the most requirements.",
-      "startMs": 890344,
-      "endMs": 943611
+      "text": "I'm not going to defend every policy decision — but I will defend the underlying principle. Heavy-handed regulation risks exporting AI development to jurisdictions with fewer protections, not more. China isn't pausing for ethics reviews. The EU's strict approach, well-intentioned as it is, may already have slowed European AI competitiveness. The strongest argument for voluntary standards and market incentives isn't that accountability doesn't matter — it's that badly designed mandates can produce compliance theater, while the real innovation and the real harms just move offshore. What we need is smart, targeted rules — not a regulatory race between Washington and Brussels to see who can write the most requirements.",
+      "startMs": 877991,
+      "endMs": 929214
     },
     {
       "speaker": "environmentalist",
-      "text": "That argument has been used to delay climate action for forty years. \"Don't regulate us, or the other guy will pollute more\" is not an ethical framework. It's a race to the bottom with a plausible-sounding narrative. The 800% energy price surge in Virginia, the water stress in Nevada, the CO₂ from data centers — those don't pause because of geopolitical competition.",
-      "startMs": 943611,
-      "endMs": 966692
+      "text": "That argument's been used to delay climate action for forty years. \"Don't regulate us, or the other guy will pollute more\" — that's not an ethical framework. It's a race to the bottom with a plausible-sounding narrative. The 800% energy price surge in Virginia, the water stress in Nevada, the CO₂ from data centers — none of that pauses for geopolitical competition.",
+      "startMs": 929214,
+      "endMs": 952063
     },
     {
       "speaker": "policy-realist",
-      "text": "And it's worth noting — Canada, Japan, the UK, and Australia are all advancing accountability frameworks that align more closely with the EU than with the current U.S. approach. This divergence creates real risk for companies navigating multiple jurisdictions — but it also means the \"innovate without rules\" model has limited geographic reach. The real question is whether the most powerful AI actors — concentrated in the U.S. — will be subject to meaningful accountability at all.",
-      "startMs": 966692,
-      "endMs": 997435
+      "text": "Canada, Japan, the UK, and Australia are all advancing accountability frameworks that align more closely with the EU than with the current U.S. approach. That divergence creates real risk for companies operating across jurisdictions — but it also means the \"innovate without rules\" model has limited geographic reach. The real question is whether the most powerful AI actors — concentrated in the U.S. — will be subject to meaningful accountability at all.",
+      "startMs": 952063,
+      "endMs": 978812
     },
     {
       "speaker": "everyday-person",
-      "text": "You know, I keep hearing that AI is going to help us solve big problems. But what I'm understanding from this conversation is that the problems it's causing right now — electricity, water, those workers in Kenya — those are real and happening now. And the people making the decisions aren't the ones paying those costs. That part bothers me the most.",
-      "startMs": 997435,
-      "endMs": 1023998
+      "text": "I keep hearing that AI is going to help us solve big problems. But what I'm taking from this conversation is that the problems it's causing right now — the electricity, the water, those workers in Kenya — those are real, and they're happening now. And the people making the decisions aren't the ones paying those costs. That's the part that bothers me the most.",
+      "startMs": 978812,
+      "endMs": 1004447
     },
     {
       "speaker": "labor-advocate",
-      "text": "That's exactly it. The costs of this technology are borne by workers in Nairobi making $2 an hour, communities in drought-stricken Nevada watching their water tables drop, and families in Virginia whose electricity bills are climbing — not by the engineers, executives, and investors who profit from it. The ethical questions aren't theoretical. They're about who pays and who doesn't.",
-      "startMs": 1023998,
-      "endMs": 1052698
+      "text": "That's exactly it. The costs of this technology are borne by workers in Nairobi making $2 an hour, by communities in drought-stricken Nevada watching their water tables drop, by families in Virginia whose electricity bills are climbing — not by the engineers, executives, and investors who profit from it. The ethical questions here aren't theoretical. They're about who pays, and who doesn't.",
+      "startMs": 1004447,
+      "endMs": 1032682
     },
     {
       "speaker": "tech-optimist",
-      "text": "I'll close by saying this: I think this technology is genuinely transformative, and that managed well, it can improve billions of lives. But this conversation has sharpened something for me. \"Managed well\" requires transparency that doesn't currently exist, labor standards that aren't currently enforced, and energy practices that aren't currently mandated. Good intentions from industry leaders aren't enough. The people in this room — including the one who just learned about all this — need to be part of the conversation that shapes what comes next.",
-      "startMs": 1052698,
-      "endMs": 1090268
+      "text": "Let me close with this. I do think this technology is genuinely transformative, and that, managed well, it can improve billions of lives. But this conversation has sharpened something for me. \"Managed well\" requires transparency that doesn't currently exist, labor standards that aren't currently enforced, and energy practices that aren't currently mandated. Good intentions from industry leaders aren't enough. The people in this room — including the one who just learned about all of this — need to be part of the conversation that shapes what comes next.",
+      "startMs": 1032682,
+      "endMs": 1070670
     },
     {
       "speaker": "host",
-      "text": "And that feels like the right place to end. Five voices, one present moment — and a set of costs that are very real, and being paid right now by people who aren't in the room where the decisions get made. Thanks for listening to Reckoning. We'll see you next time.",
-      "startMs": 1090268,
-      "endMs": 1107776
+      "text": "And that's where we'll leave it. The receipt for this round of progress is still being tallied — in megawatts, in gallons, in hours of work no one sees. What our panel agrees on, even across the table, is that the bill is real, and that right now it isn't landing on the people making the decisions. Thanks for listening to Reckoning. We'll see you next time.",
+      "startMs": 1070670,
+      "endMs": 1093797
     }
   ]
 }
