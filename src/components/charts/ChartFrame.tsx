@@ -1,0 +1,151 @@
+/**
+ * Kind-agnostic figure shell around a chart canvas: mono eyebrow, serif title,
+ * the rendered SVG, an optional legend rail, a visually-hidden data table for
+ * assistive tech, and the mono source line carrying verification status. Measures
+ * its own width (replacing Recharts' ResponsiveContainer) and hands it to the
+ * kind via `renderCanvas`.
+ */
+
+import { useChartWidth } from '../../hooks/useChartWidth'
+import type { VerificationStatus } from '../../types/content'
+import type { ChartSpec } from '../../types/document'
+import { SEGMENT_VARIANTS, variantColor } from '../chartTheme'
+import { defaultLayout, fmt } from './geometry'
+
+interface ChartFrameProps {
+  chart: ChartSpec
+  status?: VerificationStatus
+  height: number
+  renderCanvas: (width: number) => React.ReactNode
+}
+
+/** Whether a kind carries a legend/aside that can float into the side rail. */
+function hasAside(chart: ChartSpec): boolean {
+  return chart.kind === 'donut' || chart.kind === 'stackedBar'
+}
+
+export function ChartFrame({ chart, status, height, renderCanvas }: ChartFrameProps) {
+  const { ref, width } = useChartWidth<HTMLDivElement>()
+
+  return (
+    <figure
+      className="chart-block"
+      data-variant={chart.variant}
+      data-verification={status}
+      data-layout={defaultLayout(chart)}
+      role="img"
+      aria-label={chart.ariaLabel}
+    >
+      <figcaption className="chart-block__head">
+        {chart.labelTop ? <span className="chart-block__eyebrow">{chart.labelTop}</span> : null}
+        <span className="chart-block__title">{chart.title}</span>
+        {chart.subtitle ? <span className="chart-block__subtitle">{chart.subtitle}</span> : null}
+      </figcaption>
+
+      <div className="chart-block__body">
+        <div className="chart-block__canvas" ref={ref} style={{ height }} aria-hidden="true">
+          {renderCanvas(width)}
+        </div>
+        {hasAside(chart) ? (
+          <div className="chart-block__aside">
+            <ChartLegend chart={chart} />
+          </div>
+        ) : null}
+      </div>
+
+      <ChartDataTable chart={chart} />
+
+      {chart.source ? (
+        <p className="chart-block__source">
+          {status === 'verified' ? <span className="chart-block__verified">Verified</span> : null}
+          {chart.source}
+        </p>
+      ) : null}
+    </figure>
+  )
+}
+
+/** Legend rows for donut / stacked charts, keeping labels in the editorial mono type. */
+function ChartLegend({ chart }: { chart: ChartSpec }) {
+  if (chart.kind === 'donut') {
+    return (
+      <ul className="chart-legend">
+        {chart.data.map((d, i) => (
+          <li key={i}>
+            <span
+              className="chart-legend__swatch"
+              style={{
+                background: variantColor(
+                  d.variant ?? SEGMENT_VARIANTS[i % SEGMENT_VARIANTS.length],
+                ),
+              }}
+            />
+            {d.label} <strong>{fmt(d.value, chart.unit)}</strong>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  if (chart.kind === 'stackedBar') {
+    return (
+      <ul className="chart-legend">
+        {chart.series.map((s, i) => (
+          <li key={s.key}>
+            <span
+              className="chart-legend__swatch"
+              style={{
+                background: variantColor(
+                  s.variant ?? SEGMENT_VARIANTS[i % SEGMENT_VARIANTS.length],
+                ),
+              }}
+            />
+            {s.label}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+  return null
+}
+
+/** Visually-hidden data table so the figures are readable by assistive tech. */
+function ChartDataTable({ chart }: { chart: ChartSpec }) {
+  if (chart.kind === 'stackedBar') {
+    return (
+      <table className="chart-block__sr">
+        <caption>{chart.title}</caption>
+        <thead>
+          <tr>
+            <th>Category</th>
+            {chart.series.map((s) => (
+              <th key={s.key}>{s.label}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {chart.data.map((row, i) => (
+            <tr key={i}>
+              <th scope="row">{row.label}</th>
+              {chart.series.map((s) => (
+                <td key={s.key}>{fmt(Number(row[s.key]), chart.unit)}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )
+  }
+  return (
+    <table className="chart-block__sr">
+      <caption>{chart.title}</caption>
+      <tbody>
+        {chart.data.map((d, i) => (
+          <tr key={i}>
+            <th scope="row">{d.label}</th>
+            <td>{fmt(d.value, chart.unit)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+}

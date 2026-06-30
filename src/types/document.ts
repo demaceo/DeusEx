@@ -95,6 +95,8 @@ export interface ChartDatum {
   value: number
   /** Per-datum color override (e.g. one highlighted bar). Falls back to chart default. */
   variant?: ChartVariant
+  /** Marks this point as a projection: dashed line, hollow dot, faded/banded fill. */
+  projected?: boolean
 }
 
 /** One series in a {@link StackedBarChartSpec}, keyed into each row's data. */
@@ -124,6 +126,16 @@ export interface ChartBase {
   unit?: string
   /** Default series/bar color when a datum sets no `variant`. Defaults to accent. */
   variant?: ChartVariant
+  /**
+   * Wide-screen layout. `split` floats the legend/aside into a side rail next to
+   * the chart canvas; `inline` stacks it below. Defaults per-kind (donut/stacked
+   * default to `split`, others to `inline`).
+   */
+  layout?: 'inline' | 'split'
+  /** A baseline/threshold drawn as a dashed reference line (bar/line/stackedBar). */
+  reference?: { value: number; label?: string; variant?: ChartVariant }
+  /** Keyed point callouts (line/bar); `at` matches a datum `label`. */
+  annotations?: Array<{ at: string; text: string }>
 }
 
 /**
@@ -132,8 +144,13 @@ export interface ChartBase {
  */
 export type ChartSpec =
   | (ChartBase & { kind: 'bar'; orientation?: 'vertical' | 'horizontal'; data: ChartDatum[] })
-  | (ChartBase & { kind: 'line'; area?: boolean; data: ChartDatum[] })
-  | (ChartBase & { kind: 'donut'; data: ChartDatum[] })
+  | (ChartBase & { kind: 'line'; area?: boolean; band?: boolean; data: ChartDatum[] })
+  | (ChartBase & {
+      kind: 'donut'
+      data: ChartDatum[]
+      /** Which segment's figure fills the gauge center. Defaults to the largest. */
+      centerIndex?: number
+    })
   | (ChartBase & {
       kind: 'stackedBar'
       series: ChartSeries[]

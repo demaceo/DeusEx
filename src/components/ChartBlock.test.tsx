@@ -1,24 +1,14 @@
-import { describe, expect, it, vi } from 'vitest'
-import type { ReactNode } from 'react'
+import { describe, expect, it } from 'vitest'
 import { render, screen, within } from '@testing-library/react'
 import { DocumentProvider } from './DocumentProvider'
 import type { Claim } from '../types/content'
 import type { ChartSpec } from '../types/document'
-
-// Recharts' ResponsiveContainer measures its parent via ResizeObserver, which
-// reports 0×0 in jsdom and renders an empty SVG. Stub it to a fixed-size box so
-// the chart mounts; the assertions below target the figure/caption DOM, not SVG.
-vi.mock('recharts', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('recharts')>()
-  return {
-    ...actual,
-    ResponsiveContainer: ({ children }: { children: ReactNode }) => (
-      <div style={{ width: 600, height: 300 }}>{children}</div>
-    ),
-  }
-})
-
 import { ChartBlock } from './ChartBlock'
+
+// Charts are now hand-built React SVG (d3 for the math) — no Recharts, so no
+// ResponsiveContainer mock. useChartWidth falls back to a fixed width when
+// ResizeObserver reports nothing (the test setup stubs it as a no-op), so the SVG
+// mounts at a stable size; assertions below target the figure/caption/table DOM.
 
 /** Render a chart with every backing claim stubbed as verified. */
 function renderChart(chart: ChartSpec) {
@@ -74,15 +64,23 @@ describe('ChartBlock', () => {
     expect(screen.queryByText('Verified')).not.toBeInTheDocument()
   })
 
+  it('auto-computes a delta chip for a two-point bar', () => {
+    const { container } = renderChart(barChart)
+    const chip = container.querySelector('.chart-delta-chip')
+    expect(chip).not.toBeNull()
+    expect(chip).toHaveTextContent('+105%')
+    expect(chip).toHaveAttribute('data-sign', 'up')
+  })
+
   it('exposes the data as a visually-hidden table for assistive tech', () => {
-    renderChart(barChart)
-    const table = screen.getByRole('table')
+    const { container } = renderChart(barChart)
+    const table = container.querySelector('.chart-block__sr') as HTMLElement
     expect(within(table).getByText('2025')).toBeInTheDocument()
     expect(within(table).getByText('460 TWh')).toBeInTheDocument()
     expect(within(table).getByText('945 TWh')).toBeInTheDocument()
   })
 
-  it('renders a legend for donut charts', () => {
+  it('renders a donut legend and fills the gauge center with the dominant figure', () => {
     const { container } = renderChart({
       kind: 'donut',
       title: 'Water breakdown',
@@ -98,6 +96,9 @@ describe('ChartBlock', () => {
     const legend = container.querySelector('.chart-legend') as HTMLElement
     expect(within(legend).getByText('Indirect')).toBeInTheDocument()
     expect(within(legend).getByText('373 B L')).toBeInTheDocument()
+    // Center gauge surfaces the largest segment.
+    expect(container.querySelector('.chart-donut__figure')).toHaveTextContent('373 B L')
+    expect(container.querySelector('.chart-donut__caption')).toHaveTextContent('Indirect')
   })
 
   it('renders a legend and per-series table for stacked bars', () => {
@@ -119,13 +120,13 @@ describe('ChartBlock', () => {
     const legend = container.querySelector('.chart-legend') as HTMLElement
     expect(within(legend).getByText('Top 10%')).toBeInTheDocument()
     expect(within(legend).getByText('Everyone else')).toBeInTheDocument()
-    const table = screen.getByRole('table')
+    const table = container.querySelector('.chart-block__sr') as HTMLElement
     expect(within(table).getByText('Articles')).toBeInTheDocument()
     expect(within(table).getByText('55%')).toBeInTheDocument()
   })
 
   it('formats currency and percentage units correctly', () => {
-    renderChart({
+    const { container } = renderChart({
       kind: 'bar',
       orientation: 'horizontal',
       title: 'Wages',
@@ -133,6 +134,8 @@ describe('ChartBlock', () => {
       ariaLabel: 'Wage chart',
       data: [{ label: 'Kenya', value: 2 }],
     })
-    expect(screen.getByText('$2/hr')).toBeInTheDocument()
+    // The value appears both as an SVG label and in the accessible table.
+    const table = container.querySelector('.chart-block__sr') as HTMLElement
+    expect(within(table).getByText('$2/hr')).toBeInTheDocument()
   })
 })
