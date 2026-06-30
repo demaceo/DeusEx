@@ -9,8 +9,9 @@ TTS/LLM calls — it just serves the generated MP3 + transcript from `public/`.
 ```
 src/data/parts/part-*.ts                       (the static debate data)
    └─ flattenDocument()    → ordered spoken turns (intro/host + each persona)
-       └─ adaptScript()    → Claude rewrites into natural spoken dialogue
-                             (preserving every stat/claim; reviewable JSON)
+       └─ adaptScript()    → Claude rewrites into natural spoken dialogue,
+                             in each persona's own voice (humor/sarcasm/tone
+                             from personaVoices.ts); every stat/claim preserved
            └─ ElevenLabs    → one cast voice per persona (personaVoices.ts)
                └─ stitch     → public/audio/<id>.mp3
                               + public/audio/<id>.transcript.json
@@ -27,6 +28,20 @@ play button only for parts present in it.
 2. `npm install` (adds `@anthropic-ai/sdk`, `dotenv`, `tsx` as dev deps).
 3. Cast each persona's voice in `src/data/personaVoices.ts` — swap the default
    ElevenLabs voice ids for voices from your own library if you prefer.
+
+### Tuning a persona's character
+
+`src/data/personaVoices.ts` holds two levers per persona, both authored here:
+
+- **`settings`** — the ElevenLabs voice (stability/style/speed): controls how the
+  voice _sounds_.
+- **`delivery`** — humor, sarcasm, mannerisms, and tonal range: fed into
+  `adaptScript()` so Claude writes each persona in their own register. This is
+  what makes the Skeptic dry, the Accelerationist provocative, and keeps the
+  Land Defender earnest. Humor is calibrated per persona and never lands on real
+  harm. Edit `delivery` to change _how a persona talks_; edit `settings` to
+  change _how their voice sounds_. Re-run a `--dry-run` after changing `delivery`
+  to review the new wording before spending TTS credits.
 
 ## Generate an episode
 
