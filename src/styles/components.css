@@ -2532,6 +2532,7 @@ cite[role='button']:focus-visible::after {
   color: var(--paper);
   border-top: 1px solid rgba(245, 240, 232, 0.14);
   box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
 }
 
 .podcast-player__toggle {
@@ -2649,11 +2650,22 @@ cite[role='button']:focus-visible::after {
 }
 
 @media (max-width: 640px) {
+  .podcast-player {
+    gap: 0.55rem;
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+  }
   .podcast-player__now {
     min-width: 0;
     max-width: 8rem;
   }
+  .podcast-player__scrubber {
+    min-width: 2.5rem;
+  }
   .podcast-player__time {
+    display: none;
+  }
+  .podcast-player__rate {
     display: none;
   }
 }
@@ -2742,4 +2754,16 @@ cite[role='button']:focus-visible::after {
   font-size: 0.82rem;
   color: rgba(245, 240, 232, 0.82);
   line-height: 1.25;
+}
+
+@media (max-width: 640px) {
+  .debate-nav-fab {
+    /* Lift FAB above the podcast player bar (~56px) plus safe-area-inset-bottom */
+    bottom: calc(4.25rem + env(safe-area-inset-bottom));
+    right: 1rem;
+  }
+  .debate-nav-fab__trigger {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
 }
