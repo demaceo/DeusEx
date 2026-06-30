@@ -99,6 +99,22 @@ export interface ChartDatum {
   projected?: boolean
 }
 
+/**
+ * One plotted country/region on a {@link ChartSpec} world map. The centroid is
+ * looked up by `iso` (numeric ISO 3166-1, matching the basemap), never stored here.
+ * Carries either a single `value` (static map) or per-year `values` (time scrubber).
+ */
+export interface WorldMapDatum {
+  /** Display label for the tooltip + accessible table, e.g. "United States". */
+  label: string
+  /** Numeric ISO 3166-1 code as a string ("840") — joins the centroid table. */
+  iso: string
+  /** Single-frame value. Used when the map has no `years`. */
+  value?: number
+  /** Per-year values keyed by year label, e.g. `{ "2025": 5381 }`. Used with `years`. */
+  values?: Record<string, number>
+}
+
 /** One series in a {@link StackedBarChartSpec}, keyed into each row's data. */
 export interface ChartSeries {
   /** Row key holding this series' value, e.g. "top10". */
@@ -194,6 +210,17 @@ export type ChartSpec =
       target: number
       /** Marker caption (default "Target"); e.g. "Baseline" for a control value. */
       targetLabel?: string
+    })
+  | (ChartBase & {
+      kind: 'worldMap'
+      /** One row per plotted country/region (bubble at its centroid). */
+      data: WorldMapDatum[]
+      /** Ordered frames for the time scrubber, e.g. ["2020 (est.)","2025","2030 (proj.)"].
+       *  2 entries → a toggle; 3+ → a slider. Omit for a static single-value map. */
+      years?: string[]
+      /** Bubble radius-scale max override; defaults to the max value across all frames
+       *  (a shared domain so bubbles visibly grow between years). */
+      domainMax?: number
     })
 
 /**

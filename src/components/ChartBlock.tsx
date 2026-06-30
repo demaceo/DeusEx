@@ -13,6 +13,7 @@ import { Lollipop } from './charts/kinds/Lollipop'
 import { Pictogram } from './charts/kinds/Pictogram'
 import { StackedBar } from './charts/kinds/StackedBar'
 import { Waffle } from './charts/kinds/Waffle'
+import { WorldMap } from './charts/kinds/WorldMap'
 
 interface ChartBlockProps {
   chart: ChartSpec
@@ -61,6 +62,8 @@ function ChartCanvas({
       return <Pictogram chart={chart} width={width} height={height} />
     case 'bullet':
       return <Bullet chart={chart} width={width} height={height} />
+    case 'worldMap':
+      return <WorldMap chart={chart} width={width} height={height} />
     default: {
       // Exhaustiveness guard: a new kind must add a case here or this errors at compile time.
       const _exhaustive: never = chart

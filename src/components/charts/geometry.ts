@@ -134,5 +134,7 @@ export function canvasHeight(chart: ChartSpec): number {
     }
     case 'bullet':
       return Math.max(130, 26 + chart.data.length * 56)
+    case 'worldMap':
+      return chart.years?.length ? 520 : 470
   }
 }

@@ -291,6 +291,67 @@ describe('ChartBlock', () => {
     expect(container.querySelector('.chart-block__canvas')).toHaveTextContent('2015 baseline')
   })
 
+  it('world map renders a safe placeholder + per-year table without a basemap', () => {
+    const { container } = renderChart({
+      kind: 'worldMap',
+      title: 'Data centers',
+      ariaLabel: 'World map of data centers',
+      years: ['2020', '2025', '2030'],
+      claimIds: ['claim-a'],
+      data: [
+        {
+          iso: '840',
+          label: 'United States',
+          values: { '2020': 2714, '2025': 5427, '2030': 10854 },
+        },
+        { iso: '156', label: 'China', values: { '2020': 225, '2025': 449, '2030': 898 } },
+      ],
+    })
+    // jsdom has no fetch → basemap is null → graceful placeholder, no crash.
+    expect(screen.getByRole('img', { name: 'World map of data centers' })).toBeInTheDocument()
+    const table = container.querySelector('.chart-block__sr') as HTMLElement
+    expect(within(table).getByText('United States')).toBeInTheDocument()
+    expect(within(table).getByText('5427')).toBeInTheDocument()
+    expect(within(table).getByText('10854')).toBeInTheDocument()
+  })
+
+  it('world map scrubber updates the active year', () => {
+    const { container } = renderChart({
+      kind: 'worldMap',
+      title: 'Data centers',
+      ariaLabel: 'World map of data centers',
+      years: ['2020', '2025', '2030'],
+      claimIds: ['claim-a'],
+      data: [
+        {
+          iso: '840',
+          label: 'United States',
+          values: { '2020': 2714, '2025': 5427, '2030': 10854 },
+        },
+      ],
+    })
+    const slider = container.querySelector('input[type="range"]') as HTMLInputElement
+    expect(container.querySelector('.chart-worldmap__year')).toHaveTextContent('2020')
+    fireEvent.change(slider, { target: { value: '2' } })
+    expect(container.querySelector('.chart-worldmap__year')).toHaveTextContent('2030')
+  })
+
+  it('world map uses a two-button toggle for two frames', () => {
+    const { container } = renderChart({
+      kind: 'worldMap',
+      title: 'Two frames',
+      ariaLabel: 'Two frame map',
+      years: ['2024', '2030'],
+      claimIds: ['claim-a'],
+      data: [{ iso: '840', label: 'United States', values: { '2024': 1, '2030': 2 } }],
+    })
+    expect(container.querySelector('input[type="range"]')).toBeNull()
+    const buttons = container.querySelectorAll('.chart-worldmap__toggle button')
+    expect(buttons).toHaveLength(2)
+    fireEvent.click(buttons[1])
+    expect(container.querySelector('.chart-worldmap__year')).toHaveTextContent('2030')
+  })
+
   it('marks a projected tail and shades the band on a line chart', () => {
     const { container } = renderChart({
       kind: 'line',

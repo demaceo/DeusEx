@@ -837,6 +837,78 @@ cite[data-verification='unverified'] {
   display: block;
 }
 
+/* ─── WORLD MAP ───────────────────────────────────────────────────── */
+.chart-worldmap__bubble {
+  transition: r 0.5s var(--ease);
+}
+
+.chart-worldmap__scrubber {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  height: 44px;
+  padding-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+}
+.chart-worldmap__scrubber input[type='range'] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.chart-worldmap__year {
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  min-width: 6rem;
+  text-align: right;
+}
+.chart-worldmap__play {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--accent);
+  font-size: 0.58rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.chart-worldmap__play:hover {
+  background: var(--panel);
+}
+.chart-worldmap__toggle {
+  display: inline-flex;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.chart-worldmap__toggle button {
+  border: 0;
+  background: var(--white);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+}
+.chart-worldmap__toggle button[data-active='true'] {
+  background: var(--accent);
+  color: var(--white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-worldmap__bubble {
+    transition: none;
+  }
+}
+
 /* ─── DELTA CHIP (auto change badge on 2-point bars) ──────────────── */
 /* Brand-accent (not red=bad / green=good — the arrow alone conveys direction, so
    the chip stays neutral about whether a change is good news). */

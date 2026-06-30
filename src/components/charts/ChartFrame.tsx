@@ -40,14 +40,19 @@ export function ChartFrame({ chart, status, height, renderCanvas }: ChartFramePr
   const claim = useClaim(chart.claimIds?.[0])
   const source = useSource(claim?.sourceId)
 
+  // Kinds with their own interactive controls (the world map's year scrubber) can't
+  // sit inside a `role="img"` / `aria-hidden` container — that would hide the
+  // controls from assistive tech. They carry `role="img"` on their inner SVG instead.
+  const interactive = chart.kind === 'worldMap'
+
   return (
     <figure
       className="chart-block"
       data-variant={chart.variant}
       data-verification={status}
       data-layout={defaultLayout(chart)}
-      role="img"
-      aria-label={chart.ariaLabel}
+      role={interactive ? undefined : 'img'}
+      aria-label={interactive ? undefined : chart.ariaLabel}
     >
       <figcaption className="chart-block__head">
         {chart.labelTop ? <span className="chart-block__eyebrow">{chart.labelTop}</span> : null}
@@ -56,7 +61,12 @@ export function ChartFrame({ chart, status, height, renderCanvas }: ChartFramePr
       </figcaption>
 
       <div className="chart-block__body">
-        <div className="chart-block__canvas" ref={ref} style={{ height }} aria-hidden="true">
+        <div
+          className="chart-block__canvas"
+          ref={ref}
+          style={{ height }}
+          aria-hidden={interactive ? undefined : true}
+        >
           {renderCanvas(width)}
         </div>
         {hasAside(chart) ? (
@@ -129,6 +139,47 @@ function ChartLegend({ chart }: { chart: ChartSpec }) {
 
 /** Visually-hidden data table so the figures are readable by assistive tech. */
 function ChartDataTable({ chart }: { chart: ChartSpec }) {
+  if (chart.kind === 'worldMap' && chart.years?.length) {
+    const years = chart.years
+    return (
+      <table className="chart-block__sr">
+        <caption>{chart.title}</caption>
+        <thead>
+          <tr>
+            <th>Country</th>
+            {years.map((y) => (
+              <th key={y}>{y}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {chart.data.map((d, i) => (
+            <tr key={i}>
+              <th scope="row">{d.label}</th>
+              {years.map((y) => (
+                <td key={y}>{fmt(Number(d.values?.[y] ?? 0), chart.unit)}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )
+  }
+  if (chart.kind === 'worldMap') {
+    return (
+      <table className="chart-block__sr">
+        <caption>{chart.title}</caption>
+        <tbody>
+          {chart.data.map((d, i) => (
+            <tr key={i}>
+              <th scope="row">{d.label}</th>
+              <td>{fmt(Number(d.value ?? 0), chart.unit)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )
+  }
   if (chart.kind === 'stackedBar') {
     return (
       <table className="chart-block__sr">
