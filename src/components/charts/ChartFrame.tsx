@@ -21,7 +21,12 @@ interface ChartFrameProps {
 
 /** Whether a kind carries a legend/aside that can float into the side rail. */
 function hasAside(chart: ChartSpec): boolean {
-  return chart.kind === 'donut' || chart.kind === 'stackedBar'
+  return (
+    chart.kind === 'donut' ||
+    chart.kind === 'stackedBar' ||
+    chart.kind === 'waffle' ||
+    chart.kind === 'pictogram'
+  )
 }
 
 export function ChartFrame({ chart, status, height, renderCanvas }: ChartFrameProps) {
@@ -65,9 +70,9 @@ export function ChartFrame({ chart, status, height, renderCanvas }: ChartFramePr
   )
 }
 
-/** Legend rows for donut / stacked charts, keeping labels in the editorial mono type. */
+/** Legend rows for proportion / stacked charts, keeping labels in the editorial mono type. */
 function ChartLegend({ chart }: { chart: ChartSpec }) {
-  if (chart.kind === 'donut') {
+  if (chart.kind === 'donut' || chart.kind === 'waffle' || chart.kind === 'pictogram') {
     return (
       <ul className="chart-legend">
         {chart.data.map((d, i) => (

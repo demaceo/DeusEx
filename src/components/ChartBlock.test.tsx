@@ -138,4 +138,103 @@ describe('ChartBlock', () => {
     const table = container.querySelector('.chart-block__sr') as HTMLElement
     expect(within(table).getByText('$2/hr')).toBeInTheDocument()
   })
+
+  it('renders a comparison slope with a delta badge and accessible pair', () => {
+    const { container } = renderChart({
+      kind: 'comparison',
+      title: 'Demand',
+      unit: 'TWh',
+      ariaLabel: 'Comparison of demand',
+      data: [
+        { label: '2025', value: 460 },
+        { label: '2030', value: 945 },
+      ],
+    })
+    expect(container.querySelector('.chart-delta-chip')).toHaveTextContent('+105%')
+    const table = container.querySelector('.chart-block__sr') as HTMLElement
+    expect(within(table).getByText('460 TWh')).toBeInTheDocument()
+    expect(within(table).getByText('945 TWh')).toBeInTheDocument()
+  })
+
+  it('honors an explicit deltaLabel on a comparison', () => {
+    const { container } = renderChart({
+      kind: 'comparison',
+      title: 'Gap',
+      unit: '%',
+      deltaLabel: '×43',
+      ariaLabel: 'Comparison gap',
+      data: [
+        { label: 'Lighter men', value: 0.8 },
+        { label: 'Darker women', value: 34.7 },
+      ],
+    })
+    expect(container.querySelector('.chart-delta-chip')).toHaveTextContent('×43')
+  })
+
+  it('renders a waffle as a 100-cell grid with a legend', () => {
+    const { container } = renderChart({
+      kind: 'waffle',
+      title: 'Cobalt',
+      unit: '%',
+      ariaLabel: 'Cobalt waffle',
+      data: [
+        { label: 'DR Congo', value: 70 },
+        { label: 'Rest of world', value: 30 },
+      ],
+    })
+    expect(container.querySelectorAll('.chart-block__canvas svg rect')).toHaveLength(100)
+    const legend = container.querySelector('.chart-legend') as HTMLElement
+    expect(within(legend).getByText('DR Congo')).toBeInTheDocument()
+    expect(within(legend).getByText('70%')).toBeInTheDocument()
+  })
+
+  it('renders a pictogram as an icon grid with a legend', () => {
+    const { container } = renderChart({
+      kind: 'pictogram',
+      title: 'Loneliness',
+      unit: '%',
+      icon: 'user',
+      ariaLabel: 'Loneliness pictogram',
+      data: [
+        { label: 'Reported loneliness', value: 50 },
+        { label: 'Did not', value: 50 },
+      ],
+    })
+    expect(container.querySelectorAll('.chart-pictogram svg')).toHaveLength(100)
+    const legend = container.querySelector('.chart-legend') as HTMLElement
+    expect(within(legend).getByText('Reported loneliness')).toBeInTheDocument()
+  })
+
+  it('renders a lollipop with a dot per category and accessible values', () => {
+    const { container } = renderChart({
+      kind: 'lollipop',
+      orientation: 'horizontal',
+      title: 'Investment',
+      unit: '$B',
+      ariaLabel: 'Investment lollipop',
+      data: [
+        { label: 'United States', value: 67.2 },
+        { label: 'China', value: 7.8 },
+        { label: 'United Kingdom', value: 3.8 },
+      ],
+    })
+    expect(container.querySelectorAll('.chart-block__canvas svg circle')).toHaveLength(3)
+    const table = container.querySelector('.chart-block__sr') as HTMLElement
+    expect(within(table).getByText('$67.2B')).toBeInTheDocument()
+  })
+
+  it('renders a bullet with a labeled target marker', () => {
+    const { container } = renderChart({
+      kind: 'bullet',
+      title: 'AI tutor',
+      unit: 'score',
+      target: 3.5,
+      targetLabel: 'Baseline',
+      ariaLabel: 'AI tutor bullet',
+      data: [{ label: 'AI tutor', value: 4.5 }],
+    })
+    expect(container.querySelector('.chart-block__canvas svg')).toBeInTheDocument()
+    const table = container.querySelector('.chart-block__sr') as HTMLElement
+    expect(within(table).getByText('4.5 score')).toBeInTheDocument()
+  })
 })

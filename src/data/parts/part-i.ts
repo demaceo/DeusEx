@@ -86,14 +86,14 @@ export const partI: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'bar',
+            kind: 'comparison',
             labelTop: 'Energy · Global data centers',
             title: 'Electricity demand set to more than double',
             subtitle: "Global data-center electricity in 2025 vs. the IEA's projection for 2030.",
             unit: 'TWh',
             claimIds: ['s-i-dc-electricity-2025', 's-i-iea-projected-2030'],
             ariaLabel:
-              'Bar chart: global data-center electricity rises from 460 terawatt-hours in 2025 to a projected 945 terawatt-hours in 2030.',
+              'Comparison: global data-center electricity rises from 460 terawatt-hours in 2025 to a projected 945 terawatt-hours in 2030.',
             source: 'IEA, via the figures cited above.',
             data: [
               { label: '2025', value: 460, variant: 'navy' },

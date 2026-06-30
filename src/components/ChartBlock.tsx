@@ -5,9 +5,14 @@ import type { ChartSpec } from '../types/document'
 import { ChartFrame } from './charts/ChartFrame'
 import { canvasHeight } from './charts/geometry'
 import { BarChart } from './charts/kinds/BarChart'
+import { Bullet } from './charts/kinds/Bullet'
+import { ComparisonChart } from './charts/kinds/Comparison'
 import { DonutGauge } from './charts/kinds/DonutGauge'
 import { LineChart } from './charts/kinds/LineChart'
+import { Lollipop } from './charts/kinds/Lollipop'
+import { Pictogram } from './charts/kinds/Pictogram'
 import { StackedBar } from './charts/kinds/StackedBar'
+import { Waffle } from './charts/kinds/Waffle'
 
 interface ChartBlockProps {
   chart: ChartSpec
@@ -46,6 +51,16 @@ function ChartCanvas({
       return <DonutGauge chart={chart} width={width} height={height} />
     case 'stackedBar':
       return <StackedBar chart={chart} width={width} height={height} />
+    case 'comparison':
+      return <ComparisonChart chart={chart} width={width} height={height} />
+    case 'waffle':
+      return <Waffle chart={chart} width={width} height={height} />
+    case 'lollipop':
+      return <Lollipop chart={chart} width={width} height={height} />
+    case 'pictogram':
+      return <Pictogram chart={chart} width={width} height={height} />
+    case 'bullet':
+      return <Bullet chart={chart} width={width} height={height} />
     default: {
       // Exhaustiveness guard: a new kind must add a case here or this errors at compile time.
       const _exhaustive: never = chart

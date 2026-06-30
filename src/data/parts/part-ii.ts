@@ -216,7 +216,8 @@ export const partII: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'bar',
+            kind: 'lollipop',
+            orientation: 'vertical',
             variant: 'labor',
             labelTop: 'Energy · The emissions paradox',
             title: 'Emissions rose even as clean-energy buying hit records',
@@ -225,7 +226,7 @@ export const partII: RoundtableDocument = {
             unit: '%',
             claimIds: ['c-ii-fortune-mar-2026'],
             ariaLabel:
-              'Bar chart: emissions since net-zero pledges rose 23% at Microsoft, 33% at Amazon, about 50% at Google, and more than 60% at Meta.',
+              'Lollipop chart: emissions since net-zero pledges rose 23% at Microsoft, 33% at Amazon, about 50% at Google, and more than 60% at Meta.',
             source: 'Fortune, March 2026.',
             data: [
               { label: 'Microsoft', value: 23 },

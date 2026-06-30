@@ -261,7 +261,8 @@ export const partV: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'donut',
+            kind: 'pictogram',
+            icon: 'user',
             labelTop: 'Human Detection · iProov',
             title: 'Could People Spot the Deepfake?',
             subtitle:
@@ -269,7 +270,7 @@ export const partV: RoundtableDocument = {
             source: 'iProov — Deepfake Detection Study (2022)',
             claimIds: ['c-v-iproov-chart'],
             ariaLabel:
-              'Donut chart showing 24 percent of people correctly identified a deepfake and 76 percent did not',
+              'Grid of 100 person icons showing 24 of every 100 people correctly identified a deepfake and 76 did not',
             unit: '%',
             data: [
               { label: 'Correctly identified', value: 24, variant: 'environ' },

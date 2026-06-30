@@ -92,7 +92,12 @@ export function dominantIndex(values: number[], override?: number): number {
 /** Wide-screen default: proportion/legend charts float their aside into a side rail. */
 export function defaultLayout(chart: ChartSpec): 'inline' | 'split' {
   if (chart.layout) return chart.layout
-  return chart.kind === 'donut' || chart.kind === 'stackedBar' ? 'split' : 'inline'
+  return chart.kind === 'donut' ||
+    chart.kind === 'stackedBar' ||
+    chart.kind === 'waffle' ||
+    chart.kind === 'pictogram'
+    ? 'split'
+    : 'inline'
 }
 
 /**
@@ -113,5 +118,21 @@ export function canvasHeight(chart: ChartSpec): number {
       if (chart.orientation === 'horizontal') return Math.max(150, 44 + n * 46)
       return n <= 3 ? 240 : 300
     }
+    case 'comparison':
+      return 210
+    case 'waffle':
+      return 240
+    case 'pictogram': {
+      const total = chart.total ?? 100
+      const rows = Math.ceil(total / 10)
+      return rows * 24 + 24
+    }
+    case 'lollipop': {
+      const n = chart.data.length
+      if (chart.orientation === 'vertical') return n <= 3 ? 240 : 300
+      return Math.max(150, 44 + n * 46)
+    }
+    case 'bullet':
+      return Math.max(130, 26 + chart.data.length * 56)
   }
 }

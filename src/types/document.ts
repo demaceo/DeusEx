@@ -157,6 +157,44 @@ export type ChartSpec =
       /** One row per category; each row holds `label` plus a number under each series key. */
       data: Array<{ label: string } & Record<string, number | string>>
     })
+  // ── Sparse-data-friendly kinds (opt-in for the starkest charts) ──
+  | (ChartBase & {
+      kind: 'comparison'
+      /** Exactly two ordered points: [before, after]. The change is the message. */
+      data: [ChartDatum, ChartDatum]
+      /** Override the auto-computed delta badge text (e.g. "×43"). */
+      deltaLabel?: string
+    })
+  | (ChartBase & {
+      kind: 'waffle'
+      /** Segments filling a grid; values are counts out of `total`. */
+      data: ChartDatum[]
+      /** Cells in the grid (default 100 → a 10×10 percent waffle). */
+      total?: number
+    })
+  | (ChartBase & {
+      kind: 'lollipop'
+      orientation?: 'vertical' | 'horizontal'
+      data: ChartDatum[]
+    })
+  | (ChartBase & {
+      kind: 'pictogram'
+      /** Segments tallying icons out of `total`. */
+      data: ChartDatum[]
+      /** Icons in the array (default 100). */
+      total?: number
+      /** Lucide icon name driving the glyph (default "user"). */
+      icon?: 'user' | 'droplet' | 'dollar' | 'zap' | 'leaf' | 'cpu'
+    })
+  | (ChartBase & {
+      kind: 'bullet'
+      /** One or more measures plotted against the shared `target`. */
+      data: ChartDatum[]
+      /** Target/threshold the measures are judged against. */
+      target: number
+      /** Marker caption (default "Target"); e.g. "Baseline" for a control value. */
+      targetLabel?: string
+    })
 
 /**
  * A heterogeneous content block. The union preserves arbitrary source ordering;

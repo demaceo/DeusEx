@@ -824,31 +824,49 @@ cite[data-verification='unverified'] {
   color: var(--muted);
 }
 
+/* ─── PICTOGRAM (isotype icon grid) ───────────────────────────────── */
+.chart-pictogram {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 3px;
+  width: 100%;
+  height: 100%;
+}
+.chart-pictogram svg {
+  display: block;
+}
+
 /* ─── DELTA CHIP (auto change badge on 2-point bars) ──────────────── */
+/* Brand-accent (not red=bad / green=good — the arrow alone conveys direction, so
+   the chip stays neutral about whether a change is good news). */
 .chart-delta-chip {
   position: absolute;
   transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.3rem;
   font-family: var(--font-mono);
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   padding: 0.12rem 0.5rem;
   border-radius: 2px;
-  border: 1px solid currentColor;
+  border: 1px solid var(--accent);
+  color: var(--accent);
   background: var(--white);
   white-space: nowrap;
 }
-.chart-delta-chip[data-sign='up'] {
-  color: var(--c-labor);
-}
-.chart-delta-chip[data-sign='down'] {
-  color: var(--c-optimist);
-}
 .chart-delta-chip[data-sign='flat'] {
+  border-color: var(--muted);
   color: var(--muted);
+}
+
+/* Larger chip used on the comparison slope. */
+.chart-delta-chip--lg {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.65rem;
+  box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 /* Placeholder shown while the lazily-loaded chart chunk arrives — reserves height

@@ -151,7 +151,7 @@ export const partXI: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'donut',
+            kind: 'waffle',
             labelTop: 'Cobalt · USGS',
             title: 'Where the Cobalt Comes From',
             subtitle:
@@ -159,7 +159,7 @@ export const partXI: RoundtableDocument = {
             source: 'US Geological Survey — Mineral Commodity Summaries (Cobalt)',
             claimIds: ['c-xi-cobalt'],
             ariaLabel:
-              'Donut chart showing the Democratic Republic of the Congo supplying about 70 percent of mined cobalt and the rest of the world about 30 percent',
+              'Grid of 100 cells showing the Democratic Republic of the Congo supplying about 70 of every 100 units of mined cobalt and the rest of the world about 30',
             unit: '%',
             data: [
               { label: 'DR Congo', value: 70, variant: 'accent' },

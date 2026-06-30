@@ -166,8 +166,7 @@ export const partX: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'bar',
-            orientation: 'vertical',
+            kind: 'comparison',
             labelTop: 'Facial Analysis · Gender Shades',
             title: 'Same Product, Very Different Accuracy',
             subtitle:
@@ -175,11 +174,11 @@ export const partX: RoundtableDocument = {
             source: 'Buolamwini & Gebru — Gender Shades (2018)',
             claimIds: ['c-x-gendershades'],
             ariaLabel:
-              'Bar chart showing 0.8 percent error for lighter-skinned men versus 34.7 percent error for darker-skinned women in commercial facial analysis',
+              'Comparison showing 0.8 percent error for lighter-skinned men versus 34.7 percent error for darker-skinned women in commercial facial analysis',
             unit: '%',
-            variant: 'navy',
+            variant: 'accent',
             data: [
-              { label: 'Lighter men', value: 0.8 },
+              { label: 'Lighter men', value: 0.8, variant: 'navy' },
               { label: 'Darker women', value: 34.7, variant: 'accent' },
             ],
           },
