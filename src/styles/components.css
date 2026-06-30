@@ -941,6 +941,30 @@ cite[data-verification='unverified'] {
   vertical-align: middle;
 }
 
+/* Quiet "View evidence" button opening the claim drawer, mirroring the stat box. */
+.chart-block__evidence {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.7;
+  transition: opacity 0.15s var(--ease);
+}
+.chart-block__evidence::after {
+  content: ' →';
+}
+.chart-block__evidence:hover,
+.chart-block__evidence:focus-visible {
+  opacity: 1;
+}
+
 /* Verification accent dot, matching the StatBox pattern. */
 .chart-block[data-verification]::before {
   content: '';

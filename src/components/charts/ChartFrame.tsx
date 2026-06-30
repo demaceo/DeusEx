@@ -6,6 +6,8 @@
  * kind via `renderCanvas`.
  */
 
+import { useClaimDrawer } from '../../context/ClaimDrawerContext'
+import { useClaim, useSource } from '../../context/DocumentContext'
 import { useChartWidth } from '../../hooks/useChartWidth'
 import type { VerificationStatus } from '../../types/content'
 import type { ChartSpec } from '../../types/document'
@@ -31,6 +33,12 @@ function hasAside(chart: ChartSpec): boolean {
 
 export function ChartFrame({ chart, status, height, renderCanvas }: ChartFrameProps) {
   const { ref, width } = useChartWidth<HTMLDivElement>()
+  // Charts opt into the evidence drawer via their primary backing claim, mirroring
+  // the StatBox affordance. The default drawer context is a no-op, so this is safe
+  // outside a ClaimDrawerProvider (e.g. in unit tests).
+  const { open } = useClaimDrawer()
+  const claim = useClaim(chart.claimIds?.[0])
+  const source = useSource(claim?.sourceId)
 
   return (
     <figure
@@ -65,6 +73,12 @@ export function ChartFrame({ chart, status, height, renderCanvas }: ChartFramePr
           {status === 'verified' ? <span className="chart-block__verified">Verified</span> : null}
           {chart.source}
         </p>
+      ) : null}
+
+      {claim ? (
+        <button type="button" className="chart-block__evidence" onClick={() => open(claim, source)}>
+          View evidence
+        </button>
       ) : null}
     </figure>
   )

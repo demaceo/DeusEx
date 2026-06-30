@@ -61,6 +61,28 @@ export function LineChart({ chart, width, height }: KindProps) {
           </linearGradient>
         </defs>
         <g transform={`translate(${m.left},${m.top})`}>
+          {/* Shade the projected region so the forecast reads as uncertain, not measured. */}
+          {chart.band && hasProjection ? (
+            <g aria-hidden="true">
+              <rect
+                x={px(data[firstProjected - 1])}
+                y={0}
+                width={innerW - px(data[firstProjected - 1])}
+                height={innerH}
+                fill={CHART_COLORS.panel}
+                opacity={0.6}
+              />
+              <text
+                x={(px(data[firstProjected - 1]) + innerW) / 2}
+                y={12}
+                textAnchor="middle"
+                style={{ ...AXIS_TEXT, fontSize: 9, letterSpacing: '0.1em' }}
+              >
+                PROJECTED
+              </text>
+            </g>
+          ) : null}
+
           <GridLines ticks={ticks} y={y} x0={0} x1={innerW} />
           {ticks.map((t, i) => (
             <text key={i} x={-8} y={y(t)} dy="0.32em" textAnchor="end" style={AXIS_TEXT}>
@@ -122,6 +144,31 @@ export function LineChart({ chart, width, height }: KindProps) {
               unit={chart.unit}
             />
           ) : null}
+
+          {/* Keyed point callouts. */}
+          {(chart.annotations ?? []).map((a, i) => {
+            const d = data.find((p) => p.label === a.at)
+            if (!d) return null
+            return (
+              <g key={`anno-${i}`} aria-hidden="true">
+                <line
+                  x1={px(d)}
+                  y1={py(d) + 6}
+                  x2={px(d)}
+                  y2={py(d) + 20}
+                  stroke={CHART_COLORS.muted}
+                />
+                <text
+                  x={px(d)}
+                  y={py(d) + 32}
+                  textAnchor="middle"
+                  style={{ ...AXIS_TEXT, fill: CHART_COLORS.ink, fontWeight: 600 }}
+                >
+                  {a.text}
+                </text>
+              </g>
+            )
+          })}
         </g>
       </svg>
       <ChartTooltip tip={tip} unit={chart.unit} />

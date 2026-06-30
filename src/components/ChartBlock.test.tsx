@@ -1,6 +1,7 @@
-import { describe, expect, it } from 'vitest'
-import { render, screen, within } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import { DocumentProvider } from './DocumentProvider'
+import { ClaimDrawerContext } from '../context/ClaimDrawerContext'
 import type { Claim } from '../types/content'
 import type { ChartSpec } from '../types/document'
 import { ChartBlock } from './ChartBlock'
@@ -236,5 +237,78 @@ describe('ChartBlock', () => {
     expect(container.querySelector('.chart-block__canvas svg')).toBeInTheDocument()
     const table = container.querySelector('.chart-block__sr') as HTMLElement
     expect(within(table).getByText('4.5 score')).toBeInTheDocument()
+  })
+
+  it('opens the evidence drawer when "View evidence" is clicked', () => {
+    const open = vi.fn()
+    const claims: Record<string, Claim> = {
+      'claim-a': {
+        id: 'claim-a',
+        kind: 'statistic',
+        claimText: 'x',
+        verificationStatus: 'verified',
+      },
+      'claim-b': {
+        id: 'claim-b',
+        kind: 'statistic',
+        claimText: 'y',
+        verificationStatus: 'verified',
+      },
+    }
+    render(
+      <ClaimDrawerContext.Provider value={{ open }}>
+        <DocumentProvider claims={claims}>
+          <ChartBlock chart={barChart} />
+        </DocumentProvider>
+      </ClaimDrawerContext.Provider>,
+    )
+    fireEvent.click(screen.getByRole('button', { name: 'View evidence' }))
+    expect(open).toHaveBeenCalledTimes(1)
+    expect(open.mock.calls[0][0].id).toBe('claim-a')
+  })
+
+  it('omits the evidence affordance when no backing claim resolves', () => {
+    render(
+      <DocumentProvider claims={{}}>
+        <ChartBlock chart={barChart} />
+      </DocumentProvider>,
+    )
+    expect(screen.queryByRole('button', { name: 'View evidence' })).not.toBeInTheDocument()
+  })
+
+  it('draws a reference marker on a bar chart', () => {
+    const { container } = renderChart({
+      kind: 'bar',
+      title: 'Patents',
+      unit: 'K',
+      ariaLabel: 'Patents bar',
+      reference: { value: 15.3, label: '2015 baseline' },
+      data: [
+        { label: '2015', value: 15.3 },
+        { label: '2021', value: 71.4 },
+      ],
+    })
+    expect(container.querySelector('.chart-block__canvas')).toHaveTextContent('2015 baseline')
+  })
+
+  it('marks a projected tail and shades the band on a line chart', () => {
+    const { container } = renderChart({
+      kind: 'line',
+      area: true,
+      band: true,
+      title: 'Synthetic share',
+      unit: '%',
+      ariaLabel: 'Synthetic share line',
+      annotations: [{ at: '2022', text: 'Report published' }],
+      data: [
+        { label: '2022', value: 10 },
+        { label: '2024', value: 45, projected: true },
+        { label: '2026', value: 90, projected: true },
+      ],
+    })
+    const canvas = container.querySelector('.chart-block__canvas') as HTMLElement
+    expect(canvas).toHaveTextContent('PROJECTED')
+    expect(canvas).toHaveTextContent('Report published')
+    expect(canvas.querySelector('path[stroke-dasharray]')).not.toBeNull()
   })
 })

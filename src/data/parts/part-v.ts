@@ -367,6 +367,8 @@ export const partV: RoundtableDocument = {
           type: 'chart',
           data: {
             kind: 'line',
+            area: true,
+            band: true,
             labelTop: 'Synthetic Content · Projected Share',
             title: 'The Rising Share of Synthetic Content',
             subtitle:
@@ -380,9 +382,9 @@ export const partV: RoundtableDocument = {
             data: [
               { label: '2022', value: 10 },
               { label: '2023', value: 25 },
-              { label: '2024', value: 45 },
-              { label: '2025', value: 70 },
-              { label: '2026', value: 90 },
+              { label: '2024', value: 45, projected: true },
+              { label: '2025', value: 70, projected: true },
+              { label: '2026', value: 90, projected: true },
             ],
           },
         },
