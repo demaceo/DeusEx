@@ -15,6 +15,10 @@ html {
      collapse threshold and makes the header stutter/flicker. Opt out so the
      header collapses once, cleanly, as the user scrolls. */
   overflow-anchor: none;
+  /* Prevent any overflowing child from triggering horizontal scroll or causing
+     iOS Safari to zoom the page out to fit overflow. Unlike overflow:hidden
+     this does not disable position:sticky on descendant elements. */
+  overflow-x: clip;
 }
 
 body {
