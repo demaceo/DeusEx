@@ -115,6 +115,7 @@ export function PodcastPlayer({ player }: PodcastPlayerProps) {
         aria-valuetext={`${formatTime(displayTime)} of ${formatTime(maxTime)}`}
         onPointerDown={() => {
           isDragging.current = true
+          pendingScrubRef.current = player.currentTime
           player.scrubStart()
           setScrubbingAt(player.currentTime)
         }}
