@@ -20,7 +20,7 @@ export const partVII: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Loneliness has no algorithm, yet here we are. Tens of millions of people are now confiding in machines that remember everything and judge nothing, that are always available and never tired. Whether that is a gift or a warning depends entirely on what you think connection is for — and whether a perfect simulation of being heard is the same thing as actually being heard.',
+          'Tens of millions of people now confide in machines that remember everything, judge nothing, and never tire. Call that a gift or a warning — the answer depends on what you think connection is for. Is being heard perfectly the same as being heard?',
       },
     ],
     [
