@@ -116,7 +116,7 @@ export function VerificationPage() {
         </h1>
         <p className="subtitle">
           Every statistic and citation in the series is an individually-checkable claim. This is the
-          running tally — {aggregate.verified} of {aggregate.total} claims verified against primary
+          running tally: {aggregate.verified} of {aggregate.total} claims verified against primary
           sources ({pct(aggregate.verified, aggregate.total)}%).
         </p>
         <SummaryMeter summary={aggregate} />
@@ -124,7 +124,7 @@ export function VerificationPage() {
 
       <div className="container">
         <nav className="series-nav">
-          <Link to="/">← The AI Reckoning — series index</Link>
+          <Link to="/">← The AI Reckoning series index</Link>
         </nav>
 
         <div className="vp-filters" role="group" aria-label="Filter claims by status">
@@ -154,7 +154,7 @@ export function VerificationPage() {
               <div className="vp-doc__head">
                 <h2>
                   <Link to={`/${entry.doc.slug}`}>
-                    {entry.partLabel} — {entry.navTitle}
+                    {entry.partLabel}: {entry.navTitle}
                   </Link>
                   {filter !== 'all' ? (
                     <span className="vp-doc__shown">

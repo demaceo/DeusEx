@@ -23,7 +23,7 @@ describe('VerificationPage', () => {
     renderAt()
     for (const entry of DOCUMENTS) {
       const link = screen.getByRole('link', {
-        name: new RegExp(`${entry.partLabel} — ${entry.navTitle}`, 'i'),
+        name: new RegExp(`${entry.partLabel}: ${entry.navTitle}`, 'i'),
       })
       expect(link).toHaveAttribute('href', `/${entry.doc.slug}`)
     }

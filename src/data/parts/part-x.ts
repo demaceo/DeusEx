@@ -8,26 +8,26 @@ export const partX: RoundtableDocument = {
     overline: 'Bias · Fairness · Civil Rights · 2024–2026',
     titleLines: [[{ text: 'The AI Reckoning:' }], [{ text: 'Pattern and Prejudice', em: true }]],
     subtitle:
-      'A model learns the world from data, and the data is a record of the world as it has been — including its discrimination. This part asks what happens when systems trained on an unequal past are handed decisions about faces, freedom, health, and money.',
+      'A model learns the world from data, and the data is a record of the world as it has been, including its discrimination. This part asks what happens when systems trained on an unequal past are handed decisions about faces, freedom, health, and money.',
     dateLine: 'June 2026 · Tenth in the AI Reckoning series',
     accentColor: 'violet',
   },
   companion: {
-    text: 'Part X of the AI Reckoning Series — Read alongside Parts I–IX for full context',
+    text: 'Part X of the AI Reckoning Series. Read alongside Parts I–IX for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          "A mirror only shows the room — that's the problem. These systems were trained on a faithful record of a world already sorted by race, gender, class, and history. The bias isn't a glitch the model introduced; it's one the model learned, optimized, and now delivers faster and at greater scale than any biased human could manage alone. What do we do with a mirror that reflects a past we claimed to be leaving behind?",
+          "A mirror only shows the room: that's the problem. These systems were trained on a faithful record of a world already sorted by race, gender, class, and history. The bias isn't a glitch the model introduced; it's one the model learned, optimized, and now delivers faster and at greater scale than any biased human could manage alone. What do we do with a mirror that reflects a past we claimed to be leaving behind?",
       },
     ],
     [
       {
         type: 'text',
         value:
-          "The Equity Researcher leads this round, auditing these systems for the discrimination they encode and the communities they leave behind. Nobody disputes that bias exists here — it's measured, documented, settled. The real fight is whether it's a bug you patch, or a feature of any system trained on a world that was never fair — and who gets to decide.",
+          "The Equity Researcher leads this round, auditing these systems for the discrimination they encode and the communities they leave behind. Nobody disputes that bias exists here: it's measured, documented, settled. The real fight is whether it's a bug you patch, or a feature of any system trained on a world that was never fair, and who gets to decide.",
       },
     ],
   ],
@@ -48,7 +48,7 @@ export const partX: RoundtableDocument = {
                 value: '34.7%',
                 size: 'large',
                 description:
-                  'Error rate for darker-skinned women in commercial gender classification — versus 0.8% for lighter-skinned men (Gender Shades, 2018)',
+                  'Error rate for darker-skinned women in commercial gender classification, versus 0.8% for lighter-skinned men (Gender Shades, 2018)',
                 claimId: 's-x-gendershades',
               },
               {
@@ -105,7 +105,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I had always assumed a camera just sees what is there. It did not occur to me that it could be better at recognizing some faces than others. When you say it failed for darker-skinned women — what does failing actually do to a real person?',
+                      'I had always assumed a camera just sees what is there. It did not occur to me that it could be better at recognizing some faces than others. When you say it failed for darker-skinned women, what does failing actually do to a real person?',
                   },
                 ],
               ],
@@ -122,7 +122,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It gets someone arrested for a crime they did not commit. There are already documented cases of people — all of them Black men, so far — wrongfully arrested because a facial-recognition match was treated as evidence. The error rate stops being a statistic the moment a system that is worst at recognizing a group is pointed at that group by police.',
+                      'It gets someone arrested for a crime they did not commit. There are already documented cases of people (all of them Black men, so far) wrongfully arrested because a facial-recognition match was treated as evidence. The error rate stops being a statistic the moment a system that is worst at recognizing a group is pointed at that group by police.',
                   },
                 ],
               ],
@@ -171,7 +171,7 @@ export const partX: RoundtableDocument = {
             title: 'Same Product, Very Different Accuracy',
             subtitle:
               'The 2018 Gender Shades audit found commercial gender-classification error rates of up to 34.7% for darker-skinned women, against 0.8% for lighter-skinned men.',
-            source: 'Buolamwini & Gebru — Gender Shades (2018)',
+            source: 'Buolamwini & Gebru: Gender Shades (2018)',
             claimIds: ['c-x-gendershades'],
             ariaLabel:
               'Comparison showing 0.8 percent error for lighter-skinned men versus 34.7 percent error for darker-skinned women in commercial facial analysis',
@@ -226,7 +226,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I have to complicate this, because it is the most important technical point in the whole subject. The company that made the tool fired back, and they were not simply lying: the tool was roughly equally accurate for both groups, and within each risk score it predicted reoffending at similar rates. It turns out you cannot satisfy every definition of fairness at once — calibrated scores and equal error rates are mathematically incompatible when base rates differ. That is a genuine impossibility theorem, not a dodge.',
+                      'I have to complicate this, because it is the most important technical point in the whole subject. The company that made the tool fired back, and they were not simply lying: the tool was roughly equally accurate for both groups, and within each risk score it predicted reoffending at similar rates. It turns out you cannot satisfy every definition of fairness at once: calibrated scores and equal error rates are mathematically incompatible when base rates differ. That is a genuine impossibility theorem, not a dodge.',
                   },
                 ],
               ],
@@ -275,8 +275,8 @@ export const partX: RoundtableDocument = {
             labelTop: 'Criminal Risk Scoring · ProPublica',
             title: 'Wrongly Labeled High-Risk',
             subtitle:
-              'Among defendants who did not reoffend, ProPublica found Black defendants were flagged as high-risk far more often than white defendants — about 45% versus 23%.',
-            source: 'ProPublica — Machine Bias (2016)',
+              'Among defendants who did not reoffend, ProPublica found Black defendants were flagged as high-risk far more often than white defendants: about 45% versus 23%.',
+            source: 'ProPublica: Machine Bias (2016)',
             claimIds: ['c-x-compas'],
             ariaLabel:
               'Bar chart showing 45 percent of non-reoffending Black defendants wrongly flagged high-risk versus 23 percent of white defendants',
@@ -314,7 +314,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' Correcting that single proxy would have more than doubled the share of Black patients flagged for additional help — from about 18% to 46%.',
+                      ' Correcting that single proxy would have more than doubled the share of Black patients flagged for additional help, from about 18% to 46%.',
                   },
                 ],
               ],
@@ -331,7 +331,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And notice there was no malicious variable. Nobody put race into the model. The bias entered through a proxy — spending — that carried the imprint of an unequal system. This is the thing people miss: you can delete race from the inputs and still build a racist outcome, because the world is full of variables that stand in for it. Zip code, spending, arrest records. The model launders history through correlation.',
+                      'And notice there was no malicious variable. Nobody put race into the model. The bias entered through a proxy (spending) that carried the imprint of an unequal system. This is the thing people miss: you can delete race from the inputs and still build a racist outcome, because the world is full of variables that stand in for it. Zip code, spending, arrest records. The model launders history through correlation.',
                   },
                 ],
               ],
@@ -348,7 +348,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to hold onto the hopeful end of that same story, though. The healthcare bias was found by researchers who got access to the model and the outcomes, and once found, it was fixable by changing the target variable from cost to actual health. Audited, published, corrected. The same scale that makes a biased model dangerous makes a corrected one powerful — a single fix reaches every patient at once. The lever cuts both ways.',
+                      'I want to hold onto the hopeful end of that same story, though. The healthcare bias was found by researchers who got access to the model and the outcomes, and once found, it was fixable by changing the target variable from cost to actual health. Audited, published, corrected. The same scale that makes a biased model dangerous makes a corrected one powerful: a single fix reaches every patient at once. The lever cuts both ways.',
                   },
                 ],
               ],
@@ -365,7 +365,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It does cut both ways — when there is access. That study happened because the researchers got the data, which almost never happens; most of these systems are proprietary black boxes. The optimistic version requires something the market does not provide by default: the right to look inside. Mandatory auditing is the precondition for every hopeful fix you are describing.',
+                      'It does cut both ways, but only when there is access. That study happened because the researchers got the data, which almost never happens; most of these systems are proprietary black boxes. The optimistic version requires something the market does not provide by default: the right to look inside. Mandatory auditing is the precondition for every hopeful fix you are describing.',
                   },
                 ],
               ],
@@ -381,7 +381,7 @@ export const partX: RoundtableDocument = {
             title: 'How Many Black Patients the Model Saw',
             subtitle:
               'A widely used care-management algorithm flagged 17.7% of Black patients for extra help; correcting its biased cost-based target would have raised that to 46.5%.',
-            source: 'Obermeyer et al. — Science (2019)',
+            source: 'Obermeyer et al.: Science (2019)',
             claimIds: ['c-x-obermeyer'],
             ariaLabel:
               'Bar chart showing 17.7 percent of Black patients flagged for extra care by the biased algorithm versus 46.5 percent after correcting the bias',
@@ -420,7 +420,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' Faces, freedom, health, money — the same pattern in every domain, because it is the same history in all the data.',
+                      ' Faces, freedom, health, money: the same pattern in every domain, because it is the same history in all the data.',
                   },
                 ],
               ],
@@ -454,7 +454,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It can be either, and that is the honest answer. A well-audited model can be more consistent and more correctable than a thousand individual humans — you can fix one algorithm; you cannot retrain every loan officer overnight. But an unaudited one scales a single bias to everyone at once and wraps it in false objectivity. The technology is not inherently fairer or less fair. It is a multiplier. What it multiplies is whatever we feed it and whether we bother to check.',
+                      'It can be either, and that is the honest answer. A well-audited model can be more consistent and more correctable than a thousand individual humans: you can fix one algorithm; you cannot retrain every loan officer overnight. But an unaudited one scales a single bias to everyone at once and wraps it in false objectivity. The technology is not inherently fairer or less fair. It is a multiplier. What it multiplies is whatever we feed it and whether we bother to check.',
                   },
                 ],
               ],
@@ -471,7 +471,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'So the agenda writes itself, and none of it is exotic. Mandatory bias audits for consequential systems, by independent parties with real access. Documentation of training data and intended use. A right to an explanation and to contest a decision. And for some uses — like live facial recognition in public — the recognition that the fair amount of deployment may be none. Civil-rights law already forbids discrimination in lending, housing, and employment. The task is making sure an algorithm cannot be used to do what a person is not allowed to do.',
+                      'So the agenda writes itself, and none of it is exotic. Mandatory bias audits for consequential systems, by independent parties with real access. Documentation of training data and intended use. A right to an explanation and to contest a decision. And for some uses (like live facial recognition in public), the recognition that the fair amount of deployment may be none. Civil-rights law already forbids discrimination in lending, housing, and employment. The task is making sure an algorithm cannot be used to do what a person is not allowed to do.',
                   },
                 ],
               ],
@@ -488,7 +488,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I will end closer to the Equity Researcher than I started, with one caution to my own side. Audits can become theater — a fairness certificate that lets a harmful system keep running with a clean conscience. The measure that matters is not whether a model passed a test. It is whether the people it acts on are better off, and whether they have any power to say no. Keep that as the metric and I am with you. Lose it and 'debiasing' becomes the most sophisticated alibi ever built.",
+                      "I will end closer to the Equity Researcher than I started, with one caution to my own side. Audits can become theater: a fairness certificate that lets a harmful system keep running with a clean conscience. The measure that matters is not whether a model passed a test. It is whether the people it acts on are better off, and whether they have any power to say no. Keep that as the metric and I am with you. Lose it and 'debiasing' becomes the most sophisticated alibi ever built.",
                   },
                 ],
               ],
@@ -504,7 +504,7 @@ export const partX: RoundtableDocument = {
             title: 'More Likely to Be Denied',
             subtitle:
               'Controlling for applicant finances, a 2021 analysis of over two million mortgage applications found lenders more likely to deny applicants of color than comparable white applicants.',
-            source: 'The Markup — The Secret Bias Hidden in Mortgage-Approval Algorithms (2021)',
+            source: 'The Markup: The Secret Bias Hidden in Mortgage-Approval Algorithms (2021)',
             claimIds: ['c-x-lending'],
             ariaLabel:
               'Horizontal bar chart showing Black applicants 80 percent and Latino applicants 40 percent more likely to be denied a mortgage than similar white applicants',
@@ -527,7 +527,7 @@ export const partX: RoundtableDocument = {
         {
           type: 'text',
           value:
-            'Algorithmic bias is not a story about evil engineers or sentient prejudice. It is a story about inheritance: models trained on the record of an unequal society reproduce that inequality, then hand it back to us with the authority of mathematics. The Equity Researcher is right that deleting race from the inputs does not delete it from the outcome — the proxies carry it. The Skeptic is right that a better benchmark can mask a worse policy, and that an audit can become a costume. The Tech Optimist is right that, unlike human bias, this kind can be measured, published, and corrected at scale — when someone is allowed to look.',
+            'Algorithmic bias is not a story about evil engineers or sentient prejudice. It is a story about inheritance: models trained on the record of an unequal society reproduce that inequality, then hand it back to us with the authority of mathematics. The Equity Researcher is right that deleting race from the inputs does not delete it from the outcome: the proxies carry it. The Skeptic is right that a better benchmark can mask a worse policy, and that an audit can become a costume. The Tech Optimist is right that, unlike human bias, this kind can be measured, published, and corrected at scale, when someone is allowed to look.',
         },
       ],
       [
@@ -541,7 +541,7 @@ export const partX: RoundtableDocument = {
         {
           type: 'text',
           value:
-            'Across ten parts the through-line has only sharpened. The costs are real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged, the ownership concentrated, the culture taken — and now the prejudice inherited. A mirror held up to a society reflects its face exactly. The work is not to blame the mirror. It is to change what it is pointed at, and to make sure the people in the reflection have a say in how they are seen.',
+            'Across ten parts the through-line has only sharpened. The costs are real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged, the ownership concentrated, the culture taken, and now the prejudice inherited. A mirror held up to a society reflects its face exactly. The work is not to blame the mirror. It is to change what it is pointed at, and to make sure the people in the reflection have a say in how they are seen.',
         },
       ],
     ],
@@ -550,28 +550,28 @@ export const partX: RoundtableDocument = {
   sources: [
     {
       id: 'src-gender-shades',
-      title: 'Buolamwini & Gebru — Gender Shades (2018)',
+      title: 'Buolamwini & Gebru: Gender Shades (2018)',
       description:
         'MIT Media Lab / PMLR study auditing commercial gender-classification systems, finding error rates up to 34.7% for darker-skinned women versus under 1% for lighter-skinned men.',
       url: 'https://proceedings.mlr.press/v81/buolamwini18a.html',
     },
     {
       id: 'src-propublica-compas',
-      title: 'ProPublica — Machine Bias (2016)',
+      title: 'ProPublica: Machine Bias (2016)',
       description:
         'Investigation of the COMPAS recidivism risk tool, finding Black defendants who did not reoffend were far more likely than white defendants to be labeled high-risk.',
       url: 'https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing',
     },
     {
       id: 'src-obermeyer',
-      title: 'Obermeyer et al. — Science (2019)',
+      title: 'Obermeyer et al.: Science (2019)',
       description:
         'Study of a widely used health care-management algorithm showing racial bias from using cost as a proxy for need; correcting it would raise Black patients flagged for extra care from 17.7% to 46.5%.',
       url: 'https://www.science.org/doi/10.1126/science.aax2342',
     },
     {
       id: 'src-markup-lending',
-      title: 'The Markup — Mortgage-Approval Bias (2021)',
+      title: 'The Markup: Mortgage-Approval Bias (2021)',
       description:
         'Analysis of over two million conventional mortgage applications finding lenders more likely to deny applicants of color than similar white applicants.',
       url: 'https://themarkup.org/denied/2021/08/25/the-secret-bias-hidden-in-mortgage-approval-algorithms',
@@ -587,7 +587,7 @@ export const partX: RoundtableDocument = {
       sourceId: 'src-gender-shades',
       verificationStatus: 'verified',
       verifiedUrl: 'https://proceedings.mlr.press/v81/buolamwini18a.html',
-      note: 'Gender Shades (Buolamwini & Gebru, 2018) found commercial gender-classification error rates up to 34.7% for darker-skinned women, versus 0.8% for lighter-skinned men — the maximum intersectional gap across the audited products.',
+      note: 'Gender Shades (Buolamwini & Gebru, 2018) found commercial gender-classification error rates up to 34.7% for darker-skinned women, versus 0.8% for lighter-skinned men: the maximum intersectional gap across the audited products.',
       lastCheckedISO: '2026-06-27',
     },
     's-x-compas': {
@@ -632,7 +632,7 @@ export const partX: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing',
-      note: 'ProPublica 2016: of defendants who did not reoffend, ~45% of Black defendants were labeled high-risk vs ~23% of white defendants. Northpointe disputed the analysis, citing equal calibration — the documented fairness-impossibility tension noted in-text.',
+      note: 'ProPublica 2016: of defendants who did not reoffend, ~45% of Black defendants were labeled high-risk vs ~23% of white defendants. Northpointe disputed the analysis, citing equal calibration: the documented fairness-impossibility tension noted in-text.',
       lastCheckedISO: '2026-06-27',
     },
     'c-x-obermeyer': {

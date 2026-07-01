@@ -8,26 +8,26 @@ export const partVIII: RoundtableDocument = {
     overline: 'Power · Compute · Capital · 2024–2026',
     titleLines: [[{ text: 'The AI Reckoning:' }], [{ text: 'Whose Intelligence?', em: true }]],
     subtitle:
-      'The series has asked what AI does. This part asks who owns the means to build it — the chips, the capital, the data — and who captures the gains when intelligence itself becomes the most concentrated industry on earth.',
+      'The series has asked what AI does. This part asks who owns the means to build it (the chips, the capital, the data) and who captures the gains when intelligence itself becomes the most concentrated industry on earth.',
     dateLine: 'June 2026 · Eighth in the AI Reckoning series',
     accentColor: 'bronze',
   },
   companion: {
-    text: 'Part VIII of the AI Reckoning Series — Read alongside Parts I–VII for full context',
+    text: 'Part VIII of the AI Reckoning Series: Read alongside Parts I–VII for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          'Every transformative technology ends up a monopoly, or close to one — steam, oil, steel, bandwidth, all consolidated before anyone built the institutions to govern them. Intelligence now feeds every other decision we make. So ask the question that came too late for every technology before it: who owns this, and what happens to the rest of us?',
+          'Every transformative technology ends up a monopoly, or close to one: steam, oil, steel, bandwidth, all consolidated before anyone built the institutions to govern them. Intelligence now feeds every other decision we make. So ask the question that came too late for every technology before it: who owns this, and what happens to the rest of us?',
       },
     ],
     [
       {
         type: 'text',
         value:
-          "The Economist leads this round, tracking compute, capital, and data flows. Her argument: the deciding question isn't what AI can do, but who can afford to make it do anything. The risk isn't a rogue machine — it's older and more familiar. A technology powerful enough to reshape every economy ends up owned by a very few people, and stays that way.",
+          "The Economist leads this round, tracking compute, capital, and data flows. Her argument: the deciding question isn't what AI can do, but who can afford to make it do anything. The risk isn't a rogue machine; it's older and more familiar. A technology powerful enough to reshape every economy ends up owned by a very few people, and stays that way.",
       },
     ],
   ],
@@ -121,7 +121,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "It runs through a few extraordinary ones, yes — and that's because making a leading-edge chip is arguably the hardest thing humans manufacture. The concentration reflects genuine difficulty, not just market power. But I'll grant the Economist the real point: a supply chain this narrow is fragile, and fragility plus strategic importance is exactly what invites both disruption and political control.",
+                      "It runs through a few extraordinary ones, yes, and that's because making a leading-edge chip is arguably the hardest thing humans manufacture. The concentration reflects genuine difficulty, not just market power. But I'll grant the Economist the real point: a supply chain this narrow is fragile, and fragility plus strategic importance is exactly what invites both disruption and political control.",
                   },
                 ],
               ],
@@ -138,7 +138,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "And before we declare it permanent — concentration like this has a history of cracking. Memory chips, solar panels, displays: all were once choke-pointed and then diffused. I'd bet the same pressure is already building here, with the US, China, and the EU all pouring subsidies into domestic fabs. The chokepoint is real today. Whether it holds for a decade is a much weaker claim than the dramatic version implies.",
+                      "And before we declare it permanent: concentration like this has a history of cracking. Memory chips, solar panels, displays: all were once choke-pointed and then diffused. I'd bet the same pressure is already building here, with the US, China, and the EU all pouring subsidies into domestic fabs. The chokepoint is real today. Whether it holds for a decade is a much weaker claim than the dramatic version implies.",
                   },
                 ],
               ],
@@ -152,7 +152,7 @@ export const partVIII: RoundtableDocument = {
             labelTop: 'Semiconductors · Leading-Edge Capacity',
             title: 'One Company, Most of the Advanced Chips',
             subtitle:
-              "Industry estimates put TSMC's share of the world's most advanced (leading-edge) chip manufacturing at roughly 90% — the physical bottleneck under all frontier AI.",
+              "Industry estimates put TSMC's share of the world's most advanced (leading-edge) chip manufacturing at roughly 90%, the physical bottleneck under all frontier AI.",
             source: 'Industry estimates (SIA / analyst reporting)',
             claimIds: ['c-viii-tsmc'],
             ariaLabel:
@@ -190,7 +190,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' That is just the final training run — not the research, the failed runs, the talent, or the data. When the entry ticket is hundreds of millions of dollars, the set of organizations that can sit at the frontier is, by definition, tiny.',
+                      ' That is just the final training run: not the research, the failed runs, the talent, or the data. When the entry ticket is hundreds of millions of dollars, the set of organizations that can sit at the frontier is, by definition, tiny.',
                   },
                 ],
               ],
@@ -207,7 +207,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'll push on the framing. Costs at the frontier are high, but the cost of a given level of capability collapses every year — what cost $191 million to train becomes a cheap open model eighteen months later. The frontier is expensive; the diffusion behind it is breathtakingly cheap. Focusing only on the frontier price tag tells a concentration story while ignoring the democratization happening right behind it.",
+                      "I'll push on the framing. Costs at the frontier are high, but the cost of a given level of capability collapses every year: what cost $191 million to train becomes a cheap open model eighteen months later. The frontier is expensive; the diffusion behind it is breathtakingly cheap. Focusing only on the frontier price tag tells a concentration story while ignoring the democratization happening right behind it.",
                   },
                 ],
               ],
@@ -224,7 +224,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That is the most important disagreement in the whole field, and it is genuinely unresolved. You are right that capability diffuses. But the frontier keeps moving, and whoever holds it captures the highest-margin work, sets the standards, and earns the returns that fund the next frontier. Cheap last-generation models are real — and so is a flywheel where the same few players keep paying for the next ticket because they are the only ones who can.',
+                      'That is the most important disagreement in the whole field, and it is genuinely unresolved. You are right that capability diffuses. But the frontier keeps moving, and whoever holds it captures the highest-margin work, sets the standards, and earns the returns that fund the next frontier. Cheap last-generation models are real, and so is a flywheel where the same few players keep paying for the next ticket because they are the only ones who can.',
                   },
                 ],
               ],
@@ -241,7 +241,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Both can hold. Open-weight models — Llama, Mistral, and others — have genuinely put strong capability in the hands of startups, researchers, and governments that could never train from scratch. The base layer is more open than the doom narrative admits. The question is whether the frontier layer stays a private club, and on that I'm less sure than I used to be.",
+                      "Both can hold. Open-weight models (Llama, Mistral, and others) have genuinely put strong capability in the hands of startups, researchers, and governments that could never train from scratch. The base layer is more open than the doom narrative admits. The question is whether the frontier layer stays a private club, and on that I'm less sure than I used to be.",
                   },
                 ],
               ],
@@ -257,7 +257,7 @@ export const partVIII: RoundtableDocument = {
             title: 'The Rising Price of a Frontier Model',
             subtitle:
               'Estimated compute cost of the final training run has climbed into the hundreds of millions: GPT-4 ~$78M, Gemini Ultra ~$191M.',
-            source: 'Stanford HAI — AI Index Report 2024',
+            source: 'Stanford HAI: AI Index Report 2024',
             claimIds: ['c-viii-training-cost'],
             ariaLabel:
               'Bar chart showing estimated training compute cost of about 78 million dollars for GPT-4 and 191 million dollars for Gemini Ultra',
@@ -289,13 +289,13 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Now follow the money geographically. In 2023, private AI investment was overwhelmingly concentrated in the United States — about $67 billion — with China a distant second near $8 billion and the United Kingdom third under $4 billion.',
+                      'Now follow the money geographically. In 2023, private AI investment was overwhelmingly concentrated in the United States (about $67 billion), with China a distant second near $8 billion and the United Kingdom third under $4 billion.',
                   },
                   { type: 'cite', claimId: 'c-viii-investment-geo' },
                   {
                     type: 'text',
                     value:
-                      ' Most of the planet does not appear on this chart at all. The Global Majority supplies data, labor, and increasingly the energy and water we documented in Part I — but the capital, the models, and the returns accrue somewhere else.',
+                      ' Most of the planet does not appear on this chart at all. The Global Majority supplies data, labor, and increasingly the energy and water we documented in Part I. But the capital, the models, and the returns accrue somewhere else.',
                   },
                 ],
               ],
@@ -312,7 +312,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'This is the thread back to everything we said about labor. The data annotators in Nairobi, the content moderators in Manila, the cobalt and the cooling water — those are real inputs from the Global South. What comes back is a subscription product priced for the Global North. It is an old pattern wearing a new technology: the value is extracted in one place and captured in another.',
+                      'This is the thread back to everything we said about labor. The data annotators in Nairobi, the content moderators in Manila, the cobalt, and the cooling water are all real inputs from the Global South. What comes back is a subscription product priced for the Global North. It is an old pattern wearing a new technology: the value is extracted in one place and captured in another.',
                   },
                 ],
               ],
@@ -329,7 +329,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And this is where concentration stops being an economic curiosity and becomes a governance problem. When a technology that can reshape every economy is owned by a handful of firms in a handful of countries, the rest of the world faces a choice between dependence and exclusion. That is precisely the dynamic — power without matching accountability — that Part IV called one of the two bad attractors. Concentrated capability is how you slide toward it.',
+                      'And this is where concentration stops being an economic curiosity and becomes a governance problem. When a technology that can reshape every economy is owned by a handful of firms in a handful of countries, the rest of the world faces a choice between dependence and exclusion. That is precisely the dynamic (power without matching accountability) that Part IV called one of the two bad attractors. Concentrated capability is how you slide toward it.',
                   },
                 ],
               ],
@@ -362,7 +362,7 @@ export const partVIII: RoundtableDocument = {
             title: 'Where the Capital Is',
             subtitle:
               'Private AI investment in 2023 was concentrated in the United States (~$67B), far ahead of China (~$8B) and the United Kingdom (~$4B).',
-            source: 'Stanford HAI — AI Index Report 2024',
+            source: 'Stanford HAI: AI Index Report 2024',
             claimIds: ['c-viii-investment-geo'],
             ariaLabel:
               'Lollipop chart of 2023 private AI investment: United States about 67 billion dollars, China about 8 billion, United Kingdom about 4 billion',
@@ -404,7 +404,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'There are real levers here, and some are already moving. Competition regulators on both sides of the Atlantic are scrutinizing the cloud-and-model partnerships that tie frontier labs to a few hyperscalers. Public-compute initiatives — national AI research resources — aim to give universities and startups access they cannot buy. And open-weight models function as a kind of antitrust by other means: a capable free floor under the market.',
+                      'There are real levers here, and some are already moving. Competition regulators on both sides of the Atlantic are scrutinizing the cloud-and-model partnerships that tie frontier labs to a few hyperscalers. Public-compute initiatives (national AI research resources) aim to give universities and startups access they cannot buy. And open-weight models function as a kind of antitrust by other means: a capable free floor under the market.',
                   },
                 ],
               ],
@@ -421,7 +421,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Those are the right instruments. I'd add one measurement that should worry us: who actually builds the frontier models. In 2023, industry produced the overwhelming majority of notable AI models — on the order of 51, against roughly 15 from academia.",
+                      "Those are the right instruments. I'd add one measurement that should worry us: who actually builds the frontier models. In 2023, industry produced the overwhelming majority of notable AI models: on the order of 51, against roughly 15 from academia.",
                   },
                   { type: 'cite', claimId: 'c-viii-industry-academia' },
                   {
@@ -444,7 +444,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Then fund the public side rather than only fearing the private one. The fix for academia falling behind is public compute and open models, not pretending the private investment did not also produce the breakthroughs Part III documented. Concentration and progress came from the same engine. The task is to keep the progress while widening the ownership — not to choose between them.',
+                      'Then fund the public side rather than only fearing the private one. The fix for academia falling behind is public compute and open models, not pretending the private investment did not also produce the breakthroughs Part III documented. Concentration and progress came from the same engine. The task is to keep the progress while widening the ownership, not to choose between them.',
                   },
                 ],
               ],
@@ -461,7 +461,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "So the thing I should worry about is not the robots — it is that a handful of companies could end up owning the most important tool of my grandchildren's lifetime, and nobody outside them really knows how it works. When you put it that way, it sounds less like science fiction and more like every other time a few people cornered something that mattered.",
+                      "So the thing I should worry about is not the robots; it is that a handful of companies could end up owning the most important tool of my grandchildren's lifetime, and nobody outside them really knows how it works. When you put it that way, it sounds less like science fiction and more like every other time a few people cornered something that mattered.",
                   },
                 ],
               ],
@@ -476,8 +476,8 @@ export const partVIII: RoundtableDocument = {
             labelTop: 'Who Builds the Frontier · 2023',
             title: 'Notable AI Models: Industry vs Academia',
             subtitle:
-              "In 2023 industry produced roughly 51 notable machine-learning models to academia's ~15 — a reversal of the field's earlier balance, and a shift in who can independently check the frontier.",
-            source: 'Stanford HAI — AI Index Report 2024',
+              "In 2023 industry produced roughly 51 notable machine-learning models to academia's ~15, a reversal of the field's earlier balance, and a shift in who can independently check the frontier.",
+            source: 'Stanford HAI: AI Index Report 2024',
             claimIds: ['c-viii-industry-academia'],
             ariaLabel:
               'Bar chart showing about 51 notable AI models from industry and about 15 from academia in 2023',
@@ -500,21 +500,21 @@ export const partVIII: RoundtableDocument = {
         {
           type: 'text',
           value:
-            'The deepest fact about artificial intelligence may be the least technical one: it is extraordinarily concentrated. The chips trace back to a single fab; the frontier models to a handful of firms with sovereign-scale budgets; the capital to two countries. The Economist is right that this is the oldest political-economy question in a new costume — who owns the means of production when the means of production is intelligence itself. The Accelerationist is right that capability diffuses cheaply behind the frontier, and the Skeptic is right that chokepoints have cracked before.',
+            'The deepest fact about artificial intelligence may be the least technical one: it is extraordinarily concentrated. The chips trace back to a single fab; the frontier models to a handful of firms with sovereign-scale budgets; the capital to two countries. The Economist is right that this is the oldest political-economy question in a new costume: who owns the means of production when the means of production is intelligence itself. The Accelerationist is right that capability diffuses cheaply behind the frontier, and the Skeptic is right that chokepoints have cracked before.',
         },
       ],
       [
         {
           type: 'text',
           value:
-            'What makes this case different from past concentrations is reach. A dominant railroad or oil trust shaped an economy; a dominant intelligence shapes every economy, including the capacity to govern it. That is why the levers that matter are the unglamorous ones: public compute, open-weight floors, competition enforcement, and multilateral access — the institutional plumbing that decides whether capability becomes control.',
+            'What makes this case different from past concentrations is reach. A dominant railroad or oil trust shaped an economy; a dominant intelligence shapes every economy, including the capacity to govern it. That is why the levers that matter are the unglamorous ones: public compute, open-weight floors, competition enforcement, and multilateral access (the institutional plumbing that decides whether capability becomes control).',
         },
       ],
       [
         {
           type: 'text',
           value:
-            'Across eight parts the through-line holds. The costs are real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged — and the ownership concentrated. None of it resolves into a verdict on the technology. It resolves into a verdict on us: whether we build the institutions to spread a transformative power, or let it pool, as power usually does, in the hands already holding it.',
+            'Across eight parts the through-line holds. The costs are real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged, and the ownership concentrated. None of it resolves into a verdict on the technology. It resolves into a verdict on us: whether we build the institutions to spread a transformative power, or let it pool, as power usually does, in the hands already holding it.',
         },
       ],
     ],
@@ -523,14 +523,14 @@ export const partVIII: RoundtableDocument = {
   sources: [
     {
       id: 'src-ai-index-2024',
-      title: 'Stanford HAI — Artificial Intelligence Index Report 2024',
+      title: 'Stanford HAI: Artificial Intelligence Index Report 2024',
       description:
         'Stanford Institute for Human-Centered AI annual report tracking AI investment, training costs, model production, and global trends.',
       url: 'https://aiindex.stanford.edu/report/',
     },
     {
       id: 'src-chip-concentration',
-      title: 'Semiconductor supply concentration — industry estimates',
+      title: 'Semiconductor supply concentration (industry estimates)',
       description:
         "Analyst and Semiconductor Industry Association estimates of TSMC's share of the world's leading-edge chip manufacturing capacity.",
       url: 'https://www.semiconductors.org/',
@@ -556,7 +556,7 @@ export const partVIII: RoundtableDocument = {
       sourceId: 'src-ai-index-2024',
       verificationStatus: 'verified',
       verifiedUrl: 'https://aiindex.stanford.edu/report/',
-      note: 'Stanford AI Index 2024 reports US private AI investment of about $67.2 billion in 2023 — far ahead of any other country.',
+      note: 'Stanford AI Index 2024 reports US private AI investment of about $67.2 billion in 2023, far ahead of any other country.',
       lastCheckedISO: '2026-06-27',
     },
     's-viii-gemini-cost': {
@@ -608,7 +608,7 @@ export const partVIII: RoundtableDocument = {
       sourceId: 'src-ai-index-2024',
       verificationStatus: 'verified',
       verifiedUrl: 'https://aiindex.stanford.edu/report/',
-      note: 'Stanford AI Index 2024: in 2023 industry produced 51 notable machine-learning models and academia 15 (with several industry-academia collaborations) — a reversal of the earlier academic lead.',
+      note: 'Stanford AI Index 2024: in 2023 industry produced 51 notable machine-learning models and academia 15 (with several industry-academia collaborations), a reversal of the earlier academic lead.',
       lastCheckedISO: '2026-06-27',
     },
   },

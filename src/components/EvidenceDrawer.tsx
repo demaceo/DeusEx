@@ -169,7 +169,7 @@ function EvidenceDrawer({ active, onClose }: EvidenceDrawerProps) {
           </a>
         ) : (
           <p className="evidence-drawer__pending">
-            No primary source linked yet — this claim is still being checked.
+            No primary source linked yet. This claim is still being checked.
           </p>
         )}
       </aside>

@@ -12,7 +12,7 @@ export function SummaryList({ summary }: SummaryListProps) {
       <ul>
         {summary.items.map((item, i) => (
           <li key={i}>
-            <strong>{item.lead}</strong> {item.text}
+            <strong>{item.lead}:</strong> {item.text}
           </li>
         ))}
       </ul>

@@ -11,19 +11,19 @@ export const partIII: RoundtableDocument = {
       [{ text: "What It's Actually Getting Right", em: true }],
     ],
     subtitle:
-      'The same five voices — this time examining the concrete, documented, peer-reviewed positive outcomes of AI research, access, and application. No hype. No speculation. Just what is actually working.',
+      'The same five voices, this time examining the concrete, documented, peer-reviewed positive outcomes of AI research, access, and application. No hype. No speculation. Just what is actually working.',
     dateLine: 'May 2026 · Third in the AI Reckoning series',
     accentColor: 'green',
   },
   companion: {
-    text: 'Part III of the AI Reckoning Series — Read alongside Parts I & II for full context',
+    text: 'Part III of the AI Reckoning Series: read alongside Parts I & II for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          'It is not a concession to admit that something works. Science advances. Diseases yield. Floods are predicted. Children in under-resourced classrooms gain months of ground. The honest reckoning includes this — not as absolution for the costs, but as the other half of the ledger, without which none of the difficult tradeoffs can be weighed.',
+          'It is not a concession to admit that something works. Science advances. Diseases yield. Floods are predicted. Children in under-resourced classrooms gain months of ground. The honest reckoning includes this: not as absolution for the costs, but as the other half of the ledger, without which none of the difficult tradeoffs can be weighed.',
       },
     ],
   ],
@@ -45,7 +45,7 @@ export const partIII: RoundtableDocument = {
                 value: '214M+',
                 size: 'large',
                 description:
-                  'Protein structures predicted — nearly every known protein sequence on Earth',
+                  'Protein structures predicted: nearly every known protein sequence on Earth',
                 claimId: 's-iii-alphafold-214m',
               },
               {
@@ -54,7 +54,7 @@ export const partIII: RoundtableDocument = {
                 value: 'Chemistry 2024',
                 size: 'medium',
                 description:
-                  "Awarded to AlphaFold creators — the first AI-driven tool to win science's highest honor",
+                  "Awarded to AlphaFold creators, the first AI-driven tool to win science's highest honor",
                 claimId: 's-iii-nobel-chemistry-2024',
               },
               {
@@ -96,20 +96,20 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Let me start with what I consider the most significant scientific achievement in AI history. AlphaFold — developed by Google DeepMind — solved a problem that had stumped biologists for fifty years: how to predict a protein's three-dimensional shape from its sequence of amino acids. Proteins are the molecular machinery of life, and understanding their structure is the foundation of drug development, understanding disease, and developing new therapies. For decades, determining one protein structure experimentally could take a research team years. AlphaFold does it in minutes.",
+                      "Let me start with what I consider the most significant scientific achievement in AI history. AlphaFold (developed by Google DeepMind) solved a problem that had stumped biologists for fifty years: how to predict a protein's three-dimensional shape from its sequence of amino acids. Proteins are the molecular machinery of life, and understanding their structure is the foundation of drug development, understanding disease, and developing new therapies. For decades, determining one protein structure experimentally could take a research team years. AlphaFold does it in minutes.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'The AlphaFold database now contains over 214 million predicted protein structures — essentially every known protein sequence on Earth, made freely available to any researcher anywhere.',
+                      'The AlphaFold database now contains over 214 million predicted protein structures: essentially every known protein sequence on Earth, made freely available to any researcher anywhere.',
                   },
                   { type: 'cite', claimId: 'c-iii-alphafold-214m' },
                   {
                     type: 'text',
                     value:
-                      " This work won the 2024 Nobel Prize in Chemistry — the first time an AI-driven tool has earned science's highest honor.",
+                      " This work won the 2024 Nobel Prize in Chemistry, the first time an AI-driven tool has earned science's highest honor.",
                   },
                   { type: 'cite', claimId: 'c-iii-nobel-2024' },
                   {
@@ -128,7 +128,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Building on that foundation, researchers at MIT and McMaster University trained a generative AI model to design entirely new antibiotic structures to fight drug-resistant bacteria. The model screened more than 36 million molecular possibilities. From that screen, it found a small set of promising compounds. Two candidates eliminated MRSA — methicillin-resistant Staphylococcus aureus — in mouse models, and one showed activity against several other drug-resistant bacteria.',
+                      'Building on that foundation, researchers at MIT and McMaster University trained a generative AI model to design entirely new antibiotic structures to fight drug-resistant bacteria. The model screened more than 36 million molecular possibilities. From that screen, it found a small set of promising compounds. Two candidates eliminated MRSA (methicillin-resistant Staphylococcus aureus) in mouse models, and one showed activity against several other drug-resistant bacteria.',
                   },
                   { type: 'cite', claimId: 'c-iii-mit-antibiotic' },
                   {
@@ -151,20 +151,20 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to add something from a different angle. In 2024, Google partnered with the Lichtman Lab at Harvard to map a tiny cubic millimeter of human brain tissue — at a resolution and level of cellular detail never previously achieved. The project revealed never-before-seen structures within the human brain and made the complete dataset, including AI-generated annotations for every cell, freely available to the scientific community.',
+                      'I want to add something from a different angle. In 2024, Google partnered with the Lichtman Lab at Harvard to map a tiny cubic millimeter of human brain tissue, at a resolution and level of cellular detail never previously achieved. The project revealed never-before-seen structures within the human brain and made the complete dataset, including AI-generated annotations for every cell, freely available to the scientific community.',
                   },
                   { type: 'cite', claimId: 'c-iii-brain-mapping' },
                   {
                     type: 'text',
                     value:
-                      " That kind of foundational contribution — mapping what is actually there rather than theorizing — doesn't get the headlines drug discoveries do, but it may matter more for the long-term understanding of neurological disease.",
+                      " That kind of foundational contribution (mapping what is actually there rather than theorizing) doesn't get the headlines drug discoveries do, but it may matter more for the long-term understanding of neurological disease.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "And separately, Google DeepMind's AI identified a previously unknown protein interaction critical to the survival of certain cancer cells — molecular dependencies that are difficult to detect through conventional laboratory methods, pointing toward a potential new class of drug targets that could selectively disrupt cancer growth while sparing healthy tissue.",
+                      "And separately, Google DeepMind's AI identified a previously unknown protein interaction critical to the survival of certain cancer cells: molecular dependencies that are difficult to detect through conventional laboratory methods, pointing toward a potential new class of drug targets that could selectively disrupt cancer growth while sparing healthy tissue.",
                   },
                   { type: 'cite', claimId: 'c-iii-cancer-protein' },
                 ],
@@ -182,7 +182,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Something worth noting about AlphaFold specifically: the decision to make the database freely available was not commercially required. Releasing 214 million protein structures as open access to every researcher on Earth regardless of their institution or country is a policy choice about who benefits from scientific infrastructure. Research published in 2025 found that before AlphaFold, the top 10% of universities published 55% of protein research articles and secured 50% of research grants — the field was heavily concentrated.',
+                      'Something worth noting about AlphaFold specifically: the decision to make the database freely available was not commercially required. Releasing 214 million protein structures as open access to every researcher on Earth regardless of their institution or country is a policy choice about who benefits from scientific infrastructure. Research published in 2025 found that before AlphaFold, the top 10% of universities published 55% of protein research articles and secured 50% of research grants; the field was heavily concentrated.',
                   },
                   { type: 'cite', claimId: 'c-iii-biorxiv-concentration' },
                   {
@@ -202,7 +202,7 @@ export const partIII: RoundtableDocument = {
             labelTop: 'Science · Before AlphaFold',
             title: 'A handful of universities once held most of the field',
             subtitle:
-              'Share of protein-research output before AlphaFold opened its data — open access is now measurably reducing this concentration.',
+              'Share of protein-research output before AlphaFold opened its data; open access is now measurably reducing this concentration.',
             unit: '%',
             claimIds: ['c-iii-biorxiv-concentration'],
             ariaLabel:
@@ -228,7 +228,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The antibiotic thing is the one that really lands for me. I've heard about antibiotic resistance my whole life — that eventually the bacteria will outsmart all our medicines and we'll be in serious trouble. Are they saying AI actually found new ones?",
+                      "The antibiotic thing is the one that really lands for me. I've heard about antibiotic resistance my whole life: that eventually the bacteria will outsmart all our medicines and we'll be in serious trouble. Are they saying AI actually found new ones?",
                   },
                 ],
               ],
@@ -245,13 +245,13 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "In mouse models, yes — and structurally novel ones, which is the critical point. Bacteria develop resistance by evolving defenses against specific molecular structures. When a new drug has a structure bacteria have never encountered, resistance takes much longer to emerge. The AI didn't just find another version of a drug we already have. It found molecules from a part of chemical space that human researchers, working manually, would not have reached.",
+                      "In mouse models, yes, and structurally novel ones, which is the critical point. Bacteria develop resistance by evolving defenses against specific molecular structures. When a new drug has a structure bacteria have never encountered, resistance takes much longer to emerge. The AI didn't just find another version of a drug we already have. It found molecules from a part of chemical space that human researchers, working manually, would not have reached.",
                   },
                   { type: 'cite', claimId: 'c-iii-alation-chemical-space' },
                   {
                     type: 'text',
                     value:
-                      " These are early-stage findings that still need to advance through human trials. But the discovery step itself — which historically has been the hardest part — happened. That's the real news.",
+                      " These are early-stage findings that still need to advance through human trials. But the discovery step itself (which historically has been the hardest part) happened. That's the real news.",
                   },
                 ],
               ],
@@ -262,7 +262,7 @@ export const partIII: RoundtableDocument = {
           type: 'pullquote',
           data: {
             text: '"By releasing protein structure predictions in a free database, scientists around the world can accelerate progress in areas like developing new medicines, fighting antibiotic resistance, and tackling plastic pollution."',
-            attribution: '— Google AI Science, 2024',
+            attribution: 'Google AI Science, 2024',
           },
         },
       ],
@@ -343,14 +343,14 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Drug development has historically been one of the least efficient processes in human civilization. The average approved medicine costs $2.6 billion to develop and takes more than a decade. Most of that cost comes from failure — compounds that look promising early but turn out to be toxic or ineffective much later, after enormous resources have been spent. AI is attacking that failure rate at the source.',
+                      'Drug development has historically been one of the least efficient processes in human civilization. The average approved medicine costs $2.6 billion to develop and takes more than a decade. Most of that cost comes from failure: compounds that look promising early but turn out to be toxic or ineffective much later, after enormous resources have been spent. AI is attacking that failure rate at the source.',
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'AI systems can now predict which protein targets are most likely to be "druggable" before anyone steps foot in a lab. They predict toxicity profiles across different organ systems, how quickly the body absorbs and eliminates a drug, and potential off-target effects that cause side effects — all before synthesis.',
+                      'AI systems can now predict which protein targets are most likely to be "druggable" before anyone steps foot in a lab. They predict toxicity profiles across different organ systems, how quickly the body absorbs and eliminates a drug, and potential off-target effects that cause side effects, all before synthesis.',
                   },
                   { type: 'cite', claimId: 'c-iii-lifebit-druggable' },
                   {
@@ -369,7 +369,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In diagnostics, AI medical imaging analysis reads X-rays, MRIs, and CT scans at speeds and consistency that human radiologists cannot match alone — not as replacement, but as a second reader that catches what fatigue or distraction might miss. Early cancer detection through AI screening is saving an estimated $150,000 per patient in treatment costs by catching disease in stages that are far cheaper to treat.',
+                      'In diagnostics, AI medical imaging analysis reads X-rays, MRIs, and CT scans at speeds and consistency that human radiologists cannot match alone: not as a replacement, but as a second reader that catches what fatigue or distraction might miss. Early cancer detection through AI screening is saving an estimated $150,000 per patient in treatment costs by catching disease in stages that are far cheaper to treat.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-150k' },
                   {
@@ -393,14 +393,14 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I want to engage with this seriously because the healthcare case is genuinely compelling — but I also want to be clear-eyed about distribution. When AI cuts $700 million from drug development costs, does that reduce the price of the drug for patients, or does it increase the profit margin for the manufacturer? The technology's benefit to human health depends entirely on who captures the efficiency gains. A cheaper-to-develop drug that still costs $100,000 per year in treatment is not a story about democratizing medicine.",
+                      "I want to engage with this seriously because the healthcare case is genuinely compelling, but I also want to be clear-eyed about distribution. When AI cuts $700 million from drug development costs, does that reduce the price of the drug for patients, or does it increase the profit margin for the manufacturer? The technology's benefit to human health depends entirely on who captures the efficiency gains. A cheaper-to-develop drug that still costs $100,000 per year in treatment is not a story about democratizing medicine.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "That said — the point about early detection is different and I think the distribution question is easier there. Catching cancer in Stage I rather than Stage III does save lives regardless of the healthcare system structure. And for that specific application, I'm genuinely glad this technology exists.",
+                      "That said, the point about early detection is different, and I think the distribution question is easier there. Catching cancer in Stage I rather than Stage III does save lives regardless of the healthcare system structure. And for that specific application, I'm genuinely glad this technology exists.",
                   },
                 ],
               ],
@@ -423,7 +423,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' That capital is flowing disproportionately toward profitable disease areas in wealthy markets. The WHO estimates that antimicrobial resistance disproportionately kills people in low- and middle-income countries — the same countries with the least access to AI-developed treatments. The discovery of new antibiotics via AI is genuinely important. Whether those antibiotics reach the populations who need them most depends on decisions that have nothing to do with the AI itself.',
+                      ' That capital is flowing disproportionately toward profitable disease areas in wealthy markets. The WHO estimates that antimicrobial resistance disproportionately kills people in low- and middle-income countries, the same countries with the least access to AI-developed treatments. The discovery of new antibiotics via AI is genuinely important. Whether those antibiotics reach the populations who need them most depends on decisions that have nothing to do with the AI itself.',
                   },
                 ],
               ],
@@ -456,7 +456,7 @@ export const partIII: RoundtableDocument = {
                 {
                   type: 'text',
                   value:
-                    "The healthcare and drug discovery evidence is among the strongest in the AI positive case — compressed timelines, lower failure rates, and measurably earlier disease detection are documented and peer-reviewed. Whether the financial gains flow back to patients or to shareholders is a distribution question that the technology itself doesn't answer.",
+                    "The healthcare and drug discovery evidence is among the strongest in the AI positive case: compressed timelines, lower failure rates, and measurably earlier disease detection are documented and peer-reviewed. Whether the financial gains flow back to patients or to shareholders is a distribution question that the technology itself doesn't answer.",
                 },
               ],
             ],
@@ -517,7 +517,7 @@ export const partIII: RoundtableDocument = {
             labelTop: 'Climate · Flood forecasting reach',
             title: 'From one country to 150 in seven years',
             subtitle:
-              "Countries covered by Google's AI flood forecasting, which now protects over 2 billion people — from a 2018 pilot in India's Patna region.",
+              "Countries covered by Google's AI flood forecasting, which now protects over 2 billion people after growing from a 2018 pilot in India's Patna region.",
             unit: 'countries',
             claimIds: ['s-iii-flood-2b', 'c-iii-flood-2b'],
             ariaLabel:
@@ -547,13 +547,13 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Google's Flood Forecasting System began as a pilot in India's Patna region in 2018. It has since expanded to cover flood forecasting in more than 80 countries, protecting more than 500 million people — and as of 2025, the system now covers over two billion people in 150 countries for severe riverine flood events.",
+                      "Google's Flood Forecasting System began as a pilot in India's Patna region in 2018. It has since expanded to cover flood forecasting in more than 80 countries, protecting more than 500 million people. As of 2025, the system now covers over two billion people in 150 countries for severe riverine flood events.",
                   },
                   { type: 'cite', claimId: 'c-iii-flood-2b' },
                   {
                     type: 'text',
                     value:
-                      " This replaced traditional local data models that required physical gauge stations and local infrastructure. AI-based forecasting works in ungauged watersheds — rivers with no measurement infrastructure at all — which is where most of the world's flood-vulnerable communities live. A 2024 paper in Nature documented the first global prediction system for extreme floods in ungauged watersheds.",
+                      " This replaced traditional local data models that required physical gauge stations and local infrastructure. AI-based forecasting works in ungauged watersheds (rivers with no measurement infrastructure at all), which is where most of the world's flood-vulnerable communities live. A 2024 paper in Nature documented the first global prediction system for extreme floods in ungauged watersheds.",
                   },
                   { type: 'cite', claimId: 'c-iii-nature-ungauged' },
                 ],
@@ -561,7 +561,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Google DeepMind partnered with weather agencies to develop experimental cyclone prediction models using stochastic neural networks — these can predict a cyclone's path up to 15 days in advance, far beyond what any previous system could do.",
+                      "Google DeepMind partnered with weather agencies to develop experimental cyclone prediction models using stochastic neural networks: these can predict a cyclone's path up to 15 days in advance, far beyond what any previous system could do.",
                   },
                   { type: 'cite', claimId: 'c-iii-cyclone-15-days' },
                   {
@@ -615,7 +615,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' In regions facing climate-driven yield volatility, those numbers are not efficiency statistics — they are food security statistics. For a farmer in a drought-stressed region, 20% more yield from the same land is the difference between feeding a family and not.',
+                      ' In regions facing climate-driven yield volatility, those numbers are not efficiency statistics; they are food security statistics. For a farmer in a drought-stressed region, 20% more yield from the same land is the difference between feeding a family and not.',
                   },
                 ],
               ],
@@ -638,7 +638,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " Adoption in smallholder farming — which is where most of the world's food insecurity lives — is much lower, driven by cost and connectivity barriers. The technology works where it's been deployed. Deploying it where it's most needed is the unsolved problem.",
+                      " Adoption in smallholder farming (which is where most of the world's food insecurity lives) is much lower, driven by cost and connectivity barriers. The technology works where it's been deployed. Deploying it where it's most needed is the unsolved problem.",
                   },
                 ],
               ],
@@ -655,7 +655,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The flood forecasting story is actually a strong argument for public-interest AI development. Google's Flood Hub is a free public service covering the most vulnerable populations on Earth. It was built because someone decided to build it that way — it wasn't required by market forces. Two billion people don't generate the same revenue signal as two hundred million premium subscribers. The distributional outcomes we keep coming back to as the gap between AI's potential and AI's delivery are often a question of who chooses to build what, for whom.",
+                      "The flood forecasting story is actually a strong argument for public-interest AI development. Google's Flood Hub is a free public service covering the most vulnerable populations on Earth. It was built because someone decided to build it that way; it wasn't required by market forces. Two billion people don't generate the same revenue signal as two hundred million premium subscribers. The distributional outcomes we keep coming back to as the gap between AI's potential and AI's delivery are often a question of who chooses to build what, for whom.",
                   },
                 ],
               ],
@@ -665,8 +665,8 @@ export const partIII: RoundtableDocument = {
         {
           type: 'pullquote',
           data: {
-            text: '"AI-driven flood forecasting now covers more than two billion people in 150 countries for severe riverine floods — replacing traditional models that required physical infrastructure most flood-vulnerable communities never had."',
-            attribution: '— Google Research Year in Review, 2025',
+            text: '"AI-driven flood forecasting now covers more than two billion people in 150 countries for severe riverine floods, replacing traditional models that required physical infrastructure most flood-vulnerable communities never had."',
+            attribution: 'Google Research Year in Review, 2025',
           },
         },
       ],
@@ -688,11 +688,11 @@ export const partIII: RoundtableDocument = {
             stats: [
               {
                 variant: 'positive',
-                labelTop: 'Harvard RCT — 2025',
+                labelTop: 'Harvard RCT, 2025',
                 value: '0.73–1.3 SD',
                 size: 'medium',
                 description:
-                  'Effect size of AI tutoring over in-class active learning — 194 undergraduate physics students',
+                  'Effect size of AI tutoring over in-class active learning (194 undergraduate physics students)',
                 claimId: 's-iii-harvard-effect-size',
               },
               {
@@ -710,7 +710,7 @@ export const partIII: RoundtableDocument = {
                 value: 'Free Aira Access',
                 size: 'medium',
                 description:
-                  'AI visual interpreting service offered at no cost — blind travelers navigate independently',
+                  'AI visual interpreting service offered at no cost: blind travelers navigate independently',
                 claimId: 's-iii-aira-denver',
               },
             ],
@@ -726,7 +726,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In June 2025, Harvard researchers published a randomized controlled trial in Scientific Reports — one of the most rigorous study designs in education research. One hundred and ninety-four undergraduate physics students were divided between conventional in-class active learning with experienced instructors and at-home sessions with a purpose-built AI tutor. Students using the AI tutor achieved median post-test scores of 4.5 compared to 3.5 for those in active learning classrooms. The effect size — 0.73 to 1.3 standard deviations — is, in educational research, considered large.',
+                      'In June 2025, Harvard researchers published a randomized controlled trial in Scientific Reports, one of the most rigorous study designs in education research. One hundred and ninety-four undergraduate physics students were divided between conventional in-class active learning with experienced instructors and at-home sessions with a purpose-built AI tutor. Students using the AI tutor achieved median post-test scores of 4.5 compared to 3.5 for those in active learning classrooms. The effect size (0.73 to 1.3 standard deviations) is, in educational research, considered large.',
                   },
                   { type: 'cite', claimId: 'c-iii-harvard-rct' },
                 ],
@@ -734,7 +734,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "This isn't a marginal improvement. The authors note that the difference was statistically significant at a probability below one in one hundred million. And crucially, the AI tutor was designed according to research-based pedagogical principles — it was not simply a chatbot but a deliberately engineered learning system. The implication is that when AI tutoring is built carefully, it can deliver one-on-one tutoring quality at any scale. For a student in an under-resourced school with 35 people in the class and an overwhelmed teacher, that access to personalized instruction has never existed before. Brookings Institute research in 2026 identified AI tutoring as particularly valuable for novice teachers assigned to challenging environments and for under-resourced schools where human support is scarce.",
+                      "This isn't a marginal improvement. The authors note that the difference was statistically significant at a probability below one in one hundred million. And crucially, the AI tutor was designed according to research-based pedagogical principles: it was not simply a chatbot but a deliberately engineered learning system. The implication is that when AI tutoring is built carefully, it can deliver one-on-one tutoring quality at any scale. For a student in an under-resourced school with 35 people in the class and an overwhelmed teacher, that access to personalized instruction has never existed before. Brookings Institute research in 2026 identified AI tutoring as particularly valuable for novice teachers assigned to challenging environments and for under-resourced schools where human support is scarce.",
                   },
                   { type: 'cite', claimId: 'c-iii-brookings' },
                 ],
@@ -770,7 +770,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to put an honest counterweight on the education evidence, because the research is genuinely mixed. A systematic literature review by Zhai et al. found that regular use of AI tutoring systems was associated in some studies with a decline in cognitive abilities, diminished information retention, and increased cognitive offloading — students accepting AI-generated answers rather than wrestling with the material themselves.',
+                      'I want to put an honest counterweight on the education evidence, because the research is genuinely mixed. A systematic literature review by Zhai et al. found that regular use of AI tutoring systems was associated in some studies with a decline in cognitive abilities, diminished information retention, and increased cognitive offloading: students accepting AI-generated answers rather than wrestling with the material themselves.',
                   },
                   { type: 'cite', claimId: 'c-iii-nhsjs-zhai' },
                   {
@@ -783,7 +783,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The Harvard RCT result is compelling — but it's one well-designed study. The picture across the broader literature is that AI tutoring works well when deliberately engineered and when students use it actively, not passively. Implementation quality matters enormously. A poorly designed AI tutor handed to a struggling student may make things worse, not better. The technology is not a substitute for thinking about how to use it.",
+                      "The Harvard RCT result is compelling, but it's one well-designed study. The picture across the broader literature is that AI tutoring works well when deliberately engineered and when students use it actively, not passively. Implementation quality matters enormously. A poorly designed AI tutor handed to a struggling student may make things worse, not better. The technology is not a substitute for thinking about how to use it.",
                   },
                 ],
               ],
@@ -817,7 +817,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'This is an area where AI has produced concrete, real-world independence improvements for real people — not theoretical future benefits.',
+                      'This is an area where AI has produced concrete, real-world independence improvements for real people, not theoretical future benefits.',
                   },
                 ],
                 [
@@ -830,7 +830,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' Be My Eyes — originally a volunteer-based service — now includes an AI feature that handles object recognition, text reading, and navigation assistance without requiring a live human connection.',
+                      ' Be My Eyes (originally a volunteer-based service) now includes an AI feature that handles object recognition, text reading, and navigation assistance without requiring a live human connection.',
                   },
                   { type: 'cite', claimId: 'c-iii-be-my-eyes' },
                   {
@@ -844,7 +844,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Aira — an AI-powered visual interpreting service — is now available for free at many airports including Denver International, allowing a blind traveler to navigate independently from check-in through security to the gate without relying on staff escorts.',
+                      'Aira (an AI-powered visual interpreting service) is now available for free at many airports including Denver International, allowing a blind traveler to navigate independently from check-in through security to the gate without relying on staff escorts.',
                   },
                   { type: 'cite', claimId: 'c-iii-aira-denver' },
                   {
@@ -906,9 +906,9 @@ export const partIII: RoundtableDocument = {
         {
           type: 'pullquote',
           data: {
-            text: '"Students using the AI tutor achieved learning gains more than double those of the control group relative to baseline knowledge, with an effect size between 0.73 and 1.3 standard deviations — in educational research, considered large."',
+            text: '"Students using the AI tutor achieved learning gains more than double those of the control group relative to baseline knowledge, with an effect size between 0.73 and 1.3 standard deviations, which in educational research is considered large."',
             attribution:
-              '— Kestin et al., Scientific Reports, June 2025 (Harvard RCT, 194 undergraduate students)',
+              'Kestin et al., Scientific Reports, June 2025 (Harvard RCT, 194 undergraduate students)',
           },
         },
       ],
@@ -930,7 +930,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Having now sat through all three of these conversations — I feel like I understand the situation in a way I genuinely didn't before. There are real costs, real efforts to address them, and real benefits. None of those three things cancel each other out. You can hold all of them at the same time.",
+                      "Having now sat through all three of these conversations, I feel like I understand the situation in a way I genuinely didn't before. There are real costs, real efforts to address them, and real benefits. None of those three things cancel each other out. You can hold all of them at the same time.",
                   },
                 ],
               ],
@@ -947,7 +947,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That's the honest framing. The flood forecasting coverage of two billion people and the antibiotic discoveries don't cancel the energy emissions. They coexist. The question is whether we're making choices that maximize the first category and minimize the second, or whether we're letting both happen without deliberate steering. The things AI is getting right in this conversation mostly happened because someone made a decision to prioritize public benefit — free databases, open access, free apps. That's not automatic. It's a choice, and it's not the default choice in a market-driven industry.",
+                      "That's the honest framing. The flood forecasting coverage of two billion people and the antibiotic discoveries don't cancel the energy emissions. They coexist. The question is whether we're making choices that maximize the first category and minimize the second, or whether we're letting both happen without deliberate steering. The things AI is getting right in this conversation mostly happened because someone made a decision to prioritize public benefit: free databases, open access, free apps. That's not automatic. It's a choice, and it's not the default choice in a market-driven industry.",
                   },
                 ],
               ],
@@ -964,7 +964,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The pattern across every positive example in this conversation: AlphaFold's open database, the flood forecasting system, the free accessibility apps, the Brookings finding that AI tutoring matters most for under-resourced schools — the benefits reach the most people when someone chooses to give them away. The benefits concentrate when someone chooses to monetize them. The technology is neutral on that question. The people deploying it are not.",
+                      "The pattern across every positive example in this conversation: AlphaFold's open database, the flood forecasting system, the free accessibility apps, the Brookings finding that AI tutoring matters most for under-resourced schools. The benefits reach the most people when someone chooses to give them away. The benefits concentrate when someone chooses to monetize them. The technology is neutral on that question. The people deploying it are not.",
                   },
                 ],
               ],
@@ -981,7 +981,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "And that's the policy argument hiding inside the positive case. If the most impactful AI applications are the ones designed as public goods — open databases, free early-warning systems, free assistive tools — then the governance question isn't just about preventing harm. It's about creating conditions that incentivize building more of those things instead of fewer. Right now, the incentive structure mostly doesn't. That's a design problem, and design problems have solutions.",
+                      "And that's the policy argument hiding inside the positive case. If the most impactful AI applications are the ones designed as public goods (open databases, free early-warning systems, free assistive tools), then the governance question isn't just about preventing harm. It's about creating conditions that incentivize building more of those things instead of fewer. Right now, the incentive structure mostly doesn't. That's a design problem, and design problems have solutions.",
                   },
                 ],
               ],
@@ -998,7 +998,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I want to close by saying something I mean: these conversations have been more useful than most I have inside the industry. The positive case for AI is genuinely strong — the Nobel Prize wasn't political theater, the flood forecasting is real, the antibiotic discoveries are real, the Harvard RCT is real. I believe in this work. I also leave these conversations more convinced than I was before that the hardest questions aren't technical. They're about who benefits, who decides, and who pays the costs when we get it wrong. Those questions don't have engineering solutions. They require the kind of deliberate, contested, imperfect political process that people in my field tend to find frustrating. But so does everything worth doing.",
+                      "I want to close by saying something I mean: these conversations have been more useful than most I have inside the industry. The positive case for AI is genuinely strong: the Nobel Prize wasn't political theater, the flood forecasting is real, the antibiotic discoveries are real, the Harvard RCT is real. I believe in this work. I also leave these conversations more convinced than I was before that the hardest questions aren't technical. They're about who benefits, who decides, and who pays the costs when we get it wrong. Those questions don't have engineering solutions. They require the kind of deliberate, contested, imperfect political process that people in my field tend to find frustrating. But so does everything worth doing.",
                   },
                 ],
               ],
@@ -1042,7 +1042,7 @@ export const partIII: RoundtableDocument = {
     },
     {
       id: 'src-pnas',
-      title: 'PNAS — AlphaFold Two Years On (August 2024)',
+      title: 'PNAS: AlphaFold Two Years On (August 2024)',
       description:
         "Validation of AlphaFold's widespread adoption and impact across structural biology community.",
     },
@@ -1104,7 +1104,7 @@ export const partIII: RoundtableDocument = {
       url: 'https://www.nature.com/articles/s41586-024-07145-1',
       title: 'Nature Communications (March 2025)',
       description:
-        'Global prediction of extreme floods in ungauged watersheds — first system to operate without physical gauge infrastructure.',
+        'Global prediction of extreme floods in ungauged watersheds: first system to operate without physical gauge infrastructure.',
     },
     {
       id: 'src-farmonaut',
@@ -1208,7 +1208,7 @@ export const partIII: RoundtableDocument = {
       claimText: '$150K',
       verificationStatus: 'disputed',
       verifiedUrl: 'https://onlinelibrary.wiley.com/doi/10.1002/cso2.70000',
-      note: 'The $150,000 figure comes from Gebremeskel et al. (2024) as the cost per lung cancer DETECTED without AI (falling to ~$300 with AI) — a screening cost-per-detection metric for one cancer type, not an average per-patient treatment-cost saving as stated.',
+      note: 'The $150,000 figure comes from Gebremeskel et al. (2024) as the cost per lung cancer DETECTED without AI (falling to ~$300 with AI), a screening cost-per-detection metric for one cancer type, not an average per-patient treatment-cost saving as stated.',
       lastCheckedISO: '2026-06-24',
     },
     's-iii-flood-2b': {
@@ -1297,7 +1297,7 @@ export const partIII: RoundtableDocument = {
       verificationStatus: 'disputed',
       verifiedUrl:
         'https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1739303/full',
-      note: "The Frontiers in AI (2026) '40%' figure refers to new PDB structures obtained via cryo-EM, not 'AI techniques' — the claim misattributes the statistic to AI determination.",
+      note: "The Frontiers in AI (2026) '40%' figure refers to new PDB structures obtained via cryo-EM, not 'AI techniques'; the claim misattributes the statistic to AI determination.",
       lastCheckedISO: '2026-06-24',
     },
     'c-iii-mit-antibiotic': {
@@ -1308,7 +1308,7 @@ export const partIII: RoundtableDocument = {
       verificationStatus: 'disputed',
       verifiedUrl:
         'https://news.mit.edu/2025/using-generative-ai-researchers-design-compounds-kill-drug-resistant-bacteria-0814',
-      note: 'The primary study (Krishnan et al., Collins lab, Cell, Aug 2025) confirms 36M+ compounds screened, structurally novel candidates, and DN1 clearing MRSA in mice — but it is MIT/Broad/Phare Bio, NOT McMaster; the McMaster attribution appears conflated with the earlier Stokes/halicin (2020) work.',
+      note: 'The primary study (Krishnan et al., Collins lab, Cell, Aug 2025) confirms 36M+ compounds screened, structurally novel candidates, and DN1 clearing MRSA in mice, but it is MIT/Broad/Phare Bio, NOT McMaster; the McMaster attribution appears conflated with the earlier Stokes/halicin (2020) work.',
       lastCheckedISO: '2026-06-24',
     },
     'c-iii-brain-mapping': {
@@ -1348,7 +1348,7 @@ export const partIII: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://news.mit.edu/2025/using-generative-ai-researchers-design-compounds-kill-drug-resistant-bacteria-0814',
-      note: "Supported by the primary MIT/Cell source: the AI-designed candidates were 'structurally distinct from any existing antibiotics' and worked by novel mechanisms — i.e. from a region of chemical space not reached by conventional manual discovery.",
+      note: "Supported by the primary MIT/Cell source: the AI-designed candidates were 'structurally distinct from any existing antibiotics' and worked by novel mechanisms, i.e. from a region of chemical space not reached by conventional manual discovery.",
       lastCheckedISO: '2026-06-24',
     },
     'c-iii-lifebit-druggable': {
@@ -1358,7 +1358,7 @@ export const partIII: RoundtableDocument = {
       sourceId: 'src-lifebit',
       verificationStatus: 'verified',
       verifiedUrl: 'https://lifebit.ai/blog/ai-driven-drug-discovery/',
-      note: 'Lifebit (Jun 2025) accurately describes a real capability class — predicting druggable targets, toxicity, pharmacokinetics, and off-target effects before synthesis. Context: an approved medicine averages ~$2.6B to develop (Tufts CSDD / DiMasi).',
+      note: 'Lifebit (Jun 2025) accurately describes a real capability class: predicting druggable targets, toxicity, pharmacokinetics, and off-target effects before synthesis. Context: an approved medicine averages ~$2.6B to develop (Tufts CSDD / DiMasi).',
       lastCheckedISO: '2026-06-24',
     },
     'c-iii-promptbuddy-700m': {
@@ -1386,7 +1386,7 @@ export const partIII: RoundtableDocument = {
       sourceId: 'src-promptbuddy',
       verificationStatus: 'disputed',
       verifiedUrl: 'https://onlinelibrary.wiley.com/doi/10.1002/cso2.70000',
-      note: 'The $150K traces to Gebremeskel et al. (2024) as cost per lung cancer detected (→~$300 with AI), a screening cost-per-detection metric for one cancer type — not an average per-patient treatment saving across early detection.',
+      note: 'The $150K traces to Gebremeskel et al. (2024) as cost per lung cancer detected (→~$300 with AI), a screening cost-per-detection metric for one cancer type, not an average per-patient treatment saving across early detection.',
       lastCheckedISO: '2026-06-24',
     },
     'c-iii-promptbuddy-18pct': {
@@ -1498,7 +1498,7 @@ export const partIII: RoundtableDocument = {
       verificationStatus: 'disputed',
       verifiedUrl:
         'https://nhsjs.com/2025/analysing-the-effectiveness-of-different-ai-based-tutoring-systems-and-their-impact-on-education-across-global-contexts-a-literature-review/',
-      note: "The NHSJS review does cite Zhai et al. for AI-tutoring links to declining cognitive abilities, diminished retention, and cognitive offloading; but the '95% of faculty' figure is not in it — that traces to a separate Jan 2026 Elon University/AAC&U survey of 1,057 faculty, so the claim conflates two sources.",
+      note: "The NHSJS review does cite Zhai et al. for AI-tutoring links to declining cognitive abilities, diminished retention, and cognitive offloading; but the '95% of faculty' figure is not in it: that traces to a separate Jan 2026 Elon University/AAC&U survey of 1,057 faculty, so the claim conflates two sources.",
       lastCheckedISO: '2026-06-24',
     },
     'c-iii-seeing-ai': {
@@ -1520,7 +1520,7 @@ export const partIII: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://support.bemyeyes.com/hc/en-us/articles/17493302011921-Be-My-AI-image-to-text-assistance',
-      note: "Be My Eyes (founded 2012, originally volunteer-based) launched 'Be My AI' in 2023 — a GPT-4-powered feature handling object recognition, text reading, and guidance without a live human.",
+      note: "Be My Eyes (founded 2012, originally volunteer-based) launched 'Be My AI' in 2023, a GPT-4-powered feature handling object recognition, text reading, and guidance without a live human.",
       lastCheckedISO: '2026-06-24',
     },
     'c-iii-live-transcribe': {

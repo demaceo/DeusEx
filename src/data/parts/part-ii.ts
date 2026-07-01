@@ -11,19 +11,19 @@ export const partII: RoundtableDocument = {
       [{ text: "What's Actually Being Done", em: true }],
     ],
     subtitle:
-      "The same five voices return — examining real-world responses to AI's energy, water, labor, and regulatory crises. Progress is happening. So are the gaps.",
+      "The same five voices return, examining real-world responses to AI's energy, water, labor, and regulatory crises. Progress is happening. So are the gaps.",
     dateLine: 'May 2026 · Companion to "The AI Reckoning: A Roundtable on Real Costs"',
     accentColor: 'gold',
   },
   companion: {
-    text: 'Companion Document — Read alongside "The AI Reckoning: A Roundtable on Real Costs" for full context',
+    text: 'Companion Document: Read alongside "The AI Reckoning: A Roundtable on Real Costs" for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          'Every reckoning produces its own industry of response — press releases, pledges, frameworks, legislation caught mid-draft. Some of it is theater. Some of it bites. Knowing the difference requires looking past the announcement to the action, and past the action to whether it actually changed anything. That is what this conversation is for.',
+          'Every reckoning produces its own industry of response: press releases, pledges, frameworks, legislation caught mid-draft. Some of it is theater. Some of it bites. Knowing the difference requires looking past the announcement to the action, and past the action to whether it actually changed anything. That is what this conversation is for.',
       },
     ],
   ],
@@ -41,7 +41,7 @@ export const partII: RoundtableDocument = {
                 labelTop: 'Renewables share',
                 value: '58%',
                 size: 'large',
-                description: 'Data center power from renewables in 2025 — up from 50% in 2024',
+                description: 'Data center power from renewables in 2025 (up from 50% in 2024)',
                 claimId: 's-ii-renewables-share',
               },
               {
@@ -90,7 +90,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Yes — and it's one of the most significant energy deals in recent memory. Microsoft signed a 20-year power purchase agreement with Constellation Energy to restart the Crane Clean Energy Center — formerly Three Mile Island Unit 1 — targeting 2028. The deal is worth approximately $16 billion and will direct 835 megawatts of carbon-free power exclusively to Microsoft's data centers.",
+                      "Yes, and it's one of the most significant energy deals in recent memory. Microsoft signed a 20-year power purchase agreement with Constellation Energy to restart the Crane Clean Energy Center (formerly Three Mile Island Unit 1), targeting 2028. The deal is worth approximately $16 billion and will direct 835 megawatts of carbon-free power exclusively to Microsoft's data centers.",
                   },
                   { type: 'cite', claimId: 'c-ii-introl-commonfund-2025' },
                 ],
@@ -116,7 +116,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' Meta signed a 20-year deal for 1.1 gigawatts from the Clinton Clean Energy Center in Illinois — a plant previously slated to retire in 2027.',
+                      ' Meta signed a 20-year deal for 1.1 gigawatts from the Clinton Clean Energy Center in Illinois, a plant previously slated to retire in 2027.',
                   },
                   { type: 'cite', claimId: 'c-ii-commonfund-2025' },
                   {
@@ -153,7 +153,7 @@ export const partII: RoundtableDocument = {
             labelTop: 'Energy · Renewable share',
             title: 'Renewables powered 58% of data centers in 2025',
             subtitle:
-              'Share of data-center power from renewables — up 8 points year-on-year, with the IEA projecting ~22%/yr growth through 2030.',
+              'Share of data-center power from renewables, up 8 points year-on-year, with the IEA projecting ~22%/yr growth through 2030.',
             unit: '%',
             claimIds: ['s-ii-renewables-share', 'c-ii-sp-global-apr-2026'],
             ariaLabel:
@@ -175,7 +175,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to be fair — the nuclear deals are genuinely meaningful. Restarting a plant slated for retirement is not the same as building new fossil fuel infrastructure. And the renewable procurement numbers are real.',
+                      'I want to be fair: the nuclear deals are genuinely meaningful. Restarting a plant slated for retirement is not the same as building new fossil fuel infrastructure. And the renewable procurement numbers are real.',
                   },
                 ],
                 [
@@ -188,7 +188,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " Google's emissions jumped nearly 50%. Amazon's rose 33%. Microsoft's more than 23%. Meta's more than 60% — all during the same period these companies were making headline clean energy commitments.",
+                      " Google's emissions jumped nearly 50%. Amazon's rose 33%. Microsoft's more than 23%. Meta's more than 60%, all during the same period these companies were making headline clean energy commitments.",
                   },
                   { type: 'cite', claimId: 'c-ii-fortune-mar-2026' },
                   {
@@ -246,7 +246,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There's also a regulatory wrinkle worth noting. When Amazon tried to expand its nuclear access beyond the initial 300 megawatts at Susquehanna, federal regulators rejected it — citing concerns that large tech companies securing direct-access deals creates unfair advantages over other grid users who can't negotiate the same terms.",
+                      "There's also a regulatory wrinkle worth noting. When Amazon tried to expand its nuclear access beyond the initial 300 megawatts at Susquehanna, federal regulators rejected it, citing concerns that large tech companies securing direct-access deals creates unfair advantages over other grid users who can't negotiate the same terms.",
                   },
                   { type: 'cite', claimId: 'c-ii-ieee-spectrum-2024' },
                   {
@@ -324,8 +324,8 @@ export const partII: RoundtableDocument = {
         {
           type: 'pullquote',
           data: {
-            text: '"Tech companies are allowing — implicitly or explicitly — an enormous increase in fossil fuel dependence under their watch and because of their actions."',
-            attribution: '— Researcher quoted in Fortune, March 2026',
+            text: '"Tech companies are allowing, implicitly or explicitly, an enormous increase in fossil fuel dependence under their watch and because of their actions."',
+            attribution: 'Researcher quoted in Fortune, March 2026',
           },
         },
       ],
@@ -352,7 +352,7 @@ export const partII: RoundtableDocument = {
                 labelTop: 'Microsoft WUE in 2024',
                 value: '0.30',
                 size: 'large',
-                description: 'L/kWh — down from 0.49 in 2021; a 39% efficiency gain',
+                description: 'L/kWh: down from 0.49 in 2021, a 39% efficiency gain',
                 claimId: 's-ii-microsoft-wue',
               },
               {
@@ -360,7 +360,7 @@ export const partII: RoundtableDocument = {
                 labelTop: 'Google 2023 consumption',
                 value: '24,227 ML',
                 size: 'medium',
-                description: 'Megalitres — highest among major hyperscalers',
+                description: 'Megalitres, highest among major hyperscalers',
                 claimId: 's-ii-google-2023-consumption',
               },
             ],
@@ -374,7 +374,7 @@ export const partII: RoundtableDocument = {
             labelTop: 'Water · Microsoft efficiency',
             title: 'Microsoft cut its water-per-kWh by 39%',
             subtitle:
-              'Water-use effectiveness (WUE) in 2021 vs. 2024 — liters of water per kilowatt-hour. Lower is better.',
+              'Water-use effectiveness (WUE) in 2021 vs. 2024, measured in liters of water per kilowatt-hour. Lower is better.',
             unit: 'L/kWh',
             claimIds: ['s-ii-microsoft-wue'],
             ariaLabel:
@@ -413,7 +413,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'This is an area where I can point to concrete, deployed technology — not just plans. In August 2024, Microsoft began deploying a closed-loop, chip-level liquid cooling system that virtually eliminates evaporative water use. Once filled during construction, it recirculates coolant without drawing additional water from external sources, saving more than 125 million liters per data center annually.',
+                      'This is an area where I can point to concrete, deployed technology, not just plans. In August 2024, Microsoft began deploying a closed-loop, chip-level liquid cooling system that virtually eliminates evaporative water use. Once filled during construction, it recirculates coolant without drawing additional water from external sources, saving more than 125 million liters per data center annually.',
                   },
                   { type: 'cite', claimId: 'c-ii-sustainability-dcm-jul-2025' },
                   {
@@ -427,7 +427,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "In Hebei Province, China, Vertiv's X-Cooling system — built with Bridge Data Centres and Chindata — is projected to save 1.2 million tons of water per 100 megawatts of capacity annually.",
+                      "In Hebei Province, China, Vertiv's X-Cooling system (built with Bridge Data Centres and Chindata) is projected to save 1.2 million tons of water per 100 megawatts of capacity annually.",
                   },
                   { type: 'cite', claimId: 'c-ii-data-centre-magazine-2025' },
                   {
@@ -457,7 +457,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The technology is real and the Microsoft deployment is significant. My concern is pace and coverage. Microsoft's new system applies to new facilities. What about the existing ones? Google consumed 24,227 megalitres of water in 2023 — the highest among major hyperscalers.",
+                      "The technology is real and the Microsoft deployment is significant. My concern is pace and coverage. Microsoft's new system applies to new facilities. What about the existing ones? Google consumed 24,227 megalitres of water in 2023, the highest among major hyperscalers.",
                   },
                   { type: 'cite', claimId: 'c-ii-introl-2026' },
                   {
@@ -470,7 +470,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There's also the physics tradeoff: cooling systems that eliminate water often use more electricity. The most efficient water-free cooling for high-density AI — two-phase direct-to-chip immersion — is still expensive and not yet deployed at hyperscale. We're in a transitional period where the solutions exist in pilot form but growth is outrunning adoption.",
+                      "There's also the physics tradeoff: cooling systems that eliminate water often use more electricity. The most efficient water-free cooling for high-density AI (two-phase direct-to-chip immersion) is still expensive and not yet deployed at hyperscale. We're in a transitional period where the solutions exist in pilot form but growth is outrunning adoption.",
                   },
                 ],
               ],
@@ -493,7 +493,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " Microsoft's progress is voluntary. The question is whether second and third-tier operators building AI infrastructure right now are adopting any of this — and the answer, based on available data, is inconsistently at best.",
+                      " Microsoft's progress is voluntary. The question is whether second and third-tier operators building AI infrastructure right now are adopting any of this, and the answer, based on available data, is inconsistently at best.",
                   },
                 ],
               ],
@@ -532,7 +532,7 @@ export const partII: RoundtableDocument = {
                 value: '180+',
                 size: 'large',
                 description:
-                  'Kenyan workers cleared to take Meta to trial — landmark jurisdictional ruling',
+                  'Kenyan workers cleared to take Meta to trial: landmark jurisdictional ruling',
                 claimId: 's-ii-nairobi-high-court',
               },
               {
@@ -581,20 +581,20 @@ export const partII: RoundtableDocument = {
                 [
                   {
                     type: 'text',
-                    value: 'Quite a lot has moved — and some of it in opposite directions at once.',
+                    value: 'Quite a lot has moved, and some of it in opposite directions at once.',
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'The most significant legal development: the Nairobi High Court ruled that Meta must face more than 180 content moderators and data labelers in court over poor working conditions, negative mental health impacts, and withheld pay — despite Meta arguing Kenyan courts have no jurisdiction over an American company.',
+                      'The most significant legal development: the Nairobi High Court ruled that Meta must face more than 180 content moderators and data labelers in court over poor working conditions, negative mental health impacts, and withheld pay, despite Meta arguing Kenyan courts have no jurisdiction over an American company.',
                   },
                   { type: 'cite', claimId: 'c-ii-computer-weekly' },
                   {
                     type: 'text',
                     value:
-                      ' If the workers prevail, this could establish that Big Tech companies — not just their subcontractors — are legally liable for conditions inside their data annotation supply chains. That would be a structural shift.',
+                      ' If the workers prevail, this could establish that Big Tech companies (not just their subcontractors) are legally liable for conditions inside their data annotation supply chains. That would be a structural shift.',
                   },
                 ],
                 [
@@ -607,7 +607,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " The African Content Moderators Union formed from those efforts — one of its organizers, Richard Mathenge, was named among TIME's 100 most influential people in AI. In Colombia, Teleperformance signed a historic agreement granting 40,000 TikTok data workers the right to form a union, following a government investigation into their conditions.",
+                      " The African Content Moderators Union formed from those efforts; one of its organizers, Richard Mathenge, was named among TIME's 100 most influential people in AI. In Colombia, Teleperformance signed a historic agreement granting 40,000 TikTok data workers the right to form a union, following a government investigation into their conditions.",
                   },
                   { type: 'cite', claimId: 'c-ii-computer-weekly' },
                   {
@@ -647,14 +647,14 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Workers are fighting back and winning in specific cases — which matters enormously for the people involved. But the structural situation is more complicated.',
+                      'Workers are fighting back and winning in specific cases, which matters enormously for the people involved. But the structural situation is more complicated.',
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "Kenya's president William Ruto, responding to the Meta lawsuits, indicated he was preparing to sign legislation that would prevent foreign outsourcing companies from being sued in Kenya — which would strip away the very legal mechanism that enabled these High Court victories.",
+                      "Kenya's president William Ruto, responding to the Meta lawsuits, indicated he was preparing to sign legislation that would prevent foreign outsourcing companies from being sued in Kenya, which would strip away the very legal mechanism that enabled these High Court victories.",
                   },
                   { type: 'cite', claimId: 'c-ii-time-dec-2024' },
                   {
@@ -667,13 +667,13 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Meanwhile, in March 2026 a U.S. class-action lawsuit was filed against Meta after it emerged that footage from its AI smart glasses — including intimate personal content — was being reviewed without users' knowledge by contractors in Nairobi.",
+                      "Meanwhile, in March 2026 a U.S. class-action lawsuit was filed against Meta after it emerged that footage from its AI smart glasses (including intimate personal content) was being reviewed without users' knowledge by contractors in Nairobi.",
                   },
                   { type: 'cite', claimId: 'c-ii-classaction-mar-2026' },
                   {
                     type: 'text',
                     value:
-                      " The same workers. The same supply chain. The same dynamic — now with a privacy violation layered on top. We're winning individual battles while the system generating the problem continues to scale.",
+                      " The same workers. The same supply chain. The same dynamic, now with a privacy violation layered on top. We're winning individual battles while the system generating the problem continues to scale.",
                   },
                 ],
               ],
@@ -696,7 +696,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' The Workday class action — certified against an AI resume screening system for discriminatory outcomes — established that vendors, not just employers, face liability for discriminatory AI.',
+                      ' The Workday class action (certified against an AI resume screening system for discriminatory outcomes) established that vendors, not just employers, face liability for discriminatory AI.',
                   },
                   { type: 'cite', claimId: 'c-ii-stackcyber-2026' },
                   { type: 'text', value: ' These precedents accumulate.' },
@@ -715,7 +715,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "They do. But court cases move on timescales of years, and workers need protection on timescales of paychecks. The Teleperformance-Colombia agreement is meaningful precisely because it didn't wait for a court — it was a negotiated settlement driven by a government investigation. That model — regulatory investigation leading to binding agreement — is faster than litigation and more durable than voluntary pledges. The problem is it requires governments with both the will and the jurisdiction to act, and in most countries where this labor is concentrated, that combination is inconsistent.",
+                      "They do. But court cases move on timescales of years, and workers need protection on timescales of paychecks. The Teleperformance-Colombia agreement is meaningful precisely because it didn't wait for a court; it was a negotiated settlement driven by a government investigation. That model (regulatory investigation leading to binding agreement) is faster than litigation and more durable than voluntary pledges. The problem is it requires governments with both the will and the jurisdiction to act, and in most countries where this labor is concentrated, that combination is inconsistent.",
                   },
                 ],
               ],
@@ -726,7 +726,7 @@ export const partII: RoundtableDocument = {
           type: 'pullquote',
           data: {
             text: '"Until we treat content moderation as real digital work that is needed and not easily automated, we will fail to value or see these workers."',
-            attribution: '— Researcher, quoted in Computer Weekly',
+            attribution: 'Researcher, quoted in Computer Weekly',
           },
         },
       ],
@@ -742,7 +742,7 @@ export const partII: RoundtableDocument = {
             stats: [
               {
                 variant: 'positive',
-                labelTop: 'EU AI Act — in force',
+                labelTop: 'EU AI Act: in force',
                 value: 'Feb 2025',
                 size: 'medium',
                 description:
@@ -751,7 +751,7 @@ export const partII: RoundtableDocument = {
               },
               {
                 variant: 'positive',
-                labelTop: 'Max fine — worst violations',
+                labelTop: 'Max fine: worst violations',
                 value: '€35M',
                 size: 'large',
                 description: 'Or percentage of global annual turnover, whichever is higher',
@@ -763,7 +763,7 @@ export const partII: RoundtableDocument = {
                 value: 'Aug 2026',
                 size: 'medium',
                 description:
-                  'May slip to Dec 2027 under EU Digital Omnibus — trilogue failed April 28',
+                  'May slip to Dec 2027 under EU Digital Omnibus: trilogue failed April 28',
                 claimId: 's-ii-high-risk-deadline',
               },
             ],
@@ -779,20 +779,20 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Let me give an honest accounting of where regulation actually stands — there's real progress and real friction simultaneously.",
+                      "Let me give an honest accounting of where regulation actually stands: there's real progress and real friction simultaneously.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'The EU AI Act is the most significant AI law in existence, and it is moving in stages. Since February 2, 2025, the most dangerous AI applications are outright prohibited across all EU member states: AI systems that manipulate people subliminally, social scoring systems, and real-time biometric surveillance in public spaces are now illegal in Europe — in force today, not on a roadmap.',
+                      'The EU AI Act is the most significant AI law in existence, and it is moving in stages. Since February 2, 2025, the most dangerous AI applications are outright prohibited across all EU member states: AI systems that manipulate people subliminally, social scoring systems, and real-time biometric surveillance in public spaces are now illegal in Europe. That is in force today, not on a roadmap.',
                   },
                   { type: 'cite', claimId: 'c-ii-secure-privacy-2026' },
                   {
                     type: 'text',
                     value:
-                      ' Since August 2, 2025, providers of general-purpose AI models — the large foundation models behind most commercial AI — have been subject to transparency and documentation obligations.',
+                      ' Since August 2, 2025, providers of general-purpose AI models (the large foundation models behind most commercial AI) have been subject to transparency and documentation obligations.',
                   },
                   { type: 'cite', claimId: 'c-ii-eu-ai-act-enforcement-2026' },
                 ],
@@ -800,7 +800,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The next major milestone — binding requirements for high-risk AI in employment, credit, healthcare, and education — is set for August 2, 2026. However, the EU's Digital Omnibus proposal would push that to December 2027, citing delays including the fact that the EU's standardization bodies, CEN and CENELEC, have not finalized the technical standards companies need to comply against.",
+                      "The next major milestone (binding requirements for high-risk AI in employment, credit, healthcare, and education) is set for August 2, 2026. However, the EU's Digital Omnibus proposal would push that to December 2027, citing delays including the fact that the EU's standardization bodies, CEN and CENELEC, have not finalized the technical standards companies need to comply against.",
                   },
                   { type: 'cite', claimId: 'c-ii-dla-piper-genie-2026' },
                   {
@@ -825,7 +825,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In the United States, states have become the primary movers. Colorado passed the most comprehensive state AI law in the country — the Colorado AI Act — requiring impact assessments, consumer disclosures, and discrimination prevention for high-risk AI, with penalties up to $20,000 per violation, effective June 30, 2026.',
+                      'In the United States, states have become the primary movers. Colorado passed the most comprehensive state AI law in the country (the Colorado AI Act), requiring impact assessments, consumer disclosures, and discrimination prevention for high-risk AI, with penalties up to $20,000 per violation, effective June 30, 2026.',
                   },
                   { type: 'cite', claimId: 'c-ii-baker-botts-jan-2026' },
                   {
@@ -873,7 +873,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'll say something that might be surprising: the EU AI Act prohibitions currently in force are reasonable. Banning real-time public biometric surveillance and social scoring isn't anti-innovation — those are genuinely harmful applications with minimal legitimate use cases. My concern with the U.S. patchwork isn't that accountability is wrong. It's that 50 different compliance frameworks with different standards disproportionately burden smaller AI developers who don't have the legal resources of Microsoft or Google. A single clear national standard with meaningful protections — not just deregulation — would actually be preferable to the current situation for everyone.",
+                      "I'll say something that might be surprising: the EU AI Act prohibitions currently in force are reasonable. Banning real-time public biometric surveillance and social scoring isn't anti-innovation; those are genuinely harmful applications with minimal legitimate use cases. My concern with the U.S. patchwork isn't that accountability is wrong. It's that 50 different compliance frameworks with different standards disproportionately burden smaller AI developers who don't have the legal resources of Microsoft or Google. A single clear national standard with meaningful protections (not just deregulation) would actually be preferable to the current situation for everyone.",
                   },
                 ],
               ],
@@ -890,7 +890,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Worth noting that none of the passed U.S. legislation addresses energy or water at all. Colorado, California, Texas, Illinois — all of it focuses on algorithmic discrimination and transparency in automated decision-making. The environmental costs of AI have no binding regulatory framework in the United States. No mandatory energy disclosure. No water usage limits. The EU AI Act's environmental provisions are also limited. We have more legal structure around whether an AI hiring tool discriminates than around whether the data center running it is depleting an aquifer.",
+                      "Worth noting that none of the passed U.S. legislation addresses energy or water at all. Colorado, California, Texas, Illinois: all of it focuses on algorithmic discrimination and transparency in automated decision-making. The environmental costs of AI have no binding regulatory framework in the United States. No mandatory energy disclosure. No water usage limits. The EU AI Act's environmental provisions are also limited. We have more legal structure around whether an AI hiring tool discriminates than around whether the data center running it is depleting an aquifer.",
                   },
                 ],
               ],
@@ -924,7 +924,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Correct. The legislative response to AI has been almost entirely focused on how AI makes decisions affecting people — hiring, credit, healthcare, criminal justice. Appropriate and important. But the physical infrastructure that runs AI — the energy it consumes, the water it uses, the communities it displaces — exists in a separate regulatory world of utility law, water rights, and zoning that was not designed with data centers in mind. Those two regulatory worlds have not yet been connected by any binding legal framework in the United States.',
+                      'Correct. The legislative response to AI has been almost entirely focused on how AI makes decisions affecting people: hiring, credit, healthcare, criminal justice. Appropriate and important. But the physical infrastructure that runs AI (the energy it consumes, the water it uses, the communities it displaces) exists in a separate regulatory world of utility law, water rights, and zoning that was not designed with data centers in mind. Those two regulatory worlds have not yet been connected by any binding legal framework in the United States.',
                   },
                 ],
               ],
@@ -934,8 +934,8 @@ export const partII: RoundtableDocument = {
         {
           type: 'pullquote',
           data: {
-            text: '"With federal legislation stalled, states have become the primary drivers of binding AI regulation. The pace picked up in 2025 and 2026 — but coverage of AI\'s environmental costs remains almost entirely absent."',
-            attribution: '— VerifyWise AI Governance Analysis, May 2026',
+            text: '"With federal legislation stalled, states have become the primary drivers of binding AI regulation. The pace picked up in 2025 and 2026, but coverage of AI\'s environmental costs remains almost entirely absent."',
+            attribution: 'VerifyWise AI Governance Analysis, May 2026',
           },
         },
       ],
@@ -955,7 +955,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I want to make sure I understand what I've heard. There are real things happening — nuclear deals, better cooling systems, court wins for workers, actual laws. But none of it is keeping pace with how fast AI is growing?",
+                      "I want to make sure I understand what I've heard. There are real things happening: nuclear deals, better cooling systems, court wins for workers, actual laws. But none of it is keeping pace with how fast AI is growing?",
                   },
                 ],
               ],
@@ -972,7 +972,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That's a fair summary. I'll be honest: the emissions numbers are worse than I'd like, and the gap between what's being built and what's being cleaned up is real. What I hold onto is that the investment in solutions is also at a scale we've never seen — billions into nuclear, billions into cooling innovation, renewable procurement that is genuinely moving the needle on the share of clean power, even if not yet total emissions. The direction is right. The speed is the problem.",
+                      "That's a fair summary. I'll be honest: the emissions numbers are worse than I'd like, and the gap between what's being built and what's being cleaned up is real. What I hold onto is that the investment in solutions is also at a scale we've never seen: billions into nuclear, billions into cooling innovation, renewable procurement that is genuinely moving the needle on the share of clean power, even if not yet total emissions. The direction is right. The speed is the problem.",
                   },
                 ],
               ],
@@ -989,7 +989,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The speed is everything in environmental problems. We don't get to go back and un-emit the carbon or refill the aquifer. The nuclear deals are promising but won't deliver power until 2028 or later. The cooling technologies are proven but not mandated. The renewable share is growing but total emissions are rising anyway. Progress without proportionality isn't progress — it's losing more slowly.",
+                      "The speed is everything in environmental problems. We don't get to go back and un-emit the carbon or refill the aquifer. The nuclear deals are promising but won't deliver power until 2028 or later. The cooling technologies are proven but not mandated. The renewable share is growing but total emissions are rising anyway. Progress without proportionality isn't progress; it's losing more slowly.",
                   },
                 ],
               ],
@@ -1006,7 +1006,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "For workers, this has been a period of real firsts — the first major court victories, the first union agreements, the first organized associations. Those firsts matter. But they're happening against a backdrop where the industry continues to scale, the supply chain continues to extend into lower-wage countries, and the companies with the most power are still using intermediary structures that let them profit from the labor while distancing themselves from legal accountability. The Meta glasses lawsuit makes this concrete: a product sold to seven million people, generating intimate surveillance footage, routed to Nairobi for annotation, with workers receiving no meaningful protection and users receiving no meaningful disclosure. The scale of what's being built has outrun the ethics of how it was built.",
+                      "For workers, this has been a period of real firsts: the first major court victories, the first union agreements, the first organized associations. Those firsts matter. But they're happening against a backdrop where the industry continues to scale, the supply chain continues to extend into lower-wage countries, and the companies with the most power are still using intermediary structures that let them profit from the labor while distancing themselves from legal accountability. The Meta glasses lawsuit makes this concrete: a product sold to seven million people, generating intimate surveillance footage, routed to Nairobi for annotation, with workers receiving no meaningful protection and users receiving no meaningful disclosure. The scale of what's being built has outrun the ethics of how it was built.",
                   },
                 ],
               ],
@@ -1023,7 +1023,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The regulatory picture is more developed than most people realize, and less comprehensive than it needs to be. The EU AI Act is real law with real fines and a real timeline, even if slipping. More than a dozen U.S. states have enacted binding AI rules in two years. Courts are establishing precedents through litigation that legislation hasn't reached. None of it is coordinated. None of it covers environmental costs. And the most powerful AI actors operate in the jurisdiction — the United States — that is currently the most actively resistant to binding accountability. That's the honest position of where governance stands in May 2026.",
+                      "The regulatory picture is more developed than most people realize, and less comprehensive than it needs to be. The EU AI Act is real law with real fines and a real timeline, even if slipping. More than a dozen U.S. states have enacted binding AI rules in two years. Courts are establishing precedents through litigation that legislation hasn't reached. None of it is coordinated. None of it covers environmental costs. And the most powerful AI actors operate in the jurisdiction (the United States) that is currently the most actively resistant to binding accountability. That's the honest position of where governance stands in May 2026.",
                   },
                 ],
               ],
@@ -1040,7 +1040,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I came into both of these conversations not knowing very much. I leave knowing that things are happening — real things, not just talk. I also leave knowing that most of it is voluntary, most of it is slower than the problem, and none of it addresses the electricity and water issues that felt most immediate and real to me when we first talked. I guess what I'm wondering is: who decides when enough is being done? Because it doesn't sound like it's the people paying the costs.",
+                      "I came into both of these conversations not knowing very much. I leave knowing that things are happening: real things, not just talk. I also leave knowing that most of it is voluntary, most of it is slower than the problem, and none of it addresses the electricity and water issues that felt most immediate and real to me when we first talked. I guess what I'm wondering is: who decides when enough is being done? Because it doesn't sound like it's the people paying the costs.",
                   },
                 ],
               ],
@@ -1054,7 +1054,7 @@ export const partII: RoundtableDocument = {
     {
       id: 'src-sp-global',
       url: 'https://www.spglobal.com/market-intelligence/en/news-insights/articles/2026/6/s-p-webinar-data-center-power-demand-to-more-than-double-by-2030-102727689',
-      title: 'S&P Global — 2026 Data Center Trends (April 2026)',
+      title: 'S&P Global: 2026 Data Center Trends (April 2026)',
       description: 'Renewable energy share: 58% in 2025, up from 50% in 2024.',
     },
     {
@@ -1074,7 +1074,7 @@ export const partII: RoundtableDocument = {
     {
       id: 'src-brookings',
       url: 'https://www.brookings.edu/articles/global-energy-demands-within-the-ai-regulatory-landscape/',
-      title: 'Brookings — Global Energy Demands (April 2026)',
+      title: 'Brookings: Global Energy Demands (April 2026)',
       description: 'Big Tech = 43% of all clean energy PPAs signed globally in 2024.',
     },
     {
@@ -1126,7 +1126,7 @@ export const partII: RoundtableDocument = {
       id: 'src-introl-2026',
       url: 'https://introl.com/blog/water-usage-efficiency-wue-ai-data-center-cooling-guide-2025',
       title: 'Introl (2026)',
-      description: 'Google 2023 water: 24,227 megalitres — highest among major hyperscalers.',
+      description: 'Google 2023 water: 24,227 megalitres, highest among major hyperscalers.',
     },
     {
       id: 'src-nixon-peabody',
@@ -1151,8 +1151,7 @@ export const partII: RoundtableDocument = {
       id: 'src-classaction',
       url: 'https://techcrunch.com/2026/03/05/meta-sued-over-ai-smartglasses-privacy-concerns-after-workers-reviewed-nudity-sex-and-other-footage/',
       title: 'ClassAction.org / Business & Human Rights Centre (March 2026)',
-      description:
-        'U.S. class action against Meta — AI glasses footage reviewed by Kenyan workers.',
+      description: 'U.S. class action against Meta: AI glasses footage reviewed by Kenyan workers.',
     },
     {
       id: 'src-somo',
@@ -1328,7 +1327,7 @@ export const partII: RoundtableDocument = {
       verificationStatus: 'disputed',
       verifiedUrl:
         'https://www.constellationenergy.com/news/2024/Constellation-to-Launch-Crane-Clean-Energy-Center-Restoring-Jobs-and-Carbon-Free-Power-to-The-Grid.html',
-      note: 'The Constellation–Microsoft 20-year PPA to restart TMI Unit 1 as the Crane Clean Energy Center (835 MW, targeting 2028) is confirmed, but the investment is ~$1.6 billion, not "$16 billion" (Utility Dive / DCD) — likely a decimal error.',
+      note: 'The Constellation–Microsoft 20-year PPA to restart TMI Unit 1 as the Crane Clean Energy Center (835 MW, targeting 2028) is confirmed, but the investment is ~$1.6 billion, not "$16 billion" (Utility Dive / DCD), likely a decimal error.',
       lastCheckedISO: '2026-06-24',
     },
     'c-ii-introl-dec-2025': {
@@ -1426,7 +1425,7 @@ export const partII: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://www.utilitydive.com/news/nuclear-power-smr-data-center-deloitte/745390/',
-      note: 'Deloitte (Apr 2025) projects new nuclear could meet ~10% of the projected increase in US data-centre electricity demand by 2035 — i.e. 10% of the demand increase, not total demand.',
+      note: 'Deloitte (Apr 2025) projects new nuclear could meet ~10% of the projected increase in US data-centre electricity demand by 2035 (that is, 10% of the demand increase, not total demand).',
       lastCheckedISO: '2026-06-24',
     },
     'c-ii-brookings-apr-2026': {
@@ -1513,7 +1512,7 @@ export const partII: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://www.nixonpeabody.com/insights/articles/2025/09/05/water-use-in-us-data-centers-legal-and-regulatory-risks',
-      note: 'Nixon Peabody (5 Sep 2025): water disclosure requirements remain largely proposed, with usage treated as proprietary — supporting "almost no binding requirements."',
+      note: 'Nixon Peabody (5 Sep 2025): water disclosure requirements remain largely proposed, with usage treated as proprietary, supporting "almost no binding requirements."',
       lastCheckedISO: '2026-06-24',
     },
     'c-ii-computer-weekly': {
@@ -1578,7 +1577,7 @@ export const partII: RoundtableDocument = {
       verificationStatus: 'disputed',
       verifiedUrl:
         'https://www.seyfarth.com/news-insights/mobley-v-workday-court-holds-ai-service-providers-could-be-directly-liable-for-employment-discrimination-under-agent-theory.html',
-      note: "The vendor-liability point holds — in Mobley v. Workday the court held AI providers can be directly liable as employers' 'agents.' But the certification is mischaracterised: the May 2025 ruling granted conditional ADEA collective-action certification (age), not a Rule 23 class certification 'for discriminatory outcomes' generally.",
+      note: "The vendor-liability point holds: in Mobley v. Workday the court held AI providers can be directly liable as employers' 'agents.' But the certification is mischaracterised: the May 2025 ruling granted conditional ADEA collective-action certification (age), not a Rule 23 class certification 'for discriminatory outcomes' generally.",
       lastCheckedISO: '2026-06-24',
     },
     'c-ii-secure-privacy-2026': {

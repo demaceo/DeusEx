@@ -41,7 +41,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     stance: 'critic',
     role: 'Climate researcher & policy advocate',
     focus: 'The measurable damage happening right now',
-    bio: 'Focused on the concrete environmental costs of AI — energy, water, and emissions — and on who is forced to bear them.',
+    bio: 'Focused on the concrete environmental costs of AI (energy, water, and emissions) and on who is forced to bear them.',
   },
   'labor-advocate': {
     id: 'labor-advocate',
@@ -71,7 +71,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     stance: 'neutral',
     role: 'Retired schoolteacher, late 60s',
     focus: 'Encountering AI for the first time',
-    bio: 'Uses a smartphone and watches the news, but AI was never part of her daily vocabulary — until lately.',
+    bio: 'Uses a smartphone and watches the news, but AI was never part of her daily vocabulary, until lately.',
   },
   'systems-humanist': {
     id: 'systems-humanist',
@@ -81,7 +81,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     stance: 'neutral',
     role: 'Technology ethicist & coordination researcher',
     focus: 'Incentive structures, not just symptoms',
-    bio: "Argues that AI's harms aren't accidents or bad actors — they're the predictable output of misaligned races no single player can stop alone. The fix is coordination, not blame.",
+    bio: "Argues that AI's harms aren't accidents or bad actors: they're the predictable output of misaligned races no single player can stop alone. The fix is coordination, not blame.",
   },
   skeptic: {
     id: 'skeptic',
@@ -91,7 +91,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     stance: 'critic',
     role: 'Veteran technology reporter',
     focus: 'Cut the hype; show me the evidence',
-    bio: 'Has covered three tech bubbles and treats every breathless claim — boom or doom — as a number to be checked. Suspects much of the "reckoning" is marketing in both directions.',
+    bio: 'Has covered three tech bubbles and treats every breathless claim (boom or doom) as a number to be checked. Suspects much of the "reckoning" is marketing in both directions.',
   },
   artist: {
     id: 'artist',
@@ -101,7 +101,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     stance: 'critic',
     role: 'Working illustrator & musician',
     focus: 'What it costs the people who make culture',
-    bio: 'Found her catalogue in a training set she never consented to. Speaks for the creators whose work became raw material — and asks what authorship is worth when anything can be synthesized.',
+    bio: 'Found her catalogue in a training set she never consented to. Speaks for the creators whose work became raw material, and asks what authorship is worth when anything can be synthesized.',
   },
   accelerationist: {
     id: 'accelerationist',
@@ -110,7 +110,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     icon: Rocket,
     stance: 'optimist',
     role: 'Founder & e/acc advocate',
-    focus: 'The cost of slowing down is invisible — and huge',
+    focus: 'The cost of slowing down is invisible, and huge',
     bio: 'Believes the greatest risk is moving too slowly: every year of delay is a year of cures, abundance, and discovery forgone. Treats most doom scenarios as unfalsifiable and the upside as concrete.',
   },
   'safety-researcher': {
@@ -121,7 +121,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     stance: 'critic',
     role: 'AI alignment researcher',
     focus: 'Low-probability, high-stakes outcomes deserve weight',
-    bio: 'Works on making advanced systems controllable and honest. Argues that even a small chance of catastrophic, irreversible failure is worth serious precaution — not because doom is certain, but because mistakes may not be undoable.',
+    bio: 'Works on making advanced systems controllable and honest. Argues that even a small chance of catastrophic, irreversible failure is worth serious precaution: not because doom is certain, but because mistakes may not be undoable.',
   },
   'young-person': {
     id: 'young-person',
@@ -130,7 +130,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     icon: Smartphone,
     stance: 'neutral',
     role: 'University student, early 20s',
-    focus: 'Grew up with this — it is not a novelty',
+    focus: 'Grew up with this, not a novelty',
     bio: 'Has talked to chatbots since high school and watched friends form real attachments to them. Sees the comfort and the cost up close, and bristles when older voices treat it as someone else’s experiment.',
   },
   clinician: {
@@ -151,7 +151,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     stance: 'neutral',
     role: 'Political economist',
     focus: 'Follow the compute, the capital, and the power',
-    bio: 'Tracks who owns the chips, the capital, and the data — and who captures the gains. Argues that the deciding question about AI is not what it can do but who controls the means to build it.',
+    bio: 'Tracks who owns the chips, the capital, and the data, as well as who captures the gains. Argues that the deciding question about AI is not what it can do but who controls the means to build it.',
   },
   'equity-researcher': {
     id: 'equity-researcher',
@@ -171,7 +171,7 @@ export const PERSONAS: Record<PersonaId, Persona> = {
     stance: 'critic',
     role: 'Community organizer in an extraction zone',
     focus: 'The earth and the people the supply chain runs through',
-    bio: 'Lives where the minerals come from. Speaks first-hand for the communities whose land, water, and labor are consumed to build the hardware — and who see the least of what it produces.',
+    bio: 'Lives where the minerals come from. Speaks first-hand for the communities whose land, water, and labor are consumed to build the hardware, and who see the least of what it produces.',
   },
 }
 

@@ -8,26 +8,26 @@ export const partIX: RoundtableDocument = {
     overline: 'Culture · Copyright · Authorship · 2024–2026',
     titleLines: [[{ text: 'The AI Reckoning:' }], [{ text: 'The Creativity Question', em: true }]],
     subtitle:
-      'Models that write, draw, and compose were built on the work of people who were never asked. This part takes up the question of culture: what human creativity is worth when a machine can imitate it instantly — and who owes whom for the imitation.',
+      'Models that write, draw, and compose were built on the work of people who were never asked. This part takes up the question of culture: what human creativity is worth when a machine can imitate it instantly, and who owes whom for the imitation.',
     dateLine: 'June 2026 · Ninth in the AI Reckoning series',
     accentColor: 'rose',
   },
   companion: {
-    text: 'Part IX of the AI Reckoning Series — Read alongside Parts I–VIII for full context',
+    text: 'Part IX of the AI Reckoning Series: Read alongside Parts I–VIII for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          "Every artistic tradition is built on borrowing — influence, homage, style are the vocabulary of originality. What's new is the scale: billions of works ingested without consent, fed into a machine that can generate infinite variations for free. Is that culture working the way it always has, or theft of the thing that makes culture worth making?",
+          "Every artistic tradition is built on borrowing: influence, homage, style are the vocabulary of originality. What's new is the scale: billions of works ingested without consent, fed into a machine that can generate infinite variations for free. Is that culture working the way it always has, or theft of the thing that makes culture worth making?",
       },
     ],
     [
       {
         type: 'text',
         value:
-          "The Artist leads this one — she found her own catalogue inside a training set she never agreed to, and speaks for every illustrator, writer, musician, and translator whose work became raw material. The Tech Optimist sees transformation; the Policy Realist watches copyright law improvise in real time. The Economist asks what no one wants to answer: what's left of a market for human-made work?",
+          "The Artist leads this one: she found her own catalogue inside a training set she never agreed to, and speaks for every illustrator, writer, musician, and translator whose work became raw material. The Tech Optimist sees transformation; the Policy Realist watches copyright law improvise in real time. The Economist asks what no one wants to answer: what's left of a market for human-made work?",
       },
     ],
   ],
@@ -88,7 +88,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' Mine were in there. So were my friends\'. Nobody emailed us. The defense I keep hearing is that it was "publicly available" — but publicly visible has never meant free to take. A shop window is public. That does not make the clothes free.',
+                      ' Mine were in there. So were my friends\'. Nobody emailed us. The defense I keep hearing is that it was "publicly available." But publicly visible has never meant free to take. A shop window is public. That does not make the clothes free.',
                   },
                 ],
               ],
@@ -105,7 +105,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to be careful and fair here, because the engineering reality matters. A model does not store your images; it learns statistical patterns from them, the way an art student learns by studying thousands of paintings. We do not say a student who studied Picasso owes the estate when they paint. The scale is unprecedented, I grant that — but "a machine learned from public examples" is not obviously theft, legally or morally.',
+                      'I want to be careful and fair here, because the engineering reality matters. A model does not store your images; it learns statistical patterns from them, the way an art student learns by studying thousands of paintings. We do not say a student who studied Picasso owes the estate when they paint. The scale is unprecedented, I grant that. But "a machine learned from public examples" is not obviously theft, legally or morally.',
                   },
                 ],
               ],
@@ -140,7 +140,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I\'ll concede more here than I usually do. I came in expecting an overblown panic, and the consent problem is real — "it was on the internet" is doing an enormous amount of unearned work. Where I stay skeptical is the leap from "this is unfair" to "this is illegal" to "this can be stopped." Three different claims. The first is strong. The second is being fought in court right now. The third may simply be beyond reach.',
+                      'I\'ll concede more here than I usually do. I came in expecting an overblown panic, and the consent problem is real: "it was on the internet" is doing an enormous amount of unearned work. Where I stay skeptical is the leap from "this is unfair" to "this is illegal" to "this can be stopped." Three different claims. The first is strong. The second is being fought in court right now. The third may simply be beyond reach.',
                   },
                 ],
               ],
@@ -188,7 +188,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Legally, none of this is settled, and anyone who tells you otherwise is selling something. The central US question is fair use — whether training is a "transformative" use of copyrighted work. That doctrine weighs, among other things, the effect on the market for the original. The New York Times sued OpenAI and Microsoft in December 2023 on exactly this ground.',
+                      'Legally, none of this is settled, and anyone who tells you otherwise is selling something. The central US question is fair use: whether training is a "transformative" use of copyrighted work. That doctrine weighs, among other things, the effect on the market for the original. The New York Times sued OpenAI and Microsoft in December 2023 on exactly this ground.',
                   },
                   { type: 'cite', claimId: 'c-ix-nyt-suit' },
                   {
@@ -230,7 +230,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Notice the move, though — "democratizing creativity." It is generous about access and silent about volume. Within a year of release, people had generated more than fifteen billion AI images.',
+                      'Notice the move, though: "democratizing creativity." It is generous about access and silent about volume. Within a year of release, people had generated more than fifteen billion AI images.',
                   },
                   { type: 'cite', claimId: 'c-ix-images-made' },
                   {
@@ -250,8 +250,8 @@ export const partIX: RoundtableDocument = {
             labelTop: 'Synthetic Output · Everypixel',
             title: 'A Year of AI Images',
             subtitle:
-              'By rough industry estimates, more than 15 billion AI images were created in the roughly twelve months after the tools went mainstream — outpacing what the stock-photo industry made in decades.',
-            source: 'Everypixel Journal — AI Image Statistics (2023)',
+              'By rough industry estimates, more than 15 billion AI images were created in the roughly twelve months after the tools went mainstream, outpacing what the stock-photo industry made in decades.',
+            source: 'Everypixel Journal: AI Image Statistics (2023)',
             claimIds: ['c-ix-images-made'],
             ariaLabel:
               'Line chart showing cumulative AI images generated rising past 15 billion within about a year of the tools becoming available',
@@ -309,7 +309,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And creative work has always been undervalued precisely because people love doing it — "do it for the exposure" is the oldest wage suppression there is. AI supercharges that. When a client can get a passable logo for free, the floor under the illustrator who needs to eat falls out. The 2023 Hollywood writers\' strike won real guardrails on AI in their contracts. Most creative workers have no union and no contract to negotiate.',
+                      'And creative work has always been undervalued precisely because people love doing it: "do it for the exposure" is the oldest wage suppression there is. AI supercharges that. When a client can get a passable logo for free, the floor under the illustrator who needs to eat falls out. The 2023 Hollywood writers\' strike won real guardrails on AI in their contracts. Most creative workers have no union and no contract to negotiate.',
                   },
                 ],
               ],
@@ -343,7 +343,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Thank you for saying that — and please don't carry it as guilt. You are not the villain; the card is not the problem. The problem is a system that took our work to build the tool and then routed every cent of the value to the company that made it, with nothing flowing back to the people it learned from. Fix that, and your birthday card and my career can both exist. That is the whole fight: not banning the tool, but reconnecting it to the people it was built on.",
+                      "Thank you for saying that, and please don't carry it as guilt. You are not the villain; the card is not the problem. The problem is a system that took our work to build the tool and then routed every cent of the value to the company that made it, with nothing flowing back to the people it learned from. Fix that, and your birthday card and my career can both exist. That is the whole fight: not banning the tool, but reconnecting it to the people it was built on.",
                   },
                 ],
               ],
@@ -359,7 +359,7 @@ export const partIX: RoundtableDocument = {
             title: 'Creators Already Losing Income',
             subtitle:
               'In a 2024 Society of Authors survey, about 26% of illustrators and 37% of translators reported having lost work because of generative AI.',
-            source: 'The Society of Authors — Member Survey (2024)',
+            source: 'The Society of Authors: Member Survey (2024)',
             claimIds: ['c-ix-soa'],
             ariaLabel:
               'Horizontal bar chart showing about 37 percent of translators and 26 percent of illustrators reported losing work to generative AI',
@@ -392,13 +392,13 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Here is the constructive turn, and it is already underway: licensing. Rather than fight every case to the Supreme Court, some AI companies are simply paying for data. Through 2024, OpenAI alone signed content deals with a string of major publishers — Axel Springer, the Associated Press, the Financial Times, News Corp, and others.',
+                      'Here is the constructive turn, and it is already underway: licensing. Rather than fight every case to the Supreme Court, some AI companies are simply paying for data. Through 2024, OpenAI alone signed content deals with a string of major publishers: Axel Springer, the Associated Press, the Financial Times, News Corp, and others.',
                   },
                   { type: 'cite', claimId: 'c-ix-licensing' },
                   {
                     type: 'text',
                     value:
-                      ' That establishes the principle that training data has a price. The danger is that only the largest rights-holders — big publishers, major labels — get to the table, while the individual illustrator and the mid-list author are left out entirely.',
+                      ' That establishes the principle that training data has a price. The danger is that only the largest rights-holders (big publishers, major labels) get to the table, while the individual illustrator and the mid-list author are left out entirely.',
                   },
                 ],
               ],
@@ -415,7 +415,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The Policy Realist has named the real design problem. Licensing markets reward concentrated rights-holders and bypass the dispersed individual creator — the very people the data mostly came from. The instruments that could fix that are not exotic: collective licensing, the way music royalties are pooled and distributed; an opt-out and a price by default; and provenance standards, the same content-credential plumbing Part V proposed, used here to track whose work trained what.',
+                      'The Policy Realist has named the real design problem. Licensing markets reward concentrated rights-holders and bypass the dispersed individual creator, the very people the data mostly came from. The instruments that could fix that are not exotic: collective licensing, the way music royalties are pooled and distributed; an opt-out and a price by default; and provenance standards, the same content-credential plumbing Part V proposed, used here to track whose work trained what.',
                   },
                 ],
               ],
@@ -432,7 +432,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And this is buildable — it is the same provenance technology, pointed at attribution instead of detection. Models trained only on licensed or public-domain data already exist; some image tools now compensate contributors to their training sets. The technical path to a consenting, paying pipeline is real. What is missing is not the capability. It is the will to choose the more expensive, fairer architecture over the free one.',
+                      'And this is buildable: it is the same provenance technology, pointed at attribution instead of detection. Models trained only on licensed or public-domain data already exist; some image tools now compensate contributors to their training sets. The technical path to a consenting, paying pipeline is real. What is missing is not the capability. It is the will to choose the more expensive, fairer architecture over the free one.',
                   },
                 ],
               ],
@@ -449,7 +449,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That is exactly it. I am not a Luddite — I use these tools too. I want three things, and they are not radical: consent, so we are asked; credit, so the lineage is visible; and compensation, so value flows back to the people it came from. Consent, credit, compensation. Get those and the technology becomes a collaborator. Skip them and it is just the most efficient machine ever built for taking culture from the people who make it and selling it back to them.',
+                      'That is exactly it. I am not a Luddite; I use these tools too. I want three things, and they are not radical: consent, so we are asked; credit, so the lineage is visible; and compensation, so value flows back to the people it came from. Consent, credit, compensation. Get those and the technology becomes a collaborator. Skip them and it is just the most efficient machine ever built for taking culture from the people who make it and selling it back to them.',
                   },
                 ],
               ],
@@ -488,21 +488,21 @@ export const partIX: RoundtableDocument = {
         {
           type: 'text',
           value:
-            'The creativity question is not really about whether machines can be creative. It is about a transfer: the work of millions of uncredited, unpaid people was used to build tools that now compete with them. The Tech Optimist is right that the access gains are real and the technology is not going away. The Policy Realist is right that the law is improvising and unsettled. The Economist is right that the harm is already measurable in lost commissions. And the Artist is right that none of it required taking without asking — that was a choice, made because it was cheaper.',
+            'The creativity question is not really about whether machines can be creative. It is about a transfer: the work of millions of uncredited, unpaid people was used to build tools that now compete with them. The Tech Optimist is right that the access gains are real and the technology is not going away. The Policy Realist is right that the law is improvising and unsettled. The Economist is right that the harm is already measurable in lost commissions. And the Artist is right that none of it required taking without asking: that was a choice, made because it was cheaper.',
         },
       ],
       [
         {
           type: 'text',
           value:
-            'The repair is not mysterious, and it is not a ban. It is consent, credit, and compensation — built with the same provenance plumbing this series has now invoked three times, for truth, for ownership, and here for authorship. Collective licensing so individual creators reach the table; opt-out and a price by default; attribution that travels with the work. The expensive, fairer architecture exists. Choosing it is the only open question.',
+            'The repair is not mysterious, and it is not a ban. It is consent, credit, and compensation, built with the same provenance plumbing this series has now invoked three times, for truth, for ownership, and here for authorship. Collective licensing so individual creators reach the table; opt-out and a price by default; attribution that travels with the work. The expensive, fairer architecture exists. Choosing it is the only open question.',
         },
       ],
       [
         {
           type: 'text',
           value:
-            'And so the series closes where it began: not with a verdict on the machines, but with a set of choices about us. Across nine conversations the same shape kept appearing — a genuine benefit, a real and unevenly distributed cost, and a coordination problem that no single actor can solve alone. Energy, labor, regulation, benefit, race, truth, safety, intimacy, ownership, and culture. The technology will keep advancing. Whether it advances as something done to us or something built with us is, as it always was, a decision — and the decision is still ours to make.',
+            'And so the series closes where it began: not with a verdict on the machines, but with a set of choices about us. Across nine conversations the same shape kept appearing: a genuine benefit, a real and unevenly distributed cost, and a coordination problem that no single actor can solve alone. Energy, labor, regulation, benefit, race, truth, safety, intimacy, ownership, and culture. The technology will keep advancing. Whether it advances as something done to us or something built with us is, as it always was, a decision, and the decision is still ours to make.',
         },
       ],
     ],
@@ -511,21 +511,21 @@ export const partIX: RoundtableDocument = {
   sources: [
     {
       id: 'src-laion',
-      title: 'LAION-5B — A Large-Scale Dataset for Training Image-Text Models (2022)',
+      title: 'LAION-5B: A Large-Scale Dataset for Training Image-Text Models (2022)',
       description:
         'Open dataset of ~5.85 billion CLIP-filtered image–text pairs scraped from the web; the training base for Stable Diffusion and other image models.',
       url: 'https://laion.ai/blog/laion-5b/',
     },
     {
       id: 'src-soa',
-      title: 'The Society of Authors — Member Survey on AI (2024)',
+      title: 'The Society of Authors: Member Survey on AI (2024)',
       description:
         'UK survey of creative professionals reporting lost work and income due to generative AI, including illustrators and translators.',
       url: 'https://societyofauthors.org/2024/04/11/new-survey-of-authors-and-illustrators-on-ai/',
     },
     {
       id: 'src-everypixel',
-      title: 'Everypixel Journal — AI Image Statistics (2023)',
+      title: 'Everypixel Journal: AI Image Statistics (2023)',
       description:
         'Industry analysis estimating that more than 15 billion AI images were generated within roughly a year of the tools becoming widely available.',
       url: 'https://journal.everypixel.com/ai-image-statistics',
@@ -539,7 +539,7 @@ export const partIX: RoundtableDocument = {
     },
     {
       id: 'src-copyright-office',
-      title: 'U.S. Copyright Office — Works Containing AI-Generated Material',
+      title: 'U.S. Copyright Office: Works Containing AI-Generated Material',
       description:
         'Copyright Office guidance and decisions holding that material produced by AI without meaningful human authorship is not copyrightable.',
       url: 'https://www.copyright.gov/ai/',
@@ -562,7 +562,7 @@ export const partIX: RoundtableDocument = {
       sourceId: 'src-laion',
       verificationStatus: 'verified',
       verifiedUrl: 'https://laion.ai/blog/laion-5b/',
-      note: 'LAION-5B comprises ~5.85 billion CLIP-filtered image–text pairs scraped from Common Crawl web data — the open training base for Stable Diffusion and related models.',
+      note: 'LAION-5B comprises ~5.85 billion CLIP-filtered image–text pairs scraped from Common Crawl web data, the open training base for Stable Diffusion and related models.',
       lastCheckedISO: '2026-06-27',
     },
     's-ix-illustrators': {
@@ -605,7 +605,7 @@ export const partIX: RoundtableDocument = {
       sourceId: 'src-everypixel',
       verificationStatus: 'verified',
       verifiedUrl: 'https://journal.everypixel.com/ai-image-statistics',
-      note: 'Everypixel 2023 estimate of >15 billion AI images in ~12 months. The plotted curve is an illustrative ramp to that endpoint, not measured monthly totals — labelled approximate.',
+      note: 'Everypixel 2023 estimate of >15 billion AI images in ~12 months. The plotted curve is an illustrative ramp to that endpoint, not measured monthly totals (labelled approximate).',
       lastCheckedISO: '2026-06-27',
     },
     'c-ix-soa': {
@@ -637,7 +637,7 @@ export const partIX: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html',
-      note: 'The New York Times filed suit against OpenAI and Microsoft on 27 December 2023, alleging unauthorized use of its articles to train AI models — a leading fair-use test case.',
+      note: 'The New York Times filed suit against OpenAI and Microsoft on 27 December 2023, alleging unauthorized use of its articles to train AI models, a leading fair-use test case.',
       lastCheckedISO: '2026-06-27',
     },
     'c-ix-copyright-office': {

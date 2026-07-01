@@ -24,7 +24,7 @@ describe('ChartCatalogPage', () => {
       const group = groups.find((g) => g.doc.id === entry.doc.id)!
       if (group.entries.length === 0) continue
       const link = screen.getByRole('link', {
-        name: new RegExp(`${entry.partLabel} — ${entry.navTitle}`, 'i'),
+        name: new RegExp(`${entry.partLabel}: ${entry.navTitle}`, 'i'),
       })
       expect(link).toHaveAttribute('href', `/${entry.doc.slug}`)
     }

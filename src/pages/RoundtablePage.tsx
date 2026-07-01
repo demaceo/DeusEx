@@ -77,7 +77,7 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
 
         <div className="container">
           <nav className="series-nav">
-            <Link to="/">← The AI Reckoning — series index</Link>
+            <Link to="/">← The AI Reckoning series index</Link>
             <Link to="/verification">Verification status →</Link>
           </nav>
 

@@ -19,8 +19,8 @@ export function Masthead({ masthead, prev, next }: MastheadProps) {
       <Link
         className="masthead-nav masthead-nav--prev"
         to={`/${prev.slug}`}
-        aria-label={`Previous part: ${prev.partLabel} — ${prev.navTitle}`}
-        title={`${prev.partLabel} — ${prev.navTitle}`}
+        aria-label={`Previous part, ${prev.partLabel}: ${prev.navTitle}`}
+        title={`${prev.partLabel}: ${prev.navTitle}`}
       >
         <ChevronLeft aria-hidden size={28} />
       </Link>
@@ -44,7 +44,7 @@ export function Masthead({ masthead, prev, next }: MastheadProps) {
                   <Link
                     className="masthead-title-link"
                     to="/"
-                    aria-label="The AI Reckoning — return to the series index"
+                    aria-label="Return to The AI Reckoning series index"
                   >
                     {spans}
                   </Link>
@@ -61,8 +61,8 @@ export function Masthead({ masthead, prev, next }: MastheadProps) {
       <Link
         className="masthead-nav masthead-nav--next"
         to={`/${next.slug}`}
-        aria-label={`Next part: ${next.partLabel} — ${next.navTitle}`}
-        title={`${next.partLabel} — ${next.navTitle}`}
+        aria-label={`Next part, ${next.partLabel}: ${next.navTitle}`}
+        title={`${next.partLabel}: ${next.navTitle}`}
       >
         <ChevronRight aria-hidden size={28} />
       </Link>

@@ -73,14 +73,14 @@ export function ChartCatalogPage() {
           Every Chart, <em>One Place</em>
         </h1>
         <p className="subtitle">
-          Every data visualization across all {groups.length} roundtables — {totalCharts} charts
+          Every data visualization across all {groups.length} roundtables: {totalCharts} charts
           spanning {kindsPresent} chart types. Filter by type, or browse by part below.
         </p>
       </header>
 
       <div className="container">
         <nav className="series-nav">
-          <Link to="/">← The AI Reckoning — series index</Link>
+          <Link to="/">← The AI Reckoning series index</Link>
         </nav>
 
         <div className="vp-filters" role="group" aria-label="Filter charts by type">
@@ -115,7 +115,7 @@ export function ChartCatalogPage() {
                 <div className="vp-doc__head">
                   <h2>
                     <Link to={`/${group.doc.slug}`}>
-                      {group.partLabel} — {group.navTitle}
+                      {group.partLabel}: {group.navTitle}
                     </Link>
                     <span className="vp-doc__shown">
                       {group.entries.length} chart{group.entries.length === 1 ? '' : 's'}

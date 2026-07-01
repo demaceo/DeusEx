@@ -13,7 +13,7 @@ export function IndexPage() {
           The <em>AI Reckoning</em>
         </h1>
         <p className="subtitle">
-          A recurring-roundtable series on artificial intelligence — its real costs, the responses
+          A recurring-roundtable series on artificial intelligence: its real costs, the responses
           underway, what it is genuinely getting right, and the harder questions of race, truth,
           safety, intimacy, ownership, culture, bias, and extraction. Grounded in cited evidence,
           not speculation.
@@ -26,7 +26,7 @@ export function IndexPage() {
         <div className="index-intro">
           <p>
             Nine documents, one recurring panel. Read them in order, or jump to whichever question
-            you care about most. Every figure is a checkable claim —{' '}
+            you care about most. Every figure is a checkable claim:{' '}
             <Link to="/verification">see the evidence ledger</Link>, or browse every{' '}
             <Link to="/charts">chart in the series</Link>.
           </p>
@@ -53,7 +53,7 @@ export function IndexPage() {
             The Panel
           </h2>
           <p className="panel-section__intro">
-            Follow any voice across the whole series — every argument they make, in one thread. Or
+            Follow any voice across the whole series: every argument they make, in one thread. Or
             see <Link to="/voices">where each voice broke from type</Link>.
           </p>
           <ul className="panel-grid">
