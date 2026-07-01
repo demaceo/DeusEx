@@ -38,6 +38,15 @@ export interface DocumentEntry {
   blurb: string
 }
 
+/**
+ * Stable id for a section (round) within a document, e.g. "round-3". Shared by
+ * RoundtablePage's `<section id>` anchors and any deep link back into a
+ * specific round — e.g. the chart catalog's "jump to this chart" links.
+ */
+export function sectionId(i: number): string {
+  return `round-${i + 1}`
+}
+
 // Array order defines the series and navigation sequence — reordering changes prev/next navigation.
 export const DOCUMENTS: DocumentEntry[] = [
   {
