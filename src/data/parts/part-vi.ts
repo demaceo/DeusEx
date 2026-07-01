@@ -27,7 +27,7 @@ export const partVI: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Two new voices sharpen the disagreement. The Accelerationist believes the real danger is moving too slowly — that every year of caution is a year of cures and discovery forgone. The Safety Researcher keeps asking what it would look like if we were wrong. Together they illuminate the oldest question in ethics under uncertainty: when the cost of a mistake is irreversible, how much caution is enough — and who gets to decide?',
+          "Two new voices sharpen the disagreement. The Accelerationist believes the real danger is moving too slowly — every year of caution is a year of cures forgone. The Safety Researcher keeps asking what it looks like if we're wrong. Between them: the oldest question in ethics under uncertainty — when a mistake can't be undone, how much caution is enough, and who decides?",
       },
     ],
   ],

@@ -20,14 +20,14 @@ export const partXI: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Before the electricity, before the server, before the chip — there is the mine. There is the refinery. There is the hand that does the separating, and the lung that fills with the dust. The intelligence that arrives cleanly through a browser was assembled, over decades, from the earth up. This conversation follows the wire back to where it starts, and asks what was left behind there.',
+          'Before the electricity, before the server, before the chip, there is the mine — the refinery, the hand doing the separating, the lung filling with dust. The intelligence that arrives cleanly through a browser was built from the earth up. This conversation follows the wire back to its source, and asks what got left behind.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'A new voice anchors this conversation: the Land Defender, who lives where the minerals come from and speaks first-hand for the communities whose water, soil, and labor are consumed to build the machines — and who see the least of what those machines produce. The question is the oldest one in the language of environmental justice, appearing here in a new form: who bears the cost, and who gets to use the thing it built?',
+          'The Land Defender anchors this conversation. She lives where the minerals come from and speaks first-hand for the communities whose water, soil, and labor build these machines — and who see the least of what they produce. It’s the oldest question in environmental justice, in a new form: who bears the cost, and who gets to use what it built?',
       },
     ],
   ],

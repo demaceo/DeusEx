@@ -15,22 +15,22 @@ interface SeriesFooterProps {
 export function SeriesFooter({ prev, next }: SeriesFooterProps) {
   return (
     <footer className="series-footer">
-      <div className="container">
+      <div className="container series-footer__inner">
         <Link className="series-footer__next" to={`/${next.slug}`}>
-          <span className="series-footer__kicker">Continue the series · {next.partLabel}</span>
+          <span className="series-footer__kicker">Next · {next.partLabel}</span>
           <span className="series-footer__title">
             {next.navTitle}
-            <ArrowRight aria-hidden size={20} strokeWidth={2} />
+            <ArrowRight aria-hidden size={16} strokeWidth={2} />
           </span>
         </Link>
 
-        <div className="series-footer__more">
+        <nav className="series-footer__more" aria-label="More series links">
           <Link to={`/${prev.slug}`}>
             ← {prev.partLabel} · {prev.navTitle}
           </Link>
-          <Link to="/">The AI Reckoning — series index</Link>
+          <Link to="/">Series index</Link>
           <Link to="/verification">Evidence ledger</Link>
-        </div>
+        </nav>
       </div>
     </footer>
   )

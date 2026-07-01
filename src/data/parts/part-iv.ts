@@ -20,14 +20,14 @@ export const partIV: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'No one started this race. It emerged from the same logic that has driven every arms race in history: the fear that stopping means losing. Once that calculus locks in, the question of whether to run dissolves into the question of how fast. What this conversation asks is whether that logic is as unbreakable as it appears — and what it would actually cost to find out.',
+          'No one started this race — it emerged from the oldest logic there is: the fear that stopping means losing. Once that calculus locks in, whether to run stops being the question; how fast becomes the only one. This conversation asks whether that logic is as unbreakable as it looks, and what it would cost to test it.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          "There is a name for this. Economists call it a prisoner's dilemma; strategists call it an arms race; historians call it what happens to every transformative technology that arrives before the institutions designed to govern it. The actors in this conversation know the name, know the logic, and find themselves running anyway — which is the most honest thing any of them has to say.",
+          "There's a name for this. Economists call it a prisoner's dilemma, strategists an arms race, historians simply what happens when a transformative technology outruns the institutions meant to govern it. Everyone at this table knows the name, knows the logic, and is running anyway — which might be the most honest thing any of them says.",
       },
     ],
   ],

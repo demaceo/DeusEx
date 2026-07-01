@@ -20,7 +20,7 @@ export const partV: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Truth has always been contested. What is new is not the lie but its cost. When fabrication is cheap and distribution is instant, the asymmetry that once protected shared reality collapses. Any story can be planted, any image forged, any voice cloned — not by governments with armies of forgers, but by anyone with a browser and an afternoon. The question is not whether you believe it. It is whether the institutions of democratic life can survive the point at which most people cannot tell.',
+          "Truth has always been contested — what's new is the cost of faking it. When fabrication is instant and free, anyone with a browser and an afternoon can plant a story, forge an image, clone a voice. No army of state forgers required. The real question isn't whether you can tell what's real. It's whether democratic institutions survive once most people can't.",
       },
     ],
     [

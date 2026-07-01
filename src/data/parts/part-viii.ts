@@ -20,14 +20,14 @@ export const partVIII: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Every transformative technology, eventually, becomes a monopoly. Or close enough. Steam, oil, steel, bandwidth — each consolidated into the hands of a few before anyone had built the institutions to govern it. Intelligence is the input to every other decision now. The question this conversation asks is the one that came too late for every technology before it: who should own it, and what happens to everyone else if they do not?',
+          'Every transformative technology ends up a monopoly, or close to one — steam, oil, steel, bandwidth, all consolidated before anyone built the institutions to govern them. Intelligence now feeds every other decision we make. So ask the question that came too late for every technology before it: who owns this, and what happens to the rest of us?',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'A new voice leads this conversation: the Economist who tracks the compute, the capital, and the data flows, and who argues that the deciding question is not what AI can do but who can afford to make it do anything at all. The risk here is not a rogue machine. It is older and more familiar: that a general-purpose technology with the power to reshape every economy ends up in the hands of the very few — and stays there.',
+          "The Economist leads this round, tracking compute, capital, and data flows. Her argument: the deciding question isn't what AI can do, but who can afford to make it do anything. The risk isn't a rogue machine — it's older and more familiar. A technology powerful enough to reshape every economy ends up owned by a very few people, and stays that way.",
       },
     ],
   ],

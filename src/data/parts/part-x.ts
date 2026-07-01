@@ -20,14 +20,14 @@ export const partX: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'A mirror shows the room. That is all it does — and that is the problem. The data these systems were trained on is a faithful record of a world already sorted by race, gender, class, and history. The model did not introduce the bias. It learned it, optimized for it, and now delivers it at a scale and speed that exceeds anything a biased human could manage alone. The question is what we do with a mirror that faithfully reflects a past we said we were trying to leave behind.',
+          "A mirror only shows the room — that's the problem. These systems were trained on a faithful record of a world already sorted by race, gender, class, and history. The bias isn't a glitch the model introduced; it's one the model learned, optimized, and now delivers faster and at greater scale than any biased human could manage alone. What do we do with a mirror that reflects a past we claimed to be leaving behind?",
       },
     ],
     [
       {
         type: 'text',
         value:
-          'A new voice leads this conversation: the Equity Researcher who audits these systems for the discrimination they encode and the communities they leave behind. The debate around her is not whether bias exists — that is measured and documented. It is whether bias is a bug that can be patched, or a feature of any system trained on a world that was never fair — and who gets to decide which it is.',
+          "The Equity Researcher leads this round, auditing these systems for the discrimination they encode and the communities they leave behind. Nobody disputes that bias exists here — it's measured, documented, settled. The real fight is whether it's a bug you patch, or a feature of any system trained on a world that was never fair — and who gets to decide.",
       },
     ],
   ],

@@ -20,14 +20,14 @@ export const partIX: RoundtableDocument = {
       {
         type: 'text',
         value:
-          'Every great artistic tradition has been built on borrowing. Influence, homage, style — these have always been the vocabulary of originality. What is new is not the borrowing but the scale: billions of human works ingested without consent, and a machine that can produce infinite variations of them for free. Whether that is a natural extension of how culture has always worked, or a theft of what makes culture worth making, is the argument this conversation cannot avoid.',
+          "Every artistic tradition is built on borrowing — influence, homage, style are the vocabulary of originality. What's new is the scale: billions of works ingested without consent, fed into a machine that can generate infinite variations for free. Is that culture working the way it always has, or theft of the thing that makes culture worth making?",
       },
     ],
     [
       {
         type: 'text',
         value:
-          'The Artist leads this one. She found her own catalogue inside a training set she never agreed to, and she speaks for the illustrators, writers, musicians, and translators whose work became raw material. Around her the debate is genuinely hard: the Tech Optimist sees transformation, the Policy Realist is watching a copyright system improvise in real time, and the Economist asks the question no one wants to answer — what does a market for human-made work look like now?',
+          "The Artist leads this one — she found her own catalogue inside a training set she never agreed to, and speaks for every illustrator, writer, musician, and translator whose work became raw material. The Tech Optimist sees transformation; the Policy Realist watches copyright law improvise in real time. The Economist asks what no one wants to answer: what's left of a market for human-made work?",
       },
     ],
   ],
