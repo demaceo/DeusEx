@@ -89,6 +89,7 @@ The route table lives in **`src/routes.tsx`** (single source of truth, used by `
 3. **Chart colors must be hex** in `chartTheme.ts`. Do not use `var(--token)` references there.
 4. **Personas are never re-declared** in part files — use `PersonaId` only; the authoritative `Persona` objects live in `src/data/personas.ts`.
 5. **Adding a new part** means: create `src/data/parts/part-{n}.ts`, add its id to the `DocumentId` union in `document.ts`, register it in `DOCUMENTS` in `documents.ts` (array order = series/nav order), and — if it should be podcast-able — add it to the `DOCS` array in `scripts/generate-podcast.ts`.
+6. **Never use an em dash (`—`) in user-facing text** — that includes part content (`bio`, `focus`, prose `value`/`text` fields, chart `title`/`subtitle`/`description`/`ariaLabel`, `source`, pullquote `attribution`, claim `note`, etc.), persona copy, page/component JSX text, `aria-label`/`title` attributes, and `index.html` meta tags. Rewrite the sentence with a comma, period, colon, semicolon, or parentheses instead of substituting a hyphen or en dash for the em dash. This does not apply to code comments, which aren't user-facing.
 
 ## Deployment
 
