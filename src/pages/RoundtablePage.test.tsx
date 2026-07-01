@@ -60,3 +60,37 @@ describe('RoundtablePage scroll-to-top', () => {
     scrollTo.mockRestore()
   })
 })
+
+describe('RoundtablePage deep-linking into a round', () => {
+  it('scrolls the target round into view instead of the top, given a #round-N hash', () => {
+    const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+    const scrollIntoView = vi
+      .spyOn(Element.prototype, 'scrollIntoView')
+      .mockImplementation(() => {})
+
+    render(
+      <MemoryRouter initialEntries={['/real-costs#round-2']}>
+        <RoundtablePage document={partI} />
+      </MemoryRouter>,
+    )
+
+    expect(scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth', block: 'start' })
+    expect(scrollTo).not.toHaveBeenCalled()
+
+    scrollTo.mockRestore()
+    scrollIntoView.mockRestore()
+  })
+
+  it('falls back to scrolling to the top when the hash matches no round', () => {
+    const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+
+    render(
+      <MemoryRouter initialEntries={['/real-costs#not-a-round']}>
+        <RoundtablePage document={partI} />
+      </MemoryRouter>,
+    )
+
+    expect(scrollTo).toHaveBeenCalledWith(0, 0)
+    scrollTo.mockRestore()
+  })
+})

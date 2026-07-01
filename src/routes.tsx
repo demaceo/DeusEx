@@ -1,4 +1,5 @@
 import type { RouteObject } from 'react-router-dom'
+import { ChartCatalogPage } from './pages/ChartCatalogPage'
 import { DocumentRoute } from './pages/DocumentRoute'
 import { IndexPage } from './pages/IndexPage'
 import { NotFound } from './pages/NotFound'
@@ -12,6 +13,7 @@ export const routes: RouteObject[] = [
   { path: '/verification', element: <VerificationPage /> },
   { path: '/voices', element: <VoicesIndexPage /> },
   { path: '/voices/:personaId', element: <PersonaThreadPage /> },
+  { path: '/charts', element: <ChartCatalogPage /> },
   { path: '/:slug', element: <DocumentRoute /> },
   { path: '*', element: <NotFound /> },
 ]

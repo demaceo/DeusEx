@@ -27,4 +27,14 @@ describe('IndexPage', () => {
     const link = screen.getByRole('link', { name: /evidence ledger/i })
     expect(link).toHaveAttribute('href', '/verification')
   })
+
+  it('links to the chart catalog', () => {
+    render(
+      <MemoryRouter>
+        <IndexPage />
+      </MemoryRouter>,
+    )
+    const link = screen.getByRole('link', { name: /chart in the series/i })
+    expect(link).toHaveAttribute('href', '/charts')
+  })
 })

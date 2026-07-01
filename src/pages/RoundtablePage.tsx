@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { BlockRenderer } from '../components/BlockRenderer'
 import { ChapterDivider } from '../components/ChapterDivider'
 import { DebateNavFAB } from '../components/DebateNavFAB'
@@ -17,7 +17,7 @@ import { SeriesFooter } from '../components/SeriesFooter'
 import { SourcesSection } from '../components/SourcesSection'
 import { VerdictBox } from '../components/VerdictBox'
 import { VerificationNotice } from '../components/VerificationNotice'
-import { getAdjacentParts, personasInDocument } from '../data/documents'
+import { getAdjacentParts, personasInDocument, sectionId } from '../data/documents'
 import { groupBlocks } from '../data/groupBlocks'
 import { estimateReadingTime } from '../data/readingTime'
 import { usePodcastPlayer } from '../hooks/usePodcastPlayer'
@@ -27,13 +27,11 @@ interface RoundtablePageProps {
   document: RoundtableDocument
 }
 
-/** Stable id for a section, used for the round navigator and aria-labelledby. */
-const sectionId = (i: number) => `round-${i + 1}`
-
 /** Renders one full roundtable document from data. One page, many data objects. */
 export function RoundtablePage({ document }: RoundtablePageProps) {
   const { prev, next } = getAdjacentParts(document.id)
   const player = usePodcastPlayer(document.id)
+  const { hash } = useLocation()
 
   const personaIds = useMemo(() => personasInDocument(document), [document])
   const readingMinutes = useMemo(() => estimateReadingTime(document), [document])
@@ -55,8 +53,16 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
   )
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [document.id])
+    // A deep link into a specific round (e.g. from the chart catalog) jumps
+    // there instead of resetting to the top. `document` is shadowed by the
+    // prop above, so the DOM document is reached via `window`.
+    const target = hash ? window.document.getElementById(hash.slice(1)) : null
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } else {
+      window.scrollTo(0, 0)
+    }
+  }, [document.id, hash])
 
   return (
     <DocumentProvider claims={document.claims} sources={document.sources}>

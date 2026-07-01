@@ -27,7 +27,8 @@ export function IndexPage() {
           <p>
             Nine documents, one recurring panel. Read them in order, or jump to whichever question
             you care about most. Every figure is a checkable claim:{' '}
-            <Link to="/verification">see the evidence ledger</Link>.
+            <Link to="/verification">see the evidence ledger</Link>, or browse every{' '}
+            <Link to="/charts">chart in the series</Link>.
           </p>
         </div>
 
