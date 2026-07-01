@@ -33,8 +33,8 @@ export function Citation({ claimId, label }: CitationProps) {
       data-verification={status}
       role="button"
       tabIndex={0}
-      aria-label={`${text} — view evidence (${status})`}
-      title={`Verification: ${status} — view evidence`}
+      aria-label={`${text} (view evidence, ${status})`}
+      title={`Verification: ${status} (view evidence)`}
       onClick={() => open(claim, source)}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {

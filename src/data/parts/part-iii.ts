@@ -11,19 +11,19 @@ export const partIII: RoundtableDocument = {
       [{ text: "What It's Actually Getting Right", em: true }],
     ],
     subtitle:
-      'The same five voices — this time examining the concrete, documented, peer-reviewed positive outcomes of AI research, access, and application. No hype. No speculation. Just what is actually working.',
+      'The same five voices, this time examining the concrete, documented, peer-reviewed positive outcomes of AI research, access, and application. No hype. No speculation. Just what is actually working.',
     dateLine: 'May 2026 · Third in the AI Reckoning series',
     accentColor: 'green',
   },
   companion: {
-    text: 'Part III of the AI Reckoning Series — Read alongside Parts I & II for full context',
+    text: 'Part III of the AI Reckoning Series: read alongside Parts I & II for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          'It is not a concession to admit that something works. Science advances. Diseases yield. Floods are predicted. Children in under-resourced classrooms gain months of ground. The honest reckoning includes this — not as absolution for the costs, but as the other half of the ledger, without which none of the difficult tradeoffs can be weighed.',
+          'It is not a concession to admit that something works. Science advances. Diseases yield. Floods are predicted. Children in under-resourced classrooms gain months of ground. The honest reckoning includes this: not as absolution for the costs, but as the other half of the ledger, without which none of the difficult tradeoffs can be weighed.',
       },
     ],
   ],
@@ -45,7 +45,7 @@ export const partIII: RoundtableDocument = {
                 value: '214M+',
                 size: 'large',
                 description:
-                  'Protein structures predicted — nearly every known protein sequence on Earth',
+                  'Protein structures predicted: nearly every known protein sequence on Earth',
                 claimId: 's-iii-alphafold-214m',
               },
               {
@@ -54,7 +54,7 @@ export const partIII: RoundtableDocument = {
                 value: 'Chemistry 2024',
                 size: 'medium',
                 description:
-                  "Awarded to AlphaFold creators — the first AI-driven tool to win science's highest honor",
+                  "Awarded to AlphaFold creators, the first AI-driven tool to win science's highest honor",
                 claimId: 's-iii-nobel-chemistry-2024',
               },
               {
@@ -96,20 +96,20 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Let me start with what I consider the most significant scientific achievement in AI history. AlphaFold — developed by Google DeepMind — solved a problem that had stumped biologists for fifty years: how to predict a protein's three-dimensional shape from its sequence of amino acids. Proteins are the molecular machinery of life, and understanding their structure is the foundation of drug development, understanding disease, and developing new therapies. For decades, determining one protein structure experimentally could take a research team years. AlphaFold does it in minutes.",
+                      "Let me start with what I consider the most significant scientific achievement in AI history. AlphaFold (developed by Google DeepMind) solved a problem that had stumped biologists for fifty years: how to predict a protein's three-dimensional shape from its sequence of amino acids. Proteins are the molecular machinery of life, and understanding their structure is the foundation of drug development, understanding disease, and developing new therapies. For decades, determining one protein structure experimentally could take a research team years. AlphaFold does it in minutes.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'The AlphaFold database now contains over 214 million predicted protein structures — essentially every known protein sequence on Earth, made freely available to any researcher anywhere.',
+                      'The AlphaFold database now contains over 214 million predicted protein structures: essentially every known protein sequence on Earth, made freely available to any researcher anywhere.',
                   },
                   { type: 'cite', claimId: 'c-iii-alphafold-214m' },
                   {
                     type: 'text',
                     value:
-                      " This work won the 2024 Nobel Prize in Chemistry — the first time an AI-driven tool has earned science's highest honor.",
+                      " This work won the 2024 Nobel Prize in Chemistry, the first time an AI-driven tool has earned science's highest honor.",
                   },
                   { type: 'cite', claimId: 'c-iii-nobel-2024' },
                   {
@@ -128,7 +128,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Building on that foundation, researchers at MIT and McMaster University trained a generative AI model to design entirely new antibiotic structures to fight drug-resistant bacteria. The model screened more than 36 million molecular possibilities. From that screen, it found a small set of promising compounds. Two candidates eliminated MRSA — methicillin-resistant Staphylococcus aureus — in mouse models, and one showed activity against several other drug-resistant bacteria.',
+                      'Building on that foundation, researchers at MIT and McMaster University trained a generative AI model to design entirely new antibiotic structures to fight drug-resistant bacteria. The model screened more than 36 million molecular possibilities. From that screen, it found a small set of promising compounds. Two candidates eliminated MRSA (methicillin-resistant Staphylococcus aureus) in mouse models, and one showed activity against several other drug-resistant bacteria.',
                   },
                   { type: 'cite', claimId: 'c-iii-mit-antibiotic' },
                   {
@@ -151,20 +151,20 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to add something from a different angle. In 2024, Google partnered with the Lichtman Lab at Harvard to map a tiny cubic millimeter of human brain tissue — at a resolution and level of cellular detail never previously achieved. The project revealed never-before-seen structures within the human brain and made the complete dataset, including AI-generated annotations for every cell, freely available to the scientific community.',
+                      'I want to add something from a different angle. In 2024, Google partnered with the Lichtman Lab at Harvard to map a tiny cubic millimeter of human brain tissue, at a resolution and level of cellular detail never previously achieved. The project revealed never-before-seen structures within the human brain and made the complete dataset, including AI-generated annotations for every cell, freely available to the scientific community.',
                   },
                   { type: 'cite', claimId: 'c-iii-brain-mapping' },
                   {
                     type: 'text',
                     value:
-                      " That kind of foundational contribution — mapping what is actually there rather than theorizing — doesn't get the headlines drug discoveries do, but it may matter more for the long-term understanding of neurological disease.",
+                      " That kind of foundational contribution (mapping what is actually there rather than theorizing) doesn't get the headlines drug discoveries do, but it may matter more for the long-term understanding of neurological disease.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "And separately, Google DeepMind's AI identified a previously unknown protein interaction critical to the survival of certain cancer cells — molecular dependencies that are difficult to detect through conventional laboratory methods, pointing toward a potential new class of drug targets that could selectively disrupt cancer growth while sparing healthy tissue.",
+                      "And separately, Google DeepMind's AI identified a previously unknown protein interaction critical to the survival of certain cancer cells: molecular dependencies that are difficult to detect through conventional laboratory methods, pointing toward a potential new class of drug targets that could selectively disrupt cancer growth while sparing healthy tissue.",
                   },
                   { type: 'cite', claimId: 'c-iii-cancer-protein' },
                 ],
@@ -182,7 +182,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Something worth noting about AlphaFold specifically: the decision to make the database freely available was not commercially required. Releasing 214 million protein structures as open access to every researcher on Earth regardless of their institution or country is a policy choice about who benefits from scientific infrastructure. Research published in 2025 found that before AlphaFold, the top 10% of universities published 55% of protein research articles and secured 50% of research grants — the field was heavily concentrated.',
+                      'Something worth noting about AlphaFold specifically: the decision to make the database freely available was not commercially required. Releasing 214 million protein structures as open access to every researcher on Earth regardless of their institution or country is a policy choice about who benefits from scientific infrastructure. Research published in 2025 found that before AlphaFold, the top 10% of universities published 55% of protein research articles and secured 50% of research grants; the field was heavily concentrated.',
                   },
                   { type: 'cite', claimId: 'c-iii-biorxiv-concentration' },
                   {
@@ -202,7 +202,7 @@ export const partIII: RoundtableDocument = {
             labelTop: 'Science · Before AlphaFold',
             title: 'A handful of universities once held most of the field',
             subtitle:
-              'Share of protein-research output before AlphaFold opened its data — open access is now measurably reducing this concentration.',
+              'Share of protein-research output before AlphaFold opened its data; open access is now measurably reducing this concentration.',
             unit: '%',
             claimIds: ['c-iii-biorxiv-concentration'],
             ariaLabel:
@@ -228,7 +228,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The antibiotic thing is the one that really lands for me. I've heard about antibiotic resistance my whole life — that eventually the bacteria will outsmart all our medicines and we'll be in serious trouble. Are they saying AI actually found new ones?",
+                      "The antibiotic thing is the one that really lands for me. I've heard about antibiotic resistance my whole life: that eventually the bacteria will outsmart all our medicines and we'll be in serious trouble. Are they saying AI actually found new ones?",
                   },
                 ],
               ],
@@ -245,13 +245,13 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "In mouse models, yes — and structurally novel ones, which is the critical point. Bacteria develop resistance by evolving defenses against specific molecular structures. When a new drug has a structure bacteria have never encountered, resistance takes much longer to emerge. The AI didn't just find another version of a drug we already have. It found molecules from a part of chemical space that human researchers, working manually, would not have reached.",
+                      "In mouse models, yes, and structurally novel ones, which is the critical point. Bacteria develop resistance by evolving defenses against specific molecular structures. When a new drug has a structure bacteria have never encountered, resistance takes much longer to emerge. The AI didn't just find another version of a drug we already have. It found molecules from a part of chemical space that human researchers, working manually, would not have reached.",
                   },
                   { type: 'cite', claimId: 'c-iii-alation-chemical-space' },
                   {
                     type: 'text',
                     value:
-                      " These are early-stage findings that still need to advance through human trials. But the discovery step itself — which historically has been the hardest part — happened. That's the real news.",
+                      " These are early-stage findings that still need to advance through human trials. But the discovery step itself (which historically has been the hardest part) happened. That's the real news.",
                   },
                 ],
               ],
@@ -262,7 +262,7 @@ export const partIII: RoundtableDocument = {
           type: 'pullquote',
           data: {
             text: '"By releasing protein structure predictions in a free database, scientists around the world can accelerate progress in areas like developing new medicines, fighting antibiotic resistance, and tackling plastic pollution."',
-            attribution: '— Google AI Science, 2024',
+            attribution: 'Google AI Science, 2024',
           },
         },
       ],
@@ -343,14 +343,14 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Drug development has historically been one of the least efficient processes in human civilization. The average approved medicine costs $2.6 billion to develop and takes more than a decade. Most of that cost comes from failure — compounds that look promising early but turn out to be toxic or ineffective much later, after enormous resources have been spent. AI is attacking that failure rate at the source.',
+                      'Drug development has historically been one of the least efficient processes in human civilization. The average approved medicine costs $2.6 billion to develop and takes more than a decade. Most of that cost comes from failure: compounds that look promising early but turn out to be toxic or ineffective much later, after enormous resources have been spent. AI is attacking that failure rate at the source.',
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'AI systems can now predict which protein targets are most likely to be "druggable" before anyone steps foot in a lab. They predict toxicity profiles across different organ systems, how quickly the body absorbs and eliminates a drug, and potential off-target effects that cause side effects — all before synthesis.',
+                      'AI systems can now predict which protein targets are most likely to be "druggable" before anyone steps foot in a lab. They predict toxicity profiles across different organ systems, how quickly the body absorbs and eliminates a drug, and potential off-target effects that cause side effects, all before synthesis.',
                   },
                   { type: 'cite', claimId: 'c-iii-lifebit-druggable' },
                   {
@@ -369,7 +369,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In diagnostics, AI medical imaging analysis reads X-rays, MRIs, and CT scans at speeds and consistency that human radiologists cannot match alone — not as replacement, but as a second reader that catches what fatigue or distraction might miss. Early cancer detection through AI screening is saving an estimated $150,000 per patient in treatment costs by catching disease in stages that are far cheaper to treat.',
+                      'In diagnostics, AI medical imaging analysis reads X-rays, MRIs, and CT scans at speeds and consistency that human radiologists cannot match alone: not as a replacement, but as a second reader that catches what fatigue or distraction might miss. Early cancer detection through AI screening is saving an estimated $150,000 per patient in treatment costs by catching disease in stages that are far cheaper to treat.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-150k' },
                   {
@@ -393,7 +393,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I want to engage with this seriously because the healthcare case is genuinely compelling — but I also want to be clear-eyed about distribution. When AI cuts $700 million from drug development costs, does that reduce the price of the drug for patients, or does it increase the profit margin for the manufacturer? The technology's benefit to human health depends entirely on who captures the efficiency gains. A cheaper-to-develop drug that still costs $100,000 per year in treatment is not a story about democratizing medicine.",
+                      "I want to engage with this seriously because the healthcare case is genuinely compelling, but I also want to be clear-eyed about distribution. When AI cuts $700 million from drug development costs, does that reduce the price of the drug for patients, or does it increase the profit margin for the manufacturer? The technology's benefit to human health depends entirely on who captures the efficiency gains. A cheaper-to-develop drug that still costs $100,000 per year in treatment is not a story about democratizing medicine.",
                   },
                 ],
                 [

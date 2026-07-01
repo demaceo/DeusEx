@@ -26,7 +26,7 @@ export function VoicesIndexPage() {
         <p className="overline">The AI Reckoning · Series map</p>
         <h1>The Crossings</h1>
         <p className="subtitle">
-          Each voice argues from a usual camp. These are the moments a voice broke from type —
+          Each voice argues from a usual camp. These are the moments a voice broke from type:
           arguing the optimistic side, the critical side, or common ground because the subject
           called for it.
         </p>
@@ -37,7 +37,7 @@ export function VoicesIndexPage() {
 
       <div className="container">
         <nav className="series-nav">
-          <Link to="/">← The AI Reckoning — series index</Link>
+          <Link to="/">← The AI Reckoning series index</Link>
         </nav>
 
         {broke.map(({ personaId, crossings }) => {

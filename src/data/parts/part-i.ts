@@ -11,7 +11,7 @@ export const partI: RoundtableDocument = {
       [{ text: 'A Roundtable on Real Costs' }],
     ],
     subtitle:
-      'Five voices examine the energy, water, labor, and accountability crises behind artificial intelligence — grounded in fact, not fiction.',
+      'Five voices examine the energy, water, labor, and accountability crises behind artificial intelligence, grounded in fact, not fiction.',
     dateLine: 'Updated May 2026 · All data sourced from primary publications',
     accentColor: 'accent',
   },
@@ -20,7 +20,7 @@ export const partI: RoundtableDocument = {
       {
         type: 'text',
         value:
-          "Progress has always had a receipt. We are only now squinting at the fine print on this one — the megawatts, the gallons, the warehouses full of workers sorting the machine's mistakes, the communities downstream from its thirst. The question is not whether the costs are real. They are. The question is who is being asked to pay them.",
+          "Progress has always had a receipt. We are only now squinting at the fine print on this one: the megawatts, the gallons, the warehouses full of workers sorting the machine's mistakes, the communities downstream from its thirst. The question is not whether the costs are real. They are. The question is who is being asked to pay them.",
       },
     ],
   ],
@@ -35,23 +35,23 @@ export const partI: RoundtableDocument = {
             items: [
               {
                 lead: 'The Tech Optimist',
-                text: "— a senior engineer at a major AI lab who believes the technology's benefits outweigh its costs and that innovation will solve the problems it creates.",
+                text: "a senior engineer at a major AI lab who believes the technology's benefits outweigh its costs and that innovation will solve the problems it creates.",
               },
               {
                 lead: 'The Environmentalist',
-                text: '— a climate researcher and policy advocate focused on the concrete, measurable environmental damage being done right now.',
+                text: 'a climate researcher and policy advocate focused on the concrete, measurable environmental damage being done right now.',
               },
               {
                 lead: 'The Labor Advocate',
-                text: '— a researcher and organizer who documents the hidden human cost of AI supply chains, particularly in the Global South.',
+                text: 'a researcher and organizer who documents the hidden human cost of AI supply chains, particularly in the Global South.',
               },
               {
                 lead: 'The Policy Realist',
-                text: '— a former regulatory attorney who follows the law closely and believes structural governance reform is the only real solution.',
+                text: 'a former regulatory attorney who follows the law closely and believes structural governance reform is the only real solution.',
               },
               {
                 lead: 'The Everyday Person',
-                text: '— a retired schoolteacher in her late 60s. She uses a smartphone and watches the news, but AI has never been part of her daily vocabulary — until lately.',
+                text: 'a retired schoolteacher in her late 60s. She uses a smartphone and watches the news, but AI has never been part of her daily vocabulary, until lately.',
               },
             ],
           },
@@ -108,12 +108,12 @@ export const partI: RoundtableDocument = {
             labelTop: 'Infrastructure · Global footprint',
             title: 'Where the world builds its data centers',
             subtitle:
-              "The US holds nearly half. Bubbles are data centers per country (Cloudscene, 2025); the 2020 and 2030 frames scale today's distribution by the build-out's pace (Synergy, IEA) — fastest in the US and China.",
+              "The US holds nearly half. Bubbles are data centers per country (Cloudscene, 2025); the 2020 and 2030 frames scale today's distribution by the build-out's pace (Synergy, IEA), fastest in the US and China.",
             source:
               'Cloudscene (2025); Synergy Research; IEA, Energy and AI (2025). 2020 (est.) and 2030 (proj.) figures are modeled from cited growth rates, not measured counts.',
             claimIds: ['c-i-dc-count'],
             ariaLabel:
-              'World map of data centers by country across 2020, 2025 and 2030. The United States dominates with about 5,400 facilities in 2025 — roughly 46% of the global total — and its bubble grows fastest toward 2030, with China second.',
+              'World map of data centers by country across 2020, 2025 and 2030. The United States dominates with about 5,400 facilities in 2025 (roughly 46% of the global total) and its bubble grows fastest toward 2030, with China second.',
             years: ['2020 (est.)', '2025', '2030 (proj.)'],
             data: [
               {
@@ -209,7 +209,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I saw something on the news about AI using as much electricity as a whole country. Is that actually true? I use my phone to ask questions sometimes — I didn't think there was anything wrong with that. Am I part of the problem?",
+                      "I saw something on the news about AI using as much electricity as a whole country. Is that actually true? I use my phone to ask questions sometimes; I didn't think there was anything wrong with that. Am I part of the problem?",
                   },
                 ],
               ],
@@ -226,7 +226,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That framing is a bit misleading. Yes, the numbers are large in absolute terms, but context matters. Global data centers consumed roughly 460 terawatt-hours in 2025 — about 1.8% of total world electricity.',
+                      'That framing is a bit misleading. Yes, the numbers are large in absolute terms, but context matters. Global data centers consumed roughly 460 terawatt-hours in 2025, about 1.8% of total world electricity.',
                   },
                   { type: 'cite', claimId: 'c-i-iea-dc-electricity' },
                   {
@@ -245,7 +245,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " But that's a one-time cost spread across billions of daily uses. The renewable energy transition in the tech sector is also accelerating faster than almost any other industry. Microsoft, Google, and Amazon have made prominent public pledges toward 100% renewable energy — and the industry is investing billions to back them up.",
+                      " But that's a one-time cost spread across billions of daily uses. The renewable energy transition in the tech sector is also accelerating faster than almost any other industry. Microsoft, Google, and Amazon have made prominent public pledges toward 100% renewable energy, and the industry is investing billions to back them up.",
                   },
                 ],
               ],
@@ -262,7 +262,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Let me push back on "pledges." Google, Microsoft, and Amazon have made those promises — and they\'ve simultaneously seen their emissions rise. Microsoft reported a 34% increase in water consumption between 2022 and 2024.',
+                      'Let me push back on "pledges." Google, Microsoft, and Amazon have made those promises, and they\'ve simultaneously seen their emissions rise. Microsoft reported a 34% increase in water consumption between 2022 and 2024.',
                   },
                   { type: 'cite', claimId: 'c-i-microsoft-water-increase' },
                   {
@@ -281,7 +281,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " Training a single large-scale model generates an estimated 552 tons of CO₂ — equivalent to the annual carbon footprint of 121 American households — and that figure dates to the GPT-3 generation. Modern frontier models are believed to be considerably higher, though companies don't disclose it.",
+                      " Training a single large-scale model generates an estimated 552 tons of CO₂ (equivalent to the annual carbon footprint of 121 American households), and that figure dates to the GPT-3 generation. Modern frontier models are believed to be considerably higher, though companies don't disclose it.",
                   },
                   { type: 'cite', claimId: 'c-i-wef-co2-training' },
                   {
@@ -294,7 +294,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Data centers draw from electricity grids whose carbon intensity runs significantly higher than the U.S. average — because many are sited in regions where coal and gas still dominate the local mix.',
+                      'Data centers draw from electricity grids whose carbon intensity runs significantly higher than the U.S. average, because many are sited in regions where coal and gas still dominate the local mix.',
                   },
                   { type: 'cite', claimId: 'c-i-aimultiple-grid-carbon' },
                   {
@@ -322,14 +322,14 @@ export const partI: RoundtableDocument = {
                   { type: 'cite', claimId: 'c-i-mit-disclosure-gap' },
                   {
                     type: 'text',
-                    value: " We're debating estimates — and that's by design.",
+                    value: " We're debating estimates, and that's by design.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'The EU AI Act, adopted in March 2024, begins to address transparency for high-risk AI systems — but its energy provisions are limited.',
+                      'The EU AI Act, adopted in March 2024, begins to address transparency for high-risk AI systems, but its energy provisions are limited.',
                   },
                   { type: 'cite', claimId: 'c-i-eu-act-transparency' },
                   {
@@ -375,7 +375,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Yes — that's correct, and it's one of the most concrete and immediate harms for ordinary people. Northern Virginia, known as \"Data Center Alley,\" has the world's highest concentration of these facilities. The surge in data center energy demand caused an 800% spike in energy prices during the 2024 capacity auction for the regional grid.",
+                      "Yes, that's correct, and it's one of the most concrete and immediate harms for ordinary people. Northern Virginia, known as \"Data Center Alley,\" has the world's highest concentration of these facilities. The surge in data center energy demand caused an 800% spike in energy prices during the 2024 capacity auction for the regional grid.",
                   },
                   { type: 'cite', claimId: 'c-i-ansi-price-surge' },
                   {
@@ -397,7 +397,7 @@ export const partI: RoundtableDocument = {
           type: 'pullquote',
           data: {
             text: '"In 2024, data centers accounted for almost 40 percent of all electricity used in Virginia."',
-            attribution: '— Consumer Reports, March 2026, citing Data Center Map & Bloomberg',
+            attribution: 'Consumer Reports, March 2026, citing Data Center Map & Bloomberg',
           },
         },
       ],
@@ -458,7 +458,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Water? I hadn't even thought about water. Like — these buildings are using drinking water? Why?",
+                      "Water? I hadn't even thought about water. Like, these buildings are using drinking water? Why?",
                   },
                 ],
               ],
@@ -475,7 +475,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Servers generate enormous heat, and most facilities use water-based cooling systems to prevent them from overheating — often drawing from local municipal water supplies, sometimes potable water. The average data center uses 300,000 gallons of water per day.',
+                      'Servers generate enormous heat, and most facilities use water-based cooling systems to prevent them from overheating, often drawing from local municipal water supplies, sometimes potable water. The average data center uses 300,000 gallons of water per day.',
                   },
                   { type: 'cite', claimId: 'c-i-wef-water-per-day' },
                 ],
@@ -489,7 +489,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' That is six times the annual water use of the city of Seattle. And many of these facilities are being built in the American West — where we already have severe, worsening droughts. Stanford University researchers in April 2025 documented data centers actively competing with communities for scarce water resources across Nevada, Arizona, and California.',
+                      ' That is six times the annual water use of the city of Seattle. And many of these facilities are being built in the American West, where we already have severe, worsening droughts. Stanford University researchers in April 2025 documented data centers actively competing with communities for scarce water resources across Nevada, Arizona, and California.',
                   },
                   { type: 'cite', claimId: 'c-i-stanford-water-competition' },
                 ],
@@ -525,13 +525,13 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There's a real tension here that deserves honest acknowledgment. Water-based cooling is more energy efficient than air-based cooling — so reducing water use can increase electricity use, and vice versa. Cooling systems account for 20%–40% of total data center energy.",
+                      "There's a real tension here that deserves honest acknowledgment. Water-based cooling is more energy efficient than air-based cooling, so reducing water use can increase electricity use, and vice versa. Cooling systems account for 20%–40% of total data center energy.",
                   },
                   { type: 'cite', claimId: 'c-i-msci-cooling-energy' },
                   {
                     type: 'text',
                     value:
-                      ' The industry is actively developing closed-loop cooling and direct liquid cooling systems — technologies that can reduce cooling energy consumption by up to 50% compared to conventional approaches, according to peer-reviewed environmental impact research.',
+                      ' The industry is actively developing closed-loop cooling and direct liquid cooling systems: technologies that can reduce cooling energy consumption by up to 50% compared to conventional approaches, according to peer-reviewed environmental impact research.',
                   },
                   { type: 'cite', claimId: 'c-i-arxiv-cooling-reduction' },
                 ],
@@ -539,7 +539,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The solutions exist — but I'll admit adoption is slower than it should be, and the buildout is currently outpacing the efficiency improvements.",
+                      "The solutions exist, but I'll admit adoption is slower than it should be, and the buildout is currently outpacing the efficiency improvements.",
                   },
                 ],
               ],
@@ -562,7 +562,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " MSCI's analysis of water scarcity risk found that data centers are increasingly sited in regions projected to experience 15 to 35 more days of water scarcity annually by 2050 — and the companies are not legally required to factor that in.",
+                      " MSCI's analysis of water scarcity risk found that data centers are increasingly sited in regions projected to experience 15 to 35 more days of water scarcity annually by 2050, and the companies are not legally required to factor that in.",
                   },
                   { type: 'cite', claimId: 'c-i-msci-water-scarcity' },
                 ],
@@ -574,7 +574,7 @@ export const partI: RoundtableDocument = {
           type: 'pullquote',
           data: {
             text: '"Water and energy efficiency goals often pull in opposite directions: water-based cooling can be more energy efficient but increases water consumption, while air-based cooling systems conserve water but require more electricity. The optimal balance is highly location specific."',
-            attribution: '— MSCI Sustainability & Climate Research, 2025',
+            attribution: 'MSCI Sustainability & Climate Research, 2025',
           },
         },
       ],
@@ -610,14 +610,14 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Hundreds of thousands of them. Before any AI model can learn, humans have to label the data it trains on — categorizing images, flagging harmful content, rating responses, teaching the machine what's appropriate. This is called data annotation and content moderation, and it's largely invisible labor concentrated in the Global South.",
+                      "Hundreds of thousands of them. Before any AI model can learn, humans have to label the data it trains on: categorizing images, flagging harmful content, rating responses, teaching the machine what's appropriate. This is called data annotation and content moderation, and it's largely invisible labor concentrated in the Global South.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'In Kenya, data workers earning as little as $2 an hour are labeling content for companies as large as OpenAI — sometimes spending eight-hour days reviewing graphic violence, child abuse imagery, and other traumatic material.',
+                      'In Kenya, data workers earning as little as $2 an hour are labeling content for companies as large as OpenAI, sometimes spending eight-hour days reviewing graphic violence, child abuse imagery, and other traumatic material.',
                   },
                   { type: 'cite', claimId: 'c-i-kenya-2-dollars' },
                   {
@@ -635,7 +635,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In the Philippines, workers employed by Scale AI — which provides data labeling for Google — were found in 2025 to be paid below the legal minimum wage with no health insurance or paid leave.',
+                      'In the Philippines, workers employed by Scale AI (which provides data labeling for Google) were found in 2025 to be paid below the legal minimum wage with no health insurance or paid leave.',
                   },
                   { type: 'cite', claimId: 'c-i-philippines-scale-ai' },
                   {
@@ -697,7 +697,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I don't want to minimize this, because the labor conditions described are genuinely unacceptable. But the solution is worker protection and fair pay — not halting the technology. In Kenya, youth unemployment is over 12%.",
+                      "I don't want to minimize this, because the labor conditions described are genuinely unacceptable. But the solution is worker protection and fair pay, not halting the technology. In Kenya, youth unemployment is over 12%.",
                   },
                   { type: 'cite', claimId: 'c-i-qhala-unemployment' },
                   {

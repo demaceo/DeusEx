@@ -8,26 +8,26 @@ export const partXI: RoundtableDocument = {
     overline: 'Extraction · Minerals · Environmental Justice · 2024–2026',
     titleLines: [[{ text: 'The AI Reckoning:' }], [{ text: 'The Ground It Comes From', em: true }]],
     subtitle:
-      'Part I weighed the energy and water AI consumes. This part follows the wire back further — to the mines, the refineries, and the scrap heaps, and to the communities whose land and bodies are spent to build the hardware that thinks.',
+      'Part I weighed the energy and water AI consumes. This part follows the wire back further: to the mines, the refineries, and the scrap heaps, and to the communities whose land and bodies are spent to build the hardware that thinks.',
     dateLine: 'June 2026 · Eleventh in the AI Reckoning series',
     accentColor: 'umber',
   },
   companion: {
-    text: 'Part XI of the AI Reckoning Series — Read alongside Parts I–X for full context',
+    text: 'Part XI of the AI Reckoning Series. Read alongside Parts I–X for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          'Before the electricity, before the server, before the chip, there is the mine — the refinery, the hand doing the separating, the lung filling with dust. The intelligence that arrives cleanly through a browser was built from the earth up. This conversation follows the wire back to its source, and asks what got left behind.',
+          'Before the electricity, before the server, before the chip, there is the mine: the refinery, the hand doing the separating, the lung filling with dust. The intelligence that arrives cleanly through a browser was built from the earth up. This conversation follows the wire back to its source, and asks what got left behind.',
       },
     ],
     [
       {
         type: 'text',
         value:
-          'The Land Defender anchors this conversation. She lives where the minerals come from and speaks first-hand for the communities whose water, soil, and labor build these machines — and who see the least of what they produce. It’s the oldest question in environmental justice, in a new form: who bears the cost, and who gets to use what it built?',
+          'The Land Defender anchors this conversation. She lives where the minerals come from and speaks first-hand for the communities whose water, soil, and labor build these machines, and who see the least of what they produce. It’s the oldest question in environmental justice, in a new form: who bears the cost, and who gets to use what it built?',
       },
     ],
   ],
@@ -123,7 +123,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It is current, and it is the same pattern we traced in the data-labor parts of this series — the value extracted in the Global South, the profit captured in the Global North. Lithium is the other half of the story. Pulling it from brine in the Atacama and similar basins can take on the order of two million liters of water per tonne, in some of the driest inhabited places on earth, where that water belongs to Indigenous communities and the ecosystems they depend on.',
+                      'It is current, and it is the same pattern we traced in the data-labor parts of this series: the value extracted in the Global South, the profit captured in the Global North. Lithium is the other half of the story. Pulling it from brine in the Atacama and similar basins can take on the order of two million liters of water per tonne, in some of the driest inhabited places on earth, where that water belongs to Indigenous communities and the ecosystems they depend on.',
                   },
                   { type: 'cite', claimId: 'c-xi-lithium-water' },
                 ],
@@ -141,7 +141,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I won't pretend any of that is acceptable, and I won't pretend it is unique to AI either — phones, electric cars, and the whole energy transition pull on the same mines. What I'll add is that it is improvable: traceability schemes, audited supply chains, direct-lithium-extraction methods that use a fraction of the water, and battery chemistries that cut cobalt out entirely are all real and moving. The demand is the problem and also the lever — it is large enough to force the supply chain to change.",
+                      "I won't pretend any of that is acceptable, and I won't pretend it is unique to AI either: phones, electric cars, and the whole energy transition pull on the same mines. What I'll add is that it is improvable: traceability schemes, audited supply chains, direct-lithium-extraction methods that use a fraction of the water, and battery chemistries that cut cobalt out entirely are all real and moving. The demand is the problem and also the lever; it is large enough to force the supply chain to change.",
                   },
                 ],
               ],
@@ -155,8 +155,8 @@ export const partXI: RoundtableDocument = {
             labelTop: 'Cobalt · USGS',
             title: 'Where the Cobalt Comes From',
             subtitle:
-              "The Democratic Republic of the Congo accounts for roughly 70% of the world's mined cobalt — a single country at the base of the global battery supply chain.",
-            source: 'US Geological Survey — Mineral Commodity Summaries (Cobalt)',
+              "The Democratic Republic of the Congo, a single country at the base of the global battery supply chain, accounts for roughly 70% of the world's mined cobalt.",
+            source: 'US Geological Survey: Mineral Commodity Summaries (Cobalt)',
             claimIds: ['c-xi-cobalt'],
             ariaLabel:
               'Grid of 100 cells showing the Democratic Republic of the Congo supplying about 70 of every 100 units of mined cobalt and the rest of the world about 30',
@@ -187,7 +187,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Mining is only the first chokepoint. The second is processing, and it is even more concentrated. China refines roughly 90% of the world's rare-earth elements — the materials in the high-performance magnets and components inside this hardware.",
+                      "Mining is only the first chokepoint. The second is processing, and it is even more concentrated. China refines roughly 90% of the world's rare-earth elements: the materials in the high-performance magnets and components inside this hardware.",
                   },
                   { type: 'cite', claimId: 'c-xi-rare-earth' },
                   {
@@ -210,7 +210,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And ask why one country ended up with 90% of it. It is not only cheaper labor. It is a willingness to absorb the poison. Rare-earth refining produces acidic, sometimes radioactive tailings. The places that host it — and the places that host the mines feeding it — carry contamination in their water and soil for generations. "Cheap processing" is a price someone pays. It is just not the person buying the phone.',
+                      'And ask why one country ended up with 90% of it. It is not only cheaper labor. It is a willingness to absorb the poison. Rare-earth refining produces acidic, sometimes radioactive tailings. The places that host it (and the places that host the mines feeding it) carry contamination in their water and soil for generations. "Cheap processing" is a price someone pays. It is just not the person buying the phone.',
                   },
                 ],
               ],
@@ -227,7 +227,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That concentration is exactly why a dozen governments are now funding alternatives — new refining capacity with modern environmental controls, and a hard push into recycling so the toxicity is contained rather than dumped. It is early and expensive, but the strategic and environmental incentives finally point the same way. A more distributed, cleaner supply chain is buildable; it has simply never been the cheapest option, so no one built it.',
+                      'That concentration is exactly why a dozen governments are now funding alternatives: new refining capacity with modern environmental controls, and a hard push into recycling so the toxicity is contained rather than dumped. It is early and expensive, but the strategic and environmental incentives finally point the same way. A more distributed, cleaner supply chain is buildable; it has simply never been the cheapest option, so no one built it.',
                   },
                 ],
               ],
@@ -244,7 +244,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Let me temper both the alarm and the optimism. The alarm: AI is a small slice of total demand for most of these minerals — batteries and the broader electrification dwarf it — so blaming the data center alone is too neat. The optimism: I have watched 'clean, distributed supply chain, real soon' be promised for two decades. The honest position is that the harm is real and current, and the fixes are real but slow, and the gap between them is measured in ruined watersheds.",
+                      "Let me temper both the alarm and the optimism. The alarm: AI is a small slice of total demand for most of these minerals (batteries and the broader electrification dwarf it), so blaming the data center alone is too neat. The optimism: I have watched 'clean, distributed supply chain, real soon' be promised for two decades. The honest position is that the harm is real and current, and the fixes are real but slow, and the gap between them is measured in ruined watersheds.",
                   },
                 ],
               ],
@@ -258,8 +258,8 @@ export const partXI: RoundtableDocument = {
             labelTop: 'Rare Earths · Processing',
             title: 'Who Refines the Materials',
             subtitle:
-              'China accounts for roughly 90% of global rare-earth processing — the concentrated, toxic middle of the hardware supply chain.',
-            source: 'International Energy Agency — critical minerals analysis',
+              'China accounts for roughly 90% of global rare-earth processing: the concentrated, toxic middle of the hardware supply chain.',
+            source: 'International Energy Agency: critical minerals analysis',
             claimIds: ['c-xi-rare-earth'],
             ariaLabel:
               "Donut chart showing China processing about 90 percent of the world's rare-earth elements and the rest of the world about 10 percent",
@@ -296,7 +296,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " The rest is landfilled, incinerated, or shipped to informal scrapyards in the Global South, where people — often children again — burn circuit boards over open fires to recover traces of metal, breathing the fumes. The same minerals we fought to extract are then thrown away faster than we reclaim them. And AI's hardware refresh cycle, all those rapidly obsolete accelerators, only speeds the churn.",
+                      " The rest is landfilled, incinerated, or shipped to informal scrapyards in the Global South, where people (often children again) burn circuit boards over open fires to recover traces of metal, breathing the fumes. The same minerals we fought to extract are then thrown away faster than we reclaim them. And AI's hardware refresh cycle, all those rapidly obsolete accelerators, only speeds the churn.",
                   },
                 ],
               ],
@@ -313,7 +313,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There is law reaching for this, and it is one of the more hopeful fronts. Extended-producer-responsibility rules make manufacturers pay for end-of-life handling. The EU's right-to-repair and ecodesign rules attack the disposability directly. The Basel Convention restricts shipping hazardous e-waste across borders to dump on poorer countries. None of it is sufficient yet, but the direction — make the producer own the whole lifecycle — is correct.",
+                      "There is law reaching for this, and it is one of the more hopeful fronts. Extended-producer-responsibility rules make manufacturers pay for end-of-life handling. The EU's right-to-repair and ecodesign rules attack the disposability directly. The Basel Convention restricts shipping hazardous e-waste across borders to dump on poorer countries. None of it is sufficient yet, but the direction (make the producer own the whole lifecycle) is correct.",
                   },
                 ],
               ],

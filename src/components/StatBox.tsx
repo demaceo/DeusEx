@@ -23,7 +23,7 @@ export function StatBox({ stat }: StatBoxProps) {
       data-verification={status}
       role={interactive ? 'button' : undefined}
       tabIndex={interactive ? 0 : undefined}
-      aria-label={interactive ? `${stat.value}: ${stat.description} — view evidence` : undefined}
+      aria-label={interactive ? `${stat.value}: ${stat.description} (view evidence)` : undefined}
       title={interactive ? 'View evidence' : undefined}
       onClick={interactive ? () => open(claim, source) : undefined}
       onKeyDown={

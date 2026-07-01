@@ -56,7 +56,7 @@ export function PersonaThreadPage() {
 
       <div className="container">
         <nav className="series-nav">
-          <Link to="/">← The AI Reckoning — series index</Link>
+          <Link to="/">← The AI Reckoning series index</Link>
         </nav>
 
         {crossings.length > 0 ? (
@@ -65,7 +65,7 @@ export function PersonaThreadPage() {
               Where {persona.name} broke from type
             </h2>
             <p className="voice-crossings__lead">
-              {persona.name} {usualStance} —{' '}
+              {persona.name} {usualStance}, with{' '}
               {crossings.length === 1 ? 'one round' : `${crossings.length} rounds`} where the
               position shifts with the subject.
             </p>
@@ -108,7 +108,7 @@ export function PersonaThreadPage() {
               <section className="voice-doc">
                 <h2 className="voice-doc__title">
                   <Link to={`/${group.doc.slug}`}>
-                    {group.partLabel} — {group.navTitle}
+                    {group.partLabel}: {group.navTitle}
                   </Link>
                 </h2>
                 {group.entries.map((entry, i) => (

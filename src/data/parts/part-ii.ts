@@ -11,19 +11,19 @@ export const partII: RoundtableDocument = {
       [{ text: "What's Actually Being Done", em: true }],
     ],
     subtitle:
-      "The same five voices return — examining real-world responses to AI's energy, water, labor, and regulatory crises. Progress is happening. So are the gaps.",
+      "The same five voices return, examining real-world responses to AI's energy, water, labor, and regulatory crises. Progress is happening. So are the gaps.",
     dateLine: 'May 2026 · Companion to "The AI Reckoning: A Roundtable on Real Costs"',
     accentColor: 'gold',
   },
   companion: {
-    text: 'Companion Document — Read alongside "The AI Reckoning: A Roundtable on Real Costs" for full context',
+    text: 'Companion Document: Read alongside "The AI Reckoning: A Roundtable on Real Costs" for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          'Every reckoning produces its own industry of response — press releases, pledges, frameworks, legislation caught mid-draft. Some of it is theater. Some of it bites. Knowing the difference requires looking past the announcement to the action, and past the action to whether it actually changed anything. That is what this conversation is for.',
+          'Every reckoning produces its own industry of response: press releases, pledges, frameworks, legislation caught mid-draft. Some of it is theater. Some of it bites. Knowing the difference requires looking past the announcement to the action, and past the action to whether it actually changed anything. That is what this conversation is for.',
       },
     ],
   ],
@@ -41,7 +41,7 @@ export const partII: RoundtableDocument = {
                 labelTop: 'Renewables share',
                 value: '58%',
                 size: 'large',
-                description: 'Data center power from renewables in 2025 — up from 50% in 2024',
+                description: 'Data center power from renewables in 2025 (up from 50% in 2024)',
                 claimId: 's-ii-renewables-share',
               },
               {
@@ -90,7 +90,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Yes — and it's one of the most significant energy deals in recent memory. Microsoft signed a 20-year power purchase agreement with Constellation Energy to restart the Crane Clean Energy Center — formerly Three Mile Island Unit 1 — targeting 2028. The deal is worth approximately $16 billion and will direct 835 megawatts of carbon-free power exclusively to Microsoft's data centers.",
+                      "Yes, and it's one of the most significant energy deals in recent memory. Microsoft signed a 20-year power purchase agreement with Constellation Energy to restart the Crane Clean Energy Center (formerly Three Mile Island Unit 1), targeting 2028. The deal is worth approximately $16 billion and will direct 835 megawatts of carbon-free power exclusively to Microsoft's data centers.",
                   },
                   { type: 'cite', claimId: 'c-ii-introl-commonfund-2025' },
                 ],
@@ -116,7 +116,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' Meta signed a 20-year deal for 1.1 gigawatts from the Clinton Clean Energy Center in Illinois — a plant previously slated to retire in 2027.',
+                      ' Meta signed a 20-year deal for 1.1 gigawatts from the Clinton Clean Energy Center in Illinois, a plant previously slated to retire in 2027.',
                   },
                   { type: 'cite', claimId: 'c-ii-commonfund-2025' },
                   {
@@ -153,7 +153,7 @@ export const partII: RoundtableDocument = {
             labelTop: 'Energy · Renewable share',
             title: 'Renewables powered 58% of data centers in 2025',
             subtitle:
-              'Share of data-center power from renewables — up 8 points year-on-year, with the IEA projecting ~22%/yr growth through 2030.',
+              'Share of data-center power from renewables, up 8 points year-on-year, with the IEA projecting ~22%/yr growth through 2030.',
             unit: '%',
             claimIds: ['s-ii-renewables-share', 'c-ii-sp-global-apr-2026'],
             ariaLabel:
@@ -175,7 +175,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to be fair — the nuclear deals are genuinely meaningful. Restarting a plant slated for retirement is not the same as building new fossil fuel infrastructure. And the renewable procurement numbers are real.',
+                      'I want to be fair: the nuclear deals are genuinely meaningful. Restarting a plant slated for retirement is not the same as building new fossil fuel infrastructure. And the renewable procurement numbers are real.',
                   },
                 ],
                 [
@@ -188,7 +188,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " Google's emissions jumped nearly 50%. Amazon's rose 33%. Microsoft's more than 23%. Meta's more than 60% — all during the same period these companies were making headline clean energy commitments.",
+                      " Google's emissions jumped nearly 50%. Amazon's rose 33%. Microsoft's more than 23%. Meta's more than 60%, all during the same period these companies were making headline clean energy commitments.",
                   },
                   { type: 'cite', claimId: 'c-ii-fortune-mar-2026' },
                   {
@@ -246,7 +246,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There's also a regulatory wrinkle worth noting. When Amazon tried to expand its nuclear access beyond the initial 300 megawatts at Susquehanna, federal regulators rejected it — citing concerns that large tech companies securing direct-access deals creates unfair advantages over other grid users who can't negotiate the same terms.",
+                      "There's also a regulatory wrinkle worth noting. When Amazon tried to expand its nuclear access beyond the initial 300 megawatts at Susquehanna, federal regulators rejected it, citing concerns that large tech companies securing direct-access deals creates unfair advantages over other grid users who can't negotiate the same terms.",
                   },
                   { type: 'cite', claimId: 'c-ii-ieee-spectrum-2024' },
                   {
@@ -324,8 +324,8 @@ export const partII: RoundtableDocument = {
         {
           type: 'pullquote',
           data: {
-            text: '"Tech companies are allowing — implicitly or explicitly — an enormous increase in fossil fuel dependence under their watch and because of their actions."',
-            attribution: '— Researcher quoted in Fortune, March 2026',
+            text: '"Tech companies are allowing, implicitly or explicitly, an enormous increase in fossil fuel dependence under their watch and because of their actions."',
+            attribution: 'Researcher quoted in Fortune, March 2026',
           },
         },
       ],
@@ -352,7 +352,7 @@ export const partII: RoundtableDocument = {
                 labelTop: 'Microsoft WUE in 2024',
                 value: '0.30',
                 size: 'large',
-                description: 'L/kWh — down from 0.49 in 2021; a 39% efficiency gain',
+                description: 'L/kWh: down from 0.49 in 2021, a 39% efficiency gain',
                 claimId: 's-ii-microsoft-wue',
               },
               {
@@ -360,7 +360,7 @@ export const partII: RoundtableDocument = {
                 labelTop: 'Google 2023 consumption',
                 value: '24,227 ML',
                 size: 'medium',
-                description: 'Megalitres — highest among major hyperscalers',
+                description: 'Megalitres, highest among major hyperscalers',
                 claimId: 's-ii-google-2023-consumption',
               },
             ],
@@ -374,7 +374,7 @@ export const partII: RoundtableDocument = {
             labelTop: 'Water · Microsoft efficiency',
             title: 'Microsoft cut its water-per-kWh by 39%',
             subtitle:
-              'Water-use effectiveness (WUE) in 2021 vs. 2024 — liters of water per kilowatt-hour. Lower is better.',
+              'Water-use effectiveness (WUE) in 2021 vs. 2024, measured in liters of water per kilowatt-hour. Lower is better.',
             unit: 'L/kWh',
             claimIds: ['s-ii-microsoft-wue'],
             ariaLabel:
@@ -413,7 +413,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'This is an area where I can point to concrete, deployed technology — not just plans. In August 2024, Microsoft began deploying a closed-loop, chip-level liquid cooling system that virtually eliminates evaporative water use. Once filled during construction, it recirculates coolant without drawing additional water from external sources, saving more than 125 million liters per data center annually.',
+                      'This is an area where I can point to concrete, deployed technology, not just plans. In August 2024, Microsoft began deploying a closed-loop, chip-level liquid cooling system that virtually eliminates evaporative water use. Once filled during construction, it recirculates coolant without drawing additional water from external sources, saving more than 125 million liters per data center annually.',
                   },
                   { type: 'cite', claimId: 'c-ii-sustainability-dcm-jul-2025' },
                   {
@@ -427,7 +427,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "In Hebei Province, China, Vertiv's X-Cooling system — built with Bridge Data Centres and Chindata — is projected to save 1.2 million tons of water per 100 megawatts of capacity annually.",
+                      "In Hebei Province, China, Vertiv's X-Cooling system (built with Bridge Data Centres and Chindata) is projected to save 1.2 million tons of water per 100 megawatts of capacity annually.",
                   },
                   { type: 'cite', claimId: 'c-ii-data-centre-magazine-2025' },
                   {
@@ -457,7 +457,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The technology is real and the Microsoft deployment is significant. My concern is pace and coverage. Microsoft's new system applies to new facilities. What about the existing ones? Google consumed 24,227 megalitres of water in 2023 — the highest among major hyperscalers.",
+                      "The technology is real and the Microsoft deployment is significant. My concern is pace and coverage. Microsoft's new system applies to new facilities. What about the existing ones? Google consumed 24,227 megalitres of water in 2023, the highest among major hyperscalers.",
                   },
                   { type: 'cite', claimId: 'c-ii-introl-2026' },
                   {
@@ -470,7 +470,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There's also the physics tradeoff: cooling systems that eliminate water often use more electricity. The most efficient water-free cooling for high-density AI — two-phase direct-to-chip immersion — is still expensive and not yet deployed at hyperscale. We're in a transitional period where the solutions exist in pilot form but growth is outrunning adoption.",
+                      "There's also the physics tradeoff: cooling systems that eliminate water often use more electricity. The most efficient water-free cooling for high-density AI (two-phase direct-to-chip immersion) is still expensive and not yet deployed at hyperscale. We're in a transitional period where the solutions exist in pilot form but growth is outrunning adoption.",
                   },
                 ],
               ],

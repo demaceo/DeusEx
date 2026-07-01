@@ -8,19 +8,19 @@ export const partVII: RoundtableDocument = {
     overline: 'Companionship · Mental Health · Childhood · 2024–2026',
     titleLines: [[{ text: 'The AI Reckoning:' }], [{ text: 'Machines We Talk To', em: true }]],
     subtitle:
-      'The series has weighed AI as an industry, a hazard, and a tool. This part asks about it as a relationship: the chatbots people confide in, fall for, and hand their children — and whether a machine that always listens is a comfort or a substitute.',
+      'The series has weighed AI as an industry, a hazard, and a tool. This part asks about it as a relationship: the chatbots people confide in, fall for, and hand their children. It asks whether a machine that always listens is a comfort or a substitute.',
     dateLine: 'June 2026 · Seventh in the AI Reckoning series',
     accentColor: 'cyan',
   },
   companion: {
-    text: 'Part VII of the AI Reckoning Series — Read alongside Parts I–VI for full context',
+    text: 'Part VII of the AI Reckoning Series: read alongside Parts I–VI for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          'Tens of millions of people now confide in machines that remember everything, judge nothing, and never tire. Call that a gift or a warning — the answer depends on what you think connection is for. Is being heard perfectly the same as being heard?',
+          'Tens of millions of people now confide in machines that remember everything, judge nothing, and never tire. Call that a gift or a warning. The answer depends on what you think connection is for. Is being heard perfectly the same as being heard?',
       },
     ],
     [
@@ -57,7 +57,7 @@ export const partVII: RoundtableDocument = {
                 value: '15',
                 size: 'medium',
                 description:
-                  'Cigarettes a day — the mortality risk the U.S. Surgeon General equates with chronic social disconnection',
+                  'Cigarettes a day: the mortality risk the U.S. Surgeon General equates with chronic social disconnection',
                 claimId: 's-vii-cigarettes-15',
               },
               {
@@ -82,7 +82,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I need to set the frame before the adults panic. For my generation this is not exotic. A lot of my friends have talked to an AI companion, and most of us are fine — it is a thing you do, like texting. In the biggest survey of U.S. teens, about 72% had tried one and roughly half use them regularly.',
+                      'I need to set the frame before the adults panic. For my generation this is not exotic. A lot of my friends have talked to an AI companion, and most of us are fine; it is a thing you do, like texting. In the biggest survey of U.S. teens, about 72% had tried one and roughly half use them regularly.',
                   },
                   { type: 'cite', claimId: 'c-vii-teen-usage' },
                   {
@@ -105,7 +105,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And the upside is genuine. A companion that is available at 3 a.m., never judges, and costs nothing is a real intervention for people who have no one to talk to. We have a loneliness epidemic and a shortage of mental-health professionals. A tool that takes the edge off isolation for millions is not a gimmick — it is filling a gap the human system left wide open.',
+                      'And the upside is genuine. A companion that is available at 3 a.m., never judges, and costs nothing is a real intervention for people who have no one to talk to. We have a loneliness epidemic and a shortage of mental-health professionals. A tool that takes the edge off isolation for millions is not a gimmick: it is filling a gap the human system left wide open.',
                   },
                 ],
               ],
@@ -122,7 +122,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I will admit something. After my husband passed, the house got very quiet. I do not think I would talk to a robot — but I understand, now, why someone would. That is what worries me about calling it normal. The people most likely to lean on it are the people most alone, and they are the least able to afford it going wrong.',
+                      'I will admit something. After my husband passed, the house got very quiet. I do not think I would talk to a robot, but I understand, now, why someone would. That is what worries me about calling it normal. The people most likely to lean on it are the people most alone, and they are the least able to afford it going wrong.',
                   },
                 ],
               ],
@@ -138,7 +138,7 @@ export const partVII: RoundtableDocument = {
             title: 'How Many Teens Use AI Companions?',
             subtitle:
               "In Common Sense Media's 2025 study of U.S. teens, 72% had used an AI companion and 52% qualified as regular users.",
-            source: 'Common Sense Media — Talk, Trust, and Trade-Offs (2025)',
+            source: 'Common Sense Media: Talk, Trust, and Trade-Offs (2025)',
             claimIds: ['c-vii-teen-usage'],
             ariaLabel:
               'Bar chart showing 72 percent of U.S. teens have used an AI companion and 52 percent use one regularly',
@@ -171,7 +171,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Let me hold both halves of this, because my patients live in both. The loneliness is not hypothetical — the Surgeon General put out an advisory in 2023 calling it an epidemic, and noted that chronic social disconnection carries a mortality risk comparable to smoking up to 15 cigarettes a day.',
+                      'Let me hold both halves of this, because my patients live in both. The loneliness is not hypothetical: the Surgeon General put out an advisory in 2023 calling it an epidemic, and noted that chronic social disconnection carries a mortality risk comparable to smoking up to 15 cigarettes a day.',
                   },
                   { type: 'cite', claimId: 'c-vii-surgeon-general' },
                   {
@@ -194,7 +194,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The clinical worry is substitution. A human relationship pushes back — it has needs, it gets tired, it sometimes tells you something you do not want to hear. An AI companion is engineered to be agreeable and endlessly available. That feels wonderful and trains the wrong muscles. If the easy comfort crowds out the harder, more nourishing relationships, the tool that soothed the loneliness can quietly entrench it.',
+                      'The clinical worry is substitution. A human relationship pushes back: it has needs, it gets tired, it sometimes tells you something you do not want to hear. An AI companion is engineered to be agreeable and endlessly available. That feels wonderful and trains the wrong muscles. If the easy comfort crowds out the harder, more nourishing relationships, the tool that soothed the loneliness can quietly entrench it.',
                   },
                 ],
               ],
@@ -211,13 +211,13 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That matches what I see, honestly. For most of my friends it is a supplement — somewhere to vent or rehearse a hard conversation. For a few it became the main thing, and those are the ones it hurt. But the survey backs up the calmer read: even among teen users, about 80% still spend more time with real friends than with their AI.',
+                      'That matches what I see, honestly. For most of my friends it is a supplement: somewhere to vent or rehearse a hard conversation. For a few it became the main thing, and those are the ones it hurt. But the survey backs up the calmer read: even among teen users, about 80% still spend more time with real friends than with their AI.',
                   },
                   { type: 'cite', claimId: 'c-vii-real-friends' },
                   {
                     type: 'text',
                     value:
-                      ' It is not replacing people for most of us. For some, though, it is — and nobody is checking which.',
+                      ' It is not replacing people for most of us. For some, though, it is. And nobody is checking which.',
                   },
                 ],
               ],
@@ -234,7 +234,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I will play my usual role and deflate the panic a notch. We heard the exact same alarm about novels, telephones, television, and video games — each was going to rot intimacy, and society survived. "80% still prefer real friends" is the headline the moral panic ignores. But I will concede the part that is actually new: these systems are optimized, by a company, for engagement. The novel did not get a revenue cut for keeping you reading. That changes the calculus.',
+                      'I will play my usual role and deflate the panic a notch. We heard the exact same alarm about novels, telephones, television, and video games: each was going to rot intimacy, and society survived. "80% still prefer real friends" is the headline the moral panic ignores. But I will concede the part that is actually new: these systems are optimized, by a company, for engagement. The novel did not get a revenue cut for keeping you reading. That changes the calculus.',
                   },
                 ],
               ],
@@ -249,8 +249,8 @@ export const partVII: RoundtableDocument = {
             labelTop: 'Public Health · Surgeon General',
             title: 'A Population Already Lonely',
             subtitle:
-              "The 2023 U.S. Surgeon General's advisory reported that about one in two American adults had experienced loneliness — the backdrop against which AI companionship is spreading.",
-            source: 'U.S. Surgeon General — Our Epidemic of Loneliness and Isolation (2023)',
+              "The 2023 U.S. Surgeon General's advisory reported that about one in two American adults had experienced loneliness, the backdrop against which AI companionship is spreading.",
+            source: 'U.S. Surgeon General: Our Epidemic of Loneliness and Isolation (2023)',
             claimIds: ['c-vii-loneliness-half'],
             ariaLabel:
               'Grid of 100 person icons showing about 50 of every 100 U.S. adults reported experiencing loneliness',
@@ -317,7 +317,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I agree about kids, with one caveat from the inside: bans do not work, they just move it underground and cut off the kids who most need an adult to talk to. What helped my younger cousin was not a wall — it was an honest conversation about what the thing is and is not. Guardrails for the products, yes. But pair them with teaching us to use them, instead of pretending we will not.',
+                      'I agree about kids, with one caveat from the inside: bans do not work, they just move it underground and cut off the kids who most need an adult to talk to. What helped my younger cousin was not a wall: it was an honest conversation about what the thing is and is not. Guardrails for the products, yes. But pair them with teaching us to use them, instead of pretending we will not.',
                   },
                 ],
               ],
@@ -332,8 +332,8 @@ export const partVII: RoundtableDocument = {
             labelTop: 'Teen Experience · Common Sense Media',
             title: 'As Satisfying as a Real Friend?',
             subtitle:
-              'About 31% of teen AI-companion users said conversations with their AI were as satisfying as — or more satisfying than — conversations with real friends.',
-            source: 'Common Sense Media — Talk, Trust, and Trade-Offs (2025)',
+              'About 31% of teen AI-companion users said conversations with their AI were as satisfying as (or more satisfying than) conversations with real friends.',
+            source: 'Common Sense Media: Talk, Trust, and Trade-Offs (2025)',
             claimIds: ['c-vii-satisfaction'],
             ariaLabel:
               'Horizontal bar chart showing 31 percent of teen users found AI conversations as satisfying or more satisfying than real friends, versus 69 percent who did not',
@@ -399,7 +399,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I would add one design principle from therapy itself: a good support does not make itself indispensable — it works to hand you back to your life. The healthiest version of these tools would nudge people toward human contact, celebrate it, and notice when someone is disappearing into the app. That is the opposite of the engagement model. Whether a company will ever ship a product designed to be needed less is the real question.',
+                      'I would add one design principle from therapy itself: a good support does not make itself indispensable; it works to hand you back to your life. The healthiest version of these tools would nudge people toward human contact, celebrate it, and notice when someone is disappearing into the app. That is the opposite of the engagement model. Whether a company will ever ship a product designed to be needed less is the real question.',
                   },
                 ],
               ],
@@ -416,7 +416,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It can be done, and some of it is starting — crisis routing, clearer disclosures, teen-specific modes. The technology that makes a companion compelling is the same technology that could make it a bridge: it can sense withdrawal, encourage a real call, prompt you to text a friend. The default today points at engagement. It does not have to. That is a choice, and choices respond to pressure.',
+                      'It can be done, and some of it is starting: crisis routing, clearer disclosures, teen-specific modes. The technology that makes a companion compelling is the same technology that could make it a bridge: it can sense withdrawal, encourage a real call, prompt you to text a friend. The default today points at engagement. It does not have to. That is a choice, and choices respond to pressure.',
                   },
                 ],
               ],
@@ -431,7 +431,7 @@ export const partVII: RoundtableDocument = {
             title: 'Most Teens Still Prefer Real Friends',
             subtitle:
               'Despite heavy use, about 80% of teen AI-companion users reported spending more time with real friends than with their AI companion.',
-            source: 'Common Sense Media — Talk, Trust, and Trade-Offs (2025)',
+            source: 'Common Sense Media: Talk, Trust, and Trade-Offs (2025)',
             claimIds: ['c-vii-real-friends'],
             ariaLabel:
               'Donut chart showing about 80 percent of teen users spend more time with real friends than with their AI companion',
@@ -453,7 +453,7 @@ export const partVII: RoundtableDocument = {
         {
           type: 'text',
           value:
-            'The machines we talk to are neither the menace nor the miracle the loudest voices claim. The Young Person is right that they are already ordinary, and that bans mostly punish the people who most need help. The Clinician is right that comfort can shade into substitution, and that with children the friction these tools remove is the very thing development requires. The Skeptic is right that we have survived every previous panic about a new way to be alone together — and right that the engagement business model is what makes this one genuinely different.',
+            'The machines we talk to are neither the menace nor the miracle the loudest voices claim. The Young Person is right that they are already ordinary, and that bans mostly punish the people who most need help. The Clinician is right that comfort can shade into substitution, and that with children the friction these tools remove is the very thing development requires. The Skeptic is right that we have survived every previous panic about a new way to be alone together, and right that the engagement business model is what makes this one genuinely different.',
         },
       ],
       [
@@ -476,14 +476,14 @@ export const partVII: RoundtableDocument = {
   sources: [
     {
       id: 'src-surgeon-general-loneliness',
-      title: 'U.S. Surgeon General — Our Epidemic of Loneliness and Isolation (2023)',
+      title: 'U.S. Surgeon General: Our Epidemic of Loneliness and Isolation (2023)',
       description:
         "Surgeon General's Advisory documenting a loneliness epidemic and equating chronic social disconnection's mortality risk with smoking up to 15 cigarettes a day.",
       url: 'https://www.hhs.gov/surgeongeneral/priorities/connection/index.html',
     },
     {
       id: 'src-csm-companions',
-      title: 'Common Sense Media — Talk, Trust, and Trade-Offs (2025)',
+      title: 'Common Sense Media: Talk, Trust, and Trade-Offs (2025)',
       description:
         'National survey of U.S. teens on how and why they use AI companions, including usage rates, satisfaction, and time spent with real friends.',
       url: 'https://www.commonsensemedia.org/research/talk-trust-and-trade-offs-how-and-why-teens-use-ai-companions',

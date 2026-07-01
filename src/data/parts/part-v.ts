@@ -8,19 +8,19 @@ export const partV: RoundtableDocument = {
     overline: 'Truth · Synthetic Media · Trust · 2024–2026',
     titleLines: [[{ text: 'The AI Reckoning:' }], [{ text: 'The Reality Problem', em: true }]],
     subtitle:
-      "Four parts weighed AI's costs, its responses, its benefits, and the race that drives it. This one turns to the strangest cost of all: what happens to shared reality when anything can be fabricated — and anyone can dismiss the real as fake?",
+      "Four parts weighed AI's costs, its responses, its benefits, and the race that drives it. This one turns to the strangest cost of all: what happens to shared reality when anything can be fabricated, and anyone can dismiss the real as fake?",
     dateLine: 'June 2026 · Fifth in the AI Reckoning series',
     accentColor: 'slate',
   },
   companion: {
-    text: 'Part V of the AI Reckoning Series — Read alongside Parts I–IV for full context',
+    text: 'Part V of the AI Reckoning Series: Read alongside Parts I–IV for full context',
   },
   intro: [
     [
       {
         type: 'text',
         value:
-          "Truth has always been contested — what's new is the cost of faking it. When fabrication is instant and free, anyone with a browser and an afternoon can plant a story, forge an image, clone a voice. No army of state forgers required. The real question isn't whether you can tell what's real. It's whether democratic institutions survive once most people can't.",
+          "Truth has always been contested. What's new is the cost of faking it. When fabrication is instant and free, anyone with a browser and an afternoon can plant a story, forge an image, clone a voice. No army of state forgers required. The real question isn't whether you can tell what's real. It's whether democratic institutions survive once most people can't.",
       },
     ],
     [
@@ -82,7 +82,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'My grandson sent me a video of a senator saying something outrageous, and I believed it for a full day before he told me it was fake — made on a phone, apparently. I keep thinking: if I can be fooled that easily, what else have I believed this year that simply was not true?',
+                      'My grandson sent me a video of a senator saying something outrageous, and I believed it for a full day before he told me it was fake (made on a phone, apparently). I keep thinking: if I can be fooled that easily, what else have I believed this year that simply was not true?',
                   },
                 ],
               ],
@@ -105,7 +105,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' It came from a single Europol report, framed as a possibility, and it has been laundered into a fact. Most synthetic content is spam and filler, not a sophisticated plot to deceive you. The volume is the story; the apocalypse is not — yet.',
+                      ' It came from a single Europol report, framed as a possibility, and it has been laundered into a fact. Most synthetic content is spam and filler, not a sophisticated plot to deceive you. The volume is the story; the apocalypse is not, at least not yet.',
                   },
                 ],
               ],
@@ -139,7 +139,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "You're both talking about deception. I want to talk about volume, because volume is its own harm. When a model can generate ten thousand images in the style of a living illustrator overnight, it doesn't need to fool anyone. It just floods the channel until the real work — the work a person spent twenty years learning to make — becomes a needle in a haystack the machine built.",
+                      "You're both talking about deception. I want to talk about volume, because volume is its own harm. When a model can generate ten thousand images in the style of a living illustrator overnight, it doesn't need to fool anyone. It just floods the channel until the real work (the work a person spent twenty years learning to make) becomes a needle in a haystack the machine built.",
                   },
                 ],
               ],
@@ -155,7 +155,7 @@ export const partV: RoundtableDocument = {
             title: 'The Rise of Deepfake Fraud Attempts',
             subtitle:
               'Sumsub recorded a roughly ten-fold increase in detected deepfake fraud attempts worldwide between 2022 and 2023, with sharp regional concentrations.',
-            source: 'Sumsub — Identity Fraud Report (2023)',
+            source: 'Sumsub: Identity Fraud Report (2023)',
             claimIds: ['c-v-sumsub-chart'],
             ariaLabel:
               'Bar chart showing detected deepfake fraud attempts indexed to 100 in 2022 rising to roughly 1000 in 2023',
@@ -187,7 +187,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The fraud numbers matter, but the deeper legal problem has a name: the liar's dividend. Once the public knows that any video could be fake, every authentic recording becomes deniable. A politician caught on camera can simply call it a deepfake. The technology doesn't only manufacture false evidence — it corrodes the value of true evidence.",
+                      "The fraud numbers matter, but the deeper legal problem has a name: the liar's dividend. Once the public knows that any video could be fake, every authentic recording becomes deniable. A politician caught on camera can simply call it a deepfake. The technology doesn't only manufacture false evidence; it corrodes the value of true evidence.",
                   },
                 ],
               ],
@@ -204,7 +204,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That one I'll grant you completely, and it's the part that actually keeps me up at night — not because it's futuristic, but because it's already here and it costs nothing. You don't need a working deepfake to benefit from the liar's dividend. You just need everyone to believe deepfakes exist. The panic itself is the weapon.",
+                      "That one I'll grant you completely, and it's the part that actually keeps me up at night: not because it's futuristic, but because it's already here and it costs nothing. You don't need a working deepfake to benefit from the liar's dividend. You just need everyone to believe deepfakes exist. The panic itself is the weapon.",
                   },
                 ],
               ],
@@ -221,7 +221,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "So now I'm supposed to disbelieve things that are real AND believe things that are fake? That's exhausting. I used to be able to trust my own eyes. What am I supposed to trust now — a little badge on the corner of a photo?",
+                      "So now I'm supposed to disbelieve things that are real AND believe things that are fake? That's exhausting. I used to be able to trust my own eyes. What am I supposed to trust now, a little badge on the corner of a photo?",
                   },
                 ],
               ],
@@ -238,7 +238,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Several jurisdictions are trying to answer exactly that. The EU AI Act requires that AI-generated or manipulated content — text, audio, images, video — be clearly labeled as such.',
+                      'Several jurisdictions are trying to answer exactly that. The EU AI Act requires that AI-generated or manipulated content (text, audio, images, video) be clearly labeled as such.',
                   },
                   { type: 'cite', claimId: 'c-v-eu-transparency' },
                   {
@@ -267,7 +267,7 @@ export const partV: RoundtableDocument = {
             title: 'Could People Spot the Deepfake?',
             subtitle:
               'In an iProov study, only about a quarter of participants correctly identified a high-quality deepfake video; the rest were fooled or unsure.',
-            source: 'iProov — Deepfake Detection Study (2022)',
+            source: 'iProov: Deepfake Detection Study (2022)',
             claimIds: ['c-v-iproov-chart'],
             ariaLabel:
               'Grid of 100 person icons showing 24 of every 100 people correctly identified a deepfake and 76 did not',
@@ -299,7 +299,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There's a poetic justice the engineers don't like to discuss. These models were trained on the open web — on our writing, our art, our photographs. Now their output is flooding that same web. So the next generation of models will increasingly train on the output of the last. They're starting to eat their own tail.",
+                      "There's a poetic justice the engineers don't like to discuss. These models were trained on the open web: on our writing, our art, our photographs. Now their output is flooding that same web. So the next generation of models will increasingly train on the output of the last. They're starting to eat their own tail.",
                   },
                 ],
               ],
@@ -316,7 +316,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The phenomenon is real and it has a name — model collapse. A 2024 study in Nature showed that when models are trained recursively on their own generated data, they progressively lose the tails of the distribution and converge toward bland, degraded output.',
+                      'The phenomenon is real and it has a name: model collapse. A 2024 study in Nature showed that when models are trained recursively on their own generated data, they progressively lose the tails of the distribution and converge toward bland, degraded output.',
                   },
                   { type: 'cite', claimId: 'c-v-nature-collapse' },
                   {
@@ -339,7 +339,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And notice what model collapse implies, because it cuts against the doomers too: authentic, verifiably human-made data is about to become extremely valuable. A polluted well makes clean water precious. That is not a civilization-ending dynamic. It is a market — and markets get solved, usually messily.',
+                      'And notice what model collapse implies, because it cuts against the doomers too: authentic, verifiably human-made data is about to become extremely valuable. A polluted well makes clean water precious. That is not a civilization-ending dynamic. It is a market, and markets get solved, usually messily.',
                   },
                 ],
               ],
@@ -356,7 +356,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      '"Human data becomes valuable" — listen to how that lands for the people who make it. We are the well. And so far the proposal is to keep drawing from us without consent or payment, and then pay a premium to whoever can certify the water came from a human. I want the people, not just the data, to be in that deal.',
+                      '"Human data becomes valuable": listen to how that lands for the people who make it. We are the well. And so far the proposal is to keep drawing from us without consent or payment, and then pay a premium to whoever can certify the water came from a human. I want the people, not just the data, to be in that deal.',
                   },
                 ],
               ],
@@ -372,8 +372,8 @@ export const partV: RoundtableDocument = {
             labelTop: 'Synthetic Content · Projected Share',
             title: 'The Rising Share of Synthetic Content',
             subtitle:
-              'A widely cited Europol report raised the possibility that as much as 90% of online content could be synthetically generated by 2026. It is a projection, not a measurement — but the direction is not in dispute.',
-            source: 'Europol Innovation Lab — Facing Reality? (2022)',
+              'A widely cited Europol report raised the possibility that as much as 90% of online content could be synthetically generated by 2026. It is a projection, not a measurement, but the direction is not in dispute.',
+            source: 'Europol Innovation Lab: Facing Reality? (2022)',
             claimIds: ['c-v-europol-chart'],
             ariaLabel:
               'Line chart showing the projected share of synthetic online content rising from a small share in 2022 toward as much as 90 percent by 2026',
@@ -408,7 +408,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Here is the constructive turn. Instead of trying to detect every fake after the fact — a losing race — the emerging approach is to certify what is real at the moment of capture. The C2PA standard attaches tamper-evident provenance metadata to media: where it came from, what edited it, whether AI was involved.',
+                      'Here is the constructive turn. Instead of trying to detect every fake after the fact (a losing race), the emerging approach is to certify what is real at the moment of capture. The C2PA standard attaches tamper-evident provenance metadata to media: where it came from, what edited it, whether AI was involved.',
                   },
                   { type: 'cite', claimId: 'c-v-c2pa' },
                   {
@@ -431,7 +431,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Provenance is the most promising lever I've seen, precisely because it's infrastructure rather than whack-a-mole. But it only works if it's ubiquitous and hard to strip. A standard adopted by some cameras and ignored by the screenshot button is a partial floor. This needs the boring, durable work of mandates and interoperability — the same way we got seatbelts and food labels.",
+                      "Provenance is the most promising lever I've seen, precisely because it's infrastructure rather than whack-a-mole. But it only works if it's ubiquitous and hard to strip. A standard adopted by some cameras and ignored by the screenshot button is a partial floor. This needs the boring, durable work of mandates and interoperability, the same way we got seatbelts and food labels.",
                   },
                 ],
               ],
@@ -448,7 +448,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'll end where I'm genuinely torn. The deflationary case is that humans have survived every prior media revolution — the printing press, photography, Photoshop — and developed new literacies each time. The honest worry is speed and scale: those adaptations took decades, and this is moving in months. My bet is that we adapt. My fear is the gap before we do.",
+                      "I'll end where I'm genuinely torn. The deflationary case is that humans have survived every prior media revolution (the printing press, photography, Photoshop) and developed new literacies each time. The honest worry is speed and scale: those adaptations took decades, and this is moving in months. My bet is that we adapt. My fear is the gap before we do.",
                   },
                 ],
               ],
@@ -499,7 +499,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Hold onto provenance over plausibility. Stop asking "does this look real?" — fakes are designed to win that test — and start asking "where did this come from, and who is accountable for it?" Trust the chain, not the surface. That instinct, multiplied across enough people, is what makes a labeled, sourced internet worth building. The demand has to come from below.',
+                      'Hold onto provenance over plausibility. Stop asking "does this look real?" (fakes are designed to win that test) and start asking "where did this come from, and who is accountable for it?" Trust the chain, not the surface. That instinct, multiplied across enough people, is what makes a labeled, sourced internet worth building. The demand has to come from below.',
                   },
                 ],
               ],
@@ -514,8 +514,8 @@ export const partV: RoundtableDocument = {
             labelTop: 'Content Provenance · Adoption',
             title: 'Backing for Content Provenance Standards',
             subtitle:
-              'The Content Authenticity Initiative — the coalition behind C2PA provenance — grew from a handful of founders in 2019 to several thousand member organizations by 2024.',
-            source: 'Content Authenticity Initiative — Membership (2024)',
+              'The Content Authenticity Initiative (the coalition behind C2PA provenance) grew from a handful of founders in 2019 to several thousand member organizations by 2024.',
+            source: 'Content Authenticity Initiative: Membership (2024)',
             claimIds: ['c-v-cai-chart'],
             ariaLabel:
               'Horizontal bar chart showing Content Authenticity Initiative membership growing from 3 in 2019 to roughly 3000 organizations in 2024',
@@ -539,21 +539,21 @@ export const partV: RoundtableDocument = {
         {
           type: 'text',
           value:
-            'The reality problem is not that we will be drowned in convincing fakes — though we will see many. It is subtler and more corrosive: when everything could be fake, the true and the false come to cost the same, and a society that cannot agree on what happened cannot decide what to do. The Skeptic is right that the headline projections are oversold, and right too that the gap before we adapt is the real danger. The Artist is right that the well being polluted is made of human work, and that the people who made it deserve to be in the deal.',
+            'The reality problem is not that we will be drowned in convincing fakes (though we will see many). It is subtler and more corrosive: when everything could be fake, the true and the false come to cost the same, and a society that cannot agree on what happened cannot decide what to do. The Skeptic is right that the headline projections are oversold, and right too that the gap before we adapt is the real danger. The Artist is right that the well being polluted is made of human work, and that the people who made it deserve to be in the deal.',
         },
       ],
       [
         {
           type: 'text',
           value:
-            'There is a workable answer, and it is not a better detector. It is provenance: shifting the question from "prove this is fake" to "show me where this is from." That is infrastructure, and infrastructure is coordination — standards, mandates, interoperability, and a public that learns to ask for the chain rather than trust the surface. None of it is automatic, and none of it is finished.',
+            'There is a workable answer, and it is not a better detector. It is provenance: shifting the question from "prove this is fake" to "show me where this is from." That is infrastructure, and infrastructure is coordination: standards, mandates, interoperability, and a public that learns to ask for the chain rather than trust the surface. None of it is automatic, and none of it is finished.',
         },
       ],
       [
         {
           type: 'text',
           value:
-            'Across five conversations the pattern has held. The harms are real, the responses are partial, the benefits are genuine, and the race runs on. Shared reality turns out to be one more commons that no single actor can protect alone — and one more that is worth the coordinated effort to keep.',
+            'Across five conversations the pattern has held. The harms are real, the responses are partial, the benefits are genuine, and the race runs on. Shared reality turns out to be one more commons that no single actor can protect alone, and one more that is worth the coordinated effort to keep.',
         },
       ],
     ],
@@ -562,42 +562,42 @@ export const partV: RoundtableDocument = {
   sources: [
     {
       id: 'src-sumsub',
-      title: 'Sumsub — Identity Fraud Report (2023)',
+      title: 'Sumsub: Identity Fraud Report (2023)',
       description:
         "Identity-verification firm Sumsub's annual report documenting a roughly ten-fold global increase in detected deepfake fraud attempts from 2022 to 2023.",
       url: 'https://sumsub.com/newsroom/sumsub-research-global-deepfake-incidents-surge-tenfold-from-2022-to-2023/',
     },
     {
       id: 'src-iproov',
-      title: 'iProov — Deepfake Detection Study (2022)',
+      title: 'iProov: Deepfake Detection Study (2022)',
       description:
         "Biometric-authentication firm iProov's study finding that only about a quarter of people could reliably distinguish a high-quality deepfake video from genuine footage.",
       url: 'https://www.iproov.com/reports/deepfakes-the-threat-to-online-verification',
     },
     {
       id: 'src-europol',
-      title: 'Europol Innovation Lab — Facing Reality? (2022)',
+      title: 'Europol Innovation Lab: Facing Reality? (2022)',
       description:
         'Europol report on law enforcement and deepfakes, which raised the possibility that as much as 90% of online content could be synthetically generated by 2026.',
       url: 'https://www.europol.europa.eu/publications-events/publications/facing-reality-law-enforcement-and-challenge-of-deepfakes',
     },
     {
       id: 'src-nature-collapse',
-      title: 'Shumailov et al. — Nature (2024)',
+      title: 'Shumailov et al., Nature (2024)',
       description:
-        '"AI models collapse when trained on recursively generated data" — peer-reviewed demonstration that models trained on their own output progressively degrade.',
+        '"AI models collapse when trained on recursively generated data": a peer-reviewed demonstration that models trained on their own output progressively degrade.',
       url: 'https://www.nature.com/articles/s41586-024-07566-y',
     },
     {
       id: 'src-eu-ai-act-transparency',
-      title: 'EU AI Act — Article 50 Transparency Obligations (2024)',
+      title: 'EU AI Act: Article 50 Transparency Obligations (2024)',
       description:
         'Regulation (EU) 2024/1689 provisions requiring that AI-generated or manipulated content be disclosed and machine-readable as artificially generated.',
       url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689',
     },
     {
       id: 'src-c2pa',
-      title: 'C2PA — Coalition for Content Provenance and Authenticity',
+      title: 'C2PA: Coalition for Content Provenance and Authenticity',
       description:
         'Open technical standard for tamper-evident content provenance metadata, backed by Adobe, Microsoft, the BBC, camera manufacturers, and others.',
       url: 'https://c2pa.org/',
