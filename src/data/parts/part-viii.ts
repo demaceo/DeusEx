@@ -514,7 +514,7 @@ export const partVIII: RoundtableDocument = {
         {
           type: 'text',
           value:
-            'Across eight parts the through-line holds. The costs are real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged — and the ownership concentrated. None of it resolves into a verdict on the technology. It resolves into a verdict on us: whether we build the institutions to spread a transformative power, or let it pool, as power usually does, in the hands already holding it.',
+            'Across eight parts the through-line holds. The costs are real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged, and the ownership concentrated. None of it resolves into a verdict on the technology. It resolves into a verdict on us: whether we build the institutions to spread a transformative power, or let it pool, as power usually does, in the hands already holding it.',
         },
       ],
     ],
@@ -523,14 +523,14 @@ export const partVIII: RoundtableDocument = {
   sources: [
     {
       id: 'src-ai-index-2024',
-      title: 'Stanford HAI — Artificial Intelligence Index Report 2024',
+      title: 'Stanford HAI: Artificial Intelligence Index Report 2024',
       description:
         'Stanford Institute for Human-Centered AI annual report tracking AI investment, training costs, model production, and global trends.',
       url: 'https://aiindex.stanford.edu/report/',
     },
     {
       id: 'src-chip-concentration',
-      title: 'Semiconductor supply concentration — industry estimates',
+      title: 'Semiconductor supply concentration (industry estimates)',
       description:
         "Analyst and Semiconductor Industry Association estimates of TSMC's share of the world's leading-edge chip manufacturing capacity.",
       url: 'https://www.semiconductors.org/',
@@ -556,7 +556,7 @@ export const partVIII: RoundtableDocument = {
       sourceId: 'src-ai-index-2024',
       verificationStatus: 'verified',
       verifiedUrl: 'https://aiindex.stanford.edu/report/',
-      note: 'Stanford AI Index 2024 reports US private AI investment of about $67.2 billion in 2023 — far ahead of any other country.',
+      note: 'Stanford AI Index 2024 reports US private AI investment of about $67.2 billion in 2023, far ahead of any other country.',
       lastCheckedISO: '2026-06-27',
     },
     's-viii-gemini-cost': {
@@ -608,7 +608,7 @@ export const partVIII: RoundtableDocument = {
       sourceId: 'src-ai-index-2024',
       verificationStatus: 'verified',
       verifiedUrl: 'https://aiindex.stanford.edu/report/',
-      note: 'Stanford AI Index 2024: in 2023 industry produced 51 notable machine-learning models and academia 15 (with several industry-academia collaborations) — a reversal of the earlier academic lead.',
+      note: 'Stanford AI Index 2024: in 2023 industry produced 51 notable machine-learning models and academia 15 (with several industry-academia collaborations), a reversal of the earlier academic lead.',
       lastCheckedISO: '2026-06-27',
     },
   },

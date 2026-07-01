@@ -522,28 +522,28 @@ export const partVI: RoundtableDocument = {
   sources: [
     {
       id: 'src-espai-2023',
-      title: 'AI Impacts — 2023 Expert Survey on Progress in AI',
+      title: 'AI Impacts: 2023 Expert Survey on Progress in AI',
       description:
         '"Thousands of AI Authors on the Future of AI" (Grace et al., 2024): survey of 2,778 published AI researchers on timelines, risks, and priorities.',
       url: 'https://aiimpacts.org/wp-content/uploads/2023/04/Thousands_of_AI_authors_on_the_future_of_AI.pdf',
     },
     {
       id: 'src-espai-2022',
-      title: 'AI Impacts — 2022 Expert Survey on Progress in AI',
+      title: 'AI Impacts: 2022 Expert Survey on Progress in AI',
       description:
         'Survey of AI researchers in which 48% of respondents gave at least a 10% chance to an extremely bad outcome from advanced AI.',
       url: 'https://aiimpacts.org/2022-expert-survey-on-progress-in-ai/',
     },
     {
       id: 'src-cais-statement',
-      title: 'Center for AI Safety — Statement on AI Risk (2023)',
+      title: 'Center for AI Safety: Statement on AI Risk (2023)',
       description:
         'One-sentence statement that mitigating the risk of extinction from AI should be a global priority, signed by hundreds of AI scientists and lab leaders.',
       url: 'https://www.safe.ai/work/statement-on-ai-risk',
     },
     {
       id: 'src-epoch-compute',
-      title: 'Epoch AI — Compute Trends in Machine Learning',
+      title: 'Epoch AI: Compute Trends in Machine Learning',
       description:
         'Analysis finding that training compute for notable ML models has grown roughly 4–5× per year (doubling about every six months) over the past decade.',
       url: 'https://epoch.ai/trends',
@@ -560,7 +560,7 @@ export const partVI: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://aiimpacts.org/wp-content/uploads/2023/04/Thousands_of_AI_authors_on_the_future_of_AI.pdf',
-      note: 'The 2023 Expert Survey on Progress in AI reports a median respondent estimate of 5% for an extremely bad outcome (e.g., human extinction). This is a median of opinion, not a measurement of risk — a distinction the Skeptic raises in-text.',
+      note: 'The 2023 Expert Survey on Progress in AI reports a median respondent estimate of 5% for an extremely bad outcome (e.g., human extinction). This is a median of opinion, not a measurement of risk, a distinction the Skeptic raises in-text.',
       lastCheckedISO: '2026-06-27',
     },
     's-vi-hlmi-2047': {
@@ -571,7 +571,7 @@ export const partVI: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://aiimpacts.org/wp-content/uploads/2023/04/Thousands_of_AI_authors_on_the_future_of_AI.pdf',
-      note: 'The 2023 survey aggregate gives a 50% chance of high-level machine intelligence by 2047 — reported as 13 years earlier than the equivalent estimate from the 2022 survey (2060).',
+      note: 'The 2023 survey aggregate gives a 50% chance of high-level machine intelligence by 2047, reported as 13 years earlier than the equivalent estimate from the 2022 survey (2060).',
       lastCheckedISO: '2026-06-27',
     },
     's-vi-survey-n': {
@@ -582,7 +582,7 @@ export const partVI: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://aiimpacts.org/wp-content/uploads/2023/04/Thousands_of_AI_authors_on_the_future_of_AI.pdf',
-      note: 'The 2023 ESPAI surveyed 2,778 researchers who had published in top-tier AI venues — the largest such survey to date.',
+      note: 'The 2023 ESPAI surveyed 2,778 researchers who had published in top-tier AI venues, the largest such survey to date.',
       lastCheckedISO: '2026-06-27',
     },
 

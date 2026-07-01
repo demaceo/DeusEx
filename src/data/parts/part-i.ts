@@ -703,7 +703,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' Digital labor platforms represent one of the only growing employment sectors accessible to young Kenyans. What those workers deserve is legal protections, fair wages, and real mental health support — not for the jobs to disappear.',
+                      ' Digital labor platforms represent one of the only growing employment sectors accessible to young Kenyans. What those workers deserve is legal protections, fair wages, and real mental health support, not for the jobs to disappear.',
                   },
                 ],
               ],
@@ -720,13 +720,13 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Agreed — and I'd add that Amazon, Google, Meta, Microsoft, and Nvidia collectively use at least 30 intermediary companies to insulate themselves from direct accountability for how these workers are treated.",
+                      "Agreed, and I'd add that Amazon, Google, Meta, Microsoft, and Nvidia collectively use at least 30 intermediary companies to insulate themselves from direct accountability for how these workers are treated.",
                   },
                   { type: 'cite', claimId: 'c-i-somo-intermediaries' },
                   {
                     type: 'text',
                     value:
-                      ' The "we didn\'t directly employ them" defense is legal cover. When Remotasks — one of these intermediary platforms — shut down its Kenya operations in March 2024, it sent workers a few hours\' notice via email. No severance. No transition. Just gone.',
+                      ' The "we didn\'t directly employ them" defense is legal cover. When Remotasks (one of these intermediary platforms) shut down its Kenya operations in March 2024, it sent workers a few hours\' notice via email. No severance. No transition. Just gone.',
                   },
                   { type: 'cite', claimId: 'c-i-remotasks-shutdown' },
                 ],
@@ -764,7 +764,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'All of the problems discussed — energy opacity, water exploitation, labor abuse — share one root cause: the absence of binding rules with real enforcement. Let me lay out where the law actually stands.',
+                      'All of the problems discussed (energy opacity, water exploitation, labor abuse) share one root cause: the absence of binding rules with real enforcement. Let me lay out where the law actually stands.',
                   },
                 ],
                 [
@@ -789,7 +789,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' California, Colorado, New York, and Illinois each moved toward their own frameworks. But President Trump\'s December 11, 2025 executive order declared the policy of the administration is "AI dominance through a minimally burdensome national policy framework," and directed federal agencies to challenge state-level AI regulations — even threatening to withhold federal funding from states whose laws "conflict" with the administration\'s approach.',
+                      ' California, Colorado, New York, and Illinois each moved toward their own frameworks. But President Trump\'s December 11, 2025 executive order declared the policy of the administration is "AI dominance through a minimally burdensome national policy framework," and directed federal agencies to challenge state-level AI regulations, even threatening to withhold federal funding from states whose laws "conflict" with the administration\'s approach.',
                   },
                   { type: 'cite', claimId: 'c-i-eo-14365-dominance' },
                 ],
@@ -807,7 +807,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'm not going to defend every policy decision, but I'll defend the underlying principle: heavy-handed regulation risks exporting AI development to jurisdictions with fewer protections — not more. China is not pausing for ethics reviews. The EU's strict approach, while well-intentioned, may have already slowed European AI competitiveness. The strongest argument for voluntary standards and market incentives isn't that accountability doesn't matter — it's that badly designed mandates can produce compliance theater while the real innovation and the real harms move offshore. What we need is smart, targeted rules — not a regulatory race between Washington and Brussels to see who can write the most requirements.",
+                      "I'm not going to defend every policy decision, but I'll defend the underlying principle: heavy-handed regulation risks exporting AI development to jurisdictions with fewer protections, not more. China is not pausing for ethics reviews. The EU's strict approach, while well-intentioned, may have already slowed European AI competitiveness. The strongest argument for voluntary standards and market incentives isn't that accountability doesn't matter; it's that badly designed mandates can produce compliance theater while the real innovation and the real harms move offshore. What we need is smart, targeted rules, not a regulatory race between Washington and Brussels to see who can write the most requirements.",
                   },
                 ],
               ],
@@ -824,7 +824,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That argument has been used to delay climate action for forty years. \"Don't regulate us, or the other guy will pollute more\" is not an ethical framework. It's a race to the bottom with a plausible-sounding narrative. The 800% energy price surge in Virginia, the water stress in Nevada, the CO₂ from data centers — those don't pause because of geopolitical competition.",
+                      "That argument has been used to delay climate action for forty years. \"Don't regulate us, or the other guy will pollute more\" is not an ethical framework. It's a race to the bottom with a plausible-sounding narrative. The 800% energy price surge in Virginia, the water stress in Nevada, and the CO₂ from data centers don't pause because of geopolitical competition.",
                   },
                   { type: 'cite', claimId: 'c-i-ansi-stanford-combined' },
                 ],
@@ -848,7 +848,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' This divergence creates real risk for companies navigating multiple jurisdictions — but it also means the "innovate without rules" model has limited geographic reach. The question is whether the most powerful AI actors — concentrated in the U.S. — will be subject to meaningful accountability at all.',
+                      ' This divergence creates real risk for companies navigating multiple jurisdictions, but it also means the "innovate without rules" model has limited geographic reach. The question is whether the most powerful AI actors (concentrated in the U.S.) will be subject to meaningful accountability at all.',
                   },
                 ],
               ],
@@ -865,7 +865,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I keep hearing that AI is going to help us solve big problems. But what I'm understanding from this conversation is that the problems it's causing right now — electricity, water, those workers in Kenya — those are real and happening now. And the people making the decisions aren't the ones paying those costs. That part bothers me the most.",
+                      "I keep hearing that AI is going to help us solve big problems. But what I'm understanding from this conversation is that the problems it's causing right now (electricity, water, those workers in Kenya) are real and happening now. And the people making the decisions aren't the ones paying those costs. That part bothers me the most.",
                   },
                 ],
               ],
@@ -882,7 +882,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That's exactly it. The costs of this technology are borne by workers in Nairobi making $2 an hour, communities in drought-stricken Nevada watching their water tables drop, and families in Virginia whose electricity bills are climbing — not by the engineers, executives, and investors who profit from it. The ethical questions aren't theoretical. They're about who pays and who doesn't.",
+                      "That's exactly it. The costs of this technology are borne by workers in Nairobi making $2 an hour, communities in drought-stricken Nevada watching their water tables drop, and families in Virginia whose electricity bills are climbing, not by the engineers, executives, and investors who profit from it. The ethical questions aren't theoretical. They're about who pays and who doesn't.",
                   },
                 ],
               ],
@@ -899,7 +899,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'll close by saying: I think this technology is genuinely transformative and that managed well, it can improve billions of lives. But this conversation has sharpened something for me. \"Managed well\" requires transparency that doesn't currently exist, labor standards that aren't currently enforced, and energy practices that aren't currently mandated. Good intentions from industry leaders aren't enough. The people in this room — including the one who just learned about all this — need to be part of the conversation that shapes what comes next.",
+                      "I'll close by saying: I think this technology is genuinely transformative and that managed well, it can improve billions of lives. But this conversation has sharpened something for me. \"Managed well\" requires transparency that doesn't currently exist, labor standards that aren't currently enforced, and energy practices that aren't currently mandated. Good intentions from industry leaders aren't enough. The people in this room (including the one who just learned about all this) need to be part of the conversation that shapes what comes next.",
                   },
                 ],
               ],
@@ -912,14 +912,14 @@ export const partI: RoundtableDocument = {
   sources: [
     {
       id: 'src-arxiv',
-      title: 'Environmental Impact of AI Servers — arXiv (2025)',
+      title: 'Environmental Impact of AI Servers (arXiv, 2025)',
       description:
         'Peer-reviewed analysis of cooling system design, geographic siting, and combined environmental impact of AI data centers.',
     },
     {
       id: 'src-iea',
       url: 'https://www.iea.org/reports/energy-and-ai/executive-summary',
-      title: 'IEA — Energy and AI Report (April 2025)',
+      title: 'IEA: Energy and AI Report (April 2025)',
       description: 'Global data center electricity projections and AI energy intensity estimates.',
     },
     {
@@ -989,7 +989,7 @@ export const partI: RoundtableDocument = {
     {
       id: 'src-equal-times',
       title: 'Equal Times (2025)',
-      description: 'Philippines Scale AI workers — below-minimum wage, no social protection.',
+      description: 'Philippines Scale AI workers: below-minimum wage, no social protection.',
     },
     {
       id: 'src-computer-weekly',
@@ -1023,7 +1023,7 @@ export const partI: RoundtableDocument = {
     {
       id: 'src-cloudscene-dc',
       url: 'https://www.cloudscene.com/',
-      title: 'Cloudscene — Global Data Center Database (2025)',
+      title: 'Cloudscene: Global Data Center Database (2025)',
       description:
         'Per-country data-center counts: United States ~5,400 (~46% of the global ~11,800).',
     },
@@ -1040,7 +1040,7 @@ export const partI: RoundtableDocument = {
     'c-i-dc-count': {
       id: 'c-i-dc-count',
       kind: 'statistic',
-      claimText: 'The US hosts ~5,400 data centers — about 46% of the global ~11,800.',
+      claimText: 'The US hosts ~5,400 data centers (about 46% of the global ~11,800).',
       sourceId: 'src-cloudscene-dc',
       verificationStatus: 'verified',
       verifiedUrl: 'https://www.cargoson.com/en/blog/number-of-data-centers-by-country',
@@ -1206,7 +1206,7 @@ export const partI: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://www.americanactionforum.org/insight/virginias-new-data-center-electricity-rate-class/',
-      note: 'PJM 2024 capacity auction (2025–26 delivery) rose ~833% — driven by Virginia data-centre demand. (The specific "ANSI Blog" post was not located; the figure is corroborated by AAF/IEEFA/Utility Dive.)',
+      note: 'PJM 2024 capacity auction (2025–26 delivery) rose ~833%, driven by Virginia data-centre demand. (The specific "ANSI Blog" post was not located; the figure is corroborated by AAF/IEEFA/Utility Dive.)',
       lastCheckedISO: '2026-06-24',
     },
     'c-i-ansi-rate-increase': {
@@ -1279,7 +1279,7 @@ export const partI: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://www.nixonpeabody.com/insights/articles/2025/09/05/water-use-in-us-data-centers-legal-and-regulatory-risks',
-      note: 'Nixon Peabody (5 Sep 2025) analyses the thin legal/disclosure obligations around US data-centre water use — matching the cited claim.',
+      note: 'Nixon Peabody (5 Sep 2025) analyses the thin legal/disclosure obligations around US data-centre water use, matching the cited claim.',
       lastCheckedISO: '2026-06-24',
     },
     'c-i-msci-water-scarcity': {
@@ -1385,7 +1385,7 @@ export const partI: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://www.europarl.europa.eu/news/en/press-room/20240308IPR19015/artificial-intelligence-act-meps-adopt-landmark-law',
-      note: 'EU AI Act adopted by the European Parliament on 13 March 2024 — the first comprehensive, risk-based AI law; applies to non-EU providers serving the EU.',
+      note: 'EU AI Act adopted by the European Parliament on 13 March 2024: the first comprehensive, risk-based AI law; applies to non-EU providers serving the EU.',
       lastCheckedISO: '2026-06-24',
     },
     'c-i-pillsbury-bills': {

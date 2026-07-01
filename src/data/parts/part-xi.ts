@@ -330,7 +330,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And yet the recycling number has barely moved in years, while the waste pile grows. I am not against the laws — I am against mistaking a regulation for an outcome. Until recycling a server is cheaper than mining a fresh one, the economics will keep choosing the mine and the landfill. That is the lever that actually matters, and it is mostly still pointing the wrong way.',
+                      'And yet the recycling number has barely moved in years, while the waste pile grows. I am not against the laws; I am against mistaking a regulation for an outcome. Until recycling a server is cheaper than mining a fresh one, the economics will keep choosing the mine and the landfill. That is the lever that actually matters, and it is mostly still pointing the wrong way.',
                   },
                 ],
               ],
@@ -362,8 +362,8 @@ export const partXI: RoundtableDocument = {
             labelTop: 'E-Waste · UN Global E-waste Monitor',
             title: 'Generated vs Recycled',
             subtitle:
-              'Of the 62 million tonnes of e-waste generated in 2022, only about 13.8 million tonnes — roughly 22% — was formally collected and recycled.',
-            source: 'UN — Global E-waste Monitor 2024',
+              'Of the 62 million tonnes of e-waste generated in 2022, only about 13.8 million tonnes (roughly 22%) was formally collected and recycled.',
+            source: 'UN: Global E-waste Monitor 2024',
             claimIds: ['c-xi-ewaste'],
             ariaLabel:
               'Bar chart showing 62 million tonnes of e-waste generated in 2022 versus about 13.8 million tonnes formally recycled',
@@ -389,10 +389,10 @@ export const partXI: RoundtableDocument = {
         {
           type: 'incentiveAudit',
           data: {
-            race: 'Every buyer wants the cheapest hardware and the newest capability; every producer wants the cheapest inputs and the fastest refresh cycle. Mining virgin material and discarding old devices is cheaper, today, than recovering and reusing them — so the market races toward extraction and disposal.',
+            race: 'Every buyer wants the cheapest hardware and the newest capability; every producer wants the cheapest inputs and the fastest refresh cycle. Mining virgin material and discarding old devices is cheaper, today, than recovering and reusing them, so the market races toward extraction and disposal.',
             trap: 'No single manufacturer can unilaterally absorb the cost of clean, traceable, recycled supply chains without being undercut by one that does not. The damage lands on distant communities and future device-owners who are not at the negotiating table, so it never shows up on the price tag.',
             intervention:
-              'Make the producer own the full lifecycle: extended producer responsibility, right-to-repair and longevity mandates, recycled-content requirements, and binding traceability — so the cost of the harm is priced into the product instead of exported to the mine and the scrapyard.',
+              'Make the producer own the full lifecycle: extended producer responsibility, right-to-repair and longevity mandates, recycled-content requirements, and binding traceability, so the cost of the harm is priced into the product instead of exported to the mine and the scrapyard.',
           },
         },
         {
@@ -405,7 +405,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The Skeptic put the real problem precisely: the loop stays open because virgin extraction is underpriced. It does not pay for the poisoned watershed or the child in the pit — those are externalities, dumped on people with no claim on the boardroom. A circular economy is not mainly a technology problem. It is a pricing problem. Put the true cost of extraction and disposal back onto the product, and recycling and longevity suddenly become the cheap option they should already be.',
+                      'The Skeptic put the real problem precisely: the loop stays open because virgin extraction is underpriced. It does not pay for the poisoned watershed or the child in the pit; those are externalities, dumped on people with no claim on the boardroom. A circular economy is not mainly a technology problem. It is a pricing problem. Put the true cost of extraction and disposal back onto the product, and recycling and longevity suddenly become the cheap option they should already be.',
                   },
                 ],
               ],
@@ -422,7 +422,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Agreed, and the technical pieces are ready to meet a corrected price. Urban mining — recovering metals from discarded electronics — already yields far higher concentrations of some metals per tonne than ore does. Hardware that lasts longer, is designed to be repaired, and is built from recycled feedstock is entirely feasible. What has been missing is not the engineering. It is an incentive structure that rewards keeping a material in use instead of pulling a fresh one from someone else's ground.",
+                      "Agreed, and the technical pieces are ready to meet a corrected price. Urban mining (recovering metals from discarded electronics) already yields far higher concentrations of some metals per tonne than ore does. Hardware that lasts longer, is designed to be repaired, and is built from recycled feedstock is entirely feasible. What has been missing is not the engineering. It is an incentive structure that rewards keeping a material in use instead of pulling a fresh one from someone else's ground.",
                   },
                 ],
               ],
@@ -456,7 +456,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That is the whole series in one demand. Every part has circled the same structure: a benefit that concentrates, a cost that disperses onto people without a vote, and a market that will not price what it cannot see. Consent, a share, and accountability that scales with the harm — it is the same answer we reached for energy, for labor, for truth, for authorship. The ground it comes from is just the most literal version of the question: who pays, who decides, and who is allowed to say no.',
+                      'That is the whole series in one demand. Every part has circled the same structure: a benefit that concentrates, a cost that disperses onto people without a vote, and a market that will not price what it cannot see. Consent, a share, and accountability that scales with the harm: it is the same answer we reached for energy, for labor, for truth, for authorship. The ground it comes from is just the most literal version of the question: who pays, who decides, and who is allowed to say no.',
                   },
                 ],
               ],
@@ -472,8 +472,8 @@ export const partXI: RoundtableDocument = {
             labelTop: 'E-Waste · Trajectory',
             title: 'The Pile Keeps Growing',
             subtitle:
-              'Global e-waste rose from about 44 million tonnes in 2014 to 62 million in 2022, and is projected to reach roughly 82 million tonnes by 2030 — far faster than recycling is scaling.',
-            source: 'UN — Global E-waste Monitor 2024',
+              'Global e-waste rose from about 44 million tonnes in 2014 to 62 million in 2022, and is projected to reach roughly 82 million tonnes by 2030, far faster than recycling is scaling.',
+            source: 'UN: Global E-waste Monitor 2024',
             claimIds: ['c-xi-ewaste-trend'],
             ariaLabel:
               'Line chart showing global e-waste rising from about 44 million tonnes in 2014 to 62 million in 2022 and a projected 82 million tonnes by 2030',
@@ -506,14 +506,14 @@ export const partXI: RoundtableDocument = {
         {
           type: 'text',
           value:
-            'The repair is the same one every part of this series has arrived at, made physical: price the true cost, make the producer own the full lifecycle, and give the people whose land and bodies sit at the base of the supply chain consent, a share, and the power to refuse. A circular, accountable hardware economy is not a fantasy. It is simply the more expensive, fairer architecture — chosen, or not.',
+            'The repair is the same one every part of this series has arrived at, made physical: price the true cost, make the producer own the full lifecycle, and give the people whose land and bodies sit at the base of the supply chain consent, a share, and the power to refuse. A circular, accountable hardware economy is not a fantasy. It is simply the more expensive, fairer architecture: chosen, or not.',
         },
       ],
       [
         {
           type: 'text',
           value:
-            'And so the reckoning comes to rest on solid ground. Across eleven parts the costs proved real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged, the ownership concentrated, the culture taken, the prejudice inherited — and the footprint borne by those who chose none of it. The technology will keep advancing. Whether it is built out of people and the planet, or with them, is what it has always been: a decision, and the decision is still ours to make.',
+            'And so the reckoning comes to rest on solid ground. Across eleven parts the costs proved real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged, the ownership concentrated, the culture taken, the prejudice inherited, and the footprint borne by those who chose none of it. The technology will keep advancing. Whether it is built out of people and the planet, or with them, is what it has always been: a decision, and the decision is still ours to make.',
         },
       ],
     ],
@@ -522,28 +522,28 @@ export const partXI: RoundtableDocument = {
   sources: [
     {
       id: 'src-usgs-cobalt',
-      title: 'US Geological Survey — Mineral Commodity Summaries: Cobalt',
+      title: 'US Geological Survey, Mineral Commodity Summaries: Cobalt',
       description:
         "USGS data on global cobalt mine production, showing the Democratic Republic of the Congo as the source of roughly 70% of the world's mined cobalt.",
       url: 'https://www.usgs.gov/centers/national-minerals-information-center/cobalt-statistics-and-information',
     },
     {
       id: 'src-unicef-cobalt',
-      title: 'UNICEF / Amnesty International — Child labour in DRC cobalt mining',
+      title: 'UNICEF / Amnesty International: Child labour in DRC cobalt mining',
       description:
         'Reporting estimating that tens of thousands of children (UNICEF: ~40,000) worked in artisanal mines across the southern DRC, including cobalt operations.',
       url: 'https://www.unicef.org/drcongo/en',
     },
     {
       id: 'src-iea-minerals',
-      title: 'IEA — Critical Minerals and Clean Energy Transitions',
+      title: 'IEA: Critical Minerals and Clean Energy Transitions',
       description:
         'International Energy Agency analysis of mineral supply chains, including the concentration of rare-earth processing (~90% in China) and water use in lithium extraction.',
       url: 'https://www.iea.org/reports/the-role-of-critical-minerals-in-clean-energy-transitions',
     },
     {
       id: 'src-un-ewaste',
-      title: 'UN — Global E-waste Monitor 2024',
+      title: 'UN: Global E-waste Monitor 2024',
       description:
         'UNITAR/ITU report: 62 million tonnes of e-waste generated in 2022 (only ~22% formally recycled), rising from ~44 Mt in 2014 toward a projected 82 Mt by 2030.',
       url: 'https://ewastemonitor.info/',

@@ -375,7 +375,7 @@ export const partIV: RoundtableDocument = {
             title: 'Nuclear-Armed States: Coordination Held',
             subtitle:
               'JFK predicted 15–25 nuclear states by 1975. The NPT (1968) and IAEA inspection regime held the number to nine: a coordination success sustained for over fifty years.',
-            source: 'Federation of American Scientists — Status of World Nuclear Forces',
+            source: 'Federation of American Scientists: Status of World Nuclear Forces',
             claimIds: ['c-iv-nuclear-states-history'],
             ariaLabel:
               'Bar chart showing nuclear-armed states growing slowly from 1 in 1945 to 9 in 2024, far below early predictions of 25 states',
@@ -592,7 +592,7 @@ export const partIV: RoundtableDocument = {
         {
           type: 'text',
           value:
-            'The narrow path — where power is matched with responsibility, where no single actor accumulates unchecked capability, where verification makes trust possible — is not a utopia. It is simply the alternative to the two dystopias on either side. Getting there requires the same thing it has always required: enough people, across enough institutions, deciding that the race is not worth running without rules.',
+            'The narrow path (where power is matched with responsibility, where no single actor accumulates unchecked capability, where verification makes trust possible) is not a utopia. It is simply the alternative to the two dystopias on either side. Getting there requires the same thing it has always required: enough people, across enough institutions, deciding that the race is not worth running without rules.',
         },
       ],
     ],
@@ -608,49 +608,49 @@ export const partIV: RoundtableDocument = {
     },
     {
       id: 'src-unep-ozone',
-      title: 'UNEP Ozone Secretariat — ODS Data (2024)',
+      title: 'UNEP Ozone Secretariat: ODS Data (2024)',
       description:
         'United Nations Environment Programme data on ozone-depleting substance consumption under the Montreal Protocol.',
       url: 'https://ozone.unep.org/',
     },
     {
       id: 'src-fas-nuclear',
-      title: 'Federation of American Scientists — Status of World Nuclear Forces',
+      title: 'Federation of American Scientists: Status of World Nuclear Forces',
       description:
         'FAS tracker of nuclear-armed states, warhead counts, and proliferation history from 1945 to present.',
       url: 'https://fas.org/initiative/status-world-nuclear-forces/',
     },
     {
       id: 'src-bletchley',
-      title: 'UK Government — Bletchley Declaration (November 2023)',
+      title: 'UK Government: Bletchley Declaration (November 2023)',
       description:
         'Text of and signatories to the Bletchley Declaration on AI Safety, signed at the UK AI Safety Summit by 28 countries.',
       url: 'https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration/',
     },
     {
       id: 'src-white-house-ai',
-      title: 'White House — Voluntary AI Commitments (July 2023)',
+      title: 'White House: Voluntary AI Commitments (July 2023)',
       description:
         'White House fact sheet on voluntary commitments by leading AI companies to manage AI safety risks.',
       url: 'https://www.whitehouse.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/',
     },
     {
       id: 'src-eu-ai-act',
-      title: 'EU AI Act — Official Journal of the European Union (2024)',
+      title: 'EU AI Act: Official Journal of the European Union (2024)',
       description:
-        'Regulation (EU) 2024/1689 of the European Parliament — the first comprehensive binding AI regulatory framework, in force 1 August 2024.',
+        'Regulation (EU) 2024/1689 of the European Parliament: the first comprehensive binding AI regulatory framework, in force 1 August 2024.',
       url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689',
     },
     {
       id: 'src-seoul-summit',
-      title: 'Seoul AI Safety Summit — Ministerial Statement (May 2024)',
+      title: 'Seoul AI Safety Summit: Ministerial Statement (May 2024)',
       description:
         'Ministerial statement from the Seoul AI Safety Summit on international cooperation on AI safety and frontier AI governance.',
       url: 'https://www.gov.uk/government/publications/seoul-ministerial-statement-for-advancing-ai-safety-international-collaboration-and-capacity-building',
     },
     {
       id: 'src-yua-treaties',
-      title: 'Your Undivided Attention — "We Need AI Treaties" (June 2026)',
+      title: 'Your Undivided Attention: "We Need AI Treaties" (June 2026)',
       description:
         'Center for Humane Technology podcast episode with Tim Fist (Institute for Progress) and Janet Egan (CNAS) on AI red lines and verification technology as the prerequisite for enforceable international AI agreements.',
       url: 'https://www.humanetech.com/podcast/we-need-ai-treaties-this-is-how-we-get-them',
@@ -794,7 +794,7 @@ export const partIV: RoundtableDocument = {
       sourceId: 'src-yua-treaties',
       verificationStatus: 'verified',
       verifiedUrl: 'https://www.humanetech.com/podcast/we-need-ai-treaties-this-is-how-we-get-them',
-      note: 'YUA Ep. 136 (18 June 2026): Tim Fist (Institute for Progress) and Janet Egan (CNAS) argue that enforceable AI agreements on red lines — bioweapons, offensive cyber, recursive self-improvement — require verification technology, drawing the explicit parallel to ~60 years of nuclear arms-control verification (warhead, enrichment, and civilian-vs-weapons verification). The episode names verification, not political will alone, as the central obstacle.',
+      note: 'YUA Ep. 136 (18 June 2026): Tim Fist (Institute for Progress) and Janet Egan (CNAS) argue that enforceable AI agreements on red lines (bioweapons, offensive cyber, recursive self-improvement) require verification technology, drawing the explicit parallel to ~60 years of nuclear arms-control verification (warhead, enrichment, and civilian-vs-weapons verification). The episode names verification, not political will alone, as the central obstacle.',
       lastCheckedISO: '2026-06-29',
     },
   },
