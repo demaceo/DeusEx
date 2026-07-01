@@ -2549,6 +2549,12 @@ cite[role='button']:focus-visible::after {
   overflow: hidden;
 }
 
+/* Reserve space at the foot of the page so the fixed player bar never covers
+   the last bit of content — most visibly the SeriesFooter's links. */
+body:has(.podcast-player) {
+  padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+}
+
 .podcast-player__toggle {
   flex: none;
   display: inline-flex;
