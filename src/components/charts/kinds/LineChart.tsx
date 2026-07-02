@@ -90,11 +90,27 @@ export function LineChart({ chart, width, height }: KindProps) {
             </text>
           ))}
 
-          {chart.area ? <path d={areaGen(data) ?? ''} fill={`url(#${gradientId})`} /> : null}
+          {chart.area ? (
+            <path
+              className="chart-fade"
+              style={{ animationDelay: '0.35s' }}
+              d={areaGen(data) ?? ''}
+              fill={`url(#${gradientId})`}
+            />
+          ) : null}
 
-          <path d={lineGen(solid) ?? ''} fill="none" stroke={color} strokeWidth={2.5} />
+          <path
+            className="chart-draw"
+            pathLength={1}
+            d={lineGen(solid) ?? ''}
+            fill="none"
+            stroke={color}
+            strokeWidth={2.5}
+          />
           {dashed.length >= 2 ? (
             <path
+              className="chart-fade"
+              style={{ animationDelay: '0.45s' }}
               d={lineGen(dashed) ?? ''}
               fill="none"
               stroke={color}
@@ -106,6 +122,8 @@ export function LineChart({ chart, width, height }: KindProps) {
           {data.map((d, i) => (
             <g key={i}>
               <circle
+                className="chart-pop"
+                style={{ animationDelay: `${i * 70}ms` }}
                 cx={px(d)}
                 cy={py(d)}
                 r={4}

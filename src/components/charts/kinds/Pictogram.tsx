@@ -16,7 +16,14 @@ const COLS = 10
 
 const ICONS: Record<
   NonNullable<PictogramSpec['icon']>,
-  ComponentType<{ size?: number; color?: string; fill?: string; strokeWidth?: number }>
+  ComponentType<{
+    size?: number
+    color?: string
+    fill?: string
+    strokeWidth?: number
+    className?: string
+    style?: React.CSSProperties
+  }>
 > = {
   user: User,
   droplet: Droplet,
@@ -64,6 +71,8 @@ export function Pictogram({ chart, width, height }: KindProps) {
         return (
           <Icon
             key={i}
+            className="chart-cell"
+            style={{ '--i': i } as React.CSSProperties}
             size={iconSize}
             color={color}
             fill={si < 0 ? 'none' : color}

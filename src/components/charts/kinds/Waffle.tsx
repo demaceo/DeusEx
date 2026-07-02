@@ -59,6 +59,8 @@ export function Waffle({ chart, width, height }: KindProps) {
           return (
             <rect
               key={i}
+              className="chart-cell"
+              style={{ '--i': i } as React.CSSProperties}
               x={x}
               y={y}
               width={cell}

@@ -47,6 +47,8 @@ export function ComparisonChart({ chart, width, height }: KindProps) {
       <svg width={width} height={height}>
         <g transform={`translate(${m.left},${m.top})`}>
           <line
+            className="chart-draw"
+            pathLength={1}
             x1={x0}
             y1={y(before.value)}
             x2={x1}
@@ -55,12 +57,31 @@ export function ComparisonChart({ chart, width, height }: KindProps) {
             strokeWidth={3}
             strokeLinecap="round"
           />
-          <circle cx={x0} cy={y(before.value)} r={7} fill={beforeColor} />
-          <circle cx={x1} cy={y(after.value)} r={7} fill={afterColor} />
-          <text x={x0} y={y(before.value) - 18} textAnchor="middle" style={FIGURE}>
+          <circle className="chart-pop" cx={x0} cy={y(before.value)} r={7} fill={beforeColor} />
+          <circle
+            className="chart-pop"
+            style={{ animationDelay: '0.35s' }}
+            cx={x1}
+            cy={y(after.value)}
+            r={7}
+            fill={afterColor}
+          />
+          <text
+            className="chart-fade"
+            x={x0}
+            y={y(before.value) - 18}
+            textAnchor="middle"
+            style={FIGURE}
+          >
             {fmt(before.value, chart.unit)}
           </text>
-          <text x={x1} y={y(after.value) - 18} textAnchor="middle" style={FIGURE}>
+          <text
+            className="chart-fade"
+            x={x1}
+            y={y(after.value) - 18}
+            textAnchor="middle"
+            style={{ ...FIGURE, animationDelay: '0.35s' }}
+          >
             {fmt(after.value, chart.unit)}
           </text>
           <text x={x0} y={innerH + 22} textAnchor="middle" style={AXIS_TEXT}>
@@ -72,11 +93,12 @@ export function ComparisonChart({ chart, width, height }: KindProps) {
         </g>
       </svg>
       <span
-        className="chart-delta-chip chart-delta-chip--lg"
+        className="chart-delta-chip chart-delta-chip--lg chart-fade"
         data-sign={delta.sign}
         style={{
           left: m.left + innerW / 2,
           top: m.top + (y(before.value) + y(after.value)) / 2 - 30,
+          animationDelay: '0.5s',
         }}
       >
         {arrow} {deltaText}

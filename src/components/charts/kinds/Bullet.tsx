@@ -77,6 +77,8 @@ export function Bullet({ chart, width, height }: KindProps) {
               >
                 <rect x={0} y={ty} width={innerW} height={band} rx={2} fill={CHART_COLORS.panel} />
                 <rect
+                  className="chart-bar__grow-h"
+                  style={{ animationDelay: `${i * 60}ms` }}
                   x={0}
                   y={ty + (band - barH) / 2}
                   width={x(d.value)}

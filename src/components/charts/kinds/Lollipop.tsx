@@ -57,8 +57,24 @@ function HorizontalLollipop({ chart, width, height }: KindProps) {
                 }
                 onMouseLeave={hide}
               >
-                <line x1={0} y1={cy} x2={cx} y2={cy} stroke={color} strokeWidth={2} />
-                <circle cx={cx} cy={cy} r={7} fill={color} />
+                <line
+                  className="chart-bar__grow-h"
+                  style={{ animationDelay: `${i * 50}ms` }}
+                  x1={0}
+                  y1={cy}
+                  x2={cx}
+                  y2={cy}
+                  stroke={color}
+                  strokeWidth={2}
+                />
+                <circle
+                  className="chart-pop"
+                  style={{ animationDelay: `${i * 50 + 200}ms` }}
+                  cx={cx}
+                  cy={cy}
+                  r={7}
+                  fill={color}
+                />
                 <text x={cx + 12} y={cy} dy="0.32em" style={VALUE_LABEL}>
                   {fmt(d.value, chart.unit)}
                 </text>
@@ -112,8 +128,24 @@ function VerticalLollipop({ chart, width, height }: KindProps) {
                 }
                 onMouseLeave={hide}
               >
-                <line x1={cx} y1={innerH} x2={cx} y2={cy} stroke={color} strokeWidth={2} />
-                <circle cx={cx} cy={cy} r={7} fill={color} />
+                <line
+                  className="chart-bar__grow-v"
+                  style={{ animationDelay: `${i * 50}ms` }}
+                  x1={cx}
+                  y1={innerH}
+                  x2={cx}
+                  y2={cy}
+                  stroke={color}
+                  strokeWidth={2}
+                />
+                <circle
+                  className="chart-pop"
+                  style={{ animationDelay: `${i * 50 + 200}ms` }}
+                  cx={cx}
+                  cy={cy}
+                  r={7}
+                  fill={color}
+                />
                 <text x={cx} y={cy - 12} textAnchor="middle" style={VALUE_LABEL}>
                   {fmt(d.value, chart.unit)}
                 </text>

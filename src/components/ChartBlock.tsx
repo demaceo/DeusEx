@@ -38,7 +38,9 @@ export function ChartBlock({ chart }: ChartBlockProps) {
       chart={chart}
       status={status}
       height={height}
-      renderCanvas={(width) => <ChartCanvas chart={chart} width={width} height={height} />}
+      renderCanvas={(width, revealed) => (
+        <ChartCanvas chart={chart} width={width} height={height} revealed={revealed} />
+      )}
     />
   )
 }

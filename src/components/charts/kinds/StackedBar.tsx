@@ -55,29 +55,32 @@ export function StackedBar({ chart, width, height }: KindProps) {
             let acc = 0
             return (
               <g key={ri}>
-                {series.map((s, si) => {
-                  const v = Number(row[s.key] ?? 0)
-                  const y0 = y(acc)
-                  const y1 = y(acc + v)
-                  acc += v
-                  const color = colorOf(si, s)
-                  return (
-                    <path
-                      key={s.key}
-                      d={roundedRectPath(bx, y1, barW, y0 - y1, {})}
-                      fill={color}
-                      onMouseEnter={() =>
-                        show({
-                          x: m.left + bx + barW / 2,
-                          y: m.top + (y0 + y1) / 2,
-                          label: row.label,
-                          rows: [{ name: s.label, value: v, color }],
-                        })
-                      }
-                      onMouseLeave={hide}
-                    />
-                  )
-                })}
+                {/* Grow the whole column up from the baseline as it reveals. */}
+                <g className="chart-bar__grow-v" style={{ animationDelay: `${ri * 40}ms` }}>
+                  {series.map((s, si) => {
+                    const v = Number(row[s.key] ?? 0)
+                    const y0 = y(acc)
+                    const y1 = y(acc + v)
+                    acc += v
+                    const color = colorOf(si, s)
+                    return (
+                      <path
+                        key={s.key}
+                        d={roundedRectPath(bx, y1, barW, y0 - y1, {})}
+                        fill={color}
+                        onMouseEnter={() =>
+                          show({
+                            x: m.left + bx + barW / 2,
+                            y: m.top + (y0 + y1) / 2,
+                            label: row.label,
+                            rows: [{ name: s.label, value: v, color }],
+                          })
+                        }
+                        onMouseLeave={hide}
+                      />
+                    )
+                  })}
+                </g>
                 <text x={bx + barW / 2} y={innerH + 18} textAnchor="middle" style={AXIS_TEXT}>
                   {row.label}
                 </text>
