@@ -482,6 +482,7 @@ export const partXI: RoundtableDocument = {
               'Line chart showing global e-waste rising from about 44 million tonnes in 2014 to 62 million in 2022 and a projected 82 million tonnes by 2030',
             unit: 'Mt',
             variant: 'navy',
+            reference: { value: 13.8, label: 'Recycled' },
             annotations: [{ at: '2022', text: 'Only ~22% recycled' }],
             data: [
               { label: '2014', value: 44 },

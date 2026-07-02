@@ -31,7 +31,11 @@ export function LineChart({ chart, width, height }: KindProps) {
     .range([0, innerW])
     .padding(0.5)
 
-  const [lo = 0, hi = 1] = extent(data, (d) => d.value)
+  // A reference line can sit outside the data's own range (e.g. a low threshold
+  // under a high series), so fold its value into the domain or it renders off-chart.
+  const domainValues = data.map((d) => d.value)
+  if (chart.reference) domainValues.push(chart.reference.value)
+  const [lo = 0, hi = 1] = extent(domainValues)
   const pad = (hi - lo) * 0.15 || hi * 0.1 || 1
   const y = scaleLinear()
     .domain([lo - pad, hi + pad])
@@ -163,22 +167,21 @@ export function LineChart({ chart, width, height }: KindProps) {
             />
           ) : null}
 
-          {/* Keyed point callouts. */}
+          {/* Keyed point callouts. Placed below a high-sitting point, but above a
+              low one (clearing the value label) so it never collides with the x-axis. */}
           {(chart.annotations ?? []).map((a, i) => {
             const d = data.find((p) => p.label === a.at)
             if (!d) return null
+            const below = py(d) <= innerH / 2
+            const lineY1 = below ? py(d) + 6 : py(d) - 24
+            const lineY2 = below ? py(d) + 20 : py(d) - 36
+            const textY = below ? py(d) + 32 : py(d) - 42
             return (
               <g key={`anno-${i}`} aria-hidden="true">
-                <line
-                  x1={px(d)}
-                  y1={py(d) + 6}
-                  x2={px(d)}
-                  y2={py(d) + 20}
-                  stroke={CHART_COLORS.muted}
-                />
+                <line x1={px(d)} y1={lineY1} x2={px(d)} y2={lineY2} stroke={CHART_COLORS.muted} />
                 <text
                   x={px(d)}
-                  y={py(d) + 32}
+                  y={textY}
                   textAnchor="middle"
                   stroke={CHART_COLORS.white}
                   strokeWidth={3}
