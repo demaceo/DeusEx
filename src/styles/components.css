@@ -1157,6 +1157,46 @@ cite[data-verification='unverified'] {
   }
 }
 
+/* ─── BAR CHART (hover/pin/entrance motion) ───────────────────────── */
+.chart-bar__hit {
+  cursor: pointer;
+}
+.chart-bar__mark {
+  transition: opacity 0.15s var(--ease);
+}
+.chart-bar__mark[data-dimmed] {
+  opacity: 0.35;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .chart-bar__grow-v {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: chart-bar-grow-v 0.4s var(--ease) backwards;
+  }
+  .chart-bar__grow-h {
+    transform-box: fill-box;
+    transform-origin: left;
+    animation: chart-bar-grow-h 0.4s var(--ease) backwards;
+  }
+  @keyframes chart-bar-grow-v {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+  @keyframes chart-bar-grow-h {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
 /* ─── PULLQUOTE ───────────────────────────────────────────────────── */
 .pullquote {
   margin: 2rem 0;
