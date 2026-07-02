@@ -73,16 +73,134 @@
 .intro-block {
   padding: 2.75rem 0 2.25rem;
   border-bottom: 1px solid var(--rule);
-  text-align: center;
 }
 
 .intro-block p {
   font-size: 1.05rem;
+  color: var(--ink);
+  max-width: 640px;
+  line-height: 1.85;
+}
+
+.intro-block p + p {
+  margin-top: 1rem;
+}
+
+/* A drop cap on the opening paragraph, so each part's framing prose reads as
+   confident editorial copy rather than a caption. */
+.intro-block p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 0.78;
+  margin-top: 0.15rem;
+  padding-right: 0.2rem;
+  color: var(--gold);
+}
+
+/* ─── CHART THUMBNAIL CAROUSEL ─────────────────────────────────────── */
+.chart-thumb-carousel {
+  padding: 0 0 2.25rem;
+}
+
+.chart-thumb-carousel__heading {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--muted);
-  font-style: italic;
-  max-width: 660px;
-  margin: 0 auto;
-  line-height: 1.9;
+  margin-bottom: 0.85rem;
+}
+
+.chart-thumb-carousel__list {
+  list-style: none;
+  display: flex;
+  gap: 0.9rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.4rem;
+  margin: 0 -0.1rem;
+}
+
+.chart-thumb-carousel__loading {
+  height: 148px;
+  border: 1px dashed var(--rule);
+  border-radius: 3px;
+}
+
+.chart-thumb {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.chart-thumb__trigger {
+  display: flex;
+  flex-direction: column;
+  width: 168px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--white);
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  transition:
+    border-color 0.15s var(--ease),
+    box-shadow 0.15s var(--ease),
+    transform 0.15s var(--ease);
+}
+.chart-thumb__trigger:hover {
+  border-color: var(--accent);
+  box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+.chart-thumb__trigger:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.chart-thumb__canvas {
+  overflow: hidden;
+  background: var(--panel);
+  border-bottom: 1px solid var(--rule);
+}
+
+.chart-thumb__scale {
+  display: block;
+  transform-origin: top left;
+}
+
+.chart-thumb__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.55rem 0.65rem 0.65rem;
+}
+
+.chart-thumb__kind {
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.chart-thumb__title {
+  font-family: var(--font-serif);
+  font-size: 0.76rem;
+  line-height: 1.3;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-thumb__trigger {
+    transition: none;
+  }
 }
 
 /* ─── SUMMARY BOX (participants roster) ───────────────────────────── */
@@ -183,6 +301,25 @@
   /* base (Part I): navy panel */
   background: var(--navy);
   color: var(--white);
+  /* Fades/slides in the first time it scrolls into view (useRevealOnScroll).
+     The hook guarantees data-revealed lands on 'true' immediately for
+     reduced-motion or no-IntersectionObserver readers, so this never hides
+     content permanently. */
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.5s var(--ease),
+    transform 0.5s var(--ease);
+  transition-delay: calc(min(var(--reveal-index, 0), 3) * var(--stagger-step));
+}
+.stat-box[data-revealed='true'] {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stat-box {
+    transition: none;
+  }
 }
 
 /* shimmer accent at top-right corner */
@@ -331,6 +468,11 @@
 }
 
 .speaker-icon {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -350,10 +492,35 @@
   position: relative;
   z-index: 2;
 }
-.debate-entry:hover .speaker-icon {
+.debate-entry:hover .speaker-icon,
+.speaker-icon:focus-visible {
   box-shadow:
     0 3px 12px rgba(0, 0, 0, 0.18),
     0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+.speaker-icon:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* The trigger wrapper reuses .persona-tag-wrap's hover/focus-within reveal
+   mechanism (see PERSONA PROFILE in base.css). Critic turns sit flush against
+   the stage's right edge (data-stance='critic' below), so the profile card
+   anchors to its own right edge there instead of centering, to avoid clipping
+   off-screen. */
+.debate-entry[data-stance='critic'] .debate-entry__persona-trigger .persona-profile {
+  left: auto;
+  right: 0;
+  transform: translateY(-4px);
+}
+.debate-entry[data-stance='critic'] .debate-entry__persona-trigger:hover .persona-profile,
+.debate-entry[data-stance='critic'] .debate-entry__persona-trigger:focus-within .persona-profile {
+  transform: translateY(0);
+}
+.debate-entry[data-stance='critic'] .debate-entry__persona-trigger .persona-profile::before {
+  left: auto;
+  right: 19px;
+  transform: none;
 }
 
 /* Connector dot standing in for the avatar on grouped continuation turns. */
@@ -393,13 +560,6 @@
   font-weight: 600;
   color: var(--persona-color, var(--ink));
 }
-.speaker-role {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.02em;
-  color: var(--muted);
-}
-
 /* Stance chip: hidden on the stage (position conveys the camp) but kept in the
    accessibility tree, and revealed as a visible chip once stacked on mobile. */
 .debate-stance-tag {
@@ -588,6 +748,22 @@
   .debate-entry[data-stance='critic'] .debate-concession {
     margin-left: 0;
   }
+  /* Stage collapses to a single left-aligned column here, so the speaker
+     trigger is back on the left too — undo the desktop right-anchor. */
+  .debate-entry[data-stance='critic'] .debate-entry__persona-trigger .persona-profile {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  .debate-entry[data-stance='critic'] .debate-entry__persona-trigger:hover .persona-profile,
+  .debate-entry[data-stance='critic'] .debate-entry__persona-trigger:focus-within .persona-profile {
+    transform: translateX(-50%) translateY(0);
+  }
+  .debate-entry[data-stance='critic'] .debate-entry__persona-trigger .persona-profile::before {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
 
   /* Position no longer conveys the camp once stacked, so show the chip. */
   .debate-stance-tag {
@@ -673,6 +849,13 @@ cite[data-verification='unverified'] {
 }
 .stat-box[data-verification='disputed']::before {
   background: var(--gold);
+}
+/* Checked but no source found: a hollow ring, not just another fill color, so
+   it reads as its own category (distinct from pending's hazy filled dot)
+   independent of color perception. */
+.stat-box[data-verification='unverified']::before {
+  background: transparent;
+  border: 1px solid rgba(245, 240, 232, 0.55);
 }
 
 /* ─── CHART BLOCK (data visualizations) ───────────────────────────── */
@@ -1054,6 +1237,14 @@ cite[data-verification='unverified'] {
 .chart-block[data-verification='disputed']::before {
   background: var(--c-labor);
 }
+/* Checked but no source found: a hollow ring, not just another fill color, so
+   it reads as its own category (distinct from pending's faint filled dot)
+   independent of color perception. Matches --muted, same as the evidence
+   drawer's 'unverified' status badge. */
+.chart-block[data-verification='unverified']::before {
+  background: transparent;
+  border: 1px solid var(--muted);
+}
 
 /* ─── CHART TOOLTIP ───────────────────────────────────────────────── */
 .chart-tooltip {
@@ -1225,7 +1416,7 @@ cite[data-verification='unverified'] {
 .sources-section {
   background: var(--panel);
   border-top: 2px solid var(--ink);
-  padding: 2.75rem 0 3.5rem;
+  padding: 1.75rem 0 2.25rem;
   margin-top: 3.5rem;
 }
 
@@ -1261,8 +1452,8 @@ cite[data-verification='unverified'] {
 .source-list {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.6rem 1.5rem;
 }
 
 @media (max-width: 580px) {
@@ -1274,9 +1465,9 @@ cite[data-verification='unverified'] {
 .source-list li {
   font-family: var(--font-mono);
   font-size: 0.64rem;
-  line-height: 1.65;
+  line-height: 1.5;
   color: var(--muted);
-  padding: 0.45rem 0 0.45rem 0.9rem;
+  padding: 0.35rem 0 0.35rem 0.75rem;
   border-left: 2px solid var(--navy);
   transition: border-color 0.15s;
 }
@@ -1378,97 +1569,169 @@ cite[data-verification='unverified'] {
   line-height: 1.7;
 }
 
-.index-intro {
-  padding: 2.75rem 0 1rem;
-  text-align: center;
+/* The index reads as its own wider "manifest" mode, distinct from the 880px
+   reading column every document page uses. */
+.index-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.index-intro p {
+.index-standfirst {
+  padding: 2.75rem 0 0.5rem;
   font-size: 1.05rem;
   color: var(--muted);
   font-style: italic;
   max-width: 660px;
-  margin: 0 auto;
-  line-height: 1.9;
+  line-height: 1.8;
 }
 
-.part-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  padding: 2rem 0 3rem;
+.manifest-list {
+  list-style: none;
+  padding: 1.5rem 0 3rem;
 }
 
-@media (max-width: 760px) {
-  .part-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-.part-card {
+.manifest-row {
   display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  background: var(--white);
-  border: 1px solid var(--rule);
-  border-top: 4px solid var(--accent);
-  padding: 1.5rem 1.4rem 1.6rem;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--rule);
   text-decoration: none;
   color: var(--ink);
-  box-shadow:
-    1px 2px 0 rgba(0, 0, 0, 0.04),
-    3px 5px 0 rgba(0, 0, 0, 0.025);
-  transition:
-    box-shadow 0.2s var(--ease),
-    transform 0.2s var(--ease);
+  transition: background 0.15s var(--ease);
+}
+.manifest-list li:first-child .manifest-row {
+  border-top: 1px solid var(--rule);
+}
+.manifest-row:hover {
+  background: var(--panel);
+}
+.manifest-row:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
 }
 
-.part-card:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    2px 4px 0 rgba(0, 0, 0, 0.07),
-    6px 10px 0 rgba(0, 0, 0, 0.04);
+.manifest-row__num {
+  flex-shrink: 0;
+  width: 3ch;
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 900;
+  line-height: 1;
+  /* Each row carries its own data-accent, so --masthead-accent always
+     resolves here (unlike the sibling-element case fixed separately below). */
+  color: var(--masthead-accent, var(--accent));
 }
 
-.part-card[data-accent='accent'] {
-  border-top-color: var(--accent);
-}
-.part-card[data-accent='gold'] {
-  border-top-color: var(--gold);
-}
-.part-card[data-accent='green'] {
-  border-top-color: var(--c-optimist);
+.manifest-row__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-width: 0;
 }
 
-.part-card .part-num {
+.manifest-row__eyebrow {
   font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--masthead-accent, var(--accent));
 }
 
-.part-card h2 {
+.manifest-row__title {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   font-weight: 700;
   line-height: 1.2;
 }
 
-.part-card p {
-  font-size: 0.92rem;
+.manifest-row__blurb {
+  font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.6;
+  max-width: 640px;
 }
 
-.part-card .part-cta {
-  margin-top: auto;
-  padding-top: 0.6rem;
+.manifest-row__cta {
+  align-self: flex-end;
+  margin-top: 0.5rem;
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.64rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--masthead-accent, var(--accent));
+}
+
+@media (max-width: 640px) {
+  .manifest-row {
+    gap: 1rem;
+  }
+  .manifest-row__num {
+    font-size: 1.5rem;
+  }
+  .manifest-row__title {
+    font-size: 1.25rem;
+  }
+}
+
+/* ─── INDEX FOOTER ────────────────────────────────────────────────── */
+.index-footer {
+  background: var(--ink);
+  color: var(--paper);
+  margin-top: 3rem;
+  padding: 3rem 0;
+}
+.index-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.index-footer__colophon {
+  max-width: 380px;
+}
+.index-footer__name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.index-footer__tagline {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(245, 240, 232, 0.65);
+}
+.index-footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.index-footer__links a {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.75);
+  text-decoration: none;
+}
+.index-footer__links a:hover {
+  color: var(--paper);
+  text-decoration: underline;
+}
+.index-footer__tally {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .index-footer__inner {
+    flex-direction: column;
+  }
 }
 
 /* ─── NOT FOUND ───────────────────────────────────────────────────── */
@@ -1581,7 +1844,9 @@ cite[role='button']:focus-visible,
   position: fixed;
   inset: 0;
   background: rgba(15, 14, 12, 0.45);
-  z-index: 50;
+  /* Above .modal's z-index (100): "View evidence" is reachable from inside
+     the chart modal, and the drawer must win over it when both are open. */
+  z-index: 110;
   display: flex;
   justify-content: flex-end;
   animation: evidence-fade 0.15s var(--ease);
@@ -1746,6 +2011,86 @@ cite[role='button']:focus-visible,
   font-size: 0.82rem;
   font-style: italic;
   color: var(--muted);
+}
+
+/* ─── MODAL (centered lightbox) ────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 14, 12, 0.55);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: evidence-fade 0.15s var(--ease);
+}
+
+.modal {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--paper);
+  border-top: 4px solid var(--gold);
+  border-radius: 3px;
+  padding: 3rem 1.75rem 1.75rem;
+  box-shadow: 0 20px 60px rgba(15, 14, 12, 0.35);
+  animation: modal-in 0.2s var(--ease);
+}
+
+@keyframes modal-in {
+  from {
+    transform: translateY(10px) scale(0.98);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal {
+    animation: none;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--rule);
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 1;
+}
+.modal__close:hover {
+  background: var(--panel);
+}
+.modal__close:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 0;
+  }
+  .modal {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+  }
 }
 
 /* ─── VERIFICATION PAGE (evidence ledger) ─────────────────────────── */
@@ -2237,6 +2582,38 @@ cite[role='button']:focus-visible,
     transform: translateY(-50%);
     margin-top: 6rem;
     z-index: 40;
+    /* Fades in whenever it starts being displayed (first load at this width,
+       or resizing into it) and fades out once the sources/footer region nears
+       the viewport (data-visible, toggled in RoundNav.tsx), rather than
+       staying pinned in the fixed viewport band and overlapping the footer. */
+    opacity: 0;
+    animation: round-nav-in 0.4s var(--ease) 0.1s both;
+    transition: opacity 0.35s var(--ease);
+  }
+  .round-nav[data-visible='false'] {
+    /* Cancel the entrance animation: its `both` fill-mode holds opacity:1 at
+       animation-origin priority, which otherwise beats this normal-priority
+       opacity:0 regardless of specificity. */
+    animation: none;
+    opacity: 0;
+  }
+  .round-nav:not([data-visible='true']) {
+    pointer-events: none;
+  }
+  @keyframes round-nav-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .round-nav {
+      animation: none;
+      opacity: 1;
+      transition: none;
+    }
   }
 }
 
@@ -2254,6 +2631,9 @@ section[id^='round-'] {
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--rule);
+}
+.round-nav__count {
+  opacity: 0.65;
 }
 
 .round-nav__list {
@@ -2285,6 +2665,14 @@ section[id^='round-'] {
   border-left-width: 3px;
   color: var(--ink);
   font-weight: 600;
+}
+/* Rounds already read fade slightly, so the list reads as a progress trail. */
+.round-nav__link[data-status='done'] {
+  opacity: 0.55;
+}
+.round-nav__link[data-status='done']:hover,
+.round-nav__link[data-status='done']:focus-visible {
+  opacity: 1;
 }
 .round-nav__link:focus-visible {
   outline: 2px solid var(--gold);
@@ -2394,25 +2782,35 @@ cite[role='button']:focus-visible::after {
   opacity: 1;
 }
 
-/* Stat boxes get a quiet "View evidence" hint that brightens on hover/focus. */
+/* Stat boxes surface "View evidence" as a small always-visible pill (hover-only
+   affordances are invisible on touch), brightening further for pointer/keyboard
+   users on hover/focus. */
 .stat-box__evidence {
-  display: block;
-  margin-top: 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.65rem;
+  padding: 0.22rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
   font-family: var(--font-mono);
   font-size: 0.52rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  opacity: 0.7;
-  transition: opacity 0.15s var(--ease);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  transition:
+    background 0.15s var(--ease),
+    border-color 0.15s var(--ease),
+    color 0.15s var(--ease);
 }
 .stat-box__evidence::after {
   content: ' →';
 }
 .stat-box[role='button']:hover .stat-box__evidence,
 .stat-box[role='button']:focus-visible .stat-box__evidence {
-  opacity: 1;
   color: var(--white);
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.16);
 }
 
 /* ─── EVIDENCE DRAWER · MOBILE ────────────────────────────────────── */
@@ -2528,6 +2926,40 @@ cite[role='button']:focus-visible::after {
   font-size: 0.8rem;
   color: var(--muted);
   line-height: 1.35;
+}
+
+/* Groups the panel by camp (optimist/neutral/critic) instead of one flat,
+   generic grid — echoes the debate stage's own stance color vocabulary. */
+.panel-band {
+  margin-bottom: 2rem;
+}
+.panel-band:last-child {
+  margin-bottom: 0;
+}
+.panel-band__heading {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--rule);
+}
+.panel-band[data-stance='optimist'] .panel-band__heading {
+  border-bottom-color: var(--c-optimist);
+}
+.panel-band[data-stance='critic'] .panel-band__heading {
+  border-bottom-color: var(--accent);
+}
+.panel-band[data-stance='neutral'] .panel-band__heading {
+  border-bottom-color: var(--navy);
+}
+.panel-band__count {
+  font-weight: 400;
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 /* ─── PODCAST PLAYER ─────────────────────────────────────────────

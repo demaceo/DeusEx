@@ -17,6 +17,10 @@ interface KindProps {
   chart: WorldMapSpec
   width: number
   height: number
+  /** In a thumbnail preview, skip the year scrubber (button/input controls
+   * can't nest inside the thumbnail's own trigger button) but still render
+   * real data for the first frame. */
+  thumbnail?: boolean
 }
 
 const SCRUBBER_H = 44
@@ -25,7 +29,7 @@ const AUTOPLAY_MS = 1600
 const valueAt = (d: WorldMapDatum, year?: string): number =>
   (year ? d.values?.[year] : d.value) ?? 0
 
-export function WorldMap({ chart, width, height }: KindProps) {
+export function WorldMap({ chart, width, height, thumbnail }: KindProps) {
   const { tip, show, hide } = useTooltip()
   const reduceMotion = usePrefersReducedMotion()
   const [basemap, setBasemap] = useState<WorldBasemap | null>(null)
@@ -44,6 +48,9 @@ export function WorldMap({ chart, width, height }: KindProps) {
 
   const years = chart.years
   const hasYears = !!years?.length
+  // Thumbnails skip the scrubber chrome (and the height reserved for it)
+  // entirely, but still plot the first frame's real data below.
+  const showScrubber = hasYears && !thumbnail
 
   useEffect(() => {
     if (!playing || reduceMotion || !years || years.length < 2) return
@@ -51,7 +58,7 @@ export function WorldMap({ chart, width, height }: KindProps) {
     return () => clearInterval(id)
   }, [playing, reduceMotion, years])
 
-  const mapH = hasYears ? height - SCRUBBER_H : height
+  const mapH = showScrubber ? height - SCRUBBER_H : height
   const year = hasYears ? years![Math.min(yearIndex, years!.length - 1)] : undefined
 
   // Shared radius domain across ALL frames so bubbles visibly grow between years.
@@ -86,7 +93,7 @@ export function WorldMap({ chart, width, height }: KindProps) {
         </svg>
       )}
 
-      {hasYears ? (
+      {showScrubber ? (
         <div className="chart-worldmap__scrubber">
           {years!.length === 2 ? (
             <div className="chart-worldmap__toggle" role="group" aria-label="Year">

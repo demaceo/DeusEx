@@ -55,32 +55,39 @@ export interface ChartCatalogGroup {
 }
 
 /**
+ * Every `chart` block in one document, in section order. Shared by
+ * {@link getChartCatalog} (series-wide) and each roundtable page's own chart
+ * thumbnail carousel.
+ */
+export function getDocumentCharts(doc: RoundtableDocument): ChartCatalogEntry[] {
+  const entries: ChartCatalogEntry[] = []
+  doc.sections.forEach((section, i) => {
+    for (const block of section.blocks) {
+      if (block.type !== 'chart') continue
+      const { roundLabel, title } = section.header
+      entries.push({
+        chart: block.data,
+        anchor: sectionId(i),
+        roundLabel: title ? `${roundLabel} · ${title}` : roundLabel,
+      })
+    }
+  })
+  return entries
+}
+
+/**
  * Every `chart` block across the whole series, grouped by document in series
  * order (mirrors {@link getPersonaThread}'s shape). Powers the `/charts`
  * catalog page's categorization by roundtable and, via each entry's
  * `chart.kind`, by chart type.
  */
 export function getChartCatalog(): ChartCatalogGroup[] {
-  return DOCUMENTS.map((entry) => {
-    const entries: ChartCatalogEntry[] = []
-    entry.doc.sections.forEach((section, i) => {
-      for (const block of section.blocks) {
-        if (block.type !== 'chart') continue
-        const { roundLabel, title } = section.header
-        entries.push({
-          chart: block.data,
-          anchor: sectionId(i),
-          roundLabel: title ? `${roundLabel} · ${title}` : roundLabel,
-        })
-      }
-    })
-    return {
-      doc: entry.doc,
-      partLabel: entry.partLabel,
-      navTitle: entry.navTitle,
-      entries,
-    }
-  })
+  return DOCUMENTS.map((entry) => ({
+    doc: entry.doc,
+    partLabel: entry.partLabel,
+    navTitle: entry.navTitle,
+    entries: getDocumentCharts(entry.doc),
+  }))
 }
 
 /** Count of chart instances per kind across a set of catalog groups. */

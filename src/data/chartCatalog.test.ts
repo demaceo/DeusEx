@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { CHART_KINDS, countByKind, getChartCatalog } from './chartCatalog'
+import { CHART_KINDS, countByKind, getChartCatalog, getDocumentCharts } from './chartCatalog'
 import { DOCUMENTS } from './documents'
 import type { ChartSpec, RoundtableDocument } from '../types/document'
 
@@ -46,6 +46,37 @@ describe('getChartCatalog', () => {
     for (const group of groups) {
       expect(Array.isArray(group.entries)).toBe(true)
     }
+  })
+})
+
+describe('getDocumentCharts', () => {
+  it('matches the per-document slice of getChartCatalog for every document', () => {
+    const groups = getChartCatalog()
+    for (const entry of DOCUMENTS) {
+      const group = groups.find((g) => g.doc.id === entry.doc.id)
+      expect(getDocumentCharts(entry.doc)).toEqual(group?.entries)
+    }
+  })
+
+  it('returns an empty array, without throwing, for a document with no charts', () => {
+    const emptyDoc: RoundtableDocument = {
+      id: 'part-i',
+      slug: 'test-empty',
+      seriesLabel: 'Test',
+      masthead: {
+        overline: 'Test',
+        titleLines: [[{ text: 'Test' }]],
+        subtitle: 'Test',
+        dateLine: 'Test',
+        accentColor: 'accent',
+      },
+      intro: [],
+      sections: [],
+      sources: [],
+      claims: {},
+    }
+    expect(() => getDocumentCharts(emptyDoc)).not.toThrow()
+    expect(getDocumentCharts(emptyDoc)).toEqual([])
   })
 })
 

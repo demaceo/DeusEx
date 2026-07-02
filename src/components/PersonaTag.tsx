@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import type { Persona } from '../types/persona'
+import { PersonaProfileCard } from './PersonaProfileCard'
 
 interface PersonaTagProps {
   persona: Persona
@@ -12,29 +12,13 @@ interface PersonaTagProps {
  */
 export function PersonaTag({ persona }: PersonaTagProps) {
   const tooltipId = `persona-profile-${persona.id}`
-  const Icon = persona.icon
   return (
     <div className="persona-tag-wrap" data-persona={persona.id}>
       <button type="button" className="persona-tag" aria-describedby={tooltipId}>
         <span className="persona-dot" />
         <span className="persona-tag__name">{persona.name}</span>
       </button>
-      <div className="persona-profile" role="tooltip" id={tooltipId}>
-        <div className="persona-profile__header">
-          <span className="persona-profile__icon" aria-hidden="true">
-            <Icon size={18} strokeWidth={1.75} />
-          </span>
-          <span className="persona-profile__heading">
-            <span className="persona-profile__name">{persona.name}</span>
-            <span className="persona-profile__role">{persona.role}</span>
-          </span>
-        </div>
-        <p className="persona-profile__focus">{persona.focus}</p>
-        <p className="persona-profile__bio">{persona.bio}</p>
-        <Link className="persona-profile__thread" to={`/voices/${persona.id}`}>
-          Follow this voice →
-        </Link>
-      </div>
+      <PersonaProfileCard persona={persona} tooltipId={tooltipId} />
     </div>
   )
 }

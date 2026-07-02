@@ -14,7 +14,7 @@ describe('SeriesFooter', () => {
   it('links to the next and previous parts, the index, and the ledger', () => {
     render(
       <MemoryRouter>
-        <SeriesFooter prev={prev} next={next} />
+        <SeriesFooter prev={prev} next={next} accentColor="teal" />
       </MemoryRouter>,
     )
 
@@ -31,5 +31,14 @@ describe('SeriesFooter', () => {
       'href',
       '/verification',
     )
+  })
+
+  it('carries the document accent color for CSS to resolve --masthead-accent', () => {
+    const { container } = render(
+      <MemoryRouter>
+        <SeriesFooter prev={prev} next={next} accentColor="teal" />
+      </MemoryRouter>,
+    )
+    expect(container.querySelector('.series-footer')).toHaveAttribute('data-accent', 'teal')
   })
 })

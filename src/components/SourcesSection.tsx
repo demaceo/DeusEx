@@ -6,7 +6,7 @@ interface SourcesSectionProps {
 
 export function SourcesSection({ sources }: SourcesSectionProps) {
   return (
-    <section className="sources-section">
+    <section className="sources-section" id="sources-section">
       <div className="container">
         <div className="sources-header">
           <h3>Primary Sources Referenced</h3>

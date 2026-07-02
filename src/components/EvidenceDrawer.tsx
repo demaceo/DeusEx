@@ -8,7 +8,8 @@ interface ActiveEvidence {
   source?: Source
 }
 
-const FOCUSABLE =
+/** Shared with {@link Modal}'s focus trap. */
+export const FOCUSABLE =
   'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"]), input, select, textarea'
 
 const STATUS_LABEL: Record<Claim['verificationStatus'], string> = {

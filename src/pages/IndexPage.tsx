@@ -1,9 +1,21 @@
 import { Link } from 'react-router-dom'
+import { IndexFooter } from '../components/IndexFooter'
 import { PersonasBar } from '../components/PersonasBar'
 import { DOCUMENTS } from '../data/documents'
 import { PERSONAS, PERSONA_ORDER } from '../data/personas'
+import type { PersonaStance } from '../types/persona'
 
-/** Landing hub: series intro + a card per document. */
+const STANCE_BANDS: Array<{ stance: PersonaStance; heading: string }> = [
+  { stance: 'optimist', heading: 'The Optimists' },
+  { stance: 'neutral', heading: 'The Neutral & Independent' },
+  { stance: 'critic', heading: 'The Critics' },
+]
+
+/**
+ * Landing hub, in a distinctly wider "manifest" mode set apart from the
+ * documents' own 880px reading column: series intro, a numbered manifest of
+ * every part, the panel grouped by stance, and a closing footer.
+ */
 export function IndexPage() {
   return (
     <>
@@ -22,31 +34,33 @@ export function IndexPage() {
 
       <PersonasBar />
 
-      <div className="container">
-        <div className="index-intro">
-          <p>
-            Nine documents, one recurring panel. Read them in order, or jump to whichever question
-            you care about most. Every figure is a checkable claim:{' '}
-            <Link to="/verification">see the evidence ledger</Link>, or browse every{' '}
-            <Link to="/charts">chart in the series</Link>.
-          </p>
-        </div>
+      <div className="index-container">
+        <p className="index-standfirst">
+          {DOCUMENTS.length} documents, one recurring panel. Read them in order, or jump to
+          whichever question you care about most.
+        </p>
 
-        <div className="part-cards">
-          {DOCUMENTS.map((entry) => (
-            <Link
-              key={entry.doc.slug}
-              to={`/${entry.doc.slug}`}
-              className="part-card"
-              data-accent={entry.doc.masthead.accentColor}
-            >
-              <span className="part-num">{entry.partLabel}</span>
-              <h2>{entry.navTitle}</h2>
-              <p>{entry.blurb}</p>
-              <span className="part-cta">Read →</span>
-            </Link>
+        <ol className="manifest-list">
+          {DOCUMENTS.map((entry, i) => (
+            <li key={entry.doc.slug}>
+              <Link
+                to={`/${entry.doc.slug}`}
+                className="manifest-row"
+                data-accent={entry.doc.masthead.accentColor}
+              >
+                <span className="manifest-row__num" aria-hidden="true">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="manifest-row__content">
+                  <span className="manifest-row__eyebrow">{entry.partLabel}</span>
+                  <h2 className="manifest-row__title">{entry.navTitle}</h2>
+                  <p className="manifest-row__blurb">{entry.blurb}</p>
+                  <span className="manifest-row__cta">Read →</span>
+                </span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ol>
 
         <section className="panel-section" aria-labelledby="panel-heading">
           <h2 id="panel-heading" className="panel-section__heading">
@@ -56,27 +70,45 @@ export function IndexPage() {
             Follow any voice across the whole series: every argument they make, in one thread. Or
             see <Link to="/voices">where each voice broke from type</Link>.
           </p>
-          <ul className="panel-grid">
-            {PERSONA_ORDER.map((id) => {
-              const persona = PERSONAS[id]
-              const Icon = persona.icon
-              return (
-                <li key={id}>
-                  <Link className="panel-card" to={`/voices/${id}`} data-persona={id}>
-                    <span className="panel-card__icon" aria-hidden="true">
-                      <Icon size={20} strokeWidth={1.75} />
-                    </span>
-                    <span className="panel-card__text">
-                      <span className="panel-card__name">{persona.name}</span>
-                      <span className="panel-card__focus">{persona.focus}</span>
-                    </span>
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
+
+          {STANCE_BANDS.map(({ stance, heading }) => {
+            const ids = PERSONA_ORDER.filter((id) => PERSONAS[id].stance === stance)
+            if (ids.length === 0) return null
+            return (
+              <div key={stance} className="panel-band" data-stance={stance}>
+                <h3 className="panel-band__heading">
+                  {heading}
+                  <span className="panel-band__count">
+                    {' '}
+                    · {ids.length} voice{ids.length === 1 ? '' : 's'}
+                  </span>
+                </h3>
+                <ul className="panel-grid">
+                  {ids.map((id) => {
+                    const persona = PERSONAS[id]
+                    const Icon = persona.icon
+                    return (
+                      <li key={id}>
+                        <Link className="panel-card" to={`/voices/${id}`} data-persona={id}>
+                          <span className="panel-card__icon" aria-hidden="true">
+                            <Icon size={20} strokeWidth={1.75} />
+                          </span>
+                          <span className="panel-card__text">
+                            <span className="panel-card__name">{persona.name}</span>
+                            <span className="panel-card__focus">{persona.focus}</span>
+                          </span>
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            )
+          })}
         </section>
       </div>
+
+      <IndexFooter />
     </>
   )
 }

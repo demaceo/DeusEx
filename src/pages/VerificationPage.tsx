@@ -1,7 +1,12 @@
 import { useEffect, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { DOCUMENTS } from '../data/documents'
-import { summarizeClaimStatuses, type ClaimStatusSummary } from '../data/claimSummary'
+import {
+  addSummaries,
+  pct,
+  summarizeClaimStatuses,
+  type ClaimStatusSummary,
+} from '../data/claimSummary'
 import type { Claim, Source, VerificationStatus } from '../types/content'
 
 type Filter = 'all' | VerificationStatus
@@ -24,21 +29,6 @@ const STATUS_LABEL: Record<VerificationStatus, string> = {
   disputed: 'Disputed',
   unverified: 'Unverified',
   pending: 'Pending',
-}
-
-/** Sum two summaries field by field — used to build the series-wide aggregate. */
-function addSummaries(a: ClaimStatusSummary, b: ClaimStatusSummary): ClaimStatusSummary {
-  return {
-    total: a.total + b.total,
-    verified: a.verified + b.verified,
-    disputed: a.disputed + b.disputed,
-    unverified: a.unverified + b.unverified,
-    pending: a.pending + b.pending,
-  }
-}
-
-function pct(part: number, whole: number): number {
-  return whole === 0 ? 0 : Math.round((part / whole) * 100)
 }
 
 /** A compact verified/total progress bar with the four status counts beside it. */

@@ -9,7 +9,7 @@ export function StatGrid({ grid }: StatGridProps) {
   return (
     <div className="stats-grid">
       {grid.stats.map((stat, i) => (
-        <StatBox key={i} stat={stat} />
+        <StatBox key={i} stat={stat} index={i} />
       ))}
     </div>
   )
