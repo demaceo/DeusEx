@@ -380,9 +380,12 @@ export const partV: RoundtableDocument = {
               'Line chart showing the projected share of synthetic online content rising from a small share in 2022 toward as much as 90 percent by 2026',
             unit: '%',
             variant: 'navy',
+            // The claim note flags 2022-2025 as an illustrative trend, not measured, so
+            // the projection dashing starts from the 2023 point (leaving 2022 as the
+            // baseline anchor) rather than implying 2022-2023 were measured.
             data: [
               { label: '2022', value: 10 },
-              { label: '2023', value: 25 },
+              { label: '2023', value: 25, projected: true },
               { label: '2024', value: 45, projected: true },
               { label: '2025', value: 70, projected: true },
               { label: '2026', value: 90, projected: true },

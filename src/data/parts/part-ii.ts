@@ -159,6 +159,7 @@ export const partII: RoundtableDocument = {
             ariaLabel:
               'Line chart: renewables rose from 50% of data-center power in 2024 to 58% in 2025.',
             source: 'S&P Global, April 2026.',
+            annotations: [{ at: '2025', text: 'IEA: ~22%/yr to 2030' }],
             data: [
               { label: '2024', value: 50 },
               { label: '2025', value: 58 },
@@ -380,6 +381,7 @@ export const partII: RoundtableDocument = {
             ariaLabel:
               'Line chart: Microsoft water-use effectiveness fell from 0.49 liters per kilowatt-hour in 2021 to 0.30 in 2024, a 39% improvement.',
             source: 'Microsoft environmental reporting, FY2024.',
+            annotations: [{ at: '2024', text: 'Closed-loop cooling' }],
             data: [
               { label: '2021', value: 0.49 },
               { label: '2024', value: 0.3 },

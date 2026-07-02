@@ -257,11 +257,15 @@ export const partIX: RoundtableDocument = {
               'Line chart showing cumulative AI images generated rising past 15 billion within about a year of the tools becoming available',
             unit: 'B',
             variant: 'labor',
+            // Only the ~15B endpoint is source-backed; the interior points are an
+            // illustrative ramp (per the claim note), so mark them projected to render
+            // dashed/hollow rather than implying measured monthly totals.
+            annotations: [{ at: '+6 mo', text: 'Illustrative ramp' }],
             data: [
               { label: 'Launch', value: 0 },
-              { label: '+3 mo', value: 2 },
-              { label: '+6 mo', value: 6 },
-              { label: '+9 mo', value: 11 },
+              { label: '+3 mo', value: 2, projected: true },
+              { label: '+6 mo', value: 6, projected: true },
+              { label: '+9 mo', value: 11, projected: true },
               { label: '+12 mo', value: 15 },
             ],
           },

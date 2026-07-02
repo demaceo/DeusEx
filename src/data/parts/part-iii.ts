@@ -523,6 +523,11 @@ export const partIII: RoundtableDocument = {
             ariaLabel:
               'Area chart: Google AI flood forecasting expanded from a 2018 pilot in one country to about 80 countries, and to 150 countries covering over 2 billion people by 2025.',
             source: 'Google Research, 2025; EcoSkills Academy, 2025.',
+            annotations: [
+              { at: '2018', text: 'Patna pilot' },
+              { at: '~2024', text: '~500M people' },
+              { at: '2025', text: '2B+ people' },
+            ],
             data: [
               { label: '2018', value: 1 },
               { label: '~2024', value: 80 },

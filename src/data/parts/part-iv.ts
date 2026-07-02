@@ -354,6 +354,7 @@ export const partIV: RoundtableDocument = {
               'Line chart showing ozone-depleting substance consumption declining from 1100 thousand ODP-tonnes in 1989 to near-zero by 2020 following the Montreal Protocol',
             unit: 'kt ODP',
             variant: 'environ',
+            annotations: [{ at: '2020', text: 'Near-elimination' }],
             data: [
               { label: '1989', value: 1100 },
               { label: '1995', value: 450 },

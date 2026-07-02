@@ -373,6 +373,42 @@ describe('ChartBlock', () => {
     expect(canvas.querySelector('path[stroke-dasharray]')).not.toBeNull()
   })
 
+  it('renders a line reference marker even when its value sits below the data range', () => {
+    const { container } = renderChart({
+      kind: 'line',
+      title: 'E-waste',
+      unit: 'Mt',
+      ariaLabel: 'E-waste line',
+      reference: { value: 13.8, label: 'recycled' },
+      data: [
+        { label: '2014', value: 44 },
+        { label: '2022', value: 62 },
+        { label: '2030', value: 82, projected: true },
+      ],
+    })
+    const canvas = container.querySelector('.chart-block__canvas') as HTMLElement
+    // The reference (13.8) is below every data value (44+); folding it into the
+    // domain keeps its dashed marker + label on-canvas rather than clipped away.
+    expect(canvas).toHaveTextContent('recycled')
+    expect(canvas.querySelector('line[stroke-dasharray="5 3"]')).not.toBeNull()
+  })
+
+  it('renders a line annotation callout keyed to its point', () => {
+    const { container } = renderChart({
+      kind: 'line',
+      area: true,
+      title: 'Flood reach',
+      unit: 'countries',
+      ariaLabel: 'Flood reach line',
+      annotations: [{ at: '2025', text: '2B+ people' }],
+      data: [
+        { label: '2018', value: 1 },
+        { label: '2025', value: 150 },
+      ],
+    })
+    expect(container.querySelector('.chart-block__canvas')).toHaveTextContent('2B+ people')
+  })
+
   it('marks the figure with a scroll-reveal state for the entrance animation', () => {
     const { container } = renderChart(barChart)
     // jsdom's IntersectionObserver stub never fires, so the figure sits at

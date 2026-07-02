@@ -376,6 +376,7 @@ export const partVI: RoundtableDocument = {
               'Line chart showing the aggregate 50 percent year for high-level machine intelligence falling from 2061 in the 2016 survey to 2059 in 2022 to 2047 in 2023',
             unit: '',
             variant: 'policy',
+            annotations: [{ at: '2023 survey', text: '2,778 experts' }],
             data: [
               { label: '2016 survey', value: 2061 },
               { label: '2022 survey', value: 2059 },
