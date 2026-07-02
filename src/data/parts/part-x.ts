@@ -380,7 +380,7 @@ export const partX: RoundtableDocument = {
             labelTop: 'Healthcare Algorithm · Science (2019)',
             title: 'How Many Black Patients the Model Saw',
             subtitle:
-              'A widely used care-management algorithm flagged 17.7% of Black patients for extra help; correcting its biased cost-based target would have raised that to 46.5%.',
+              'A widely used care-management algorithm, trained on about 200 million people-years of data, flagged 17.7% of Black patients for extra help; correcting its biased cost-based target would have raised that to 46.5%.',
             source: 'Obermeyer et al.: Science (2019)',
             claimIds: ['c-x-obermeyer'],
             ariaLabel:
@@ -510,6 +510,7 @@ export const partX: RoundtableDocument = {
               'Horizontal bar chart showing Black applicants 80 percent and Latino applicants 40 percent more likely to be denied a mortgage than similar white applicants',
             unit: '%',
             variant: 'labor',
+            annotations: [{ at: 'Black applicants', text: 'Same pattern across every round' }],
             data: [
               { label: 'Black applicants', value: 80, variant: 'accent' },
               { label: 'Latino applicants', value: 40 },

@@ -509,6 +509,7 @@ export const partI: RoundtableDocument = {
             ariaLabel:
               'Bar chart: U.S. data-center water use of 228 billion gallons in 2023, projected to roughly double to about 456 billion gallons by 2028.',
             source: 'Front and Centered / Pew Research, 2025.',
+            annotations: [{ at: '2028 (proj.)', text: 'Rate reflects direct cooling water' }],
             data: [
               { label: '2023', value: 228, variant: 'navy' },
               { label: '2028 (proj.)', value: 456, variant: 'accent' },

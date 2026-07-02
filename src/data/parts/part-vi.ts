@@ -482,6 +482,7 @@ export const partVI: RoundtableDocument = {
               'Horizontal bar chart showing about 70 percent of researchers want more priority on AI safety research, versus 30 percent who do not',
             unit: '%',
             variant: 'gold',
+            annotations: [{ at: 'More priority', text: 'Median risk estimate: just 5%' }],
             data: [
               { label: 'More priority', value: 70, variant: 'accent' },
               { label: 'Same or less', value: 30 },
