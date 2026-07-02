@@ -21,17 +21,24 @@ interface ChartCanvasProps {
    * trigger button).
    */
   thumbnail?: boolean
+  /**
+   * Whether the chart has scrolled into view (from `ChartFrame`). Only the donut
+   * reads it, to drive its JS arc sweep; every other kind animates via CSS off
+   * the figure's `data-reveal` attribute. Undefined outside a `ChartFrame` (e.g.
+   * a thumbnail), where the donut renders full immediately.
+   */
+  revealed?: boolean
 }
 
 /** Dispatches a spec to its d3-rendered SVG kind. Exhaustive over `ChartSpec['kind']`. */
-export function ChartCanvas({ chart, width, height, thumbnail }: ChartCanvasProps) {
+export function ChartCanvas({ chart, width, height, thumbnail, revealed }: ChartCanvasProps) {
   switch (chart.kind) {
     case 'bar':
       return <BarChart chart={chart} width={width} height={height} />
     case 'line':
       return <LineChart chart={chart} width={width} height={height} />
     case 'donut':
-      return <DonutGauge chart={chart} width={width} height={height} />
+      return <DonutGauge chart={chart} width={width} height={height} revealed={revealed} />
     case 'stackedBar':
       return <StackedBar chart={chart} width={width} height={height} />
     case 'comparison':

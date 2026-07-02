@@ -9,6 +9,7 @@
 import { useClaimDrawer } from '../../context/ClaimDrawerContext'
 import { useClaim, useSource } from '../../context/DocumentContext'
 import { useChartWidth } from '../../hooks/useChartWidth'
+import { useRevealOnScroll } from '../../hooks/useRevealOnScroll'
 import type { VerificationStatus } from '../../types/content'
 import type { ChartSpec } from '../../types/document'
 import { SEGMENT_VARIANTS, variantColor } from '../chartTheme'
@@ -18,7 +19,13 @@ interface ChartFrameProps {
   chart: ChartSpec
   status?: VerificationStatus
   height: number
-  renderCanvas: (width: number) => React.ReactNode
+  /**
+   * `revealed` is true once the figure has scrolled into view (or immediately
+   * under reduced motion / without IntersectionObserver). CSS keys off the
+   * figure's `data-reveal` attribute; the donut also reads the boolean to drive
+   * its JS arc sweep.
+   */
+  renderCanvas: (width: number, revealed: boolean) => React.ReactNode
 }
 
 /** Whether a kind carries a legend/aside that can float into the side rail. */
@@ -33,6 +40,10 @@ function hasAside(chart: ChartSpec): boolean {
 
 export function ChartFrame({ chart, status, height, renderCanvas }: ChartFrameProps) {
   const { ref, width } = useChartWidth<HTMLDivElement>()
+  // One-shot scroll reveal: marks stay "empty" until the figure enters the
+  // viewport, then animate to their final value. Observes the whole card (a
+  // separate node from the width ref on the canvas, so no ref conflict).
+  const { ref: revealRef, revealed } = useRevealOnScroll<HTMLElement>()
   // Charts opt into the evidence drawer via their primary backing claim, mirroring
   // the StatBox affordance. The default drawer context is a no-op, so this is safe
   // outside a ClaimDrawerProvider (e.g. in unit tests).
@@ -48,6 +59,8 @@ export function ChartFrame({ chart, status, height, renderCanvas }: ChartFramePr
   return (
     <figure
       className="chart-block"
+      ref={revealRef}
+      data-reveal={revealed ? 'in' : 'pending'}
       data-variant={chart.variant}
       data-verification={status}
       data-layout={defaultLayout(chart)}
@@ -67,7 +80,7 @@ export function ChartFrame({ chart, status, height, renderCanvas }: ChartFramePr
           style={{ height }}
           aria-hidden={interactive ? undefined : true}
         >
-          {renderCanvas(width)}
+          {renderCanvas(width, revealed)}
         </div>
         {hasAside(chart) ? (
           <div className="chart-block__aside">

@@ -372,4 +372,44 @@ describe('ChartBlock', () => {
     expect(canvas).toHaveTextContent('Report published')
     expect(canvas.querySelector('path[stroke-dasharray]')).not.toBeNull()
   })
+
+  it('marks the figure with a scroll-reveal state for the entrance animation', () => {
+    const { container } = renderChart(barChart)
+    // jsdom's IntersectionObserver stub never fires, so the figure sits at
+    // 'pending' (marks held empty) until a real viewport reveal flips it to 'in'.
+    expect(container.querySelector('.chart-block')).toHaveAttribute('data-reveal', 'pending')
+  })
+
+  it('draws the full donut immediately under reduced motion (sweep terminal state)', () => {
+    const original = window.matchMedia
+    window.matchMedia = ((query: string) => ({
+      matches: /prefers-reduced-motion: reduce/.test(query),
+      media: query,
+      onchange: null,
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      addListener: () => {},
+      removeListener: () => {},
+      dispatchEvent: () => false,
+    })) as unknown as typeof window.matchMedia
+    try {
+      const { container } = renderChart({
+        kind: 'donut',
+        title: 'Water breakdown',
+        unit: 'B L',
+        ariaLabel: 'Donut of water use',
+        data: [
+          { label: 'Indirect', value: 373 },
+          { label: 'Direct', value: 140 },
+          { label: 'Manufacturing', value: 47 },
+        ],
+      })
+      // Reduced motion skips the sweep, so all three wedges render fully at once.
+      const arcs = container.querySelectorAll('.chart-block__canvas svg path')
+      expect(arcs).toHaveLength(3)
+      arcs.forEach((arc) => expect(arc.getAttribute('d')).toBeTruthy())
+    } finally {
+      window.matchMedia = original
+    }
+  })
 })

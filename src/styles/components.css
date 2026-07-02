@@ -1319,8 +1319,18 @@ cite[data-verification='unverified'] {
     4px 7px 0 rgba(0, 0, 0, 0.03);
 }
 
+/* ─── CHART REVEAL: value-in motion ───────────────────────────────
+   Marks stay "empty" until the card scrolls into view (ChartFrame sets
+   data-reveal on .chart-block), then animate to their final value. All of it
+   lives under no-preference, so reduced motion shows the final state with no
+   motion; the accessible data table sits outside the canvas and is never hidden.
+   The donut's arc sweep is JS (useSweepProgress), driven by the same reveal. */
 @media (prefers-reduced-motion: no-preference) {
-  .chart-block__canvas {
+  /* Shared canvas fade + rise for every kind, on reveal instead of on mount. */
+  .chart-block[data-reveal='pending'] .chart-block__canvas {
+    opacity: 0;
+  }
+  .chart-block[data-reveal='in'] .chart-block__canvas {
     animation: chart-rise 0.5s var(--ease) both;
   }
   @keyframes chart-rise {
@@ -1331,6 +1341,125 @@ cite[data-verification='unverified'] {
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* Grow from base — bars, stacked columns, bullet value, lollipop stems. */
+  .chart-block[data-reveal] .chart-bar__grow-v {
+    transform-box: fill-box;
+    transform-origin: bottom;
+  }
+  .chart-block[data-reveal] .chart-bar__grow-h {
+    transform-box: fill-box;
+    transform-origin: left;
+  }
+  .chart-block[data-reveal='pending'] .chart-bar__grow-v {
+    transform: scaleY(0);
+  }
+  .chart-block[data-reveal='pending'] .chart-bar__grow-h {
+    transform: scaleX(0);
+  }
+  .chart-block[data-reveal='in'] .chart-bar__grow-v {
+    animation: chart-bar-grow-v 0.4s var(--ease) backwards;
+  }
+  .chart-block[data-reveal='in'] .chart-bar__grow-h {
+    animation: chart-bar-grow-h 0.4s var(--ease) backwards;
+  }
+  @keyframes chart-bar-grow-v {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+  @keyframes chart-bar-grow-h {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  /* Stroke draw — line path and comparison slope (need pathLength=1). */
+  .chart-block[data-reveal] .chart-draw {
+    stroke-dasharray: 1;
+  }
+  .chart-block[data-reveal='pending'] .chart-draw {
+    stroke-dashoffset: 1;
+  }
+  .chart-block[data-reveal='in'] .chart-draw {
+    animation: chart-draw 0.7s var(--ease) backwards;
+  }
+  @keyframes chart-draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Scale-in dots — line and comparison points. */
+  .chart-block[data-reveal] .chart-pop {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .chart-block[data-reveal='pending'] .chart-pop {
+    transform: scale(0);
+  }
+  .chart-block[data-reveal='in'] .chart-pop {
+    animation: chart-pop 0.4s var(--ease) backwards;
+  }
+  @keyframes chart-pop {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* Fade-in — area fills, big figures, dashed tails, the delta chip. */
+  .chart-block[data-reveal='pending'] .chart-fade {
+    opacity: 0;
+  }
+  .chart-block[data-reveal='in'] .chart-fade {
+    animation: chart-fade 0.5s var(--ease) backwards;
+  }
+  @keyframes chart-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Grid cells — waffle rects and pictogram icons populate in a cascade. */
+  .chart-block[data-reveal] .chart-cell {
+    transform-origin: center;
+  }
+  .chart-block[data-reveal] rect.chart-cell {
+    transform-box: fill-box;
+  }
+  .chart-block[data-reveal='pending'] .chart-cell {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  .chart-block[data-reveal='in'] .chart-cell {
+    animation: chart-cell 0.35s var(--ease) backwards;
+    animation-delay: calc(var(--i, 0) * 7ms);
+  }
+  @keyframes chart-cell {
+    from {
+      opacity: 0;
+      transform: scale(0.4);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 }
@@ -1359,34 +1488,8 @@ cite[data-verification='unverified'] {
   opacity: 0.35;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .chart-bar__grow-v {
-    transform-box: fill-box;
-    transform-origin: bottom;
-    animation: chart-bar-grow-v 0.4s var(--ease) backwards;
-  }
-  .chart-bar__grow-h {
-    transform-box: fill-box;
-    transform-origin: left;
-    animation: chart-bar-grow-h 0.4s var(--ease) backwards;
-  }
-  @keyframes chart-bar-grow-v {
-    from {
-      transform: scaleY(0);
-    }
-    to {
-      transform: scaleY(1);
-    }
-  }
-  @keyframes chart-bar-grow-h {
-    from {
-      transform: scaleX(0);
-    }
-    to {
-      transform: scaleX(1);
-    }
-  }
-}
+/* Bar grow-in is now part of the consolidated chart-reveal block above, so it
+   fires on scroll-into-view rather than on mount. */
 
 /* ─── PULLQUOTE ───────────────────────────────────────────────────── */
 .pullquote {
