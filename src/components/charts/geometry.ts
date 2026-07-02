@@ -81,6 +81,11 @@ export function roundedRectPath(
     .join(' ')
 }
 
+/** Split a label on literal `\n`s into trimmed lines, for multi-line SVG `<tspan>` rendering. */
+export function splitLabel(label: string): string[] {
+  return label.split('\n').map((line) => line.trim())
+}
+
 /** Index of the segment whose figure fills the donut gauge center (largest by default). */
 export function dominantIndex(values: number[], override?: number): number {
   if (override != null && override >= 0 && override < values.length) return override

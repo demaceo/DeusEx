@@ -83,7 +83,7 @@ export function LineChart({ chart, width, height }: KindProps) {
             </g>
           ) : null}
 
-          <GridLines ticks={ticks} y={y} x0={0} x1={innerW} />
+          <GridLines ticks={ticks} scale={y} x0={0} x1={innerW} />
           {ticks.map((t, i) => (
             <text key={i} x={-8} y={y(t)} dy="0.32em" textAnchor="end" style={AXIS_TEXT}>
               {t}
@@ -138,7 +138,7 @@ export function LineChart({ chart, width, height }: KindProps) {
               color={
                 chart.reference.variant ? variantColor(chart.reference.variant) : CHART_COLORS.muted
               }
-              y={y}
+              scale={y}
               x0={0}
               x1={innerW}
               unit={chart.unit}

@@ -94,7 +94,7 @@ function VerticalLollipop({ chart, width, height }: KindProps) {
     <>
       <svg width={width} height={height}>
         <g transform={`translate(${m.left},${m.top})`}>
-          <GridLines ticks={ticks} y={y} x0={0} x1={innerW} />
+          <GridLines ticks={ticks} scale={y} x0={0} x1={innerW} />
           {ticks.map((t, i) => (
             <text key={i} x={-8} y={y(t)} dy="0.32em" textAnchor="end" style={AXIS_TEXT}>
               {t}
