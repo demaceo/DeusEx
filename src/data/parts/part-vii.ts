@@ -144,6 +144,7 @@ export const partVII: RoundtableDocument = {
               'Bar chart showing 72 percent of U.S. teens have used an AI companion and 52 percent use one regularly',
             unit: '%',
             variant: 'environ',
+            annotations: [{ at: 'Ever used', text: 'Risk comparable to 15 cigarettes/day' }],
             data: [
               { label: 'Ever used', value: 72, variant: 'accent' },
               { label: 'Regular user', value: 52 },
@@ -339,6 +340,7 @@ export const partVII: RoundtableDocument = {
               'Horizontal bar chart showing 31 percent of teen users found AI conversations as satisfying or more satisfying than real friends, versus 69 percent who did not',
             unit: '%',
             variant: 'gold',
+            annotations: [{ at: 'As/more satisfying', text: 'Still, ~80% prefer real friends' }],
             data: [
               { label: 'As/more satisfying', value: 31, variant: 'accent' },
               { label: 'Less satisfying', value: 69 },

@@ -263,6 +263,9 @@ export const partVIII: RoundtableDocument = {
               'Bar chart showing estimated training compute cost of about 78 million dollars for GPT-4 and 191 million dollars for Gemini Ultra',
             unit: '$M',
             variant: 'gold',
+            annotations: [
+              { at: 'Gemini Ultra\n2023', text: 'Against $67B in 2023 US AI investment' },
+            ],
             data: [
               { label: 'GPT-4\n2023', value: 78 },
               { label: 'Gemini Ultra\n2023', value: 191, variant: 'accent' },
@@ -483,6 +486,7 @@ export const partVIII: RoundtableDocument = {
               'Bar chart showing about 51 notable AI models from industry and about 15 from academia in 2023',
             unit: 'models',
             variant: 'policy',
+            annotations: [{ at: 'Industry', text: 'Part of a wider concentration trend' }],
             data: [
               { label: 'Industry', value: 51, variant: 'accent' },
               { label: 'Academia', value: 15 },

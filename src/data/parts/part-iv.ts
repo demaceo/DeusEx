@@ -178,8 +178,7 @@ export const partIV: RoundtableDocument = {
             orientation: 'vertical',
             labelTop: 'AI Patents · WIPO Data',
             title: 'The Race in Numbers: Global AI Patent Applications',
-            subtitle:
-              'Applications per year grew 4.5× from 2015 to 2021, with the US and China accounting for the majority of filings.',
+            subtitle: 'Applications per year grew 4.5× from 2015 to 2021.',
             source: 'WIPO Technology Trends 2023 / AI Patent Landscape Report',
             claimIds: ['c-iv-wipo-patents'],
             ariaLabel:
@@ -381,6 +380,7 @@ export const partIV: RoundtableDocument = {
               'Bar chart showing nuclear-armed states growing slowly from 1 in 1945 to 9 in 2024, far below early predictions of 25 states',
             unit: 'states',
             variant: 'navy',
+            reference: { value: 15, label: "JFK's 1963 low-end prediction" },
             data: [
               { label: '1945', value: 1 },
               { label: '1952', value: 3 },
@@ -560,6 +560,9 @@ export const partIV: RoundtableDocument = {
               'Horizontal bar chart showing AI companies signing safety commitments: 7 at White House July 2023, 16 at Bletchley November 2023, 16 at Seoul May 2024',
             unit: 'labs',
             variant: 'gold',
+            annotations: [
+              { at: 'Bletchley\nNov 2023', text: '28 countries signed the Declaration' },
+            ],
             data: [
               { label: 'White House\nJul 2023', value: 7 },
               { label: 'Bletchley\nNov 2023', value: 16 },

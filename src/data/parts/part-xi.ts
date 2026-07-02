@@ -369,6 +369,9 @@ export const partXI: RoundtableDocument = {
               'Bar chart showing 62 million tonnes of e-waste generated in 2022 versus about 13.8 million tonnes formally recycled',
             unit: 'Mt',
             variant: 'labor',
+            annotations: [
+              { at: 'Generated', text: 'Up from 44 Mt in 2014, projected 82 Mt by 2030' },
+            ],
             data: [
               { label: 'Generated', value: 62, variant: 'accent' },
               { label: 'Recycled', value: 13.8, variant: 'optimist' },

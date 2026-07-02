@@ -41,7 +41,7 @@ function VerticalBars({ chart, width, height }: KindProps) {
   const hasAnnotations = (chart.annotations?.length ?? 0) > 0
   const maxLines = Math.max(1, ...data.map((d) => splitLabel(d.label).length))
   const m = {
-    top: (showDelta ? 46 : 26) + (hasAnnotations ? 24 : 0),
+    top: (showDelta ? 46 : 26) + (hasAnnotations ? 45 : 0),
     right: 12,
     bottom: 28 + (maxLines - 1) * 13,
     left: 46,
@@ -54,7 +54,9 @@ function VerticalBars({ chart, width, height }: KindProps) {
     .range([0, innerW])
     .padding(data.length <= 3 ? 0.45 : 0.32)
 
-  const domainMax = niceMax((max(data, (d) => d.value) ?? 0) * 1.02)
+  const domainMax = niceMax(
+    Math.max(max(data, (d) => d.value) ?? 0, chart.reference?.value ?? 0) * 1.02,
+  )
   const y = scaleLinear().domain([0, domainMax]).range([innerH, 0])
   const ticks = y.ticks(4)
   const delta = showDelta ? computeDelta(data[0].value, data[1].value) : null
@@ -145,19 +147,21 @@ function VerticalBars({ chart, width, height }: KindProps) {
             const band = x.bandwidth()
             const barW = Math.min(band, MAX_BAR)
             const bx = (x(d.label) ?? 0) + (band - barW) / 2
+            // topY is the value label's baseline; the label's own glyphs occupy
+            // roughly [topY-11, topY], so the leader/text sit well clear of that.
             const topY = y(d.value) - 8
             return (
               <g key={`anno-${i}`} aria-hidden="true">
                 <line
                   x1={bx + barW / 2}
-                  y1={topY - 14}
+                  y1={topY - 27}
                   x2={bx + barW / 2}
-                  y2={topY - 2}
+                  y2={topY - 17}
                   stroke={CHART_COLORS.muted}
                 />
                 <text
                   x={bx + barW / 2}
-                  y={topY - 20}
+                  y={topY - 33}
                   textAnchor="middle"
                   stroke={CHART_COLORS.white}
                   strokeWidth={3}
@@ -189,8 +193,11 @@ function HorizontalBars({ chart, width, height }: KindProps) {
   const { tip, show, hide, svgRef, pinnedIndex, isDimmed, togglePin } = useBarInteraction()
   const data = chart.data
   const showDelta = data.length === 2
+  const hasAnnotations = (chart.annotations?.length ?? 0) > 0
   const delta = showDelta ? computeDelta(data[0].value, data[1].value) : null
-  const m = { top: showDelta ? 46 : 8, right: 52, bottom: 8, left: 96 }
+  // left is wide enough for the longest real category labels ("Latino applicants",
+  // "As/more satisfying") without clipping against the SVG's own left edge.
+  const m = { top: showDelta ? 46 : 8, right: hasAnnotations ? 220 : 52, bottom: 8, left: 140 }
   const innerW = Math.max(0, width - m.left - m.right)
   const innerH = Math.max(0, height - m.top - m.bottom)
 
@@ -198,7 +205,9 @@ function HorizontalBars({ chart, width, height }: KindProps) {
     .domain(data.map((d) => d.label))
     .range([0, innerH])
     .padding(0.32)
-  const domainMax = niceMax((max(data, (d) => d.value) ?? 0) * 1.02)
+  const domainMax = niceMax(
+    Math.max(max(data, (d) => d.value) ?? 0, chart.reference?.value ?? 0) * 1.02,
+  )
   const x = scaleLinear().domain([0, domainMax]).range([0, innerW])
   const ticks = x.ticks(4)
 
@@ -287,11 +296,14 @@ function HorizontalBars({ chart, width, height }: KindProps) {
             const barH = Math.min(band, 42)
             const by = (y(d.label) ?? 0) + (band - barH) / 2
             const bw = x(d.value)
+            // Anchored past the value label's own worst-case width (not just this
+            // bar's length), so it never overlaps a long value label on a long bar.
+            const valueLabelWidth = fmt(d.value, chart.unit).length * 6.6
             return (
               <text
                 key={`anno-${i}`}
                 aria-hidden="true"
-                x={bw + 60}
+                x={bw + 8 + valueLabelWidth + 14}
                 y={by + barH / 2}
                 dy="0.32em"
                 textAnchor="start"

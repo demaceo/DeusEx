@@ -471,6 +471,9 @@ export const partIX: RoundtableDocument = {
               'Bar chart showing publicly announced AI content licensing deals rising from about 2 in 2023 to about 12 in 2024',
             unit: 'deals',
             variant: 'gold',
+            annotations: [
+              { at: '2024', text: 'Incl. Financial Times, News Corp, Le Monde, Condé Nast' },
+            ],
             data: [
               { label: '2023', value: 2 },
               { label: '2024', value: 12, variant: 'accent' },

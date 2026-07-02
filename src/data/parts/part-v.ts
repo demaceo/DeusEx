@@ -161,6 +161,7 @@ export const partV: RoundtableDocument = {
               'Bar chart showing detected deepfake fraud attempts indexed to 100 in 2022 rising to roughly 1000 in 2023',
             unit: 'index',
             variant: 'accent',
+            annotations: [{ at: '2023', text: 'Only ~24% of people can spot a deepfake' }],
             data: [
               { label: '2022', value: 100 },
               { label: '2023', value: 1000, variant: 'labor' },
@@ -521,6 +522,7 @@ export const partV: RoundtableDocument = {
               'Horizontal bar chart showing Content Authenticity Initiative membership growing from 3 in 2019 to roughly 3000 organizations in 2024',
             unit: 'members',
             variant: 'gold',
+            annotations: [{ at: '2024', text: 'EU mandate alone covers 450M people' }],
             data: [
               { label: '2019', value: 3 },
               { label: '2021', value: 375 },
