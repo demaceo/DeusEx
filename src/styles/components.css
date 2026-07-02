@@ -3105,90 +3105,92 @@ cite[role='button']:focus-visible::after {
   letter-spacing: normal;
 }
 
-/* ─── PODCAST PLAYER ─────────────────────────────────────────────
-   Sticky bar shown once the listener engages playback from the masthead. */
-.podcast-player {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 40;
+/* ─── MASTHEAD PLAYER ────────────────────────────────────────────
+   Audio player docked inside the sticky masthead so it rides along and stays
+   visible as the reader scrolls. A pill-shaped row under the title; condenses
+   to a slim strip when the masthead collapses (driven by the ancestor's
+   [data-collapsed] attribute). Sits on the dark masthead, so it borrows the
+   masthead accent and paper/persona text colors. */
+.masthead-player {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  padding: 0.6rem max(1rem, env(safe-area-inset-left)) calc(0.6rem + env(safe-area-inset-bottom));
-  background: rgba(15, 14, 12, 0.96);
-  color: var(--paper);
-  border-top: 1px solid rgba(245, 240, 232, 0.14);
-  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.28);
-  overflow: hidden;
+  gap: 0.7rem;
+  width: 100%;
+  max-width: 30rem;
+  margin: 1.1rem auto 0;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid rgba(245, 240, 232, 0.14);
+  border-radius: 999px;
+  background: rgba(245, 240, 232, 0.05);
+  text-align: left;
+  transition:
+    margin 0.3s ease,
+    padding 0.3s ease,
+    gap 0.3s ease;
 }
 
-/* Reserve space at the foot of the page so the fixed player bar never covers
-   the last bit of content — most visibly the SeriesFooter's links. */
-body:has(.podcast-player) {
-  padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
-}
-
-.podcast-player__toggle {
+.masthead-player__toggle {
   flex: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border: none;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--masthead-accent, var(--accent));
   color: #16110c;
   cursor: pointer;
   transition:
     transform 0.15s var(--ease),
-    background 0.2s ease;
+    width 0.3s ease,
+    height 0.3s ease;
 }
-.podcast-player__toggle:hover,
-.podcast-player__toggle:focus-visible {
-  transform: scale(1.05);
+.masthead-player__toggle:hover,
+.masthead-player__toggle:focus-visible {
+  transform: scale(1.06);
   outline: none;
 }
-.podcast-player__toggle:focus-visible {
+.masthead-player__toggle:focus-visible {
   box-shadow: 0 0 0 2px var(--paper);
 }
 
-.podcast-player__now {
+.masthead-player__now {
   flex: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  min-width: 9.5rem;
-  max-width: 13rem;
+  gap: 0.45rem;
+  min-width: 0;
+  max-width: 11rem;
 }
-.podcast-player__speaker-icon {
+.masthead-player__speaker-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: var(--persona-color, var(--muted));
   color: var(--white);
   flex: none;
 }
-.podcast-player__speaker {
+.masthead-player__speaker {
   display: flex;
   flex-direction: column;
-  line-height: 1.15;
+  line-height: 1.1;
   min-width: 0;
 }
-.podcast-player__eyebrow {
+.masthead-player__eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(245, 240, 232, 0.55);
+  color: rgba(245, 240, 232, 0.5);
 }
-.podcast-player__speaker-name {
-  font-size: 0.9rem;
+.masthead-player__speaker-name {
+  font-size: 0.85rem;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
@@ -3196,72 +3198,99 @@ body:has(.podcast-player) {
   color: var(--persona-color, var(--paper));
 }
 
-.podcast-player__scrubber {
+.masthead-player__scrubber {
   flex: 1 1 auto;
-  min-width: 4rem;
-  accent-color: var(--accent);
+  min-width: 3rem;
+  accent-color: var(--masthead-accent, var(--accent));
   cursor: pointer;
 }
 
-.podcast-player__time {
+.masthead-player__time {
   flex: none;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: rgba(245, 240, 232, 0.7);
+  font-size: 0.7rem;
+  color: rgba(245, 240, 232, 0.72);
   font-variant-numeric: tabular-nums;
 }
 
-.podcast-player__rate {
+.masthead-player__rate {
   flex: none;
-  min-width: 2.75rem;
-  padding: 0.3rem 0.5rem;
+  min-width: 2.6rem;
+  padding: 0.25rem 0.45rem;
   border: 1px solid rgba(245, 240, 232, 0.25);
   border-radius: 6px;
   background: transparent;
   color: var(--paper);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   cursor: pointer;
   transition:
     border-color 0.2s ease,
     color 0.2s ease;
 }
-.podcast-player__rate:hover,
-.podcast-player__rate:focus-visible {
-  border-color: var(--accent);
-  color: var(--accent);
+.masthead-player__rate:hover,
+.masthead-player__rate:focus-visible {
+  border-color: var(--masthead-accent, var(--accent));
+  color: var(--masthead-accent, var(--accent));
   outline: none;
 }
 
-.podcast-player__idle-label {
-  display: flex;
+/* Idle row — the "Listen to this Roundtable" prompt before first play. */
+.masthead-player__idle-label {
+  flex: 1 1 auto;
+  display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(245, 240, 232, 0.6);
+  color: rgba(245, 240, 232, 0.62);
+}
+.masthead-player__idle-time {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgba(245, 240, 232, 0.62);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Condensed strip — masthead collapsed on scroll ──
+   Shrink to play + progress + time; drop the speaker chip and rate button so
+   the pinned header stays slim. */
+.masthead[data-collapsed='true'] .masthead-player {
+  max-width: 26rem;
+  margin-top: 0.5rem;
+  gap: 0.55rem;
+  padding: 0.25rem 0.45rem;
+}
+.masthead[data-collapsed='true'] .masthead-player__toggle {
+  width: 30px;
+  height: 30px;
+}
+.masthead[data-collapsed='true'] .masthead-player__now,
+.masthead[data-collapsed='true'] .masthead-player__rate {
+  display: none;
 }
 
 @media (max-width: 640px) {
-  .podcast-player {
-    gap: 0.55rem;
-    padding-left: 0.65rem;
-    padding-right: 0.65rem;
+  .masthead-player {
+    max-width: none;
+    gap: 0.5rem;
+    margin-top: 0.85rem;
   }
-  .podcast-player__now {
-    min-width: 0;
-    max-width: 8rem;
+  .masthead-player__now {
+    max-width: 7.5rem;
   }
-  .podcast-player__scrubber {
-    min-width: 2.5rem;
-  }
-  .podcast-player__time {
+  .masthead-player__rate {
     display: none;
   }
-  .podcast-player__rate {
-    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead-player,
+  .masthead-player__toggle {
+    transition: none;
   }
 }
 
@@ -3353,8 +3382,8 @@ body:has(.podcast-player) {
 
 @media (max-width: 640px) {
   .debate-nav-fab {
-    /* Lift FAB above the podcast player bar (~56px) plus safe-area-inset-bottom */
-    bottom: calc(4.25rem + env(safe-area-inset-bottom));
+    /* The audio player now lives in the masthead, not a bottom bar, so the FAB
+       keeps its default bottom-right position — just nudge in from the edge. */
     right: 1rem;
   }
   .debate-nav-fab__trigger {

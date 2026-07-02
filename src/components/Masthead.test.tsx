@@ -1,9 +1,26 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { Masthead } from './Masthead'
 import type { Masthead as MastheadData } from '../types/document'
 import type { PartNavTarget } from '../data/documents'
+import type { PodcastPlayer as PodcastPlayerState } from '../hooks/usePodcastPlayer'
+
+// No episode → MastheadPlayer renders nothing, keeping these tests focused on
+// the masthead's own navigation/title output.
+const player: PodcastPlayerState = {
+  hasEpisode: false,
+  episode: null,
+  isPlaying: false,
+  isActive: false,
+  currentTime: 0,
+  duration: 0,
+  rate: 1,
+  currentSpeaker: null,
+  toggle: vi.fn(),
+  seek: vi.fn(),
+  cycleRate: vi.fn(),
+}
 
 const masthead: MastheadData = {
   overline: 'Overline text',
@@ -27,7 +44,7 @@ const next: PartNavTarget = {
 function renderMasthead() {
   return render(
     <MemoryRouter>
-      <Masthead masthead={masthead} prev={prev} next={next} />
+      <Masthead masthead={masthead} prev={prev} next={next} player={player} />
     </MemoryRouter>,
   )
 }

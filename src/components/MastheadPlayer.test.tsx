@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { PodcastPlayer } from './PodcastPlayer'
+import { MastheadPlayer } from './MastheadPlayer'
 import type { PodcastPlayer as PodcastPlayerState } from '../hooks/usePodcastPlayer'
 import type { AudioEpisode } from '../data/audioEpisodes'
 
@@ -24,36 +24,39 @@ function makePlayer(overrides: Partial<PodcastPlayerState> = {}): PodcastPlayerS
     currentSpeaker: null,
     toggle: vi.fn(),
     seek: vi.fn(),
-    scrubStart: vi.fn(),
-    scrubEnd: vi.fn(),
     cycleRate: vi.fn(),
     ...overrides,
   }
 }
 
-describe('PodcastPlayer — idle state', () => {
+describe('MastheadPlayer — idle state', () => {
   it('returns null when no episode is loaded', () => {
-    const { container } = render(<PodcastPlayer player={makePlayer({ episode: null })} />)
+    const { container } = render(<MastheadPlayer player={makePlayer({ episode: null })} />)
     expect(container.firstChild).toBeNull()
   })
 
   it('renders the idle bar when not active', () => {
-    render(<PodcastPlayer player={makePlayer()} />)
+    render(<MastheadPlayer player={makePlayer()} />)
     expect(screen.getByRole('button', { name: /listen to the audio podcast/i })).toBeInTheDocument()
     expect(screen.getByText('Listen to this Roundtable')).toBeInTheDocument()
   })
 
+  it('shows the episode duration in the idle bar', () => {
+    render(<MastheadPlayer player={makePlayer({ duration: 300 })} />)
+    expect(screen.getByText('5:00')).toBeInTheDocument()
+  })
+
   it('calls toggle when the idle play button is clicked', () => {
     const toggle = vi.fn()
-    render(<PodcastPlayer player={makePlayer({ toggle })} />)
+    render(<MastheadPlayer player={makePlayer({ toggle })} />)
     fireEvent.click(screen.getByRole('button', { name: /listen to the audio podcast/i }))
     expect(toggle).toHaveBeenCalledOnce()
   })
 })
 
-describe('PodcastPlayer — active state', () => {
+describe('MastheadPlayer — active state', () => {
   function renderActive(overrides: Partial<PodcastPlayerState> = {}) {
-    return render(<PodcastPlayer player={makePlayer({ isActive: true, ...overrides })} />)
+    return render(<MastheadPlayer player={makePlayer({ isActive: true, ...overrides })} />)
   }
 
   it('shows play button when paused', () => {
@@ -80,54 +83,62 @@ describe('PodcastPlayer — active state', () => {
     renderActive()
     const nowRegion = screen
       .getByRole('region', { name: /podcast player/i })
-      .querySelector('.podcast-player__now')
+      .querySelector('.masthead-player__now')
     expect(nowRegion).toHaveAttribute('aria-live', 'polite')
     expect(nowRegion).toHaveAttribute('aria-atomic', 'true')
   })
 })
 
-describe('PodcastPlayer — scrubber time sync', () => {
-  it('time display tracks scrubbingAt position while dragging, not audio currentTime', () => {
-    // Bug: previously the time counter showed player.currentTime (frozen during drag)
-    // while the scrubber thumb showed scrubbingAt, causing visible desync.
+describe('MastheadPlayer — scrubber seeks on change', () => {
+  it('seeks immediately to the changed value and reflects it in the time display', () => {
+    // The rebuilt scrubber seeks on every change — no deferred commit that can go
+    // stale. A change to 90s must call seek(90) and show 1:30 right away.
+    const seek = vi.fn()
     render(
-      <PodcastPlayer
-        player={makePlayer({ isActive: true, isPlaying: true, currentTime: 30, duration: 300 })}
+      <MastheadPlayer
+        player={makePlayer({
+          isActive: true,
+          isPlaying: true,
+          currentTime: 30,
+          duration: 300,
+          seek,
+        })}
       />,
     )
 
-    // Before any scrub the display matches current time
+    // Before any interaction the display matches current time.
     expect(screen.getByText('0:30 / 5:00')).toBeInTheDocument()
 
     const slider = screen.getByRole('slider')
-
-    // Simulate pointer-down to begin scrub gesture
-    fireEvent.pointerDown(slider)
-
-    // Simulate dragging to 90 seconds
     fireEvent.change(slider, { target: { value: '90' } })
 
-    // Time display must update to reflect the visual scrub position (1:30),
-    // not stay frozen at the pre-scrub audio time (0:30).
+    expect(seek).toHaveBeenCalledWith(90)
     expect(screen.getByText('1:30 / 5:00')).toBeInTheDocument()
   })
 
-  it('time display returns to audio currentTime after scrub is committed', () => {
-    const scrubEnd = vi.fn()
-    render(
-      <PodcastPlayer
-        player={makePlayer({ isActive: true, currentTime: 30, duration: 300, scrubEnd })}
+  it('keeps the committed position after release — no snap-back to a stale value', () => {
+    const seek = vi.fn()
+    const { rerender } = render(
+      <MastheadPlayer
+        player={makePlayer({ isActive: true, currentTime: 30, duration: 300, seek })}
       />,
     )
 
     const slider = screen.getByRole('slider')
-    fireEvent.pointerDown(slider)
     fireEvent.change(slider, { target: { value: '90' } })
+    expect(seek).toHaveBeenCalledWith(90)
 
-    // On pointer-up the scrub position is committed and scrubbingAt is cleared.
-    // The time display falls back to player.currentTime (30s from the prop).
-    fireEvent.pointerUp(slider, { target: slider })
-    expect(screen.getByText('0:30 / 5:00')).toBeInTheDocument()
-    expect(scrubEnd).toHaveBeenCalledOnce()
+    // The real hook's seek() sets audio.currentTime and currentTime state
+    // synchronously; mirror that with a re-render carrying the new currentTime.
+    rerender(
+      <MastheadPlayer
+        player={makePlayer({ isActive: true, currentTime: 90, duration: 300, seek })}
+      />,
+    )
+    fireEvent.pointerUp(slider)
+
+    // dragValue clears on release; the display falls back to currentTime (90s) —
+    // the position just seeked to, never 0 or a prior value.
+    expect(screen.getByText('1:30 / 5:00')).toBeInTheDocument()
   })
 })

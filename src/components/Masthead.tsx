@@ -2,16 +2,20 @@ import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useScrollCollapse } from '../hooks/useScrollCollapse'
+import { MastheadPlayer } from './MastheadPlayer'
 import type { PartNavTarget } from '../data/documents'
+import type { PodcastPlayer as PodcastPlayerState } from '../hooks/usePodcastPlayer'
 import type { Masthead as MastheadData } from '../types/document'
 
 interface MastheadProps {
   masthead: MastheadData
   prev: PartNavTarget
   next: PartNavTarget
+  /** The document's audio player, docked inside the masthead. */
+  player: PodcastPlayerState
 }
 
-export function Masthead({ masthead, prev, next }: MastheadProps) {
+export function Masthead({ masthead, prev, next, player }: MastheadProps) {
   const collapsed = useScrollCollapse()
 
   return (
@@ -57,6 +61,8 @@ export function Masthead({ masthead, prev, next }: MastheadProps) {
         </h1>
         <p className="subtitle">{masthead.subtitle}</p>
       </div>
+
+      <MastheadPlayer player={player} />
 
       <Link
         className="masthead-nav masthead-nav--next"

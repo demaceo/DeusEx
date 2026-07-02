@@ -10,7 +10,6 @@ import { ClaimDrawerProvider } from '../components/EvidenceDrawer'
 import { IntroBlock } from '../components/IntroBlock'
 import { Masthead } from '../components/Masthead'
 import { PersonasBar } from '../components/PersonasBar'
-import { PodcastPlayer } from '../components/PodcastPlayer'
 import { ReadingProgress } from '../components/ReadingProgress'
 import { RoundNav, type RoundNavItem } from '../components/RoundNav'
 import { SectionHeader } from '../components/SectionHeader'
@@ -68,9 +67,8 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
   return (
     <DocumentProvider claims={document.claims} sources={document.sources}>
       <ClaimDrawerProvider>
-        <Masthead masthead={document.masthead} prev={prev} next={next} />
+        <Masthead masthead={document.masthead} prev={prev} next={next} player={player} />
         <ReadingProgress accentColor={document.masthead.accentColor} />
-        <PodcastPlayer player={player} />
         <PersonasBar personaIds={personaIds} label="The panel" />
 
         <RoundNav items={navItems} accentColor={document.masthead.accentColor} />
