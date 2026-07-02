@@ -63,7 +63,7 @@ The shipped app contains **no API keys and makes no TTS/LLM calls** — it only 
 - **`scripts/generate-podcast.ts`** — orchestrator: flatten part → Claude rewrite → ElevenLabs synth → stitch MP3 → write `public/audio/<id>.{mp3,transcript.json}` and upsert `episodes.json`. `--dry-run` stops after the Claude rewrite (no TTS spend) so wording can be signed off first.
 - **`scripts/lib/`** — `flattenDocument.ts` (part → ordered turns), `adaptScript.ts` (Claude conversational rewrite, preserving every claim), `elevenlabs.ts` (synthesis), `types.ts`.
 - It imports part modules **directly** (not `documents.ts`) because `documents.ts` references `import.meta.env.DEV` and throws under Node. When adding a part, also register it in the `DOCS` array in `generate-podcast.ts` if it should be podcast-able.
-- Runtime side: **`PodcastPlayer.tsx`** + **`usePodcastPlayer.ts`** drive playback and current-speaker display from the transcript cues. See `scripts/README.md` for the full workflow and one-time `.env.local` setup.
+- Runtime side: **`MastheadPlayer.tsx`** (docked inside the sticky `Masthead`, condensing with it on scroll) + **`usePodcastPlayer.ts`** drive playback and current-speaker display from the transcript cues. See `scripts/README.md` for the full workflow and one-time `.env.local` setup.
 
 ### Design system (`src/styles/`)
 

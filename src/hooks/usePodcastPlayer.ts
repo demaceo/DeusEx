@@ -24,11 +24,8 @@ export interface PodcastPlayer {
   /** The speaker id at the current playhead, or null. */
   currentSpeaker: EpisodeSpeaker | null
   toggle: () => void
+  /** Seek to an absolute position (seconds). Sets audio.currentTime immediately. */
   seek: (seconds: number) => void
-  /** Call before a scrub gesture starts — suppresses timeupdate jitter. */
-  scrubStart: () => void
-  /** Call when a scrub gesture ends — commits the final seek position. */
-  scrubEnd: (seconds: number) => void
   cycleRate: () => void
 }
 
@@ -37,10 +34,9 @@ export interface PodcastPlayer {
  * declarative playback state. The transcript sidecar is loaded lazily on first
  * play to resolve the current speaker.
  *
- * Scrub gesture (pointer drag on the range input) is split into scrubStart /
- * scrubEnd so the component can suppress timeupdate state updates while the
- * user is dragging — otherwise the controlled input fights the audio element's
- * own position updates and the thumb jumps around.
+ * Scrubbing is a plain `seek` on every input change: the component drives the
+ * thumb from its own drag state while the gesture is live, and each change seeks
+ * the audio element directly, so there is no separate commit step to go stale.
  */
 export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
   const [episode, setEpisode] = useState<AudioEpisode | null>(null)
@@ -52,9 +48,6 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
   const [rate, setRate] = useState<PlaybackRate>(1)
 
   const audioRef = useRef<HTMLAudioElement | null>(null)
-  // True while the user is dragging the scrubber. Suppresses timeupdate so the
-  // controlled input thumb doesn't fight the drag gesture.
-  const isScrubbingRef = useRef(false)
 
   // Resolve the episode for this document; reset everything when it changes.
   useEffect(() => {
@@ -87,9 +80,7 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
     const audio = new Audio(episode.src)
     audio.preload = 'metadata'
     audio.playbackRate = rate
-    audio.addEventListener('timeupdate', () => {
-      if (!isScrubbingRef.current) setCurrentTime(audio.currentTime)
-    })
+    audio.addEventListener('timeupdate', () => setCurrentTime(audio.currentTime))
     audio.addEventListener('durationchange', () => setDuration(audio.duration || 0))
     audio.addEventListener('play', () => setIsPlaying(true))
     audio.addEventListener('pause', () => setIsPlaying(false))
@@ -125,18 +116,6 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
     setCurrentTime(seconds)
   }, [])
 
-  const scrubStart = useCallback(() => {
-    isScrubbingRef.current = true
-  }, [])
-
-  const scrubEnd = useCallback((seconds: number) => {
-    isScrubbingRef.current = false
-    const audio = audioRef.current
-    if (!audio) return
-    audio.currentTime = seconds
-    setCurrentTime(seconds)
-  }, [])
-
   const cycleRate = useCallback(() => {
     setRate((prev) => {
       const next = PLAYBACK_RATES[(PLAYBACK_RATES.indexOf(prev) + 1) % PLAYBACK_RATES.length]
@@ -163,8 +142,6 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
     currentSpeaker,
     toggle,
     seek,
-    scrubStart,
-    scrubEnd,
     cycleRate,
   }
 }
