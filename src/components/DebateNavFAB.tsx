@@ -2,8 +2,14 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { DOCUMENTS } from '../data/documents'
+import type { Masthead } from '../types/document'
 
-export function DebateNavFAB() {
+interface DebateNavFABProps {
+  /** Drives the trigger's hover color to match this document's masthead. */
+  accentColor: Masthead['accentColor']
+}
+
+export function DebateNavFAB({ accentColor }: DebateNavFABProps) {
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -28,7 +34,7 @@ export function DebateNavFAB() {
   }, [open])
 
   return (
-    <div className="debate-nav-fab" ref={containerRef}>
+    <div className="debate-nav-fab" ref={containerRef} data-accent={accentColor}>
       {open && (
         <nav className="debate-nav-fab__panel" aria-label="All debates">
           {DOCUMENTS.map((entry) => (

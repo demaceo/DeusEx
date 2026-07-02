@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { BlockRenderer } from '../components/BlockRenderer'
 import { ChapterDivider } from '../components/ChapterDivider'
+import { ChartThumbnailCarousel } from '../components/ChartThumbnailCarousel'
 import { DebateNavFAB } from '../components/DebateNavFAB'
 import { DebateThread } from '../components/DebateThread'
 import { DocumentProvider } from '../components/DocumentProvider'
@@ -68,12 +69,12 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
     <DocumentProvider claims={document.claims} sources={document.sources}>
       <ClaimDrawerProvider>
         <Masthead masthead={document.masthead} prev={prev} next={next} />
-        <ReadingProgress />
+        <ReadingProgress accentColor={document.masthead.accentColor} />
         <PodcastPlayer player={player} />
         <PersonasBar personaIds={personaIds} label="The panel" />
 
-        <RoundNav items={navItems} />
-        <DebateNavFAB />
+        <RoundNav items={navItems} accentColor={document.masthead.accentColor} />
+        <DebateNavFAB accentColor={document.masthead.accentColor} />
 
         <div className="container">
           <nav className="series-nav">
@@ -85,6 +86,7 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
             {readingMinutes} min read · {navItems.length} rounds
           </p>
           <IntroBlock paragraphs={document.intro} />
+          <ChartThumbnailCarousel document={document} />
           <VerificationNotice claims={document.claims} />
 
           {document.sections.map((section, i) => {
@@ -116,7 +118,7 @@ export function RoundtablePage({ document }: RoundtablePageProps) {
         </div>
 
         <SourcesSection sources={document.sources} />
-        <SeriesFooter prev={prev} next={next} />
+        <SeriesFooter prev={prev} next={next} accentColor={document.masthead.accentColor} />
       </ClaimDrawerProvider>
     </DocumentProvider>
   )

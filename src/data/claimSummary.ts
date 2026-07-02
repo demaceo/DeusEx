@@ -27,3 +27,26 @@ export function summarizeClaimStatuses(claims: Record<string, Claim>): ClaimStat
   }
   return summary
 }
+
+/** Sum two summaries field by field, e.g. to build a series-wide aggregate. */
+export function addSummaries(a: ClaimStatusSummary, b: ClaimStatusSummary): ClaimStatusSummary {
+  return {
+    total: a.total + b.total,
+    verified: a.verified + b.verified,
+    disputed: a.disputed + b.disputed,
+    unverified: a.unverified + b.unverified,
+    pending: a.pending + b.pending,
+  }
+}
+
+/** Percentage of `part` within `whole`, rounded; 0 when `whole` is 0. */
+export function pct(part: number, whole: number): number {
+  return whole === 0 ? 0 : Math.round((part / whole) * 100)
+}
+
+/** Series-wide aggregate across every document's claims registry. */
+export function aggregateClaimStatuses(claimsPerDoc: Record<string, Claim>[]): ClaimStatusSummary {
+  return claimsPerDoc.reduce((acc, claims) => addSummaries(acc, summarizeClaimStatuses(claims)), {
+    ...EMPTY,
+  })
+}
