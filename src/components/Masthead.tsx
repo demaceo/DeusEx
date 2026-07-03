@@ -60,6 +60,10 @@ export function Masthead({ masthead, prev, next, player }: MastheadProps) {
           })}
         </h1>
         <p className="subtitle">{masthead.subtitle}</p>
+        {/* Publish date + series position: dropped from the visible design to
+            keep the header uncluttered, but still worth exposing to screen
+            readers and crawlers. */}
+        <p className="sr-only">{masthead.dateLine}</p>
       </div>
 
       <MastheadPlayer player={player} />

@@ -122,6 +122,19 @@ export function MastheadPlayer({ player }: MastheadPlayerProps) {
           setDragValue(v)
           player.seek(v)
         }}
+        onKeyDown={(e) => {
+          // The native step (0.1s, for smooth drag/scrub precision) makes
+          // arrow-key seeking impractically slow — jump further on arrow keys.
+          // Home/End/PageUp/PageDown keep their native behavior.
+          const forward = e.key === 'ArrowRight' || e.key === 'ArrowUp'
+          const backward = e.key === 'ArrowLeft' || e.key === 'ArrowDown'
+          if (!forward && !backward) return
+          e.preventDefault()
+          const delta = forward ? 5 : -5
+          const v = Math.min(maxTime, Math.max(0, Math.min(player.currentTime, maxTime) + delta))
+          setDragValue(v)
+          player.seek(v)
+        }}
         onPointerUp={() => setDragValue(null)}
         onPointerCancel={() => setDragValue(null)}
         onBlur={() => setDragValue(null)}

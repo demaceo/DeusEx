@@ -30,6 +30,22 @@
   --c-equity: #7c3aed;
   --c-land: #6b4423;
 
+  /* On-dark text variants: several persona/accent hues above read below
+     WCAG AA (4.5:1) as small text or UI elements against --ink. These
+     lightened variants (≥4.9:1 against --ink) are used only where a color
+     sits as foreground text/graphics on the dark masthead; the base hues
+     above remain unchanged for use as fills, chips, and backgrounds. */
+  --c-accent-ondark: #cc5f54;
+  --c-policy-ondark: #3487bd;
+  --c-everyday-ondark: #a469bd;
+  --c-skeptic-ondark: #748290;
+  --c-artist-ondark: #ca598f;
+  --c-safety-ondark: #7878c9;
+  --c-clinician-ondark: #af724f;
+  --c-economist-ondark: #977d38;
+  --c-equity-ondark: #9762f1;
+  --c-land-ondark: #977b64;
+
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   /* Per-turn delay step for the debate stage's staggered scroll reveal. */
   --stagger-step: 60ms;
@@ -41,7 +57,10 @@
 }
 
 /* Persona color resolution. Components set data-persona; CSS maps it to a color.
-   --persona-color is consumed by speaker icons, dots, and bubble top borders. */
+   --persona-color is consumed by speaker icons, dots, and bubble top borders.
+   --persona-text-color additionally resolves for personas whose --persona-color
+   is too dark to read as text on the masthead (see MastheadPlayer's speaker
+   name); it falls back to --persona-color wherever no override is needed. */
 [data-persona='tech-optimist'] {
   --persona-color: var(--c-optimist);
 }
@@ -53,47 +72,60 @@
 }
 [data-persona='policy-realist'] {
   --persona-color: var(--c-policy);
+  --persona-text-color: var(--c-policy-ondark);
 }
 [data-persona='everyday-person'] {
   --persona-color: var(--c-everyday);
+  --persona-text-color: var(--c-everyday-ondark);
 }
 [data-persona='systems-humanist'] {
   --persona-color: var(--c-systems);
 }
 [data-persona='skeptic'] {
   --persona-color: var(--c-skeptic);
+  --persona-text-color: var(--c-skeptic-ondark);
 }
 [data-persona='artist'] {
   --persona-color: var(--c-artist);
+  --persona-text-color: var(--c-artist-ondark);
 }
 [data-persona='accelerationist'] {
   --persona-color: var(--c-accelerationist);
 }
 [data-persona='safety-researcher'] {
   --persona-color: var(--c-safety);
+  --persona-text-color: var(--c-safety-ondark);
 }
 [data-persona='young-person'] {
   --persona-color: var(--c-young);
 }
 [data-persona='clinician'] {
   --persona-color: var(--c-clinician);
+  --persona-text-color: var(--c-clinician-ondark);
 }
 [data-persona='economist'] {
   --persona-color: var(--c-economist);
+  --persona-text-color: var(--c-economist-ondark);
 }
 [data-persona='equity-researcher'] {
   --persona-color: var(--c-equity);
+  --persona-text-color: var(--c-equity-ondark);
 }
 [data-persona='land-defender'] {
   --persona-color: var(--c-land);
+  --persona-text-color: var(--c-land-ondark);
 }
 
-/* Masthead bottom-accent resolution (data-accent on .masthead). */
+/* Masthead bottom-accent resolution (data-accent on .masthead). --masthead-accent-text
+   overrides --masthead-accent for foreground text/UI (overline, h1 em, nav arrows,
+   rate button) wherever the base hue falls below WCAG AA (4.5:1) against --ink;
+   it's left unset (falling back to --masthead-accent) for hues that already pass. */
 [data-accent='gold'] {
   --masthead-accent: var(--gold);
 }
 [data-accent='accent'] {
   --masthead-accent: var(--accent);
+  --masthead-accent-text: var(--c-accent-ondark);
 }
 [data-accent='green'] {
   --masthead-accent: var(--c-optimist);
@@ -106,37 +138,46 @@
 }
 [data-accent='blue'] {
   --masthead-accent: var(--c-policy);
+  --masthead-accent-text: var(--c-policy-ondark);
 }
 [data-accent='purple'] {
   --masthead-accent: var(--c-everyday);
+  --masthead-accent-text: var(--c-everyday-ondark);
 }
 [data-accent='amber'] {
   --masthead-accent: var(--c-systems);
 }
 [data-accent='slate'] {
   --masthead-accent: var(--c-skeptic);
+  --masthead-accent-text: var(--c-skeptic-ondark);
 }
 [data-accent='rose'] {
   --masthead-accent: var(--c-artist);
+  --masthead-accent-text: var(--c-artist-ondark);
 }
 [data-accent='flame'] {
   --masthead-accent: var(--c-accelerationist);
 }
 [data-accent='indigo'] {
   --masthead-accent: var(--c-safety);
+  --masthead-accent-text: var(--c-safety-ondark);
 }
 [data-accent='cyan'] {
   --masthead-accent: var(--c-young);
 }
 [data-accent='clay'] {
   --masthead-accent: var(--c-clinician);
+  --masthead-accent-text: var(--c-clinician-ondark);
 }
 [data-accent='bronze'] {
   --masthead-accent: var(--c-economist);
+  --masthead-accent-text: var(--c-economist-ondark);
 }
 [data-accent='violet'] {
   --masthead-accent: var(--c-equity);
+  --masthead-accent-text: var(--c-equity-ondark);
 }
 [data-accent='umber'] {
   --masthead-accent: var(--c-land);
+  --masthead-accent-text: var(--c-land-ondark);
 }
