@@ -84,7 +84,7 @@ a {
   font-size: 0.62rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--masthead-accent, var(--accent));
+  color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
   margin-bottom: 1.1rem;
 }
 
@@ -99,30 +99,29 @@ a {
 
 .masthead h1 em {
   font-style: italic;
-  color: var(--masthead-accent, var(--accent));
+  color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
 }
 
-/* Title links home. Styling stays subtle — inherits the display type, no default
-   underline; on hover a thin accent underline rides well below the baseline. */
+/* Title links home. A faint underline sits under this line at rest (the rest of
+   the h1 has none) so the clickable scope is legible before the reader hovers;
+   it strengthens to the full accent color on hover/focus. */
 .masthead-title-link {
   color: inherit;
-  /* Underline always present but transparent, so the accent can fade in on hover
-     without the text reflowing. */
   text-decoration: underline;
-  text-decoration-color: transparent;
+  text-decoration-color: rgba(245, 240, 232, 0.22);
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
   transition: text-decoration-color 0.2s var(--ease);
 }
 .masthead-title-link:hover {
-  text-decoration-color: var(--masthead-accent, var(--accent));
+  text-decoration-color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
 }
 .masthead-title-link:focus-visible {
   outline: none;
   text-decoration: underline;
-  text-decoration-color: var(--masthead-accent, var(--accent));
+  text-decoration-color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
   border-radius: 2px;
-  box-shadow: 0 0 0 2px var(--masthead-accent, var(--accent));
+  box-shadow: 0 0 0 2px var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
 }
 
 .masthead .subtitle {
@@ -202,27 +201,30 @@ a {
 }
 .masthead-nav:hover,
 .masthead-nav:focus-visible {
-  color: var(--masthead-accent, var(--accent));
+  color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
   background: rgba(255, 255, 255, 0.06);
   outline: none;
 }
 .masthead-nav:focus-visible {
-  box-shadow: 0 0 0 2px var(--masthead-accent, var(--accent));
+  box-shadow: 0 0 0 2px var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
 }
 
 @media (max-width: 640px) {
   .masthead-body {
-    padding: 0 2.75rem;
+    padding: 0 3.25rem;
   }
+  /* Kept at the 44px minimum recommended touch target (was 40px) and inset
+     further from the viewport edge so it doesn't compete with the browser's
+     edge-swipe-back gesture. */
   .masthead-nav {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
   }
   .masthead-nav--prev {
-    left: 0.35rem;
+    left: 0.5rem;
   }
   .masthead-nav--next {
-    right: 0.35rem;
+    right: 0.5rem;
   }
 
   /* Tighter expanded-state padding — reduces header from ~55% to ~35% of screen */

@@ -2679,11 +2679,17 @@ cite[role='button']:focus-visible,
 /* ─── READING PROGRESS BAR ────────────────────────────────────────── */
 .reading-progress {
   position: fixed;
-  top: 0;
+  /* Set by ReadingProgress.tsx (via ResizeObserver) from the sticky masthead's
+     live height, so this bar rides directly under it instead of overlapping
+     its top edge. No transition of its own: the masthead's own collapse
+     transition already produces a steady stream of ResizeObserver callbacks,
+     so `top` tracks it smoothly; adding a second transition here would chase
+     a moving target and lag behind the header's edge mid-animation. */
+  top: var(--masthead-height, 0px);
   left: 0;
   right: 0;
   height: 3px;
-  z-index: 60;
+  z-index: 45;
   background: transparent;
   pointer-events: none;
 }
@@ -3195,7 +3201,7 @@ cite[role='button']:focus-visible::after {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--persona-color, var(--paper));
+  color: var(--persona-text-color, var(--persona-color, var(--paper)));
 }
 
 .masthead-player__scrubber {
@@ -3230,8 +3236,8 @@ cite[role='button']:focus-visible::after {
 }
 .masthead-player__rate:hover,
 .masthead-player__rate:focus-visible {
-  border-color: var(--masthead-accent, var(--accent));
-  color: var(--masthead-accent, var(--accent));
+  border-color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
+  color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
   outline: none;
 }
 
