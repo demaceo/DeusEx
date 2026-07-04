@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
+import { fireEvent, render, screen, act } from '@testing-library/react'
 import { RoundNav, type RoundNavItem } from './RoundNav'
 
 const items: RoundNavItem[] = [
@@ -7,7 +7,25 @@ const items: RoundNavItem[] = [
   { id: 'round-2', label: 'Round II', title: 'Water' },
 ]
 
+function setScrollY(y: number) {
+  Object.defineProperty(window, 'scrollY', { value: y, configurable: true, writable: true })
+}
+
 describe('RoundNav', () => {
+  beforeEach(() => {
+    setScrollY(0)
+    // Run rAF callbacks synchronously so scroll handling is deterministic in tests.
+    vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => {
+      cb(0)
+      return 1
+    })
+    vi.stubGlobal('cancelAnimationFrame', () => {})
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
   it('lists every round with its label and title', () => {
     render(<RoundNav items={items} accentColor="teal" />)
     expect(screen.getByText('Round I')).toBeInTheDocument()
@@ -31,5 +49,34 @@ describe('RoundNav', () => {
   it('carries the document accent color for CSS to resolve --masthead-accent', () => {
     const { container } = render(<RoundNav items={items} accentColor="teal" />)
     expect(container.querySelector('.round-nav')).toHaveAttribute('data-accent', 'teal')
+  })
+
+  it('stays hidden until the masthead collapses', () => {
+    const { container } = render(<RoundNav items={items} accentColor="teal" />)
+    expect(container.querySelector('.round-nav')).toHaveAttribute('data-visible', 'false')
+
+    act(() => {
+      setScrollY(200)
+      window.dispatchEvent(new Event('scroll'))
+    })
+    expect(container.querySelector('.round-nav')).toHaveAttribute('data-visible', 'true')
+  })
+
+  it('renders already visible when the page mounts already scrolled past the collapse threshold', () => {
+    setScrollY(200)
+    const { container } = render(<RoundNav items={items} accentColor="teal" />)
+    expect(container.querySelector('.round-nav')).toHaveAttribute('data-visible', 'true')
+  })
+
+  it('hides again when scrolling back above the collapse threshold', () => {
+    setScrollY(200)
+    const { container } = render(<RoundNav items={items} accentColor="teal" />)
+    expect(container.querySelector('.round-nav')).toHaveAttribute('data-visible', 'true')
+
+    act(() => {
+      setScrollY(0)
+      window.dispatchEvent(new Event('scroll'))
+    })
+    expect(container.querySelector('.round-nav')).toHaveAttribute('data-visible', 'false')
   })
 })

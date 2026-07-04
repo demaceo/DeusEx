@@ -2731,36 +2731,27 @@ cite[role='button']:focus-visible,
     transform: translateY(-50%);
     margin-top: 6rem;
     z-index: 40;
-    /* Fades in whenever it starts being displayed (first load at this width,
-       or resizing into it) and fades out once the sources/footer region nears
-       the viewport (data-visible, toggled in RoundNav.tsx), rather than
-       staying pinned in the fixed viewport band and overlapping the footer. */
+    /* Hidden until the Masthead collapses (data-visible, toggled in RoundNav.tsx
+       off the same useScrollCollapse state), then unfurls top-down via clip-path
+       rather than an animated height/transform, so the translateY(-50%) centering
+       above never has to recompute mid-animation. Also fades out once the
+       sources/footer region nears the viewport, instead of staying pinned in the
+       fixed viewport band and overlapping the footer. */
+    clip-path: inset(0 0 100% 0);
     opacity: 0;
-    animation: round-nav-in 0.4s var(--ease) 0.1s both;
-    transition: opacity 0.35s var(--ease);
+    transition:
+      clip-path 0.4s var(--ease),
+      opacity 0.4s var(--ease);
   }
-  .round-nav[data-visible='false'] {
-    /* Cancel the entrance animation: its `both` fill-mode holds opacity:1 at
-       animation-origin priority, which otherwise beats this normal-priority
-       opacity:0 regardless of specificity. */
-    animation: none;
-    opacity: 0;
+  .round-nav[data-visible='true'] {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
   }
   .round-nav:not([data-visible='true']) {
     pointer-events: none;
   }
-  @keyframes round-nav-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
   @media (prefers-reduced-motion: reduce) {
     .round-nav {
-      animation: none;
-      opacity: 1;
       transition: none;
     }
   }

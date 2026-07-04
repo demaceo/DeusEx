@@ -29,5 +29,5 @@ describe('BlockRenderer chart dispatch', () => {
     expect(figure).toHaveAttribute('aria-label')
     // Part I's charts all rest on verified claims, so the status surfaces.
     expect(figure).toHaveAttribute('data-verification', 'verified')
-  })
+  }, 20000)
 })

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useActiveSection } from '../hooks/useReadingProgress'
+import { useScrollCollapse } from '../hooks/useScrollCollapse'
 import type { Masthead } from '../types/document'
 
 export interface RoundNavItem {
@@ -20,11 +21,16 @@ interface RoundNavProps {
  * viewports); the reading-progress bar covers navigation on narrow screens. Fixed
  * to the viewport rather than the document, so it fades out once the sources/
  * footer region scrolls into view, instead of ever overlapping their dark band.
+ *
+ * Also stays hidden until the Masthead itself has collapsed: shares `useScrollCollapse`
+ * with it (same default thresholds) so both flip on the same scroll tick, then unfurls
+ * top-down into view rather than appearing as soon as the page mounts.
  */
 export function RoundNav({ items, accentColor }: RoundNavProps) {
   const ids = items.map((i) => i.id)
   const active = useActiveSection(ids)
   const activeIndex = items.findIndex((i) => i.id === active)
+  const collapsed = useScrollCollapse()
   const [nearEnd, setNearEnd] = useState(false)
 
   useEffect(() => {
@@ -49,7 +55,7 @@ export function RoundNav({ items, accentColor }: RoundNavProps) {
     <nav
       className="round-nav"
       aria-label="Rounds in this roundtable"
-      data-visible={!nearEnd}
+      data-visible={collapsed && !nearEnd}
       data-accent={accentColor}
     >
       <p className="round-nav__heading">

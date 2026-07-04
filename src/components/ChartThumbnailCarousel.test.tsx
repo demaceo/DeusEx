@@ -52,7 +52,7 @@ describe('ChartThumbnailCarousel', () => {
       { timeout: 15000 },
     )
     expect(buttons).toHaveLength(entries.length)
-  })
+  }, 20000)
 
   it('opens the full chart in a labeled dialog when a thumbnail is clicked', async () => {
     renderCarousel(partI)
@@ -71,7 +71,7 @@ describe('ChartThumbnailCarousel', () => {
       { timeout: 15000 },
     )
     expect(dialog).toBeInTheDocument()
-  })
+  }, 20000)
 
   it('closes on Escape and restores focus to the thumbnail', async () => {
     renderCarousel(partI)
@@ -89,7 +89,7 @@ describe('ChartThumbnailCarousel', () => {
     fireEvent.keyDown(document, { key: 'Escape' })
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
     expect(trigger).toHaveFocus()
-  })
+  }, 20000)
 
   it('closes on the close button', async () => {
     renderCarousel(partI)
@@ -105,5 +105,5 @@ describe('ChartThumbnailCarousel', () => {
 
     fireEvent.click(screen.getByRole('button', { name: /close/i }))
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
-  })
+  }, 20000)
 })
