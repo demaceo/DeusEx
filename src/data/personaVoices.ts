@@ -9,8 +9,13 @@
  *
  * This file is imported ONLY by the build-time generation script
  * (`scripts/generate-podcast.ts`) — never by the shipped client bundle. The
- * `voiceId`s below are ElevenLabs' default-library voices; swap them for voices
- * from your own ElevenLabs library by editing this one map.
+ * `voiceId`s below are custom voices from the project's own ElevenLabs library,
+ * cast deliberately for accent and character variety (English, Scottish,
+ * Nigerian, South African, Black American, Spanish, Russian, Irish, American,
+ * and Australian are all represented at least once). Where a persona's actual
+ * gender is established in the prose (see the part files under
+ * `src/data/parts/`), the cast voice matches it; swap any entry for another
+ * voice from your library by editing this one map.
  */
 
 import type { PersonaId } from '../types/persona'
@@ -74,7 +79,7 @@ const BASE: VoiceSettings = {
  * intro/prose/figure beats. Deliberately calm and neutral so the personas stand out.
  */
 export const HOST_VOICE: VoiceCasting = {
-  voiceId: '21m00Tcm4TlvDq8ikWAM', // Rachel — calm, clear, classic narrator
+  voiceId: 'VlUmeC1Uzj3NnwiVR9K9', // Black man — steady, resonant narrator; distinct from every persona voice
   settings: { ...BASE, stability: 0.6, style: 0.2 },
   characterNote: 'Neutral podcast host/narrator. Measured, warm, unobtrusive.',
   delivery: {
@@ -87,9 +92,8 @@ export const HOST_VOICE: VoiceCasting = {
 
 export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
   'tech-optimist': {
-    // Callum: intense, inscrutable British — sounds brilliant and slightly dismissive,
-    // nothing like the overused "Adam" default. Silicon Valley certainty with an edge.
-    voiceId: 'N2lVS1w4EtoT3dr4eOWO',
+    // Specifically cast for this persona.
+    voiceId: 'ljX1ZrXuDIIRVcmiVSyR',
     settings: { ...BASE, stability: 0.4, style: 0.45, speed: 1.02 },
     characterNote: 'Senior AI engineer. Confident, brisk, a touch dismissive.',
     delivery: {
@@ -101,7 +105,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   environmentalist: {
-    voiceId: 'EXAVITQu4vr4xnSDxMaL', // Sarah — warm, earnest female
+    voiceId: 'gsm4lUH9bnZ3pjR1Pw7w', // South African woman — grounds the climate argument in the Global South
     settings: { ...BASE, stability: 0.5, style: 0.38 },
     characterNote: 'Climate researcher. Earnest, grounded, quietly urgent.',
     delivery: {
@@ -112,9 +116,8 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   'labor-advocate': {
-    // Sam: raspy, fast American — authentic working-class energy vs a "polished" voice.
-    // Sounds like someone who has actually been to a picket line.
-    voiceId: 'yoZ06aMxZJJ28mfd3POQ',
+    // Nigerian man — ties the delivery to the bio's Global South data-labor supply chain.
+    voiceId: 'U7wWSnxIJwCjioxt86mk',
     settings: { ...BASE, stability: 0.42, style: 0.48, speed: 1.02 },
     characterNote: 'Labor organizer. Direct, fired up, morally insistent.',
     delivery: {
@@ -125,7 +128,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   'policy-realist': {
-    voiceId: 'nPczCjzI2devNBz1zQrb', // Brian — deep, mature American male
+    voiceId: 'jRAAK67SEFE9m7ci5DhD', // English man — dry, buttoned-up regulatory register
     settings: { ...BASE, stability: 0.62, style: 0.18 },
     characterNote: 'Former regulatory attorney. Precise, dry, unhurried.',
     delivery: {
@@ -136,7 +139,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   'everyday-person': {
-    voiceId: 'ThT5KcBeYPX3keUQqHPh', // Dorothy — pleasant older British female
+    voiceId: 'DbwWo4rVEd5NrejHYUnm', // Irish woman — warm, plainspoken (persona is written as female in part-i.ts)
     settings: { ...BASE, stability: 0.58, style: 0.28, speed: 0.96 },
     characterNote: 'Retired schoolteacher, late 60s. Warm, curious, plainspoken.',
     delivery: {
@@ -148,9 +151,8 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   'systems-humanist': {
-    // Charlie: casual, conversational Australian — warm and approachable, a stark
-    // contrast to the formal British/American male cluster (Brian, George, Bill).
-    voiceId: 'IKne5meyi135sOtTRyHE',
+    // Australian male — casual, conversational warmth; the bridge-builder register.
+    voiceId: 'DYkrAHD8iwork3YSUBbs',
     settings: { ...BASE, stability: 0.5, style: 0.35, speed: 0.98 },
     characterNote: 'Technology ethicist. Measured, humane, accessible.',
     delivery: {
@@ -162,7 +164,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   skeptic: {
-    voiceId: 'pqHfZKP75CvOlQylNhV4', // Bill — older, grounded, trustworthy American
+    voiceId: 'IXa3pM2v3YjF2UVeGPGR', // American man — plain, grounded newsroom voice
     settings: { ...BASE, stability: 0.46, style: 0.44 }, // looser, more inflection for the wry asides
     characterNote: 'Veteran tech reporter. Wry, evidence-first, faintly weary.',
     delivery: {
@@ -174,7 +176,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   artist: {
-    voiceId: 'XrExE9yKIg1WjnnlVkGX', // Matilda — warm, expressive female
+    voiceId: 'DXX4Q5Bh1vqK8CciYVPf', // Black woman ("Kiki") — expressive, lyrical (persona is written as female in part-v.ts/part-ix.ts)
     settings: { ...BASE, stability: 0.38, style: 0.52 },
     characterNote: 'Working illustrator & musician. Expressive, personal, lyrical.',
     delivery: {
@@ -186,8 +188,8 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   accelerationist: {
-    voiceId: 'TxGEqnHWrfWFTfGW9XjX', // Josh — young, energetic male
-    settings: { ...BASE, stability: 0.38, style: 0.48, speed: 1.06 },
+    voiceId: '1THll2MhJjluQYaSQxDr', // Spanish male — fast, confident energy
+    settings: { ...BASE, stability: 0.38, style: 0.48, speed: 1.1 },
     characterNote: 'e/acc founder. Fast, energetic, provocative.',
     delivery: {
       humor: 'provocative and quick; enjoys a sharp, contrarian one-liner',
@@ -198,7 +200,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   'safety-researcher': {
-    voiceId: 'GBv7mTt0atIp3Br8iCZE', // Thomas — calm, contemplative American
+    voiceId: 'Xh5OictnmgRO4dff7pLm', // Russian man — grave, deliberate weight for existential-risk stakes
     settings: { ...BASE, stability: 0.68, style: 0.18 },
     characterNote: 'Alignment researcher. Careful, deliberate, soberly precise.',
     delivery: {
@@ -210,7 +212,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   'young-person': {
-    voiceId: 'jsCqWAovK2LkecY7zXl4', // Freya — young, expressive female
+    voiceId: 'YyqkX0AHv8W5D1vxG9lR', // American woman — warm, witty, candid
     settings: { ...BASE, stability: 0.38, style: 0.48, speed: 1.04 },
     characterNote: 'University student, early 20s. Direct, candid, a little impatient.',
     delivery: {
@@ -222,7 +224,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   clinician: {
-    voiceId: 'oWAxZDx7w5VEj9dCyTzz', // Grace — gentle, caring female
+    voiceId: 'DODLEQrClDo8wCz460ld', // American woman — friendly, comforting (persona is written as female in part-vii.ts)
     settings: { ...BASE, stability: 0.62, style: 0.22 },
     characterNote: 'Clinical psychologist. Calm, caring, carefully measured.',
     delivery: {
@@ -234,7 +236,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   economist: {
-    voiceId: 'JBFqnCBsd6RMkjVDRZzb', // George — warm, mature British male
+    voiceId: 'h8eW5xfRUGVJrZhAFxqK', // Scottish woman (persona is written as female in part-viii.ts: "Her argument")
     settings: { ...BASE, stability: 0.52, style: 0.34 }, // a touch more color for the dry, knowing wit
     characterNote: 'Political economist. Measured, dry, follows the incentives.',
     delivery: {
@@ -246,7 +248,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   'equity-researcher': {
-    voiceId: 'pMsXgVXv3BLzUgSXRplE', // Serena — articulate, sharp female
+    voiceId: '6aDn1KB0hjpdcocrUkmq', // Black woman — sharp, principled
     settings: { ...BASE, stability: 0.48, style: 0.42 },
     characterNote: 'Algorithmic-justice researcher. Sharp, principled, insistent.',
     delivery: {
@@ -259,10 +261,10 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     },
   },
   'land-defender': {
-    // Clyde: strong, grounded, reliable American — sounds like someone who has been
-    // through real things. More gravitas than Dave's casual British register.
-    voiceId: '2EiwWnXFnvU5JabPnv8n',
-    settings: { ...BASE, stability: 0.48, style: 0.42, speed: 0.97 },
+    // Nigerian woman — first-hand extraction-zone gravity (persona is written as
+    // female in part-xi.ts: "She lives where the minerals come from").
+    voiceId: 'b8XX4QShLFkd3yZQlz8T',
+    settings: { ...BASE, stability: 0.56, style: 0.3, speed: 0.97 },
     characterNote: 'Community organizer in an extraction zone. Resolute, unvarnished, weighty.',
     delivery: {
       humor: 'none — earnest, grave, first-hand; the weight of lived experience, never a punchline',
