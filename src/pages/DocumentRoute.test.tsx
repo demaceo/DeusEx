@@ -11,7 +11,7 @@ function renderAt(path: string) {
 describe('routing', () => {
   it('renders the matching document for a known slug', () => {
     renderAt('/real-costs')
-    expect(screen.getByText(/Five voices examine/i)).toBeInTheDocument()
+    expect(screen.getByText(/Examining the energy, water, labor/i)).toBeInTheDocument()
   })
 
   it('renders NotFound for an unknown slug', () => {

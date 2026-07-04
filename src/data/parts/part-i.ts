@@ -11,7 +11,7 @@ export const partI: RoundtableDocument = {
       [{ text: 'A Roundtable on Real Costs' }],
     ],
     subtitle:
-      'Five voices examine the energy, water, labor, and accountability crises behind artificial intelligence, grounded in fact, not fiction.',
+      'Examining the energy, water, labor, and accountability crises behind artificial intelligence, grounded in fact, not fiction.',
     dateLine: 'Updated May 2026 · All data sourced from primary publications',
     accentColor: 'accent',
   },

@@ -11,7 +11,7 @@ export const partII: RoundtableDocument = {
       [{ text: "What's Actually Being Done", em: true }],
     ],
     subtitle:
-      "The same five voices return, examining real-world responses to AI's energy, water, labor, and regulatory crises. Progress is happening. So are the gaps.",
+      "Examining real-world responses to AI's energy, water, labor, and regulatory crises. Progress is happening. So are the gaps.",
     dateLine: 'May 2026 · Companion to "The AI Reckoning: A Roundtable on Real Costs"',
     accentColor: 'gold',
   },

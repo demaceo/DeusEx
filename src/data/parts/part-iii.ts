@@ -11,7 +11,7 @@ export const partIII: RoundtableDocument = {
       [{ text: "What It's Actually Getting Right", em: true }],
     ],
     subtitle:
-      'The same five voices, this time examining the concrete, documented, peer-reviewed positive outcomes of AI research, access, and application. No hype. No speculation. Just what is actually working.',
+      'Highlighting the concrete, documented, peer-reviewed positive outcomes of AI research, access, and application. No hype. No speculation. Just what is actually working.',
     dateLine: 'May 2026 · Third in the AI Reckoning series',
     accentColor: 'green',
   },

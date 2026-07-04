@@ -52,5 +52,5 @@ describe('ChartCatalogPage', () => {
     const figures = await screen.findAllByRole('img', {}, { timeout: 15000 })
     expect(figures.length).toBeGreaterThan(0)
     for (const figure of figures) expect(figure).toHaveAttribute('aria-label')
-  })
+  }, 20000)
 })

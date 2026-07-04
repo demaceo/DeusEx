@@ -53,7 +53,7 @@ export function RoundNav({ items, accentColor }: RoundNavProps) {
       data-accent={accentColor}
     >
       <p className="round-nav__heading">
-        On this Roundtable
+        On this Roundtable <br />
         {items.length ? <span className="round-nav__count"> · {items.length} rounds</span> : null}
       </p>
       <ol className="round-nav__list">
