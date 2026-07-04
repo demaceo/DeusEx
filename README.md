@@ -43,10 +43,17 @@ shared component kit**, not hand-maintained pages:
 
 Every statistic and citation is an individually-addressable **`Claim`** in a per-document
 registry, each carrying a `verificationStatus` (`pending` / `verified` / `disputed` /
-`unverified`) and a slot for a real source URL. Today everything is `pending` and the site
-visibly flags figures as **not yet independently verified** — actual fact-checking against
-primary sources is a dedicated later pass. A dev-time referential-integrity check
-(`src/data/documents.ts`) ensures no claim or source reference dangles.
+`unverified`), a real source URL, a reviewer note, and a last-checked date. **All eleven parts
+have been fact-checked against primary sources**; the per-part write-ups live in
+[`docs/verification/`](docs/verification/). Across the series the large majority of claims are
+`verified`, with a minority `disputed` (the figure is real but misattributed — wrong year, actor,
+or source) or `unverified` (no primary source located for the specific attribution). The site
+surfaces this honestly: citations and stat boxes color by status, a chart shows its **Verified**
+badge only when every backing figure checks out, and the **evidence ledger** (`/verification`)
+tallies each document's status breakdown with links to primary sources. Disputed and unverified
+figures are flagged in the reviewer note, not silently changed, since the prose is a transcript of
+the source documents. A dev-time referential-integrity check (`src/data/documents.ts`) ensures no
+claim or source reference dangles.
 
 ## Develop
 

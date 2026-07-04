@@ -572,11 +572,11 @@ export const partXI: RoundtableDocument = {
       kind: 'statistic',
       claimText: '~2M L',
       sourceId: 'src-iea-minerals',
-      verificationStatus: 'verified',
+      verificationStatus: 'disputed',
       verifiedUrl:
-        'https://www.iea.org/reports/the-role-of-critical-minerals-in-clean-energy-transitions',
-      note: 'Commonly cited estimate that producing one tonne of lithium from brine evaporation uses on the order of ~2 million litres of water. Figures vary widely by site and method (brine vs hard-rock); presented as an order-of-magnitude estimate.',
-      lastCheckedISO: '2026-06-27',
+        'https://www.nrdc.org/bio/amanda-maxwell/lithium-mining-must-not-dry-atacama-desert',
+      note: 'The ~2 million litres per tonne figure is credible as an order-of-magnitude estimate, but it is misattributed to the IEA. The cited IEA report does not state it; the number traces to Dr. Ingrid Garces (Univ. of Antofagasta) via NRDC and similar reporting. The IEA discusses lithium-brine water stress qualitatively, in different units. Figure defensible; IEA attribution wrong.',
+      lastCheckedISO: '2026-07-04',
     },
     's-xi-ewaste': {
       id: 's-xi-ewaste',
@@ -616,11 +616,11 @@ export const partXI: RoundtableDocument = {
       kind: 'citation',
       claimText: '~2 million litres of water per tonne of lithium (brine)',
       sourceId: 'src-iea-minerals',
-      verificationStatus: 'verified',
+      verificationStatus: 'disputed',
       verifiedUrl:
-        'https://www.iea.org/reports/the-role-of-critical-minerals-in-clean-energy-transitions',
-      note: 'Order-of-magnitude estimate of water used per tonne of lithium from brine evaporation, frequently cited in critical-minerals and Atacama water-use reporting. Varies significantly by method and site.',
-      lastCheckedISO: '2026-06-27',
+        'https://www.nrdc.org/bio/amanda-maxwell/lithium-mining-must-not-dry-atacama-desert',
+      note: 'The ~2 million litres of water per tonne of lithium (brine) figure is a widely repeated order-of-magnitude estimate, but it does not originate from the cited IEA report; it traces to Dr. Ingrid Garces via NRDC and comparable sources. Number defensible; IEA source attribution wrong.',
+      lastCheckedISO: '2026-07-04',
     },
     'c-xi-rare-earth': {
       id: 'c-xi-rare-earth',

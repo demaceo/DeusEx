@@ -641,10 +641,10 @@ export const partX: RoundtableDocument = {
       kind: 'citation',
       claimText: 'Healthcare algorithm: Black patients flagged 17.7% biased vs 46.5% corrected',
       sourceId: 'src-obermeyer',
-      verificationStatus: 'verified',
+      verificationStatus: 'disputed',
       verifiedUrl: 'https://www.science.org/doi/10.1126/science.aax2342',
-      note: "Obermeyer et al., Science (2019): correcting the algorithm's cost-based proxy would raise the share of Black patients identified for extra care from 17.7% to 46.5%. The model used ~200 million people-years of data.",
-      lastCheckedISO: '2026-06-27',
+      note: "Obermeyer et al., Science (2019): correcting the algorithm's cost-based proxy would raise the share of Black patients identified for extra care from 17.7% to 46.5% (headline figure verified). The '~200 million people-years of data' descriptor is wrong: that figure is the number of people such commercial risk algorithms are applied to each year across the US (deployment scale), not this study's training data. The study itself analyzed about 49,618 patients from one academic medical center. Core statistic correct; data-volume descriptor misattributed.",
+      lastCheckedISO: '2026-07-04',
     },
     'c-x-lending': {
       id: 'c-x-lending',
