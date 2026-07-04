@@ -23,8 +23,8 @@ pnpm vitest run src/path/to/file.test.ts
 Podcast generation (build-time, maintainer-only — needs API keys in `.env.local`):
 
 ```bash
-pnpm podcast:generate -- --slug=real-costs --dry-run   # Claude rewrite only, no TTS spend
-pnpm podcast:generate -- --slug=real-costs             # full synth + write assets
+pnpm podcast:generate -- --id=part-i --dry-run   # Claude rewrite only, no TTS spend
+pnpm podcast:generate -- --id=part-i             # full synth + write assets
 ```
 
 Pre-commit hooks (Husky + lint-staged) run ESLint + Prettier automatically on staged `.ts`/`.tsx` files.

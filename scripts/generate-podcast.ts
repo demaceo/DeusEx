@@ -8,8 +8,8 @@
  *
  * Run by a maintainer with API keys in .env.local — NEVER shipped to the client.
  *
- *   node --import tsx scripts/generate-podcast.ts --slug=real-costs --dry-run
- *   node --import tsx scripts/generate-podcast.ts --slug=real-costs
+ *   node --import tsx scripts/generate-podcast.ts --id=part-i --dry-run
+ *   node --import tsx scripts/generate-podcast.ts --id=part-i
  *
  * --dry-run stops after the Claude rewrite and writes only the reviewable script
  * JSON (no ElevenLabs spend), so the adapted wording can be signed off first.
@@ -73,14 +73,14 @@ interface ManifestEntry {
 }
 type Manifest = Record<string, ManifestEntry>
 
-function parseArgs(argv: string[]): { slug?: string; dryRun: boolean } {
-  let slug: string | undefined
+function parseArgs(argv: string[]): { id?: string; dryRun: boolean } {
+  let id: string | undefined
   let dryRun = false
   for (const arg of argv) {
     if (arg === '--dry-run') dryRun = true
-    else if (arg.startsWith('--slug=')) slug = arg.slice('--slug='.length)
+    else if (arg.startsWith('--id=')) id = arg.slice('--id='.length)
   }
-  return { slug, dryRun }
+  return { id, dryRun }
 }
 
 function voiceFor(speaker: Turn['speaker']) {
@@ -101,15 +101,15 @@ async function readManifest(): Promise<Manifest> {
 }
 
 async function main() {
-  const { slug, dryRun } = parseArgs(process.argv.slice(2))
-  if (!slug) {
-    console.error('Usage: generate-podcast.ts --slug=<slug> [--dry-run]')
+  const { id, dryRun } = parseArgs(process.argv.slice(2))
+  if (!id) {
+    console.error('Usage: generate-podcast.ts --id=<id> [--dry-run]')
     process.exit(1)
   }
 
-  const doc = DOCS.find((d) => d.slug === slug)
+  const doc = DOCS.find((d) => d.id === id)
   if (!doc) {
-    console.error(`Unknown slug "${slug}". Known: ${DOCS.map((d) => d.slug).join(', ')}`)
+    console.error(`Unknown id "${id}". Known: ${DOCS.map((d) => d.id).join(', ')}`)
     process.exit(1)
   }
 
