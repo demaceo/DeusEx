@@ -79,7 +79,7 @@ const BASE: VoiceSettings = {
  * intro/prose/figure beats. Deliberately calm and neutral so the personas stand out.
  */
 export const HOST_VOICE: VoiceCasting = {
-  voiceId: '21m00Tcm4TlvDq8ikWAM', // Rachel — calm, clear, classic narrator
+  voiceId: 'VlUmeC1Uzj3NnwiVR9K9', // Black man — steady, resonant narrator; distinct from every persona voice
   settings: { ...BASE, stability: 0.6, style: 0.2 },
   characterNote: 'Neutral podcast host/narrator. Measured, warm, unobtrusive.',
   delivery: {
@@ -189,7 +189,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
   },
   accelerationist: {
     voiceId: '1THll2MhJjluQYaSQxDr', // Spanish male — fast, confident energy
-    settings: { ...BASE, stability: 0.38, style: 0.48, speed: 1.06 },
+    settings: { ...BASE, stability: 0.38, style: 0.48, speed: 1.1 },
     characterNote: 'e/acc founder. Fast, energetic, provocative.',
     delivery: {
       humor: 'provocative and quick; enjoys a sharp, contrarian one-liner',
@@ -264,7 +264,7 @@ export const PERSONA_VOICES: Record<PersonaId, VoiceCasting> = {
     // Nigerian woman — first-hand extraction-zone gravity (persona is written as
     // female in part-xi.ts: "She lives where the minerals come from").
     voiceId: 'b8XX4QShLFkd3yZQlz8T',
-    settings: { ...BASE, stability: 0.48, style: 0.42, speed: 0.97 },
+    settings: { ...BASE, stability: 0.56, style: 0.3, speed: 0.97 },
     characterNote: 'Community organizer in an extraction zone. Resolute, unvarnished, weighty.',
     delivery: {
       humor: 'none — earnest, grave, first-hand; the weight of lived experience, never a punchline',
