@@ -67,3 +67,9 @@ pnpm preview
 
 Deployed on Vercel; `vercel.json` adds an SPA rewrite so deep links (e.g. `/getting-right`)
 resolve to the app.
+
+Command to generate a new part:
+
+```bash
+pnpm podcast:generate -- --id=part-x
+```
