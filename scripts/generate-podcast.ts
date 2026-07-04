@@ -37,6 +37,8 @@ import { partVI } from '../src/data/parts/part-vi'
 import { partVII } from '../src/data/parts/part-vii'
 import { partVIII } from '../src/data/parts/part-viii'
 import { partIX } from '../src/data/parts/part-ix'
+import { partX } from '../src/data/parts/part-x'
+import { partXI } from '../src/data/parts/part-xi'
 import { adaptScript } from './lib/adaptScript'
 import { flattenDocument } from './lib/flattenDocument'
 import { synthesize } from './lib/elevenlabs'
@@ -54,6 +56,8 @@ const DOCS: RoundtableDocument[] = [
   partVII,
   partVIII,
   partIX,
+  partX,
+  partXI,
 ]
 
 const HERE = dirname(fileURLToPath(import.meta.url))
