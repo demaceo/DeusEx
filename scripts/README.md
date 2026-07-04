@@ -45,16 +45,16 @@ play button only for parts present in it.
 
 ## Generate an episode
 
-Slugs match `RoundtableDocument.slug` (e.g. Part I is `real-costs`).
+IDs match `RoundtableDocument.id` (e.g. Part I is `part-i`).
 
 ```sh
 # 1. Editorial review — runs the Claude rewrite only, no ElevenLabs spend.
-npm run podcast:generate -- --slug=real-costs --dry-run
+npm run podcast:generate -- --id=part-i --dry-run
 #    Inspect public/audio/part-i.script.json: confirm every statistic, figure,
 #    and persona position is preserved before spending TTS credits.
 
 # 2. Full generation — synthesizes voices and writes the assets + manifest.
-npm run podcast:generate -- --slug=real-costs
+npm run podcast:generate -- --id=part-i
 ```
 
 Then listen to `public/audio/part-i.mp3`, and commit the generated
@@ -67,6 +67,5 @@ Then listen to `public/audio/part-i.mp3`, and commit the generated
 - Segments are concatenated MP3s (browsers play these fine). For studio-grade
   silence padding or background music, post-process the stitched file with
   `ffmpeg` — a natural place to extend `generate-podcast.ts`.
-- Roll out to the rest of the series by re-running step 2 for each slug:
-  `whats-actually-being-done`, `whats-actually-getting-right`, etc. (see
-  `src/data/parts/*` for each `slug`).
+- Roll out to the rest of the series by re-running step 2 for each id:
+  `part-ii`, `part-iii`, … `part-xi` (see `src/data/parts/*` for each `id`).

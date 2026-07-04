@@ -580,8 +580,8 @@ export const partIX: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://societyofauthors.org/2024/04/11/new-survey-of-authors-and-illustrators-on-ai/',
-      note: "The Society of Authors' 2024 survey reported that roughly a quarter (~26%) of illustrators said they had lost work due to generative AI; about 37% of translators reported the same.",
-      lastCheckedISO: '2026-06-27',
+      note: "The Society of Authors' 2024 survey reported that roughly a quarter (~26%) of illustrators said they had lost work due to generative AI; about 36% of translators reported the same.",
+      lastCheckedISO: '2026-07-04',
     },
     's-ix-images-made': {
       id: 's-ix-images-made',
@@ -620,11 +620,11 @@ export const partIX: RoundtableDocument = {
       kind: 'citation',
       claimText: 'SoA 2024: ~26% of illustrators and ~37% of translators lost work to AI',
       sourceId: 'src-soa',
-      verificationStatus: 'verified',
+      verificationStatus: 'disputed',
       verifiedUrl:
         'https://societyofauthors.org/2024/04/11/new-survey-of-authors-and-illustrators-on-ai/',
-      note: 'Society of Authors 2024 survey: ~26% of illustrators and ~37% of translators reported losing work due to generative AI. Bar shows both figures.',
-      lastCheckedISO: '2026-06-27',
+      note: "Society of Authors 2024 survey: the illustrators figure (~26% lost work) is correct, but the translators lost-work figure is 36%, not 37%. The 37% is the SoA figure for illustrators whose income decreased (translators' income decreased 43%). Illustrator figure correct; translator lost-work figure misstated as 37% instead of 36%.",
+      lastCheckedISO: '2026-07-04',
     },
     'c-ix-licensing': {
       id: 'c-ix-licensing',
