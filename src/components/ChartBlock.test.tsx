@@ -352,6 +352,48 @@ describe('ChartBlock', () => {
     expect(container.querySelector('.chart-worldmap__year')).toHaveTextContent('2030')
   })
 
+  it('world map opens on the first measured frame and flags modeled frames', () => {
+    const { container } = renderChart({
+      kind: 'worldMap',
+      title: 'Data centers',
+      ariaLabel: 'World map of data centers',
+      years: ['2020 (est.)', '2025', '2030 (proj.)'],
+      projectedYears: ['2020 (est.)', '2030 (proj.)'],
+      claimIds: ['claim-a'],
+      data: [
+        {
+          iso: '840',
+          label: 'United States',
+          values: { '2020 (est.)': 2714, '2025': 5427, '2030 (proj.)': 10854 },
+        },
+      ],
+    })
+    // Opens on the measured frame (2025), not the modeled 2020, so no badge.
+    expect(container.querySelector('.chart-worldmap__year')).toHaveTextContent('2025')
+    expect(container.querySelector('.chart-worldmap__modeled')).toBeNull()
+
+    const slider = container.querySelector('input[type="range"]') as HTMLInputElement
+    // Scrub to a modeled frame (2030 proj.) → the "Modeled" badge appears.
+    fireEvent.change(slider, { target: { value: '2' } })
+    expect(container.querySelector('.chart-worldmap__year')).toHaveTextContent('2030')
+    expect(container.querySelector('.chart-worldmap__modeled')).toBeInTheDocument()
+  })
+
+  it('gives the world map slider an aria-valuetext of the year label', () => {
+    const { container } = renderChart({
+      kind: 'worldMap',
+      title: 'Data centers',
+      ariaLabel: 'World map of data centers',
+      years: ['2020', '2025', '2030'],
+      claimIds: ['claim-a'],
+      data: [{ iso: '840', label: 'United States', values: { '2020': 1, '2025': 2, '2030': 3 } }],
+    })
+    const slider = container.querySelector('input[type="range"]') as HTMLInputElement
+    expect(slider).toHaveAttribute('aria-valuetext', '2020')
+    fireEvent.change(slider, { target: { value: '1' } })
+    expect(slider).toHaveAttribute('aria-valuetext', '2025')
+  })
+
   it('marks a projected tail and shades the band on a line chart', () => {
     const { container } = renderChart({
       kind: 'line',

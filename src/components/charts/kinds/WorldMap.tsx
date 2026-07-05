@@ -29,27 +29,47 @@ const AUTOPLAY_MS = 1600
 const valueAt = (d: WorldMapDatum, year?: string): number =>
   (year ? d.values?.[year] : d.value) ?? 0
 
+/** Index of the first frame that isn't modeled (est./proj.), so the map opens on measured data. */
+function firstMeasuredIndex(years?: string[], projected?: string[]): number {
+  if (!years?.length || !projected?.length) return 0
+  const i = years.findIndex((y) => !projected.includes(y))
+  return i >= 0 ? i : 0
+}
+
 export function WorldMap({ chart, width, height, thumbnail }: KindProps) {
   const { tip, show, hide } = useTooltip()
   const reduceMotion = usePrefersReducedMotion()
+  const years = chart.years
+  const hasYears = !!years?.length
+  const projectedYears = chart.projectedYears
   const [basemap, setBasemap] = useState<WorldBasemap | null>(null)
-  const [yearIndex, setYearIndex] = useState(0)
+  // Distinguish a genuinely failed basemap fetch from a slow one, so the map
+  // shows "Loading map…" only while pending and "Map unavailable" on failure
+  // (the visually-hidden data table still carries every figure either way).
+  const [status, setStatus] = useState<'loading' | 'ready' | 'failed'>('loading')
+  // Open on the first measured frame (not a modeled est./proj. one) so the map
+  // lands on solid ground before the reader scrubs to the projected past/future.
+  const [yearIndex, setYearIndex] = useState(() => firstMeasuredIndex(years, projectedYears))
   const [playing, setPlaying] = useState(false)
 
   useEffect(() => {
     let live = true
     loadBasemap().then((fc) => {
-      if (live) setBasemap(fc)
+      if (!live) return
+      if (fc) {
+        setBasemap(fc)
+        setStatus('ready')
+      } else {
+        setStatus('failed')
+      }
     })
     return () => {
       live = false
     }
   }, [])
 
-  const years = chart.years
-  const hasYears = !!years?.length
   // Thumbnails skip the scrubber chrome (and the height reserved for it)
-  // entirely, but still plot the first frame's real data below.
+  // entirely, but still plot the measured frame's real data below.
   const showScrubber = hasYears && !thumbnail
 
   useEffect(() => {
@@ -60,6 +80,8 @@ export function WorldMap({ chart, width, height, thumbnail }: KindProps) {
 
   const mapH = showScrubber ? height - SCRUBBER_H : height
   const year = hasYears ? years![Math.min(yearIndex, years!.length - 1)] : undefined
+  // The current frame is modeled (estimated/projected) rather than measured.
+  const modeled = !!year && (projectedYears?.includes(year) ?? false)
 
   // Shared radius domain across ALL frames so bubbles visibly grow between years.
   const domainMax =
@@ -73,13 +95,14 @@ export function WorldMap({ chart, width, height, thumbnail }: KindProps) {
 
   return (
     <>
-      {basemap ? (
+      {status === 'ready' && basemap ? (
         <MapSvg
           chart={chart}
           basemap={basemap}
           width={width}
           mapH={mapH}
           year={year}
+          modeled={modeled}
           radius={radius}
           domainMax={domainMax}
           show={show}
@@ -88,7 +111,7 @@ export function WorldMap({ chart, width, height, thumbnail }: KindProps) {
       ) : (
         <svg width={width} height={mapH} role="img" aria-label={chart.ariaLabel}>
           <text x={width / 2} y={mapH / 2} textAnchor="middle" style={AXIS_TEXT}>
-            Loading map…
+            {status === 'failed' ? 'Map unavailable' : 'Loading map…'}
           </text>
         </svg>
       )}
@@ -115,6 +138,7 @@ export function WorldMap({ chart, width, height, thumbnail }: KindProps) {
                   type="button"
                   className="chart-worldmap__play"
                   aria-label={playing ? 'Pause' : 'Play'}
+                  aria-pressed={playing}
                   onClick={() => setPlaying((p) => !p)}
                 >
                   {playing ? '❙❙' : '▶'}
@@ -127,6 +151,7 @@ export function WorldMap({ chart, width, height, thumbnail }: KindProps) {
                 step={1}
                 value={yearIndex}
                 aria-label="Year"
+                aria-valuetext={year}
                 onChange={(e) => {
                   setPlaying(false)
                   setYearIndex(Number(e.target.value))
@@ -134,6 +159,7 @@ export function WorldMap({ chart, width, height, thumbnail }: KindProps) {
               />
             </>
           )}
+          {modeled ? <span className="chart-worldmap__modeled">Modeled</span> : null}
           <span className="chart-worldmap__year">{year}</span>
         </div>
       ) : null}
@@ -149,13 +175,26 @@ interface MapSvgProps {
   width: number
   mapH: number
   year?: string
+  /** Current frame is modeled (estimated/projected) rather than measured. */
+  modeled: boolean
   radius: (v: number) => number
   domainMax: number
   show: ReturnType<typeof useTooltip>['show']
   hide: ReturnType<typeof useTooltip>['hide']
 }
 
-function MapSvg({ chart, basemap, width, mapH, year, radius, domainMax, show, hide }: MapSvgProps) {
+function MapSvg({
+  chart,
+  basemap,
+  width,
+  mapH,
+  year,
+  modeled,
+  radius,
+  domainMax,
+  show,
+  hide,
+}: MapSvgProps) {
   const { projection, path } = fitWorld(basemap, width, mapH)
 
   // Resolve each datum to a projected bubble; largest first so small render on top.
@@ -173,8 +212,10 @@ function MapSvg({ chart, basemap, width, mapH, year, radius, domainMax, show, hi
   // Two-circle nested size legend, bottom-left, using the live radius scale.
   const legendVals = [domainMax, Math.round(domainMax / 4)]
   const legendBaseY = mapH - 14
-  const legendX = 30
+  // Offset so the largest circle isn't clipped by the SVG's left edge.
+  const legendX = radius(domainMax) + 10
   const legendCaptionX = legendX + radius(domainMax) + 8
+  const legendTitleY = legendBaseY - 2 * radius(domainMax) - 8
 
   return (
     <svg width={width} height={mapH} role="img" aria-label={chart.ariaLabel}>
@@ -197,10 +238,12 @@ function MapSvg({ chart, basemap, width, mapH, year, radius, domainMax, show, hi
             cy={b.cy}
             r={b.r}
             className="chart-worldmap__bubble"
+            data-modeled={modeled || undefined}
             fill={CHART_COLORS.accent}
-            fillOpacity={0.6}
+            fillOpacity={modeled ? 0.32 : 0.6}
             stroke={CHART_COLORS.white}
             strokeWidth={0.8}
+            strokeDasharray={modeled ? '3 2' : undefined}
             onMouseEnter={() =>
               show({
                 x: b.cx,
@@ -210,11 +253,20 @@ function MapSvg({ chart, basemap, width, mapH, year, radius, domainMax, show, hi
               })
             }
             onMouseLeave={hide}
-          />
+          >
+            <title>{`${b.label}: ${fmt(b.value, chart.unit)}`}</title>
+          </circle>
         ))}
       </g>
       {/* In-map size legend */}
       <g aria-hidden="true">
+        <text
+          x={legendX - radius(domainMax)}
+          y={legendTitleY}
+          style={{ ...AXIS_TEXT, fontSize: 9, letterSpacing: '0.08em' }}
+        >
+          Data centers
+        </text>
         {legendVals.map((v, i) => {
           const rr = radius(v)
           return (
