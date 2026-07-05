@@ -1047,6 +1047,17 @@ cite[data-verification='unverified'] {
   min-width: 6rem;
   text-align: right;
 }
+/* Flags the current frame as an estimate/projection, not a measured count. */
+.chart-worldmap__modeled {
+  flex-shrink: 0;
+  padding: 0.1rem 0.4rem;
+  border: 1px dashed var(--muted);
+  border-radius: 2px;
+  font-size: 0.54rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 .chart-worldmap__play {
   flex-shrink: 0;
   width: 26px;
@@ -1089,6 +1100,19 @@ cite[data-verification='unverified'] {
 @media (prefers-reduced-motion: reduce) {
   .chart-worldmap__bubble {
     transition: none;
+  }
+}
+
+/* On narrow screens, relax the scrubber so the slider, play button, badge, and
+   year label don't get crushed into the fixed row. */
+@media (max-width: 560px) {
+  .chart-worldmap__scrubber {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 0.4rem 0.6rem;
+  }
+  .chart-worldmap__year {
+    min-width: 0;
   }
 }
 

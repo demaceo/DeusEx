@@ -218,6 +218,10 @@ export type ChartSpec =
       /** Ordered frames for the time scrubber, e.g. ["2020 (est.)","2025","2030 (proj.)"].
        *  2 entries → a toggle; 3+ → a slider. Omit for a static single-value map. */
       years?: string[]
+      /** Which `years` frames are modeled/estimated rather than measured. Those frames
+       *  render with a distinct "modeled" bubble style and a caption; the map also opens
+       *  on the first frame NOT listed here (the measured one). */
+      projectedYears?: string[]
       /** Bubble radius-scale max override; defaults to the max value across all frames
        *  (a shared domain so bubbles visibly grow between years). */
       domainMax?: number

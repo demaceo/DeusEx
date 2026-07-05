@@ -115,6 +115,7 @@ export const partI: RoundtableDocument = {
             ariaLabel:
               'World map of data centers by country across 2020, 2025 and 2030. The United States dominates with about 5,400 facilities in 2025 (roughly 46% of the global total) and its bubble grows fastest toward 2030, with China second.',
             years: ['2020 (est.)', '2025', '2030 (proj.)'],
+            projectedYears: ['2020 (est.)', '2030 (proj.)'],
             data: [
               {
                 iso: '840',
