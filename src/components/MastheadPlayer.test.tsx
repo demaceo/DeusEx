@@ -21,7 +21,10 @@ function makePlayer(overrides: Partial<PodcastPlayerState> = {}): PodcastPlayerS
     currentTime: 0,
     duration: 300,
     rate: 1,
+    currentCue: null,
     currentSpeaker: null,
+    captionsEnabled: false,
+    toggleCaptions: vi.fn(),
     toggle: vi.fn(),
     seek: vi.fn(),
     cycleRate: vi.fn(),
@@ -86,6 +89,37 @@ describe('MastheadPlayer — active state', () => {
       .querySelector('.masthead-player__now')
     expect(nowRegion).toHaveAttribute('aria-live', 'polite')
     expect(nowRegion).toHaveAttribute('aria-atomic', 'true')
+  })
+
+  it('shows a captions toggle reflecting captionsEnabled', () => {
+    renderActive({ captionsEnabled: true })
+    expect(screen.getByRole('button', { name: /turn off captions/i })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    )
+  })
+
+  it('calls toggleCaptions when the CC button is clicked', () => {
+    const toggleCaptions = vi.fn()
+    renderActive({ captionsEnabled: false, toggleCaptions })
+    fireEvent.click(screen.getByRole('button', { name: /turn on captions/i }))
+    expect(toggleCaptions).toHaveBeenCalledOnce()
+  })
+
+  it('renders the captions overlay when captions are enabled', () => {
+    renderActive({
+      captionsEnabled: true,
+      currentCue: { speaker: 'host', text: 'Hello there.', startMs: 0, endMs: 1000 },
+    })
+    expect(screen.getByText('Hello there.')).toBeInTheDocument()
+  })
+
+  it('does not render the captions overlay when captions are disabled', () => {
+    renderActive({
+      captionsEnabled: false,
+      currentCue: { speaker: 'host', text: 'Hello there.', startMs: 0, endMs: 1000 },
+    })
+    expect(screen.queryByText('Hello there.')).not.toBeInTheDocument()
   })
 })
 

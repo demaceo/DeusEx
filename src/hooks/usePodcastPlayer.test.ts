@@ -148,3 +148,90 @@ describe('usePodcastPlayer — play() rejection resets isActive', () => {
     expect(result.current.isPlaying).toBe(false)
   })
 })
+
+// ─── currentCue tracks currentTime ─────────────────────────────────────────────
+
+describe('usePodcastPlayer — currentCue', () => {
+  let audioStub: ReturnType<typeof makeAudioStub>
+
+  beforeEach(() => {
+    audioStub = makeAudioStub()
+    vi.stubGlobal(
+      'Audio',
+      vi.fn(function () {
+        return audioStub
+      }),
+    )
+    vi.mocked(getEpisode).mockResolvedValue(MOCK_EPISODE)
+    vi.mocked(getTranscript).mockResolvedValue({
+      slug: 'part-i',
+      documentId: 'part-i' as DocumentId,
+      durationMs: 300000,
+      cues: [
+        { speaker: 'host', text: 'First cue.', startMs: 0, endMs: 5000 },
+        { speaker: 'tech-optimist', text: 'Second cue.', startMs: 5000, endMs: 10000 },
+      ],
+    })
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('resolves to the cue matching currentTime once cues load', async () => {
+    const { result } = renderHook(() => usePodcastPlayer('part-i'))
+    await waitFor(() => expect(result.current.episode).not.toBeNull())
+
+    await act(async () => {
+      result.current.toggle()
+    })
+    await waitFor(() => expect(result.current.currentCue).not.toBeNull())
+    expect(result.current.currentCue?.text).toBe('First cue.')
+
+    act(() => {
+      audioStub.currentTime = 7
+      audioStub.addEventListener.mock.calls
+        .filter((call) => call[0] === 'timeupdate')
+        .forEach((call) => call[1]())
+    })
+
+    expect(result.current.currentCue?.text).toBe('Second cue.')
+    expect(result.current.currentSpeaker).toBe('tech-optimist')
+  })
+})
+
+// ─── captionsEnabled persists to localStorage ──────────────────────────────────
+
+describe('usePodcastPlayer — captionsEnabled', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    vi.mocked(getEpisode).mockResolvedValue(MOCK_EPISODE)
+    vi.mocked(getTranscript).mockResolvedValue(null)
+  })
+
+  it('defaults to false when localStorage is empty', () => {
+    const { result } = renderHook(() => usePodcastPlayer('part-i'))
+    expect(result.current.captionsEnabled).toBe(false)
+  })
+
+  it('defaults to the persisted value', () => {
+    localStorage.setItem('deusex:captions-enabled', 'true')
+    const { result } = renderHook(() => usePodcastPlayer('part-i'))
+    expect(result.current.captionsEnabled).toBe(true)
+  })
+
+  it('toggleCaptions flips the value and persists it', () => {
+    const { result } = renderHook(() => usePodcastPlayer('part-i'))
+    act(() => {
+      result.current.toggleCaptions()
+    })
+    expect(result.current.captionsEnabled).toBe(true)
+    expect(localStorage.getItem('deusex:captions-enabled')).toBe('true')
+
+    act(() => {
+      result.current.toggleCaptions()
+    })
+    expect(result.current.captionsEnabled).toBe(false)
+    expect(localStorage.getItem('deusex:captions-enabled')).toBe('false')
+  })
+})
