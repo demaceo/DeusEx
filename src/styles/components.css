@@ -3256,6 +3256,33 @@ cite[role='button']:focus-visible::after {
   outline: none;
 }
 
+.masthead-player__cc {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(245, 240, 232, 0.25);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--paper);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+.masthead-player__cc[aria-pressed='true'] {
+  border-color: var(--masthead-accent, var(--accent));
+  color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
+}
+.masthead-player__cc:hover,
+.masthead-player__cc:focus-visible {
+  border-color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
+  color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
+  outline: none;
+}
+
 /* Idle row — the "Listen to this Roundtable" prompt before first play. */
 .masthead-player__idle-label {
   flex: 1 1 auto;
@@ -3277,8 +3304,9 @@ cite[role='button']:focus-visible::after {
 }
 
 /* ── Condensed strip — masthead collapsed on scroll ──
-   Shrink to play + progress + time; drop the speaker chip and rate button so
-   the pinned header stays slim. */
+   Shrink to play + progress + time; drop the rate and CC buttons so the
+   pinned header stays slim, but keep the speaker chip (compacted) so
+   listeners still know who's talking while scrolling. */
 .masthead[data-collapsed='true'] .masthead-player {
   max-width: 26rem;
   margin-top: 0.5rem;
@@ -3289,9 +3317,22 @@ cite[role='button']:focus-visible::after {
   width: 30px;
   height: 30px;
 }
-.masthead[data-collapsed='true'] .masthead-player__now,
-.masthead[data-collapsed='true'] .masthead-player__rate {
+.masthead[data-collapsed='true'] .masthead-player__rate,
+.masthead[data-collapsed='true'] .masthead-player__cc {
   display: none;
+}
+.masthead[data-collapsed='true'] .masthead-player__now {
+  max-width: 8rem;
+}
+.masthead[data-collapsed='true'] .masthead-player__eyebrow {
+  display: none;
+}
+.masthead[data-collapsed='true'] .masthead-player__speaker-icon {
+  width: 20px;
+  height: 20px;
+}
+.masthead[data-collapsed='true'] .masthead-player__speaker-name {
+  font-size: 0.72rem;
 }
 
 @media (max-width: 640px) {
@@ -3303,7 +3344,8 @@ cite[role='button']:focus-visible::after {
   .masthead-player__now {
     max-width: 7.5rem;
   }
-  .masthead-player__rate {
+  .masthead-player__rate,
+  .masthead-player__cc {
     display: none;
   }
 }
@@ -3311,6 +3353,61 @@ cite[role='button']:focus-visible::after {
 @media (prefers-reduced-motion: reduce) {
   .masthead-player,
   .masthead-player__toggle {
+    transition: none;
+  }
+}
+
+/* ─── CAPTIONS OVERLAY ──────────────────────────────────────────────
+   Fixed, floating subtitle-style box, independent of masthead scroll or
+   collapse state. Mounted by MastheadPlayer but positioned relative to
+   the viewport so it stays visible while the reader scrolls. */
+.captions-overlay {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  bottom: max(1.5rem, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 60;
+  width: min(90vw, 40rem);
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  background: rgba(20, 16, 12, 0.82);
+  color: var(--paper);
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease);
+}
+.captions-overlay__speaker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--persona-text-color, var(--persona-color, rgba(245, 240, 232, 0.65)));
+  margin-bottom: 0.15rem;
+}
+.captions-overlay__text {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+.captions-overlay__text:empty {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .captions-overlay {
+    width: min(94vw, 26rem);
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    padding: 0.5rem 0.85rem;
+  }
+  .captions-overlay__text {
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .captions-overlay {
     transition: none;
   }
 }

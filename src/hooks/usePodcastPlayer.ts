@@ -11,6 +11,8 @@ import type { DocumentId } from '../types/document'
 const PLAYBACK_RATES = [1, 1.25, 1.5, 2] as const
 export type PlaybackRate = (typeof PLAYBACK_RATES)[number]
 
+const CAPTIONS_STORAGE_KEY = 'deusex:captions-enabled'
+
 export interface PodcastPlayer {
   /** Whether a generated episode exists for this document. */
   hasEpisode: boolean
@@ -21,8 +23,13 @@ export interface PodcastPlayer {
   currentTime: number
   duration: number
   rate: PlaybackRate
+  /** The transcript cue at the current playhead, or null. */
+  currentCue: TranscriptCue | null
   /** The speaker id at the current playhead, or null. */
   currentSpeaker: EpisodeSpeaker | null
+  /** Whether the closed-captions overlay is enabled. Persisted globally. */
+  captionsEnabled: boolean
+  toggleCaptions: () => void
   toggle: () => void
   /** Seek to an absolute position (seconds). Sets audio.currentTime immediately. */
   seek: (seconds: number) => void
@@ -46,6 +53,13 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [rate, setRate] = useState<PlaybackRate>(1)
+  const [captionsEnabled, setCaptionsEnabled] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem(CAPTIONS_STORAGE_KEY) === 'true'
+    } catch {
+      return false
+    }
+  })
 
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
@@ -124,12 +138,24 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
     })
   }, [])
 
-  const currentSpeaker = useMemo<EpisodeSpeaker | null>(() => {
+  const toggleCaptions = useCallback(() => {
+    setCaptionsEnabled((prev) => {
+      const next = !prev
+      try {
+        localStorage.setItem(CAPTIONS_STORAGE_KEY, String(next))
+      } catch {
+        // localStorage unavailable (private mode, disabled) — degrade silently.
+      }
+      return next
+    })
+  }, [])
+
+  const currentCue = useMemo<TranscriptCue | null>(() => {
     if (!cues || cues.length === 0) return null
     const ms = currentTime * 1000
-    const cue = cues.find((c) => ms >= c.startMs && ms < c.endMs)
-    return cue?.speaker ?? null
+    return cues.find((c) => ms >= c.startMs && ms < c.endMs) ?? null
   }, [cues, currentTime])
+  const currentSpeaker = currentCue?.speaker ?? null
 
   return {
     hasEpisode: episode !== null,
@@ -139,7 +165,10 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
     currentTime,
     duration: duration || (episode?.durationSec ?? 0),
     rate,
+    currentCue,
     currentSpeaker,
+    captionsEnabled,
+    toggleCaptions,
     toggle,
     seek,
     cycleRate,
