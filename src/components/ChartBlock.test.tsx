@@ -102,6 +102,24 @@ describe('ChartBlock', () => {
     expect(container.querySelector('.chart-donut__caption')).toHaveTextContent('Indirect')
   })
 
+  it('centerIndex overrides the gauge center to a non-dominant segment', () => {
+    const { container } = renderChart({
+      kind: 'donut',
+      title: 'Clean-energy deals',
+      unit: '%',
+      ariaLabel: 'Donut of clean-energy deal share',
+      centerIndex: 0,
+      data: [
+        { label: 'Big Tech', value: 43 },
+        { label: 'Rest of market', value: 57 },
+      ],
+    })
+    // Without centerIndex the center would show the larger 57% "Rest"; the override
+    // surfaces the 43% Big Tech story instead.
+    expect(container.querySelector('.chart-donut__figure')).toHaveTextContent('43%')
+    expect(container.querySelector('.chart-donut__caption')).toHaveTextContent('Big Tech')
+  })
+
   it('renders a legend and per-series table for stacked bars', () => {
     const { container } = renderChart({
       kind: 'stackedBar',
