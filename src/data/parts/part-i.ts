@@ -89,7 +89,8 @@ export const partI: RoundtableDocument = {
             kind: 'comparison',
             labelTop: 'Energy · Global data centers',
             title: 'Electricity demand set to more than double',
-            subtitle: "Global data-center electricity in 2025 vs. the IEA's projection for 2030.",
+            subtitle:
+              "Global data-center electricity in 2025 vs. the IEA's projection for 2030, when data centers reach roughly 3% of global electricity demand.",
             unit: 'TWh',
             claimIds: ['s-i-dc-electricity-2025', 's-i-iea-projected-2030'],
             ariaLabel:

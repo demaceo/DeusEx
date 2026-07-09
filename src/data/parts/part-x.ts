@@ -168,7 +168,7 @@ export const partX: RoundtableDocument = {
           data: {
             kind: 'comparison',
             labelTop: 'Facial Analysis · Gender Shades',
-            title: 'Same Product, Very Different Accuracy',
+            title: 'Same Task, Very Different Accuracy',
             subtitle:
               'The 2018 Gender Shades audit found commercial gender-classification error rates of up to 34.7% for darker-skinned women, against 0.8% for lighter-skinned men.',
             source: 'Buolamwini & Gebru: Gender Shades (2018)',
