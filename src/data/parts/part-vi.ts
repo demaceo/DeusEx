@@ -158,6 +158,9 @@ export const partVI: RoundtableDocument = {
             ariaLabel:
               'Donut chart showing 48 percent of surveyed AI researchers gave at least a 10 percent chance of an extremely bad outcome and 52 percent did not',
             unit: '%',
+            // Fill the center with the 48% who take the tail seriously (the title's question),
+            // not the bare majority.
+            centerIndex: 0,
             data: [
               { label: 'Gave ≥10% chance', value: 48, variant: 'accent' },
               { label: 'Gave less than 10%', value: 52, variant: 'navy' },

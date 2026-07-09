@@ -258,7 +258,7 @@ export const partXI: RoundtableDocument = {
             labelTop: 'Rare Earths · Processing',
             title: 'Who Refines the Materials',
             subtitle:
-              'China accounts for roughly 90% of global rare-earth processing: the concentrated, toxic middle of the hardware supply chain.',
+              'China accounts for roughly 90% of global rare-earth processing, versus about 60% of mining: refining is the concentrated, toxic middle of the hardware supply chain.',
             source: 'International Energy Agency: critical minerals analysis',
             claimIds: ['c-xi-rare-earth'],
             ariaLabel:

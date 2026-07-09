@@ -316,6 +316,8 @@ export const partII: RoundtableDocument = {
             ariaLabel:
               'Donut chart: Big Tech accounted for 43% of all clean-energy power purchase agreements signed globally in 2024; the rest of the market accounted for 57%.',
             source: 'Brookings, April 2026.',
+            // Fill the center with the Big Tech share (the story), not the larger "rest".
+            centerIndex: 0,
             data: [
               { label: 'Big Tech', value: 43, variant: 'accent' },
               { label: 'Rest of market', value: 57, variant: 'navy' },
