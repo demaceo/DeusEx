@@ -155,7 +155,7 @@ export const partXI: RoundtableDocument = {
             labelTop: 'Cobalt · USGS',
             title: 'Where the Cobalt Comes From',
             subtitle:
-              "The Democratic Republic of the Congo, a single country at the base of the global battery supply chain, accounts for roughly 70% of the world's mined cobalt.",
+              "The Democratic Republic of the Congo, a single country at the base of the global battery supply chain, accounts for roughly 70% of the world's mined cobalt, with USGS estimates ranging from 68% to 74% year to year.",
             source: 'US Geological Survey: Mineral Commodity Summaries (Cobalt)',
             claimIds: ['c-xi-cobalt'],
             ariaLabel:
@@ -598,7 +598,7 @@ export const partXI: RoundtableDocument = {
       verificationStatus: 'verified',
       verifiedUrl:
         'https://www.usgs.gov/centers/national-minerals-information-center/cobalt-statistics-and-information',
-      note: 'USGS: the DRC accounts for roughly 70% of global mined cobalt. Donut shown as 70/30.',
+      note: 'USGS: the DRC accounts for roughly 70% of global mined cobalt. Waffle shown as 70/30.',
       lastCheckedISO: '2026-06-27',
     },
     'c-xi-child-labor': {
