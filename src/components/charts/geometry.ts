@@ -125,8 +125,11 @@ export function canvasHeight(chart: ChartSpec): number {
     }
     case 'comparison':
       return 210
-    case 'waffle':
-      return 240
+    case 'waffle': {
+      const total = chart.total ?? 100
+      const rows = Math.ceil(total / 10)
+      return rows * 20 + 40
+    }
     case 'pictogram': {
       const total = chart.total ?? 100
       const rows = Math.ceil(total / 10)
