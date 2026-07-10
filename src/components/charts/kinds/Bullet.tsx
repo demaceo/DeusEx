@@ -38,30 +38,6 @@ export function Bullet({ chart, width, height }: KindProps) {
     <>
       <svg width={width} height={height}>
         <g transform={`translate(${m.left},${m.top})`}>
-          {/* Shared target marker spanning all rows. */}
-          <line
-            x1={tx}
-            y1={-6}
-            x2={tx}
-            y2={innerH}
-            stroke={CHART_COLORS.ink}
-            strokeWidth={1.5}
-            strokeDasharray="4 3"
-          />
-          <text
-            x={tx}
-            y={-10}
-            textAnchor="middle"
-            style={{
-              fontFamily: CHART_FONT.mono,
-              fontSize: 10,
-              fill: CHART_COLORS.ink,
-              fontWeight: 600,
-            }}
-          >
-            {chart.targetLabel ?? 'Target'} {fmt(chart.target, chart.unit)}
-          </text>
-
           {data.map((d, i) => {
             const band = y.bandwidth()
             const ty = y(d.label) ?? 0
@@ -95,6 +71,30 @@ export function Bullet({ chart, width, height }: KindProps) {
               </g>
             )
           })}
+          {/* Shared target marker spanning all rows, drawn last so it crosses the bars
+              instead of disappearing under their opaque tracks. */}
+          <line
+            x1={tx}
+            y1={-6}
+            x2={tx}
+            y2={innerH}
+            stroke={CHART_COLORS.ink}
+            strokeWidth={1.5}
+            strokeDasharray="4 3"
+          />
+          <text
+            x={tx}
+            y={-10}
+            textAnchor="middle"
+            style={{
+              fontFamily: CHART_FONT.mono,
+              fontSize: 10,
+              fill: CHART_COLORS.ink,
+              fontWeight: 600,
+            }}
+          >
+            {chart.targetLabel ?? 'Target'} {fmt(chart.target, chart.unit)}
+          </text>
         </g>
       </svg>
       <ChartTooltip tip={tip} unit={chart.unit} />
