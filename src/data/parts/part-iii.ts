@@ -200,7 +200,7 @@ export const partIII: RoundtableDocument = {
           data: {
             kind: 'stackedBar',
             labelTop: 'Science · Before AlphaFold',
-            title: 'A handful of universities once held most of the field',
+            title: 'A handful of universities once held much of the field',
             subtitle:
               'Share of protein-research output before AlphaFold opened its data; open access is now measurably reducing this concentration.',
             unit: '%',
