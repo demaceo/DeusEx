@@ -757,7 +757,7 @@ export const partIII: RoundtableDocument = {
             labelTop: 'Education · Harvard RCT (n = 194)',
             title: 'Students learned more with an AI tutor',
             subtitle:
-              'Median physics post-test score: AI tutor vs. the in-class active-learning baseline. Effect size 0.73–1.3 SD; p < 10⁻⁸.',
+              "Median physics post-test score: AI tutor vs. the in-class active-learning baseline, a learning gain more than double the control group's relative to baseline knowledge. Effect size 0.73–1.3 SD; p < 10⁻⁸.",
             claimIds: ['s-iii-harvard-effect-size', 'c-iii-harvard-rct'],
             ariaLabel:
               'Bullet chart: in a Harvard randomized controlled trial of 194 students, the AI-tutored group scored a median of 4.5 on the post-test, above the active-learning classroom baseline of 3.5.',
