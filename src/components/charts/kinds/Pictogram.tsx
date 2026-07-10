@@ -3,6 +3,8 @@ import { Cpu, Droplet, DollarSign, Leaf, User, Zap } from 'lucide-react'
 import type { ComponentType } from 'react'
 import type { ChartSpec } from '../../../types/document'
 import { CHART_COLORS, SEGMENT_VARIANTS, variantColor } from '../../chartTheme'
+import { ChartTooltip } from '../primitives'
+import { useTooltip } from '../useTooltip'
 
 type PictogramSpec = Extract<ChartSpec, { kind: 'pictogram' }>
 
@@ -13,6 +15,7 @@ interface KindProps {
 }
 
 const COLS = 10
+const GAP = 3
 
 const ICONS: Record<
   NonNullable<PictogramSpec['icon']>,
@@ -23,6 +26,8 @@ const ICONS: Record<
     strokeWidth?: number
     className?: string
     style?: React.CSSProperties
+    onMouseEnter?: () => void
+    onMouseLeave?: () => void
   }>
 > = {
   user: User,
@@ -39,6 +44,7 @@ const ICONS: Record<
  * (already a dependency).
  */
 export function Pictogram({ chart, width, height }: KindProps) {
+  const { tip, show, hide } = useTooltip()
   const total = chart.total ?? 100
   const rows = Math.ceil(total / COLS)
   const Icon = ICONS[chart.icon ?? 'user'] ?? User
@@ -48,6 +54,10 @@ export function Pictogram({ chart, width, height }: KindProps) {
     Math.min(Math.floor((width - 8) / COLS), Math.floor((height - 8) / rows)),
   )
   const iconSize = cell - 4
+  const gridW = cell * COLS + GAP * (COLS - 1)
+  const gridH = cell * rows + GAP * (rows - 1)
+  const offX = (width - gridW) / 2
+  const offY = (height - gridH) / 2
 
   const totalValue = sum(chart.data, (d) => d.value) || 1
   const owner: number[] = new Array(total).fill(-1)
@@ -58,28 +68,47 @@ export function Pictogram({ chart, width, height }: KindProps) {
   })
 
   return (
-    <div
-      className="chart-pictogram"
-      style={{ gridTemplateColumns: `repeat(${COLS}, ${cell}px)`, gridAutoRows: `${cell}px` }}
-    >
-      {Array.from({ length: total }, (_, i) => {
-        const si = owner[i]
-        const color =
-          si < 0
-            ? CHART_COLORS.rule
-            : variantColor(chart.data[si].variant ?? SEGMENT_VARIANTS[si % SEGMENT_VARIANTS.length])
-        return (
-          <Icon
-            key={i}
-            className="chart-cell"
-            style={{ '--i': i } as React.CSSProperties}
-            size={iconSize}
-            color={color}
-            fill={si < 0 ? 'none' : color}
-            strokeWidth={si < 0 ? 1.5 : 0.5}
-          />
-        )
-      })}
-    </div>
+    <>
+      <div
+        className="chart-pictogram"
+        style={{ gridTemplateColumns: `repeat(${COLS}, ${cell}px)`, gridAutoRows: `${cell}px` }}
+      >
+        {Array.from({ length: total }, (_, i) => {
+          const si = owner[i]
+          const color =
+            si < 0
+              ? CHART_COLORS.rule
+              : variantColor(
+                  chart.data[si].variant ?? SEGMENT_VARIANTS[si % SEGMENT_VARIANTS.length],
+                )
+          const r = Math.floor(i / COLS)
+          const c = i % COLS
+          return (
+            <Icon
+              key={i}
+              className="chart-cell"
+              style={{ '--i': i } as React.CSSProperties}
+              size={iconSize}
+              color={color}
+              fill={si < 0 ? 'none' : color}
+              strokeWidth={si < 0 ? 1.5 : 0.5}
+              onMouseEnter={
+                si < 0
+                  ? undefined
+                  : () =>
+                      show({
+                        x: offX + c * (cell + GAP) + cell / 2,
+                        y: offY + r * (cell + GAP),
+                        label: chart.data[si].label,
+                        rows: [{ value: chart.data[si].value, color }],
+                      })
+              }
+              onMouseLeave={hide}
+            />
+          )
+        })}
+      </div>
+      <ChartTooltip tip={tip} unit={chart.unit} />
+    </>
   )
 }
