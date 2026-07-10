@@ -555,7 +555,7 @@ export const partVII: RoundtableDocument = {
       sourceId: 'src-surgeon-general-loneliness',
       verificationStatus: 'verified',
       verifiedUrl: 'https://www.hhs.gov/surgeongeneral/priorities/connection/index.html',
-      note: "Donut reflects the advisory's statement that ~50% of U.S. adults reported experiencing loneliness. Shown as a 50/50 split for illustration.",
+      note: "Pictogram reflects the advisory's statement that ~50% of U.S. adults reported experiencing loneliness. Shown as a 50/50 split for illustration.",
       lastCheckedISO: '2026-06-27',
     },
     'c-vii-satisfaction': {

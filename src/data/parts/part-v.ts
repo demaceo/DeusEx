@@ -57,7 +57,7 @@ export const partV: RoundtableDocument = {
                 value: '24%',
                 size: 'medium',
                 description:
-                  'Share of people who could reliably tell a high-quality deepfake video from a real one (iProov, 2022)',
+                  'Share of people who could reliably tell a high-quality deepfake video from a real one (Korshunov & Marcel, 2020)',
                 claimId: 's-v-iproov-detection',
               },
               {
@@ -264,11 +264,11 @@ export const partV: RoundtableDocument = {
           data: {
             kind: 'pictogram',
             icon: 'user',
-            labelTop: 'Human Detection · iProov',
+            labelTop: 'Human Detection · Korshunov & Marcel (2020)',
             title: 'Could People Spot the Deepfake?',
             subtitle:
-              'In an iProov study, only about a quarter of participants correctly identified a high-quality deepfake video; the rest were fooled or unsure.',
-            source: 'iProov: Deepfake Detection Study (2022)',
+              'In a Korshunov and Marcel (2020) study, only about a quarter of participants correctly identified a high-quality deepfake video; the rest were fooled or unsure. A separate 2022 iProov survey found 57% believed they could spot a deepfake themselves.',
+            source: 'Korshunov & Marcel (2020), arXiv:2009.03155',
             claimIds: ['c-v-iproov-chart'],
             ariaLabel:
               'Grid of 100 person icons showing 24 of every 100 people correctly identified a deepfake and 76 did not',
@@ -574,10 +574,10 @@ export const partV: RoundtableDocument = {
     },
     {
       id: 'src-iproov',
-      title: 'iProov: Deepfake Detection Study (2022)',
+      title: 'Korshunov & Marcel: Deepfake Detection, Humans vs. Machines (2020)',
       description:
-        "Biometric-authentication firm iProov's study finding that only about a quarter of people could reliably distinguish a high-quality deepfake video from genuine footage.",
-      url: 'https://www.iproov.com/reports/deepfakes-the-threat-to-online-verification',
+        "Korshunov and Marcel's study finding that only about a quarter of people could reliably distinguish a high-quality deepfake video from genuine footage; often misattributed to a 2022 iProov study.",
+      url: 'https://arxiv.org/abs/2009.03155',
     },
     {
       id: 'src-europol',
@@ -634,9 +634,9 @@ export const partV: RoundtableDocument = {
       kind: 'statistic',
       claimText: '24%',
       sourceId: 'src-iproov',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl: 'https://arxiv.org/abs/2009.03155',
-      note: "The ~24% figure is real but misattributed. It originates from Korshunov and Marcel (2020), 'Deepfake detection: humans vs. machines' (arXiv:2009.03155), a subjective study, not from iProov. iProov's 2022 consumer survey measured self-reported confidence (57% believe they could spot a deepfake); its actual detection-rate study is from 2025 (only 0.1% correctly identified all synthetic media). Figure credible; source and year misattributed.",
+      note: "The ~24% figure is from Korshunov and Marcel (2020), 'Deepfake detection: humans vs. machines' (arXiv:2009.03155), a subjective study. It was previously mislabeled here as an iProov figure; the attribution has been corrected. iProov's own 2022 consumer survey measured a different thing, self-reported confidence (57% believe they could spot a deepfake); iProov's actual detection-rate study is from 2025 (only 0.1% correctly identified all synthetic media).",
       lastCheckedISO: '2026-07-04',
     },
     's-v-europol-90': {
@@ -666,11 +666,11 @@ export const partV: RoundtableDocument = {
     'c-v-iproov-chart': {
       id: 'c-v-iproov-chart',
       kind: 'citation',
-      claimText: 'Share correctly identifying a deepfake video (iProov)',
+      claimText: 'Share correctly identifying a deepfake video (Korshunov & Marcel, 2020)',
       sourceId: 'src-iproov',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl: 'https://arxiv.org/abs/2009.03155',
-      note: 'The ~24% correct-identification figure traces to Korshunov and Marcel (2020) (arXiv:2009.03155), not to an iProov 2022 study as labeled. The number itself (~24% correctly identified a high-quality video deepfake, ~76% fooled or unsure) is credible; the attribution is wrong. Split shown as a two-segment donut.',
+      note: 'The ~24% correct-identification figure comes from Korshunov and Marcel (2020) (arXiv:2009.03155). The chart was previously mislabeled as an iProov 2022 study; labelTop, subtitle, and source have been corrected. The number itself (~24% correctly identified a high-quality video deepfake, ~76% fooled or unsure) is credible. Split shown as a two-color pictogram grid.',
       lastCheckedISO: '2026-07-04',
     },
     'c-v-europol-chart': {
