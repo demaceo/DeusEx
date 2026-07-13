@@ -3,95 +3,91 @@
   "turns": [
     {
       "speaker": "host",
-      "text": "Welcome back to Reckoning. Every reckoning produces its own industry of response: press releases, pledges, frameworks, legislation caught mid-draft. Some of it is theater. Some of it bites. Knowing the difference means looking past the announcement to the action, and past the action to whether it actually changed anything. That's what today's conversation is for."
+      "text": "Welcome back to Reckoning. Every reckoning produces its own industry of response: press releases, pledges, frameworks, legislation caught mid-draft. Some of it is theater. Some of it bites. And knowing the difference means looking past the announcement to the action — and past the action to whether it actually changed anything. That's what this conversation is for."
     },
     {
       "speaker": "host",
-      "text": "First, by the numbers. Renewables now supply 58% of data center power in 2025, up from 50% in 2024. Big Tech contracted more than 10 gigawatts of new nuclear capacity across 2024 and 2025. And Google's emissions have risen 50% since it pledged net zero."
+      "text": "First, by the numbers. Renewables' share of data-center power hit 58% in 2025, up from 50% in 2024. Big Tech contracted more than 10 gigawatts of new nuclear capacity across 2024 and 2025. And Google's emissions have risen 50% since it pledged net zero."
     },
     {
       "speaker": "host",
-      "text": "Let's bring in our panel. First, our Everyday Person — a retired schoolteacher encountering all of this for the first time."
+      "text": "Let me bring in our panel — starting with someone here as the rest of us: a retired schoolteacher encountering all this for the first time. Call her our Everyday Person."
     },
     {
       "speaker": "everyday-person",
-      "text": "You know, after our last conversation, I started paying more attention. And I've been hearing things about nuclear power and AI. Now, help me understand — isn't that what Microsoft did with Three Mile Island? That name scared me a little, honestly."
+      "text": "You know, after our last conversation I started paying more attention. And I keep hearing about nuclear power and AI. Now, help me understand — isn't that what Microsoft did with Three Mile Island? That name scared me a little, I'll be honest."
     },
     {
       "speaker": "host",
-      "text": "For the case that these problems have engineering answers, our Tech Optimist — a senior engineer at a major AI lab."
+      "text": "To answer that, our Tech Optimist — a senior engineer at a major AI lab."
     },
     {
       "speaker": "tech-optimist",
-      "text": "It is, and it's one of the most significant energy deals in recent memory. Microsoft signed a 20-year power purchase agreement with Constellation Energy to restart the Crane Clean Energy Center — formerly Three Mile Island Unit 1 — targeting 2028. The deal's worth roughly $16 billion, and it'll send 835 megawatts of carbon-free power exclusively to Microsoft's data centers. And it's not a one-off. Big Tech contracted more than 10 gigawatts of new nuclear capacity in 2024 and 2025 combined. Amazon secured a 1.92 gigawatt PPA with Talen Energy's Susquehanna plant through 2042, and put over $20 billion into converting the site into a nuclear-powered AI campus. Google contracted 500 megawatts of small modular reactors from Kairos Power, aiming for first deployment by 2030. Meta signed a 20-year deal for 1.1 gigawatts from the Clinton Clean Energy Center in Illinois — a plant that was going to retire in 2027. And in January 2026, Meta and Vistra added an agreement with an option for a new 300-megawatt SMR. Renewables are accelerating too. The share of data center power from renewables rose from 50% in 2024 to 58% in 2025. The IEA projects renewables will cover nearly half of all additional data center demand growth through 2030, growing at 22% a year."
+      "text": "Yes — and it's one of the most significant energy deals in recent memory. Microsoft signed a 20-year power purchase agreement with Constellation Energy to restart the Crane Clean Energy Center — formerly Three Mile Island Unit 1 — targeting 2028. The deal's worth roughly $16 billion, and it'll direct 835 megawatts of carbon-free power exclusively to Microsoft's data centers. And it's not a one-off. Big Tech contracted more than 10 gigawatts of new nuclear capacity across 2024 and 2025. Amazon secured a 1.92 gigawatt PPA with Talen Energy's Susquehanna plant through 2042, and put over $20 billion into converting the site into a nuclear-powered AI campus. Google contracted 500 megawatts of small modular reactors from Kairos Power, first deployment targeted by 2030. Meta signed a 20-year deal for 1.1 gigawatts from the Clinton Clean Energy Center in Illinois — a plant that was slated to retire in 2027. And in January 2026, Meta and Vistra signed another agreement, with an option for a new 300-megawatt SMR. Renewables are accelerating too. Data-center power from renewables rose from 50% in 2024 to 58% in 2025. The IEA projects renewables will cover nearly half of all additional data-center demand growth through 2030, growing 22% a year."
     },
     {
       "speaker": "host",
-      "text": "That figure again: renewables powered 58% of data centers in 2025 — up eight points year on year, with the IEA projecting around 22% annual growth through 2030."
+      "text": "To put a point on it: renewables powered 58% of data centers in 2025 — up eight points year on year, with the IEA projecting about 22% annual growth through 2030."
     },
     {
       "speaker": "host",
-      "text": "And for the view from the physical world, our Environmentalist — a climate researcher and policy advocate."
+      "text": "And our Environmentalist — a climate researcher and policy advocate."
     },
     {
       "speaker": "environmentalist",
-      "text": "Let me be fair first: the nuclear deals are genuinely meaningful. Restarting a plant that was slated to retire is not the same as building new fossil fuel infrastructure. And the renewable numbers are real. But I have to hold those numbers against the others. Tech companies bought record amounts of clean energy in 2024 and 2025 — and their total emissions went up anyway. Google's jumped nearly 50%. Amazon's rose 33%. Microsoft's more than 23%. Meta's more than 60% — all during the same period they were making headline clean energy commitments. You can buy more solar and still emit more carbon if you're building ten times faster than you're cleaning up. And the timing: the Three Mile Island deal doesn't come online until 2028. The SMRs won't produce power until 2030 at the earliest. A Deloitte analysis projects nuclear could meet up to 10% of data center electricity demand by 2035. That's a decade out — and only a tenth of the need."
+      "text": "Let me be fair here: the nuclear deals are genuinely meaningful. Restarting a plant that was headed for retirement isn't the same as building new fossil fuel infrastructure. And the renewable procurement numbers are real. But I have to put those numbers right up against the others. Tech companies bought record amounts of clean energy in 2024 and 2025 — and their total emissions went up anyway. Google's jumped nearly 50%. Amazon's rose 33%. Microsoft's more than 23%. Meta's more than 60% — all during the same period they were making these headline clean-energy commitments. You can buy more solar and still emit more carbon if you're building ten times faster than you're cleaning up. And the Three Mile Island deal doesn't come online until 2028. The SMRs won't produce power until 2030 at the earliest. A Deloitte analysis projects nuclear could meet up to 10% of data-center electricity demand by 2035. That's a decade away — and only one-tenth of the need."
     },
     {
       "speaker": "host",
-      "text": "To underline that: emissions rose even as clean-energy buying hit records. That's the increase in each company's total emissions since it pledged net zero, over 2024 and 2025."
+      "text": "So the headline there: emissions rose even as clean-energy buying hit records — that 50%, 33%, 23%, 60% jump in each company's total emissions since it pledged net zero."
     },
     {
       "speaker": "host",
-      "text": "And for the structural view, our Policy Realist — a former regulatory attorney."
+      "text": "Our Policy Realist — a former regulatory attorney."
     },
     {
       "speaker": "policy-realist",
-      "text": "There's a regulatory wrinkle worth noting, too. When Amazon tried to expand its nuclear access beyond the initial 300 megawatts at Susquehanna, federal regulators rejected it — citing concerns that large tech companies securing direct-access deals creates unfair advantages over other grid users who can't negotiate the same terms. In practice, these deals are setting infrastructure precedents that regulators haven't caught up to."
+      "text": "There's a regulatory wrinkle worth noting too. When Amazon tried to expand its nuclear access beyond the initial 300 megawatts at Susquehanna, federal regulators rejected it — citing concerns that large tech companies securing direct-access deals creates an unfair advantage over other grid users who can't negotiate the same terms. In practice, these deals are setting infrastructure precedents that regulators haven't fully caught up to."
     },
     {
       "speaker": "everyday-person",
-      "text": "So the technology companies are the biggest clean energy buyers in the world... and their emissions are still going up. That's a hard thing to hold in my head at the same time."
+      "text": "So the technology companies are the biggest clean-energy buyers in the world — but their emissions are still going up. That's a hard thing to hold in my head at the same time."
     },
     {
       "speaker": "environmentalist",
-      "text": "That's exactly the tension. In 2024, Big Tech accounted for 43% of all clean energy power purchase agreements signed globally. And yet total emissions are climbing. That's what \"outpacing\" means in practice — you're running toward the finish line, but the finish line is moving away faster than you are. The 2025 Uptime Institute survey found a 12% drop in the number of data center operators who thought they'd hit their carbon-neutral goals by 2030. The industry knows it."
+      "text": "That's exactly the tension. In 2024, Big Tech accounted for 43% of all clean-energy power purchase agreements signed globally. And yet total emissions are climbing. That's what \"outpacing\" means in practice — you're running toward the finish line, but the line's moving faster than you are. The 2025 Uptime Institute survey found a 12% drop in the number of data-center operators who believed they'd meet their carbon-neutral goals by 2030. The industry knows it."
     },
     {
       "speaker": "host",
-      "text": "Five companies signed 43% of the world's clean-energy deals — that's Big Tech's share of all clean-energy power purchase agreements signed globally in 2024."
+      "text": "Five companies signed 43% of the world's clean-energy deals in 2024. And as one researcher, quoted in Fortune in March 2026, put it: \"Tech companies are allowing, implicitly or explicitly, an enormous increase in fossil fuel dependence under their watch and because of their actions.\""
     },
     {
       "speaker": "host",
-      "text": "As one researcher, quoted in Fortune in March 2026, put it: \"Tech companies are allowing, implicitly or explicitly, an enormous increase in fossil fuel dependence under their watch and because of their actions.\""
-    },
-    {
-      "speaker": "host",
-      "text": "On water: Microsoft's closed-loop cooling system, deployed from August 2024, saves more than 125 million litres per facility each year. Its water-use effectiveness dropped to 0.30 litres per kilowatt-hour in 2024, down from 0.49 in 2021 — a 39% efficiency gain. And Google consumed 24,227 megalitres in 2023, the highest among major hyperscalers."
+      "text": "On water: Microsoft's closed-loop cooling system, deployed from August 2024, saves more than 125 million litres per facility annually. Its water-use effectiveness fell to 0.30 litres per kilowatt-hour in 2024, down from 0.49 in 2021 — a 39% efficiency gain. And Google consumed 24,227 megalitres of water in 2023, the highest among major hyperscalers."
     },
     {
       "speaker": "everyday-person",
-      "text": "Last time, we talked about data centers using enormous amounts of drinking water for cooling. Is anything being done about that specifically?"
+      "text": "Last time, we talked about data centers using enormous amounts of drinking water for cooling. Is anything being done about that, specifically?"
     },
     {
       "speaker": "tech-optimist",
-      "text": "This is where I can point to concrete, deployed technology — not just plans. In August 2024, Microsoft began deploying a closed-loop, chip-level liquid cooling system that virtually eliminates evaporative water use. You fill it once during construction, and it recirculates coolant without drawing more water from outside — saving more than 125 million liters per data center annually. Pilot sites are running in Phoenix, Arizona and Mt. Pleasant, Wisconsin, and every new Microsoft data center project has used this zero-water design since August 2024. It's not just them. In Hebei Province, China, Vertiv's X-Cooling system — built with Bridge Data Centres and Chindata — is projected to save 1.2 million tons of water per 100 megawatts of capacity a year. Edged Data Centers opened a zero-water-cooling facility in Chicago in February 2025. And the investment's scaling: Crusoe raised $1.4 billion in October 2025 for closed-loop AI infrastructure, and Firmus raised $327 million in November 2025 for a 1.6-gigawatt zero-water-cooling buildout by 2028."
+      "text": "This is an area where I can point to concrete, deployed technology — not just plans. In August 2024, Microsoft began deploying a closed-loop, chip-level liquid cooling system that virtually eliminates evaporative water use. Once it's filled during construction, it just recirculates coolant without drawing more water from outside — saving more than 125 million litres per data center a year. Pilot sites are running in Phoenix, Arizona and Mt. Pleasant, Wisconsin, and every new Microsoft data-center project has used this zero-water design from August 2024 onward. It's not just them. In Hebei Province, China, Vertiv's X-Cooling system — built with Bridge Data Centres and Chindata — is projected to save 1.2 million tons of water per 100 megawatts of capacity annually. Edged Data Centers opened a zero-water-cooling facility in Chicago in February 2025. And the investment's scaling: Crusoe raised $1.4 billion in October 2025 for closed-loop AI infrastructure, and Firmus raised $327 million in November 2025 for a 1.6-gigawatt zero-water-cooling buildout by 2028."
     },
     {
       "speaker": "environmentalist",
-      "text": "The technology is real, and the Microsoft deployment is significant. My concern is pace and coverage. Microsoft's new system applies to new facilities. What about the existing ones? Google consumed 24,227 megalitres of water in 2023 — the highest among major hyperscalers. The retrofit challenge is enormous, and there's no binding timeline for existing facilities to adopt any of this. And there's a physics tradeoff: cooling that eliminates water often uses more electricity. The most efficient water-free cooling for high-density AI — two-phase direct-to-chip immersion — is still expensive and not yet deployed at hyperscale. We're in a transitional period where the solutions exist in pilot form, but growth is outrunning adoption."
+      "text": "The technology's real, and the Microsoft deployment is significant. My concern is pace and coverage. Microsoft's new system applies to new facilities — but what about the existing ones? Google consumed 24,227 megalitres of water in 2023, the highest among major hyperscalers. The retrofit challenge is enormous, and there's no binding timeline for existing facilities to adopt any of this. And there's a physics tradeoff: cooling systems that eliminate water often use more electricity. The most efficient water-free cooling for high-density AI — two-phase direct-to-chip immersion — is still expensive and not yet deployed at hyperscale. We're in a transitional period where the solutions exist in pilot form, but growth is outrunning adoption."
     },
     {
       "speaker": "policy-realist",
-      "text": "And there's still no legal obligation to use any of it. Nixon Peabody's 2025 analysis found companies face almost no binding water disclosure or usage requirements for data centers. Microsoft's progress is voluntary. The real question is whether the second- and third-tier operators building AI infrastructure right now are adopting any of this — and the answer, based on the data we have, is inconsistently at best."
+      "text": "And there's still no legal obligation to use any of it. Nixon Peabody's 2025 analysis found companies face almost no binding water disclosure or usage requirements for data centers. Microsoft's progress is voluntary. The real question is whether the second- and third-tier operators building AI infrastructure right now are adopting any of this — and the answer, based on the available data, is inconsistently at best."
     },
     {
       "speaker": "host",
-      "text": "So: zero-water and closed-loop cooling are real, deployed, and demonstrably effective. Microsoft's rollout is genuine progress. But adoption across the industry is voluntary and uneven, retrofit of existing facilities is largely unaddressed, and no binding requirements compel the broader market to follow. Progress is real; universality is not."
+      "text": "So the ledger on cooling: zero-water and closed-loop technologies are real, deployed, and demonstrably effective. Microsoft's rollout is genuine progress. But adoption across the industry is voluntary and uneven, retrofitting existing facilities is largely unaddressed, and no binding requirements exist to compel the broader market to follow. Progress is real; universality is not."
     },
     {
       "speaker": "host",
-      "text": "Now to labor. The Nairobi High Court has cleared more than 180 Kenyan workers to take Meta to trial — a landmark jurisdictional ruling. In Colombia, Teleperformance workers — 40,000 of them — were granted union rights after a government investigation. And in a countermovement, over 2024 and 2025, Kenya's president signaled legislation to restrict lawsuits against foreign outsourcers."
+      "text": "On labor: Kenya's Nairobi High Court cleared more than 180 workers to take Meta to trial — a landmark jurisdictional ruling. In Colombia, Teleperformance granted 40,000 workers union rights after a government investigation. And in 2024 and 2025, Kenya's president signaled legislation to restrict lawsuits against foreign outsourcers."
     },
     {
       "speaker": "everyday-person",
@@ -99,59 +95,59 @@
     },
     {
       "speaker": "host",
-      "text": "To answer that, our Labor Advocate — a labor researcher and organizer."
+      "text": "Our Labor Advocate — a labor researcher and organizer."
     },
     {
       "speaker": "labor-advocate",
-      "text": "Quite a lot has moved — and some of it in opposite directions at once. The biggest legal development: the Nairobi High Court ruled that Meta must face more than 180 content moderators and data labelers in court over poor working conditions, harm to their mental health, and withheld pay — despite Meta arguing Kenyan courts have no jurisdiction over an American company. If the workers win, this could establish that Big Tech companies — not just their subcontractors — are legally liable for conditions inside their data annotation supply chains. That would be a structural shift. And it builds on a 2023 victory, where the same community won a ruling ordering Meta to provide \"proper medical, psychiatric and psychological care\" for workers exposed to traumatic content. The African Content Moderators Union grew out of that effort — one of its organizers, Richard Mathenge, was named among TIME's 100 most influential people in AI. In Colombia, Teleperformance signed a historic agreement granting 40,000 TikTok data workers the right to form a union, after a government investigation into their conditions. And in February 2025, the Kenya Data Labelers Association formed and gained 339 members in its first week."
+      "text": "Quite a lot has moved — and some of it in opposite directions at once. The most significant legal development: the Nairobi High Court ruled that Meta must face more than 180 content moderators and data labelers in court, over poor working conditions, damage to their mental health, and withheld pay — this despite Meta arguing Kenyan courts have no jurisdiction over an American company. If those workers prevail, it could establish that Big Tech companies — not just their subcontractors — are legally liable for conditions inside their data-annotation supply chains. That would be a structural shift. And it builds on a 2023 victory, where the same community won a ruling ordering Meta to provide \"proper medical, psychiatric and psychological care\" for workers exposed to traumatic content. The African Content Moderators Union formed out of those efforts — one of its organizers, Richard Mathenge, was named among TIME's 100 most influential people in AI. In Colombia, Teleperformance signed a historic agreement granting 40,000 TikTok data workers the right to form a union, after a government investigation into their conditions. And in February 2025, the Kenya Data Labelers Association formed — and gained 339 members in its first week."
     },
     {
       "speaker": "everyday-person",
-      "text": "That sounds like real progress. So things are getting better?"
+      "text": "That sounds like real progress. So — things are getting better?"
     },
     {
       "speaker": "labor-advocate",
-      "text": "Workers are fighting back and winning in specific cases — and that matters enormously to the people involved. But let's be honest about the structural picture, because it's more complicated. Kenya's president, William Ruto, responding to the Meta lawsuits, indicated he was preparing to sign legislation that would prevent foreign outsourcing companies from being sued in Kenya. That would strip away the very legal mechanism that made these High Court victories possible. Their leverage could be legislated away at the exact moment they're using it. And then, in March 2026, a U.S. class-action lawsuit was filed against Meta after it emerged that footage from its AI smart glasses — including intimate personal content — was being reviewed without users' knowledge by contractors in Nairobi. The same workers. The same supply chain. The same dynamic — now with a privacy violation layered on top. We're winning individual battles while the system generating the problem keeps scaling."
+      "text": "Workers are fighting back, and winning in specific cases — and that matters enormously for the people involved. But let's be honest about the structural situation, because it's more complicated. Kenya's president, William Ruto, responding to the Meta lawsuits, indicated he was preparing to sign legislation that would prevent foreign outsourcing companies from being sued in Kenya. That would strip away the very legal mechanism that made these High Court victories possible. Their legal leverage could be legislated away at the exact moment they're using it. And meanwhile, in March 2026, a U.S. class-action lawsuit was filed against Meta, after it emerged that footage from its AI smart glasses — including intimate personal content — was being reviewed without users' knowledge by contractors in Nairobi. The same workers. The same supply chain. The same dynamic — now with a privacy violation layered on top. We're winning individual battles while the system generating the problem keeps scaling."
     },
     {
       "speaker": "tech-optimist",
-      "text": "The glasses situation is serious, and I don't want to minimize it. But it's also being litigated, investigated by regulators in Sweden and the UK, and generating exactly the kind of public attention that historically does change corporate behavior. SOMO's March 2026 report — naming Amazon, Google, Meta, Microsoft, and Nvidia specifically, and documenting their use of 30-plus intermediary companies — that's the transparency pressure that eventually moves behavior. The Workday class action, certified against an AI resume screening system for discriminatory outcomes, established that vendors — not just employers — face liability for discriminatory AI. These precedents accumulate."
+      "text": "The Meta glasses situation is serious, and I won't minimize it. But it's also being litigated, investigated by regulators in Sweden and the UK, and generating the kind of public attention that historically does change corporate behavior. SOMO's March 2026 report — naming Amazon, Google, Meta, Microsoft, and Nvidia specifically, and documenting their use of 30-plus intermediary companies — that's exactly the transparency pressure that eventually moves behavior. The Workday class action, certified against an AI resume-screening system for discriminatory outcomes, established that vendors — not just employers — face liability for discriminatory AI. These precedents accumulate."
     },
     {
       "speaker": "policy-realist",
-      "text": "They do. But court cases move on timescales of years, and workers need protection on the timescale of paychecks. The Teleperformance-Colombia agreement is meaningful precisely because it didn't wait for a court — it was a negotiated settlement driven by a government investigation. That model, regulatory investigation leading to a binding agreement, is faster than litigation and more durable than a voluntary pledge. The catch: it requires governments with both the will and the jurisdiction to act. And in most countries where this labor is concentrated, that combination is inconsistent."
+      "text": "They do. But court cases move on timescales of years — and workers need protection on timescales of paychecks. The Teleperformance-Colombia agreement matters precisely because it didn't wait for a court; it was a negotiated settlement, driven by a government investigation. That model — regulatory investigation leading to a binding agreement — is faster than litigation and more durable than voluntary pledges. The catch is it requires governments with both the will and the jurisdiction to act. And in most countries where this labor is concentrated, that combination is, in practice, inconsistent."
     },
     {
       "speaker": "host",
-      "text": "As one researcher told Computer Weekly: \"Until we treat content moderation as real digital work that is needed and not easily automated, we will fail to value or see these workers.\""
+      "text": "As one researcher, quoted in Computer Weekly, put it: \"Until we treat content moderation as real digital work that is needed and not easily automated, we will fail to value or see these workers.\""
     },
     {
       "speaker": "host",
-      "text": "On regulation: the EU AI Act's prohibited uses have been enforceable since February 2025 — social scoring, manipulative AI, real-time public biometrics. The maximum fine for the worst violations is 35 million euros, or a percentage of global annual turnover, whichever is higher. And the high-risk AI deadline, set for August 2026, may slip to December 2027 under the EU's Digital Omnibus — trilogue talks failed on April 28."
+      "text": "On the law itself: the EU AI Act has been in force since February 2025 — prohibited uses like social scoring, manipulative AI, and real-time public biometrics are now enforceable. Maximum fines for the worst violations reach €35 million, or a percentage of global annual turnover, whichever is higher. The high-risk AI deadline is set for August 2026 — though it may slip to December 2027 under the EU's Digital Omnibus, after trilogue talks failed on April 28."
     },
     {
       "speaker": "policy-realist",
-      "text": "Let me give an honest accounting of where regulation actually stands — because there's real progress and real friction at the same time. The EU AI Act is the most significant AI law in existence, and it's arriving in stages. Since February 2, 2025, the most dangerous applications are outright prohibited across all EU member states: AI that manipulates people subliminally, social scoring systems, and real-time biometric surveillance in public spaces are now illegal in Europe. That's in force today — not on a roadmap. Since August 2, 2025, providers of general-purpose AI models — the large foundation models behind most commercial AI — have been subject to transparency and documentation obligations. The next big milestone — binding requirements for high-risk AI in employment, credit, healthcare, and education — is set for August 2, 2026. But the EU's Digital Omnibus proposal would push that to December 2027, citing delays — including the fact that the EU's standardization bodies, CEN and CENELEC, haven't finalized the technical standards companies need to comply against. As of late April 2026, trilogue negotiations on the Omnibus collapsed, and a follow-up was scheduled for May 13. So the high-risk deadline remains uncertain."
+      "text": "Let me give an honest accounting of where regulation actually stands — because there's real progress and real friction at the same time. The EU AI Act is the most significant AI law in existence, and it's moving in stages. Since February 2, 2025, the most dangerous applications are outright prohibited across all EU member states — AI that manipulates people subliminally, social scoring systems, real-time biometric surveillance in public spaces. All illegal in Europe now. That's in force today, not on a roadmap. Since August 2, 2025, providers of general-purpose AI models — the large foundation models behind most commercial AI — have been subject to transparency and documentation obligations. The next major milestone — binding requirements for high-risk AI in employment, credit, healthcare, and education — is set for August 2, 2026. But the EU's Digital Omnibus proposal would push that to December 2027, citing delays, including the fact that the EU's standardization bodies, CEN and CENELEC, haven't finalized the technical standards companies need to comply against. And as of late April 2026, trilogue negotiations on the Omnibus collapsed, with a follow-up scheduled for May 13. So the high-risk deadline remains uncertain."
     },
     {
       "speaker": "policy-realist",
-      "text": "In the United States, the states have become the primary movers. Colorado passed the most comprehensive state AI law in the country — the Colorado AI Act — requiring impact assessments, consumer disclosures, and discrimination prevention for high-risk AI, with penalties up to $20,000 per violation, effective June 30, 2026. California signed the Transparency in Frontier AI Act in September 2025, effective January 1, 2026. Texas passed its own framework, effective January 1, 2026. Illinois banned discriminatory employer use of AI in hiring, also effective January 1, 2026. And New York City's Local Law 144, requiring bias audits for AI hiring tools, has been in effect since 2023. Now the complication: the December 2025 federal executive order explicitly named the Colorado AI Act as an example of excessive regulation, and directed agencies to evaluate and potentially challenge state laws that conflict with the administration's deregulatory posture. Courts will ultimately decide whether the order can preempt state statutes — because executive orders alone typically can't. But on paper, it creates genuine compliance uncertainty."
+      "text": "In the United States, states have become the primary movers. Colorado passed the most comprehensive state AI law in the country — the Colorado AI Act — requiring impact assessments, consumer disclosures, and discrimination prevention for high-risk AI, with penalties up to $20,000 per violation, effective June 30, 2026. California signed the Transparency in Frontier AI Act in September 2025, effective January 1, 2026. Texas passed its own framework, also effective January 1, 2026. Illinois banned discriminatory employer use of AI in hiring — again, effective January 1, 2026. And New York City's Local Law 144, requiring bias audits for AI hiring tools, has been in effect since 2023. Now the complication: the December 2025 federal executive order explicitly named the Colorado AI Act as an example of excessive regulation, and directed agencies to evaluate and potentially challenge state laws conflicting with the administration's deregulatory posture. Courts will ultimately decide whether the order can preempt state statutes — executive orders alone typically can't. But on paper, it creates genuine compliance uncertainty."
     },
     {
       "speaker": "tech-optimist",
-      "text": "I'll say something that might be surprising: the EU AI Act prohibitions currently in force are reasonable. Banning real-time public biometric surveillance and social scoring isn't anti-innovation — those are genuinely harmful applications with minimal legitimate use. My concern with the U.S. patchwork isn't that accountability is wrong. It's that 50 different compliance frameworks with 50 different standards disproportionately burden smaller AI developers who don't have the legal resources of a Microsoft or a Google. A single clear national standard with meaningful protections — not just deregulation — would actually be preferable for everyone."
+      "text": "I'll say something that might be surprising: the EU AI Act prohibitions currently in force are reasonable. Banning real-time public biometric surveillance and social scoring isn't anti-innovation — those are genuinely harmful applications with minimal legitimate use. My concern with the U.S. patchwork isn't that accountability is wrong. It's that 50 different compliance frameworks, with 50 different standards, disproportionately burden the smaller AI developers who don't have the legal resources of a Microsoft or a Google. A single clear national standard — with meaningful protections, not just deregulation — would actually be preferable for everyone."
     },
     {
       "speaker": "environmentalist",
-      "text": "And it's worth noting that none of the U.S. legislation that passed addresses energy or water at all. Colorado, California, Texas, Illinois — all of it focuses on algorithmic discrimination and transparency in automated decisions. The environmental costs of AI have no binding regulatory framework in the United States. No mandatory energy disclosure. No water usage limits. The EU AI Act's environmental provisions are limited too. We have more legal structure around whether an AI hiring tool discriminates than around whether the data center running it is depleting an aquifer."
+      "text": "And it's worth noting: none of the passed U.S. legislation addresses energy or water at all. Colorado, California, Texas, Illinois — all of it focuses on algorithmic discrimination and transparency in automated decision-making. The environmental costs of AI have no binding regulatory framework in the United States. No mandatory energy disclosure. No water usage limits. The EU AI Act's environmental provisions are limited too. We have more legal structure around whether an AI hiring tool discriminates than around whether the data center running it is depleting an aquifer."
     },
     {
       "speaker": "everyday-person",
-      "text": "So we have real laws in Europe, and real laws in some states. That's more than I expected. But none of it covers the electricity and water problems?"
+      "text": "So we have real laws in Europe, and real laws in some states. That's more than I expected, honestly. But none of it covers the electricity and water problems?"
     },
     {
       "speaker": "policy-realist",
-      "text": "Correct. The legislative response to AI has been almost entirely focused on how AI makes decisions that affect people — hiring, credit, healthcare, criminal justice. That's appropriate and important. But the physical infrastructure that runs AI — the energy it consumes, the water it uses, the communities it displaces — sits in a separate regulatory world of utility law, water rights, and zoning that was never designed with data centers in mind. And in the United States, those two worlds haven't been connected by any binding legal framework."
+      "text": "Correct. The legislative response to AI has been almost entirely focused on how AI makes decisions affecting people — hiring, credit, healthcare, criminal justice. Appropriate, and important. But the physical infrastructure that runs AI — the energy it consumes, the water it uses, the communities it displaces — that lives in a separate regulatory world of utility law, water rights, and zoning that was never designed with data centers in mind. And those two worlds haven't yet been connected by any binding legal framework in the United States."
     },
     {
       "speaker": "host",
@@ -163,27 +159,27 @@
     },
     {
       "speaker": "tech-optimist",
-      "text": "That's a fair summary. And I'll be honest — the emissions numbers are worse than I'd like, and the gap between what's being built and what's being cleaned up is real. What I hold onto is that the investment in solutions is at a scale we've never seen: billions into nuclear, billions into cooling innovation, renewable procurement that's genuinely moving the needle on the share of clean power — even if not yet on total emissions. The direction is right. The speed is the problem."
+      "text": "That's a fair summary. And I'll be honest — the emissions numbers are worse than I'd like, and the gap between what's being built and what's being cleaned up is real. What I hold onto is that the investment in solutions is also at a scale we've never seen: billions into nuclear, billions into cooling innovation, renewable procurement that's genuinely moving the needle on the share of clean power — even if not yet on total emissions. The direction is right. The speed is the problem."
     },
     {
       "speaker": "environmentalist",
-      "text": "And with environmental problems, speed is everything. We don't get to go back and un-emit the carbon, or refill the aquifer. The nuclear deals are promising, but they don't deliver power until 2028 or later. The cooling technologies are proven, but not mandated. The renewable share is growing, but total emissions are rising anyway. Progress without proportionality isn't progress — it's just losing more slowly."
+      "text": "And the speed is everything in environmental problems. We don't get to go back and un-emit the carbon, or refill the aquifer. The nuclear deals are promising, but they won't deliver power until 2028 or later. The cooling technologies are proven, but not mandated. The renewable share is growing, but total emissions are rising anyway. Progress without proportionality isn't progress — it's losing more slowly."
     },
     {
       "speaker": "labor-advocate",
-      "text": "For workers, this has been a period of real firsts — the first major court victories, the first union agreements, the first organized associations. Those firsts matter. But they're happening against a backdrop where the industry keeps scaling, the supply chain keeps extending into lower-wage countries, and the companies with the most power still use intermediary structures that let them profit from the labor while holding legal accountability at arm's length. The Meta glasses lawsuit makes it concrete: a product sold to seven million people, generating intimate surveillance footage, routed to Nairobi for annotation — workers getting no meaningful protection, users getting no meaningful disclosure. The scale of what's being built has outrun the ethics of how it was built."
+      "text": "For workers, this has been a period of real firsts — the first major court victories, the first union agreements, the first organized associations. Those firsts matter. But they're happening against a backdrop where the industry keeps scaling, the supply chain keeps extending into lower-wage countries, and the companies with the most power are still using intermediary structures that let them profit from the labor while holding legal accountability at arm's length. The Meta glasses lawsuit makes it concrete: a product sold to seven million people, generating intimate surveillance footage, routed to Nairobi for annotation — with workers getting no meaningful protection, and users getting no meaningful disclosure. The scale of what's being built has outrun the ethics of how it was built."
     },
     {
       "speaker": "policy-realist",
-      "text": "The regulatory picture is more developed than most people realize — and less comprehensive than it needs to be. The EU AI Act is real law, with real fines and a real timeline, even if it's slipping. More than a dozen U.S. states have enacted binding AI rules in two years. Courts are setting precedents through litigation that legislation hasn't reached. But none of it is coordinated. None of it covers environmental costs. And the most powerful AI actors operate in the one jurisdiction — the United States — that's currently the most actively resistant to binding accountability. That's the honest position of where governance stands in May 2026."
+      "text": "The regulatory picture is more developed than most people realize — and less comprehensive than it needs to be. The EU AI Act is real law, with real fines and a real timeline, even if it's slipping. More than a dozen U.S. states have enacted binding AI rules in two years. Courts are establishing precedents through litigation that legislation hasn't reached. But none of it is coordinated. None of it covers environmental costs. And the most powerful AI actors operate in the jurisdiction — the United States — that's currently the most actively resistant to binding accountability. That's the honest position of where governance stands in May 2026."
     },
     {
       "speaker": "everyday-person",
-      "text": "I came into both of these conversations not knowing very much. I leave knowing that things are happening — real things, not just talk. I also leave knowing that most of it is voluntary, most of it is slower than the problem, and none of it addresses the electricity and water issues that felt most immediate and real to me when we first talked. I suppose what I'm wondering is — who decides when enough is being done? Because it doesn't sound like it's the people paying the costs."
+      "text": "I came into both of these conversations not knowing very much. I leave knowing that things are happening — real things, not just talk. But I also leave knowing that most of it is voluntary, most of it is slower than the problem, and none of it addresses the electricity and water issues that felt most immediate and real to me when we first talked. And I guess what I'm wondering is — who decides when enough is being done? Because it doesn't sound like it's the people paying the costs."
     },
     {
       "speaker": "host",
-      "text": "And that's the question we'll leave open. Real movement, on nearly every front — and a growing distance between the pace of the response and the pace of the thing it's responding to. Thanks to our panel, and thank you for listening to Reckoning. We'll see you next time."
+      "text": "And maybe that's the question this whole series has been circling. Real progress, real precedent, real law — moving at one speed, while the thing it's meant to govern moves at another. Thanks to our panel, and thank you for listening. This has been Reckoning."
     }
   ]
 }
