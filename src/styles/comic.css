@@ -1,0 +1,1034 @@
+/**
+ * Roundtable Reckoning: the comic-book design system.
+ *
+ * Every rule is scoped under [data-series='roundtable-reckoning'] so nothing
+ * leaks into (or from) the editorial series' tokens/base/components styles.
+ * Techniques ported from the codepenz comic pens: hand-drawn borders
+ * (irregular 8-value border-radius + uneven border widths + slight rotation),
+ * glossy bubbles (gradient fill + inset gloss + layered drop-shadows),
+ * CSS halftones (hard-stop radial-gradient tiles), starburst SFX
+ * (many-point clip-path polygons), and skewed caption plates.
+ */
+
+/* Tokens resolve for anything opted into the comic system, including the
+   landing page's cross-promo card. */
+[data-series='roundtable-reckoning'] {
+  /* ── Comic tokens ─────────────────────────────────────────────── */
+  --comic-ink: #1a1208;
+  --comic-paper: #f7ecd7;
+  --comic-paper-bright: #fffaf0;
+  --comic-yellow: #ffd23f;
+  --comic-red: #e5484d;
+  --comic-red-deep: #b91c1c;
+  --comic-cyan: #29b6d8;
+  --comic-purple: #7b5ea7;
+  --comic-halftone: 14px;
+  --font-comic-display: 'Bangers', 'Comic Sans MS', 'Chalkboard SE', cursive;
+  --font-comic-hand: 'Permanent Marker', 'Comic Sans MS', 'Chalkboard SE', cursive;
+  --font-comic-body: 'Comic Sans MS', 'Chalkboard SE', 'Segoe Print', cursive, sans-serif;
+}
+
+/* Full-page chrome applies only to comic page roots, not the promo card. */
+.comic-root[data-series='roundtable-reckoning'] {
+  min-height: 100vh;
+  background-color: var(--comic-paper);
+  /* faint Ben-Day dot wash over the whole page (offset twin gradients) */
+  background-image:
+    radial-gradient(rgba(26, 18, 8, 0.05) 22%, transparent 23%),
+    radial-gradient(rgba(26, 18, 8, 0.05) 22%, transparent 23%);
+  background-size:
+    var(--comic-halftone) var(--comic-halftone),
+    var(--comic-halftone) var(--comic-halftone);
+  background-position:
+    0 0,
+    calc(var(--comic-halftone) / 2) calc(var(--comic-halftone) / 2);
+  color: var(--comic-ink);
+  font-family: var(--font-comic-body);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.comic-root[data-series='roundtable-reckoning'] ::selection {
+  background: var(--comic-yellow);
+  color: var(--comic-ink);
+}
+
+/* ── Cover splash ─────────────────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-cover {
+  position: relative;
+  padding: 4.5rem 1.5rem 4rem;
+  text-align: center;
+  border-bottom: 4px solid var(--comic-ink);
+  /* sunburst rays + hot core, from the splash-panel pens */
+  background:
+    radial-gradient(circle at 50% 42%, var(--comic-yellow) 0 6rem, transparent 16rem),
+    repeating-conic-gradient(
+      from 8deg at 50% 42%,
+      var(--comic-red) 0 7deg,
+      #d13a3f 7deg 14deg
+    );
+  overflow: hidden;
+}
+
+[data-series='roundtable-reckoning'] .comic-cover__overline {
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  padding: 0.3rem 1rem;
+  background: var(--comic-ink);
+  color: var(--comic-paper-bright);
+  font-family: var(--font-comic-hand);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: rotate(-1.5deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-cover__title {
+  margin: 0;
+  font-family: var(--font-comic-display);
+  font-weight: 400;
+  font-size: clamp(3.2rem, 11vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--comic-paper-bright);
+  /* layered ink outline + hard offset, comic-title style */
+  text-shadow:
+    3px 3px 0 var(--comic-ink),
+    -2px -2px 0 var(--comic-ink),
+    2px -2px 0 var(--comic-ink),
+    -2px 2px 0 var(--comic-ink),
+    7px 7px 0 rgba(26, 18, 8, 0.55);
+}
+
+[data-series='roundtable-reckoning'] .comic-cover__title-line {
+  display: block;
+}
+
+[data-series='roundtable-reckoning'] .comic-cover__title-line:nth-child(2) {
+  color: var(--comic-yellow);
+  transform: rotate(-1deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-cover__subtitle {
+  max-width: 34rem;
+  margin: 1.75rem auto 0;
+  padding: 0.85rem 1.25rem;
+  background: var(--comic-paper-bright);
+  border: 3px solid var(--comic-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 5px 5px 0 var(--comic-ink);
+  font-family: var(--font-comic-hand);
+  font-size: 1.02rem;
+  transform: rotate(0.6deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-cover__dateline {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-family: var(--font-comic-hand);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--comic-paper-bright);
+  text-shadow: 1.5px 1.5px 0 var(--comic-ink);
+}
+
+[data-series='roundtable-reckoning'] .comic-cover .comic-sfx {
+  position: absolute;
+  top: 1.4rem;
+  right: clamp(0.5rem, 6vw, 5rem);
+  transform: rotate(9deg);
+}
+
+/* ── Cast strip ───────────────────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-cast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.1rem;
+  padding: 2rem 1.25rem;
+  border-bottom: 4px solid var(--comic-ink);
+  background: var(--comic-paper-bright);
+}
+
+[data-series='roundtable-reckoning'] .comic-cast__card {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: 19rem;
+  padding: 0.7rem 1rem;
+  background: #fff;
+  border: 3px solid var(--comic-ink);
+  border-radius: 95% 4% 92% 5% / 4% 95% 6% 95%;
+  box-shadow: 4px 4px 0 var(--comic-ink);
+}
+
+[data-series='roundtable-reckoning'] .comic-cast__card:nth-child(even) {
+  border-radius: 4% 95% 6% 95% / 95% 4% 92% 5%;
+  transform: rotate(1.2deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-cast__card:nth-child(odd) {
+  transform: rotate(-1.2deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-cast__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 2.5px solid var(--comic-ink);
+  border-radius: 50% 45% 52% 48% / 47% 52% 45% 53%;
+  background: var(--persona-color, var(--comic-cyan));
+  color: #fff;
+}
+
+[data-series='roundtable-reckoning'] .comic-cast__card[data-cast='the-researcher'] .comic-cast__icon {
+  background: var(--comic-purple);
+}
+
+[data-series='roundtable-reckoning'] .comic-cast__card[data-cast='the-chorus'] .comic-cast__icon {
+  background: var(--comic-red);
+}
+
+[data-series='roundtable-reckoning'] .comic-cast__name {
+  display: block;
+  font-family: var(--font-comic-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+}
+
+[data-series='roundtable-reckoning'] .comic-cast__role {
+  display: block;
+  font-family: var(--font-comic-hand);
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+/* ── Scenes ───────────────────────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-scene {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 2.75rem 1.25rem 1rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-scene__kicker {
+  display: inline-block;
+  margin: 0;
+  padding: 0.25rem 0.9rem;
+  background: var(--comic-ink);
+  color: var(--comic-yellow);
+  font-family: var(--font-comic-display);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(-1deg) skew(-8deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-scene__title {
+  margin: 0.5rem 0 1.5rem;
+  font-family: var(--font-comic-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 var(--comic-yellow);
+}
+
+[data-series='roundtable-reckoning'] .comic-scene__panels {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 700px) {
+  [data-series='roundtable-reckoning'] .comic-scene__panels--grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  [data-series='roundtable-reckoning'] .comic-scene__panels--grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  [data-series='roundtable-reckoning'] .comic-scene__panels--mosaic {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+  }
+
+  [data-series='roundtable-reckoning'] .comic-panel[data-span='2'] {
+    grid-column: span 2;
+  }
+
+  [data-series='roundtable-reckoning'] .comic-panel[data-span='3'] {
+    grid-column: span 3;
+  }
+}
+
+/* ── Panels ───────────────────────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.4rem 1.25rem;
+  background: var(--comic-paper-bright);
+}
+
+/* hand-inked frame: irregular corners, uneven widths, slight lean */
+[data-series='roundtable-reckoning'] .comic-panel--sketch {
+  border: solid var(--comic-ink);
+  border-width: 3px 4px 3px 5px;
+  border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;
+  box-shadow: 6px 6px 0 rgba(26, 18, 8, 0.8);
+}
+
+[data-series='roundtable-reckoning'] .comic-panel--sketch:nth-child(odd) {
+  transform: rotate(-0.5deg);
+  border-width: 3px 3px 5px 5px;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+[data-series='roundtable-reckoning'] .comic-panel--sketch:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-panel--jagged {
+  border: none;
+  padding: 2rem 1.75rem;
+  background: var(--comic-paper-bright);
+  clip-path: polygon(
+    1% 3%,
+    99% 0%,
+    98% 30%,
+    100% 55%,
+    97% 78%,
+    99% 97%,
+    52% 99%,
+    2% 100%,
+    3% 70%,
+    0% 42%,
+    2% 18%
+  );
+  filter: drop-shadow(5px 5px 0 rgba(26, 18, 8, 0.8));
+}
+
+[data-series='roundtable-reckoning'] .comic-panel--clean {
+  border: 3px solid var(--comic-ink);
+  box-shadow: 6px 6px 0 rgba(26, 18, 8, 0.8);
+}
+
+[data-series='roundtable-reckoning'] .comic-panel--borderless {
+  background: transparent;
+  padding: 0.5rem 0;
+}
+
+/* panel backgrounds */
+[data-series='roundtable-reckoning'] .comic-panel[data-background='halftone'] {
+  background-color: var(--comic-paper-bright);
+  background-image: radial-gradient(rgba(41, 182, 216, 0.28) 24%, transparent 25%);
+  background-size: 11px 11px;
+}
+
+[data-series='roundtable-reckoning'] .comic-panel[data-background='burst'] {
+  background:
+    radial-gradient(circle at 50% 45%, var(--comic-paper-bright) 0 5rem, transparent 15rem),
+    repeating-conic-gradient(
+      from 4deg at 50% 45%,
+      var(--comic-yellow) 0 8deg,
+      #f5c526 8deg 16deg
+    );
+}
+
+[data-series='roundtable-reckoning'] .comic-panel[data-background='flat'] {
+  background: var(--comic-paper-bright);
+}
+
+[data-series='roundtable-reckoning'] .comic-panel[data-background='paper'] {
+  background: var(--comic-paper);
+}
+
+/* ── Caption plates ───────────────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-caption {
+  z-index: 2;
+  max-width: 32rem;
+  margin: 0;
+  padding: 0.55rem 1.1rem;
+  background: var(--comic-yellow);
+  border: 2.5px solid var(--comic-ink);
+  box-shadow: 3px 3px 0 var(--comic-ink);
+  font-family: var(--font-comic-hand);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  transform: skew(-6deg) rotate(-0.6deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-caption > span {
+  display: inline-block;
+  transform: skew(6deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-caption--top-right,
+[data-series='roundtable-reckoning'] .comic-caption--bottom-right {
+  align-self: flex-end;
+  transform: skew(6deg) rotate(0.6deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-caption--top-right > span,
+[data-series='roundtable-reckoning'] .comic-caption--bottom-right > span {
+  transform: skew(-6deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-caption--bottom-left,
+[data-series='roundtable-reckoning'] .comic-caption--bottom-right {
+  order: 99;
+}
+
+/* ── Speech bubbles (panelists) ───────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-speech {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 36rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-speech__speaker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  padding: 0.16rem 0.7rem;
+  border: 2px solid var(--comic-ink);
+  border-radius: 999px;
+  background: var(--persona-color, var(--comic-purple));
+  color: #fff;
+  font-family: var(--font-comic-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  box-shadow: 2px 2px 0 var(--comic-ink);
+  transform: rotate(-1deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-speech[data-cast='the-researcher'] .comic-speech__speaker {
+  background: var(--comic-purple);
+}
+
+/* glossy bubble: gradient fill + inset gloss + hand-drawn outline + tail */
+[data-series='roundtable-reckoning'] .comic-speech__bubble {
+  position: relative;
+  padding: 0.9rem 1.2rem;
+  background: linear-gradient(25deg, #ffffff, #eef3f6);
+  border: 2.5px solid var(--comic-ink);
+  border-radius: 1.1rem 1.3rem 1.2rem 1rem;
+  box-shadow:
+    -2px 2px 2px 1px #fff inset,
+    4px 4px 0 rgba(26, 18, 8, 0.75);
+  font-size: 0.95rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-speech__bubble p {
+  margin: 0;
+}
+
+[data-series='roundtable-reckoning'] .comic-speech__bubble p + p {
+  margin-top: 0.6rem;
+}
+
+/* two-layer border-triangle tail: ink outline under white fill */
+[data-series='roundtable-reckoning'] .comic-speech__bubble::before,
+[data-series='roundtable-reckoning'] .comic-speech__bubble::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+}
+
+[data-series='roundtable-reckoning'] .comic-speech__bubble::before {
+  bottom: -17px;
+  left: 11%;
+  border-width: 17px 7px 0;
+  border-color: var(--comic-ink) transparent;
+}
+
+[data-series='roundtable-reckoning'] .comic-speech__bubble::after {
+  bottom: -12px;
+  left: calc(11% + 1.5px);
+  border-width: 13px 5px 0;
+  border-color: #fff transparent;
+}
+
+[data-series='roundtable-reckoning'] .comic-speech[data-tail='right'] .comic-speech__bubble::before {
+  left: auto;
+  right: 11%;
+}
+
+[data-series='roundtable-reckoning'] .comic-speech[data-tail='right'] .comic-speech__bubble::after {
+  left: auto;
+  right: calc(11% + 1.5px);
+}
+
+[data-series='roundtable-reckoning'] .comic-speech[data-tail='right'] {
+  align-self: flex-end;
+}
+
+[data-series='roundtable-reckoning'] .comic-speech[data-tail='right'] .comic-speech__speaker {
+  align-self: flex-end;
+  transform: rotate(1deg);
+}
+
+/* thought variant: cloudy corners, dotted trail instead of a tail */
+[data-series='roundtable-reckoning'] .comic-speech[data-style='thought'] .comic-speech__bubble {
+  border-radius: 2.5rem 2.2rem 2.6rem 2.3rem;
+  border-style: dashed;
+}
+
+[data-series='roundtable-reckoning'] .comic-speech[data-style='thought'] .comic-speech__bubble::before {
+  border: none;
+  bottom: -14px;
+  left: 14%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 0 2.5px var(--comic-ink),
+    16px 10px 0 -3px #fff,
+    16px 10px 0 -1px var(--comic-ink);
+}
+
+[data-series='roundtable-reckoning'] .comic-speech[data-style='thought'] .comic-speech__bubble::after {
+  display: none;
+}
+
+/* shout variant: jagged edge + display type */
+[data-series='roundtable-reckoning'] .comic-speech[data-style='shout'] .comic-speech__bubble {
+  border-radius: 0;
+  clip-path: polygon(
+    2% 12%,
+    8% 2%,
+    28% 6%,
+    46% 0%,
+    64% 5%,
+    84% 1%,
+    97% 10%,
+    94% 38%,
+    100% 60%,
+    95% 84%,
+    82% 97%,
+    58% 93%,
+    36% 100%,
+    16% 94%,
+    3% 86%,
+    6% 55%,
+    0% 34%
+  );
+  border: none;
+  padding: 1.3rem 1.6rem;
+  background: #fff;
+  box-shadow: none;
+  filter: drop-shadow(3px 3px 0 var(--comic-ink));
+  font-family: var(--font-comic-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── The Chorus: jagged attack bubbles ────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-swarm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.1rem;
+  padding: 0.5rem 0;
+}
+
+[data-series='roundtable-reckoning'] .comic-swarm__bubble {
+  position: relative;
+  max-width: 24rem;
+  padding: 1.2rem 1.4rem;
+  background: #fff;
+  clip-path: polygon(
+    3% 10%,
+    0% 0%,
+    12% 4%,
+    30% 0%,
+    52% 4%,
+    73% 0%,
+    88% 5%,
+    100% 0%,
+    97% 22%,
+    100% 48%,
+    96% 71%,
+    100% 100%,
+    82% 96%,
+    60% 100%,
+    38% 95%,
+    17% 100%,
+    4% 94%,
+    0% 72%,
+    3% 45%
+  );
+  filter: drop-shadow(4px 4px 0 rgba(26, 18, 8, 0.85));
+  font-size: 0.88rem;
+  line-height: 1.45;
+  transform: rotate(var(--tilt, 0deg));
+}
+
+[data-series='roundtable-reckoning'] .comic-swarm__bubble p {
+  margin: 0;
+}
+
+[data-series='roundtable-reckoning'] .comic-swarm__bubble--heavy {
+  max-width: 28rem;
+  background: #ffe3e3;
+  font-size: 1rem;
+  filter: drop-shadow(5px 5px 0 var(--comic-red-deep));
+}
+
+[data-series='roundtable-reckoning'] .comic-swarm__handle {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-comic-hand);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--comic-red-deep);
+}
+
+/* grawlix run inside a chorus bubble */
+[data-series='roundtable-reckoning'] .comic-grawlix {
+  display: inline-block;
+  font-family: var(--font-comic-display);
+  font-size: 1.35em;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--comic-red);
+  text-shadow: 1.5px 1.5px 0 var(--comic-ink);
+  transform: rotate(-2deg) translateY(0.08em);
+}
+
+/* ── SFX bursts ───────────────────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-sfx {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: fit-content;
+  padding: 2.2rem 2.6rem;
+  font-family: var(--font-comic-display);
+  color: var(--comic-red-deep);
+  text-shadow:
+    2px 2px 0 #fff,
+    -1.5px -1.5px 0 #fff;
+}
+
+[data-series='roundtable-reckoning'] .comic-sfx--md {
+  font-size: 1.6rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-sfx--lg {
+  font-size: 2.3rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-sfx--xl {
+  font-size: 3.2rem;
+}
+
+/* three-layer starburst behind the text, from the pop/splash pens */
+[data-series='roundtable-reckoning'] .comic-sfx--starburst::before,
+[data-series='roundtable-reckoning'] .comic-sfx--starburst::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  clip-path: polygon(
+    0% 0%,
+    27% 24%,
+    28% 0%,
+    46% 24%,
+    60% 0%,
+    71% 28%,
+    99% 1%,
+    83% 30%,
+    99% 28%,
+    84% 40%,
+    100% 51%,
+    82% 60%,
+    100% 69%,
+    78% 73%,
+    100% 100%,
+    66% 79%,
+    61% 100%,
+    45% 78%,
+    33% 100%,
+    28% 81%,
+    0% 100%,
+    21% 65%,
+    0% 61%,
+    24% 47%,
+    0% 32%,
+    15% 28%
+  );
+}
+
+[data-series='roundtable-reckoning'] .comic-sfx--starburst::before {
+  background: var(--comic-ink);
+  transform: scale(1.08) rotate(3deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-sfx--starburst::after {
+  background: var(--comic-yellow);
+}
+
+[data-series='roundtable-reckoning'] .comic-sfx--grawlix {
+  padding: 1.4rem 1.8rem;
+  color: #fff;
+  text-shadow:
+    2px 2px 0 var(--comic-ink),
+    -1.5px -1.5px 0 var(--comic-ink);
+}
+
+[data-series='roundtable-reckoning'] .comic-sfx--grawlix::before,
+[data-series='roundtable-reckoning'] .comic-sfx--grawlix::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  clip-path: polygon(
+    0% 0%,
+    27% 24%,
+    28% 0%,
+    46% 24%,
+    60% 0%,
+    71% 28%,
+    99% 1%,
+    83% 30%,
+    99% 28%,
+    84% 40%,
+    100% 51%,
+    82% 60%,
+    100% 69%,
+    78% 73%,
+    100% 100%,
+    66% 79%,
+    61% 100%,
+    45% 78%,
+    33% 100%,
+    28% 81%,
+    0% 100%,
+    21% 65%,
+    0% 61%,
+    24% 47%,
+    0% 32%,
+    15% 28%
+  );
+}
+
+[data-series='roundtable-reckoning'] .comic-sfx--grawlix::before {
+  background: var(--comic-ink);
+  transform: scale(1.08) rotate(-4deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-sfx--grawlix::after {
+  background: var(--comic-red);
+}
+
+/* ── Embedded social post ─────────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-post {
+  max-width: 30rem;
+  padding: 1rem 1.2rem;
+  background: #fff;
+  border: 3px solid var(--comic-ink);
+  border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;
+  box-shadow: 5px 5px 0 var(--comic-cyan);
+  font-family:
+    -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-post__head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-post__avatar {
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 2px solid var(--comic-ink);
+  border-radius: 50%;
+  background: var(--comic-cyan);
+  color: #fff;
+  font-family: var(--font-comic-display);
+  font-size: 1.05rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-post__author {
+  display: block;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+[data-series='roundtable-reckoning'] .comic-post__handle {
+  display: block;
+  font-size: 0.78rem;
+  color: #566;
+}
+
+[data-series='roundtable-reckoning'] .comic-post__text {
+  margin: 0;
+  line-height: 1.5;
+}
+
+[data-series='roundtable-reckoning'] .comic-post__meta {
+  display: block;
+  margin-top: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #dde;
+  font-size: 0.76rem;
+  color: #566;
+}
+
+/* ── Verdict plate & sources ──────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-verdict {
+  max-width: 46rem;
+  margin: 3rem auto;
+  padding: 1.8rem 1.9rem;
+  background: var(--comic-ink);
+  color: var(--comic-paper-bright);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow:
+    0 0 0 3px var(--comic-paper-bright),
+    0 0 0 6px var(--comic-ink),
+    8px 8px 0 6px var(--comic-red);
+  transform: rotate(-0.4deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-verdict__label {
+  display: inline-block;
+  margin: 0 0 0.8rem;
+  padding: 0.2rem 0.9rem;
+  background: var(--comic-yellow);
+  color: var(--comic-ink);
+  font-family: var(--font-comic-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: skew(-8deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-verdict p {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+[data-series='roundtable-reckoning'] .comic-verdict p:last-child {
+  margin-bottom: 0;
+}
+
+[data-series='roundtable-reckoning'] .comic-sources {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-sources__heading {
+  font-family: var(--font-comic-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 var(--comic-yellow);
+}
+
+[data-series='roundtable-reckoning'] .comic-sources__item {
+  padding: 0.8rem 1rem;
+  background: var(--comic-paper-bright);
+  border: 2.5px solid var(--comic-ink);
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  box-shadow: 3px 3px 0 var(--comic-ink);
+  font-size: 0.88rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-sources__item + .comic-sources__item {
+  margin-top: 0.8rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-sources__item strong {
+  font-family: var(--font-comic-hand);
+}
+
+/* citation footnote marks inside bubbles */
+[data-series='roundtable-reckoning'] .comic-cite {
+  margin-left: 0.15rem;
+  font-family: var(--font-comic-hand);
+  font-size: 0.72em;
+  vertical-align: super;
+  color: var(--comic-red-deep);
+  text-decoration: none;
+  border-bottom: 1.5px dashed var(--comic-red-deep);
+}
+
+/* ── Footer nav ───────────────────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2.2rem 1.25rem 3.2rem;
+  border-top: 4px solid var(--comic-ink);
+  background: var(--comic-paper-bright);
+}
+
+[data-series='roundtable-reckoning'] .comic-button {
+  display: inline-block;
+  padding: 0.55rem 1.3rem;
+  background: var(--comic-yellow);
+  border: 3px solid var(--comic-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 4px 4px 0 var(--comic-ink);
+  color: var(--comic-ink);
+  font-family: var(--font-comic-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+[data-series='roundtable-reckoning'] .comic-button:hover {
+  background: var(--comic-cyan);
+  color: #fff;
+}
+
+[data-series='roundtable-reckoning'] .comic-button--ghost {
+  background: var(--comic-paper-bright);
+}
+
+/* ── Episode index page ───────────────────────────────────────────── */
+
+[data-series='roundtable-reckoning'] .comic-index {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+[data-series='roundtable-reckoning'] .comic-episode-card {
+  display: block;
+  padding: 1.4rem 1.6rem;
+  background: var(--comic-paper-bright);
+  border: 3.5px solid var(--comic-ink);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 6px 6px 0 var(--comic-red);
+  color: var(--comic-ink);
+  text-decoration: none;
+  transform: rotate(-0.5deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-episode-card:hover {
+  box-shadow: 6px 6px 0 var(--comic-cyan);
+}
+
+[data-series='roundtable-reckoning'] .comic-episode-card + .comic-episode-card {
+  margin-top: 1.4rem;
+  transform: rotate(0.5deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-episode-card__eyebrow {
+  display: inline-block;
+  padding: 0.14rem 0.7rem;
+  background: var(--comic-ink);
+  color: var(--comic-yellow);
+  font-family: var(--font-comic-hand);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(-1deg);
+}
+
+[data-series='roundtable-reckoning'] .comic-episode-card__title {
+  margin: 0.6rem 0 0.4rem;
+  font-family: var(--font-comic-display);
+  font-weight: 400;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 2.5px 2.5px 0 var(--comic-yellow);
+}
+
+[data-series='roundtable-reckoning'] .comic-episode-card__blurb {
+  margin: 0;
+  font-family: var(--font-comic-hand);
+  font-size: 0.9rem;
+}
+
+/* ── Reveal animation ─────────────────────────────────────────────── */
+
+/* Panels/SFX start hidden and pop to rest when useRevealOnScroll flips the
+   attribute. Under reduced motion the hook reports revealed immediately and
+   the media query below never applies, so content is always visible. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-series='roundtable-reckoning'] .comic-reveal {
+    opacity: 0;
+    transform: scale(0.93) rotate(-1deg);
+    transition:
+      opacity 0.45s cubic-bezier(0.22, 1.4, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1.4, 0.36, 1);
+  }
+
+  [data-series='roundtable-reckoning'] .comic-reveal[data-revealed='true'] {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-series='roundtable-reckoning'] .comic-sfx[data-revealed='true'] {
+    animation: comic-boom 0.5s cubic-bezier(0.22, 1.6, 0.36, 1) both;
+  }
+
+  @keyframes comic-boom {
+    0% {
+      scale: 0.2;
+      rotate: -12deg;
+      opacity: 0;
+    }
+    60% {
+      scale: 1.15;
+      rotate: 4deg;
+      opacity: 1;
+    }
+    100% {
+      scale: 1;
+      rotate: 0deg;
+      opacity: 1;
+    }
+  }
+}
+
+/* ── Small screens ────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  [data-series='roundtable-reckoning'] .comic-cover {
+    padding: 3rem 1rem 2.75rem;
+  }
+
+  [data-series='roundtable-reckoning'] .comic-sfx--xl {
+    font-size: 2.2rem;
+  }
+
+  [data-series='roundtable-reckoning'] .comic-swarm__bubble {
+    max-width: 100%;
+  }
+}

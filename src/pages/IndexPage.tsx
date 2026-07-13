@@ -62,6 +62,23 @@ export function IndexPage() {
           ))}
         </ol>
 
+        <section
+          className="comic-promo"
+          data-series="roundtable-reckoning"
+          aria-labelledby="comic-promo-heading"
+          style={{ margin: '3rem 0' }}
+        >
+          <Link className="comic-episode-card" to="/unfiltered">
+            <span className="comic-episode-card__eyebrow">New companion series</span>
+            <h2 id="comic-promo-heading" className="comic-episode-card__title">
+              Roundtable Reckoning
+            </h2>
+            <p className="comic-episode-card__blurb">
+              Unfiltered conversations, drawn as they happened. Episode 1: Good Faith Not Found.
+            </p>
+          </Link>
+        </section>
+
         <section className="panel-section" aria-labelledby="panel-heading">
           <h2 id="panel-heading" className="panel-section__heading">
             The Panel

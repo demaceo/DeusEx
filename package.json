@@ -17,6 +17,8 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@fontsource/bangers": "^5.2.8",
+    "@fontsource/permanent-marker": "^5.2.7",
     "d3-array": "^3.2.4",
     "d3-geo": "^3.1.1",
     "d3-scale": "^4.0.2",

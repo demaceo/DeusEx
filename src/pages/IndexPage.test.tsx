@@ -70,6 +70,16 @@ describe('IndexPage', () => {
     expect(link).toHaveAttribute('href', '/voices')
   })
 
+  it('cross-promotes the Roundtable Reckoning comic series', () => {
+    render(
+      <MemoryRouter>
+        <IndexPage />
+      </MemoryRouter>,
+    )
+    const link = screen.getByRole('link', { name: /roundtable reckoning/i })
+    expect(link).toHaveAttribute('href', '/unfiltered')
+  })
+
   it('groups the panel into stance bands with correct voice counts', () => {
     render(
       <MemoryRouter>

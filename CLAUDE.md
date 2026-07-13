@@ -70,6 +70,17 @@ The shipped app contains **no API keys and makes no TTS/LLM calls** — it only 
 - **`tokens.css`** — single source of truth for all colors, fonts, and easing. Persona colors are applied via the `[data-persona='...']` data attribute — components set `data-persona={personaId}` and CSS resolves `--persona-color`.
 - **`chartTheme.ts`** — **mirrors `tokens.css` in hex** because Recharts renders SVG and CSS `var()` doesn't resolve for SVG attributes. If a token color changes, update both files.
 
+### Comic series — "Roundtable Reckoning" (`/unfiltered`)
+
+A second, visually separate series: unfiltered conversations rendered as an animated comic book. It is a deliberate parallel universe to the essay series — comics never enter `DOCUMENTS`, so essay navigation, persona projections, the chart catalog, the verification dashboard, and the podcast pipeline are untouched.
+
+- **`src/types/comic.ts`** — `ComicDocument`, `ComicScene`, `ComicPanel`, and the `ComicBlock` union (`caption | speech | chorusSwarm | sfx | embeddedPost`). `ComicSpeaker` is either a series-local `ComicCastId` (`the-researcher`, `the-chorus`; declared in `src/data/comics/cast.ts`, NOT in `PersonaId`) or a guest `PersonaId` resolving through `PERSONAS`.
+- **`src/data/comics.ts`** — the comic registry (`COMICS`, `getComicBySlug`, `getAdjacentEpisodes`) and `assertComicReferentialIntegrity` (dev + `comics.test.ts`). Episodes live in `src/data/comics/` (e.g. `unfiltered-i.ts`).
+- **`src/components/comic/ComicBlockRenderer.tsx`** — exhaustive switch over `ComicBlock['type']` with the same `never` guard idiom as `BlockRenderer`; adding a comic block variant requires a case here.
+- **`src/styles/comic.css`** — the comic design system. Every rule is scoped under `[data-series='roundtable-reckoning']`; full-page chrome only under `.comic-root[data-series=…]`. `tokens.css`/`base.css`/`components.css` are untouched by it. Comic fonts (`@fontsource/bangers`, `@fontsource/permanent-marker`) are imported from the comic pages only, so essay pages never load them.
+- **Grawlix**: hostile quotes may render partially as comic symbol swearing (`grawlixParts`), but the claim registry always stores the real verbatim text; grawlix glyphs are `aria-hidden` with an `sr-only` "[expletive]" fallback.
+- **Adding an episode**: create `src/data/comics/<id>.ts`, extend `ComicId` in `types/comic.ts`, register it in `COMICS`. Podcast generation does not apply to comics.
+
 ### Pages (`src/pages/`) & routing
 
 The route table lives in **`src/routes.tsx`** (single source of truth, used by `App` and by tests). Note `/:slug` is matched last so the static routes win.
@@ -79,6 +90,8 @@ The route table lives in **`src/routes.tsx`** (single source of truth, used by `
 | `/`                  | `IndexPage` — series landing with document cards             |
 | `/verification`      | `VerificationPage` — claim status dashboard                  |
 | `/voices/:personaId` | `PersonaThreadPage` — one persona's bubbles across all parts |
+| `/unfiltered`        | `UnfilteredIndexPage` — comic series landing                 |
+| `/unfiltered/:slug`  | `ComicRoute` → `ComicPage`                                   |
 | `/:slug`             | `DocumentRoute` → `RoundtablePage`                           |
 | `*`                  | `NotFound`                                                   |
 
