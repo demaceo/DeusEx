@@ -62,7 +62,7 @@ export function IndexPage() {
           ))}
         </ol>
 
-        <section
+        {/* <section
           className="comic-promo"
           data-series="roundtable-reckoning"
           aria-labelledby="comic-promo-heading"
@@ -77,7 +77,7 @@ export function IndexPage() {
               Unfiltered conversations, drawn as they happened. Episode 1: Good Faith Not Found.
             </p>
           </Link>
-        </section>
+        </section> */}
 
         <section className="panel-section" aria-labelledby="panel-heading">
           <h2 id="panel-heading" className="panel-section__heading">
