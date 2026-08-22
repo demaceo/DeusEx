@@ -52,7 +52,7 @@ export const SEGMENT_VARIANTS: ChartVariant[] = [
 /** Shared typography/axis styling for chart ticks and labels. */
 export const CHART_FONT = {
   mono: "'IBM Plex Mono', ui-monospace, monospace",
-  display: "'Playfair Display', Georgia, serif",
+  display: "'Playfair Display Variable', 'Playfair Display', Georgia, serif",
 } as const
 
 /** Tick props shared across cartesian axes. */

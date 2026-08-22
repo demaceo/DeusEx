@@ -42,17 +42,18 @@ Husky + lint-staged run ESLint and Prettier on staged files at commit time.
 
 ### Runtime (shipped to the browser)
 
-| Layer            | Choice                                                        | Notes                                                                               |
-| ---------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| UI               | **React 19.2**                                                | Function components only; `use()`-style context providers (`<Ctx value={…}>`).      |
-| Compiler         | **React Compiler 1.0** (`babel-plugin-react-compiler`)        | Wired through `@rolldown/plugin-babel` in `vite.config.ts`; auto-memoization.       |
-| Language         | **TypeScript ~6.0**                                           | `verbatimModuleSyntax`, `erasableSyntaxOnly`, `noUnusedLocals/Parameters`, no emit. |
-| Build            | **Vite 8** (Rolldown-powered)                                 | `pnpm build` runs `tsc -b` first, so a type error fails the build.                  |
-| Routing          | **react-router-dom 7**                                        | `createBrowserRouter` over the route table in `src/routes.tsx`.                     |
-| Charts           | **d3-scale · d3-shape · d3-array · d3-geo · topojson-client** | Math only. Every mark is hand-authored React SVG; there is no charting library.     |
-| Icons            | **lucide-react**                                              | Persona icons are `LucideIcon` values stored on the `Persona` record.               |
-| Comic typography | **@fontsource/bangers · @fontsource/permanent-marker**        | Self-hosted, imported only from the comic pages so essay pages never load them.     |
-| Styling          | **Plain CSS + custom properties**                             | Four stylesheets, no CSS-in-JS, no utility framework, no preprocessor.              |
+| Layer            | Choice                                                                                                      | Notes                                                                               |
+| ---------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| UI               | **React 19.2**                                                                                              | Function components only; `use()`-style context providers (`<Ctx value={…}>`).      |
+| Compiler         | **React Compiler 1.0** (`babel-plugin-react-compiler`)                                                      | Wired through `@rolldown/plugin-babel` in `vite.config.ts`; auto-memoization.       |
+| Language         | **TypeScript ~6.0**                                                                                         | `verbatimModuleSyntax`, `erasableSyntaxOnly`, `noUnusedLocals/Parameters`, no emit. |
+| Build            | **Vite 8** (Rolldown-powered)                                                                               | `pnpm build` runs `tsc -b` first, so a type error fails the build.                  |
+| Routing          | **react-router-dom 7**                                                                                      | `createBrowserRouter` over the route table in `src/routes.tsx`.                     |
+| Charts           | **d3-scale · d3-shape · d3-array · d3-geo · topojson-client**                                               | Math only. Every mark is hand-authored React SVG; there is no charting library.     |
+| Icons            | **lucide-react**                                                                                            | Persona icons are `LucideIcon` values stored on the `Persona` record.               |
+| Typography       | **@fontsource-variable/playfair-display · @fontsource-variable/source-serif-4 · @fontsource/ibm-plex-mono** | Self-hosted, `font-display: swap`, imported in `main.tsx`.                          |
+| Comic typography | **@fontsource/bangers · @fontsource/permanent-marker**                                                      | Self-hosted, imported only from the comic pages so essay pages never load them.     |
+| Styling          | **Plain CSS + custom properties**                                                                           | Four stylesheets, no CSS-in-JS, no utility framework, no preprocessor.              |
 
 ### Tooling and quality gates
 
@@ -406,16 +407,25 @@ progress-bar fill, round-navigator highlight, and footer color from one attribut
 
 ### Typography
 
-| Token            | Stack                                      | Used for                              |
-| ---------------- | ------------------------------------------ | ------------------------------------- |
-| `--font-display` | `'Playfair Display', Georgia, serif`       | Mastheads, titles, pullquotes         |
-| `--font-serif`   | `'Source Serif 4', Georgia, serif`         | Body prose, speech bubbles            |
-| `--font-mono`    | `'IBM Plex Mono', ui-monospace, monospace` | Eyebrows, labels, axis ticks, sources |
+| Token            | Stack                                                             | Used for                              |
+| ---------------- | ----------------------------------------------------------------- | ------------------------------------- |
+| `--font-display` | `'Playfair Display Variable', 'Playfair Display', Georgia, serif` | Mastheads, titles, pullquotes         |
+| `--font-serif`   | `'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif`     | Body prose, speech bubbles            |
+| `--font-mono`    | `'IBM Plex Mono', ui-monospace, monospace`                        | Eyebrows, labels, axis ticks, sources |
 
-The essay pages ship **no webfont files**: the named families are used when present on the reader's
-system and fall back to Georgia and the platform mono otherwise, which keeps the critical path free
-of font requests. The comic series is the exception, self-hosting Bangers and Permanent Marker via
-`@fontsource` and importing them only from the comic pages.
+All three faces are **self-hosted** and imported once in `src/main.tsx`. The two serifs ship as
+variable fonts, so a single file per style covers every weight the kit uses (display at 700/800/900,
+body at 400/700); the mono is static and only the three weights the CSS asks for (400, 600, 700) are
+imported. Everything is `font-display: swap` and `unicode-range` gated, so a reader of the English
+text downloads the latin cuts only, roughly 240KB across six faces, and never blocks on them.
+
+Two things to keep in sync when touching typography: fontsource names variable families with a
+`Variable` suffix, which is why the stacks lead with `'… Variable'` and keep the plain name as the
+next candidate for a locally installed copy; and `components/chartTheme.ts` mirrors these stacks in
+full, because SVG text cannot resolve `var()`.
+
+The comic series stays separate, self-hosting Bangers and Permanent Marker via `@fontsource` and
+importing them only from the comic pages so essay pages never load them.
 
 ### Motion
 

@@ -67,6 +67,7 @@ The shipped app contains **no API keys and makes no TTS/LLM calls** — it only 
 
 ### Design system (`src/styles/`)
 
+- **Webfonts** — the three editorial faces (Playfair Display, Source Serif 4, IBM Plex Mono) are self-hosted via `@fontsource` and imported once in **`src/main.tsx`**. The two serifs are variable fonts, which fontsource declares under a `Variable`-suffixed family name, so `--font-display` / `--font-serif` must lead with `'Playfair Display Variable'` / `'Source Serif 4 Variable'` and `chartTheme.ts` must mirror that. Mono is static: only weights 400/600/700 are imported, so a new bold-mono rule needs its weight added there. Comic faces stay page-level imports.
 - **`tokens.css`** — single source of truth for all colors, fonts, and easing. Persona colors are applied via the `[data-persona='...']` data attribute — components set `data-persona={personaId}` and CSS resolves `--persona-color`.
 - **`src/components/chartTheme.ts`** — **mirrors `tokens.css` in hex** because charts paint SVG and CSS `var()` doesn't resolve for SVG attributes (and not at all in jsdom under test). If a token color changes, update both files.
 
