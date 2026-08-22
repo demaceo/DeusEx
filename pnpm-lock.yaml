@@ -8,9 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/playfair-display':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource-variable/source-serif-4':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@fontsource/bangers':
         specifier: ^5.2.8
         version: 5.2.8
+      '@fontsource/ibm-plex-mono':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@fontsource/permanent-marker':
         specifier: ^5.2.7
         version: 5.2.7
@@ -498,8 +507,17 @@ packages:
       '@noble/hashes':
         optional: true
 
+  '@fontsource-variable/playfair-display@5.3.0':
+    resolution: {integrity: sha512-IHdzTvE8eGIXHteZql7KXoqdc3Gfm+Zs1u4XlSC3MeplkwviT3sx/P6gI0tLwg/xIYLF4ZJYveZ5V+bl9cnDwA==}
+
+  '@fontsource-variable/source-serif-4@5.3.0':
+    resolution: {integrity: sha512-9vch9WqxjaaA+1o9Ur8pOgIGbCYLjRReOUel23A6lOpD1syptgjtkORevvNmldJ5kGXQL29onQUqI5Ltz0s3bQ==}
+
   '@fontsource/bangers@5.2.8':
     resolution: {integrity: sha512-fFFXg+IHf05TEQ4U0gS8f7B0JHrhAN7oEw/Q8wR0APPLXnhnQSfZz2QDjg0kmVuM+IsM28ODga+0rSpnHLqFfQ==}
+
+  '@fontsource/ibm-plex-mono@5.3.0':
+    resolution: {integrity: sha512-eTgnZjZEGk1QtD3ZstF+Vclo2HLAni8YMy34/DxllwZvyz1lR/1RF/xTiAquOBO7MvqBx8D2Ig2WCPMVfdZu7Q==}
 
   '@fontsource/permanent-marker@5.2.7':
     resolution: {integrity: sha512-Lpjv3yD6TSRvcxjhdv4OZuNtEttbUgVNfFqAE8Qf7D1J8L97qZTZ8rj8OExX2ezCNv920psv+HBHvthAQxNE+A==}
@@ -2143,7 +2161,13 @@ snapshots:
 
   '@exodus/bytes@1.15.1': {}
 
+  '@fontsource-variable/playfair-display@5.3.0': {}
+
+  '@fontsource-variable/source-serif-4@5.3.0': {}
+
   '@fontsource/bangers@5.2.8': {}
+
+  '@fontsource/ibm-plex-mono@5.3.0': {}
 
   '@fontsource/permanent-marker@5.2.7': {}
 

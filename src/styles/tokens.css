@@ -50,10 +50,13 @@
   /* Per-turn delay step for the debate stage's staggered scroll reveal. */
   --stagger-step: 60ms;
 
-  /* Fonts */
-  --font-display: 'Playfair Display', Georgia, serif;
+  /* Fonts. The two serifs ship as variable webfonts, which fontsource names with
+     a "Variable" suffix; the plain family name follows so a locally installed copy
+     still wins over the system fallback. Faces are imported in src/main.tsx, and
+     `components/chartTheme.ts` mirrors these stacks for SVG text. */
+  --font-display: 'Playfair Display Variable', 'Playfair Display', Georgia, serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
-  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-serif: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif;
 }
 
 /* Persona color resolution. Components set data-persona; CSS maps it to a color.
