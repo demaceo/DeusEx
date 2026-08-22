@@ -546,6 +546,13 @@ export const partXI: RoundtableDocument = {
       url: 'https://www.iea.org/reports/the-role-of-critical-minerals-in-clean-energy-transitions',
     },
     {
+      id: 'src-nrdc-lithium',
+      url: 'https://www.nrdc.org/bio/amanda-maxwell/lithium-mining-must-not-dry-atacama-desert',
+      title: 'NRDC: Lithium Mining Must Not Dry Out the Atacama Desert',
+      description:
+        'Reports the widely cited estimate, attributed to Dr. Ingrid Garces of the University of Antofagasta, of roughly 2 million litres of water consumed per tonne of lithium produced from brine.',
+    },
+    {
       id: 'src-un-ewaste',
       title: 'UN: Global E-waste Monitor 2024',
       description:
@@ -571,12 +578,12 @@ export const partXI: RoundtableDocument = {
       id: 's-xi-lithium-water',
       kind: 'statistic',
       claimText: '~2M L',
-      sourceId: 'src-iea-minerals',
-      verificationStatus: 'disputed',
+      sourceId: 'src-nrdc-lithium',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://www.nrdc.org/bio/amanda-maxwell/lithium-mining-must-not-dry-atacama-desert',
-      note: 'The ~2 million litres per tonne figure is credible as an order-of-magnitude estimate, but it is misattributed to the IEA. The cited IEA report does not state it; the number traces to Dr. Ingrid Garces (Univ. of Antofagasta) via NRDC and similar reporting. The IEA discusses lithium-brine water stress qualitatively, in different units. Figure defensible; IEA attribution wrong.',
-      lastCheckedISO: '2026-07-04',
+      note: 'Figure retained and re-attributed. The roughly 2 million litres per tonne estimate for brine lithium is credible and widely cited, but it does not come from the IEA critical minerals report it was previously credited to; it traces to Dr. Ingrid Garces of the University of Antofagasta, reported via NRDC. Source corrected.',
+      lastCheckedISO: '2026-08-22',
     },
     's-xi-ewaste': {
       id: 's-xi-ewaste',
@@ -615,12 +622,12 @@ export const partXI: RoundtableDocument = {
       id: 'c-xi-lithium-water',
       kind: 'citation',
       claimText: '~2 million litres of water per tonne of lithium (brine)',
-      sourceId: 'src-iea-minerals',
-      verificationStatus: 'disputed',
+      sourceId: 'src-nrdc-lithium',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://www.nrdc.org/bio/amanda-maxwell/lithium-mining-must-not-dry-atacama-desert',
-      note: 'The ~2 million litres of water per tonne of lithium (brine) figure is a widely repeated order-of-magnitude estimate, but it does not originate from the cited IEA report; it traces to Dr. Ingrid Garces via NRDC and comparable sources. Number defensible; IEA source attribution wrong.',
-      lastCheckedISO: '2026-07-04',
+      note: 'Re-attributed from the IEA critical minerals report, which does not state this figure, to its actual origin: Dr. Ingrid Garces of the University of Antofagasta, reported via NRDC. The order-of-magnitude estimate itself is well supported.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-xi-rare-earth': {
       id: 'c-xi-rare-earth',

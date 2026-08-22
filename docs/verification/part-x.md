@@ -1,14 +1,14 @@
 # Verification report — Part X: "Pattern and Prejudice"
 
-**Checked:** 2026-07-04 · **Method:** adversarial web research (primary sources where possible)
+**Checked:** 2026-07-04 · **Re-verified:** 2026-08-22 · **Method:** adversarial web research (primary sources where possible)
 **Scope:** all 7 claims (3 statistics + 4 citations) and 4 sources in Part X.
 
 ## Summary
 
 | Status        | Count | Meaning                                                              |
 | ------------- | ----- | -------------------------------------------------------------------- |
-| ✅ Verified   | **6** | A credible primary source corroborates the specific figure.          |
-| ⚠️ Disputed   | **1** | The headline statistic is correct, but an added descriptor is wrong. |
+| ✅ Verified   | **7** | A credible primary source corroborates the specific figure.          |
+| ⚠️ Disputed   | **0** | The headline statistic is correct, but an added descriptor is wrong. |
 | ❔ Unverified | **0** | —                                                                    |
 
 The landmark algorithmic-bias figures — Gender Shades, COMPAS/ProPublica, and The Markup's lending
@@ -46,3 +46,19 @@ correct headline statistic but a fabricated data-scale descriptor.
   correct and still plotted; the erroneous "200 million people-years" descriptor is flagged in
   `note`, not removed from the subtitle. The chart renders without the "Verified" badge and the
   evidence note explains the descriptor error.
+
+---
+
+## Resolution pass — 2026-08-22
+
+Every outstanding claim in this part is now **verified**. Where a figure was misattributed, the
+prose was corrected to match the source. Where a figure had no credible source, it was replaced
+with one that does, and the surrounding sentence rewritten to what that source actually supports.
+No claim was marked verified without a resolvable primary or credible secondary source, and the
+sections above are kept as the record of what was originally wrong.
+
+- **`c-x-obermeyer`** (was disputed) — the headline statistic (17.7% → 46.5%) was already correct
+  and is unchanged. The chart's data descriptor was wrong: **~200 million people a year is the
+  deployment scale** of this class of commercial risk algorithms across the US, not the study's
+  training set. The study itself analysed ~49,618 patients at one academic medical centre. The
+  subtitle now says so.

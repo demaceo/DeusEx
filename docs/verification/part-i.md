@@ -1,15 +1,15 @@
 # Verification report — Part I: "A Roundtable on Real Costs"
 
-**Checked:** 2026-06-24 · **Method:** sequential web research (primary sources where possible)
-**Scope:** all 37 claims (6 statistics + 31 citations) and 19 sources in Part I.
+**Checked:** 2026-06-24 · **Re-verified:** 2026-08-22 · **Method:** sequential web research (primary sources where possible)
+**Scope:** all 38 claims (7 statistics + 31 citations) and 25 sources in Part I.
 
 ## Summary
 
 | Status        | Count  | Meaning                                                                             |
 | ------------- | ------ | ----------------------------------------------------------------------------------- |
-| ✅ Verified   | **32** | A credible source corroborates the specific figure (minor rounding/labeling noted). |
-| ⚠️ Disputed   | **1**  | The figure is real but misattributed (wrong years).                                 |
-| ❔ Unverified | **4**  | No credible source located in this pass for the specific attribution.               |
+| ✅ Verified   | **38** | A credible source corroborates the specific figure (minor rounding/labeling noted). |
+| ⚠️ Disputed   | **0**  | The figure is real but misattributed (wrong years).                                 |
+| ❔ Unverified | **0**  | No credible source located in this pass for the specific attribution.               |
 
 The hard, headline data — energy (IEA), water (IEA / NPR / MSCI / LBNL), labor (TIME / Foxglove
 / SOMO / Computer Weekly / Rest of World), and regulation (EU AI Act / EO 14365 / state-bill
@@ -80,3 +80,33 @@ handful of secondary-blog, legal, or forward-looking attributions, plus one clea
   is a transcript of the source documents.
 - Next passes: Part II ("What's Actually Being Done") and Part III ("What It's Actually Getting
   Right").
+
+---
+
+## Resolution pass — 2026-08-22
+
+Every outstanding claim in this part is now **verified**. Where a figure was misattributed, the
+prose was corrected to match the source. Where a figure had no credible source, it was replaced
+with one that does, and the surrounding sentence rewritten to what that source actually supports.
+No claim was marked verified without a resolvable primary or credible secondary source, and the
+sections above are kept as the record of what was originally wrong.
+
+- **`c-i-microsoft-water-increase`** (was disputed) — prose corrected to the year the 34% jump
+  actually belongs to: the single-year rise to ~6.4M m³, not "between 2022 and 2024."
+- **`c-i-stanford-water-competition`** (was unverified) — the unlocatable April 2025 Stanford Bill
+  Lane Center report was replaced with [Western Resource Advocates, _Data Center Impacts in the
+  West_ (July 2025)](https://westernresourceadvocates.org/publications/data-center-impacts-in-the-west-policy-solutions-for-water-and-energy-use/),
+  which projects 7 billion gallons of annual data-center water use across five interior West
+  states by 2035.
+- **`c-i-arxiv-cooling-reduction`** (was unverified) — the "up to 50%" cooling reduction was
+  replaced with the [Vertiv / NVIDIA liquid-cooling analysis](https://www.vertiv.com/en-us/about/news-and-insights/articles/blog-posts/quantifying-data-center-pue-when-introducing-liquid-cooling/):
+  ~18% lower facility power and ~10% lower total site power at roughly 75% liquid cooling. The
+  direction held; the magnitude was overstated.
+- **`c-i-qhala-unemployment`** (was unverified) — re-sourced to [World Bank youth-unemployment
+  data](https://data.worldbank.org/indicator/SL.UEM.1524.ZS?locations=KE) (~15–17% recent years),
+  which comfortably supports the "over 12%" statement.
+- **`c-i-squire-global-frameworks`** (was unverified) — **the claim did not survive checking and
+  the prose was corrected rather than re-sourced.** Canada, Japan, the UK and Australia are not
+  converging on the EU model: Japan's 2025 AI Act is promotion-first, Australia chose
+  standards-led governance over EU-style risk tiers, the UK remains sector-led, and Canada has no
+  comprehensive statute. The sentence now says they are diverging.

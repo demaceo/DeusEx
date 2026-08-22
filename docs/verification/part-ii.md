@@ -1,14 +1,14 @@
 # Verification report — Part II: "What's Actually Being Done"
 
-**Checked:** 2026-06-24 · **Method:** parallel web research (primary sources where possible)
+**Checked:** 2026-06-24 · **Re-verified:** 2026-08-22 · **Method:** parallel web research (primary sources where possible)
 **Scope:** all 44 claims (12 statistics + 32 citations) and 21 sources in Part II.
 
 ## Summary
 
 | Status        | Count  | Meaning                                                                             |
 | ------------- | ------ | ----------------------------------------------------------------------------------- |
-| ✅ Verified   | **41** | A credible source corroborates the specific figure (minor rounding/labeling noted). |
-| ⚠️ Disputed   | **3**  | The figure is real but misattributed, or sources materially conflict.               |
+| ✅ Verified   | **44** | A credible source corroborates the specific figure (minor rounding/labeling noted). |
+| ⚠️ Disputed   | **0**  | The figure is real but misattributed, or sources materially conflict.               |
 | ❔ Unverified | **0**  | —                                                                                   |
 
 Part II holds up extremely well. The nuclear deals, the cooling technology, the labor
@@ -84,3 +84,24 @@ the underlying facts in all three are real.
 - "Verified" means a credible source corroborates the specific figure; aggregator citations
   (Introl, Enkiai, Commonfund, ThePromptBuddy) were checked against the underlying primary
   sources, which are the URLs recorded.
+
+---
+
+## Resolution pass — 2026-08-22
+
+Every outstanding claim in this part is now **verified**. Where a figure was misattributed, the
+prose was corrected to match the source. Where a figure had no credible source, it was replaced
+with one that does, and the surrounding sentence rewritten to what that source actually supports.
+No claim was marked verified without a resolvable primary or credible secondary source, and the
+sections above are kept as the record of what was originally wrong.
+
+- **`c-ii-introl-commonfund-2025`** (was disputed) — Three Mile Island / Crane Clean Energy Center
+  investment corrected from **$16 billion to ~$1.6 billion** (a decimal error). The 20-year PPA,
+  835 MW and 2028 target were already right.
+- **`c-ii-enkiai-commonfund-2025`** (was disputed) — Amazon / Talen Susquehanna deal corrected from
+  "over $20 billion" to the reported **~$18 billion over 17 years**. Capacity (1,920 MW) and term
+  (through 2042) were already right.
+- **`c-ii-stackcyber-2026`** (was disputed) — _Mobley v. Workday_ posture corrected: the May 2025
+  ruling granted **conditional ADEA collective-action certification** on age discrimination, not a
+  Rule 23 class certification for discriminatory outcomes generally. The vendor-liability holding
+  (AI providers liable as an employer's agent) was already correct and is retained.
