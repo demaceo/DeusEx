@@ -90,7 +90,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Yes, and it's one of the most significant energy deals in recent memory. Microsoft signed a 20-year power purchase agreement with Constellation Energy to restart the Crane Clean Energy Center (formerly Three Mile Island Unit 1), targeting 2028. The deal is worth approximately $16 billion and will direct 835 megawatts of carbon-free power exclusively to Microsoft's data centers.",
+                      "Yes, and it's one of the most significant energy deals in recent memory. Microsoft signed a 20-year power purchase agreement with Constellation Energy to restart the Crane Clean Energy Center (formerly Three Mile Island Unit 1), targeting 2028. The deal is worth approximately $1.6 billion and will direct 835 megawatts of carbon-free power exclusively to Microsoft's data centers.",
                   },
                   { type: 'cite', claimId: 'c-ii-introl-commonfund-2025' },
                 ],
@@ -104,7 +104,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " Amazon secured a 1.92 gigawatt PPA with Talen Energy's Susquehanna plant through 2042 and invested over $20 billion converting the site into a nuclear-powered AI campus.",
+                      " Amazon secured a 1.92 gigawatt PPA with Talen Energy's Susquehanna plant through 2042, a roughly $18 billion, 17-year deal turning the site into a nuclear-powered AI campus.",
                   },
                   { type: 'cite', claimId: 'c-ii-enkiai-commonfund-2025' },
                   {
@@ -700,7 +700,7 @@ export const partII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' The Workday class action (certified against an AI resume screening system for discriminatory outcomes) established that vendors, not just employers, face liability for discriminatory AI.',
+                      " In Mobley v. Workday the court held that AI vendors can be directly liable as an employer's agent, and in May 2025 granted conditional collective-action certification on the age-discrimination claim, establishing that vendors, not just employers, face exposure for discriminatory AI.",
                   },
                   { type: 'cite', claimId: 'c-ii-stackcyber-2026' },
                   { type: 'text', value: ' These precedents accumulate.' },
@@ -1326,13 +1326,13 @@ export const partII: RoundtableDocument = {
     'c-ii-introl-commonfund-2025': {
       id: 'c-ii-introl-commonfund-2025',
       kind: 'citation',
-      claimText: '[Introl / Commonfund, 2025]',
+      claimText: '[Constellation Energy, 2024]',
       sourceId: 'src-introl-commonfund',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://www.constellationenergy.com/news/2024/Constellation-to-Launch-Crane-Clean-Energy-Center-Restoring-Jobs-and-Carbon-Free-Power-to-The-Grid.html',
-      note: 'The Constellation–Microsoft 20-year PPA to restart TMI Unit 1 as the Crane Clean Energy Center (835 MW, targeting 2028) is confirmed, but the investment is ~$1.6 billion, not "$16 billion" (Utility Dive / DCD), likely a decimal error.',
-      lastCheckedISO: '2026-06-24',
+      note: 'The Constellation and Microsoft 20-year PPA restarting Three Mile Island Unit 1 as the Crane Clean Energy Center (835 MW, targeting 2028) is confirmed. The investment figure has been corrected from $16 billion to approximately $1.6 billion, which appears to have been a decimal error.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-ii-introl-dec-2025': {
       id: 'c-ii-introl-dec-2025',
@@ -1348,13 +1348,13 @@ export const partII: RoundtableDocument = {
     'c-ii-enkiai-commonfund-2025': {
       id: 'c-ii-enkiai-commonfund-2025',
       kind: 'citation',
-      claimText: '[Enkiai / Commonfund, 2025]',
+      claimText: '[Talen Energy investor relations, 2025]',
       sourceId: 'src-enkiai-commonfund',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-expands-nuclear-energy-relationship-amazon',
-      note: "Amazon's 1,920 MW Susquehanna PPA with Talen through 2042 is confirmed (June 2025), but it is a ~$18 billion 17-year deal, not 'over $20 billion'; the capacity and term are correct, the dollar figure is off.",
-      lastCheckedISO: '2026-06-24',
+      note: "Amazon's 1,920 MW Susquehanna PPA with Talen running through 2042 is confirmed (June 2025). The dollar figure has been corrected from 'over $20 billion' to the reported roughly $18 billion over 17 years; capacity and term were already correct.",
+      lastCheckedISO: '2026-08-22',
     },
     'c-ii-ieee-spectrum-2024': {
       id: 'c-ii-ieee-spectrum-2024',
@@ -1576,13 +1576,13 @@ export const partII: RoundtableDocument = {
     'c-ii-stackcyber-2026': {
       id: 'c-ii-stackcyber-2026',
       kind: 'citation',
-      claimText: '[StackCyber, 2026]',
+      claimText: '[Mobley v. Workday, 2024-2025]',
       sourceId: 'src-stackcyber',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://www.seyfarth.com/news-insights/mobley-v-workday-court-holds-ai-service-providers-could-be-directly-liable-for-employment-discrimination-under-agent-theory.html',
-      note: "The vendor-liability point holds: in Mobley v. Workday the court held AI providers can be directly liable as employers' 'agents.' But the certification is mischaracterised: the May 2025 ruling granted conditional ADEA collective-action certification (age), not a Rule 23 class certification 'for discriminatory outcomes' generally.",
-      lastCheckedISO: '2026-06-24',
+      note: "The vendor-liability holding is confirmed: the court held AI providers can be directly liable as an employer's agent. The procedural posture has been corrected in the prose: the May 2025 ruling granted conditional ADEA collective-action certification on age discrimination, not a Rule 23 class certification for discriminatory outcomes generally.",
+      lastCheckedISO: '2026-08-22',
     },
     'c-ii-secure-privacy-2026': {
       id: 'c-ii-secure-privacy-2026',

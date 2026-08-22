@@ -1,15 +1,15 @@
 # Verification report — Part IV: "The Race We're In"
 
-**Checked:** 2026-07-04 · **Method:** adversarial web research (primary sources where possible)
-**Scope:** all 13 claims (3 statistics + 10 citations) and 8 sources in Part IV.
+**Checked:** 2026-07-04 · **Re-verified:** 2026-08-22 · **Method:** adversarial web research (primary sources where possible)
+**Scope:** all 13 claims (3 statistics + 10 citations) and 9 sources in Part IV.
 
 ## Summary
 
-| Status        | Count | Meaning                                                                             |
-| ------------- | ----- | ----------------------------------------------------------------------------------- |
-| ✅ Verified   | **8** | A credible source corroborates the specific figure (minor rounding/labeling noted). |
-| ⚠️ Disputed   | **2** | The figure is real but misattributed, or the source says something different.       |
-| ❔ Unverified | **3** | No credible source located in this pass for the specific attribution.               |
+| Status        | Count  | Meaning                                                                             |
+| ------------- | ------ | ----------------------------------------------------------------------------------- |
+| ✅ Verified   | **13** | A credible source corroborates the specific figure (minor rounding/labeling noted). |
+| ⚠️ Disputed   | **0**  | The figure is real but misattributed, or the source says something different.       |
+| ❔ Unverified | **0**  | No credible source located in this pass for the specific attribution.               |
 
 The historical and governance material — JFK's proliferation warning, the nuclear-states
 timeline, the Montreal Protocol trend, the EU AI Act, and the White House / Bletchley
@@ -74,3 +74,25 @@ not exist, and a WIPO-citing secondary source gives a materially different 2021 
   changed. The WIPO patents chart (`c-iv-wipo-patents`) therefore still renders, but as an
   unverified figure: `ChartFrame` withholds the "Verified" badge and stamps `data-verification`,
   and the evidence note explains why.
+
+---
+
+## Resolution pass — 2026-08-22
+
+Every outstanding claim in this part is now **verified**. Where a figure was misattributed, the
+prose was corrected to match the source. Where a figure had no credible source, it was replaced
+with one that does, and the surrounding sentence rewritten to what that source actually supports.
+No claim was marked verified without a resolvable primary or credible secondary source, and the
+sections above are kept as the record of what was originally wrong.
+
+- **`s-iv-wipo-patents-2021`**, **`s-iv-wipo-countries`**, **`s-iv-wipo-growth-rate`**,
+  **`c-iv-wipo-patents`** (was 1 disputed + 3 unverified) — the entire WIPO cluster rested on a
+  page that now 404s and a report title that does not exist. All four were re-sourced to the
+  [Stanford AI Index 2025](https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development):
+  granted AI patents **3,833 (2010) → 122,511 (2023)**, **+29.6%** year over year, **69.7%**
+  credited to China. The chart became a two-point `comparison` rather than an interpolated
+  seven-year series, so no intermediate year is asserted beyond what the source states.
+- **`c-iv-safety-commitments`** (was disputed) — the middle bar was misattributed. The 16 firms
+  signed the **Frontier AI Safety Commitments at Seoul (May 2024)**, not at Bletchley (Nov 2023).
+  The Bletchley bar was removed and the 28-country Declaration moved to an annotation, so the
+  7 → 16 growth now sits against the correct venues.

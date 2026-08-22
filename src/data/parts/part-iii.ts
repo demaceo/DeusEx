@@ -115,7 +115,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' By 2024–2025, approximately 40% of new protein structures deposited into the global Protein Data Bank used AI techniques in their determination.',
+                      ' By 2024 to 2025, about 40% of new structures deposited into the global Protein Data Bank were solved by cryo-electron microscopy.',
                   },
                   { type: 'cite', claimId: 'c-iii-pdb-40pct' },
                   {
@@ -128,7 +128,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Building on that foundation, researchers at MIT and McMaster University trained a generative AI model to design entirely new antibiotic structures to fight drug-resistant bacteria. The model screened more than 36 million molecular possibilities. From that screen, it found a small set of promising compounds. Two candidates eliminated MRSA (methicillin-resistant Staphylococcus aureus) in mouse models, and one showed activity against several other drug-resistant bacteria.',
+                      'Building on that foundation, researchers at MIT, the Broad Institute, and Phare Bio trained a generative AI model to design entirely new antibiotic structures to fight drug-resistant bacteria. The model screened more than 36 million molecular possibilities. From that screen, it found a small set of promising compounds. Two candidates eliminated MRSA (methicillin-resistant Staphylococcus aureus) in mouse models, and one showed activity against several other drug-resistant bacteria.',
                   },
                   { type: 'cite', claimId: 'c-iii-mit-antibiotic' },
                   {
@@ -164,7 +164,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "And separately, Google DeepMind's AI identified a previously unknown protein interaction critical to the survival of certain cancer cells: molecular dependencies that are difficult to detect through conventional laboratory methods, pointing toward a potential new class of drug targets that could selectively disrupt cancer growth while sparing healthy tissue.",
+                      "And separately, a 27 billion parameter model built by Google Research and Yale, C2S-Scale, generated a novel hypothesis for making 'cold' tumors visible to the immune system: pairing the drug silmitasertib with low dose interferon to raise antigen presentation. Laboratory work on human neuroendocrine cell models confirmed the prediction, with antigen presentation rising roughly 50%.",
                   },
                   { type: 'cite', claimId: 'c-iii-cancer-protein' },
                 ],
@@ -284,11 +284,11 @@ export const partIII: RoundtableDocument = {
             stats: [
               {
                 variant: 'positive',
-                labelTop: 'Drug cost reduction',
-                value: '$700M',
+                labelTop: 'Pharma R&D value',
+                value: '$60–110B',
                 size: 'large',
                 description:
-                  'Average savings per drug reported by pharma companies using AI in development',
+                  'Annual value generative AI could unlock across the pharmaceutical and medical products industries',
                 claimId: 's-iii-drug-cost-700m',
               },
               {
@@ -302,11 +302,11 @@ export const partIII: RoundtableDocument = {
               },
               {
                 variant: 'blue',
-                labelTop: 'Early cancer detection savings',
+                labelTop: 'Cost per cancer detected',
                 value: '$150K',
                 size: 'large',
                 description:
-                  'Average per-patient treatment cost savings when AI screening catches cancer earlier',
+                  'Cost per lung cancer detected by screening without AI support, falling to about $300 with it',
                 claimId: 's-iii-cancer-detection-150k',
               },
             ],
@@ -356,12 +356,13 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' Pharmaceutical companies using AI report average cost savings of $700 million per drug, and preclinical testing timelines are being compressed from four years to eighteen months.',
+                      ' The McKinsey Global Institute puts the value generative AI could unlock across the pharmaceutical and medical products industries at $60 billion to $110 billion a year, and preclinical testing timelines are being compressed from four years to eighteen months.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-700m' },
                   {
                     type: 'text',
-                    value: ' Failed candidates are being caught 70% earlier in development.',
+                    value:
+                      ' And the molecules are holding up in the clinic: of the AI discovered candidates that had completed Phase I trials by the end of 2023, 21 of 24 succeeded, well above the historic industry norm.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-70pct' },
                 ],
@@ -369,13 +370,13 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In diagnostics, AI medical imaging analysis reads X-rays, MRIs, and CT scans at speeds and consistency that human radiologists cannot match alone: not as a replacement, but as a second reader that catches what fatigue or distraction might miss. Early cancer detection through AI screening is saving an estimated $150,000 per patient in treatment costs by catching disease in stages that are far cheaper to treat.',
+                      'In diagnostics, AI medical imaging analysis reads X-rays, MRIs, and CT scans at speeds and consistency that human radiologists cannot match alone: not as a replacement, but as a second reader that catches what fatigue or distraction might miss. In one lung cancer screening analysis, the cost per cancer detected fell from about $150,000 without AI support to roughly $300 with it.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-150k' },
                   {
                     type: 'text',
                     value:
-                      ' Hospitals using AI diagnostics report 18% lower imaging costs through faster analysis and reduced need for repeat scans.',
+                      ' One hospital study of an AI radiology platform put the five year return on investment at 451%, rising to 791% once radiologist time savings were counted.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-18pct' },
                 ],
@@ -417,7 +418,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Also worth flagging: total healthcare AI investment in 2025 reached $9.8 billion, up 67% from 2024.',
+                      'Also worth flagging: venture funding into AI health tech reached about $10.7 billion in 2025, up roughly 24% from $8.6 billion in 2024.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-98b' },
                   {
@@ -614,7 +615,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In agriculture, AI precision farming systems are producing documented results: 15–20% increases in crop yields compared to conventional methods, up to 30% reduction in water usage through optimized irrigation, and 25% reduction in overall input costs including fertilizers and pesticides.',
+                      'In agriculture, AI precision farming systems are producing documented results: a random effects meta-analysis of AI driven irrigation studies published between 2018 and 2025 puts water savings at 30% to 50% and yield improvements at 20% to 30%.',
                   },
                   { type: 'cite', claimId: 'c-iii-farmonaut-yields' },
                   {
@@ -637,7 +638,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'On agriculture I want to add an honest note. The 15–20% yield increase figures come primarily from large-scale farms in developed countries with existing digital infrastructure. Over 70% of large-scale farms in developed countries are estimated to use some form of AI-driven technology.',
+                      'On agriculture I want to add an honest note. A meta-analysis of 85 studies covering 1,472 farm observations found precision agriculture lifts net profit by about 18.5% on average, but the gains concentrate in large scale grain farms: they are weaker and less stable on small farms and in developing countries.',
                   },
                   { type: 'cite', claimId: 'c-iii-farmonaut-70pct' },
                   {
@@ -781,8 +782,9 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' And a 2026 survey found 95% of college faculty reported fear of student over-reliance on AI and diminished critical thinking.',
+                      ' And a January 2026 survey of 1,057 college faculty found 95% expect generative AI to increase student overreliance on it, with 90% expecting a decline in critical thinking.',
                   },
+                  { type: 'cite', claimId: 'c-iii-elon-faculty' },
                 ],
                 [
                   {
@@ -1073,16 +1075,71 @@ export const partIII: RoundtableDocument = {
         "Human brain mapping with Harvard Lichtman Lab; AlphaFold's antibiotic and plastic pollution research applications.",
     },
     {
-      id: 'src-interesting-engineering',
-      title: 'Interesting Engineering (January 2026)',
+      id: 'src-mckinsey-pharma',
+      url: 'https://www.mckinsey.com/industries/life-sciences/our-insights/generative-ai-in-the-pharmaceutical-industry-moving-from-hype-to-reality',
+      title: 'McKinsey Global Institute: Generative AI in the Pharmaceutical Industry (2023)',
       description:
-        'Google DeepMind identified unknown protein interaction critical to cancer cell survival; potential new drug target class.',
+        'Estimates generative AI could unlock $60B to $110B a year in economic value across the pharmaceutical and medical products industries, equal to 2.6% to 4.5% of annual revenues.',
     },
     {
-      id: 'src-promptbuddy',
-      title: 'ThePromptBuddy (November 2025)',
+      id: 'src-ddt-ai-clinical',
+      url: 'https://www.sciencedirect.com/science/article/pii/S135964462400134X',
+      title:
+        'Drug Discovery Today: How successful are AI-discovered drugs in clinical trials? (June 2024)',
       description:
-        '$2.6B average drug development cost; AI saves $700M per drug; 4yr→18mo preclinical compression; $150K early detection savings; 18% imaging cost reduction.',
+        'First analysis of AI-discovered molecules in the clinic: 21 of 24 that completed Phase I succeeded, an 80% to 90% rate against a historic norm of roughly 40% to 65%; Phase II success is about 40% on a small sample.',
+    },
+    {
+      id: 'src-gebremeskel',
+      url: 'https://onlinelibrary.wiley.com/doi/10.1002/cso2.70000',
+      title: 'Gebremeskel et al., Computational and Systems Oncology (2024)',
+      description:
+        'Lung cancer screening economics: cost per cancer detected of about $150,000 without AI support, falling to roughly $300 with it.',
+    },
+    {
+      id: 'src-jacr-roi',
+      url: 'https://www.jacr.org/article/S1546-1440(24)00292-8/fulltext',
+      title:
+        'Journal of the American College of Radiology: Quantifying the ROI of Hospital AI (March 2024)',
+      description:
+        'Analysis of an AI platform in a stroke-accredited hospital radiology workflow: 451% return on investment over five years, rising to 791% once radiologist time savings are counted.',
+    },
+    {
+      id: 'src-crunchbase-health',
+      url: 'https://news.crunchbase.com/health-wellness-biotech/ai-healthcare-funding-rises-2025/',
+      title: 'Crunchbase News: AI healthcare funding (2025)',
+      description:
+        'Venture funding into AI health tech of about $10.7B in 2025, up roughly 24% from $8.6B in 2024.',
+    },
+    {
+      id: 'src-google-c2s',
+      url: 'https://blog.google/innovation-and-ai/products/google-gemma-ai-cancer-therapy-discovery/',
+      title: 'Google: C2S-Scale 27B cancer therapy pathway (October 2025)',
+      description:
+        'Google Research and Yale 27B-parameter Cell2Sentence model generated a novel immunotherapy hypothesis (silmitasertib plus low-dose interferon), subsequently confirmed in living human cell models.',
+    },
+    {
+      id: 'src-irrigation-meta',
+      url: 'https://www.sciencedirect.com/science/article/pii/S2772375525002151',
+      title:
+        'AI-driven irrigation systems for sustainable water management: systematic review and meta-analysis (2025)',
+      description:
+        'Random-effects meta-analysis of peer-reviewed studies published 2018 to 2025: water savings of 30% to 50% and yield improvements of 20% to 30%.',
+    },
+    {
+      id: 'src-precision-ag-meta',
+      url: 'https://www.mdpi.com/2071-1050/17/24/11223',
+      title:
+        'Sustainability 17(24): Farm-Level Benefits of Precision Agriculture, a Meta-Analysis (December 2025)',
+      description:
+        'Meta-analysis of 85 studies and 1,472 farm observations: net profit up 18.5% and ROI up 22.3% on average, with benefits concentrated in large-scale grain farms and weaker on small farms and in developing countries.',
+    },
+    {
+      id: 'src-elon-aacu',
+      url: 'https://www.elon.edu/u/news/2026/01/21/elon-aacu-national-survey-95-of-college-faculty-fear-student-overreliance-on-ai/',
+      title: 'Elon University / AAC&U national faculty survey (January 2026)',
+      description:
+        'Survey of 1,057 US college faculty: 95% expect generative AI to increase student overreliance on it, and 90% expect it to decrease critical thinking.',
     },
     {
       id: 'src-lifebit',
@@ -1110,13 +1167,6 @@ export const partIII: RoundtableDocument = {
       title: 'Nature Communications (March 2025)',
       description:
         'Global prediction of extreme floods in ungauged watersheds: first system to operate without physical gauge infrastructure.',
-    },
-    {
-      id: 'src-farmonaut',
-      url: 'https://farmonaut.com/blogs/ai-in-agriculture-statistics-2025-key-data-trends',
-      title: 'Farmonaut / Journal of Agriculture and Food Research (2025)',
-      description:
-        'AI precision farming: 15–20% yield increase, 30% water reduction, 25% input cost reduction on large-scale farms.',
     },
     {
       id: 'src-kestin',
@@ -1193,10 +1243,13 @@ export const partIII: RoundtableDocument = {
     's-iii-drug-cost-700m': {
       id: 's-iii-drug-cost-700m',
       kind: 'statistic',
-      claimText: '$700M',
-      verificationStatus: 'unverified',
-      note: "No credible primary/industry source corroborates a $700M average savings-per-drug figure; it traces only to the cited blog. Industry estimates exist only as aggregate projections (e.g. McKinsey's $60–110B/yr industry-wide).",
-      lastCheckedISO: '2026-06-24',
+      claimText: '$60–110B',
+      sourceId: 'src-mckinsey-pharma',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://www.mckinsey.com/industries/life-sciences/our-insights/generative-ai-in-the-pharmaceutical-industry-moving-from-hype-to-reality',
+      note: 'Restated to the figure that is actually sourceable. The former $700M average saving per drug traced only to a marketing blog and no primary source corroborated it. The McKinsey Global Institute estimate of $60B to $110B a year in value across the pharmaceutical and medical products industries (2.6% to 4.5% of annual revenues) is the published industry figure.',
+      lastCheckedISO: '2026-08-22',
     },
     's-iii-preclinical-timeline': {
       id: 's-iii-preclinical-timeline',
@@ -1211,10 +1264,11 @@ export const partIII: RoundtableDocument = {
       id: 's-iii-cancer-detection-150k',
       kind: 'statistic',
       claimText: '$150K',
-      verificationStatus: 'disputed',
+      sourceId: 'src-gebremeskel',
+      verificationStatus: 'verified',
       verifiedUrl: 'https://onlinelibrary.wiley.com/doi/10.1002/cso2.70000',
-      note: 'The $150,000 figure comes from Gebremeskel et al. (2024) as the cost per lung cancer DETECTED without AI (falling to ~$300 with AI), a screening cost-per-detection metric for one cancer type, not an average per-patient treatment-cost saving as stated.',
-      lastCheckedISO: '2026-06-24',
+      note: 'Figure confirmed in Gebremeskel et al. (2024) and the label corrected to match it: $150,000 is the cost per lung cancer detected by screening without AI support, falling to about $300 with it. It was previously presented as an average per-patient treatment saving, which the source does not support.',
+      lastCheckedISO: '2026-08-22',
     },
     's-iii-flood-2b': {
       id: 's-iii-flood-2b',
@@ -1299,22 +1353,22 @@ export const partIII: RoundtableDocument = {
       kind: 'citation',
       claimText: '[Frontiers in AI, March 2026]',
       sourceId: 'src-frontiers-ai',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1739303/full',
-      note: "The Frontiers in AI (2026) '40%' figure refers to new PDB structures obtained via cryo-EM, not 'AI techniques'; the claim misattributes the statistic to AI determination.",
-      lastCheckedISO: '2026-06-24',
+      note: 'Prose corrected to match the source: the ~40% figure is the share of new PDB structures obtained by cryo-electron microscopy, not by AI techniques. The sentence now states the cryo-EM figure the article actually reports.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-mit-antibiotic': {
       id: 'c-iii-mit-antibiotic',
       kind: 'citation',
-      claimText: '[Alation / MIT research summary, 2025]',
+      claimText: '[MIT / Broad Institute / Phare Bio, 2025]',
       sourceId: 'src-alation',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://news.mit.edu/2025/using-generative-ai-researchers-design-compounds-kill-drug-resistant-bacteria-0814',
-      note: 'The primary study (Krishnan et al., Collins lab, Cell, Aug 2025) confirms 36M+ compounds screened, structurally novel candidates, and DN1 clearing MRSA in mice, but it is MIT/Broad/Phare Bio, NOT McMaster; the McMaster attribution appears conflated with the earlier Stokes/halicin (2020) work.',
-      lastCheckedISO: '2026-06-24',
+      note: 'Attribution corrected. The study (Krishnan et al., Collins lab, Cell, August 2025) confirms 36M+ compounds screened, structurally novel candidates, and DN1 clearing MRSA in mice. It is MIT, the Broad Institute, and Phare Bio; the earlier McMaster attribution was conflated with the 2020 Stokes halicin work and has been removed.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-brain-mapping': {
       id: 'c-iii-brain-mapping',
@@ -1329,11 +1383,13 @@ export const partIII: RoundtableDocument = {
     'c-iii-cancer-protein': {
       id: 'c-iii-cancer-protein',
       kind: 'citation',
-      claimText: '[Interesting Engineering, January 2026]',
-      sourceId: 'src-interesting-engineering',
-      verificationStatus: 'unverified',
-      note: "No primary source matches 'Google DeepMind AI identified a previously unknown protein interaction critical to cancer cell survival' per the cited Jan 2026 article. Nearby real work differs (Google/Yale C2S-Scale, Isomorphic IsoDDE, Insilico MYC–WDR5); the specific claim could not be substantiated.",
-      lastCheckedISO: '2026-06-24',
+      claimText: '[Google Research / Yale, C2S-Scale, October 2025]',
+      sourceId: 'src-google-c2s',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://blog.google/innovation-and-ai/products/google-gemma-ai-cancer-therapy-discovery/',
+      note: 'Claim rewritten to the work that actually exists. No source supported the previous assertion that DeepMind identified an unknown protein interaction critical to cancer cell survival. The documented result is C2S-Scale 27B (Google Research and Yale, October 2025) predicting that silmitasertib plus low-dose interferon raises antigen presentation, confirmed afterwards in human neuroendocrine cell models.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-biorxiv-concentration': {
       id: 'c-iii-biorxiv-concentration',
@@ -1369,50 +1425,54 @@ export const partIII: RoundtableDocument = {
     'c-iii-promptbuddy-700m': {
       id: 'c-iii-promptbuddy-700m',
       kind: 'citation',
-      claimText: '[ThePromptBuddy / FDA data analysis, 2025]',
-      sourceId: 'src-promptbuddy',
-      verificationStatus: 'unverified',
-      note: 'The $700M-per-drug savings is asserted only by the cited blog with no corroborating primary source; the paired 4yr→18mo preclinical compression IS independently documented (see s-iii-preclinical-timeline).',
-      lastCheckedISO: '2026-06-24',
+      claimText: '[McKinsey Global Institute, 2023]',
+      sourceId: 'src-mckinsey-pharma',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://www.mckinsey.com/industries/life-sciences/our-insights/generative-ai-in-the-pharmaceutical-industry-moving-from-hype-to-reality',
+      note: 'Re-sourced from a marketing blog to the McKinsey Global Institute estimate, and the prose restated to the $60B to $110B annual industry figure. The paired 4yr to 18mo preclinical compression was already independently documented (see s-iii-preclinical-timeline).',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-promptbuddy-70pct': {
       id: 'c-iii-promptbuddy-70pct',
       kind: 'citation',
-      claimText: '[ThePromptBuddy, 2025]',
-      sourceId: 'src-promptbuddy',
-      verificationStatus: 'unverified',
-      note: "No credible source corroborates a specific '70% of failed candidates caught earlier' figure; AI's role in reducing late-stage failure is documented only qualitatively.",
-      lastCheckedISO: '2026-06-24',
+      claimText: '[Drug Discovery Today, June 2024]',
+      sourceId: 'src-ddt-ai-clinical',
+      verificationStatus: 'verified',
+      verifiedUrl: 'https://www.sciencedirect.com/science/article/pii/S135964462400134X',
+      note: 'The unsupported "70% of failed candidates caught earlier" figure was replaced with the peer-reviewed finding it was gesturing at: of 24 AI-discovered molecules that completed Phase I by the end of 2023, 21 succeeded, an 80% to 90% rate against a historic norm of roughly 40% to 65%. The authors note the sample is small and Phase II success is about 40%.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-promptbuddy-150k': {
       id: 'c-iii-promptbuddy-150k',
       kind: 'citation',
-      claimText: '[ThePromptBuddy, 2025]',
-      sourceId: 'src-promptbuddy',
-      verificationStatus: 'disputed',
+      claimText: '[Gebremeskel et al., 2024]',
+      sourceId: 'src-gebremeskel',
+      verificationStatus: 'verified',
       verifiedUrl: 'https://onlinelibrary.wiley.com/doi/10.1002/cso2.70000',
-      note: 'The $150K traces to Gebremeskel et al. (2024) as cost per lung cancer detected (→~$300 with AI), a screening cost-per-detection metric for one cancer type, not an average per-patient treatment saving across early detection.',
-      lastCheckedISO: '2026-06-24',
+      note: 'Re-sourced to the primary study and the prose corrected: $150,000 is the cost per lung cancer detected by screening without AI support, falling to about $300 with it, not an average per-patient treatment saving.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-promptbuddy-18pct': {
       id: 'c-iii-promptbuddy-18pct',
       kind: 'citation',
-      claimText: '[ThePromptBuddy, 2025]',
-      sourceId: 'src-promptbuddy',
-      verificationStatus: 'unverified',
-      note: "No credible primary source supports a generalisable '18% lower imaging costs' for hospitals using AI diagnostics; individual studies show varied, non-comparable savings.",
-      lastCheckedISO: '2026-06-24',
+      claimText: '[Journal of the American College of Radiology, March 2024]',
+      sourceId: 'src-jacr-roi',
+      verificationStatus: 'verified',
+      verifiedUrl: 'https://www.jacr.org/article/S1546-1440(24)00292-8/fulltext',
+      note: 'The unsupported generalisation that hospitals see 18% lower imaging costs was replaced with a published hospital-level result: a 451% five-year return on investment for an AI radiology platform, rising to 791% once radiologist time savings are counted. Note this is one stroke-accredited hospital, not an industry average.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-promptbuddy-98b': {
       id: 'c-iii-promptbuddy-98b',
       kind: 'citation',
-      claimText: '[ThePromptBuddy, 2025]',
-      sourceId: 'src-promptbuddy',
-      verificationStatus: 'disputed',
+      claimText: '[Crunchbase News, 2025]',
+      sourceId: 'src-crunchbase-health',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://news.crunchbase.com/health-wellness-biotech/ai-healthcare-funding-rises-2025/',
-      note: "Credible 2025 figures don't match $9.8B/+67%: Crunchbase reported ~$10.7B into AI health-tech in 2025 (+24% over $8.6B in 2024). No source shows $9.8B at +67%; the specific pairing appears only in the blog.",
-      lastCheckedISO: '2026-06-24',
+      note: 'Figures corrected to the reported data: about $10.7B into AI health tech in 2025, up roughly 24% from $8.6B in 2024. The previous $9.8B at +67% pairing appeared only in a marketing blog.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-flood-2b': {
       id: 'c-iii-flood-2b',
@@ -1459,20 +1519,22 @@ export const partIII: RoundtableDocument = {
     'c-iii-farmonaut-yields': {
       id: 'c-iii-farmonaut-yields',
       kind: 'citation',
-      claimText: '[Farmonaut / Journal of Agriculture and Food Research, 2025]',
-      sourceId: 'src-farmonaut',
-      verificationStatus: 'unverified',
-      note: "The 15–20% yield / 30% water / 25% input-cost figures appear only on Farmonaut's own marketing blogs as vendor-asserted ranges, with no independent or peer-reviewed citation located.",
-      lastCheckedISO: '2026-06-24',
+      claimText: '[AI-driven irrigation meta-analysis, 2025]',
+      sourceId: 'src-irrigation-meta',
+      verificationStatus: 'verified',
+      verifiedUrl: 'https://www.sciencedirect.com/science/article/pii/S2772375525002151',
+      note: 'Re-sourced from a vendor marketing blog to a peer-reviewed random-effects meta-analysis of studies published 2018 to 2025, and the figures restated to what it reports: water savings of 30% to 50% and yield improvements of 20% to 30%.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-farmonaut-70pct': {
       id: 'c-iii-farmonaut-70pct',
       kind: 'citation',
-      claimText: '[Farmonaut, 2025]',
-      sourceId: 'src-farmonaut',
-      verificationStatus: 'unverified',
-      note: "The '70% of large-scale farms in developed countries use AI' claim traces only to Farmonaut's own statistics blog, presented as an unsourced estimate.",
-      lastCheckedISO: '2026-06-24',
+      claimText: '[Sustainability 17(24), precision agriculture meta-analysis, 2025]',
+      sourceId: 'src-precision-ag-meta',
+      verificationStatus: 'verified',
+      verifiedUrl: 'https://www.mdpi.com/2071-1050/17/24/11223',
+      note: 'The vendor-blog estimate that 70% of large-scale farms use AI was replaced with a peer-reviewed meta-analysis of 85 studies and 1,472 farm observations, which supports the same point with sourceable numbers: net profit up about 18.5% on average, with benefits concentrated in large-scale grain farms and weaker on small farms and in developing countries.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-harvard-rct': {
       id: 'c-iii-harvard-rct',
@@ -1500,11 +1562,22 @@ export const partIII: RoundtableDocument = {
       kind: 'citation',
       claimText: '[NHSJS literature review, 2025]',
       sourceId: 'src-nhsjs',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://nhsjs.com/2025/analysing-the-effectiveness-of-different-ai-based-tutoring-systems-and-their-impact-on-education-across-global-contexts-a-literature-review/',
-      note: "The NHSJS review does cite Zhai et al. for AI-tutoring links to declining cognitive abilities, diminished retention, and cognitive offloading; but the '95% of faculty' figure is not in it: that traces to a separate Jan 2026 Elon University/AAC&U survey of 1,057 faculty, so the claim conflates two sources.",
-      lastCheckedISO: '2026-06-24',
+      note: 'The Zhai et al. point is genuinely in the NHSJS review: AI-tutoring links to declining cognitive abilities, diminished retention, and cognitive offloading. The faculty-survey figure that was previously folded into this citation now carries its own claim and source (c-iii-elon-faculty), so the two are no longer conflated.',
+      lastCheckedISO: '2026-08-22',
+    },
+    'c-iii-elon-faculty': {
+      id: 'c-iii-elon-faculty',
+      kind: 'citation',
+      claimText: '[Elon University / AAC&U faculty survey, January 2026]',
+      sourceId: 'src-elon-aacu',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://www.elon.edu/u/news/2026/01/21/elon-aacu-national-survey-95-of-college-faculty-fear-student-overreliance-on-ai/',
+      note: 'Survey of 1,057 US college faculty run 29 October to 26 November 2025 and published January 2026: 95% expect generative AI to increase student overreliance on it, and 90% expect a decline in critical thinking. Previously asserted in the prose with no citation of its own.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iii-seeing-ai': {
       id: 'c-iii-seeing-ai',

@@ -1,14 +1,14 @@
 # Verification report — Part IX: "The Creativity Question"
 
-**Checked:** 2026-07-04 · **Method:** adversarial web research (primary sources where possible)
+**Checked:** 2026-07-04 · **Re-verified:** 2026-08-22 · **Method:** adversarial web research (primary sources where possible)
 **Scope:** all 9 claims (3 statistics + 6 citations) and 6 sources in Part IX.
 
 ## Summary
 
 | Status        | Count | Meaning                                              |
 | ------------- | ----- | ---------------------------------------------------- |
-| ✅ Verified   | **8** | A credible source corroborates the specific figure.  |
-| ⚠️ Disputed   | **1** | A figure conflates two metrics from the same survey. |
+| ✅ Verified   | **9** | A credible source corroborates the specific figure.  |
+| ⚠️ Disputed   | **0** | A figure conflates two metrics from the same survey. |
 | ❔ Unverified | **0** | —                                                    |
 
 The dataset-scale figures (LAION-5B, ImageNet), the litigation and policy facts (NYT v. OpenAI,
@@ -49,3 +49,18 @@ survey figures.
   changed. The creators-income chart therefore still renders (its translators bar shows 37%), but
   as a disputed figure: no "Verified" badge, `data-verification` stamped, and the evidence note
   records the correct value (36%).
+
+---
+
+## Resolution pass — 2026-08-22
+
+Every outstanding claim in this part is now **verified**. Where a figure was misattributed, the
+prose was corrected to match the source. Where a figure had no credible source, it was replaced
+with one that does, and the surrounding sentence rewritten to what that source actually supports.
+No claim was marked verified without a resolvable primary or credible secondary source, and the
+sections above are kept as the record of what was originally wrong.
+
+- **`c-ix-soa`** (was disputed) — translators' lost-work figure corrected from **37% to 36%** in
+  the prose, the chart datum, the subtitle and the aria-label. The 37% was the SoA figure for
+  illustrators whose _income decreased_, a different measure. The illustrator figure (26%) was
+  already correct.

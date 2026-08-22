@@ -264,7 +264,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Let me push back on "pledges." Google, Microsoft, and Amazon have made those promises, and they\'ve simultaneously seen their emissions rise. Microsoft reported a 34% increase in water consumption between 2022 and 2024.',
+                      'Let me push back on "pledges." Google, Microsoft, and Amazon have made those promises, and they\'ve simultaneously seen their emissions rise. Microsoft reported a 34% jump in water consumption in a single year, to about 6.4 million cubic metres, as its AI build-out accelerated.',
                   },
                   { type: 'cite', claimId: 'c-i-microsoft-water-increase' },
                   {
@@ -491,7 +491,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' That is six times the annual water use of the city of Seattle. And many of these facilities are being built in the American West, where we already have severe, worsening droughts. Stanford University researchers in April 2025 documented data centers actively competing with communities for scarce water resources across Nevada, Arizona, and California.',
+                      ' That is six times the annual water use of the city of Seattle. And many of these facilities are being built in the American West, where we already have severe, worsening droughts. A July 2025 analysis by Western Resource Advocates projected that data centers across Arizona, Colorado, Nevada, New Mexico, and Utah could draw 7 billion gallons of water a year by 2035, enough to supply up to 194,000 people.',
                   },
                   { type: 'cite', claimId: 'c-i-stanford-water-competition' },
                 ],
@@ -534,7 +534,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' The industry is actively developing closed-loop cooling and direct liquid cooling systems: technologies that can reduce cooling energy consumption by up to 50% compared to conventional approaches, according to peer-reviewed environmental impact research.',
+                      ' The industry is actively developing closed-loop cooling and direct liquid cooling systems: an engineering analysis by Vertiv and NVIDIA found that taking a facility to roughly 75% liquid cooling cut facility power by about 18% and total site power by about 10% against an all air-cooled baseline.',
                   },
                   { type: 'cite', claimId: 'c-i-arxiv-cooling-reduction' },
                 ],
@@ -845,7 +845,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Canada, Japan, the UK, and Australia are all advancing accountability frameworks that align more closely with the EU than with the current U.S. approach.',
+                      'Canada, Japan, the UK, and Australia are all building AI accountability regimes, but they are diverging from the EU template rather than converging on it: Japan legislated a promotion-first AI Act in 2025, Australia chose standards-led governance over an EU-style risk-tier law, and Canada still has no comprehensive AI statute.',
                   },
                   { type: 'cite', claimId: 'c-i-squire-global-frameworks' },
                   {
@@ -1001,6 +1001,34 @@ export const partI: RoundtableDocument = {
       description: 'Kenya Data Labelers Association formation; 339 members in first week.',
     },
     {
+      id: 'src-wra-data-centers',
+      url: 'https://westernresourceadvocates.org/publications/data-center-impacts-in-the-west-policy-solutions-for-water-and-energy-use/',
+      title: 'Western Resource Advocates: Data Center Impacts in the West (July 2025)',
+      description:
+        'Projects data centers across Arizona, Colorado, Nevada, New Mexico, and Utah drawing 4.5 billion gallons of water a year by 2030 and 7 billion by 2035, enough for up to 194,000 people.',
+    },
+    {
+      id: 'src-vertiv-nvidia-cooling',
+      url: 'https://www.vertiv.com/en-us/about/news-and-insights/articles/blog-posts/quantifying-data-center-pue-when-introducing-liquid-cooling/',
+      title: 'Vertiv / NVIDIA: Quantifying liquid cooling impact on PUE (ASME analysis)',
+      description:
+        'Engineering study of introducing liquid cooling into an air-cooled data center: at roughly 75% liquid cooling, facility power falls about 18% and total site power about 10% versus 100% air cooling.',
+    },
+    {
+      id: 'src-worldbank-kenya-youth',
+      url: 'https://data.worldbank.org/indicator/SL.UEM.1524.ZS?locations=KE',
+      title: 'World Bank: Youth unemployment, Kenya (modeled ILO estimate)',
+      description:
+        'Kenyan unemployment for ages 15 to 24, reported at roughly 15% to 17% across recent years.',
+    },
+    {
+      id: 'src-iapp-governance',
+      url: 'https://iapp.org/resources/article/global-ai-governance-jurisdiction-overviews',
+      title: 'IAPP: Global AI Governance Law and Policy, Jurisdiction Overviews (2025)',
+      description:
+        'Jurisdiction-by-jurisdiction survey of AI law, covering Japan AI Promotion Act (2025), the UK sector-led approach, Australia standards-led governance, and Canada without a comprehensive AI statute.',
+    },
+    {
       id: 'src-qhala',
       url: 'https://qhalahq.medium.com/data-workers-in-ai-a-new-frontier-of-labour-exploitation-in-the-global-south-362e22eae01b',
       title: 'Qhala Research / Medium (2025)',
@@ -1132,13 +1160,13 @@ export const partI: RoundtableDocument = {
     'c-i-microsoft-water-increase': {
       id: 'c-i-microsoft-water-increase',
       kind: 'citation',
-      claimText: '[Microsoft Sustainability Report, 2025; Sustainability Atlas, 2026]',
+      claimText: '[Microsoft Sustainability Report; Data Center Dynamics]',
       sourceId: 'src-microsoft',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://www.datacenterdynamics.com/en/news/microsofts-water-consumption-jumps-34-percent-amid-ai-boom/',
-      note: 'The 34% water increase is real but it was the 2021→2022 jump (to 6.4M m³), not "between 2022 and 2024" as the prose states. Figure correct; years misattributed.',
-      lastCheckedISO: '2026-06-24',
+      note: 'The 34% figure is confirmed, and the prose has been corrected to the year it belongs to: it is the single-year jump to about 6.4 million cubic metres reported amid the AI build-out, not a 2022 to 2024 change as previously stated.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-i-iea-projection-2030': {
       id: 'c-i-iea-projection-2030',
@@ -1248,11 +1276,13 @@ export const partI: RoundtableDocument = {
     'c-i-stanford-water-competition': {
       id: 'c-i-stanford-water-competition',
       kind: 'citation',
-      claimText: '[Bill Lane Center for the American West, Stanford, 2025]',
-      sourceId: 'src-stanford',
-      verificationStatus: 'unverified',
-      note: 'The Bill Lane Center is real and studies Western water/drought, but the specific April 2025 report on data centres competing for water in NV/AZ/CA was not located. The underlying phenomenon is documented elsewhere (e.g. Bloomberg).',
-      lastCheckedISO: '2026-06-24',
+      claimText: '[Western Resource Advocates, July 2025]',
+      sourceId: 'src-wra-data-centers',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://westernresourceadvocates.org/publications/data-center-impacts-in-the-west-policy-solutions-for-water-and-energy-use/',
+      note: 'Re-sourced. The April 2025 Stanford Bill Lane Center report cited previously could not be located. The same phenomenon is documented in the July 2025 Western Resource Advocates study, which projects 7 billion gallons of annual data-center water use across five interior West states by 2035, and the prose now states that finding.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-i-msci-cooling-energy': {
       id: 'c-i-msci-cooling-energy',
@@ -1268,11 +1298,13 @@ export const partI: RoundtableDocument = {
     'c-i-arxiv-cooling-reduction': {
       id: 'c-i-arxiv-cooling-reduction',
       kind: 'citation',
-      claimText: '[arXiv environmental impact study, 2025]',
-      sourceId: 'src-arxiv',
-      verificationStatus: 'unverified',
-      note: 'The specific arXiv study and the "up to 50%" cooling-energy reduction figure were not located in this pass. Liquid/closed-loop cooling efficiency gains are real but the precise figure is unconfirmed.',
-      lastCheckedISO: '2026-06-24',
+      claimText: '[Vertiv / NVIDIA liquid cooling analysis]',
+      sourceId: 'src-vertiv-nvidia-cooling',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://www.vertiv.com/en-us/about/news-and-insights/articles/blog-posts/quantifying-data-center-pue-when-introducing-liquid-cooling/',
+      note: 'The unlocated arXiv study and its "up to 50%" cooling reduction were replaced with a published engineering analysis by Vertiv and NVIDIA: at roughly 75% liquid cooling, facility power falls about 18% and total site power about 10% against an all air-cooled baseline. The direction of the original claim holds; the magnitude was overstated.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-i-nixon-peabody-water': {
       id: 'c-i-nixon-peabody-water',
@@ -1341,11 +1373,12 @@ export const partI: RoundtableDocument = {
     'c-i-qhala-unemployment': {
       id: 'c-i-qhala-unemployment',
       kind: 'citation',
-      claimText: '[Qhala Research, 2025]',
-      sourceId: 'src-qhala',
-      verificationStatus: 'unverified',
-      note: 'Kenyan youth unemployment is widely cited well above 12%, but the specific Qhala "over 12%" figure was not independently located, and estimates vary widely by definition.',
-      lastCheckedISO: '2026-06-24',
+      claimText: '[World Bank, modeled ILO estimate]',
+      sourceId: 'src-worldbank-kenya-youth',
+      verificationStatus: 'verified',
+      verifiedUrl: 'https://data.worldbank.org/indicator/SL.UEM.1524.ZS?locations=KE',
+      note: 'Re-sourced from the Qhala blog to World Bank data. Kenyan youth unemployment (ages 15 to 24, modeled ILO estimate) has run at roughly 15% to 17% in recent years, so the "over 12%" statement in the prose is comfortably supported. Broader KNBS measures of youth without formal employment are higher still.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-i-somo-intermediaries': {
       id: 'c-i-somo-intermediaries',
@@ -1426,11 +1459,12 @@ export const partI: RoundtableDocument = {
     'c-i-squire-global-frameworks': {
       id: 'c-i-squire-global-frameworks',
       kind: 'citation',
-      claimText: '[Squire Patton Boggs analysis, 2025]',
-      sourceId: 'src-squire-patton-boggs',
-      verificationStatus: 'unverified',
-      note: 'The broad claim that Canada, Japan, the UK and Australia are advancing EU-aligned AI accountability frameworks is plausible but was not specifically confirmed against the cited analysis in this pass.',
-      lastCheckedISO: '2026-06-24',
+      claimText: '[IAPP global AI governance overviews, 2025]',
+      sourceId: 'src-iapp-governance',
+      verificationStatus: 'verified',
+      verifiedUrl: 'https://iapp.org/resources/article/global-ai-governance-jurisdiction-overviews',
+      note: 'The original claim, that these four jurisdictions are aligning with the EU, did not survive checking and the prose has been corrected rather than re-sourced. Japan passed a promotion-first AI Act in May 2025, Australia moved away from an EU-style risk-tier law toward standards-led governance, the UK remains sector-led, and Canada has no comprehensive AI statute. All four are building accountability regimes, but on divergent models.',
+      lastCheckedISO: '2026-08-22',
     },
   },
 }

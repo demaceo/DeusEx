@@ -1,15 +1,15 @@
 # Verification report — Part III: "What It's Actually Getting Right"
 
-**Checked:** 2026-06-24 · **Method:** parallel web research (primary sources where possible)
-**Scope:** all 41 claims (12 statistics + 29 citations) and 19 sources in Part III.
+**Checked:** 2026-06-24 · **Re-verified:** 2026-08-22 · **Method:** parallel web research (primary sources where possible)
+**Scope:** all 42 claims (12 statistics + 30 citations) and 25 sources in Part III.
 
 ## Summary
 
 | Status        | Count  | Meaning                                                                       |
 | ------------- | ------ | ----------------------------------------------------------------------------- |
-| ✅ Verified   | **28** | A credible source corroborates the specific figure (minor labeling noted).    |
-| ⚠️ Disputed   | **6**  | The figure is real but misattributed, or the source says something different. |
-| ❔ Unverified | **7**  | No credible source located for the specific figure this pass.                 |
+| ✅ Verified   | **42** | A credible source corroborates the specific figure (minor labeling noted).    |
+| ⚠️ Disputed   | **0**  | The figure is real but misattributed, or the source says something different. |
+| ❔ Unverified | **0**  | No credible source located for the specific figure this pass.                 |
 
 The "flagship" science holds up cleanly — AlphaFold, the 2024 Nobel, the MIT antibiotic work,
 the brain map, the flood/weather systems, the Harvard tutoring RCT, and the accessibility tools
@@ -93,3 +93,58 @@ ThePromptBuddy and Farmonaut figures are the weakest-sourced material in the ent
 - Blog-only citations (ThePromptBuddy, Farmonaut) were checked against credible primary/industry
   sources; where none corroborated the specific figure, the claim is marked unverified or
   disputed and the reason recorded.
+
+---
+
+## Resolution pass — 2026-08-22
+
+Every outstanding claim in this part is now **verified**. Where a figure was misattributed, the
+prose was corrected to match the source. Where a figure had no credible source, it was replaced
+with one that does, and the surrounding sentence rewritten to what that source actually supports.
+No claim was marked verified without a resolvable primary or credible secondary source, and the
+sections above are kept as the record of what was originally wrong.
+
+This part carried the weakest-sourced material in the series: a cluster of medical-economics
+figures traceable only to a marketing blog, and two agriculture figures traceable only to a
+vendor's own blog. Rather than restate them, each was **replaced with a peer-reviewed or primary
+source**, and the prose rewritten to whatever that source actually supports. The three discredited
+sources (`src-promptbuddy`, `src-farmonaut`, `src-interesting-engineering`) were removed from the
+Sources section, since nothing cites them any more.
+
+- **`s-iii-drug-cost-700m`** / **`c-iii-promptbuddy-700m`** (was unverified) — the unsourceable
+  "$700M saved per drug" was replaced with the [McKinsey Global Institute](https://www.mckinsey.com/industries/life-sciences/our-insights/generative-ai-in-the-pharmaceutical-industry-moving-from-hype-to-reality)
+  estimate of **$60–110B a year** across the pharmaceutical and medical-products industries.
+- **`c-iii-promptbuddy-70pct`** (was unverified) — "failed candidates caught 70% earlier" replaced
+  with the peer-reviewed finding it was gesturing at ([_Drug Discovery Today_, June 2024](https://www.sciencedirect.com/science/article/pii/S135964462400134X)):
+  **21 of 24** AI-discovered molecules completing Phase I succeeded, against a historic norm nearer
+  40–65%. The authors' caveats (small sample, ~40% Phase II) are recorded in the claim note.
+- **`c-iii-promptbuddy-18pct`** (was unverified) — the generalised "18% lower imaging costs"
+  replaced with a published hospital result ([_JACR_, March 2024](<https://www.jacr.org/article/S1546-1440(24)00292-8/fulltext>)):
+  **451% five-year ROI**, rising to 791% with radiologist time savings. Noted as one hospital, not
+  an industry average.
+- **`s-iii-cancer-detection-150k`** / **`c-iii-promptbuddy-150k`** (was disputed) — the $150K is
+  real but is the **cost per lung cancer _detected_** without AI (falling to ~$300 with it), per
+  Gebremeskel et al. (2024). Stat label and prose corrected to that metric.
+- **`c-iii-promptbuddy-98b`** (was disputed) — corrected to the reported Crunchbase figures:
+  **~$10.7B in 2025, +24%** over $8.6B in 2024 (not $9.8B at +67%).
+- **`c-iii-cancer-protein`** (was unverified) — no source supported "DeepMind identified an unknown
+  protein interaction critical to cancer-cell survival." Rewritten to the work that does exist:
+  [C2S-Scale 27B](https://blog.google/innovation-and-ai/products/google-gemma-ai-cancer-therapy-discovery/)
+  (Google Research / Yale, Oct 2025) predicting silmitasertib + low-dose interferon raises antigen
+  presentation, confirmed afterwards in human cell models.
+- **`c-iii-pdb-40pct`** (was disputed) — the ~40% figure is **cryo-EM**, not AI. Prose now states
+  the cryo-EM figure the article actually reports.
+- **`c-iii-mit-antibiotic`** (was disputed) — attribution corrected to **MIT / Broad / Phare Bio**
+  (Collins lab, _Cell_, Aug 2025). The McMaster credit was conflated with the 2020 halicin work.
+- **`c-iii-farmonaut-yields`** (was unverified) — replaced with a random-effects
+  [meta-analysis of AI-driven irrigation studies 2018–2025](https://www.sciencedirect.com/science/article/pii/S2772375525002151):
+  **30–50% water savings, 20–30% yield improvement**.
+- **`c-iii-farmonaut-70pct`** (was unverified) — the "70% of large farms use AI" estimate replaced
+  with a [meta-analysis of 85 studies / 1,472 farm observations](https://www.mdpi.com/2071-1050/17/24/11223),
+  which supports the same point with real numbers: net profit **+18.5%** on average, with gains
+  concentrated in large-scale grain farms and weaker on small farms and in developing countries.
+- **`c-iii-nhsjs-zhai`** (was disputed) — de-conflated. The Zhai cognitive-offloading point is
+  genuinely in the NHSJS review and stays; the faculty-survey figure now carries its own claim and
+  source (**`c-iii-elon-faculty`**, [Elon / AAC&U, Jan 2026](https://www.elon.edu/u/news/2026/01/21/elon-aacu-national-survey-95-of-college-faculty-fear-student-overreliance-on-ai/):
+  95% expect increased overreliance, 90% expect reduced critical thinking). This is the one new
+  claim in the pass, replacing a previously uncited sentence.

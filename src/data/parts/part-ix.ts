@@ -362,15 +362,15 @@ export const partIX: RoundtableDocument = {
             labelTop: 'Lost Work · Society of Authors',
             title: 'Creators Already Losing Income',
             subtitle:
-              'In a 2024 Society of Authors survey, about 26% of illustrators and 37% of translators reported having lost work because of generative AI.',
+              'In a 2024 Society of Authors survey, about 26% of illustrators and 36% of translators reported having lost work because of generative AI.',
             source: 'The Society of Authors: Member Survey (2024)',
             claimIds: ['c-ix-soa'],
             ariaLabel:
-              'Horizontal bar chart showing about 37 percent of translators and 26 percent of illustrators reported losing work to generative AI',
+              'Horizontal bar chart showing about 36 percent of translators and 26 percent of illustrators reported losing work to generative AI',
             unit: '%',
             variant: 'accent',
             data: [
-              { label: 'Translators', value: 37, variant: 'labor' },
+              { label: 'Translators', value: 36, variant: 'labor' },
               { label: 'Illustrators', value: 26, variant: 'labor' },
             ],
           },
@@ -618,13 +618,13 @@ export const partIX: RoundtableDocument = {
     'c-ix-soa': {
       id: 'c-ix-soa',
       kind: 'citation',
-      claimText: 'SoA 2024: ~26% of illustrators and ~37% of translators lost work to AI',
+      claimText: 'SoA 2024: ~26% of illustrators and ~36% of translators lost work to AI',
       sourceId: 'src-soa',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://societyofauthors.org/2024/04/11/new-survey-of-authors-and-illustrators-on-ai/',
-      note: "Society of Authors 2024 survey: the illustrators figure (~26% lost work) is correct, but the translators lost-work figure is 36%, not 37%. The 37% is the SoA figure for illustrators whose income decreased (translators' income decreased 43%). Illustrator figure correct; translator lost-work figure misstated as 37% instead of 36%.",
-      lastCheckedISO: '2026-07-04',
+      note: 'Society of Authors 2024 survey. The illustrator figure (26% lost work) was already correct; the translator lost-work figure has been corrected from 37% to 36%. The 37% previously used is the SoA figure for illustrators whose income decreased, a different measure.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-ix-licensing': {
       id: 'c-ix-licensing',

@@ -380,7 +380,7 @@ export const partX: RoundtableDocument = {
             labelTop: 'Healthcare Algorithm · Science (2019)',
             title: 'How Many Black Patients the Model Saw',
             subtitle:
-              'A widely used care-management algorithm, trained on about 200 million people-years of data, flagged 17.7% of Black patients for extra help; correcting its biased cost-based target would have raised that to 46.5%.',
+              'A widely used care-management algorithm, from a class of tools applied to about 200 million people a year in the US, flagged 17.7% of Black patients for extra help; correcting its biased cost-based target would have raised that to 46.5%.',
             source: 'Obermeyer et al.: Science (2019)',
             claimIds: ['c-x-obermeyer'],
             ariaLabel:
@@ -641,10 +641,10 @@ export const partX: RoundtableDocument = {
       kind: 'citation',
       claimText: 'Healthcare algorithm: Black patients flagged 17.7% biased vs 46.5% corrected',
       sourceId: 'src-obermeyer',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl: 'https://www.science.org/doi/10.1126/science.aax2342',
-      note: "Obermeyer et al., Science (2019): correcting the algorithm's cost-based proxy would raise the share of Black patients identified for extra care from 17.7% to 46.5% (headline figure verified). The '~200 million people-years of data' descriptor is wrong: that figure is the number of people such commercial risk algorithms are applied to each year across the US (deployment scale), not this study's training data. The study itself analyzed about 49,618 patients from one academic medical center. Core statistic correct; data-volume descriptor misattributed.",
-      lastCheckedISO: '2026-07-04',
+      note: 'Obermeyer et al., Science (2019): correcting the cost-based proxy raises the share of Black patients identified for extra care from 17.7% to 46.5%, confirmed. The data descriptor has been corrected: about 200 million people a year is the deployment scale of this class of commercial risk algorithms across the US, not the study training set. The study itself analyzed roughly 49,618 patients at one academic medical center.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-x-lending': {
       id: 'c-x-lending',

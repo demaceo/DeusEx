@@ -53,27 +53,27 @@ export const partIV: RoundtableDocument = {
             stats: [
               {
                 variant: 'caution',
-                labelTop: 'AI patent applications',
-                value: '71K+',
+                labelTop: 'AI patents granted',
+                value: '122K+',
                 size: 'large',
                 description:
-                  'Filed globally in 2021, up from 15K in 2015: a 4.5× increase in six years',
+                  'Granted worldwide in 2023, up from 3,833 in 2010: a 32× increase in thirteen years',
                 claimId: 's-iv-wipo-patents-2021',
               },
               {
                 variant: 'neutral',
-                labelTop: 'WIPO coverage',
-                value: '167',
+                labelTop: 'Held by China',
+                value: '69.7%',
                 size: 'medium',
-                description: "Countries tracked in WIPO's AI patent database",
+                description: 'Share of all granted AI patents worldwide credited to China in 2023',
                 claimId: 's-iv-wipo-countries',
               },
               {
                 variant: 'caution',
                 labelTop: 'Year-over-year growth',
-                value: '~20%',
+                value: '29.6%',
                 size: 'medium',
-                description: 'Annual rate of AI patent growth from 2013 to 2021',
+                description: 'Growth in granted AI patents worldwide from 2022 to 2023',
                 claimId: 's-iv-wipo-growth-rate',
               },
             ],
@@ -174,26 +174,20 @@ export const partIV: RoundtableDocument = {
         {
           type: 'chart',
           data: {
-            kind: 'bar',
-            orientation: 'vertical',
-            labelTop: 'AI Patents · WIPO Data',
-            title: 'The Race in Numbers: Global AI Patent Applications',
-            subtitle: 'Applications per year grew 4.5× from 2015 to 2021.',
-            source: 'WIPO Technology Trends 2023 / AI Patent Landscape Report',
+            kind: 'comparison',
+            labelTop: 'AI Patents · Stanford AI Index',
+            title: 'The Race in Numbers: AI Patents Granted Worldwide',
+            subtitle: 'Granted AI patents rose from 3,833 in 2010 to 122,511 in 2023.',
+            source: 'Stanford HAI: AI Index Report 2025, Research and Development',
             claimIds: ['c-iv-wipo-patents'],
             ariaLabel:
-              'Bar chart showing global AI patent applications growing from 15,317 in 2015 to 71,423 in 2021',
+              'Comparison chart showing granted AI patents worldwide rising from 3,833 in 2010 to 122,511 in 2023',
             unit: 'K',
             variant: 'accent',
-            reference: { value: 15.3, label: '2015 baseline' },
+            deltaLabel: '×32',
             data: [
-              { label: '2015', value: 15.3 },
-              { label: '2016', value: 19.3 },
-              { label: '2017', value: 26.3 },
-              { label: '2018', value: 37.7 },
-              { label: '2019', value: 48.8 },
-              { label: '2020', value: 59.9 },
-              { label: '2021', value: 71.4 },
+              { label: '2010', value: 3.8 },
+              { label: '2023', value: 122.5 },
             ],
           },
         },
@@ -553,20 +547,22 @@ export const partIV: RoundtableDocument = {
             labelTop: 'AI Governance · Voluntary Commitments',
             title: 'AI Labs That Signed Safety Commitments by Summit',
             subtitle:
-              'Labs signing voluntary AI safety commitments grew from 7 at the White House (July 2023) to 16 at Bletchley (November 2023) and Seoul (May 2024).',
+              'Labs signing voluntary AI safety commitments grew from 7 at the White House (July 2023) to 16 signing the Frontier AI Safety Commitments at Seoul (May 2024).',
             source:
-              'White House Fact Sheet July 2023; UK Government Bletchley Declaration November 2023; Seoul AI Safety Summit May 2024',
+              'White House Fact Sheet July 2023; UK Government Frontier AI Safety Commitments, AI Seoul Summit May 2024',
             claimIds: ['c-iv-safety-commitments'],
             ariaLabel:
-              'Horizontal bar chart showing AI companies signing safety commitments: 7 at White House July 2023, 16 at Bletchley November 2023, 16 at Seoul May 2024',
+              'Horizontal bar chart showing AI companies signing safety commitments: 7 at the White House in July 2023 and 16 at Seoul in May 2024',
             unit: 'labs',
             variant: 'gold',
             annotations: [
-              { at: 'Bletchley\nNov 2023', text: '28 countries signed the Declaration' },
+              {
+                at: 'Seoul\nMay 2024',
+                text: '28 countries signed at Bletchley',
+              },
             ],
             data: [
               { label: 'White House\nJul 2023', value: 7 },
-              { label: 'Bletchley\nNov 2023', value: 16 },
               { label: 'Seoul\nMay 2024', value: 16 },
             ],
           },
@@ -603,6 +599,13 @@ export const partIV: RoundtableDocument = {
   },
 
   sources: [
+    {
+      id: 'src-ai-index-patents',
+      url: 'https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development',
+      title: 'Stanford HAI: AI Index Report 2025, Research and Development',
+      description:
+        'Tracks granted AI patents worldwide: 3,833 in 2010 rising to 122,511 in 2023, up 29.6% year over year, with China credited with 69.7% of all grants.',
+    },
     {
       id: 'src-wipo-ai',
       title: 'WIPO Technology Trends: Artificial Intelligence (2023)',
@@ -666,41 +669,48 @@ export const partIV: RoundtableDocument = {
     's-iv-wipo-patents-2021': {
       id: 's-iv-wipo-patents-2021',
       kind: 'statistic',
-      claimText: '71K+',
-      sourceId: 'src-wipo-ai',
-      verificationStatus: 'disputed',
-      verifiedUrl: 'https://insights.greyb.com/artificial-intelligence-patent-landscape/',
-      note: "The specific 71,423 figure could not be corroborated: the cited WIPO page returns a 404 and the referenced WIPO Technology Trends report title does not exist (WIPO's AI patent report is the 2024 GenAI Patent Landscape). A WIPO-citing secondary source instead reports about 62,582 AI patent applications for 2021. The rising trend is real, but this specific value and its 4.5x framing are unconfirmed.",
-      lastCheckedISO: '2026-07-04',
+      claimText: '122K+',
+      sourceId: 'src-ai-index-patents',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development',
+      note: 'Re-sourced and restated. The previous 71,423 applications for 2021 could not be corroborated: the cited WIPO page 404s and the report title it named does not exist. The figure now used is the Stanford AI Index 2025 series for granted AI patents worldwide, 3,833 in 2010 rising to 122,511 in 2023.',
+      lastCheckedISO: '2026-08-22',
     },
     's-iv-wipo-countries': {
       id: 's-iv-wipo-countries',
       kind: 'statistic',
-      claimText: '167',
-      sourceId: 'src-wipo-ai',
-      verificationStatus: 'unverified',
-      note: 'No WIPO source located that states AI patent data is tracked across 167 countries; the figure traces only to the cited page, which now returns a 404. Unconfirmed in this pass.',
-      lastCheckedISO: '2026-07-04',
+      claimText: '69.7%',
+      sourceId: 'src-ai-index-patents',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development',
+      note: 'The unverifiable "167 countries tracked" figure was replaced with a sourceable measure of the same race: China accounted for 69.7% of all granted AI patents worldwide in 2023, per the Stanford AI Index 2025.',
+      lastCheckedISO: '2026-08-22',
     },
     's-iv-wipo-growth-rate': {
       id: 's-iv-wipo-growth-rate',
       kind: 'statistic',
-      claimText: '~20%',
-      sourceId: 'src-wipo-ai',
-      verificationStatus: 'unverified',
-      note: "The ~20% CAGR for 2013 to 2021 could not be substantiated and is internally inconsistent: the site's own 2015 to 2021 series works out to roughly 29% CAGR, and WIPO's 2019 data implies about 28% for machine-learning patents 2013 to 2016. Unconfirmed in this pass.",
-      lastCheckedISO: '2026-07-04',
+      claimText: '29.6%',
+      sourceId: 'src-ai-index-patents',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development',
+      note: 'The unsubstantiated ~20% CAGR for 2013 to 2021 was replaced with the published year-over-year figure: granted AI patents worldwide rose 29.6% from 2022 to 2023, per the Stanford AI Index 2025.',
+      lastCheckedISO: '2026-08-22',
     },
 
     // ── Chart claims ────────────────────────────────────────────────────
     'c-iv-wipo-patents': {
       id: 'c-iv-wipo-patents',
       kind: 'citation',
-      claimText: 'WIPO AI patent applications, 2015–2021',
-      sourceId: 'src-wipo-ai',
-      verificationStatus: 'unverified',
-      note: "The exact year-by-year series (15,317 in 2015 rising to 71,423 in 2021) appears in no locatable WIPO publication, and the cited page returns a 404. WIPO's 2019 Technology Trends report gives different metrics and does not extend to 2021. The chart's rising trend is directionally real, but the specific series is unconfirmed.",
-      lastCheckedISO: '2026-07-04',
+      claimText: 'Granted AI patents worldwide, 2010 and 2023',
+      sourceId: 'src-ai-index-patents',
+      verificationStatus: 'verified',
+      verifiedUrl:
+        'https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development',
+      note: 'The unlocatable WIPO 2015 to 2021 series was replaced with the two published endpoints from the Stanford AI Index 2025: 3,833 granted AI patents in 2010 and 122,511 in 2023. The chart is now a two-point comparison rather than an interpolated series, so no intermediate year is asserted beyond what the source states.',
+      lastCheckedISO: '2026-08-22',
     },
     'c-iv-montreal-ods': {
       id: 'c-iv-montreal-ods',
@@ -725,13 +735,13 @@ export const partIV: RoundtableDocument = {
     'c-iv-safety-commitments': {
       id: 'c-iv-safety-commitments',
       kind: 'citation',
-      claimText: 'AI labs signing voluntary safety commitments, 2023–2024',
+      claimText: 'AI labs signing voluntary safety commitments, 2023-2024',
       sourceId: 'src-white-house-ai',
-      verificationStatus: 'disputed',
+      verificationStatus: 'verified',
       verifiedUrl:
         'https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024',
-      note: "White House (Jul 2023): 7 companies (Amazon, Anthropic, Google, Inflection, Meta, Microsoft, OpenAI), correct. The '16 companies at Bletchley (Nov 2023)' data point is misattributed: 16 firms signed the Frontier AI Safety Commitments at the Seoul summit (May 2024); at Bletchley only the same 7 frontier developers published safety policies, not a new set of 16. The 7 to 16 growth is real, but the middle bar's venue and date are wrong.",
-      lastCheckedISO: '2026-07-04',
+      note: 'Corrected. The White House figure (7 companies, July 2023) was right, but the middle data point was misattributed: 16 firms signed the Frontier AI Safety Commitments at the Seoul summit in May 2024, not at Bletchley in November 2023. The Bletchley bar has been removed and the 28-country Declaration now appears as an annotation, so the 7 to 16 growth is shown against the correct venues.',
+      lastCheckedISO: '2026-08-22',
     },
 
     // ── Debate inline citations ─────────────────────────────────────────

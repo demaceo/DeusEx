@@ -12,7 +12,7 @@ pipeline that turns any part into a voiced episode ship alongside it.
 | ------------------ | ------------------------------------------------------------------- |
 | Parts published    | 11 roundtables, 46 rounds, 206 debate turns                         |
 | Recurring panel    | 15 personas, declared once and referenced by id                     |
-| Evidence           | 196 claims, 98 sources, 84.7% verified against primary sources      |
+| Evidence           | 197 claims, 110 sources, 100% verified against primary sources      |
 | Data visualization | 45 charts across 10 chart kinds, hand-built as React SVG            |
 | Audio              | Build-time podcast pipeline (Claude rewrite + ElevenLabs synthesis) |
 | Comic series       | 1 episode (`/unfiltered`), its own isolated design system           |
@@ -157,9 +157,10 @@ The route table in `src/routes.tsx` is the single source of truth, used by `App`
 - **Per-document notice.** A compact tally above each document's first round links into the ledger.
 - **Evidence ledger** (`/verification`). Series-wide dashboard: a verified/total meter per part,
   four status filters bound to the `?status=` search param, and per-claim links to primary sources.
-- **Honest disputes.** Disputed and unverified figures are flagged in the reviewer note rather than
-  quietly corrected, because the prose is a transcript. Per-part write-ups live in
-  [`docs/verification/`](docs/verification/).
+- **Honest disputes.** Nothing is quietly corrected: every claim carries a reviewer note recording
+  what was checked and what changed, and the per-part write-ups in
+  [`docs/verification/`](docs/verification/) keep the original findings even where the figure has
+  since been fixed or replaced.
 
 ### Data visualization
 
@@ -318,36 +319,41 @@ flowchart LR
 
 ## Evidence at a glance
 
-The verification model is not decorative. Across the eleven parts:
+The verification model is not decorative, and it is not decorative because it was allowed to fail: an earlier pass left 30 claims flagged as disputed or unverified rather than quietly restating them. Those 30 have since been resolved, each by correcting the prose to match its source or by re-sourcing the figure entirely. Across the eleven parts:
 
 ```mermaid
 pie showData
-  title 196 claims by verification status
-  "Verified" : 166
-  "Disputed" : 16
-  "Unverified" : 14
+  title 197 claims by verification status
+  "Verified" : 197
 ```
 
 Per part, ordered as they appear in the series (bar = share of that part's claims verified):
 
-| Part  | Rounds |   Turns | Charts |  Claims | Verified | Disputed | Unverified | Sources | Verified share              |
-| ----- | -----: | ------: | -----: | ------: | -------: | -------: | ---------: | ------: | --------------------------- |
-| I     |      5 |      22 |      5 |      38 |       33 |        1 |          4 |      21 | `█████████████████···` 87%  |
-| II    |      5 |      28 |      4 |      44 |       41 |        3 |          0 |      21 | `███████████████████·` 93%  |
-| III   |      5 |      27 |      4 |      41 |       28 |        6 |          7 |      19 | `██████████████······` 68%  |
-| IV    |      3 |      16 |      4 |      13 |        8 |        2 |          3 |       8 | `████████████········` 62%  |
-| V     |      4 |      18 |      4 |      11 |       11 |        0 |          0 |       7 | `████████████████████` 100% |
-| VI    |      4 |      16 |      4 |       9 |        9 |        0 |          0 |       4 | `████████████████████` 100% |
-| VII   |      4 |      14 |      4 |       8 |        8 |        0 |          0 |       2 | `████████████████████` 100% |
-| VIII  |      4 |      16 |      4 |       7 |        7 |        0 |          0 |       2 | `████████████████████` 100% |
-| IX    |      4 |      15 |      4 |       9 |        8 |        1 |          0 |       6 | `██████████████████··` 89%  |
-| X     |      4 |      18 |      4 |       7 |        6 |        1 |          0 |       4 | `█████████████████···` 86%  |
-| XI    |      4 |      16 |      4 |       9 |        7 |        2 |          0 |       4 | `████████████████····` 78%  |
-| **Σ** | **46** | **206** | **45** | **196** |  **166** |   **16** |     **14** |  **98** | **84.7% verified**          |
+| Part  | Rounds |   Turns | Charts |  Claims | Verified | Sources | Verified share              |
+| ----- | -----: | ------: | -----: | ------: | -------: | ------: | --------------------------- |
+| I     |      5 |      22 |      5 |      38 |       38 |      25 | `████████████████████` 100% |
+| II    |      5 |      28 |      4 |      44 |       44 |      21 | `████████████████████` 100% |
+| III   |      5 |      27 |      4 |      42 |       42 |      25 | `████████████████████` 100% |
+| IV    |      3 |      16 |      4 |      13 |       13 |       9 | `████████████████████` 100% |
+| V     |      4 |      18 |      4 |      11 |       11 |       7 | `████████████████████` 100% |
+| VI    |      4 |      16 |      4 |       9 |        9 |       4 | `████████████████████` 100% |
+| VII   |      4 |      14 |      4 |       8 |        8 |       2 | `████████████████████` 100% |
+| VIII  |      4 |      16 |      4 |       7 |        7 |       2 | `████████████████████` 100% |
+| IX    |      4 |      15 |      4 |       9 |        9 |       6 | `████████████████████` 100% |
+| X     |      4 |      18 |      4 |       7 |        7 |       4 | `████████████████████` 100% |
+| XI    |      4 |      16 |      4 |       9 |        9 |       5 | `████████████████████` 100% |
+| **Σ** | **46** | **206** | **45** | **197** |  **197** | **110** | **100% verified**           |
 
-`disputed` means the figure is real but misattributed (wrong year, actor, or source);
-`unverified` means no primary source was located for that specific attribution. Both stay visible in
-the prose and are explained in the claim's reviewer note.
+Reaching 100% was an editing job, not a relabelling one. Roughly half the outstanding claims were
+figures that were real but attached to the wrong year, actor, or metric, and the prose was corrected
+to match the source. The rest had no credible source at all, most of them traceable to two marketing
+blogs, and were replaced with peer-reviewed or primary sources with the surrounding sentence
+rewritten to whatever that source actually supports. One claim did not survive contact with the
+evidence and was reversed outright: Canada, Japan, the UK and Australia turn out to be diverging
+from the EU regulatory model, not converging on it. Every claim's `note` records what changed, and
+the per-part reports in [`docs/verification/`](docs/verification/) keep the original findings as the
+audit trail. The four status values (`verified`, `disputed`, `unverified`, `pending`) remain in the
+model, because the next new part will start out unverified like every other.
 
 ### The chart catalog
 
@@ -356,10 +362,10 @@ chart lives in a part file as data alongside the prose it supports.
 
 | Kind         | In series | Built for                                                          |
 | ------------ | --------: | ------------------------------------------------------------------ |
-| `bar`        |        21 | Ranked categories, vertical or horizontal                          |
+| `bar`        |        20 | Ranked categories, vertical or horizontal                          |
 | `line`       |         8 | Trends over time, with optional area, band, and projected segments |
 | `donut`      |         6 | One share against the whole, figure in the center                  |
-| `comparison` |         2 | Exactly two points where the change is the message                 |
+| `comparison` |         3 | Exactly two points where the change is the message                 |
 | `lollipop`   |         2 | Sparse rankings that bars would over-ink                           |
 | `pictogram`  |         2 | Isotype counts out of a total                                      |
 | `stackedBar` |         1 | Composition within categories                                      |

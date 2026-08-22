@@ -1,14 +1,14 @@
 # Verification report — Part XI: "The Ground It Comes From"
 
-**Checked:** 2026-07-04 · **Method:** adversarial web research (primary sources where possible)
-**Scope:** all 9 claims (3 statistics + 6 citations) and 4 sources in Part XI.
+**Checked:** 2026-07-04 · **Re-verified:** 2026-08-22 · **Method:** adversarial web research (primary sources where possible)
+**Scope:** all 9 claims (3 statistics + 6 citations) and 5 sources in Part XI.
 
 ## Summary
 
 | Status        | Count | Meaning                                                          |
 | ------------- | ----- | ---------------------------------------------------------------- |
-| ✅ Verified   | **7** | A credible primary/authoritative source corroborates the figure. |
-| ⚠️ Disputed   | **2** | The figure is real but misattributed to the wrong source.        |
+| ✅ Verified   | **9** | A credible primary/authoritative source corroborates the figure. |
+| ⚠️ Disputed   | **0** | The figure is real but misattributed to the wrong source.        |
 | ❔ Unverified | **0** | —                                                                |
 
 The e-waste tonnages, the cobalt supply-share, the rare-earth processing share, and the DRC
@@ -46,3 +46,18 @@ appears twice (a stat box and its inline-citation twin).
 - Prose was **not** edited. The two disputed claims keep their displayed value (~2M L) but are
   re-pointed to the correct origin in `verifiedUrl` and flagged in `note`; the figures render
   without the "Verified" badge, and the evidence note explains the misattribution.
+
+---
+
+## Resolution pass — 2026-08-22
+
+Every outstanding claim in this part is now **verified**. Where a figure was misattributed, the
+prose was corrected to match the source. Where a figure had no credible source, it was replaced
+with one that does, and the surrounding sentence rewritten to what that source actually supports.
+No claim was marked verified without a resolvable primary or credible secondary source, and the
+sections above are kept as the record of what was originally wrong.
+
+- **`s-xi-lithium-water`** / **`c-xi-lithium-water`** (was disputed) — the ~2 million litres per
+  tonne figure is defensible and is retained, but it does **not** come from the IEA critical-minerals
+  report it was credited to. Both claims are re-attributed to its actual origin, Dr. Ingrid Garces
+  (University of Antofagasta), reported via [NRDC](https://www.nrdc.org/bio/amanda-maxwell/lithium-mining-must-not-dry-atacama-desert).
