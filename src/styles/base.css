@@ -108,7 +108,9 @@ a {
 .masthead-title-link {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: rgba(245, 240, 232, 0.22);
+  /* Was 0.22, effectively invisible against the dark masthead: the affordance
+     existed but could not be perceived. */
+  text-decoration-color: rgba(245, 240, 232, 0.42);
   text-underline-offset: 0.18em;
   text-decoration-thickness: 1px;
   transition: text-decoration-color 0.2s var(--ease);
@@ -183,8 +185,10 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  /* 48px, not 44: these sit in the top corners, the least reachable point
+     one-handed, and prev/next is the main way through the series. */
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   color: rgba(245, 240, 232, 0.55);
   background: transparent;
@@ -213,12 +217,11 @@ a {
   .masthead-body {
     padding: 0 3.25rem;
   }
-  /* Kept at the 44px minimum recommended touch target (was 40px) and inset
-     further from the viewport edge so it doesn't compete with the browser's
-     edge-swipe-back gesture. */
+  /* Inset further from the viewport edge so it doesn't compete with the
+     browser's edge-swipe-back gesture. Size comes from the base rule. */
   .masthead-nav {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
   }
   .masthead-nav--prev {
     left: 0.5rem;
@@ -289,6 +292,55 @@ a {
   flex-wrap: wrap;
   gap: 0.65rem;
   justify-content: center;
+}
+
+/* Wide viewports have room for the full legend, so the disclosure trigger is
+   irrelevant there and the chips are simply shown. */
+.personas-bar__toggle {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .personas-bar__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 48px;
+    padding: 0 0.9rem;
+    border: 1px solid rgba(245, 240, 232, 0.25);
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(245, 240, 232, 0.75);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .personas-bar__toggle:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+  .personas-bar__toggle svg {
+    transition: transform 0.2s var(--ease);
+  }
+  .personas-bar[data-open='true'] .personas-bar__toggle svg {
+    transform: rotate(180deg);
+  }
+
+  /* The trigger already names the panel, so the eyebrow would just repeat it. */
+  .personas-bar__label {
+    display: none;
+  }
+  .personas-bar:not([data-open='true']) .personas-bar__tags {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .personas-bar__toggle svg {
+    transition: none;
+  }
 }
 
 @media (max-width: 380px) {
@@ -371,12 +423,53 @@ a {
   z-index: 60;
 }
 
-.persona-tag-wrap:hover .persona-profile,
+/* Tap/click state first: this is the only path that exists on a touchscreen,
+   where there is no hover to reveal with and nothing else in the stylesheet
+   branches on pointer type. */
+.persona-tag-wrap[data-open='true'] .persona-profile,
 .persona-tag-wrap:focus-within .persona-profile {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
+}
+
+/* Hover reveal is layered on top, and only for pointers that actually hover.
+   Ungated, this rule reads as the primary affordance on devices that can never
+   trigger it. */
+@media (hover: hover) {
+  .persona-tag-wrap:hover .persona-profile {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* The card's own dismiss. Where a pointer hovers, moving away already closes
+   it and the button is noise; where it doesn't, this is the discoverable exit. */
+.persona-profile__close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.persona-profile__close:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -4px;
+}
+@media (hover: hover) {
+  .persona-profile__close {
+    display: none;
+  }
 }
 
 /* little arrow pointing up at the chip */

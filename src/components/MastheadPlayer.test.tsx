@@ -24,6 +24,8 @@ function makePlayer(overrides: Partial<PodcastPlayerState> = {}): PodcastPlayerS
     currentCue: null,
     currentSpeaker: null,
     captionsEnabled: false,
+    error: null,
+    retry: vi.fn(),
     toggleCaptions: vi.fn(),
     toggle: vi.fn(),
     seek: vi.fn(),
@@ -174,5 +176,40 @@ describe('MastheadPlayer — scrubber seeks on change', () => {
     // dragValue clears on release; the display falls back to currentTime (90s) —
     // the position just seeked to, never 0 or a prior value.
     expect(screen.getByText('1:30 / 5:00')).toBeInTheDocument()
+  })
+})
+
+describe('MastheadPlayer — error state', () => {
+  it('replaces the transport with a named failure and a retry', () => {
+    render(<MastheadPlayer player={makePlayer({ isActive: true, error: 'Audio unavailable.' })} />)
+
+    expect(screen.getByRole('status')).toHaveTextContent('Audio unavailable.')
+    expect(screen.getByRole('button', { name: /retry loading the audio/i })).toBeInTheDocument()
+    // The broken transport is gone rather than sitting engaged at 0:00.
+    expect(screen.queryByRole('slider')).not.toBeInTheDocument()
+  })
+
+  it('takes precedence over the idle prompt', () => {
+    render(<MastheadPlayer player={makePlayer({ isActive: false, error: 'Audio stalled.' })} />)
+
+    expect(screen.getByRole('status')).toHaveTextContent('Audio stalled.')
+    expect(screen.queryByText(/listen to this roundtable/i)).not.toBeInTheDocument()
+  })
+
+  it('calls retry when the reader asks to try again', () => {
+    const retry = vi.fn()
+    render(
+      <MastheadPlayer player={makePlayer({ isActive: true, error: 'Audio stalled.', retry })} />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: /retry loading the audio/i }))
+    expect(retry).toHaveBeenCalledOnce()
+  })
+
+  it('still renders nothing when there is no episode at all', () => {
+    const { container } = render(
+      <MastheadPlayer player={makePlayer({ episode: null, error: 'Audio unavailable.' })} />,
+    )
+    expect(container.firstChild).toBeNull()
   })
 })

@@ -3,7 +3,7 @@ import { PERSONAS } from '../data/personas'
 import { CONCESSION_LABEL, STANCE_LABEL } from '../data/stance'
 import type { DebateEntry as DebateEntryData } from '../types/document'
 import type { PersonaId, PersonaStance } from '../types/persona'
-import { PersonaProfileCard } from './PersonaProfileCard'
+import { PersonaDisclosure } from './PersonaDisclosure'
 import { SpeechBubble } from './SpeechBubble'
 
 interface DebateEntryProps {
@@ -34,7 +34,7 @@ export function DebateEntry({
 }: DebateEntryProps) {
   const persona = PERSONAS[entry.personaId]
   const Icon = persona.icon
-  const tooltipId = useId()
+  const cardId = useId()
   const resolvedStance = stance ?? persona.stance
   // This turn argues off the speaker's usual camp — flag it once, on entry.
   const isConcession = isFirstOfSpeaker && resolvedStance !== persona.stance
@@ -54,17 +54,15 @@ export function DebateEntry({
     >
       <div className="debate-entry__rail" aria-hidden={isFirstOfSpeaker ? undefined : true}>
         {isFirstOfSpeaker ? (
-          <div className="persona-tag-wrap debate-entry__persona-trigger" data-persona={persona.id}>
-            <button
-              type="button"
-              className="speaker-icon"
-              aria-describedby={tooltipId}
-              aria-label={`${persona.name}: view profile`}
-            >
-              <Icon size={22} strokeWidth={1.75} />
-            </button>
-            <PersonaProfileCard persona={persona} tooltipId={tooltipId} />
-          </div>
+          <PersonaDisclosure
+            persona={persona}
+            cardId={cardId}
+            triggerClassName="speaker-icon"
+            triggerLabel={`${persona.name}: view profile`}
+            wrapClassName="debate-entry__persona-trigger"
+          >
+            <Icon size={22} strokeWidth={1.75} />
+          </PersonaDisclosure>
         ) : (
           <div className="debate-entry__dot" data-persona={persona.id} />
         )}

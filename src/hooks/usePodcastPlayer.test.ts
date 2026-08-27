@@ -45,6 +45,10 @@ function makeAudioStub(playBehavior: 'resolve' | 'reject' = 'resolve') {
       listeners[event] = listeners[event] ?? []
       listeners[event].push(fn)
     }),
+    /** Fire a media event at the hook's listeners, e.g. a failed load. */
+    emit(event: string) {
+      listeners[event]?.forEach((fn) => fn())
+    },
   }
   return stub
 }
@@ -233,5 +237,104 @@ describe('usePodcastPlayer — captionsEnabled', () => {
     })
     expect(result.current.captionsEnabled).toBe(false)
     expect(localStorage.getItem('deusex:captions-enabled')).toBe('false')
+  })
+})
+
+// ─── Audio failure is reported instead of stalling silently ───────────────────
+
+describe('usePodcastPlayer — audio failure', () => {
+  let audioStub: ReturnType<typeof makeAudioStub>
+
+  beforeEach(() => {
+    audioStub = makeAudioStub()
+    vi.stubGlobal(
+      'Audio',
+      vi.fn(function () {
+        return audioStub
+      }),
+    )
+    vi.mocked(getEpisode).mockResolvedValue(MOCK_EPISODE)
+    vi.mocked(getTranscript).mockResolvedValue(null)
+  })
+
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    vi.clearAllMocks()
+  })
+
+  async function mounted() {
+    const hook = renderHook(() => usePodcastPlayer('part-i' as DocumentId))
+    await waitFor(() => expect(hook.result.current.hasEpisode).toBe(true))
+    act(() => {
+      hook.result.current.toggle()
+    })
+    return hook
+  }
+
+  it('starts with no error', async () => {
+    const { result } = await mounted()
+    expect(result.current.error).toBeNull()
+  })
+
+  it('reports a terminal error when the media element fails', async () => {
+    const { result } = await mounted()
+    act(() => {
+      audioStub.emit('error')
+    })
+    expect(result.current.error).toMatch(/unavailable/i)
+    expect(result.current.isPlaying).toBe(false)
+  })
+
+  it('reports a recoverable message when the stream stalls', async () => {
+    const { result } = await mounted()
+    act(() => {
+      audioStub.emit('stalled')
+    })
+    expect(result.current.error).toMatch(/stalled/i)
+  })
+
+  it('clears the error once playback actually resumes', async () => {
+    const { result } = await mounted()
+    act(() => {
+      audioStub.emit('stalled')
+    })
+    expect(result.current.error).not.toBeNull()
+
+    act(() => {
+      audioStub.emit('playing')
+    })
+    expect(result.current.error).toBeNull()
+  })
+
+  it('retry clears the error and rebuilds the element rather than replaying a latched one', async () => {
+    const { result } = await mounted()
+    const buildsBefore = vi.mocked(globalThis.Audio).mock.calls.length
+    act(() => {
+      audioStub.emit('error')
+    })
+    expect(result.current.error).not.toBeNull()
+
+    act(() => {
+      result.current.retry()
+    })
+    expect(result.current.error).toBeNull()
+    expect(vi.mocked(globalThis.Audio).mock.calls.length).toBeGreaterThan(buildsBefore)
+  })
+
+  it('clears a stale error when the reader moves to another document', async () => {
+    const hook = renderHook(({ id }) => usePodcastPlayer(id), {
+      initialProps: { id: 'part-i' as DocumentId },
+    })
+    await waitFor(() => expect(hook.result.current.hasEpisode).toBe(true))
+    act(() => {
+      hook.result.current.toggle()
+    })
+    act(() => {
+      audioStub.emit('error')
+    })
+    expect(hook.result.current.error).not.toBeNull()
+
+    hook.rerender({ id: 'part-ii' as DocumentId })
+    await waitFor(() => expect(hook.result.current.error).toBeNull())
   })
 })

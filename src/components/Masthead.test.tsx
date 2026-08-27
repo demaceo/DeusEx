@@ -19,6 +19,8 @@ const player: PodcastPlayerState = {
   currentCue: null,
   currentSpeaker: null,
   captionsEnabled: false,
+  error: null,
+  retry: vi.fn(),
   toggleCaptions: vi.fn(),
   toggle: vi.fn(),
   seek: vi.fn(),

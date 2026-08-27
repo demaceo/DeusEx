@@ -1,5 +1,13 @@
 import { useState } from 'react'
-import { Captions, CaptionsOff, Headphones, Pause, Play } from 'lucide-react'
+import {
+  AlertTriangle,
+  Captions,
+  CaptionsOff,
+  Headphones,
+  Pause,
+  Play,
+  RotateCcw,
+} from 'lucide-react'
 import { speakerInfo } from '../lib/speakerInfo'
 import { CaptionsOverlay } from './CaptionsOverlay'
 import type { PodcastPlayer as PodcastPlayerState } from '../hooks/usePodcastPlayer'
@@ -33,6 +41,34 @@ export function MastheadPlayer({ player }: MastheadPlayerProps) {
   const [dragValue, setDragValue] = useState<number | null>(null)
 
   if (!player.episode) return null
+
+  // A failure has to say so. Otherwise the bar sits engaged at 0:00 and the
+  // reader cannot tell a broken file from a slow one. Named as a dead end with
+  // a way out: the written roundtable is right there, and retry rebuilds the
+  // element rather than replaying a latched error.
+  if (player.error) {
+    return (
+      <div
+        className="masthead-player masthead-player--error"
+        role="region"
+        aria-label="Roundtable podcast player"
+      >
+        <AlertTriangle size={15} aria-hidden />
+        <span className="masthead-player__error" role="status">
+          {player.error}
+        </span>
+        <button
+          type="button"
+          className="masthead-player__retry"
+          onClick={player.retry}
+          aria-label="Retry loading the audio"
+        >
+          <RotateCcw size={13} aria-hidden />
+          Try again
+        </button>
+      </div>
+    )
+  }
 
   const maxTime = player.duration || 0
 

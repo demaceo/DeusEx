@@ -29,6 +29,14 @@ export interface PodcastPlayer {
   currentSpeaker: EpisodeSpeaker | null
   /** Whether the closed-captions overlay is enabled. Persisted globally. */
   captionsEnabled: boolean
+  /**
+   * Set when the audio element fails or stalls indefinitely. Without this the
+   * bar can sit "engaged" at 0:00 forever on a missing MP3 or a dropped
+   * connection, with nothing to tell the reader whether it is loading or broken.
+   */
+  error: string | null
+  /** Clears {@link error} and retries playback from the current position. */
+  retry: () => void
   toggleCaptions: () => void
   toggle: () => void
   /** Seek to an absolute position (seconds). Sets audio.currentTime immediately. */
@@ -53,6 +61,7 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [rate, setRate] = useState<PlaybackRate>(1)
+  const [error, setError] = useState<string | null>(null)
   const [captionsEnabled, setCaptionsEnabled] = useState<boolean>(() => {
     try {
       return localStorage.getItem(CAPTIONS_STORAGE_KEY) === 'true'
@@ -74,6 +83,7 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
       setIsPlaying(false)
       setCurrentTime(0)
       setDuration(0)
+      setError(null)
     })
     return () => {
       cancelled = true
@@ -102,6 +112,19 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
       setIsPlaying(false)
       setCurrentTime(0)
     })
+    // A missing or unplayable MP3 fires `error` and nothing else: without this
+    // the bar stays engaged at 0:00 with no way to tell broken from loading.
+    audio.addEventListener('error', () => {
+      setIsPlaying(false)
+      setError('Audio unavailable. The written roundtable below is complete.')
+    })
+    // `stalled` means the network went quiet mid-buffer. Recoverable, so it gets
+    // a retry-oriented message rather than the terminal one above.
+    audio.addEventListener('stalled', () => {
+      setError('Audio stalled. Check your connection and try again.')
+    })
+    // Any successful progress clears a stall we reported earlier.
+    audio.addEventListener('playing', () => setError(null))
     audioRef.current = audio
     return audio
   }, [episode, rate])
@@ -122,6 +145,24 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
       audio.pause()
     }
   }, [cues, ensureAudio, episode])
+
+  const retry = useCallback(() => {
+    setError(null)
+    // A failed media element latches its error state, so replaying the same one
+    // just fails again. Rebuild it, resuming where the reader left off.
+    const previous = audioRef.current
+    const resumeAt = previous?.currentTime ?? 0
+    previous?.pause()
+    audioRef.current = null
+
+    const audio = ensureAudio()
+    if (!audio) return
+    if (resumeAt > 0) audio.currentTime = resumeAt
+    setIsActive(true)
+    audio.play().catch(() => {
+      setError('Audio unavailable. The written roundtable below is complete.')
+    })
+  }, [ensureAudio])
 
   const seek = useCallback((seconds: number) => {
     const audio = audioRef.current
@@ -168,6 +209,8 @@ export function usePodcastPlayer(documentId: DocumentId): PodcastPlayer {
     currentCue,
     currentSpeaker,
     captionsEnabled,
+    error,
+    retry,
     toggleCaptions,
     toggle,
     seek,

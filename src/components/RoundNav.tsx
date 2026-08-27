@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useActiveSection } from '../hooks/useReadingProgress'
 import { useScrollCollapse } from '../hooks/useScrollCollapse'
 import type { Masthead } from '../types/document'
@@ -16,15 +16,24 @@ interface RoundNavProps {
 }
 
 /**
- * A sticky left-rail navigator listing the document's rounds, highlighting the one
- * in view and jumping to it on click. Shown only where there's margin room (wide
- * viewports); the reading-progress bar covers navigation on narrow screens. Fixed
- * to the viewport rather than the document, so it fades out once the sources/
- * footer region scrolls into view, instead of ever overlapping their dark band.
+ * Navigator listing the document's rounds, highlighting the one in view and
+ * jumping to it on click. One component, two layouts, same markup and the same
+ * accessibility tree:
  *
- * Also stays hidden until the Masthead itself has collapsed: shares `useScrollCollapse`
+ * - Wide viewports (>=1280px): a rail in the left margin, where there is room.
+ * - Everything narrower: a horizontal strip of round chips pinned under the
+ *   masthead. Narrow screens previously had no in-document navigation at all;
+ *   the reading-progress bar was treated as covering it, but that bar is 3px of
+ *   `pointer-events: none` decoration and cannot be navigated with. A reader on
+ *   a phone had no way to see the round structure or move between rounds.
+ *
+ * Fixed to the viewport rather than the document, so it fades out once the
+ * sources/footer region scrolls into view instead of overlapping their dark band.
+ *
+ * Stays hidden until the Masthead itself has collapsed: shares `useScrollCollapse`
  * with it (same default thresholds) so both flip on the same scroll tick, then unfurls
- * top-down into view rather than appearing as soon as the page mounts.
+ * into view rather than appearing as soon as the page mounts. On mobile that also
+ * keeps it out of the pre-content stack a reader meets before the first sentence.
  */
 export function RoundNav({ items, accentColor }: RoundNavProps) {
   const ids = items.map((i) => i.id)
@@ -32,6 +41,21 @@ export function RoundNav({ items, accentColor }: RoundNavProps) {
   const activeIndex = items.findIndex((i) => i.id === active)
   const collapsed = useScrollCollapse()
   const [nearEnd, setNearEnd] = useState(false)
+  const listRef = useRef<HTMLOListElement>(null)
+
+  // Keep the active chip in view in the mobile strip as the reader advances,
+  // otherwise the current round scrolls off the end and the strip stops
+  // reporting where they are. Only the list's own horizontal offset is touched,
+  // never the page scroll, so this can't fight the reader mid-scroll. On the
+  // desktop rail the list doesn't scroll horizontally and this is a no-op.
+  useEffect(() => {
+    const list = listRef.current
+    if (!list || activeIndex < 0 || typeof list.scrollTo !== 'function') return
+    const item = list.children[activeIndex] as HTMLElement | undefined
+    if (!item) return
+    const left = item.offsetLeft - (list.clientWidth - item.clientWidth) / 2
+    list.scrollTo({ left: Math.max(0, left), behavior: 'smooth' })
+  }, [activeIndex])
 
   useEffect(() => {
     const sentinel = document.getElementById('sources-section')
@@ -62,7 +86,7 @@ export function RoundNav({ items, accentColor }: RoundNavProps) {
         On this Roundtable <br />
         {items.length ? <span className="round-nav__count"> · {items.length} rounds</span> : null}
       </p>
-      <ol className="round-nav__list">
+      <ol className="round-nav__list" ref={listRef}>
         {items.map((item, i) => (
           <li key={item.id}>
             <button

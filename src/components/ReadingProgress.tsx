@@ -22,11 +22,19 @@ export function ReadingProgress({ accentColor }: ReadingProgressProps) {
     // edge — a fixed `top: 0` would paint over the header, since both are
     // pinned to the viewport's top and this bar's z-index must sit above it
     // for the fill to ever be visible.
-    const sync = () => el.style.setProperty('--masthead-height', `${masthead.offsetHeight}px`)
+    //
+    // Published on the root rather than this element: the mobile round strip
+    // pins itself directly beneath the same header and needs the same number,
+    // and it is nowhere near this component in the tree.
+    const root = document.documentElement
+    const sync = () => root.style.setProperty('--masthead-height', `${masthead.offsetHeight}px`)
     sync()
     const observer = new ResizeObserver(sync)
     observer.observe(masthead)
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      root.style.removeProperty('--masthead-height')
+    }
   }, [])
 
   return (

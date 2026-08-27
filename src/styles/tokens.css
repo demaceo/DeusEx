@@ -50,6 +50,14 @@
   /* Per-turn delay step for the debate stage's staggered scroll reveal. */
   --stagger-step: 60ms;
 
+  /* Floating bottom-right FAB geometry. Shared because two components that never
+     meet in the tree both depend on it: the FAB itself, and the captions overlay,
+     which has to sit clear of that band or it hides the only persistent
+     navigation control behind a subtitle. The inset also keeps the trigger out
+     of the iOS home-indicator swipe region, which a bare rem value sits inside. */
+  --fab-size: 2.75rem;
+  --fab-inset: max(1.75rem, calc(env(safe-area-inset-bottom) + 0.75rem));
+
   /* Fonts. The two serifs ship as variable webfonts, which fontsource names with
      a "Variable" suffix; the plain family name follows so a locally installed copy
      still wins over the system fallback. Faces are imported in src/main.tsx, and
@@ -57,6 +65,14 @@
   --font-display: 'Playfair Display Variable', 'Playfair Display', Georgia, serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   --font-serif: 'Source Serif 4 Variable', 'Source Serif 4', Georgia, serif;
+}
+
+@media (max-width: 640px) {
+  :root {
+    /* 48px on a phone: clears the Android minimum, not just the iOS one, and
+       this is the one control a reader keeps reaching for one-handed. */
+    --fab-size: 3rem;
+  }
 }
 
 /* Persona color resolution. Components set data-persona; CSS maps it to a color.

@@ -79,4 +79,59 @@ describe('Modal', () => {
     fireEvent.click(screen.getByRole('button', { name: /close/i }))
     expect(trigger).toHaveFocus()
   })
+
+  it('closes on the Back gesture instead of leaving the page', () => {
+    render(<Harness />)
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }))
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+
+    // An open dialog parks one throwaway entry on the stack so Back has
+    // something to pop; popping it must close rather than navigate away.
+    fireEvent.popState(window)
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('closes on the bottom dismiss button', () => {
+    render(<Harness />)
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }))
+
+    fireEvent.click(screen.getByRole('button', { name: 'Done' }))
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('closes when the handle is dragged past the dismiss threshold', () => {
+    const { container } = render(<Harness />)
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }))
+    const handle = container.querySelector('.sheet-handle')!
+
+    fireEvent.pointerDown(handle, { clientY: 100, button: 0 })
+    fireEvent.pointerMove(handle, { clientY: 260 })
+    fireEvent.pointerUp(handle)
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('settles back open when the drag is released short of the threshold', () => {
+    const { container } = render(<Harness />)
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }))
+    const handle = container.querySelector('.sheet-handle')!
+
+    fireEvent.pointerDown(handle, { clientY: 100, button: 0 })
+    fireEvent.pointerMove(handle, { clientY: 140 })
+    fireEvent.pointerUp(handle)
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+  })
+
+  it('ignores upward drag so the sheet never lifts off its anchor', () => {
+    const { container } = render(<Harness />)
+    fireEvent.click(screen.getByRole('button', { name: 'Open' }))
+    const handle = container.querySelector('.sheet-handle')!
+    const dialog = screen.getByRole('dialog')
+
+    fireEvent.pointerDown(handle, { clientY: 300, button: 0 })
+    fireEvent.pointerMove(handle, { clientY: 40 })
+    expect(dialog).not.toHaveAttribute('style', expect.stringContaining('translateY'))
+
+    fireEvent.pointerUp(handle)
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+  })
 })
