@@ -123,12 +123,6 @@
   margin: 0 -0.1rem;
 }
 
-.chart-thumb-carousel__loading {
-  height: 148px;
-  border: 1px dashed var(--rule);
-  border-radius: 3px;
-}
-
 .chart-thumb {
   scroll-snap-align: start;
   flex-shrink: 0;
@@ -513,6 +507,9 @@
   right: 0;
   transform: translateY(-4px);
 }
+.debate-entry[data-stance='critic']
+  .debate-entry__persona-trigger[data-open='true']
+  .persona-profile,
 .debate-entry[data-stance='critic'] .debate-entry__persona-trigger:hover .persona-profile,
 .debate-entry[data-stance='critic'] .debate-entry__persona-trigger:focus-within .persona-profile {
   transform: translateY(0);
@@ -755,6 +752,9 @@
     right: auto;
     transform: translateX(-50%) translateY(-4px);
   }
+  .debate-entry[data-stance='critic']
+    .debate-entry__persona-trigger[data-open='true']
+    .persona-profile,
   .debate-entry[data-stance='critic'] .debate-entry__persona-trigger:hover .persona-profile,
   .debate-entry[data-stance='critic'] .debate-entry__persona-trigger:focus-within .persona-profile {
     transform: translateX(-50%) translateY(0);
@@ -1153,10 +1153,57 @@ cite[data-verification='unverified'] {
 
 /* Placeholder shown while the lazily-loaded chart chunk arrives — reserves height
    so the surrounding prose doesn't reflow. */
-.chart-block--loading {
-  min-height: 360px;
-  border-top-color: var(--rule);
+/* ─── CHART SKELETON (lazy-chunk placeholder) ─────────────────────────
+   Replaces a bare grey rectangle that was aria-hidden and motionless, which
+   read as a chart that had failed rather than one still arriving. */
+.chart-skeleton {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-top: 3px solid var(--rule);
   background: var(--panel);
+}
+.chart-skeleton--block {
+  min-height: 360px;
+  padding: 2.5rem 1.5rem;
+}
+.chart-skeleton--thumb {
+  min-height: 148px;
+  padding: 1rem;
+  border: 1px dashed var(--rule);
+  border-radius: 3px;
+}
+.chart-skeleton__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6rem;
+  width: min(100%, 22rem);
+  height: 100%;
+}
+.chart-skeleton__bar {
+  flex: 1 1 0;
+  border-radius: 2px 2px 0 0;
+  background: var(--rule);
+  opacity: 0.55;
+  animation: chart-skeleton-pulse 1.4s var(--ease) infinite;
+}
+
+@keyframes chart-skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* A pulsing placeholder is exactly the motion a reader may have opted out of;
+   the layout still holds the space so nothing shifts when the chart lands. */
+@media (prefers-reduced-motion: reduce) {
+  .chart-skeleton__bar {
+    animation: none;
+  }
 }
 
 /* ─── CHART LEGEND ────────────────────────────────────────────────── */
@@ -2827,30 +2874,111 @@ cite[role='button']:focus-visible,
   color: var(--muted);
 }
 
-/* ─── ROUND NAVIGATOR (sticky left rail) ──────────────────────────── */
+/* ─── ROUND NAVIGATOR (left rail wide / round strip narrow) ───────────
+   Below 1280px this used to be display:none, which left phones with no
+   in-document navigation whatsoever. It is now a horizontal strip of round
+   chips pinned under the masthead, on the same data-visible reveal as the
+   rail, so it appears only once the reader has started scrolling. */
 .round-nav {
+  position: fixed;
+  /* Under the masthead and the 3px progress bar riding on it. --masthead-height
+     is published on :root by ReadingProgress, tracking the live collapse. */
+  top: calc(var(--masthead-height, 0px) + 3px);
+  left: 0;
+  right: 0;
+  z-index: 44;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.4rem 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.3s var(--ease),
+    transform 0.3s var(--ease),
+    visibility 0.3s;
+}
+.round-nav[data-visible='true'] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.round-nav:not([data-visible='true']) {
+  pointer-events: none;
+}
+
+/* The rail's vertical framing is dead weight in a one-line strip: the heading
+   and the per-round section titles both go, leaving just the round labels. */
+.round-nav__heading,
+.round-nav .round-nav__title {
   display: none;
 }
 
-@media (min-width: 1280px) {
+.round-nav__list {
+  display: flex;
+  flex-direction: row;
+  gap: 0.35rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  /* Chips are scrolled to by the component, so a stray drag shouldn't leave one
+     half-cut at the edge. */
+  scroll-snap-type: x proximity;
+}
+.round-nav__list::-webkit-scrollbar {
+  display: none;
+}
+.round-nav__list > li {
+  scroll-snap-align: center;
+}
+
+.round-nav .round-nav__link {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  /* Clears the 48dp floor: these are the in-document jump targets and they sit
+     in a dense row. */
+  min-height: 48px;
+  padding: 0 0.85rem;
+  white-space: nowrap;
+  border-left: none;
+  border-bottom: 2px solid var(--rule);
+  border-radius: 0;
+}
+.round-nav .round-nav__link[data-active='true'] {
+  border-bottom-color: var(--masthead-accent, var(--accent));
+  border-bottom-width: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
   .round-nav {
-    display: block;
-    position: fixed;
+    transition: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Back to the left rail, where there is margin room for the full listing.
+     Every strip-specific declaration above is undone here rather than being
+     scoped the other way round, so the narrow layout stays the default and a
+     new viewport never lands on "no navigation" by omission. */
+  .round-nav {
     /* left: calc(50% - 640px) keeps a consistent 20px gap between the nav's
        right edge and the container left edge at all viewport widths ≥ 1280px.
        (Container max-width = 880px, half = 440px; 640 - 180 = 460 > 440.) */
     top: 50%;
     left: calc(50% - 640px);
+    right: auto;
     width: 180px;
-    transform: translateY(-50%);
     margin-top: 6rem;
     z-index: 40;
-    /* Hidden until the Masthead collapses (data-visible, toggled in RoundNav.tsx
-       off the same useScrollCollapse state), then unfurls top-down via clip-path
-       rather than an animated height/transform, so the translateY(-50%) centering
-       above never has to recompute mid-animation. Also fades out once the
-       sources/footer region nears the viewport, instead of staying pinned in the
-       fixed viewport band and overlapping the footer. */
+    background: transparent;
+    border-bottom: none;
+    padding: 0;
+    visibility: visible;
+    /* Unfurls top-down via clip-path rather than an animated height/transform,
+       so the translateY(-50%) centering never has to recompute mid-animation.
+       The transform therefore has to hold in both states, which is why the
+       visible rule below restates it. */
+    transform: translateY(-50%);
     clip-path: inset(0 0 100% 0);
     opacity: 0;
     transition:
@@ -2860,10 +2988,34 @@ cite[role='button']:focus-visible,
   .round-nav[data-visible='true'] {
     clip-path: inset(0 0 0 0);
     opacity: 1;
+    transform: translateY(-50%);
   }
-  .round-nav:not([data-visible='true']) {
-    pointer-events: none;
+
+  .round-nav__heading,
+  .round-nav .round-nav__title {
+    display: block;
   }
+  .round-nav__list {
+    flex-direction: column;
+    gap: 0.15rem;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+  .round-nav .round-nav__link {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    padding: 0.3rem 0 0.3rem 0.7rem;
+    white-space: normal;
+    border-bottom: none;
+    border-left: 2px solid var(--rule);
+  }
+  .round-nav .round-nav__link[data-active='true'] {
+    border-bottom: none;
+    border-left-color: var(--masthead-accent, var(--accent));
+    border-left-width: 3px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .round-nav {
       transition: none;
@@ -2871,9 +3023,17 @@ cite[role='button']:focus-visible,
   }
 }
 
-/* Sections need scroll-margin so smooth-scroll clears the sticky masthead. */
+/* Sections need scroll-margin so smooth-scroll clears the sticky masthead, and
+   on narrow viewports the round strip pinned beneath it as well: landing a
+   round heading underneath the strip that jumped you there reads as a broken
+   jump. The rail sits in the margin, so wide viewports only clear the header. */
 section[id^='round-'] {
-  scroll-margin-top: 8rem;
+  scroll-margin-top: 11.5rem;
+}
+@media (min-width: 1280px) {
+  section[id^='round-'] {
+    scroll-margin-top: 8rem;
+  }
 }
 
 .round-nav__heading {
@@ -3613,14 +3773,41 @@ cite[role='button']:focus-visible::after {
   scrollbar-width: thin;
 }
 
+.debate-nav-fab__heading {
+  position: sticky;
+  top: 0;
+  padding: 0.6rem 0.85rem 0.5rem;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.12);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.5);
+}
+
 .debate-nav-fab__item {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
+  /* Comfortably past the tap minimum: eleven of these sit in one dense column. */
+  min-height: 48px;
+  justify-content: center;
   padding: 0.55rem 0.85rem;
   text-decoration: none;
   border-bottom: 1px solid rgba(245, 240, 232, 0.07);
+  border-left: 3px solid transparent;
   transition: background 0.12s var(--ease);
+}
+
+/* The reader's current part, so the panel opens as a position to move from
+   rather than eleven equally-weighted fresh choices. */
+.debate-nav-fab__item[data-current='true'] {
+  border-left-color: var(--masthead-accent, var(--accent));
+  background: rgba(245, 240, 232, 0.06);
+}
+.debate-nav-fab__here {
+  color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
 }
 .debate-nav-fab__item:last-child {
   border-bottom: none;

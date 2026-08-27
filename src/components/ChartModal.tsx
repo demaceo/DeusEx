@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react'
+import { ChartSkeleton } from './ChartSkeleton'
 import type { ChartSpec } from '../types/document'
 import { Modal } from './Modal'
 
@@ -20,7 +21,7 @@ interface ChartModalProps {
 export function ChartModal({ chart, onClose }: ChartModalProps) {
   return (
     <Modal onClose={onClose} ariaLabel={chart.title} className="chart-modal">
-      <Suspense fallback={<div className="chart-block chart-block--loading" aria-hidden="true" />}>
+      <Suspense fallback={<ChartSkeleton />}>
         <ChartBlock chart={chart} />
       </Suspense>
     </Modal>

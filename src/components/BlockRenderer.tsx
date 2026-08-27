@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react'
+import { ChartSkeleton } from './ChartSkeleton'
 import type { Block } from '../types/document'
 import { ChapterDivider } from './ChapterDivider'
 import { DebateEntry } from './DebateEntry'
@@ -36,9 +37,7 @@ export function BlockRenderer({ block }: BlockRendererProps) {
       return <IncentiveAudit audit={block.data} />
     case 'chart':
       return (
-        <Suspense
-          fallback={<div className="chart-block chart-block--loading" aria-hidden="true" />}
-        >
+        <Suspense fallback={<ChartSkeleton />}>
           <ChartBlock chart={block.data} />
         </Suspense>
       )

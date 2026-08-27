@@ -28,7 +28,8 @@ describe('DebateEntry', () => {
       </MemoryRouter>,
     )
     const trigger = screen.getByRole('button', { name: `${persona.name}: view profile` })
-    expect(trigger.getAttribute('aria-describedby')).toBeTruthy()
+    expect(trigger.getAttribute('aria-controls')).toBeTruthy()
+    expect(trigger).toHaveAttribute('aria-expanded', 'false')
     expect(screen.getByText(persona.role)).toBeInTheDocument()
     expect(screen.getByText(persona.focus)).toBeInTheDocument()
     expect(screen.getByText(persona.bio)).toBeInTheDocument()
@@ -46,7 +47,7 @@ describe('DebateEntry', () => {
     expect(container.querySelector('.debate-entry__rail')).toHaveAttribute('aria-hidden', 'true')
   })
 
-  it('gives two turns by the same persona in one render distinct tooltip ids', () => {
+  it('gives two turns by the same persona in one render distinct card ids', () => {
     const { container } = render(
       <MemoryRouter>
         <DebateEntry entry={turn('tech-optimist', 'First.')} isFirstOfSpeaker turnIndex={0} />
@@ -57,7 +58,7 @@ describe('DebateEntry', () => {
         />
       </MemoryRouter>,
     )
-    const ids = Array.from(container.querySelectorAll('[role="tooltip"]')).map((el) => el.id)
+    const ids = Array.from(container.querySelectorAll('.persona-profile')).map((el) => el.id)
     expect(ids).toHaveLength(2)
     expect(ids.every(Boolean)).toBe(true)
     expect(new Set(ids).size).toBe(2)

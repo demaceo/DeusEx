@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import { ChartSkeleton } from '../components/ChartSkeleton'
 import { DocumentProvider } from '../components/DocumentProvider'
 import { ClaimDrawerProvider } from '../components/EvidenceDrawer'
 import {
@@ -136,11 +137,7 @@ export function ChartCatalogPage() {
                         {entry.roundLabel} →
                       </Link>
                     </div>
-                    <Suspense
-                      fallback={
-                        <div className="chart-block chart-block--loading" aria-hidden="true" />
-                      }
-                    >
+                    <Suspense fallback={<ChartSkeleton announce={false} />}>
                       <ChartBlock chart={entry.chart} />
                     </Suspense>
                   </div>

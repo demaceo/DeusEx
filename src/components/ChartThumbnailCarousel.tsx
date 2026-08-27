@@ -2,6 +2,7 @@ import { lazy, Suspense, useState } from 'react'
 import { getDocumentCharts } from '../data/chartCatalog'
 import type { RoundtableDocument } from '../types/document'
 import { ChartModal } from './ChartModal'
+import { ChartSkeleton } from './ChartSkeleton'
 
 // Same code-split boundary as ChartBlock: a document with charts pays for the
 // d3 bundle once, whether it's first reached via this carousel or scrolling
@@ -30,7 +31,7 @@ export function ChartThumbnailCarousel({ document }: ChartThumbnailCarouselProps
       <p className="chart-thumb-carousel__heading">
         {entries.length} chart{entries.length === 1 ? '' : 's'} in this roundtable
       </p>
-      <Suspense fallback={<div className="chart-thumb-carousel__loading" aria-hidden="true" />}>
+      <Suspense fallback={<ChartSkeleton variant="thumb" announce={false} />}>
         <ul className="chart-thumb-carousel__list">
           {entries.map((entry, i) => (
             <ChartThumbnail key={i} chart={entry.chart} onOpen={() => setOpenIndex(i)} />
