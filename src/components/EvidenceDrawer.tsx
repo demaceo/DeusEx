@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { ExternalLink, X } from 'lucide-react'
 import { ClaimDrawerContext } from '../context/ClaimDrawerContext'
+import { useDismissOnBack } from '../hooks/useDismissOnBack'
+import { useDragToDismiss } from '../hooks/useDragToDismiss'
 import type { Claim, Source } from '../types/content'
 
 interface ActiveEvidence {
@@ -63,6 +65,13 @@ function EvidenceDrawer({ active, onClose }: EvidenceDrawerProps) {
   const closeRef = useRef<HTMLButtonElement>(null)
   const drawerRef = useRef<HTMLElement>(null)
 
+  // Back closes the drawer instead of leaving the article; the handle lets a
+  // thumb throw it away without reaching the far corner. At mobile widths the
+  // drawer covers the scrim entirely, so neither the outside tap nor Escape is
+  // available and these are the reader's real exits.
+  useDismissOnBack(active !== null, onClose)
+  const drag = useDragToDismiss(onClose)
+
   useEffect(() => {
     if (!active) return
 
@@ -113,7 +122,16 @@ function EvidenceDrawer({ active, onClose }: EvidenceDrawerProps) {
         aria-labelledby={titleId}
         ref={drawerRef}
         onClick={(e) => e.stopPropagation()}
+        data-dragging={drag.dragging ? 'true' : undefined}
+        style={drag.offset ? { transform: `translateY(${drag.offset}px)` } : undefined}
       >
+        {/* Grab handle. Presentational on desktop (CSS hides it there, where the
+            scrim is exposed and takes an outside click); the real gesture target
+            on mobile, where it is the nearest exit to the reader's thumb. */}
+        <div className="sheet-handle" aria-hidden="true" {...drag.handleProps}>
+          <span className="sheet-handle__grip" />
+        </div>
+
         <header className="evidence-drawer__head">
           <span className="evidence-drawer__kicker">{KIND_LABEL[claim.kind]} · Evidence</span>
           <button
@@ -173,6 +191,13 @@ function EvidenceDrawer({ active, onClose }: EvidenceDrawerProps) {
             No primary source linked yet. This claim is still being checked.
           </p>
         )}
+
+        {/* Full-width exit pinned to the bottom of the sheet, inside the thumb
+            zone. Shown only where the drawer covers the scrim (mobile); the
+            corner button and an outside click cover the wider layouts. */}
+        <button type="button" className="sheet-dismiss" onClick={onClose}>
+          Close and keep reading
+        </button>
       </aside>
     </div>
   )

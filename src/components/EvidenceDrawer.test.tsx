@@ -81,4 +81,43 @@ describe('EvidenceDrawer', () => {
     fireEvent.click(screen.getByRole('button', { name: /close evidence panel/i }))
     expect(trigger).toHaveFocus()
   })
+
+  it('closes on the Back gesture instead of leaving the article', () => {
+    renderCitation()
+    fireEvent.click(screen.getByRole('button', { name: /view evidence/i }))
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+
+    fireEvent.popState(window)
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('closes on the bottom dismiss button', () => {
+    renderCitation()
+    fireEvent.click(screen.getByRole('button', { name: /view evidence/i }))
+
+    fireEvent.click(screen.getByRole('button', { name: /close and keep reading/i }))
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('closes when the handle is dragged past the dismiss threshold', () => {
+    const { container } = renderCitation()
+    fireEvent.click(screen.getByRole('button', { name: /view evidence/i }))
+    const handle = container.querySelector('.sheet-handle')!
+
+    fireEvent.pointerDown(handle, { clientY: 80, button: 0 })
+    fireEvent.pointerMove(handle, { clientY: 240 })
+    fireEvent.pointerUp(handle)
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('stays open when the drag is released short of the threshold', () => {
+    const { container } = renderCitation()
+    fireEvent.click(screen.getByRole('button', { name: /view evidence/i }))
+    const handle = container.querySelector('.sheet-handle')!
+
+    fireEvent.pointerDown(handle, { clientY: 80, button: 0 })
+    fireEvent.pointerMove(handle, { clientY: 120 })
+    fireEvent.pointerUp(handle)
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+  })
 })

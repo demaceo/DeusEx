@@ -796,15 +796,18 @@
 cite {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-style: normal;
   color: var(--accent);
   background: rgba(192, 57, 43, 0.065);
-  padding: 0.08rem 0.32rem;
+  /* ~24px tall. Still a small chip against the prose, but a real target rather
+     than the ~15px it used to compute to. Stays under the 28px body line box,
+     so growing it reflows nothing. */
+  padding: 0.28rem 0.45rem;
   border-radius: 2px;
   margin-left: 0.2rem;
   vertical-align: middle;
-  line-height: 1.2;
+  line-height: 1.35;
   transition: background 0.15s;
   cursor: help;
 }
@@ -1993,6 +1996,23 @@ cite[data-verification='unverified'] {
 /* ─── CLICKABLE CLAIMS (evidence affordance) ──────────────────────── */
 cite[role='button'] {
   cursor: pointer;
+  position: relative;
+}
+
+/* Carries the chip the rest of the way to the 44px minimum without changing
+   what the reader sees. An inline citation can't simply grow: it sits mid
+   sentence and any real height would push the line box around. So the visible
+   chip stays ~24px and an invisible, centered overlay takes the taps.
+   Bounded deliberately at 44px: the overhang past the chip is about 10px per
+   side, which stays inside the body line's half-leading instead of reaching
+   into the glyphs above and below and swallowing their taps. */
+cite[role='button']::before {
+  content: '';
+  position: absolute;
+  inset-inline: -4px;
+  top: 50%;
+  height: 44px;
+  transform: translateY(-50%);
 }
 cite[role='button']:focus-visible,
 .stat-box[role='button']:focus-visible {
@@ -2076,8 +2096,8 @@ cite[role='button']:focus-visible,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--rule);
   background: var(--white);
   color: var(--ink);
@@ -2231,8 +2251,8 @@ cite[role='button']:focus-visible,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--rule);
   background: var(--white);
   color: var(--ink);
@@ -2257,6 +2277,76 @@ cite[role='button']:focus-visible,
     height: 100%;
     max-height: 100%;
     border-radius: 0;
+  }
+}
+
+/* ─── SHEET DISMISS AFFORDANCES (drawer + modal) ──────────────────────
+   Both overlays go edge-to-edge on a phone, which leaves their scrim with no
+   exposed surface to tap and no hardware Escape to press. These two controls are
+   the exits that remain: a grab handle at the top of the sheet, where the thumb
+   already is, and a full-width button pinned to the bottom of it. Both are
+   mobile-only; at wider widths the scrim is exposed and takes an outside click.
+   (Back also closes either overlay, via useDismissOnBack.) */
+.sheet-handle,
+.sheet-dismiss {
+  display: none;
+}
+
+@media (max-width: 580px) {
+  .sheet-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Comfortably past the 48dp floor: this is a drag target, not just a tap. */
+    height: 34px;
+    margin: -0.35rem 0 0.15rem;
+    cursor: grab;
+    /* Claim the vertical gesture so the sheet drags instead of scrolling. */
+    touch-action: none;
+  }
+  .sheet-handle__grip {
+    width: 42px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--rule);
+  }
+
+  .sheet-dismiss {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    /* Clears the iOS home indicator so the button is never half under it. */
+    margin: 1.5rem 0 calc(env(safe-area-inset-bottom) * -1);
+    padding: 0.95rem 1rem calc(0.95rem + env(safe-area-inset-bottom));
+    min-height: 48px;
+    border: none;
+    border-top: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .sheet-dismiss:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: -2px;
+  }
+}
+
+/* The sheet follows the drag live, then settles back if released short of the
+   dismiss threshold. No transition mid-gesture or it would lag the finger. */
+.evidence-drawer:not([data-dragging]),
+.modal:not([data-dragging]) {
+  transition: transform 0.2s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .evidence-drawer:not([data-dragging]),
+  .modal:not([data-dragging]) {
+    transition: none;
   }
 }
 
@@ -3283,6 +3373,47 @@ cite[role='button']:focus-visible::after {
   outline: none;
 }
 
+/* Error row — replaces the transport when the audio fails or stalls. Named
+   failure plus a way out, instead of a bar stuck at 0:00. */
+.masthead-player--error {
+  color: var(--paper);
+  border-color: rgba(211, 84, 0, 0.55);
+}
+.masthead-player__error {
+  flex: 1 1 auto;
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-align: left;
+  color: rgba(245, 240, 232, 0.9);
+}
+.masthead-player__retry {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 40px;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(245, 240, 232, 0.35);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+.masthead-player__retry:hover,
+.masthead-player__retry:focus-visible {
+  border-color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
+  color: var(--masthead-accent-text, var(--masthead-accent, var(--accent)));
+  outline: none;
+}
+
 /* Idle row — the "Listen to this Roundtable" prompt before first play. */
 .masthead-player__idle-label {
   flex: 1 1 auto;
@@ -3317,8 +3448,11 @@ cite[role='button']:focus-visible::after {
   width: 30px;
   height: 30px;
 }
-.masthead[data-collapsed='true'] .masthead-player__rate,
-.masthead[data-collapsed='true'] .masthead-player__cc {
+/* Speed is a convenience and yields its width when the header condenses.
+   Captions deliberately do not: hiding them here used to mean that scrolling
+   away from the top revoked the only control a deaf or hard-of-hearing reader
+   has over the audio. */
+.masthead[data-collapsed='true'] .masthead-player__rate {
   display: none;
 }
 .masthead[data-collapsed='true'] .masthead-player__now {
@@ -3342,11 +3476,21 @@ cite[role='button']:focus-visible::after {
     margin-top: 0.85rem;
   }
   .masthead-player__now {
-    max-width: 7.5rem;
+    max-width: 6rem;
   }
-  .masthead-player__rate,
-  .masthead-player__cc {
+  /* Captions and speed both stay reachable on a phone. The width comes out of
+     the time readout instead: it is aria-hidden decoration, and the scrubber
+     already announces the same position through aria-valuetext. */
+  .masthead-player__time {
     display: none;
+  }
+  .masthead-player__toggle,
+  .masthead-player__cc {
+    width: 40px;
+    height: 40px;
+  }
+  .masthead-player__rate {
+    min-height: 40px;
   }
 }
 
@@ -3364,8 +3508,13 @@ cite[role='button']:focus-visible::after {
 .captions-overlay {
   position: fixed;
   left: 50%;
-  bottom: 1.5rem;
-  bottom: max(1.5rem, env(safe-area-inset-bottom));
+  /* Fallback for engines without env()/max() in calc. */
+  bottom: 5.25rem;
+  /* Parked directly above the FAB band rather than inside it. The overlay is
+     pointer-events:none, so the old overlap never blocked the button, it just
+     hid it: a reader listening with captions on lost sight of the only
+     persistent navigation control on the page. */
+  bottom: calc(var(--fab-inset) + var(--fab-size) + 0.75rem);
   transform: translateX(-50%);
   z-index: 60;
   width: min(90vw, 40rem);
@@ -3397,8 +3546,9 @@ cite[role='button']:focus-visible::after {
 
 @media (max-width: 640px) {
   .captions-overlay {
-    width: min(94vw, 26rem);
-    bottom: max(1rem, env(safe-area-inset-bottom));
+    /* Narrower than the viewport so it clears the FAB horizontally too, not
+       just vertically. The bottom offset stays on the shared FAB geometry. */
+    width: min(88vw, 26rem);
     padding: 0.5rem 0.85rem;
   }
   .captions-overlay__text {
@@ -3415,7 +3565,7 @@ cite[role='button']:focus-visible::after {
 /* ─── DEBATE NAV FAB ──────────────────────────────────────────────── */
 .debate-nav-fab {
   position: fixed;
-  bottom: 1.75rem;
+  bottom: var(--fab-inset);
   right: 1.75rem;
   z-index: 45;
   display: flex;
@@ -3425,8 +3575,8 @@ cite[role='button']:focus-visible::after {
 }
 
 .debate-nav-fab__trigger {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: var(--fab-size);
+  height: var(--fab-size);
   border-radius: 50%;
   background: var(--ink);
   color: var(--paper);
@@ -3504,10 +3654,9 @@ cite[role='button']:focus-visible::after {
        keeps its default bottom-right position — just nudge in from the edge. */
     right: 1rem;
   }
-  .debate-nav-fab__trigger {
-    width: 2.25rem;
-    height: 2.25rem;
-  }
+  /* The trigger no longer shrinks here. It used to drop to 36px on exactly the
+     viewport where it is the only persistent navigation and the only input is a
+     thumb; --fab-size now goes the other way and grows it to 48px. */
 }
 
 /* ─── /charts — the chart catalog ─────────────────────────────────── */

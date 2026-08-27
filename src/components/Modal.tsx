@@ -1,5 +1,7 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 import { X } from 'lucide-react'
+import { useDismissOnBack } from '../hooks/useDismissOnBack'
+import { useDragToDismiss } from '../hooks/useDragToDismiss'
 import { FOCUSABLE } from './EvidenceDrawer'
 
 interface ModalProps {
@@ -21,6 +23,13 @@ interface ModalProps {
 export function Modal({ onClose, children, ariaLabel, ariaLabelledBy, className }: ModalProps) {
   const closeRef = useRef<HTMLButtonElement>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
+
+  // Below 480px the dialog goes edge-to-edge and the scrim it would otherwise be
+  // dismissed against is fully covered, so Back and the drag handle become the
+  // reader's only exits besides the corner button. This component is mounted only
+  // while open, so the hook is unconditionally active.
+  useDismissOnBack(true, onClose)
+  const drag = useDragToDismiss(onClose)
 
   // Runs once per mount: capture the trigger for focus restoration, lock
   // background scroll, and move focus into the dialog. Deliberately excludes
@@ -72,7 +81,13 @@ export function Modal({ onClose, children, ariaLabel, ariaLabelledBy, className 
         aria-labelledby={ariaLabelledBy}
         ref={dialogRef}
         onClick={(e) => e.stopPropagation()}
+        data-dragging={drag.dragging ? 'true' : undefined}
+        style={drag.offset ? { transform: `translateY(${drag.offset}px)` } : undefined}
       >
+        <div className="sheet-handle" aria-hidden="true" {...drag.handleProps}>
+          <span className="sheet-handle__grip" />
+        </div>
+
         <button
           type="button"
           className="modal__close"
@@ -83,6 +98,13 @@ export function Modal({ onClose, children, ariaLabel, ariaLabelledBy, className 
           <X size={18} strokeWidth={2} aria-hidden="true" />
         </button>
         {children}
+
+        {/* "Done" rather than a second "Close": it matches the platform wording
+            for dismissing a full-screen viewer, and keeps this control
+            distinguishable from the corner button for screen readers. */}
+        <button type="button" className="sheet-dismiss" onClick={onClose}>
+          Done
+        </button>
       </div>
     </div>
   )
