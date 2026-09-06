@@ -1,0 +1,149 @@
+{
+  "slug": "the-ground-it-comes-from",
+  "turns": [
+    {
+      "speaker": "host",
+      "text": "Welcome back to Reckoning, for the last time in this series. This conversation starts before the electricity, before the server, before the chip — at the mine, the refinery, the hand doing the separating, the lung filling with dust. The intelligence that arrives so cleanly through your browser was built from the earth up, and today we're following the wire back to its source to ask what got left behind. Anchoring the conversation is someone who lives where the minerals come from and speaks first-hand for the communities whose water, soil, and labor build these machines, and who see the least of what they produce. It's the oldest question in environmental justice, wearing a new face — who bears the cost, and who gets to use what it built?"
+    },
+    {
+      "speaker": "host",
+      "text": "First, by the numbers. The Democratic Republic of the Congo supplies roughly 70% of the world's mined cobalt, according to the USGS. It takes something like 2 million liters of water to produce one tonne of lithium from brine — often in arid Indigenous regions. And the world generated 62 million tonnes of electronic waste in 2022 — only about 22% of it formally recycled, according to the UN in 2024."
+    },
+    {
+      "speaker": "host",
+      "text": "Let's start with her. Our Land Defender — a community organizer in an extraction zone."
+    },
+    {
+      "speaker": "land-defender",
+      "text": "You talk about the cloud like it floats. It does not. It begins in a hole in the ground, near where people live. The Democratic Republic of the Congo supplies roughly 70% of the world's cobalt, the metal in the batteries that back up your data centers and power your devices. A large share of it is dug by hand, in unregulated artisanal pits. UNICEF estimated some 40,000 children were working in mines across the southern DRC. Those are not abstractions to the families who live there. They are the first link in your supply chain."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Everyday Person is with us again — the retired schoolteacher taking all this in for the first time."
+    },
+    {
+      "speaker": "everyday-person",
+      "text": "I think most of us just never picture this. The screen is so clean. I had no idea a child with a shovel might be standing at the far end of it. Is that really still happening, or is it an old story?"
+    },
+    {
+      "speaker": "host",
+      "text": "Our Labor Advocate — a labor researcher and organizer."
+    },
+    {
+      "speaker": "labor-advocate",
+      "text": "It's current — and it's the same pattern we traced in the data-labor parts of this series: the value extracted in the Global South, the profit captured in the Global North. Lithium's the other half of the story. Pulling it from brine in the Atacama and similar basins can take on the order of two million liters of water per tonne — in some of the driest inhabited places on earth, where that water belongs to Indigenous communities and the ecosystems they depend on."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Tech Optimist — a senior engineer at a major AI lab."
+    },
+    {
+      "speaker": "tech-optimist",
+      "text": "I won't pretend any of that is acceptable, and I won't pretend it's unique to AI either — phones, electric cars, the whole energy transition pull on the same mines. What I'll add is that it's improvable: traceability schemes, audited supply chains, direct-lithium-extraction methods that use a fraction of the water, battery chemistries that cut cobalt out entirely — all of that's real, and moving. The demand is the problem, and it's also the lever — it's large enough to force the supply chain to change."
+    },
+    {
+      "speaker": "host",
+      "text": "Here's the shape of it: the Democratic Republic of the Congo — a single country at the base of the global battery supply chain — accounts for roughly 70% of the world's mined cobalt, with USGS estimates ranging from 68% to 74% year to year. Now, the second chokepoint in this chain: the refinery."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Economist — a political economist."
+    },
+    {
+      "speaker": "economist",
+      "text": "Mining's only the first chokepoint. The second is processing, and it's even more concentrated. China refines roughly 90% of the world's rare-earth elements — the materials in the high-performance magnets and components inside this hardware. This is the mirror image of the chip chokepoint from Part VIII. Power over AI isn't only about who designs the model — it's about who controls the dirty, toxic, low-margin middle of the supply chain that everyone else would rather not host."
+    },
+    {
+      "speaker": "land-defender",
+      "text": "And ask why one country ended up with 90% of it. It is not only cheaper labor. It is a willingness to absorb the poison. Rare-earth refining produces acidic, sometimes radioactive tailings. The places that host it — and the places that host the mines feeding it — carry contamination in their water and soil for generations. \"Cheap processing\" is a price someone pays. It is just not the person buying the phone."
+    },
+    {
+      "speaker": "tech-optimist",
+      "text": "That concentration is exactly why a dozen governments are now funding alternatives — new refining capacity with modern environmental controls, and a hard push into recycling so the toxicity's contained instead of dumped. It's early and expensive, but the strategic and environmental incentives finally point the same way. A more distributed, cleaner supply chain is buildable — it's simply never been the cheapest option, so no one built it."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Skeptic — a veteran technology reporter."
+    },
+    {
+      "speaker": "skeptic",
+      "text": "Let me temper both the alarm and the optimism. The alarm: AI's a small slice of total demand for most of these minerals — batteries and the broader electrification dwarf it — so blaming the data center alone is too neat. The optimism: I've watched 'clean, distributed supply chain, real soon' get promised for two decades. The honest position is that the harm's real and current, the fixes are real but slow, and the gap between them is measured in ruined watersheds."
+    },
+    {
+      "speaker": "host",
+      "text": "China accounts for roughly 90% of global rare-earth processing, versus about 60% of mining — refining is the concentrated, toxic middle of the hardware supply chain. Now follow the hardware to the end of its life, because the cycle closes badly too."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Environmentalist — a climate researcher and policy advocate."
+    },
+    {
+      "speaker": "environmentalist",
+      "text": "The world generated about 62 million tonnes of electronic waste in 2022, and only around 22% of it was formally collected and recycled. The rest is landfilled, incinerated, or shipped to informal scrapyards in the Global South, where people — often children again — burn circuit boards over open fires to recover traces of metal, breathing the fumes. The same minerals we fought to extract are then thrown away faster than we reclaim them. And AI's hardware refresh cycle, all those rapidly obsolete accelerators, only speeds the churn."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Policy Realist — a former regulatory attorney."
+    },
+    {
+      "speaker": "policy-realist",
+      "text": "There's law reaching for this, and it's one of the more hopeful fronts. Extended-producer-responsibility rules make manufacturers pay for end-of-life handling. The EU's right-to-repair and ecodesign rules attack the disposability directly. The Basel Convention restricts shipping hazardous e-waste across borders to dump on poorer countries. None of it's sufficient yet, but the direction — make the producer own the whole lifecycle — is correct."
+    },
+    {
+      "speaker": "skeptic",
+      "text": "And yet the recycling number's barely moved in years, while the waste pile grows. I'm not against the laws — I'm against mistaking a regulation for an outcome. Until recycling a server is cheaper than mining a fresh one, the economics will keep choosing the mine and the landfill. That's the lever that actually matters, and it's mostly still pointing the wrong way."
+    },
+    {
+      "speaker": "everyday-person",
+      "text": "I have a drawer full of old phones and chargers right now. I always assumed someone, somewhere, was responsibly recycling the ones I did hand in. It's unsettling to learn that \"recycled\" might mean a child breathing smoke on the other side of the world."
+    },
+    {
+      "speaker": "host",
+      "text": "Of the 62 million tonnes of e-waste generated in 2022, only about 13.8 million tonnes — roughly 22% — was formally collected and recycled. So how do we close this loop?"
+    },
+    {
+      "speaker": "host",
+      "text": "Here's the incentive problem underneath all of it. The race: every buyer wants the cheapest hardware and the newest capability, and every producer wants the cheapest inputs and the fastest refresh cycle. Mining virgin material and discarding old devices is cheaper, today, than recovering and reusing them — so the market races toward extraction and disposal. The trap: no single manufacturer can unilaterally absorb the cost of clean, traceable, recycled supply chains without being undercut by one that doesn't. The damage lands on distant communities and future device-owners who aren't at the negotiating table, so it never shows up on the price tag. The way out: make the producer own the full lifecycle — extended producer responsibility, right-to-repair and longevity mandates, recycled-content requirements, and binding traceability — so the cost of the harm is priced into the product instead of exported to the mine and the scrapyard."
+    },
+    {
+      "speaker": "economist",
+      "text": "The Skeptic put the real problem precisely: the loop stays open because virgin extraction is underpriced. It doesn't pay for the poisoned watershed or the child in the pit — those are externalities, dumped on people with no claim on the boardroom. A circular economy isn't mainly a technology problem. It's a pricing problem. Put the true cost of extraction and disposal back onto the product, and recycling and longevity suddenly become the cheap option they should already be."
+    },
+    {
+      "speaker": "tech-optimist",
+      "text": "Agreed — and the technical pieces are ready to meet a corrected price. Urban mining — recovering metals from discarded electronics — already yields far higher concentrations of some metals per tonne than ore does. Hardware that lasts longer, is designed to be repaired, and is built from recycled feedstock is entirely feasible. What's been missing isn't the engineering — it's an incentive structure that rewards keeping a material in use instead of pulling a fresh one from someone else's ground."
+    },
+    {
+      "speaker": "land-defender",
+      "text": "Then let me say what the people upstream are actually asking for, because it is not pity. It is a seat and a share. Free, prior, and informed consent before a mine opens on our land. A real cut of the value, not a road and a promise. Cleanup that is funded before the first shovel, not after the company leaves. We are not against the future being built. We are against it being built out of us, for someone else, while we are told to be grateful for the jobs."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Systems Humanist — a technology ethicist and coordination researcher."
+    },
+    {
+      "speaker": "systems-humanist",
+      "text": "That's the whole series in one demand. Every part has circled the same structure: a benefit that concentrates, a cost that disperses onto people without a vote, and a market that won't price what it can't see. Consent, a share, and accountability that scales with the harm — it's the same answer we reached for energy, for labor, for truth, for authorship. The ground it comes from is just the most literal version of the question: who pays, who decides, and who's allowed to say no."
+    },
+    {
+      "speaker": "host",
+      "text": "Global e-waste rose from about 44 million tonnes in 2014 to 62 million in 2022, and is projected to reach roughly 82 million tonnes by 2030 — far faster than recycling is scaling."
+    },
+    {
+      "speaker": "host",
+      "text": "So where does that leave us? The machine that thinks is made of the earth and of other people's labor, and the bill for both is paid a long way from the screen. The Land Defender's right that the cloud begins in a pit and ends in a scrapyard, with real communities at both ends. The Economist's right that the loop stays open because extraction is underpriced and its harms are externalized. The Tech Optimist's right that cleaner extraction, longer-lived hardware, and urban mining are buildable. And the Skeptic's right that none of it happens until recovering a material costs less than tearing a fresh one out of the ground."
+    },
+    {
+      "speaker": "host",
+      "text": "The repair is the same one every part of this series has arrived at, made physical: price the true cost, make the producer own the full lifecycle, and give the people whose land and bodies sit at the base of the supply chain consent, a share, and the power to refuse. A circular, accountable hardware economy isn't a fantasy — it's simply the more expensive, fairer architecture: chosen, or not."
+    },
+    {
+      "speaker": "host",
+      "text": "And so the reckoning comes to rest on solid ground. Across eleven parts, the costs proved real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged, the ownership concentrated, the culture taken, the prejudice inherited, and the footprint borne by those who chose none of it. The technology will keep advancing. Whether it's built out of people and the planet, or with them, is what it's always been: a decision — and the decision is still ours to make."
+    },
+    {
+      "speaker": "host",
+      "text": "That's our series. Thanks for listening all the way through, from the first part to this one. This has been Reckoning."
+    }
+  ]
+}
