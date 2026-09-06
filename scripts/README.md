@@ -60,6 +60,20 @@ npm run podcast:generate -- --id=part-i
 Then listen to `public/audio/part-i.mp3`, and commit the generated
 `public/audio/*.mp3`, `*.transcript.json`, and `episodes.json`.
 
+### Synthesizing an already-reviewed script
+
+If `public/audio/<id>.script.json` already exists and has been signed off (written
+by a prior `--dry-run`, or authored directly), skip the Claude rewrite entirely:
+
+```sh
+npm run podcast:generate -- --id=part-iii --from-script
+```
+
+This reuses that script verbatim for synthesis, no `ANTHROPIC_API_KEY` needed, and
+guarantees the shipped audio matches exactly the wording that was reviewed (a plain
+`--dry-run` followed by a plain full run re-rolls the Claude rewrite and can produce
+different wording than what was reviewed).
+
 ## Notes
 
 - Turn timing in the transcript comes from ElevenLabs' character alignment;

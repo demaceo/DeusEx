@@ -10,9 +10,13 @@
  *
  *   node --import tsx scripts/generate-podcast.ts --id=part-i --dry-run
  *   node --import tsx scripts/generate-podcast.ts --id=part-i
+ *   node --import tsx scripts/generate-podcast.ts --id=part-i --from-script
  *
  * --dry-run stops after the Claude rewrite and writes only the reviewable script
  * JSON (no ElevenLabs spend), so the adapted wording can be signed off first.
+ * --from-script skips flattening + the Claude rewrite entirely and synthesizes
+ * the already-reviewed public/audio/<id>.script.json as-is: no ANTHROPIC_API_KEY
+ * needed, and the audio matches exactly the wording that was signed off.
  */
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
@@ -73,14 +77,16 @@ interface ManifestEntry {
 }
 type Manifest = Record<string, ManifestEntry>
 
-function parseArgs(argv: string[]): { id?: string; dryRun: boolean } {
+function parseArgs(argv: string[]): { id?: string; dryRun: boolean; fromScript: boolean } {
   let id: string | undefined
   let dryRun = false
+  let fromScript = false
   for (const arg of argv) {
     if (arg === '--dry-run') dryRun = true
+    else if (arg === '--from-script') fromScript = true
     else if (arg.startsWith('--id=')) id = arg.slice('--id='.length)
   }
-  return { id, dryRun }
+  return { id, dryRun, fromScript }
 }
 
 function voiceFor(speaker: Turn['speaker']) {
@@ -101,9 +107,9 @@ async function readManifest(): Promise<Manifest> {
 }
 
 async function main() {
-  const { id, dryRun } = parseArgs(process.argv.slice(2))
+  const { id, dryRun, fromScript } = parseArgs(process.argv.slice(2))
   if (!id) {
-    console.error('Usage: generate-podcast.ts --id=<id> [--dry-run]')
+    console.error('Usage: generate-podcast.ts --id=<id> [--dry-run | --from-script]')
     process.exit(1)
   }
 
@@ -115,24 +121,37 @@ async function main() {
 
   await mkdir(AUDIO_DIR, { recursive: true })
 
-  console.log(`[1/4] Flattening ${doc.id} (${doc.slug})…`)
-  const flat = flattenDocument(doc)
-  console.log(`      ${flat.length} source turns.`)
-
-  console.log('[2/4] Adapting to spoken dialogue with Claude (guardrails on)…')
-  const script = await adaptScript(flat)
-  console.log(`      ${script.length} spoken turns.`)
-
-  // Always write the reviewable script for editorial sign-off.
   const scriptPath = resolve(AUDIO_DIR, `${doc.id}.script.json`)
-  await writeFile(scriptPath, JSON.stringify({ slug: doc.slug, turns: script }, null, 2))
-  console.log(`      Script written to ${scriptPath}`)
+  let script: Turn[]
 
-  if (dryRun) {
-    console.log(
-      '[dry-run] Stopping before synthesis. Review the script, then re-run without --dry-run.',
-    )
-    return
+  if (fromScript) {
+    if (!existsSync(scriptPath)) {
+      console.error(`--from-script given but ${scriptPath} does not exist. Run without it first.`)
+      process.exit(1)
+    }
+    console.log(`[1/4] Reusing reviewed script at ${scriptPath} (no flatten, no Claude call)…`)
+    const saved = JSON.parse(await readFile(scriptPath, 'utf8')) as { turns: Turn[] }
+    script = saved.turns
+    console.log(`      ${script.length} spoken turns.`)
+  } else {
+    console.log(`[1/4] Flattening ${doc.id} (${doc.slug})…`)
+    const flat = flattenDocument(doc)
+    console.log(`      ${flat.length} source turns.`)
+
+    console.log('[2/4] Adapting to spoken dialogue with Claude (guardrails on)…')
+    script = await adaptScript(flat)
+    console.log(`      ${script.length} spoken turns.`)
+
+    // Always write the reviewable script for editorial sign-off.
+    await writeFile(scriptPath, JSON.stringify({ slug: doc.slug, turns: script }, null, 2))
+    console.log(`      Script written to ${scriptPath}`)
+
+    if (dryRun) {
+      console.log(
+        '[dry-run] Stopping before synthesis. Review the script, then re-run without --dry-run.',
+      )
+      return
+    }
   }
 
   console.log('[3/4] Synthesizing with ElevenLabs (cast voices)…')
