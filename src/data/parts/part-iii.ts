@@ -394,7 +394,13 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I want to engage with this seriously because the healthcare case is genuinely compelling, but I also want to be clear-eyed about distribution. When AI cuts $700 million from drug development costs, does that reduce the price of the drug for patients, or does it increase the profit margin for the manufacturer? The technology's benefit to human health depends entirely on who captures the efficiency gains. A cheaper-to-develop drug that still costs $100,000 per year in treatment is not a story about democratizing medicine.",
+                      'I want to engage with this seriously because the healthcare case is genuinely compelling, but I also want to be clear-eyed about distribution. When generative AI unlocks $60 billion to $110 billion a year in value across the pharmaceutical industry,',
+                  },
+                  { type: 'cite', claimId: 'c-iii-promptbuddy-700m' },
+                  {
+                    type: 'text',
+                    value:
+                      " does that reduce the price of the drug for patients, or does it increase the profit margin for the manufacturer? The technology's benefit to human health depends entirely on who captures the efficiency gains. A cheaper-to-develop drug that still costs $100,000 per year in treatment is not a story about democratizing medicine.",
                   },
                 ],
                 [
