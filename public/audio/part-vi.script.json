@@ -1,0 +1,133 @@
+{
+  "slug": "the-tail-risk",
+  "turns": [
+    {
+      "speaker": "host",
+      "text": "Welcome to Reckoning. Six parts into this series, we've argued about costs, responses, benefits, and the race. Today, we take up the question this conversation keeps circling back to. Here's the thing about the questions most worth arguing over: we have no precedent for them. Every institution we've built, every intuition we trust, every risk model we run, was shaped by a history of surviving whatever came before. Tonight's conversation is about the one category of failure that sits outside that history altogether: the downside can't be undone, and the evidence, if it ever arrives, arrives only once. Two new voices sharpen that disagreement this time. The Accelerationist believes the real danger is moving too slowly — every year of caution is a year of cures forgone. The Safety Researcher keeps asking what it looks like if we're wrong. Between them sits the oldest question in ethics under uncertainty: when a mistake can't be undone, how much caution is enough, and who decides?"
+    },
+    {
+      "speaker": "host",
+      "text": "Let's start with the numbers. In a 2023 survey, 2,778 AI researchers were asked about exactly this. The median estimate they gave for an extremely bad long-run outcome — something on the order of human extinction — was 5%. That same survey put the year we'd reach a 50% chance of high-level machine intelligence at 2047, 13 years earlier than what the same survey found the year before."
+    },
+    {
+      "speaker": "host",
+      "text": "Let's bring in the panel. First, our Systems Humanist — a technology ethicist and coordination researcher — who's going to set the terms for this whole conversation."
+    },
+    {
+      "speaker": "systems-humanist",
+      "text": "Let's define the term precisely, because it gets misused constantly. A tail risk isn't a prediction that something will happen — it's a low-probability, high-consequence event sitting in the tail of a distribution. What makes it matter isn't the likelihood on its own, it's the likelihood times the stakes, and, crucially, whether the outcome is reversible. We buy insurance and wear seatbelts for exactly this shape of risk."
+    },
+    {
+      "speaker": "host",
+      "text": "And here to ask what most of us are actually thinking, our Everyday Person — a retired schoolteacher, encountering all this for the first time."
+    },
+    {
+      "speaker": "everyday-person",
+      "text": "When people say AI could end the world, I'll be honest, I tune right out. It sounds like science fiction. So tell me plainly — is this a fringe idea, or do serious people actually believe it?"
+    },
+    {
+      "speaker": "host",
+      "text": "For an answer, here's our Safety Researcher — an AI alignment researcher who spends his working life on exactly this kind of failure."
+    },
+    {
+      "speaker": "safety-researcher",
+      "text": "It's not fringe. That's the uncomfortable part. When thousands of published AI researchers were surveyed in 2023, the median estimate for an extremely bad outcome — on the order of human extinction — was around 5%. Nearly half of respondents in a closely related survey put it at 10% or higher. These aren't activists. They're the people building the systems. You don't have to share their estimate to notice that a 5% chance of an irreversible catastrophe isn't a number a sane society just shrugs off."
+    },
+    {
+      "speaker": "host",
+      "text": "And, right on cue, our Skeptic — a veteran technology reporter who's covered three tech bubbles and trusts no headline on sight."
+    },
+    {
+      "speaker": "skeptic",
+      "text": "I want to put a thumb on the scale here — against the caution, for once. People are notoriously terrible at estimating probabilities for events with no base rate. \"5%\" sounds rigorous, but it's a vibe wearing a number's clothing. Ask the same people again next year, you'll get a different figure. I take the survey seriously as evidence that experts are worried. I don't take it seriously as a measurement of actual risk — because no such measurement exists."
+    },
+    {
+      "speaker": "host",
+      "text": "So — how many researchers actually take the tail seriously? In the 2022 Expert Survey on Progress in AI, 48% of respondents gave at least a 10% chance to an extremely bad outcome from advanced AI. Worth repeating: that's a distribution of opinion, not a measurement of risk."
+    },
+    {
+      "speaker": "host",
+      "text": "Now, the case for speed. Here's our Accelerationist — a founder and outspoken e/acc advocate."
+    },
+    {
+      "speaker": "accelerationist",
+      "text": "Here's what the safety framing leaves out: the cost of delay is real, large, and invisible. Every year we slow down is a year of drugs not discovered, diagnoses missed, materials not invented. Part III of this series covered AlphaFold and the medical breakthroughs — those came from racing forward, not from a precautionary pause. The bodies on the side of caution are real too — they're just statistical, so nobody counts them."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Tech Optimist — a senior engineer at a major AI lab — picks up the thread."
+    },
+    {
+      "speaker": "tech-optimist",
+      "text": "I'm more cautious than the Accelerationist, but the underlying point about capability is just true. The compute used to train frontier models has roughly doubled every six months for over a decade. That curve is why timelines keep getting shorter — and it's also why \"just pause\" is harder than it sounds. The capability gains are coupled to the same scaling that produces the benefits. You can't cleanly keep one and stop the other."
+    },
+    {
+      "speaker": "accelerationist",
+      "text": "And notice the asymmetry in how risk gets treated. A speculative catastrophe gets a respectful hearing and an international summit. A concrete delay — a cancer drug that arrives in 2032 instead of 2028 — gets nothing, because it doesn't have a face. I'm not saying ignore safety. I'm saying weigh both tails. There's a tail where we move too slowly, and the people who could've been saved aren't."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Policy Realist — a former regulatory attorney."
+    },
+    {
+      "speaker": "policy-realist",
+      "text": "That's a fair challenge, and the honest answer is that good policy has to price both tails. But there's a difference the Accelerationist glosses over: a delayed drug is a recoverable loss — we get it later. An irreversible catastrophe isn't recoverable at all. When one side of the ledger reads \"slower\" and the other reads \"permanent,\" precaution isn't irrational. It's simply how you treat an asymmetric, one-way risk."
+    },
+    {
+      "speaker": "host",
+      "text": "So, what does that actually look like? Training compute for frontier models has grown by roughly four to five times a year — that's a doubling about every six months. Picture that on a log scale: order of magnitude of training FLOP, across a handful of representative systems."
+    },
+    {
+      "speaker": "host",
+      "text": "So that's the case for speed. Now, the case for caution."
+    },
+    {
+      "speaker": "safety-researcher",
+      "text": "The strongest argument for caution isn't a movie plot. It's that we're deploying systems we can't fully interpret, faster than we can understand them, and the timelines keep compressing. In the 2023 survey, the aggregate forecast for a 50% chance of high-level machine intelligence jumped to 2047 — thirteen years earlier than the same researchers said just one year before. When the people closest to the work keep revising their timelines toward sooner, that's data about our own uncertainty. And uncertainty cuts toward caution, not away from it."
+    },
+    {
+      "speaker": "safety-researcher",
+      "text": "And there's this too. In 2023, hundreds of scientists and lab leaders — including Turing Award winners and the heads of the major labs — signed a single sentence: that mitigating the risk of extinction from AI should be a global priority alongside pandemics and nuclear war. You can think they're wrong. But you can't call it a fringe view when the field's most cited researchers, and the CEOs racing to build the thing, put their names to it."
+    },
+    {
+      "speaker": "accelerationist",
+      "text": "I'll note the obvious conflict of interest, since no one else will. A statement that 'this technology is so powerful it could end the world' is also the greatest marketing copy ever written for a product — and a moat dug by incumbents who'd love regulation that only they can afford. Sincere fear and convenient fear look identical from the outside."
+    },
+    {
+      "speaker": "systems-humanist",
+      "text": "Both things can be true. The incentive to overstate risk for regulatory capture is real, and so is the underlying hazard. The way out of that trap isn't picking a side on motives. It's building independent capacity to evaluate the systems, so we don't have to trust the labs' framing in either direction. The nuclear field didn't run on the goodwill of weapons states. It ran on inspectors."
+    },
+    {
+      "speaker": "host",
+      "text": "So — when will machines reach human-level ability? The year researchers collectively assign a 50% chance of high-level machine intelligence has moved sharply earlier: from 2061 in the 2016 survey, to 2047 in 2023."
+    },
+    {
+      "speaker": "host",
+      "text": "Round four: what does reasonable precaution actually look like?"
+    },
+    {
+      "speaker": "everyday-person",
+      "text": "I follow both of you, and I'm stuck. One says hurry, people are dying for lack of progress. The other says slow down, we might not get a second chance. They both sound right to me. So what does a normal person actually want here?"
+    },
+    {
+      "speaker": "systems-humanist",
+      "text": "What you want is the boring middle that neither extreme is selling: proportional precaution. Keep developing the medicine and the materials. But also build the things that cost almost nothing in speed and buy a lot of safety — evaluations before deployment, the ability to shut a system down, independent auditors, incident reporting. Most researchers already want this. In the 2023 survey, around 70% said AI safety research should be prioritized more than it currently is. That's not a doom cult. That's the field asking for a seatbelt."
+    },
+    {
+      "speaker": "skeptic",
+      "text": "I can live with that framing — and I'll say why it persuades me where the doom talk didn't. Evaluations, shutdown switches, audits: good ideas even if the probability of catastrophe is basically zero, because they also catch the boring failures we already know happen. A precaution that pays off in every scenario is just competent engineering. That's a very different thing from betting policy on a number nobody can defend."
+    },
+    {
+      "speaker": "accelerationist",
+      "text": "If the deal is 'keep shipping, add real evaluations and an off-switch, and don't let incumbents weaponize safety into a licensing moat' — then I'm in. My fight was never against safety. It was against using a speculative tail to justify handing a few companies a monopoly on the future. Cheap, universal safeguards, I can defend. Permission slips for progress, I can't."
+    },
+    {
+      "speaker": "host",
+      "text": "Should AI safety be prioritized more? In the 2023 Expert Survey on Progress in AI, about 70% of respondents said yes: society should prioritize AI safety research more than it currently does."
+    },
+    {
+      "speaker": "host",
+      "text": "So where does that leave us? The tail risk debate isn't, at its core, a disagreement about facts. It's a disagreement about how to act under deep uncertainty. The Accelerationist is right that delay has real, uncounted costs, and right to be suspicious of fear that conveniently favors incumbents. The Safety Researcher is right that an irreversible loss is categorically different from a recoverable one, and that the field's own experts aren't calm about this. The resolution both of them could live with isn't a number on the apocalypse. It's a portfolio of precautions that look sensible across the whole range of estimates: pre-deployment evaluations, the ability to halt a system, independent audits, incident reporting, measures that cost little in speed and pay off whether the true risk is 0.1% or 10%. When a safeguard is worth taking at almost any probability, you don't need to win the argument about the probability. And that's the quiet thread running through all six parts. The harms are real, the responses partial, the benefits genuine, the race relentless, the truth contested, and now, the stakes possibly irreversible. None of it resolves into certainty. What it resolves into is a discipline: act on the asymmetries you can see, build the capacity to course-correct, and don't bet the things you can't get back on the confidence of any single forecast. Thanks to our panel, and thank you for listening. This has been Reckoning."
+    }
+  ]
+}

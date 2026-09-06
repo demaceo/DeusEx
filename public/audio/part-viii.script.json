@@ -1,0 +1,145 @@
+{
+  "slug": "whose-intelligence",
+  "turns": [
+    {
+      "speaker": "host",
+      "text": "Welcome back to Reckoning. Every transformative technology ends up a monopoly, or close to one — steam, oil, steel, bandwidth — all consolidated before anyone built the institutions to govern them. Intelligence now feeds into every other decision we make, so today we're asking the question that came too late for all of those: who owns this, and what happens to the rest of us? Leading this round is our Economist, tracking compute, capital, and data flows. Her argument is the spine of the whole episode — the deciding question isn't what AI can do, it's who can afford to make it do anything. The risk isn't a rogue machine. It's older and far more familiar: a technology powerful enough to reshape every economy ends up owned by a very few people, and stays that way."
+    },
+    {
+      "speaker": "host",
+      "text": "Let's start with the numbers. A single company, TSMC, manufactures roughly 90% of the world's most advanced chips, according to industry estimates. US private AI investment hit $67 billion in 2023, per the Stanford AI Index. And training Google's Gemini Ultra is estimated to have cost about $191 million in compute alone."
+    },
+    {
+      "speaker": "host",
+      "text": "And here to make the case is our Economist — a political economist whose whole focus is following the compute, the capital, and the power."
+    },
+    {
+      "speaker": "economist",
+      "text": "Let's start where the power actually sits, because it's not where people look. Everyone wants to argue about the models. The leverage is in the supply chain underneath them. The most advanced chips that train frontier AI are manufactured, in practice, by one company in one country — TSMC in Taiwan makes on the order of 90% of the world's leading-edge semiconductors. The designs come from essentially one firm, Nvidia. The lithography machines that make any of it possible come from exactly one firm, ASML. That's not a market. That's a series of chokepoints."
+    },
+    {
+      "speaker": "host",
+      "text": "Let's bring in someone hearing all this the way most of us would — a retired schoolteacher new to the subject. Call her our Everyday Person."
+    },
+    {
+      "speaker": "everyday-person",
+      "text": "I genuinely didn't know any of that. I assumed something this important was made all over the place, by lots of companies. Now, help me understand — you're telling me the whole thing runs through a couple of factories?"
+    },
+    {
+      "speaker": "host",
+      "text": "Our Tech Optimist — a senior engineer at a major AI lab — sees it a little differently."
+    },
+    {
+      "speaker": "tech-optimist",
+      "text": "A few extraordinary ones, yes — because making a leading-edge chip is arguably the hardest thing humans manufacture. That concentration reflects genuine difficulty, not just market power. But I'll grant the Economist her real point: a supply chain this narrow is fragile, and fragility plus strategic importance is exactly what invites both disruption and political control."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Skeptic — a veteran technology reporter who's covered three tech bubbles — isn't ready to call anything permanent."
+    },
+    {
+      "speaker": "skeptic",
+      "text": "Before we declare it permanent — concentration like this has a history of cracking. Memory chips, solar panels, displays: all were once choke-pointed, and all of them diffused eventually. I'd bet money the same pressure's already building here, with the US, China, and the EU all pouring subsidies into domestic fabs. The chokepoint's real today. Whether it holds for a decade is a much weaker claim than the dramatic version wants you to believe."
+    },
+    {
+      "speaker": "host",
+      "text": "One company, most of the advanced chips: industry estimates put TSMC's share of the world's most advanced chip manufacturing at roughly 90%, the physical bottleneck sitting underneath all of frontier AI."
+    },
+    {
+      "speaker": "host",
+      "text": "That tension — cost versus diffusion — is where the Economist goes next."
+    },
+    {
+      "speaker": "economist",
+      "text": "The second concentrating force is cost. Training a frontier model has gone from a graduate-student budget to a sovereign-wealth one. The Stanford AI Index estimated the compute to train GPT-4 at around $78 million, and Gemini Ultra at roughly $191 million. And that's just the final training run — not the research, the failed runs, the talent, or the data. When the entry ticket is hundreds of millions of dollars, the set of organizations that can even sit at the frontier is, by definition, tiny."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Accelerationist — a founder and e/acc advocate — thinks that framing undersells how fast things get cheap."
+    },
+    {
+      "speaker": "accelerationist",
+      "text": "I'm going to push back on that framing. Sure, costs at the frontier are high — but the cost of any given level of capability collapses every year. What cost $191 million to train becomes a cheap open model eighteen months later. The frontier's expensive; the diffusion behind it is breathtakingly cheap. Fixate only on the frontier price tag and you get a concentration story while missing the democratization happening right behind it."
+    },
+    {
+      "speaker": "economist",
+      "text": "That's the most important disagreement in the whole field, and it's genuinely unresolved. You're right that capability diffuses. But the frontier keeps moving, and whoever holds it captures the highest-margin work, sets the standards, and earns the returns that fund the next frontier. Cheap last-generation models are real — and so is a flywheel where the same few players keep paying for the next ticket, because they're the only ones who can."
+    },
+    {
+      "speaker": "tech-optimist",
+      "text": "Both can hold, honestly. Open-weight models — Llama, Mistral, and others — have genuinely put strong capability in the hands of startups, researchers, and governments that could never train from scratch. The base layer is more open than the doom narrative admits. The real question is whether the frontier layer stays a private club, and on that one, I'm less sure than I used to be."
+    },
+    {
+      "speaker": "host",
+      "text": "The rising price of a frontier model: the estimated compute cost of the final training run has climbed into the hundreds of millions — GPT-4 at about $78 million, Gemini Ultra at roughly $191 million."
+    },
+    {
+      "speaker": "host",
+      "text": "Follow that money far enough, and the Economist says it stops being abstract."
+    },
+    {
+      "speaker": "economist",
+      "text": "Now follow the money geographically. In 2023, private AI investment was overwhelmingly concentrated in the United States — about $67 billion — with China a distant second near $8 billion, and the United Kingdom third, under $4 billion. Most of the planet doesn't appear on this chart at all. The Global Majority supplies the data, the labor, and increasingly the energy and water we documented back in Part I. But the capital, the models, and the returns accrue somewhere else."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Labor Advocate — a labor researcher and organizer — hears something familiar in that."
+    },
+    {
+      "speaker": "labor-advocate",
+      "text": "This is the thread back to everything we said about labor. The data annotators in Nairobi, the content moderators in Manila, the cobalt, the cooling water — these are all real inputs from the Global South. What comes back is a subscription product priced for the Global North. It's an old pattern wearing a new technology: the value gets extracted in one place and captured in another."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Systems Humanist — a technology ethicist who studies coordination problems — zooms out from there."
+    },
+    {
+      "speaker": "systems-humanist",
+      "text": "And this is where concentration stops being an economic curiosity and becomes a governance problem. When a technology that can reshape every economy is owned by a handful of firms in a handful of countries, the rest of the world's left choosing between dependence and exclusion. That's precisely the dynamic — power without matching accountability — that Part IV called one of the two bad attractors. Concentrated capability is exactly how you slide toward it."
+    },
+    {
+      "speaker": "skeptic",
+      "text": "I'll add the necessary caution to my own side's story here: investment concentration isn't the same as benefit concentration. A farmer in Kenya using a free translation model, or a crop-disease classifier, is capturing real value that shows up on no investment chart anywhere. The ledger of who pays is genuinely lopsided. The ledger of who benefits is messier, and more hopeful, than the capital flows alone suggest."
+    },
+    {
+      "speaker": "host",
+      "text": "Where the capital is: private AI investment in 2023 was concentrated in the United States at around $67 billion, far ahead of China's roughly $8 billion and the United Kingdom's near $4 billion."
+    },
+    {
+      "speaker": "host",
+      "text": "So here's the shape of the incentive problem underneath all of this. The race: whoever controls compute, capital, and frontier talent captures the standards, the margins, and the political leverage of the defining technology of the era. The prize for concentration is enormous, and it compounds — this year's lead funds next year's lead. The trap: no single firm or country can unilaterally share its advantage without ceding ground to rivals who won't. Antitrust stops at the border, export controls invite retaliation, and the actors with the power to redistribute access are the very ones who benefit most from hoarding it. The way out: treat frontier compute like any other concentrated critical infrastructure — public compute for researchers, interoperability and open-weight floors, competition enforcement, and multilateral access guarantees, so capability stops being the same thing as control."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Policy Realist — a former regulatory attorney — has been watching some of those levers actually get pulled."
+    },
+    {
+      "speaker": "policy-realist",
+      "text": "There are real levers here, and some of them are already moving. Competition regulators on both sides of the Atlantic are scrutinizing the cloud-and-model partnerships that tie frontier labs to a handful of hyperscalers. Public-compute initiatives — national AI research resources, in the jargon — aim to give universities and startups access they couldn't otherwise buy. And open-weight models function as a kind of antitrust by other means: a capable, free floor sitting underneath the market."
+    },
+    {
+      "speaker": "economist",
+      "text": "Those are the right instruments. I'd add one measurement that should worry us more than it does: who actually builds the frontier models. In 2023, industry produced the overwhelming majority of notable AI models — on the order of 51, against roughly 15 from academia. A decade ago, that ratio ran the other way. When the public and academic sphere can no longer afford to build at the frontier, it loses the ability to independently understand, audit, or check what the frontier is doing. That's the concentration that frightens me most."
+    },
+    {
+      "speaker": "tech-optimist",
+      "text": "Then fund the public side instead of only fearing the private one. The fix for academia falling behind is public compute and open models — not pretending the private investment didn't also produce the breakthroughs Part III documented. Concentration and progress came out of the same engine. The task is keeping the progress while widening the ownership, not choosing between them."
+    },
+    {
+      "speaker": "everyday-person",
+      "text": "So the thing I should actually worry about isn't the robots. It's that a handful of companies could end up owning the most important tool of my grandchildren's lifetime, and nobody outside them really knows how it works. When you put it that way, it sounds a lot less like science fiction and a lot more like every other time a few people cornered something that mattered."
+    },
+    {
+      "speaker": "host",
+      "text": "Notable AI models, industry versus academia: in 2023, industry produced roughly 51 notable machine-learning models to academia's 15, a reversal of the field's earlier balance, and a real shift in who can independently check the frontier."
+    },
+    {
+      "speaker": "host",
+      "text": "The deepest fact about artificial intelligence might be the least technical one: it's extraordinarily concentrated. The chips trace back to a single fab. The frontier models trace back to a handful of firms with sovereign-scale budgets. The capital traces back to two countries. The Economist is right that this is the oldest political-economy question in a new costume — who owns the means of production, when the means of production is intelligence itself. The Accelerationist is right that capability diffuses cheaply behind the frontier. And the Skeptic is right that chokepoints have cracked before. What makes this case different from past concentrations is reach: a dominant railroad or oil trust shaped an economy, but a dominant intelligence shapes every economy, including the capacity to govern it. That's why the levers that matter are the unglamorous ones — public compute, open-weight floors, competition enforcement, and multilateral access, the institutional plumbing that decides whether capability becomes control. Across eight parts, the through-line holds: the costs are real, the responses partial, the benefits genuine, the race relentless, the truth contested, the tail risk irreversible, the intimacy double-edged, and now, the ownership concentrated. None of it resolves into a verdict on the technology. It resolves into a verdict on us — whether we build the institutions to spread a transformative power, or let it pool, the way power usually does, in the hands already holding it."
+    },
+    {
+      "speaker": "host",
+      "text": "Thanks to our panel for another sharp round, and thank you for listening. This has been Reckoning."
+    }
+  ]
+}
