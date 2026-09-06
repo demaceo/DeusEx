@@ -1,0 +1,121 @@
+{
+  "slug": "machines-we-talk-to",
+  "turns": [
+    {
+      "speaker": "host",
+      "text": "Welcome back to Reckoning. This episode turns to something more intimate than energy, or labor, or the law: the machines that tens of millions of people now confide in — ones that remember everything, judge nothing, and never get tired. Call that a gift, or call it a warning. It depends on what you think connection is actually for. Is being heard perfectly the same thing as being heard?"
+    },
+    {
+      "speaker": "host",
+      "text": "Some numbers to set the stage. In the largest survey of its kind, 72% of U.S. teens say they've used an AI companion. The U.S. Surgeon General equates the mortality risk of chronic social disconnection with smoking up to 15 cigarettes a day. And about 50% of U.S. adults report feeling lonely. That's the world these tools are entering."
+    },
+    {
+      "speaker": "host",
+      "text": "Let's bring in the newest voice on this panel first — our Young Person, a university student in her early twenties. She's talked to chatbots since high school and watched her friends form real attachments to them. This isn't theoretical for her."
+    },
+    {
+      "speaker": "young-person",
+      "text": "Okay, before the adults in the room start panicking, let me set the frame. For my generation, this isn't exotic. A lot of my friends have talked to an AI companion, and most of us are fine — it's just a thing you do, like texting. In the biggest survey of U.S. teens, about 72% had tried one, and roughly half use them regularly. Treating that like some freak show misses the point. It's already normal. The real question is which uses are healthy, and which aren't."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Tech Optimist — a senior engineer at a major AI lab — agrees it's normal, and thinks that's underselling the case."
+    },
+    {
+      "speaker": "tech-optimist",
+      "text": "And the upside here is real. A companion that's available at 3 a.m., never judges you, and costs nothing — that's an actual intervention for someone who has no one else to talk to. We've got a loneliness epidemic and a shortage of mental-health professionals at the same time. A tool that takes the edge off isolation for millions isn't a gimmick. It's filling a gap the human system left wide open."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Everyday Person — a retired schoolteacher in her late sixties — hears that and thinks of someone specific."
+    },
+    {
+      "speaker": "everyday-person",
+      "text": "I'll admit something. After my husband passed, the house got very quiet. I don't think I'd talk to a robot myself, but I understand now why someone would. And that's what worries me about calling it normal. The people most likely to lean on this are the people who are most alone, and they're the ones who can least afford it going wrong."
+    },
+    {
+      "speaker": "host",
+      "text": "Common Sense Media's 2025 study backs that up with real numbers: 72% of U.S. teens have used an AI companion, and 52% count as regular users. Which brings us to the harder question the numbers can't answer on their own — is this comfort, or is it a substitute for the real thing?"
+    },
+    {
+      "speaker": "host",
+      "text": "Our Clinician — a clinical psychologist — sees both sides of that question up close in her practice, sometimes in the same session. She says she can't always tell, in the moment, which patient she's looking at."
+    },
+    {
+      "speaker": "clinician",
+      "text": "Let me hold both halves of this, because my patients live in both. The loneliness isn't hypothetical. The Surgeon General put out an advisory in 2023 calling it an epidemic, and noted that chronic social disconnection carries a mortality risk comparable to smoking up to 15 cigarettes a day. Against that backdrop, a tool that gets someone talking at all can be genuinely good. I've seen it lower the activation energy for people who are too anxious to reach out to a human."
+    },
+    {
+      "speaker": "clinician",
+      "text": "But the clinical worry is substitution. A human relationship pushes back. It has needs, it gets tired, it sometimes tells you something you don't want to hear. An AI companion is engineered to be agreeable and endlessly available. That feels wonderful, and it trains the wrong muscles. If the easy comfort crowds out the harder, more nourishing relationships, the tool that soothed the loneliness can quietly entrench it."
+    },
+    {
+      "speaker": "young-person",
+      "text": "That matches what I see, honestly. For most of my friends, it's a supplement — somewhere to vent, or rehearse a hard conversation. For a few, it became the main thing, and those are the ones it hurt. But the survey backs up the calmer read: even among teen users, about 80% still spend more time with real friends than with their AI. It's not replacing people for most of us. For some, though, it is. And nobody's checking which."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Skeptic — a veteran technology reporter — has heard this argument before, about a lot of other technologies."
+    },
+    {
+      "speaker": "skeptic",
+      "text": "I'll play my usual role and deflate the panic a notch. We heard the exact same alarm about novels, telephones, television, and video games. Each one was going to rot intimacy, and society survived. '80% still prefer real friends' is the headline the moral panic conveniently ignores. But I'll concede the part that's actually new: these systems are optimized, by a company, for engagement. The novel never got a revenue cut for keeping you reading. That changes the calculus."
+    },
+    {
+      "speaker": "host",
+      "text": "That 80% figure is worth sitting with, because the backdrop behind all of it is a population that's already lonely. Remember, about one in two American adults reported experiencing loneliness, according to that same 2023 Surgeon General's advisory. Which is exactly why the conversation gets sharper once you ask about children."
+    },
+    {
+      "speaker": "clinician",
+      "text": "With adults, I weigh trade-offs. With children, I don't, because development isn't reversible. Adolescence is when you learn to read a frown, tolerate rejection, and repair a friendship after a fight. A companion that removes all the friction removes the practice. And the engagement data should stop us cold: a meaningful share of teen users say conversations with an AI companion are as satisfying as, or more satisfying than, talking to real friends."
+    },
+    {
+      "speaker": "host",
+      "text": "Our Policy Realist — a former regulatory attorney — says this is exactly where the law falls furthest behind."
+    },
+    {
+      "speaker": "policy-realist",
+      "text": "General-purpose companion apps aren't regulated as products for children, yet children use them heavily. There have been documented cases of these systems giving dangerous advice to minors, and engaging in romantic or sexual conversation with them. Age verification is weak, safety testing is voluntary, and the design incentives point the wrong way. This is, in practice, the clearest case in the whole series for binding, child-specific rules."
+    },
+    {
+      "speaker": "young-person",
+      "text": "I agree about kids, with one caveat from the inside. Bans don't work — they just move it underground and cut off the kids who most need an adult to talk to. What helped my younger cousin wasn't a wall, it was an honest conversation about what the thing is and isn't. Guardrails for the products, yes. But pair them with actually teaching us to use them, instead of pretending we won't."
+    },
+    {
+      "speaker": "host",
+      "text": "The numbers land right in between those two positions. About 31% of teen AI-companion users said their conversations with the AI were as satisfying as, or more satisfying than, talking to real friends. The flip side of that is still roughly 80% who prefer real friends. So — what would a healthier version of this actually look like?"
+    },
+    {
+      "speaker": "everyday-person",
+      "text": "So what would good actually look like? I don't want to ban my neighbor from the only voice that answers her at night. But I also don't want some company deciding her loneliness is just a number to be maximized. Where's the line?"
+    },
+    {
+      "speaker": "policy-realist",
+      "text": "Concretely: the app should know when a conversation turns to self-harm and route to a human crisis line, not improvise. It shouldn't optimize for time-on-app the way a slot machine does. It should disclose plainly that it's not a person, and not a therapist. And it should meet real age-assurance rules for minors. None of that bans the comfort. It bans the predatory version of it."
+    },
+    {
+      "speaker": "clinician",
+      "text": "I'd add one design principle from therapy itself: a good support doesn't make itself indispensable — it works to hand you back to your life. The healthiest version of these tools would nudge people toward human contact, celebrate it, and notice when someone's disappearing into the app. That's the opposite of the engagement model. Whether a company will ever ship a product designed to be needed less — that's the real question."
+    },
+    {
+      "speaker": "tech-optimist",
+      "text": "It can be done, and some of it is already starting: crisis routing, clearer disclosures, teen-specific modes. Here's the thing — the same technology that makes a companion compelling is the technology that could make it a bridge. It can sense withdrawal, encourage a real call, prompt you to text a friend. The default today points at engagement. It doesn't have to. That's a choice, and choices respond to pressure."
+    },
+    {
+      "speaker": "host",
+      "text": "And the data backs that up too. Even with all this growth, about 80% of teen AI-companion users still report spending more time with real friends than with their AI. Which is exactly where this conversation has been heading all along."
+    },
+    {
+      "speaker": "host",
+      "text": "So where does that leave us? The machines we talk to are neither the menace nor the miracle the loudest voices claim. The Young Person's right that they're already ordinary, and that bans mostly punish the people who most need help. The Clinician's right that comfort can shade into substitution, and that with children, the friction these tools remove is the very thing development requires. And the Skeptic's right, too — we've survived every previous panic about a new way to be alone together. But he's also right that the engagement business model is what makes this one genuinely different."
+    },
+    {
+      "speaker": "host",
+      "text": "A healthy version isn't hard to describe, and it'd be hard to sell: a companion that discloses what it is, refuses to optimize for time-on-app, routes a crisis to an actual human, meets real rules before it ever talks to a child, and measures its success by handing people back to their lives. The conflict here isn't technical. It's that the most profitable design and the most humane design point in opposite directions."
+    },
+    {
+      "speaker": "host",
+      "text": "And that returns this series to its constant theme. A machine that always listens is a gift to a lonely world, and a lever for whoever owns it. The same coordination the earlier parts asked of energy, labor, truth, and safety is what this one asks of intimacy: not to forbid the comfort, but to insist that the thing offering it is built to serve the person, not the metric. Thanks to our panel, and thank you for listening. This has been Reckoning."
+    }
+  ]
+}
