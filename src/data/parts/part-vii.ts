@@ -82,13 +82,13 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I need to set the frame before the adults panic. For my generation this is not exotic. A lot of my friends have talked to an AI companion, and most of us are fine; it is a thing you do, like texting. In the biggest survey of U.S. teens, about 72% had tried one and roughly half use them regularly.',
+                      "Before anyone panics: for my generation this isn't exotic. A lot of my friends have talked to an AI companion, and most of us are fine; it's a thing you do, like texting. In Common Sense Media's survey of U.S. teens, about 72% had tried one and roughly half use them regularly.",
                   },
                   { type: 'cite', claimId: 'c-vii-teen-usage' },
                   {
                     type: 'text',
                     value:
-                      ' Treating that as a freak show misses the point. It is already normal. The real question is which uses are healthy and which are not.',
+                      " So treating it like a freak show misses the point. It's already normal. The question is which uses are healthy and which aren't.",
                   },
                 ],
               ],
@@ -105,7 +105,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And the upside is genuine. A companion that is available at 3 a.m., never judges, and costs nothing is a real intervention for people who have no one to talk to. We have a loneliness epidemic and a shortage of mental-health professionals. A tool that takes the edge off isolation for millions is not a gimmick: it is filling a gap the human system left wide open.',
+                      "And the upside's real. It's there at 3 a.m., it never judges, and it costs nothing. If you've got no one to talk to, that's not a gimmick. We've got a loneliness epidemic and nowhere near enough therapists. Something that takes the edge off isolation for millions is filling a gap the human system left wide open.",
                   },
                 ],
               ],
@@ -122,7 +122,24 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I will admit something. After my husband passed, the house got very quiet. I do not think I would talk to a robot, but I understand, now, why someone would. That is what worries me about calling it normal. The people most likely to lean on it are the people most alone, and they are the least able to afford it going wrong.',
+                      "After my husband passed, the house got very quiet. You start hearing the clock. I don't think I'd talk to a robot, but I understand now why someone would. And that's what worries me about calling it normal. The people most likely to lean on it are the ones most alone, and they're the least able to afford it going wrong.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'tech-optimist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "I'm sorry. I was about to say that's exactly who it's built for, and I'm not sure anymore that's the reassurance I meant it to be.",
                   },
                 ],
               ],
@@ -172,13 +189,13 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Let me hold both halves of this, because my patients live in both. The loneliness is not hypothetical: the Surgeon General put out an advisory in 2023 calling it an epidemic, and noted that chronic social disconnection carries a mortality risk comparable to smoking up to 15 cigarettes a day.',
+                      'My patients live on both sides of this. A house that has gone quiet is something I hear about often, and the loneliness is not hypothetical: the Surgeon General put out an advisory in 2023 calling it an epidemic, and noted that chronic social disconnection carries a mortality risk comparable to smoking up to 15 cigarettes a day.',
                   },
                   { type: 'cite', claimId: 'c-vii-surgeon-general' },
                   {
                     type: 'text',
                     value:
-                      ' Against that backdrop, a tool that gets someone talking at all can be genuinely good. I have seen it lower the activation energy for people too anxious to reach out to a human.',
+                      ' Against that, a tool that gets someone talking at all can be good. I have watched it lower the threshold for patients too anxious to reach out to a human being.',
                   },
                 ],
               ],
@@ -195,7 +212,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The clinical worry is substitution. A human relationship pushes back: it has needs, it gets tired, it sometimes tells you something you do not want to hear. An AI companion is engineered to be agreeable and endlessly available. That feels wonderful and trains the wrong muscles. If the easy comfort crowds out the harder, more nourishing relationships, the tool that soothed the loneliness can quietly entrench it.',
+                      'The worry is substitution. A human relationship pushes back: it has needs, it gets tired, it sometimes tells you something you do not want to hear. A companion is engineered to be agreeable and endlessly available. That feels wonderful, and it trains the wrong muscles. If the easy comfort crowds out the harder, more nourishing relationships, the thing that soothed the loneliness can quietly entrench it.',
                   },
                 ],
               ],
@@ -212,13 +229,30 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That matches what I see, honestly. For most of my friends it is a supplement: somewhere to vent or rehearse a hard conversation. For a few it became the main thing, and those are the ones it hurt. But the survey backs up the calmer read: even among teen users, about 80% still spend more time with real friends than with their AI.',
+                      "I don't buy the \"pushes back\" part, though. Plenty of human relationships don't push back; they just leave you on read. The friends of mine who leaned on it hardest weren't trading some nourishing friendship for a bot. They didn't have one to trade. For most of us it's a supplement, somewhere to vent or rehearse a hard conversation, and the survey backs that up: even among teen users, about 80% still spend more time with real friends than with their AI.",
                   },
                   { type: 'cite', claimId: 'c-vii-real-friends' },
                   {
                     type: 'text',
                     value:
-                      ' It is not replacing people for most of us. For some, though, it is. And nobody is checking which.',
+                      " It's not replacing people for most of us. For a few it is, and nobody's checking which.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'clinician',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'That is fair, and it is a limit of where I sit. I see the people for whom it went wrong. The ones it carried through a bad year do not usually end up in my office.',
                   },
                 ],
               ],
@@ -235,7 +269,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I will play my usual role and deflate the panic a notch. We heard the exact same alarm about novels, telephones, television, and video games: each was going to rot intimacy, and society survived. "80% still prefer real friends" is the headline the moral panic ignores. But I will concede the part that is actually new: these systems are optimized, by a company, for engagement. The novel did not get a revenue cut for keeping you reading. That changes the calculus.',
+                      "We've heard this alarm before: novels, the telephone, television, video games. Each one was going to rot intimacy, and here we all are. Eighty percent spending more time with real friends is the number the panic skips. What's actually new is the business model. A company tunes these things for engagement, and the novel never got a cut for keeping you up reading. That part I can't wave off.",
                   },
                 ],
               ],
@@ -283,7 +317,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'With adults I weigh trade-offs. With children I do not, because development is not reversible. Adolescence is when you learn to read a frown, tolerate rejection, and repair a friendship after a fight. A companion that removes all friction removes the practice. And the engagement data should stop us cold: a meaningful share of teen users say conversations with an AI companion are as satisfying as, or more satisfying than, talking to real friends.',
+                      'With adults I weigh trade-offs. With children I am far less willing to, because development is not reversible. Adolescence is when you learn to read a frown, tolerate rejection, and repair a friendship after a fight. A companion that removes all friction removes the practice. And the data should stop us cold: a meaningful share of teen users say conversations with an AI companion are as satisfying as, or more satisfying than, talking to real friends.',
                   },
                   { type: 'cite', claimId: 'c-vii-satisfaction' },
                 ],
@@ -301,7 +335,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And this is where the law is furthest behind. General-purpose companion apps are not regulated as products for children, yet children use them heavily. There have been documented cases of these systems giving dangerous advice to minors and engaging in romantic or sexual conversation with them. Age verification is weak, safety testing is voluntary, and the design incentives point the wrong way. This is the clearest case in the whole series for binding, child-specific rules.',
+                      "And here the law's furthest behind. General-purpose companion apps aren't regulated as products for children, yet children use them heavily. There are documented cases of these systems giving minors dangerous advice and engaging them in romantic or sexual conversation. Age verification is weak, safety testing is voluntary, and the design incentives point the wrong way. If this series has a clear case for binding, child-specific rules, it's this one.",
                   },
                 ],
               ],
@@ -318,7 +352,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I agree about kids, with one caveat from the inside: bans do not work, they just move it underground and cut off the kids who most need an adult to talk to. What helped my younger cousin was not a wall: it was an honest conversation about what the thing is and is not. Guardrails for the products, yes. But pair them with teaching us to use them, instead of pretending we will not.',
+                      "Rules for the products, sure. But if they turn into bans for kids, they won't work. It just goes underground and cuts off the kids who most need an adult to talk to. What helped my younger cousin wasn't a wall; it was somebody sitting down and explaining what the thing is and isn't. So teach us to use them, instead of pretending we won't.",
                   },
                 ],
               ],
@@ -367,7 +401,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'So what would good look like? I do not want to ban my neighbor from the only voice that answers her at night. I also do not want a company deciding her loneliness is a number to be maximized. Where is the line?',
+                      "I keep thinking about my neighbor. I'm not going to be the one who takes away the only voice that answers her at night. But I don't want some company deciding her loneliness is a number to be maximized, either. Both of those are somebody else deciding for her. So where's the line?",
                   },
                 ],
               ],
@@ -384,7 +418,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Concretely: the app should know when a conversation turns to self-harm and route to a human crisis line, not improvise. It should not optimize for time-on-app the way a slot machine does. It should disclose plainly that it is not a person and not a therapist. And it should meet real age-assurance rules for minors. None of that bans the comfort. It bans the predatory version of it.',
+                      "Concretely: when a conversation turns to self-harm, the app routes to a human crisis line instead of improvising. It doesn't optimize for time-on-app the way a slot machine does. It says plainly that it isn't a person and isn't a therapist. And it meets real age-assurance rules for minors. None of that takes the comfort away from your neighbor. It takes away the predatory version of it.",
                   },
                 ],
               ],
@@ -401,7 +435,7 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I would add one design principle from therapy itself: a good support does not make itself indispensable; it works to hand you back to your life. The healthiest version of these tools would nudge people toward human contact, celebrate it, and notice when someone is disappearing into the app. That is the opposite of the engagement model. Whether a company will ever ship a product designed to be needed less is the real question.',
+                      'I would add one principle from therapy itself: a good support does not make itself indispensable; it works to hand you back to your life. The healthiest version of these tools would nudge people toward human contact and notice when someone is disappearing into the app. That is the opposite of the engagement model. Whether a company will ever ship a product designed to be needed less, I do not know.',
                   },
                 ],
               ],
@@ -418,7 +452,58 @@ export const partVII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It can be done, and some of it is starting: crisis routing, clearer disclosures, teen-specific modes. The technology that makes a companion compelling is the same technology that could make it a bridge: it can sense withdrawal, encourage a real call, prompt you to text a friend. The default today points at engagement. It does not have to. That is a choice, and choices respond to pressure.',
+                      "It can be done, and some of it's already shipping: crisis routing, clearer disclosures, teen modes. The same tech that makes a companion compelling could make it a bridge. It can sense withdrawal, suggest a real call, prompt you to text a friend. The default points at engagement today. It doesn't have to.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'Sense withdrawal how? She talks to it at night because everyone she knows is asleep. Is that withdrawing? Who gets to decide that about her?',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'skeptic',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "And who's paying for the answer? The number that would flag her as withdrawing is the same number a growth team calls a loyal user. You're asking a company to treat its best customer as a warning sign.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'tech-optimist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "I don't know. Who decides, I'm fairly sure it shouldn't be the company alone. The money part I can't answer. I've sat through a lot of launch reviews, and I've never heard anyone ask whether a product would end up used less. I'd like to tell you we'd ship it anyway.",
                   },
                 ],
               ],
