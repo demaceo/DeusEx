@@ -18,6 +18,7 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { PERSONAS } from '../../src/data/personas'
 import { PERSONA_VOICES } from '../../src/data/personaVoices'
+import { PERSONA_VOICE_GUIDE } from '../../src/data/personaVoiceGuide'
 import type { PersonaId } from '../../src/types/persona'
 import type { Speaker, Turn } from './types'
 
@@ -54,6 +55,7 @@ const SCRIPT_SCHEMA = {
 function rosterLine(id: PersonaId): string {
   const p = PERSONAS[id]
   const d = PERSONA_VOICES[id].delivery
+  const g = PERSONA_VOICE_GUIDE[id]
   return [
     `- ${id} — ${p.name} (${p.role}). Cares about: ${p.focus}.`,
     `    Viewpoint: ${p.bio}`,
@@ -61,6 +63,11 @@ function rosterLine(id: PersonaId): string {
     `    Sarcasm: ${d.sarcasm}`,
     `    Mannerisms: ${d.mannerisms}`,
     `    Tone: ${d.tone}`,
+    // The written-page voice guide, so audio and text keep the same people.
+    // Biography is deliberately left out: the rewrite must not add facts.
+    `    Signature moves: ${g.moves.join(' / ')}`,
+    `    Pushes back on: ${g.pushesBackOn}`,
+    `    Avoid: ${g.avoid.join(' / ')}`,
   ].join('\n')
 }
 
