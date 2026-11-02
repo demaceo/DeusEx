@@ -80,6 +80,12 @@ describe.each(DOCUMENTS.map((entry) => entry.doc))('$id content integrity', (doc
     expect(() => assertReferentialIntegrity(doc)).not.toThrow()
   })
 
+  it('user-facing text never uses an em dash (CLAUDE.md invariant 6)', () => {
+    // Comments are stripped at compile time, so serializing the data checks
+    // exactly what readers see.
+    expect(JSON.stringify(doc)).not.toContain('\u2014')
+  })
+
   it('charts rest only on reviewed (non-pending) claims', () => {
     const charts = chartsIn(doc)
     // Part I carries an extra chart — the data-center world map.

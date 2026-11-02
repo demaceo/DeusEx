@@ -88,7 +88,7 @@ function voiceFor(speaker: Turn['speaker']) {
 }
 
 function episodeTitle(doc: RoundtableDocument): string {
-  return doc.masthead.titleLines.map((line) => line.map((span) => span.text).join('')).join(' — ')
+  return doc.masthead.titleLines.map((line) => line.map((span) => span.text).join('')).join(' ')
 }
 
 async function readManifest(): Promise<Manifest> {
@@ -127,6 +127,16 @@ async function main() {
   const scriptPath = resolve(AUDIO_DIR, `${doc.id}.script.json`)
   await writeFile(scriptPath, JSON.stringify({ slug: doc.slug, turns: script }, null, 2))
   console.log(`      Script written to ${scriptPath}`)
+
+  // CLAUDE.md invariant #6: the transcript is shown on screen as captions, so
+  // an em dash in it is user-facing. The adapt prompt forbids them; this catches
+  // a slip before any TTS spend (re-running only costs another Claude pass).
+  const dashed = script.flatMap((t, i) => (t.text.includes('—') ? [i] : []))
+  if (dashed.length > 0) {
+    const msg = `Em dash found in spoken turn(s) ${dashed.join(', ')} of ${scriptPath}.`
+    if (dryRun) console.warn(`[warn] ${msg} Re-run before synthesizing.`)
+    else throw new Error(`${msg} Aborting before synthesis; re-run to regenerate the script.`)
+  }
 
   if (dryRun) {
     console.log(
