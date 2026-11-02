@@ -82,13 +82,13 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Let me begin with the study that changed the field, because it is concrete. In 2018, an audit of commercial facial-analysis systems found error rates of up to 34.7% for darker-skinned women, while the error rate for lighter-skinned men was under 1%.',
+                      'In 2018, an audit of commercial facial-analysis systems found error rates of up to 34.7% for darker-skinned women, while the error rate for lighter-skinned men was under 1%.',
                   },
                   { type: 'cite', claimId: 'c-x-gendershades' },
                   {
                     type: 'text',
                     value:
-                      ' Same product, same task. The systems worked nearly flawlessly for the people who built and tested them, and failed badly for everyone else. That is not a glitch. It is what happens when the training data and the test data both reflect a narrow slice of humanity.',
+                      " Same product, same task. The systems worked almost flawlessly on the kind of faces they were built and tested on, and badly on everyone else. That isn't a glitch. The training data and the test data both reflected a narrow slice of humanity, so the failure was invisible to the people checking.",
                   },
                 ],
               ],
@@ -105,7 +105,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I had always assumed a camera just sees what is there. It did not occur to me that it could be better at recognizing some faces than others. When you say it failed for darker-skinned women, what does failing actually do to a real person?',
+                      "Every picture day, some of my darker-skinned students came back from the photographer barely visible in their own school portrait. I blamed the lighting and thought no more about it. I'd always assumed a camera just sees what's there. Is this the same thing, only now the camera's deciding something?",
                   },
                 ],
               ],
@@ -122,7 +122,24 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It gets someone arrested for a crime they did not commit. There are already documented cases of people (all of them Black men, so far) wrongfully arrested because a facial-recognition match was treated as evidence. The error rate stops being a statistic the moment a system that is worst at recognizing a group is pointed at that group by police.',
+                      'Close to the same thing, except a school portrait never put anyone in a cell. There are documented cases of people, almost all of them Black, wrongfully arrested because a facial-recognition match was treated as evidence. The error rate stops being a statistic the moment a system that is worst at recognizing a group is pointed at that group by police.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "And then you're sitting there telling them the computer got it wrong, and they've got the computer. Who believes you?",
                   },
                 ],
               ],
@@ -139,7 +156,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And here is the part that should give us some hope: that 2018 result existed because someone measured it. Once the gap was named, vendors retrained on more representative data and the disparities on those benchmarks narrowed sharply. Bias in these systems is detectable and, on the narrow technical metric, improvable. That is genuinely different from human bias, which hides.',
+                      "Which is why the measuring matters so much. That 2018 result exists because someone ran the test. Once the gap was named, vendors retrained on more representative data and the disparities on those benchmarks narrowed sharply. You can find this kind of bias and shrink it, at least on the technical metric. A biased detective doesn't publish an error rate.",
                   },
                 ],
               ],
@@ -156,7 +173,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Improving the benchmark is not the same as fixing the harm, and I want to keep those separate. A more accurate facial-recognition system pointed at the same over-policed neighborhoods is a better tool for the same biased policy. Sometimes the fair fix is a more accurate model. Sometimes it is not building the system at all. The engineers keep answering a measurement question when the real question is a power question.',
+                      "A better benchmark isn't a fixed harm, though. A more accurate face-matcher pointed at the same over-policed neighborhoods is a better tool for the same policy. Sometimes the fair fix is a more accurate model. Sometimes it's not building the thing at all. You're answering a measurement question, and her question was about who ends up in the cell.",
                   },
                 ],
               ],
@@ -203,13 +220,13 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Move from cameras to courtrooms and the stakes get heavier. Risk-assessment tools score defendants for the likelihood of reoffending, and judges use those scores in bail and sentencing. In 2016, ProPublica analyzed one widely used tool and found that Black defendants who did not go on to reoffend were nearly twice as likely as comparable white defendants to have been labeled high-risk.',
+                      'Courtrooms, then, where the stakes get heavier. Risk-assessment tools score defendants on their likelihood of reoffending, and judges use those scores in bail and sentencing. In 2016, ProPublica analyzed one widely used tool and found that Black defendants who did not go on to reoffend were nearly twice as likely as comparable white defendants to have been labeled high-risk.',
                   },
                   { type: 'cite', claimId: 'c-x-compas' },
                   {
                     type: 'text',
                     value:
-                      ' White defendants who did reoffend were more likely to have been rated low-risk. The errors were not random; they ran in one direction.',
+                      " White defendants who did reoffend were more likely to have been rated low-risk. The errors weren't random. They ran in one direction.",
                   },
                 ],
               ],
@@ -226,7 +243,24 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I have to complicate this, because it is the most important technical point in the whole subject. The company that made the tool fired back, and they were not simply lying: the tool was roughly equally accurate for both groups, and within each risk score it predicted reoffending at similar rates. It turns out you cannot satisfy every definition of fairness at once: calibrated scores and equal error rates are mathematically incompatible when base rates differ. That is a genuine impossibility theorem, not a dodge.',
+                      "This is where I've spent the most time with the source material, and it's the hardest technical point in the whole subject. The company that made the tool fired back, and they weren't simply lying: the tool was roughly equally accurate for both groups, and within each risk score it predicted reoffending at similar rates. You can't satisfy every definition of fairness at once. When base rates differ, calibrated scores and equal error rates are mathematically incompatible. That's a real impossibility theorem, not a dodge.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "I can't follow the math, but I can follow where it leaves us. Both sides are right about the numbers, and a man who'd never have reoffended still waits in jail because of a score he never got to see. Somebody picked which kind of wrong was acceptable. Who?",
                   },
                 ],
               ],
@@ -243,7 +277,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'You are right that the theorem is real, and that is exactly why this cannot be left to engineers to optimize. When fairness definitions conflict, choosing among them is a moral and political decision about which errors we are willing to tolerate and who bears them. Hiding that choice inside a proprietary risk score does not make it neutral. It just removes it from democratic view and hands it to a vendor.',
+                      "That is the question, and the theorem is exactly why it can't be left to engineers to optimize. When fairness definitions conflict, choosing among them is a moral and political decision about which errors we are willing to tolerate and who bears them. Hiding that choice inside a proprietary risk score does not make it neutral. It takes it out of public view and hands it to a vendor.",
                   },
                 ],
               ],
@@ -260,7 +294,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Which is why the law is starting to treat these as high-stakes decisions rather than software features. The EU AI Act classes uses like this as high-risk, demanding transparency and human oversight. Several US jurisdictions have restricted algorithmic tools in pretrial decisions. The principle is the same one we reached in earlier parts: when a system exercises power over a person, accountability has to scale with it.',
+                      "Not the vendor, then. The law is starting to agree. The EU AI Act classes uses like this as high-risk, with requirements for transparency and human oversight. Several US jurisdictions have restricted algorithmic tools in pretrial decisions. Nobody's asking a county board to do the math. They have to choose which error they'll accept, on the record, and someone outside has to be able to check the tool against that choice.",
                   },
                 ],
               ],
@@ -308,13 +342,47 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The example that haunts me is from my own field, because the bias was invisible and the intent was good. A risk algorithm used on millions of patients to flag who needed extra care used health-care spending as a proxy for health need. But because less money is historically spent on Black patients at the same level of illness, the algorithm concluded they were healthier than they were.',
+                      'The example that stays with me is from my own field, because the intent was good and the bias was invisible. A risk algorithm used on millions of patients to flag who needed extra care used health-care spending as a proxy for health need. But because less money is historically spent on Black patients at the same level of illness, the algorithm concluded they were healthier than they were.',
                   },
                   { type: 'cite', claimId: 'c-x-obermeyer' },
                   {
                     type: 'text',
                     value:
                       ' Correcting that single proxy would have more than doubled the share of Black patients flagged for additional help, from about 18% to 46%.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Wait. So she's just as sick, and the computer decides she's fine because nobody spent much on her before? Being shortchanged once gets counted as proof you don't need help. That's backwards.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'clinician',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "From the patient's side, that is exactly how it works. Lower spending usually means less access: a clinic further away, a job that will not give you the afternoon, a referral that never got made. In the record, all of that looks like a person who did not need much care. And nobody in that pipeline did anything that looked wrong. Predicting cost is a reasonable thing for a hospital to want.",
                   },
                 ],
               ],
@@ -331,7 +399,24 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And notice there was no malicious variable. Nobody put race into the model. The bias entered through a proxy (spending) that carried the imprint of an unequal system. This is the thing people miss: you can delete race from the inputs and still build a racist outcome, because the world is full of variables that stand in for it. Zip code, spending, arrest records. The model launders history through correlation.',
+                      "That's the part people miss. There was no malicious variable. Nobody put race into the model. The bias came in through spending, which carried the imprint of an unequal system. You can delete race from the inputs and still build a racist outcome, because the world is full of variables that stand in for it: zip code, spending, arrest records.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'skeptic',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Arrest records especially. That's the courtroom problem again from the other end. If one neighborhood gets watched harder, its arrest records measure the watching as much as the crime.",
                   },
                 ],
               ],
@@ -348,7 +433,24 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to hold onto the hopeful end of that same story, though. The healthcare bias was found by researchers who got access to the model and the outcomes, and once found, it was fixable by changing the target variable from cost to actual health. Audited, published, corrected. The same scale that makes a biased model dangerous makes a corrected one powerful: a single fix reaches every patient at once. The lever cuts both ways.',
+                      "There's a hopeful end to the same story, though. The healthcare bias was found by researchers who got access to the model and the outcomes, and once found, it was fixable by changing the target from cost to actual health. Audited, published, corrected. The scale that makes a biased model dangerous makes a corrected one powerful: one fix reaches every patient at once.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'clinician',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'Every patient from then on. It does not reach the ones who were passed over in the years before anyone looked, and in my experience nobody goes back to find them.',
                   },
                 ],
               ],
@@ -365,7 +467,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It does cut both ways, but only when there is access. That study happened because the researchers got the data, which almost never happens; most of these systems are proprietary black boxes. The optimistic version requires something the market does not provide by default: the right to look inside. Mandatory auditing is the precondition for every hopeful fix you are describing.',
+                      "And the fix only happens when someone can look. That study happened because the researchers got the data, which almost never happens; most of these systems are proprietary black boxes. The hopeful version requires something the market does not provide by default: the right to look inside. Mandatory auditing is the precondition for every fix you're describing.",
                   },
                 ],
               ],
@@ -437,7 +539,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I will be honest: part of me wants to believe a computer is at least fairer than a prejudiced loan officer having a bad day. Are you telling me it is not even that?',
+                      "Part of me still wants to believe a computer's fairer than a prejudiced loan officer having a bad day. But with the loan officer you could at least ask for the manager. Who do you ask when it's a computer that said no?",
                   },
                 ],
               ],
@@ -454,7 +556,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It can be either, and that is the honest answer. A well-audited model can be more consistent and more correctable than a thousand individual humans: you can fix one algorithm; you cannot retrain every loan officer overnight. But an unaudited one scales a single bias to everyone at once and wraps it in false objectivity. The technology is not inherently fairer or less fair. It is a multiplier. What it multiplies is whatever we feed it and whether we bother to check.',
+                      "On the first part, it can go either way. A well-audited model can be more consistent and easier to correct than a thousand loan officers: you can fix one algorithm, and you can't retrain every loan officer overnight. An unaudited one scales a single bias to everyone at once and dresses it up as objectivity. It's a multiplier. What it multiplies is whatever we feed it and whether we bother to check.",
                   },
                 ],
               ],
@@ -471,7 +573,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'So the agenda writes itself, and none of it is exotic. Mandatory bias audits for consequential systems, by independent parties with real access. Documentation of training data and intended use. A right to an explanation and to contest a decision. And for some uses (like live facial recognition in public), the recognition that the fair amount of deployment may be none. Civil-rights law already forbids discrimination in lending, housing, and employment. The task is making sure an algorithm cannot be used to do what a person is not allowed to do.',
+                      "And the manager question has an answer, or should, and none of it is exotic. Mandatory bias audits for consequential systems, by independent parties with real access. Documentation of training data and intended use. A right to an explanation and to contest a decision: that's your manager. For some uses, like live facial recognition in public, the fair amount of deployment may be none. Civil-rights law already forbids discrimination in lending, housing, and employment. The task is making sure an algorithm can't be used to do what a person isn't allowed to do.",
                   },
                 ],
               ],
@@ -488,7 +590,7 @@ export const partX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I will end closer to the Equity Researcher than I started, with one caution to my own side. Audits can become theater: a fairness certificate that lets a harmful system keep running with a clean conscience. The measure that matters is not whether a model passed a test. It is whether the people it acts on are better off, and whether they have any power to say no. Keep that as the metric and I am with you. Lose it and 'debiasing' becomes the most sophisticated alibi ever built.",
+                      "I'm ending closer to the Equity Researcher than I started, so take this as a caution to my own side. Audits can become theater: a fairness certificate that lets a harmful system keep running with a clean conscience. What matters isn't whether a model passed a test. It's whether the people it acts on are better off, and whether they've got any power to say no. Keep that as the metric and I'm with you. Lose it and 'debiasing' becomes the most sophisticated alibi ever built.",
                   },
                 ],
               ],
