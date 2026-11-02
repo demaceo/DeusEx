@@ -2881,15 +2881,18 @@ cite[role='button']:focus-visible,
    rail, so it appears only once the reader has started scrolling. */
 .round-nav {
   position: fixed;
-  /* Under the masthead and the 3px progress bar riding on it. --masthead-height
-     is published on :root by ReadingProgress, tracking the live collapse. */
-  top: calc(var(--masthead-height, 0px) + 3px);
+  /* Flush against the masthead, running under the 3px progress bar (z-index 45,
+     above this) rather than starting below it: that bar's track is transparent,
+     so a strip that began beneath it left a slit of page text showing through.
+     --masthead-height is published on :root by ReadingProgress. */
+  top: var(--masthead-height, 0px);
   left: 0;
   right: 0;
   z-index: 44;
   background: var(--paper);
   border-bottom: 1px solid var(--rule);
-  padding: 0.4rem 0.75rem;
+  /* +3px top clears the progress bar overlapping the strip's first rows. */
+  padding: calc(0.4rem + 3px) 0.75rem 0.4rem;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-6px);
@@ -2915,6 +2918,7 @@ cite[role='button']:focus-visible,
 }
 
 .round-nav__list {
+  list-style: none;
   display: flex;
   flex-direction: row;
   gap: 0.35rem;
@@ -3052,9 +3056,6 @@ section[id^='round-'] {
 
 .round-nav__list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
 }
 
 .round-nav__link {
