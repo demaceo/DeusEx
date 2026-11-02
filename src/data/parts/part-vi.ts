@@ -74,14 +74,14 @@ export const partVI: RoundtableDocument = {
         {
           type: 'debate',
           data: {
-            personaId: 'systems-humanist',
+            personaId: 'everyday-person',
             bubble: {
               paragraphs: [
                 [
                   {
                     type: 'text',
                     value:
-                      'Let me define the term precisely, because it is constantly misused. A "tail risk" is not a prediction that something will happen. It is a low-probability, high-consequence event in the tail of a distribution. The thing that makes it matter is not its likelihood but the product of likelihood and stakes, and, crucially, whether the outcome is reversible. We buy insurance and wear seatbelts for exactly this shape of risk.',
+                      "After our talk about fake videos, I'm wary of anything that sounds like a movie trailer. And when people say AI could end the world, I tune out. It sounds like science fiction. What do you even mean by a tail risk? Is this a fringe idea, or do serious people actually believe it?",
                   },
                 ],
               ],
@@ -91,14 +91,14 @@ export const partVI: RoundtableDocument = {
         {
           type: 'debate',
           data: {
-            personaId: 'everyday-person',
+            personaId: 'systems-humanist',
             bubble: {
               paragraphs: [
                 [
                   {
                     type: 'text',
                     value:
-                      'When people say AI could end the world, I honestly tune out. It sounds like science fiction. So tell me plainly: is this a fringe idea, or do serious people actually believe it?',
+                      "Start with the phrase, because it sounds scarier than it is. A tail risk isn't a prediction that something will happen. It's the far end of the range of outcomes: the odds are low and the stakes are enormous. You already live with these. You don't wear a seatbelt because you expect to crash today. What makes a tail matter is the odds times the stakes, and above all whether you can undo it afterward.",
                   },
                 ],
               ],
@@ -115,13 +115,13 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It is not fringe, and that is the uncomfortable part. When thousands of published AI researchers were surveyed in 2023, the median estimate for an extremely bad outcome (on the order of human extinction) was around 5%.',
+                      'As for fringe: no, and that is the uncomfortable part. When thousands of published AI researchers were surveyed in 2023, the median estimate for an extremely bad outcome (on the order of human extinction) was around 5%.',
                   },
                   { type: 'cite', claimId: 'c-vi-median-estimate' },
                   {
                     type: 'text',
                     value:
-                      ' Nearly half of respondents in a closely related survey gave it at least a 10% chance. These are not activists. They are the people building the systems. You do not have to share their estimate to notice that a 5% chance of an irreversible catastrophe is not a number a sane society ignores.',
+                      " Nearly half of respondents in a closely related survey gave it at least a 10% chance. These aren't activists. They're the people building the systems. You don't have to share their estimate. But if the builders put the odds there, I'd want a very good reason before we shrug it off.",
                   },
                 ],
               ],
@@ -138,7 +138,7 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to put a thumb on the scale of caution here. Against the caution. People are notoriously terrible at estimating probabilities for events with no base rate. "5%" sounds rigorous, but it is a vibe wearing a number\'s clothing. Ask the same people next year and you will get a different figure. I take the survey seriously as evidence that experts are worried. I do not take it seriously as a measurement of actual risk, because no such measurement exists.',
+                      "I'd lean the other way. People are terrible at putting odds on things that have never happened once. \"5%\" sounds rigorous, but it's a vibe wearing a number's clothing. Ask the same people next year and you'll get a different figure. I've covered three tech bubbles, and insiders' forecasts were never the thing I'd have bet on. So I take the survey as evidence that experts are worried. Not as a measurement of risk. Nobody has one of those.",
                   },
                 ],
               ],
@@ -188,7 +188,7 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Here is what the safety framing leaves out: the cost of delay is real, large, and invisible. Every year we slow down is a year of drugs not discovered, diagnoses missed, materials not invented. Part III of this series documented AlphaFold and the medical breakthroughs. Those came from racing forward, not from a precautionary pause. The bodies on the side of caution are real too; they are just statistical, so no one counts them.',
+                      "Here's what the safety framing leaves out: delay costs something, and nobody ever sees the bill. Every year we slow down is a year of drugs not discovered, diagnoses missed, materials not invented. When this table talked about medicine, it was AlphaFold and the breakthroughs that followed. Those came from racing, not from a pause. The people caution costs are real too. They're just statistical, so nobody counts them.",
                   },
                 ],
               ],
@@ -205,13 +205,13 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I am more cautious than the Accelerationist, but the underlying point about capability is just true. The compute used to train frontier models has roughly doubled every six months for over a decade.',
+                      "I'm more cautious than you are, but on capability you're simply right. The compute used to train frontier models has roughly doubled every six months for over a decade.",
                   },
                   { type: 'cite', claimId: 'c-vi-compute-trend' },
                   {
                     type: 'text',
                     value:
-                      ' That curve is why timelines keep getting shorter, and it is also why "just pause" is harder than it sounds. The capability gains are coupled to the same scaling that produces the benefits. You cannot cleanly keep one and stop the other.',
+                      ' That curve is why the timelines keep shrinking, and it\'s why "just pause" is harder than it sounds. The benefits and the risks come out of the same scaling. In every review I\'ve sat in, nobody had a way to keep one and switch off the other.',
                   },
                 ],
               ],
@@ -228,7 +228,7 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And notice the asymmetry in how risk gets treated. A speculative catastrophe gets a respectful hearing and an international summit. A concrete delay (a cancer drug that arrives in 2032 instead of 2028) gets nothing, because it has no face. I am not saying ignore safety. I am saying weigh both tails. There is a tail where we move too slowly and people who could have been saved are not.',
+                      "And look at how differently the two kinds of risk get treated. A speculative catastrophe gets a respectful hearing and an international summit. A concrete delay (a cancer drug that arrives in 2032 instead of 2028) gets nothing, because it has no face. I'm not saying ignore safety. I'm saying weigh both tails. There's one where we move too slowly and people who could've been saved aren't.",
                   },
                 ],
               ],
@@ -245,7 +245,24 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That is a fair challenge, and the honest answer is that good policy has to price both tails. But there is a difference the Accelerationist glosses over: a delayed drug is a recoverable loss; we get it later. An irreversible catastrophe is not recoverable at all. When one side of the ledger is "slower" and the other is "permanent," precaution is not irrational. It is how you treat asymmetric, one-way risks.',
+                      'Fair challenge, and good policy does have to price both tails. But you\'re skipping a difference. A delayed drug is a recoverable loss; we get it later. An irreversible catastrophe is not recoverable at all. When one side of the ledger says "slower" and the other says "permanent," precaution is not irrational. It is the ordinary way to treat a one-way risk.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'accelerationist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Recoverable for whom? The patient who doesn't make it to 2032 doesn't get the drug later.",
                   },
                 ],
               ],
@@ -295,13 +312,37 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The strongest argument for caution is not a movie plot. It is that we are deploying systems we cannot fully interpret, faster than we can understand them, and the timelines are compressing. In the 2023 survey, the aggregate forecast for a 50% chance of high-level machine intelligence jumped to 2047 (thirteen years earlier than the same researchers said just one year before).',
+                      "That patient is real, and I won't pretend the cost of slowing down is small, or that it falls on anyone at this table. The best case for speed is that its victims exist and can't be seen, and we're bad at counting people we can't see.",
+                  },
+                ],
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Here's why I still lean the other way. We're deploying systems we can't fully interpret, faster than we can understand them, and the timelines are compressing. In the 2023 survey, the aggregate forecast for a 50% chance of high-level machine intelligence jumped to 2047 (thirteen years earlier than the previous survey had put it just one year before).",
                   },
                   { type: 'cite', claimId: 'c-vi-hlmi-shift' },
                   {
                     type: 'text',
                     value:
-                      ' When the people closest to the work keep revising their timelines toward sooner, that is data about our uncertainty, and uncertainty cuts toward caution, not away from it.',
+                      ' When the people closest to the work keep moving their dates sooner, that tells you how uncertain we are. And uncertainty about something you cannot undo pushes me toward caution, not away from it.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'skeptic',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Hold on. A minute ago I said the number would move from one year to the next, and that made it weak. Now it's moved, and that makes it strong?",
                   },
                 ],
               ],
@@ -318,13 +359,13 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In 2023, hundreds of scientists and lab leaders (including Turing Award winners and the heads of the major labs) signed a single sentence: that mitigating the risk of extinction from AI should be a global priority alongside pandemics and nuclear war.',
+                      "It's both: weak as a measurement, telling as a sign of how unsure the field is. So here's something that isn't a survey. In 2023, hundreds of scientists and lab leaders (including Turing Award winners and the heads of the major labs) signed a single sentence: that mitigating the risk of extinction from AI should be a global priority alongside pandemics and nuclear war.",
                   },
                   { type: 'cite', claimId: 'c-vi-cais-statement' },
                   {
                     type: 'text',
                     value:
-                      " You can think they are wrong. You cannot call it a fringe view when the field's most cited researchers and the CEOs racing to build it put their names to it.",
+                      " You can think they're wrong. It's hard to call it fringe when the field's most cited researchers and the CEOs racing to build it put their names to it.",
                   },
                 ],
               ],
@@ -341,7 +382,7 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I will note the obvious conflict of interest, since no one else will: a statement that 'this technology is so powerful it could end the world' is also the greatest marketing copy ever written for a product, and a moat dug by incumbents who would love regulation that only they can afford. Sincere fear and convenient fear look identical from the outside.",
+                      "I'll give you the best version of your side, because it's better than the survey: nobody can fully read these systems, and the people building them keep pulling their own dates forward. I take that seriously. Now the conflict of interest, since nobody else at this table will raise it. 'This technology is so powerful it could end the world' is also the greatest marketing copy ever written for a product. And it's a moat for incumbents who'd love regulation only they can afford. From the outside, I can't tell the sincere fear from the convenient kind.",
                   },
                 ],
               ],
@@ -358,7 +399,7 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Both things can be true. The incentive to overstate risk for regulatory capture is real, and so is the underlying hazard. The way out of that trap is not to pick a side on motives. It is to build independent capacity to evaluate the systems, so we do not have to trust the labs' framing in either direction. The nuclear field did not run on the goodwill of weapons states. It ran on inspectors.",
+                      "Neither can anyone else, which is the point. The incentive to overstate risk and capture the regulators is real, and so is the hazard underneath it. You don't get out of that by guessing motives. You build independent capacity to test the systems, so nobody has to take the labs' framing in either direction. The nuclear field didn't run on the goodwill of weapons states. It ran on inspectors.",
                   },
                 ],
               ],
@@ -408,7 +449,7 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I follow both of you, and I am stuck. One says hurry, people are dying for lack of progress. The other says slow down, we might not get a second chance. They both sound right. What does a normal person actually want here?',
+                      "I follow both of you, and I'm stuck. One says hurry, people are dying for lack of progress. The other says slow down, we might not get a second chance. They both sound right. But I did yard duty for a lot of years, and nobody kept the children indoors because they might scrape a knee. You watched the gate to the road. Knees heal. So I don't need your five percent. I need to know which one this is: the knee or the road.",
                   },
                 ],
               ],
@@ -425,12 +466,12 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'What you want is the boring middle that neither extreme sells: proportional precaution. Keep developing the medicine and the materials. Also build the things that cost almost nothing in speed but buy a lot of safety: evaluations before deployment, the ability to shut a system down, independent auditors, incident reporting. Most researchers already want this. In the 2023 survey, around 70% said AI safety research should be prioritized more than it currently is.',
+                      "Some of each, probably, and nobody can tell you which part is which yet. That's why I'd take the boring middle neither camp sells: proportional precaution. Keep the yard open; keep developing the medicine and the materials. And watch the gate: build the things that cost almost nothing in speed but buy a lot of safety. Evaluations before deployment, the ability to shut a system down, independent auditors, incident reporting. Most researchers already want this. In the 2023 survey, around 70% said AI safety research should be prioritized more than it currently is.",
                   },
                   { type: 'cite', claimId: 'c-vi-prioritize-safety' },
                   {
                     type: 'text',
-                    value: ' That is not a doom cult. That is the field asking for a seatbelt.',
+                    value: " That's not a doom cult. That's the field asking for a seatbelt.",
                   },
                 ],
               ],
@@ -447,7 +488,7 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I can live with that framing, and I will say why it persuades me where doom did not. Evaluations, shutdown switches, and audits are good ideas even if the probability of catastrophe is basically zero, because they also catch the boring failures we already know happen. A precaution that pays off in every scenario is just competent engineering. That is a very different thing from betting the policy on a number nobody can defend.',
+                      "That one I can sign, and here's why it gets me where the doom didn't. Evaluations, shutdown switches, and audits are worth having even if the odds of catastrophe are basically zero, because they also catch the boring failures we already know happen. A precaution that pays off in every scenario is just competent engineering. Nobody has to defend a number to want it.",
                   },
                 ],
               ],
@@ -464,7 +505,57 @@ export const partVI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "If the deal is 'keep shipping, add real evaluations and an off-switch, and don't let incumbents weaponize safety into a licensing moat,' then I am in. My fight was never against safety. It was against using a speculative tail to justify handing a few companies a monopoly on the future. Cheap, universal safeguards I can defend. Permission slips for progress I cannot.",
+                      "If the deal is 'keep shipping, add real evaluations and an off-switch, and don't let incumbents turn safety into a licensing moat,' then I'm in. My fight was never against safety. It was against using a speculative tail to justify handing a few companies a monopoly on the future. Seatbelts I can defend. Permission slips for progress I can't.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'safety-researcher',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "I'll take that deal. And since you've spent the whole conversation asking what caution costs, here's the version that bothers me. If evaluations get expensive enough that only the biggest labs can afford them, people like me will have helped dig the moat you keep describing. And some of what we've learned about how these models work inside has come from researchers studying open ones. Lock everything down in the name of safety and you slow the very research that would tell us whether we're safe. So what would make you uneasy about going fast?",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'accelerationist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Something I can't roll back. I've shipped bad releases and pulled them the same afternoon; every founder has. Then I watched one faulty CrowdStrike update ground flights and disrupt hospitals in a single morning, and that was a patch somebody could reverse. Once a model's weights are copied around the world, there's no reverse. That's the part of your argument I can't wave off, and it's worth more to me than another fight over five percent.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'safety-researcher',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value: 'Same here. That told me more than the survey did.',
                   },
                 ],
               ],
