@@ -119,6 +119,72 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
         establishedIn: 'part-xi',
         anchor: 'Global e-waste collection rate (claim c-xi-ewaste).',
       },
+      {
+        fact: 'Retired; her income does not rise when the electric bill does.',
+        establishedIn: 'part-i',
+        anchor: 'Virginia/PJM residential rate rises (claim c-i-ansi-rate-increase).',
+      },
+      {
+        fact: 'Heard "be grateful you\'ve got a job" in the staff room more than once.',
+        establishedIn: 'part-i',
+        anchor: 'Kenya youth-unemployment exchange (claim c-i-qhala-unemployment).',
+      },
+      {
+        fact: 'Remembers Three Mile Island from the evening news as a young woman.',
+        establishedIn: 'part-ii',
+        anchor: 'The 1979 partial meltdown at Three Mile Island Unit 2.',
+      },
+      {
+        fact: "Was in the teachers' union her whole career.",
+        establishedIn: 'part-ii',
+        anchor: 'US public-school teachers are widely unionized (NEA, AFT).',
+      },
+      {
+        fact: 'Taught where new resources (computers, good textbooks) reached the schools across town first; her district got computers late.',
+        establishedIn: 'part-iii',
+        anchor: 'Documented US school funding gaps tied to local property taxes.',
+      },
+      {
+        fact: 'Her neighbor has stopped going to the pharmacy alone because she cannot read the labels, and hates asking for help.',
+        establishedIn: 'part-iii',
+        anchor: 'Documented difficulty low-vision patients have reading medication labels.',
+      },
+      {
+        fact: 'Repeated the fake senator video to friends before learning it was fake; now doubts the evening news; still half-remembers him saying it.',
+        establishedIn: 'part-v',
+        anchor:
+          'Forward-driven spread of deepfakes; the continued-influence effect of misinformation.',
+      },
+      {
+        fact: 'As a teacher, made pupils say where they had read a fact before using it.',
+        establishedIn: 'part-v',
+        anchor: 'Ordinary source-citation teaching.',
+      },
+      {
+        fact: 'Did yard duty for many years.',
+        establishedIn: 'part-vi',
+        anchor: 'Routine playground supervision duty for teachers.',
+      },
+      {
+        fact: 'In the quiet house since her husband died, she hears the clock.',
+        establishedIn: 'part-vii',
+        anchor: 'Surgeon General 2023 advisory on loneliness (claim c-vii-surgeon-general).',
+      },
+      {
+        fact: 'Cut pictures out of magazines for worksheets; would otherwise have drawn the birthday card herself with felt pens.',
+        establishedIn: 'part-ix',
+        anchor: 'Ordinary pre-digital classroom practice.',
+      },
+      {
+        fact: 'Saw darker-skinned students come back from school picture day barely visible in their portraits.',
+        establishedIn: 'part-x',
+        anchor: 'Color film calibrated to lighter skin (Kodak "Shirley cards").',
+      },
+      {
+        fact: 'Decided that nothing leaves her drawer until the manufacturer says where it goes.',
+        establishedIn: 'part-xi',
+        anchor: 'Global e-waste collection rate (claim c-xi-ewaste).',
+      },
     ],
     arc: 'Starts as a newcomer asking whether she is complicit (I). By III she can hold costs and benefits together; by VIII she names concentration in her own words. She should increasingly bring judgment, not just questions.',
   },
@@ -148,6 +214,26 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
         establishedIn: 'part-iv',
         anchor:
           'Seven leading labs signed the White House commitments, including pre-deployment red-teaming (claim c-iv-white-house-commitments).',
+      },
+      {
+        fact: 'Nobody "in my building" sets drug prices.',
+        establishedIn: 'part-iii',
+        anchor: 'Persona definition (engineer, not pricing).',
+      },
+      {
+        fact: 'Has sat in launch reviews where no one asked whether a product would end up used less.',
+        establishedIn: 'part-vii',
+        anchor: 'Engagement-optimized product incentives discussed in Part VII.',
+      },
+      {
+        fact: 'Has sat in meetings deciding who gets early access to new models.',
+        establishedIn: 'part-viii',
+        anchor: 'Frontier labs run limited early-access and trusted-tester programs.',
+      },
+      {
+        fact: 'Has seen the licensed-data route lose in planning meetings because it is slower and costlier.',
+        establishedIn: 'part-ix',
+        anchor: 'Licensed-only training models exist (Part IX dialogue).',
       },
     ],
     arc: 'Concedes "managed well" needs mandated transparency (I); "the direction is right, the speed is the problem" (II); the hardest questions are not technical (III); less sure the frontier will not stay a private club (VIII). Each part should leave this persona a little less certain that voluntary action is enough, without becoming a critic.',
@@ -258,6 +344,11 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
         establishedIn: 'part-v',
         anchor: 'Persona definition in personas.ts.',
       },
+      {
+        fact: 'Writes debunking columns; keeps a file of "clean supply chain soon" press releases.',
+        establishedIn: 'part-v',
+        anchor: 'Veteran technology reporter (persona definition).',
+      },
     ],
     arc: 'Deflates the deepfake projection (V) and the probability estimates (VI), then concedes more and more: the consent problem (IX), ending "closer to the Equity Researcher than I started" (X).',
   },
@@ -283,6 +374,11 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
         establishedIn: 'part-ix',
         anchor: 'Stated in her Part IX turns.',
       },
+      {
+        fact: 'Has fed her own rough sketches to a generative tool and been delighted by some results; friends of hers have stopped taking commissions.',
+        establishedIn: 'part-ix',
+        anchor: 'Society of Authors 2024 lost-work survey (claim c-ix-soa).',
+      },
     ],
     arc: 'From naming volume as the harm (V) to a concrete demand: consent, credit, compensation (IX). Room to show contradiction: she enjoys the tools and still calls the economics unjust.',
   },
@@ -302,6 +398,11 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
         fact: 'Founder and e/acc advocate.',
         establishedIn: 'part-vi',
         anchor: 'Persona definition in personas.ts.',
+      },
+      {
+        fact: 'Has shipped bad releases and pulled them the same day; watched the faulty CrowdStrike update ground flights and disrupt hospitals.',
+        establishedIn: 'part-vi',
+        anchor: 'The July 2024 CrowdStrike outage.',
       },
     ],
     arc: 'Agrees in VI to cheap, universal safeguards ("I am in"); the line is permission slips, not seatbelts.',
@@ -340,6 +441,12 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
         fact: 'University student in their early twenties; has used chatbots since high school; has a younger cousin.',
         establishedIn: 'part-vii',
         anchor: 'Common Sense Media teen survey (claim c-vii-teen-usage).',
+      },
+      {
+        fact: 'The friends who leaned hardest on companions had no close friendship to trade.',
+        establishedIn: 'part-vii',
+        anchor:
+          'Most teen users still spend more time with real friends (claim c-vii-real-friends).',
       },
     ],
     arc: 'Single appearance so far (VII).',
@@ -404,7 +511,7 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
 
   'land-defender': {
     register:
-      'No contractions; short declarative sentences; speaks as "we" for a community. Grounded in place, water, and soil. Never pleads.',
+      'No contractions; short declarative sentences; speaks as "we" for a community. Established as "she" in the Part XI intro. Grounded in place, water, and soil. Never pleads.',
     moves: [
       'Corrects the abstraction with the physical ("It does not float").',
       'Speaks of organizing and decisions the community has made, not only of harm done to it.',
@@ -413,9 +520,15 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
     pushesBackOn: '"Jobs" offered as payment for consent that was never asked.',
     biography: [
       {
-        fact: 'Community organizer living in an extraction zone.',
+        fact: 'Community organizer living in an extraction zone; written as female in the Part XI intro.',
         establishedIn: 'part-xi',
         anchor: 'Cobalt mining in the southern DRC (claim c-xi-cobalt).',
+      },
+      {
+        fact: 'Her community holds its own assemblies before outsiders arrive, does not always agree, and has a rule that no one signs for the village alone; some neighbors want the mine jobs.',
+        establishedIn: 'part-xi',
+        anchor:
+          'Free, prior and informed consent (UNDRIP); company negotiations with individual households near southern DRC cobalt mines.',
       },
     ],
     arc: 'Single appearance so far (XI). A revision should show agency: consultation fights, community votes, and disagreement inside the community about mining jobs.',
