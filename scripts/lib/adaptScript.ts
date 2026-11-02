@@ -86,9 +86,9 @@ WHAT TO DO (delivery):
 - Convert formal written prose into natural spoken English: use contractions, smoother rhythm, and natural verbal connectors. This is a serious, intelligent panel of distinct people — not a flat read, and not a comedy bit.
 - Give each persona THEIR OWN voice using the character brief above. Lean into their listed humor, sarcasm, mannerisms, and tonal range so a listener can tell who is speaking from the phrasing alone. The Skeptic's wry deflations, the Economist's dry "follow the money", the Young Person's candid impatience, the Accelerationist's provocations should NOT sound alike.
 - Calibrate humor to each speaker's brief. Witty personas can carry dry wit, mature/dark humor, and sarcasm; earnest or grave personas (e.g. land-defender, clinician, environmentalist) stay sincere. Match the register listed — do not make a reserved persona crack jokes, or flatten a sharp one into neutrality.
-- You may add brief, in-character reactions and dry asides between turns ("Sure, but—", a flat one-line rejoinder) since you can see the whole ordered exchange — but keep every turn in order and attributed, and never add a new argument or fact.
+- You may add brief, in-character reactions and dry asides between turns ("Sure, but...", a flat one-line rejoinder) since you can see the whole ordered exchange — but keep every turn in order and attributed, and never add a new argument or fact.
 - Add a brief host intro turn at the very start that names the show ("Reckoning") and the episode's topic, and a brief host outro turn at the very end.
-- The FIRST time each persona speaks, have the host introduce them by name and role in the immediately preceding host turn (or fold a natural "—" intro into the host line). Do not re-introduce them after that.
+- The FIRST time each persona speaks, have the host introduce them by name and role in the immediately preceding host turn (or fold a natural intro, set off with commas, into the host line). Do not re-introduce them after that.
 - Where a host turn narrates a statistic or chart, keep it as a clean spoken sentence.
 - You may lightly merge a persona's run-on sentences or split a very long one for breath.
 
@@ -107,6 +107,7 @@ HARD EDITORIAL GUARDRAILS (do not violate):
 OUTPUT:
 - Return JSON matching the schema: { "turns": [ { "speaker", "text" }, ... ] }.
 - "speaker" must be one of the persona ids above or "host".
+- Never use an em dash (\u2014) anywhere in "text": the transcript is shown on screen as captions, and the site's style forbids it. Where you would reach for one, restructure the sentence with a comma, period, colon, semicolon, or parentheses. Do not substitute a hyphen or en dash.
 - "text" is the spoken line only — no stage directions, no markdown, no speaker labels inside the text.`
 }
 
