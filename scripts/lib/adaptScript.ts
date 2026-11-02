@@ -63,11 +63,12 @@ function rosterLine(id: PersonaId): string {
     `    Sarcasm: ${d.sarcasm}`,
     `    Mannerisms: ${d.mannerisms}`,
     `    Tone: ${d.tone}`,
-    // The written-page voice guide, so audio and text keep the same people.
-    // Biography is deliberately left out: the rewrite must not add facts.
-    `    Signature moves: ${g.moves.join(' / ')}`,
-    `    Pushes back on: ${g.pushesBackOn}`,
-    `    Avoid: ${g.avoid.join(' / ')}`,
+    // Only the guide's register (sentence shape, formality, contractions) is
+    // passed: it shapes delivery without touching substance. Its moves,
+    // pushback and avoid lists are content-editing guidance for writers
+    // (e.g. "no long inventories of figures") that would conflict with the
+    // guardrail to preserve every statistic, and biography would add facts.
+    `    Register: ${g.register}`,
   ].join('\n')
 }
 

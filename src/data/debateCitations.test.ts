@@ -12,7 +12,8 @@ import type { RoundtableDocument } from '../types/document'
  * the evidence (and the verification dashboard built on it) attached to the
  * same voice that asserts it.
  *
- * Changing a part's claims on purpose? Run `pnpm vitest run -u` and review the
+ * Changing a part's claims on purpose? Run `pnpm vitest run src/data/debateCitations.test.ts -u`
+ * (scoped, so no other snapshot is silently accepted) and review the
  * snapshot diff in the PR like any other content change.
  */
 function citationsBySpeaker(doc: RoundtableDocument): Record<string, string[]> {

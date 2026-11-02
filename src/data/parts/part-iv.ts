@@ -500,7 +500,7 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      " Most of its obligations apply from 2026, if Brussels doesn't push the high-risk deadline back again. It covers any company deploying AI in the EU, wherever the system was built, and that reach is what gives it teeth. It's imperfect: what counts as \"high risk\" is contested, and national regulators' capacity to enforce it is uneven. But it's a legal floor, and a floor is more than a declaration.",
+                      " Most of its obligations apply from 2026, if Brussels doesn't push the high-risk deadline back, which it's now debating. It covers any company deploying AI in the EU, wherever the system was built, and that reach is what gives it teeth. It's imperfect: what counts as \"high risk\" is contested, and national regulators' capacity to enforce it is uneven. But it's a legal floor, and a floor is more than a declaration.",
                   },
                 ],
               ],

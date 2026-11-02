@@ -140,9 +140,14 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
         anchor: 'US public-school teachers are widely unionized (NEA, AFT).',
       },
       {
-        fact: 'Taught where new resources (computers, good textbooks) reached the schools across town first; her district got computers late.',
+        fact: 'Taught where new resources (computers, good textbooks) reached the schools across town first.',
         establishedIn: 'part-iii',
         anchor: 'Documented US school funding gaps tied to local property taxes.',
+      },
+      {
+        fact: 'Her district got computers "the year after they stopped mattering".',
+        establishedIn: 'part-viii',
+        anchor: 'Documented classroom-technology lag in under-resourced US districts.',
       },
       {
         fact: 'Her neighbor has stopped going to the pharmacy alone because she cannot read the labels, and hates asking for help.',
@@ -325,7 +330,7 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
     ],
     pushesBackOn: 'Blame aimed at individual bad actors, and fatalism about races.',
     biography: [],
-    arc: 'Introduced in IV as the framer of the race; later parts use this voice sparingly to connect threads (V, VI, VIII, X) and close the series (XI). The arc: argued with more often than agreed with.',
+    arc: "Introduced in IV as the framer of the race; later parts use this voice sparingly to connect threads (V, VI, VIII, X) and give a single, conceding turn in the finale (XI), where the Land Defender corrects the idea of consent as a switch. The arc: argued with more often than agreed with; deliberately not the series' closing voice.",
   },
 
   skeptic: {
@@ -380,7 +385,7 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
         anchor: 'Society of Authors 2024 lost-work survey (claim c-ix-soa).',
       },
     ],
-    arc: 'From naming volume as the harm (V) to a concrete demand: consent, credit, compensation (IX). Room to show contradiction: she enjoys the tools and still calls the economics unjust.',
+    arc: 'From naming volume as the harm (V) to a concrete demand: consent, credit, compensation (IX). The revised IX shows her contradiction: delighted by the tools on her own sketches, still calling the deal rotten.',
   },
 
   accelerationist: {
@@ -424,7 +429,7 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
         anchor: 'Persona definition in personas.ts.',
       },
     ],
-    arc: 'Single appearance so far (VI). A return should show what would make this persona uncomfortable about moving too slowly.',
+    arc: 'Single appearance so far (VI), which already shows the discomfort with moving too slowly (evaluation costs building a moat; locking down open models). A return should build on that, not restate it.',
   },
 
   'young-person': {
@@ -531,6 +536,6 @@ export const PERSONA_VOICE_GUIDE: Record<PersonaId, PersonaVoiceGuide> = {
           'Free, prior and informed consent (UNDRIP); company negotiations with individual households near southern DRC cobalt mines.',
       },
     ],
-    arc: 'Single appearance so far (XI). A revision should show agency: consultation fights, community votes, and disagreement inside the community about mining jobs.',
+    arc: 'Single appearance so far (XI), already shown with agency: community assemblies, internal disagreement about mine jobs, and the rule that no one signs alone. A return should build on that.',
   },
 }
