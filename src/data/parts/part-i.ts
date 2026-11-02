@@ -211,7 +211,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I saw something on the news about AI using as much electricity as a whole country. Is that actually true? I use my phone to ask questions sometimes; I didn't think there was anything wrong with that. Am I part of the problem?",
+                      "I saw on the news that AI uses as much electricity as a whole country. I ask my phone things a few times a day: the weather, how long to roast a chicken. I never gave it a thought. Surely one question about a chicken isn't what's doing it. Or am I part of the problem?",
                   },
                 ],
               ],
@@ -228,26 +228,26 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That framing is a bit misleading. Yes, the numbers are large in absolute terms, but context matters. Global data centers consumed roughly 460 terawatt-hours in 2025, about 1.8% of total world electricity.',
+                      "Your chicken isn't the problem. Global data centers consumed roughly 460 terawatt-hours in 2025, about 1.8% of total world electricity.",
                   },
                   { type: 'cite', claimId: 'c-i-iea-dc-electricity' },
                   {
                     type: 'text',
                     value:
-                      ' That is significant, but so is what it enables: climate modeling, drug discovery, real-time translation, accessibility tools for people with disabilities.',
+                      ' Big number, small share, and look at what it runs: climate modeling, drug discovery, real-time translation, accessibility tools for people with disabilities.',
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'And individual queries are not the issue. The real energy intensity sits in model training. A single GPT-4-scale training run uses about 50 gigawatt-hours.',
+                      'The heavy energy use is in training. A single GPT-4-scale training run uses about 50 gigawatt-hours.',
                   },
                   { type: 'cite', claimId: 'c-i-mit-training-gwh' },
                   {
                     type: 'text',
                     value:
-                      " But that's a one-time cost spread across billions of daily uses. The renewable energy transition in the tech sector is also accelerating faster than almost any other industry. Microsoft, Google, and Amazon have made prominent public pledges toward 100% renewable energy, and the industry is investing billions to back them up.",
+                      " But you pay that once and spread it across billions of uses a day. And the tech sector is moving to clean power faster than almost any other industry: Microsoft, Google, and Amazon have all made public pledges toward 100% renewable energy, and they're putting billions behind them.",
                   },
                 ],
               ],
@@ -264,46 +264,66 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Let me push back on "pledges." Google, Microsoft, and Amazon have made those promises, and they\'ve simultaneously seen their emissions rise. Microsoft reported a 34% jump in water consumption in a single year, to about 6.4 million cubic metres, as its AI build-out accelerated.',
+                      "They've pledged. And since they pledged, their emissions have gone up, not down. The water is going the same way: Microsoft reported a 34% jump in water consumption in a single year, to about 6.4 million cubic metres, as its AI build-out accelerated.",
                   },
                   { type: 'cite', claimId: 'c-i-microsoft-water-increase' },
-                  {
-                    type: 'text',
-                    value:
-                      ' Their carbon emissions have gone up, not down, since they pledged net zero. Pledges without enforcement mechanisms are marketing. The infrastructure buildout is outpacing the clean energy transition by a wide margin.',
-                  },
+                  { type: 'text', value: ' A pledge with nothing enforcing it is marketing.' },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'And the 1.8% figure is a snapshot. The IEA projects data center electricity demand will more than double to 945 TWh by 2030.',
-                  },
-                  { type: 'cite', claimId: 'c-i-iea-projection-2030' },
-                  {
-                    type: 'text',
-                    value:
-                      " Training a single large-scale model generates an estimated 552 tons of CO₂ (equivalent to the annual carbon footprint of 121 American households), and that figure dates to the GPT-3 generation. Modern frontier models are believed to be considerably higher, though companies don't disclose it.",
-                  },
-                  { type: 'cite', claimId: 'c-i-wef-co2-training' },
-                  {
-                    type: 'text',
-                    value:
-                      " We are building an industry whose carbon costs rival small nations, and we're doing it with fossil-heavy grids in many regions.",
-                  },
-                ],
-                [
-                  {
-                    type: 'text',
-                    value:
-                      'Data centers draw from electricity grids whose carbon intensity runs significantly higher than the U.S. average, because many are sited in regions where coal and gas still dominate the local mix.',
+                      'Then look at where the power comes from. Data centers draw from grids whose carbon intensity runs significantly higher than the U.S. average, because so many are sited in regions where coal and gas still dominate the local mix.',
                   },
                   { type: 'cite', claimId: 'c-i-aimultiple-grid-carbon' },
                   {
                     type: 'text',
                     value:
-                      " Where you build matters enormously. And most companies are not being transparent about where they're building or what energy mix they're drawing from.",
+                      " Where you build matters enormously, and most companies won't say where they're building or what energy mix they're drawing from.",
                   },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'tech-optimist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Emissions went up because demand outran every forecast, not because anyone's cheating. And training is still a one-time cost.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'environmentalist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "One time per model, and nobody's stopped making models. That 1.8% is a snapshot. The IEA projects data center electricity demand will more than double to 945 terawatt-hours by 2030.",
+                  },
+                  { type: 'cite', claimId: 'c-i-iea-projection-2030' },
+                ],
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Training a single large-scale model generates an estimated 552 tons of CO₂, about the annual carbon footprint of 121 American households, and that figure dates to the GPT-3 generation. Today's frontier models are believed to be considerably higher, though the companies don't disclose it.",
+                  },
+                  { type: 'cite', claimId: 'c-i-wef-co2-training' },
                 ],
               ],
             },
@@ -319,13 +339,10 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The reason we're having this debate at all is that there are no binding disclosure requirements. Most major AI providers do not publish enough information for independent researchers to verify their energy use or carbon footprint.",
+                      "They don't have to. There are no binding disclosure requirements. Most major AI providers do not publish enough information for independent researchers to verify their energy use or carbon footprint.",
                   },
                   { type: 'cite', claimId: 'c-i-mit-disclosure-gap' },
-                  {
-                    type: 'text',
-                    value: " We're debating estimates, and that's by design.",
-                  },
+                  { type: 'text', value: " We're debating estimates, and that's by design." },
                 ],
                 [
                   {
@@ -337,13 +354,13 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' In the U.S., President Trump\'s December 2025 executive order moved in the opposite direction, declaring that "U.S. AI companies must be free to innovate without cumbersome regulation," and actively working to preempt state-level AI laws.',
+                      ' The U.S. went the other way. President Trump\'s December 2025 executive order declared that "U.S. AI companies must be free to innovate without cumbersome regulation," and moved to preempt state-level AI laws.',
                   },
                   { type: 'cite', claimId: 'c-i-eo-14365-innovate' },
                   {
                     type: 'text',
                     value:
-                      ' The regulatory environment is fragmenting precisely when we need coordination.',
+                      ' The rules are fragmenting at precisely the moment they need to converge.',
                   },
                 ],
               ],
@@ -360,7 +377,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'So my electricity bill might actually go up because of all this? I read something about that. In Virginia, they said energy prices jumped some enormous amount because of all the data centers there.',
+                      "Here's where I'd feel it: my electric bill. I'm retired, and my income doesn't go up when the bill does. I read that prices in Virginia jumped some enormous amount because of all the data centers there. Is that coming for the rest of us?",
                   },
                 ],
               ],
@@ -377,19 +394,15 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Yes, that's correct, and it's one of the most concrete and immediate harms for ordinary people. Northern Virginia, known as \"Data Center Alley,\" has the world's highest concentration of these facilities. The surge in data center energy demand caused an 800% spike in energy prices during the 2024 capacity auction for the regional grid.",
+                      "It's already here. Northern Virginia, known as \"Data Center Alley,\" has the world's highest concentration of these facilities. Their demand drove an 800% spike in prices at the regional grid's 2024 capacity auction.",
                   },
                   { type: 'cite', claimId: 'c-i-ansi-price-surge' },
                   {
                     type: 'text',
                     value:
-                      ' That is expected to raise residential electricity rates across 13 states by 20% in summer 2026, and by 30%–60% by 2030.',
+                      ' That is expected to raise residential electricity rates across 13 states by 20% in summer 2026, and by 30% to 60% by 2030.',
                   },
                   { type: 'cite', claimId: 'c-i-ansi-rate-increase' },
-                  {
-                    type: 'text',
-                    value: ' This is not abstract. This is your utility bill.',
-                  },
                 ],
               ],
             },
@@ -460,7 +473,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Water? I hadn't even thought about water. Like, these buildings are using drinking water? Why?",
+                      'Water too? I taught the water cycle for years and never once had to put a computer in it. Are these buildings using the same water that comes out of my tap?',
                   },
                 ],
               ],
@@ -477,7 +490,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Servers generate enormous heat, and most facilities use water-based cooling systems to prevent them from overheating, often drawing from local municipal water supplies, sometimes potable water. The average data center uses 300,000 gallons of water per day.',
+                      'Sometimes, yes. Servers throw off enormous heat, and most facilities cool them with water, often drawn from the local municipal supply, sometimes potable water. The average data center uses 300,000 gallons of water per day.',
                   },
                   { type: 'cite', claimId: 'c-i-wef-water-per-day' },
                 ],
@@ -490,8 +503,41 @@ export const partI: RoundtableDocument = {
                   { type: 'cite', claimId: 'c-i-pew-us-water' },
                   {
                     type: 'text',
+                    value: " That's six times the annual water use of the city of Seattle.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
                     value:
-                      ' That is six times the annual water use of the city of Seattle. And many of these facilities are being built in the American West, where we already have severe, worsening droughts. A July 2025 analysis by Western Resource Advocates projected that data centers across Arizona, Colorado, Nevada, New Mexico, and Utah could draw 7 billion gallons of water a year by 2035, enough to supply up to 194,000 people.',
+                      "Seattle has rain to spare. Are they putting these places where there's rain to spare?",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'environmentalist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'Not often enough. Many are going up in the American West, where droughts are already severe and getting worse. A July 2025 analysis by Western Resource Advocates projected that data centers across Arizona, Colorado, Nevada, New Mexico, and Utah could draw 7 billion gallons of water a year by 2035, enough to supply up to 194,000 people.',
                   },
                   { type: 'cite', claimId: 'c-i-stanford-water-competition' },
                 ],
@@ -528,13 +574,13 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There's a real tension here that deserves honest acknowledgment. Water-based cooling is more energy efficient than air-based cooling, so reducing water use can increase electricity use, and vice versa. Cooling systems account for 20%–40% of total data center energy.",
+                      'And out there you run into the trade-off nobody likes. Water-based cooling is more energy efficient than air-based cooling, so cutting water usually means burning more electricity, and the other way round. Cooling systems account for 20% to 40% of total data center energy.',
                   },
                   { type: 'cite', claimId: 'c-i-msci-cooling-energy' },
                   {
                     type: 'text',
                     value:
-                      ' The industry is actively developing closed-loop cooling and direct liquid cooling systems: an engineering analysis by Vertiv and NVIDIA found that taking a facility to roughly 75% liquid cooling cut facility power by about 18% and total site power by about 10% against an all air-cooled baseline.',
+                      " We're building our way out with closed-loop and direct liquid cooling: an engineering analysis by Vertiv and NVIDIA found that taking a facility to roughly 75% liquid cooling cut facility power by about 18% and total site power by about 10% against an all air-cooled baseline.",
                   },
                   { type: 'cite', claimId: 'c-i-arxiv-cooling-reduction' },
                 ],
@@ -542,7 +588,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The solutions exist, but I'll admit adoption is slower than it should be, and the buildout is currently outpacing the efficiency improvements.",
+                      "The fixes exist. Adoption's slower than it should be, and right now the build-out is outrunning them.",
                   },
                 ],
               ],
@@ -559,13 +605,13 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The solutions existing and the solutions being deployed are different things. Nixon Peabody's September 2025 legal analysis found that companies face almost no binding legal obligations around water disclosure or usage limits for data centers.",
+                      "Existing and deployed are different things. Nixon Peabody's September 2025 legal analysis found that companies face almost no binding legal obligations around water disclosure or usage limits for data centers.",
                   },
                   { type: 'cite', claimId: 'c-i-nixon-peabody-water' },
                   {
                     type: 'text',
                     value:
-                      " MSCI's analysis of water scarcity risk found that data centers are increasingly sited in regions projected to experience 15 to 35 more days of water scarcity annually by 2050, and the companies are not legally required to factor that in.",
+                      ' MSCI found that data centers are increasingly sited in regions projected to experience 15 to 35 more days of water scarcity annually by 2050, and nothing requires the companies to factor that in.',
                   },
                   { type: 'cite', claimId: 'c-i-msci-water-scarcity' },
                 ],
@@ -596,7 +642,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I thought AI was made by, like, engineers and programmers. Are there a lot of regular people involved in building it?',
+                      "I've always pictured programmers in California, typing away. That's who builds it, isn't it?",
                   },
                 ],
               ],
@@ -613,7 +659,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Hundreds of thousands of them. Before any AI model can learn, humans have to label the data it trains on: categorizing images, flagging harmful content, rating responses, teaching the machine what's appropriate. This is called data annotation and content moderation, and it's largely invisible labor concentrated in the Global South.",
+                      "Some of it. The rest is hundreds of thousands of people you'll never see. Before any model can learn, humans have to label the data it trains on: sorting images, flagging harmful content, rating answers, teaching the machine what's appropriate. Data annotation. Content moderation. Mostly invisible, mostly in the Global South.",
                   },
                 ],
                 [
@@ -643,10 +689,10 @@ export const partI: RoundtableDocument = {
                   { type: 'cite', claimId: 'c-i-philippines-scale-ai' },
                   {
                     type: 'text',
-                    value:
-                      ' Meanwhile, a U.S.-based annotator doing the same work earns $10–$25 an hour.',
+                    value: ' A U.S.-based annotator doing the same work earns $10 to $25 an hour.',
                   },
                   { type: 'cite', claimId: 'c-i-us-annotator-wage' },
+                  { type: 'text', value: ' Same work. Different country.' },
                 ],
               ],
             },
@@ -683,7 +729,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That's... I didn't know that at all. So when I use one of these AI tools, someone somewhere had to sit and watch terrible things to help train it? That feels wrong.",
+                      "I didn't know any of that. So when I ask it about the weather, somebody sat through those things so it would know what not to show me. Then I am part of it. Not the electricity. This.",
                   },
                 ],
               ],
@@ -700,13 +746,30 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I don't want to minimize this, because the labor conditions described are genuinely unacceptable. But the solution is worker protection and fair pay, not halting the technology. In Kenya, youth unemployment is over 12%.",
+                      "You didn't set those wages, and nobody here will defend them; those conditions are unacceptable. But the fix is worker protection and fair pay, not halting the technology. In Kenya, youth unemployment is over 12%.",
                   },
                   { type: 'cite', claimId: 'c-i-qhala-unemployment' },
                   {
                     type: 'text',
                     value:
-                      ' Digital labor platforms represent one of the only growing employment sectors accessible to young Kenyans. What those workers deserve is legal protections, fair wages, and real mental health support, not for the jobs to disappear.',
+                      " Digital labor platforms are one of the only growing employment sectors young Kenyans can get into. Those workers need legal protections, fair wages, and real mental health support. They don't need the jobs to disappear.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'That sounds a lot like "be grateful you\'ve got a job." I heard that in the staff room more than once, and it never meant things were about to get better.',
                   },
                 ],
               ],
@@ -723,13 +786,13 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Agreed, and I'd add that Amazon, Google, Meta, Microsoft, and Nvidia collectively use at least 30 intermediary companies to insulate themselves from direct accountability for how these workers are treated.",
+                      'It usually means the opposite. Nobody here wants those jobs gone. We want somebody to answer for them. Amazon, Google, Meta, Microsoft, and Nvidia collectively use at least 30 intermediary companies to insulate themselves from direct accountability for how these workers are treated.',
                   },
                   { type: 'cite', claimId: 'c-i-somo-intermediaries' },
                   {
                     type: 'text',
                     value:
-                      ' The "we didn\'t directly employ them" defense is legal cover. When Remotasks (one of these intermediary platforms) shut down its Kenya operations in March 2024, it sent workers a few hours\' notice via email. No severance. No transition. Just gone.',
+                      ' "We didn\'t employ them directly" is legal cover. When Remotasks, one of those intermediary platforms, shut down its Kenya operations in March 2024, it gave workers a few hours\' notice by email. No severance. No transition. Just gone.',
                   },
                   { type: 'cite', claimId: 'c-i-remotasks-shutdown' },
                 ],
@@ -737,13 +800,12 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In February 2025, Kenyan data workers formed the Data Labelers Association specifically to challenge what they call "systemic injustices." 339 members joined in its first week.',
+                      'In February 2025, Kenyan data workers formed the Data Labelers Association to challenge what they call "systemic injustices." 339 members joined in its first week.',
                   },
                   { type: 'cite', claimId: 'c-i-data-labelers-association' },
                   {
                     type: 'text',
-                    value:
-                      ' These workers are organizing because no law protects them and no corporation is volunteering accountability.',
+                    value: ' No law protected them and no company volunteered, so they organized.',
                   },
                 ],
               ],
@@ -767,32 +829,32 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'All of the problems discussed (energy opacity, water exploitation, labor abuse) share one root cause: the absence of binding rules with real enforcement. Let me lay out where the law actually stands.',
+                      "Energy nobody can verify, water nobody has to report, workers nobody employs on paper. It's the same gap each time: no binding rules with real enforcement.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "The EU AI Act, adopted March 2024, is the world's most comprehensive binding AI law. It classifies AI systems by risk level and imposes transparency requirements, third-party audits, and human oversight mandates for high-risk systems.",
+                      "I mentioned the EU AI Act earlier. Adopted in March 2024, it's the world's most comprehensive binding AI law. It classifies AI systems by risk level and imposes transparency requirements, third-party audits, and human oversight mandates for high-risk systems.",
                   },
                   { type: 'cite', claimId: 'c-i-eu-act-comprehensive' },
                   {
                     type: 'text',
-                    value: ' It does apply to non-EU companies deploying AI in Europe.',
+                    value: ' And it applies to non-EU companies deploying AI in Europe.',
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'In the United States, the picture is fragmented. More than 1,000 AI-related bills were introduced across U.S. states in 2024–2025.',
+                      'The United States is fragmented. More than 1,000 AI-related bills were introduced across U.S. states in 2024 and 2025.',
                   },
                   { type: 'cite', claimId: 'c-i-pillsbury-bills' },
                   {
                     type: 'text',
                     value:
-                      ' California, Colorado, New York, and Illinois each moved toward their own frameworks. But President Trump\'s December 11, 2025 executive order declared the policy of the administration is "AI dominance through a minimally burdensome national policy framework," and directed federal agencies to challenge state-level AI regulations, even threatening to withhold federal funding from states whose laws "conflict" with the administration\'s approach.',
+                      ' California, Colorado, New York, and Illinois each moved toward their own frameworks. Then President Trump\'s December 11, 2025 executive order declared the policy of the administration to be "AI dominance through a minimally burdensome national policy framework," and directed federal agencies to challenge state-level AI regulations, even threatening to withhold federal funding from states whose laws "conflict" with the administration\'s approach.',
                   },
                   { type: 'cite', claimId: 'c-i-eo-14365-dominance' },
                 ],
@@ -810,7 +872,30 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'm not going to defend every policy decision, but I'll defend the underlying principle: heavy-handed regulation risks exporting AI development to jurisdictions with fewer protections, not more. China is not pausing for ethics reviews. The EU's strict approach, while well-intentioned, may have already slowed European AI competitiveness. The strongest argument for voluntary standards and market incentives isn't that accountability doesn't matter; it's that badly designed mandates can produce compliance theater while the real innovation and the real harms move offshore. What we need is smart, targeted rules, not a regulatory race between Washington and Brussels to see who can write the most requirements.",
+                      "I won't defend every policy decision. I'll defend the principle. Heavy-handed regulation risks pushing AI development to places with fewer protections, not more. China isn't pausing for ethics reviews. Europe's strict approach, well meant as it is, may already have slowed its own AI industry. Badly designed mandates get you compliance theater while the real work, and the real harm, moves offshore. I'd take smart, targeted rules over Washington and Brussels racing to see who can write the most requirements.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'policy-realist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'Offshore to where? Canada, Japan, the UK, and Australia are all building AI accountability regimes, but they are diverging from the EU template rather than converging on it: Japan legislated a promotion-first AI Act in 2025, Australia chose standards-led governance over an EU-style risk-tier law, and Canada still has no comprehensive AI statute.',
+                  },
+                  { type: 'cite', claimId: 'c-i-squire-global-frameworks' },
+                  {
+                    type: 'text',
+                    value:
+                      ' That divergence is a real headache for companies working across jurisdictions. It also means the "innovate without rules" model has limited geographic reach. The open question is whether the most powerful AI companies, concentrated in the U.S., will answer to anyone at all.',
                   },
                 ],
               ],
@@ -827,9 +912,13 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That argument has been used to delay climate action for forty years. \"Don't regulate us, or the other guy will pollute more\" is not an ethical framework. It's a race to the bottom with a plausible-sounding narrative. The 800% energy price surge in Virginia, the water stress in Nevada, and the CO₂ from data centers don't pause because of geopolitical competition.",
+                      "And that offshoring argument has been used to delay climate action for forty years. \"Don't regulate us, or the other guy will pollute more\" isn't an ethical framework. It's a race to the bottom with a plausible story attached. The 800% price surge in Virginia, the water stress in Nevada, and the CO₂ from data centers don't pause for geopolitical competition.",
                   },
                   { type: 'cite', claimId: 'c-i-ansi-stanford-combined' },
+                  {
+                    type: 'text',
+                    value: " So while we wait for the perfect rule, who pays? It isn't your lab.",
+                  },
                 ],
               ],
             },
@@ -838,22 +927,10 @@ export const partI: RoundtableDocument = {
         {
           type: 'debate',
           data: {
-            personaId: 'policy-realist',
+            personaId: 'tech-optimist',
             bubble: {
               paragraphs: [
-                [
-                  {
-                    type: 'text',
-                    value:
-                      'Canada, Japan, the UK, and Australia are all building AI accountability regimes, but they are diverging from the EU template rather than converging on it: Japan legislated a promotion-first AI Act in 2025, Australia chose standards-led governance over an EU-style risk-tier law, and Canada still has no comprehensive AI statute.',
-                  },
-                  { type: 'cite', claimId: 'c-i-squire-global-frameworks' },
-                  {
-                    type: 'text',
-                    value:
-                      ' This divergence creates real risk for companies navigating multiple jurisdictions, but it also means the "innovate without rules" model has limited geographic reach. The question is whether the most powerful AI actors (concentrated in the U.S.) will be subject to meaningful accountability at all.',
-                  },
-                ],
+                [{ type: 'text', value: 'My lab pays for every megawatt-hour it uses.' }],
               ],
             },
           },
@@ -868,7 +945,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I keep hearing that AI is going to help us solve big problems. But what I'm understanding from this conversation is that the problems it's causing right now (electricity, water, those workers in Kenya) are real and happening now. And the people making the decisions aren't the ones paying those costs. That part bothers me the most.",
+                      "And who pays for mine? I keep hearing that AI is going to help solve big problems, and maybe it will. But the problems it's causing are here now: the bills, the water out West, those workers in Kenya. And the people making the decisions aren't the ones paying for them. That's the part that bothers me most.",
                   },
                 ],
               ],
@@ -885,7 +962,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That's exactly it. The costs of this technology are borne by workers in Nairobi making $2 an hour, communities in drought-stricken Nevada watching their water tables drop, and families in Virginia whose electricity bills are climbing, not by the engineers, executives, and investors who profit from it. The ethical questions aren't theoretical. They're about who pays and who doesn't.",
+                      "Look at who wasn't in the room when those decisions got made. The annotator in Nairobi on $2 an hour. The communities in drought-stricken Nevada watching their water tables drop. The families in Virginia opening the electric bill. The engineers, executives, and investors were there, and they're the ones who profit. When your lab picks a site or signs a labeling contract, who's speaking for any of them?",
                   },
                 ],
               ],
@@ -902,7 +979,7 @@ export const partI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'll close by saying: I think this technology is genuinely transformative and that managed well, it can improve billions of lives. But this conversation has sharpened something for me. \"Managed well\" requires transparency that doesn't currently exist, labor standards that aren't currently enforced, and energy practices that aren't currently mandated. Good intentions from industry leaders aren't enough. The people in this room (including the one who just learned about all this) need to be part of the conversation that shapes what comes next.",
+                      "Mostly nobody. I'll own that. I still think this technology can improve billions of lives if it's managed well. But today made something clearer to me: \"managed well\" means transparency that doesn't exist yet, labor standards nobody enforces, and energy practices nobody mandates. I used to think good intentions at the top would cover the gap. I'm less sure of that than I was this morning.",
                   },
                 ],
               ],
