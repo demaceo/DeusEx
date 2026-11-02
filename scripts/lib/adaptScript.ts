@@ -18,6 +18,7 @@
 import Anthropic from '@anthropic-ai/sdk'
 import { PERSONAS } from '../../src/data/personas'
 import { PERSONA_VOICES } from '../../src/data/personaVoices'
+import { PERSONA_VOICE_GUIDE } from '../../src/data/personaVoiceGuide'
 import type { PersonaId } from '../../src/types/persona'
 import type { Speaker, Turn } from './types'
 
@@ -54,6 +55,7 @@ const SCRIPT_SCHEMA = {
 function rosterLine(id: PersonaId): string {
   const p = PERSONAS[id]
   const d = PERSONA_VOICES[id].delivery
+  const g = PERSONA_VOICE_GUIDE[id]
   return [
     `- ${id} — ${p.name} (${p.role}). Cares about: ${p.focus}.`,
     `    Viewpoint: ${p.bio}`,
@@ -61,6 +63,12 @@ function rosterLine(id: PersonaId): string {
     `    Sarcasm: ${d.sarcasm}`,
     `    Mannerisms: ${d.mannerisms}`,
     `    Tone: ${d.tone}`,
+    // Only the guide's register (sentence shape, formality, contractions) is
+    // passed: it shapes delivery without touching substance. Its moves,
+    // pushback and avoid lists are content-editing guidance for writers
+    // (e.g. "no long inventories of figures") that would conflict with the
+    // guardrail to preserve every statistic, and biography would add facts.
+    `    Register: ${g.register}`,
   ].join('\n')
 }
 

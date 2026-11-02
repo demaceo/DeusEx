@@ -79,7 +79,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "We've spent two whole conversations talking about what AI costs and what people are doing about it. I want to actually know what's good. Not what might be good someday. What is good right now, that's real?",
+                      "We've spent two whole conversations on what AI costs and who's trying to rein it in. So what's good? Not someday. Right now, and real. I'll admit I half expect a list of promises.",
                   },
                 ],
               ],
@@ -96,46 +96,31 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Let me start with what I consider the most significant scientific achievement in AI history. AlphaFold (developed by Google DeepMind) solved a problem that had stumped biologists for fifty years: how to predict a protein's three-dimensional shape from its sequence of amino acids. Proteins are the molecular machinery of life, and understanding their structure is the foundation of drug development, understanding disease, and developing new therapies. For decades, determining one protein structure experimentally could take a research team years. AlphaFold does it in minutes.",
+                      "AlphaFold, if I only get one. Biologists spent fifty years trying to predict a protein's three-dimensional shape from its sequence of amino acids, and the shape is what you need to design a drug or understand a disease. Working out a single structure experimentally could take a team years. AlphaFold does it in minutes.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'The AlphaFold database now contains over 214 million predicted protein structures: essentially every known protein sequence on Earth, made freely available to any researcher anywhere.',
+                      'The database now holds over 214 million predicted structures, essentially every known protein sequence on Earth, free to any researcher anywhere.',
                   },
                   { type: 'cite', claimId: 'c-iii-alphafold-214m' },
                   {
                     type: 'text',
                     value:
-                      " This work won the 2024 Nobel Prize in Chemistry, the first time an AI-driven tool has earned science's highest honor.",
+                      " It won the 2024 Nobel Prize in Chemistry, the first time an AI-driven tool has earned science's highest honor.",
                   },
                   { type: 'cite', claimId: 'c-iii-nobel-2024' },
-                  {
-                    type: 'text',
-                    value:
-                      ' By 2024 to 2025, about 40% of new structures deposited into the global Protein Data Bank were solved by cryo-electron microscopy.',
-                  },
-                  { type: 'cite', claimId: 'c-iii-pdb-40pct' },
-                  {
-                    type: 'text',
-                    value:
-                      ' That is not a projection. That is the current state of structural biology.',
-                  },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'Building on that foundation, researchers at MIT, the Broad Institute, and Phare Bio trained a generative AI model to design entirely new antibiotic structures to fight drug-resistant bacteria. The model screened more than 36 million molecular possibilities. From that screen, it found a small set of promising compounds. Two candidates eliminated MRSA (methicillin-resistant Staphylococcus aureus) in mouse models, and one showed activity against several other drug-resistant bacteria.',
+                      "And the bench work didn't disappear: by 2024 to 2025, about 40% of new structures deposited into the global Protein Data Bank were solved by cryo-electron microscopy.",
                   },
-                  { type: 'cite', claimId: 'c-iii-mit-antibiotic' },
-                  {
-                    type: 'text',
-                    value:
-                      ' These are structurally distinct from any existing antibiotic class, opening genuinely new strategies against antimicrobial resistance, which kills over a million people per year.',
-                  },
+                  { type: 'cite', claimId: 'c-iii-pdb-40pct' },
+                  { type: 'text', value: " That's structural biology today, not a projection." },
                 ],
               ],
             },
@@ -151,20 +136,20 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to add something from a different angle. In 2024, Google partnered with the Lichtman Lab at Harvard to map a tiny cubic millimeter of human brain tissue, at a resolution and level of cellular detail never previously achieved. The project revealed never-before-seen structures within the human brain and made the complete dataset, including AI-generated annotations for every cell, freely available to the scientific community.',
+                      "You'll be surprised to hear me agree, so I'll add one that got less attention. In 2024, Google and the Lichtman Lab at Harvard mapped a single cubic millimeter of human brain tissue at a level of cellular detail nobody had reached before. They found structures no one had seen, and they released the whole dataset, AI annotations for every cell included, free to the scientific community.",
                   },
                   { type: 'cite', claimId: 'c-iii-brain-mapping' },
                   {
                     type: 'text',
                     value:
-                      " That kind of foundational contribution (mapping what is actually there rather than theorizing) doesn't get the headlines drug discoveries do, but it may matter more for the long-term understanding of neurological disease.",
+                      " It's a map of what's physically there, not a theory. It won't get the headlines a new drug gets, but for neurological disease it may matter more.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "And separately, a 27 billion parameter model built by Google Research and Yale, C2S-Scale, generated a novel hypothesis for making 'cold' tumors visible to the immune system: pairing the drug silmitasertib with low dose interferon to raise antigen presentation. Laboratory work on human neuroendocrine cell models confirmed the prediction, with antigen presentation rising roughly 50%.",
+                      "Then there's C2S-Scale, a 27 billion parameter model from Google Research and Yale. It generated a new hypothesis for making 'cold' tumors visible to the immune system: pair the drug silmitasertib with low dose interferon to raise antigen presentation. Lab work on human neuroendocrine cell models confirmed the prediction, with antigen presentation up roughly 50%.",
                   },
                   { type: 'cite', claimId: 'c-iii-cancer-protein' },
                 ],
@@ -182,13 +167,13 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Something worth noting about AlphaFold specifically: the decision to make the database freely available was not commercially required. Releasing 214 million protein structures as open access to every researcher on Earth regardless of their institution or country is a policy choice about who benefits from scientific infrastructure. Research published in 2025 found that before AlphaFold, the top 10% of universities published 55% of protein research articles and secured 50% of research grants; the field was heavily concentrated.',
+                      'Go back to one word: free. Nothing commercial required releasing 214 million protein structures to every researcher on Earth, whatever their institution or country. That was a policy choice about who gets to use scientific infrastructure. A 2025 preprint found that before AlphaFold, the top 10% of universities published 55% of protein research articles and secured 50% of research grants.',
                   },
                   { type: 'cite', claimId: 'c-iii-biorxiv-concentration' },
                   {
                     type: 'text',
                     value:
-                      ' Open access to the database is measurably reducing that concentration. That is a distributional outcome that deserves acknowledgment alongside the scientific one.',
+                      " Open access is measurably narrowing that. It's a distributional result, and it deserves the same credit as the science.",
                   },
                 ],
               ],
@@ -228,7 +213,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The antibiotic thing is the one that really lands for me. I've heard about antibiotic resistance my whole life: that eventually the bacteria will outsmart all our medicines and we'll be in serious trouble. Are they saying AI actually found new ones?",
+                      "The thing I'd actually read about before today was the antibiotics. My whole life I've heard that one day the bacteria will outsmart every medicine we've got. Is it true AI found new ones?",
                   },
                 ],
               ],
@@ -245,13 +230,47 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "In mouse models, yes, and structurally novel ones, which is the critical point. Bacteria develop resistance by evolving defenses against specific molecular structures. When a new drug has a structure bacteria have never encountered, resistance takes much longer to emerge. The AI didn't just find another version of a drug we already have. It found molecules from a part of chemical space that human researchers, working manually, would not have reached.",
+                      'In mice, yes. Researchers at MIT, the Broad Institute and Phare Bio trained a generative model to design entirely new antibiotics against drug-resistant bacteria. It screened more than 36 million molecular possibilities and narrowed them to a small set of promising compounds. Two eliminated MRSA (methicillin-resistant Staphylococcus aureus) in mouse models, and one showed activity against several other drug-resistant bacteria.',
+                  },
+                  { type: 'cite', claimId: 'c-iii-mit-antibiotic' },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'labor-advocate',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value: "In mice. I've read a lot of good news that ended in mice.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'tech-optimist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Fair, and they still have to get through human trials. But look at what kind of molecules they are. Bacteria evolve defenses against specific structures, so a drug with a shape they've never met should take them much longer to beat. The AI didn't find another version of a drug we already have. It reached a part of chemical space that human researchers, working by hand, wouldn't have.",
                   },
                   { type: 'cite', claimId: 'c-iii-alation-chemical-space' },
                   {
                     type: 'text',
                     value:
-                      " These are early-stage findings that still need to advance through human trials. But the discovery step itself (which historically has been the hardest part) happened. That's the real news.",
+                      ' Antimicrobial resistance kills over a million people a year. Discovery has historically been the hardest step, and that step happened.',
                   },
                 ],
               ],
@@ -343,14 +362,14 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Drug development has historically been one of the least efficient processes in human civilization. The average approved medicine costs $2.6 billion to develop and takes more than a decade. Most of that cost comes from failure: compounds that look promising early but turn out to be toxic or ineffective much later, after enormous resources have been spent. AI is attacking that failure rate at the source.',
+                      "Drug development is one of the least efficient things we do. An approved medicine costs about $2.6 billion and more than a decade to develop, and most of that is failure: compounds that look great early and turn out toxic or useless after the money's been spent. That's where AI is aimed.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'AI systems can now predict which protein targets are most likely to be "druggable" before anyone steps foot in a lab. They predict toxicity profiles across different organ systems, how quickly the body absorbs and eliminates a drug, and potential off-target effects that cause side effects, all before synthesis.',
+                      'Models now predict which protein targets are likely to be "druggable" before anyone sets foot in a lab, along with toxicity across organ systems, how fast the body absorbs and clears a drug, and the off-target effects that become side effects, all before synthesis.',
                   },
                   { type: 'cite', claimId: 'c-iii-lifebit-druggable' },
                   {
@@ -362,21 +381,48 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' And the molecules are holding up in the clinic: of the AI discovered candidates that had completed Phase I trials by the end of 2023, 21 of 24 succeeded, well above the historic industry norm.',
+                      ' And the molecules are holding up in the clinic: of the AI-discovered candidates that had completed Phase I trials by the end of 2023, 21 of 24 succeeded, well above the historic industry norm.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-70pct' },
                 ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'labor-advocate',
+            bubble: {
+              paragraphs: [
                 [
                   {
                     type: 'text',
                     value:
-                      'In diagnostics, AI medical imaging analysis reads X-rays, MRIs, and CT scans at speeds and consistency that human radiologists cannot match alone: not as a replacement, but as a second reader that catches what fatigue or distraction might miss. In one lung cancer screening analysis, the cost per cancer detected fell from about $150,000 without AI support to roughly $300 with it.',
+                      "Cheaper for whom, though? When AI cuts what it costs to develop a drug, does the price come down for the patient, or does the margin go up for the manufacturer? The health benefit depends on who keeps the savings. A drug that was cheaper to develop and still costs $100,000 a year in treatment isn't a story about democratizing medicine. Same pill. Same price. Bigger margin.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'tech-optimist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "I can't answer that, and I won't pretend the model sets the price. Nobody in my building does. Where I'd point you is diagnostics. AI reads X-rays, MRIs and CT scans as a second reader, not a replacement, catching what fatigue or distraction might miss. In one lung cancer screening analysis, the cost per cancer detected fell from about $150,000 without AI support to roughly $300 with it.",
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-150k' },
                   {
                     type: 'text',
                     value:
-                      ' One hospital study of an AI radiology platform put the five year return on investment at 451%, rising to 791% once radiologist time savings were counted.',
+                      ' One hospital study of an AI radiology platform put the five-year return on investment at 451%, rising to 791% once radiologist time savings were counted.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-18pct' },
                 ],
@@ -393,15 +439,14 @@ export const partIII: RoundtableDocument = {
                 [
                   {
                     type: 'text',
-                    value:
-                      "I want to engage with this seriously because the healthcare case is genuinely compelling, but I also want to be clear-eyed about distribution. When AI cuts $700 million from drug development costs, does that reduce the price of the drug for patients, or does it increase the profit margin for the manufacturer? The technology's benefit to human health depends entirely on who captures the efficiency gains. A cheaper-to-develop drug that still costs $100,000 per year in treatment is not a story about democratizing medicine.",
+                    value: "Return for the hospital. That's my question again in a different coat.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "That said, the point about early detection is different, and I think the distribution question is easier there. Catching cancer in Stage I rather than Stage III does save lives regardless of the healthcare system structure. And for that specific application, I'm genuinely glad this technology exists.",
+                      "Early detection is different, though, I'll give you that. Catching a cancer at Stage I instead of Stage III saves a life whatever the health system looks like. That one I'm glad exists.",
                   },
                 ],
               ],
@@ -418,13 +463,13 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Also worth flagging: venture funding into AI health tech reached about $10.7 billion in 2025, up roughly 24% from $8.6 billion in 2024.',
+                      'And look where the money is going. Venture funding into AI health tech reached about $10.7 billion in 2025, up roughly 24% from $8.6 billion in 2024.',
                   },
                   { type: 'cite', claimId: 'c-iii-promptbuddy-98b' },
                   {
                     type: 'text',
                     value:
-                      ' That capital is flowing disproportionately toward profitable disease areas in wealthy markets. The WHO estimates that antimicrobial resistance disproportionately kills people in low- and middle-income countries, the same countries with the least access to AI-developed treatments. The discovery of new antibiotics via AI is genuinely important. Whether those antibiotics reach the populations who need them most depends on decisions that have nothing to do with the AI itself.',
+                      " It's heading toward profitable diseases in wealthy markets. The WHO says antimicrobial resistance kills disproportionately in low- and middle-income countries, the same places with the least access to AI-developed treatments. The new antibiotics matter. Whether they reach the people dying of resistant infections gets decided somewhere other than the lab.",
                   },
                 ],
               ],
@@ -441,7 +486,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'So the technology is real, but whether regular people benefit from it is a separate question that depends on other things. That feels like a pattern in these conversations.',
+                      'That part I recognize. When I was teaching, the new things (the computers, the good textbooks) always seemed to reach the schools across town first. They were real, and they were good, and whether my kids ever saw them was decided by somebody I never met.',
                   },
                 ],
               ],
@@ -546,36 +591,15 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'This is the section where I get to say: yes, this is genuinely good, and it connects directly to the climate problems we discussed in our first conversation.',
-                  },
-                ],
-                [
-                  {
-                    type: 'text',
-                    value:
-                      "Google's Flood Forecasting System began as a pilot in India's Patna region in 2018. It has since expanded to cover flood forecasting in more than 80 countries, protecting more than 500 million people. As of 2025, the system now covers over two billion people in 150 countries for severe riverine flood events.",
+                      "Here's one I'm glad to credit, and it ties straight back to the climate damage we started with. Google's flood forecasting began as a pilot in India's Patna region in 2018. It grew to more than 80 countries and around 500 million people, and as of 2025 it covers over two billion people in 150 countries for severe riverine floods.",
                   },
                   { type: 'cite', claimId: 'c-iii-flood-2b' },
                   {
                     type: 'text',
                     value:
-                      " This replaced traditional local data models that required physical gauge stations and local infrastructure. AI-based forecasting works in ungauged watersheds (rivers with no measurement infrastructure at all), which is where most of the world's flood-vulnerable communities live. A 2024 paper in Nature documented the first global prediction system for extreme floods in ungauged watersheds.",
+                      " The old models needed gauge stations and local infrastructure. This works in ungauged watersheds (rivers nobody measures at all), which is where most of the world's flood-vulnerable communities live. A 2024 paper in Nature documented the first global prediction system for extreme floods in ungauged watersheds.",
                   },
                   { type: 'cite', claimId: 'c-iii-nature-ungauged' },
-                ],
-                [
-                  {
-                    type: 'text',
-                    value:
-                      "Google DeepMind partnered with weather agencies to develop experimental cyclone prediction models using stochastic neural networks: these can predict a cyclone's path up to 15 days in advance, far beyond what any previous system could do.",
-                  },
-                  { type: 'cite', claimId: 'c-iii-cyclone-15-days' },
-                  {
-                    type: 'text',
-                    value:
-                      ' WeatherNext 2, their most advanced forecasting model, generates forecasts 8 times faster than prior models at up to 1-hour resolution, and is now available to developers worldwide.',
-                  },
-                  { type: 'cite', claimId: 'c-iii-weathernext-8x' },
                 ],
               ],
             },
@@ -591,7 +615,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Two billion people getting flood warnings they didn't have before. That's not abstract. That's villages having time to move people before the water comes.",
+                      "Two billion people getting warnings they didn't get before. That's a village with time to move people before the water comes. How much time, though? An hour's notice isn't much if you're old, or you've got animals.",
                   },
                 ],
               ],
@@ -608,20 +632,61 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Exactly. And to be precise: warnings that give people 24–72 hours are qualitatively different from warnings that give them 2 hours. You can evacuate livestock, move elderly family members, retrieve documents. The difference between a warning and a useful warning is measured in hours of lead time, and AI is extending that lead time in places that have never had reliable forecasting infrastructure.',
+                      "That's the right question. A warning that comes 24 to 72 hours ahead is a different thing from one that comes two hours ahead. You can move livestock, get elderly relatives out, grab the documents. Lead time is what turns a warning into a useful one, and it's getting longer in places that never had reliable forecasting.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'In agriculture, AI precision farming systems are producing documented results: a random effects meta-analysis of AI driven irrigation studies published between 2018 and 2025 puts water savings at 30% to 50% and yield improvements at 20% to 30%.',
+                      "Google DeepMind worked with weather agencies on experimental cyclone models built on stochastic neural networks, which can predict a cyclone's path up to 15 days in advance, further out than earlier systems managed.",
+                  },
+                  { type: 'cite', claimId: 'c-iii-cyclone-15-days' },
+                  {
+                    type: 'text',
+                    value:
+                      ' WeatherNext 2, their most advanced forecasting model, generates forecasts 8 times faster than prior models at up to 1-hour resolution, and developers anywhere can use it.',
+                  },
+                  { type: 'cite', claimId: 'c-iii-weathernext-8x' },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'policy-realist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "And Flood Hub is free. It covers some of the most vulnerable people on Earth because someone decided to build it that way; no market force required it. Two billion people in flood plains don't send the revenue signal that two hundred million premium subscribers do.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'environmentalist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'Not all of the good news is charity, though. Farming is where the commercial tools have real numbers: a random effects meta-analysis of AI-driven irrigation studies published between 2018 and 2025 puts water savings at 30% to 50% and yield improvements at 20% to 30%.',
                   },
                   { type: 'cite', claimId: 'c-iii-farmonaut-yields' },
                   {
                     type: 'text',
                     value:
-                      ' In regions facing climate-driven yield volatility, those numbers are not efficiency statistics; they are food security statistics. For a farmer in a drought-stressed region, 20% more yield from the same land is the difference between feeding a family and not.',
+                      " Where drought makes harvests unpredictable, those aren't efficiency figures. They're food security. For a farmer on dry land, 20% more from the same field can be the difference between feeding a family and not.",
                   },
                 ],
               ],
@@ -638,30 +703,13 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'On agriculture I want to add an honest note. A meta-analysis of 85 studies covering 1,472 farm observations found precision agriculture lifts net profit by about 18.5% on average, but the gains concentrate in large scale grain farms: they are weaker and less stable on small farms and in developing countries.',
+                      "Which farmer, though? A meta-analysis of 85 studies covering 1,472 farm observations found precision agriculture lifts net profit by about 18.5% on average, but the gains concentrate in large-scale grain farms; they're weaker and less stable on small farms and in developing countries.",
                   },
                   { type: 'cite', claimId: 'c-iii-farmonaut-70pct' },
                   {
                     type: 'text',
                     value:
-                      " Adoption in smallholder farming (which is where most of the world's food insecurity lives) is much lower, driven by cost and connectivity barriers. The technology works where it's been deployed. Deploying it where it's most needed is the unsolved problem.",
-                  },
-                ],
-              ],
-            },
-          },
-        },
-        {
-          type: 'debate',
-          data: {
-            personaId: 'policy-realist',
-            bubble: {
-              paragraphs: [
-                [
-                  {
-                    type: 'text',
-                    value:
-                      "The flood forecasting story is actually a strong argument for public-interest AI development. Google's Flood Hub is a free public service covering the most vulnerable populations on Earth. It was built because someone decided to build it that way; it wasn't required by market forces. Two billion people don't generate the same revenue signal as two hundred million premium subscribers. The distributional outcomes we keep coming back to as the gap between AI's potential and AI's delivery are often a question of who chooses to build what, for whom.",
+                      " Smallholders are where most of the world's hunger is, and cost and connectivity keep them out. The technology works where it's been deployed. Getting it where it's needed is the problem nobody's solved.",
                   },
                 ],
               ],
@@ -732,17 +780,9 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'In June 2025, Harvard researchers published a randomized controlled trial in Scientific Reports, one of the most rigorous study designs in education research. One hundred and ninety-four undergraduate physics students were divided between conventional in-class active learning with experienced instructors and at-home sessions with a purpose-built AI tutor. Students using the AI tutor achieved median post-test scores of 4.5 compared to 3.5 for those in active learning classrooms. The effect size (0.73 to 1.3 standard deviations) is, in educational research, considered large.',
+                      'The education result surprised even me. In June 2025, Harvard researchers published a randomized controlled trial in Scientific Reports, about as rigorous as education research gets. They split 194 undergraduate physics students between in-class active learning with experienced instructors and at-home sessions with a purpose-built AI tutor. The tutored students scored a median of 4.5 on the post-test, against 3.5 in the active learning classrooms. An effect size of 0.73 to 1.3 standard deviations is, in education research, considered large.',
                   },
                   { type: 'cite', claimId: 'c-iii-harvard-rct' },
-                ],
-                [
-                  {
-                    type: 'text',
-                    value:
-                      "This isn't a marginal improvement. The authors note that the difference was statistically significant at a probability below one in one hundred million. And crucially, the AI tutor was designed according to research-based pedagogical principles: it was not simply a chatbot but a deliberately engineered learning system. The implication is that when AI tutoring is built carefully, it can deliver one-on-one tutoring quality at any scale. For a student in an under-resourced school with 35 people in the class and an overwhelmed teacher, that access to personalized instruction has never existed before. Brookings Institute research in 2026 identified AI tutoring as particularly valuable for novice teachers assigned to challenging environments and for under-resourced schools where human support is scarce.",
-                  },
-                  { type: 'cite', claimId: 'c-iii-brookings' },
                 ],
               ],
             },
@@ -769,37 +809,6 @@ export const partIII: RoundtableDocument = {
         {
           type: 'debate',
           data: {
-            personaId: 'labor-advocate',
-            bubble: {
-              paragraphs: [
-                [
-                  {
-                    type: 'text',
-                    value:
-                      'I want to put an honest counterweight on the education evidence, because the research is genuinely mixed. A systematic literature review by Zhai et al. found that regular use of AI tutoring systems was associated in some studies with a decline in cognitive abilities, diminished information retention, and increased cognitive offloading: students accepting AI-generated answers rather than wrestling with the material themselves.',
-                  },
-                  { type: 'cite', claimId: 'c-iii-nhsjs-zhai' },
-                  {
-                    type: 'text',
-                    value:
-                      ' And a January 2026 survey of 1,057 college faculty found 95% expect generative AI to increase student overreliance on it, with 90% expecting a decline in critical thinking.',
-                  },
-                  { type: 'cite', claimId: 'c-iii-elon-faculty' },
-                ],
-                [
-                  {
-                    type: 'text',
-                    value:
-                      "The Harvard RCT result is compelling, but it's one well-designed study. The picture across the broader literature is that AI tutoring works well when deliberately engineered and when students use it actively, not passively. Implementation quality matters enormously. A poorly designed AI tutor handed to a struggling student may make things worse, not better. The technology is not a substitute for thinking about how to use it.",
-                  },
-                ],
-              ],
-            },
-          },
-        },
-        {
-          type: 'debate',
-          data: {
             personaId: 'everyday-person',
             bubble: {
               paragraphs: [
@@ -807,7 +816,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "What about for people with disabilities? I have a neighbor who is losing her sight and she's been talking about some of these tools. I didn't know much about them.",
+                      "I taught for a long time, and the child I still think about is the one stuck at the back while I'm helping somebody else. Did the tutor help that one? Or the ones who were already doing fine?",
                   },
                 ],
               ],
@@ -824,40 +833,12 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'This is an area where AI has produced concrete, real-world independence improvements for real people, not theoretical future benefits.',
+                      "The study doesn't split it that way, so I can't tell you. What it does show is a difference that was statistically significant at a probability below one in one hundred million, from a tutor built on research-based teaching principles, not a chatbot with a syllabus. And Brookings research in 2026 identified AI tutoring as particularly valuable for novice teachers assigned to challenging environments and for under-resourced schools where human support is scarce.",
                   },
-                ],
-                [
+                  { type: 'cite', claimId: 'c-iii-brookings' },
                   {
                     type: 'text',
-                    value:
-                      "Microsoft's Seeing AI is a free mobile app on both iOS and Android. Using the phone's camera and AI-driven vision, it describes scenes, reads text aloud, identifies objects, and recognizes people in real time for blind or low-vision users.",
-                  },
-                  { type: 'cite', claimId: 'c-iii-seeing-ai' },
-                  {
-                    type: 'text',
-                    value:
-                      ' Be My Eyes (originally a volunteer-based service) now includes an AI feature that handles object recognition, text reading, and navigation assistance without requiring a live human connection.',
-                  },
-                  { type: 'cite', claimId: 'c-iii-be-my-eyes' },
-                  {
-                    type: 'text',
-                    value:
-                      " Google's Live Transcribe converts spoken conversations to text in real time, supporting people who are deaf or hard of hearing in one-on-one conversations, group settings, and public environments.",
-                  },
-                  { type: 'cite', claimId: 'c-iii-live-transcribe' },
-                ],
-                [
-                  {
-                    type: 'text',
-                    value:
-                      'Aira (an AI-powered visual interpreting service) is now available for free at many airports including Denver International, allowing a blind traveler to navigate independently from check-in through security to the gate without relying on staff escorts.',
-                  },
-                  { type: 'cite', claimId: 'c-iii-aira-denver' },
-                  {
-                    type: 'text',
-                    value:
-                      ' These are not features that will exist someday. They exist today, they are free or low-cost, and they are providing a form of independence that has no prior equivalent. For someone losing their sight, the world looks meaningfully different with these tools than it did five years ago.',
+                    value: " That's as close to your kid at the back as the evidence gets.",
                   },
                 ],
               ],
@@ -867,26 +848,28 @@ export const partIII: RoundtableDocument = {
         {
           type: 'debate',
           data: {
-            personaId: 'policy-realist',
+            personaId: 'labor-advocate',
             bubble: {
               paragraphs: [
                 [
                   {
                     type: 'text',
                     value:
-                      'Worth noting the regulatory context: in 2024, the U.S. Department of Justice finalized new digital accessibility rules under Title II of the Americans with Disabilities Act, requiring all state and local government websites and apps to meet accessibility standards.',
+                      'Before we hand it to that kid: the research is mixed. A systematic literature review by Zhai et al. found that regular use of AI tutoring systems was associated in some studies with a decline in cognitive abilities, diminished information retention, and increased cognitive offloading: students accepting AI-generated answers rather than wrestling with the material themselves.',
                   },
-                  { type: 'cite', claimId: 'c-iii-doj-ada' },
+                  { type: 'cite', claimId: 'c-iii-nhsjs-zhai' },
                   {
                     type: 'text',
                     value:
-                      ' The European Accessibility Act came into effect in late 2025, setting similar requirements for a wide range of products and services across EU member states.',
+                      ' And a January 2026 survey of 1,057 college faculty found 95% expect generative AI to increase student overreliance on it, with 90% expecting a decline in critical thinking.',
                   },
-                  { type: 'cite', claimId: 'c-iii-eaa' },
+                  { type: 'cite', claimId: 'c-iii-elon-faculty' },
+                ],
+                [
                   {
                     type: 'text',
                     value:
-                      ' These legal frameworks are creating structural demand for AI-powered accessibility tools rather than leaving it to voluntary corporate good will. The combination of available technology and legal mandate is a more durable path than either alone.',
+                      "Harvard is one well-designed study. Across the literature, tutoring works when it's built deliberately and students use it actively. Hand a badly designed tutor to a struggling student and you can make things worse.",
                   },
                 ],
               ],
@@ -903,7 +886,130 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'm going to tell her about the Seeing AI app. That's exactly the kind of thing she would want to know about and I didn't know to tell her.",
+                      "That I believe. Give a child the answer and you've taken the problem away, and the problem was the point.",
+                  },
+                ],
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "But what I really wanted to ask about today is my neighbor. She's losing her sight, she's been asking me about these tools, and I didn't know what to tell her.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'tech-optimist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Tell her about Seeing AI. It's a free Microsoft app on both iOS and Android: point the phone's camera and it describes the scene, reads text aloud, identifies objects, and recognizes people in real time.",
+                  },
+                  { type: 'cite', claimId: 'c-iii-seeing-ai' },
+                  {
+                    type: 'text',
+                    value:
+                      ' Be My Eyes started as a volunteer service and now has an AI feature that handles object recognition, text reading and navigation help without needing a live person on the line.',
+                  },
+                  { type: 'cite', claimId: 'c-iii-be-my-eyes' },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Without a person. She'd like that more than you'd think. She hates asking. She's stopped going to the pharmacy on her own because she can't read the boxes on the shelf, and she won't call somebody every time she needs a label read to her.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'tech-optimist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "That's what these tools are for: not having to ask. Aira, an AI-powered visual interpreting service, is now free at many airports including Denver International, so a blind traveler can get from check-in through security to the gate without waiting for a staff escort.",
+                  },
+                  { type: 'cite', claimId: 'c-iii-aira-denver' },
+                  {
+                    type: 'text',
+                    value:
+                      " Google's Live Transcribe does it for hearing, turning spoken conversation into text in real time for people who are deaf or hard of hearing, one on one, in groups, out in public.",
+                  },
+                  { type: 'cite', claimId: 'c-iii-live-transcribe' },
+                  {
+                    type: 'text',
+                    value:
+                      " None of this is someday. It's free or cheap and it's on phones now. For someone losing their sight, the world looks different with these than it did five years ago.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'policy-realist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'And some of it no longer depends on goodwill. In 2024, the U.S. Department of Justice finalized digital accessibility rules under Title II of the Americans with Disabilities Act, requiring state and local government websites and apps to meet accessibility standards.',
+                  },
+                  { type: 'cite', claimId: 'c-iii-doj-ada' },
+                  {
+                    type: 'text',
+                    value:
+                      ' The European Accessibility Act came into effect in June 2025, setting similar requirements for a wide range of products and services across EU member states.',
+                  },
+                  { type: 'cite', claimId: 'c-iii-eaa' },
+                  {
+                    type: 'text',
+                    value:
+                      ' The law creates the demand and the technology meets it. Either one alone is less durable.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "I'm going to show her Seeing AI this week. Forget the airport; it's the pharmacy shelf. If that app reads her the boxes, she gets to go on her own again, and that's what she's actually been missing.",
                   },
                 ],
               ],
@@ -937,7 +1043,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Having now sat through all three of these conversations, I feel like I understand the situation in a way I genuinely didn't before. There are real costs, real efforts to address them, and real benefits. None of those three things cancel each other out. You can hold all of them at the same time.",
+                      "Three of these now. The first time, I mostly wanted to know whether I was part of the problem every time I typed in a question. I still don't have a tidy answer. But I know what's on the other side of the scale now, and it isn't nothing.",
                   },
                 ],
               ],
@@ -954,7 +1060,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That's the honest framing. The flood forecasting coverage of two billion people and the antibiotic discoveries don't cancel the energy emissions. They coexist. The question is whether we're making choices that maximize the first category and minimize the second, or whether we're letting both happen without deliberate steering. The things AI is getting right in this conversation mostly happened because someone made a decision to prioritize public benefit: free databases, open access, free apps. That's not automatic. It's a choice, and it's not the default choice in a market-driven industry.",
+                      "It isn't, and it doesn't erase the other side either. Flood warnings for two billion people and the antibiotic candidates don't cancel the emissions we started with. They sit next to them. What strikes me is how much of today's list exists because someone decided to give it away: the open database, the free flood service, the free apps. Nobody made them do it.",
                   },
                 ],
               ],
@@ -971,7 +1077,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The pattern across every positive example in this conversation: AlphaFold's open database, the flood forecasting system, the free accessibility apps, the Brookings finding that AI tutoring matters most for under-resourced schools. The benefits reach the most people when someone chooses to give them away. The benefits concentrate when someone chooses to monetize them. The technology is neutral on that question. The people deploying it are not.",
+                      "This time. The same companies charge for nearly everything else, and a board can reverse a decision in one meeting. When it's given away, it reaches the most people. When it's sold, it pools with whoever can pay.",
                   },
                 ],
               ],
@@ -988,7 +1094,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "And that's the policy argument hiding inside the positive case. If the most impactful AI applications are the ones designed as public goods (open databases, free early-warning systems, free assistive tools), then the governance question isn't just about preventing harm. It's about creating conditions that incentivize building more of those things instead of fewer. Right now, the incentive structure mostly doesn't. That's a design problem, and design problems have solutions.",
+                      "Then don't leave it to goodwill. Very little in the current incentive structure rewards building a public good. Put open-access conditions on public money; use procurement to buy what the market won't build. It's unglamorous, and it's most of the job.",
                   },
                 ],
               ],
@@ -1005,7 +1111,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I want to close by saying something I mean: these conversations have been more useful than most I have inside the industry. The positive case for AI is genuinely strong: the Nobel Prize wasn't political theater, the flood forecasting is real, the antibiotic discoveries are real, the Harvard RCT is real. I believe in this work. I also leave these conversations more convinced than I was before that the hardest questions aren't technical. They're about who benefits, who decides, and who pays the costs when we get it wrong. Those questions don't have engineering solutions. They require the kind of deliberate, contested, imperfect political process that people in my field tend to find frustrating. But so does everything worth doing.",
+                      "These conversations have been more useful to me than most I have inside the industry. The positive case is strong: the Nobel wasn't political theater, and the flood forecasts, the antibiotics and the Harvard trial are all real. I believe in this work. But I'm leaving more convinced that the hardest questions aren't technical. Who benefits, who decides, who pays when we get it wrong: I can't ship an answer to those. They need the slow, contested politics people in my field find maddening.",
                   },
                 ],
               ],
@@ -1022,7 +1128,7 @@ export const partIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'm going to download that Seeing AI app today and share it with my neighbor. That's a small thing, but it's something I can actually do right now with what I learned here. I think that's the right scale to hold alongside all the bigger questions. The world-scale problems and the neighbor-scale ones are both real.",
+                      "I'm downloading Seeing AI tonight, so I know how it works before I sit down with her. It's a small thing. It's also the one I can do this week.",
                   },
                 ],
               ],

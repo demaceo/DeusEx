@@ -88,7 +88,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      ' A large share of it is dug by hand, in unregulated artisanal pits. UNICEF estimated some 40,000 children were working in mines across the southern DRC. Those are not abstractions to the families who live there. They are the first link in your supply chain.',
+                      ' Some of it is dug by hand, in unregulated pits. UNICEF estimated some 40,000 children were working in mines across the southern DRC. We know their families. They are the first link in your supply chain.',
                   },
                   { type: 'cite', claimId: 'c-xi-child-labor' },
                 ],
@@ -106,7 +106,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I think most of us simply never picture this. The screen is so clean. I had no idea a child with a shovel might be standing at the far end of it. Is that really still happening, or is it an old story?',
+                      "The very first time we sat down, I asked if I was part of the problem just by asking my phone questions. I thought the answer was going to be my electric bill. I never pictured a child with a shovel at the far end of it. The screen's so clean. But that number sounds like something from an old documentary. Is it still happening?",
                   },
                 ],
               ],
@@ -123,7 +123,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'It is current, and it is the same pattern we traced in the data-labor parts of this series: the value extracted in the Global South, the profit captured in the Global North. Lithium is the other half of the story. Pulling it from brine in the Atacama and similar basins can take on the order of two million liters of water per tonne, in some of the driest inhabited places on earth, where that water belongs to Indigenous communities and the ecosystems they depend on.',
+                      "The estimate's old. The practice isn't. And it's the same shape we found with the data workers in Kenya: the value dug out in the Global South, the profit booked in the North, and the people doing the work nowhere near the room where the price gets set. Lithium's the other half. Pulling it from brine in the Atacama and basins like it can take on the order of two million liters of water per tonne, in some of the driest places people live, where that water belongs to Indigenous communities and the ecosystems they depend on.",
                   },
                   { type: 'cite', claimId: 'c-xi-lithium-water' },
                 ],
@@ -141,7 +141,24 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I won't pretend any of that is acceptable, and I won't pretend it is unique to AI either: phones, electric cars, and the whole energy transition pull on the same mines. What I'll add is that it is improvable: traceability schemes, audited supply chains, direct-lithium-extraction methods that use a fraction of the water, and battery chemistries that cut cobalt out entirely are all real and moving. The demand is the problem and also the lever; it is large enough to force the supply chain to change.",
+                      "None of that's acceptable. It isn't unique to AI either: phones, electric cars, the whole energy transition pull on the same mines. But it's fixable, and some of the fix is already shipping. There are battery chemistries in production that cut cobalt out entirely, and buyers are starting to demand audited, traceable supply. The demand's the problem, sure. It's also the lever. It's big enough to force the supply chain to change.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'land-defender',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'A lever needs a hand on it. Whose? An auditor visits a mine for a day. We live beside it every day after. So we do not wait for the auditor. We hold our own assemblies before anyone from outside arrives, and when they come, they hear what we decided. It is not always one answer. But it is ours.',
                   },
                 ],
               ],
@@ -187,13 +204,13 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Mining is only the first chokepoint. The second is processing, and it is even more concentrated. China refines roughly 90% of the world's rare-earth elements: the materials in the high-performance magnets and components inside this hardware.",
+                      "Follow the ore one step further. Mining's the first chokepoint; processing is the second, and it's tighter. China refines roughly 90% of the world's rare-earth elements: the materials in the high-performance magnets and components inside this hardware.",
                   },
                   { type: 'cite', claimId: 'c-xi-rare-earth' },
                   {
                     type: 'text',
                     value:
-                      ' This is the mirror image of the chip chokepoint from Part VIII. Power over AI is not only about who designs the model. It is about who controls the dirty, toxic, low-margin middle of the supply chain that everyone else would rather not host.',
+                      " It's the mirror image of the chip chokepoint we talked about with the fabs. There, the leverage sat in the most advanced, highest-margin step. Here it sits in the dirtiest, lowest-margin one, the step everyone else was happy to hand away.",
                   },
                 ],
               ],
@@ -210,7 +227,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And ask why one country ended up with 90% of it. It is not only cheaper labor. It is a willingness to absorb the poison. Rare-earth refining produces acidic, sometimes radioactive tailings. The places that host it (and the places that host the mines feeding it) carry contamination in their water and soil for generations. "Cheap processing" is a price someone pays. It is just not the person buying the phone.',
+                      'Happy is the wrong word. Ask why one country ended up with nearly all of it. It is not only cheaper labor. It is a willingness to absorb the poison. Rare-earth refining leaves acidic, sometimes radioactive tailings. The places that host it, and the mines that feed it, carry that in their water and soil for generations. "Cheap processing" is a price. Someone pays it. Not the person buying the phone.',
                   },
                 ],
               ],
@@ -227,7 +244,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That concentration is exactly why a dozen governments are now funding alternatives: new refining capacity with modern environmental controls, and a hard push into recycling so the toxicity is contained rather than dumped. It is early and expensive, but the strategic and environmental incentives finally point the same way. A more distributed, cleaner supply chain is buildable; it has simply never been the cheapest option, so no one built it.',
+                      "And that concentration is why a dozen governments are now paying for alternatives: new refineries with modern environmental controls, and a real push into recycling so the toxic part is contained instead of dumped. It's early and it's expensive. But for once the strategic incentive and the environmental one point the same way. A cleaner, more spread-out supply chain is buildable. It just was never the cheapest option, so nobody built it.",
                   },
                 ],
               ],
@@ -244,7 +261,24 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Let me temper both the alarm and the optimism. The alarm: AI is a small slice of total demand for most of these minerals (batteries and the broader electrification dwarf it), so blaming the data center alone is too neat. The optimism: I have watched 'clean, distributed supply chain, real soon' be promised for two decades. The honest position is that the harm is real and current, and the fixes are real but slow, and the gap between them is measured in ruined watersheds.",
+                      "Two corrections, one in each direction. AI is a small slice of total demand for most of these minerals; batteries and electrification dwarf it, so pinning this on the data center is too neat. And I've been hearing 'clean, distributed supply chain, real soon' for two decades. I've got a whole file of press releases that say so. I'll believe the refinery when I can drive past it.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'land-defender',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'Small to you. The pit does not know which customer the cobalt is for. A small slice of a deep hole is still dug in our ground.',
                   },
                 ],
               ],
@@ -290,13 +324,13 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Now follow the hardware to the end of its life, because the cycle closes badly. The world generated about 62 million tonnes of electronic waste in 2022, and only around 22% of it was formally collected and recycled.',
+                      "We've been at the front of the pipe. Look at the other end, because that's where it really breaks. The world generated about 62 million tonnes of electronic waste in 2022, and only around 22% of it was formally collected and recycled.",
                   },
                   { type: 'cite', claimId: 'c-xi-ewaste' },
                   {
                     type: 'text',
                     value:
-                      " The rest is landfilled, incinerated, or shipped to informal scrapyards in the Global South, where people (often children again) burn circuit boards over open fires to recover traces of metal, breathing the fumes. The same minerals we fought to extract are then thrown away faster than we reclaim them. And AI's hardware refresh cycle, all those rapidly obsolete accelerators, only speeds the churn.",
+                      " The rest gets landfilled, incinerated, or shipped to informal scrapyards in the Global South, where people, often children again, burn circuit boards over open fires for traces of metal and breathe the smoke. We tear the minerals out of one community's ground and dump them on another's. And AI's refresh cycle, all those accelerators retired for the next generation, only speeds it up.",
                   },
                 ],
               ],
@@ -313,7 +347,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There is law reaching for this, and it is one of the more hopeful fronts. Extended-producer-responsibility rules make manufacturers pay for end-of-life handling. The EU's right-to-repair and ecodesign rules attack the disposability directly. The Basel Convention restricts shipping hazardous e-waste across borders to dump on poorer countries. None of it is sufficient yet, but the direction (make the producer own the whole lifecycle) is correct.",
+                      "There's law reaching for this. Extended-producer-responsibility rules make manufacturers pay for end-of-life handling. The EU's right-to-repair and ecodesign rules go after disposability itself. The Basel Convention restricts shipping hazardous e-waste to poorer countries. That's what's on paper. Enforcement is thinner, especially at the ports. Still, the direction is correct: make the producer own the whole lifecycle.",
                   },
                 ],
               ],
@@ -330,7 +364,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And yet the recycling number has barely moved in years, while the waste pile grows. I am not against the laws; I am against mistaking a regulation for an outcome. Until recycling a server is cheaper than mining a fresh one, the economics will keep choosing the mine and the landfill. That is the lever that actually matters, and it is mostly still pointing the wrong way.',
+                      "And the recycling number's barely moved in years while the pile grows. I'm not against the laws. I'm against mistaking a regulation for an outcome. Until recycling a server costs less than mining a fresh one, the economics will keep choosing the mine and the landfill.",
                   },
                 ],
               ],
@@ -347,7 +381,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I have a drawer full of old phones and chargers right now. I always assumed someone, somewhere, was responsibly recycling the ones I did hand in. It is unsettling to learn that "recycled" might mean a child breathing smoke on the other side of the world.',
+                      "I've got a drawer full of old phones and chargers right now. The ones I did hand in, I assumed somebody was taking care of. Now \"recycled\" might mean a child breathing smoke on the other side of the world. So here's what I've decided. Before anything else leaves that drawer, I'm calling the company that made it and asking where it actually goes. If nobody can tell me, it stays put. I know that doesn't fix the price. But I'm done handing things over on trust, and I'm not carrying the guilt for a system nobody asked me about.",
                   },
                 ],
               ],
@@ -408,7 +442,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The Skeptic put the real problem precisely: the loop stays open because virgin extraction is underpriced. It does not pay for the poisoned watershed or the child in the pit; those are externalities, dumped on people with no claim on the boardroom. A circular economy is not mainly a technology problem. It is a pricing problem. Put the true cost of extraction and disposal back onto the product, and recycling and longevity suddenly become the cheap option they should already be.',
+                      "The Skeptic's put the problem in one line: the loop stays open because fresh extraction is underpriced. The price of new cobalt doesn't include the poisoned watershed or the child in the pit. Those costs land on people with no claim on the boardroom. So this isn't mainly a technology problem; it's a pricing problem. Put the real cost of extraction and disposal back on the product, and recycling and longevity become the cheap option.",
                   },
                 ],
               ],
@@ -425,7 +459,7 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Agreed, and the technical pieces are ready to meet a corrected price. Urban mining (recovering metals from discarded electronics) already yields far higher concentrations of some metals per tonne than ore does. Hardware that lasts longer, is designed to be repaired, and is built from recycled feedstock is entirely feasible. What has been missing is not the engineering. It is an incentive structure that rewards keeping a material in use instead of pulling a fresh one from someone else's ground.",
+                      "And when the price moves, the engineering's ready. Urban mining, pulling metals back out of discarded electronics, already yields far higher concentrations of some metals per tonne than ore does. Hardware built to last and to be repaired is a design choice, not a research problem. What I'm less sure of than I used to be is that anyone corrects the price voluntarily. I've sat in enough planning meetings to know nobody volunteers to pay more for the same chip.",
                   },
                 ],
               ],
@@ -442,7 +476,14 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Then let me say what the people upstream are actually asking for, because it is not pity. It is a seat and a share. Free, prior, and informed consent before a mine opens on our land. A real cut of the value, not a road and a promise. Cleanup that is funded before the first shovel, not after the company leaves. We are not against the future being built. We are against it being built out of us, for someone else, while we are told to be grateful for the jobs.',
+                      'Then here is what we are asking for. It is not pity. It is a seat and a share. Free, prior, and informed consent before a mine opens on our land. A real cut of the value, not a road and a promise. Cleanup that is funded before the first shovel, not after the company leaves.',
+                  },
+                ],
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'We did not write that list in one evening. We argued it in assemblies, and we did not all agree. Some of our neighbors want the mine jobs. They are not wrong to want wages. But a job offer is not the same as asking us. We are not against the future being built. We are against it being built out of us, for someone else.',
                   },
                 ],
               ],
@@ -459,7 +500,58 @@ export const partXI: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That is the whole series in one demand. Every part has circled the same structure: a benefit that concentrates, a cost that disperses onto people without a vote, and a market that will not price what it cannot see. Consent, a share, and accountability that scales with the harm: it is the same answer we reached for energy, for labor, for truth, for authorship. The ground it comes from is just the most literal version of the question: who pays, who decides, and who is allowed to say no.',
+                      "We've landed on some version of your list in nearly every conversation: give the people who carry the cost a say and a share. I still think that's right. But I've been picturing consent as a switch somebody flips. What you're describing is a room full of neighbors who disagree, and a buyer who only has to find the half that says yes.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'land-defender',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'Yes. That is why we made a rule. No one signs for the village alone. When a company comes with papers for one family, we send it back to the assembly. Some still sign. The ones who lose the vote are still our neighbors in the morning.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "You know what gets me? You've got a whole assembly about the mine. Nobody at my end has ever been asked a thing. The phone just shows up in the store. If I wanted to say no to any of this, I wouldn't even know who to say it to.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'land-defender',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'Start with your drawer. You will call and ask where the phones go. Ask also where they came from. We have been waiting a long time for someone at your end to ask that.',
                   },
                 ],
               ],

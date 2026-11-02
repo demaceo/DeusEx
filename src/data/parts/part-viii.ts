@@ -81,13 +81,13 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Let me start where the power actually sits, which is not where people look. Everyone debates the models. The leverage is in the supply chain beneath them. The most advanced chips that train frontier AI are manufactured, in practice, by one company in one country: TSMC in Taiwan makes on the order of 90% of the world's leading-edge semiconductors.",
+                      "Everyone argues about the models. The leverage sits underneath them, in the supply chain. The most advanced chips that train frontier AI come, in practice, from one company in one country: TSMC in Taiwan makes on the order of 90% of the world's leading-edge semiconductors.",
                   },
                   { type: 'cite', claimId: 'c-viii-tsmc' },
                   {
                     type: 'text',
                     value:
-                      ' The designs come from largely one firm, Nvidia. The lithography machines that make the chips possible come from exactly one firm, ASML. That is not a market. That is a series of chokepoints.',
+                      " The designs come largely from one firm, Nvidia. The lithography machines that make those chips possible come from exactly one firm, ASML. That isn't a market. It's a row of chokepoints.",
                   },
                 ],
               ],
@@ -104,7 +104,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I genuinely did not know any of that. I assumed something this important was made all over the place, by lots of companies. You are telling me the whole thing runs through a couple of factories?',
+                      "I'd have bet this was made all over the world, by hundreds of companies, like cars. So the whole thing runs through a couple of factories? That doesn't sound like the future to me. It sounds like the one bridge into town.",
                   },
                 ],
               ],
@@ -121,7 +121,24 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "It runs through a few extraordinary ones, yes, and that's because making a leading-edge chip is arguably the hardest thing humans manufacture. The concentration reflects genuine difficulty, not just market power. But I'll grant the Economist the real point: a supply chain this narrow is fragile, and fragility plus strategic importance is exactly what invites both disruption and political control.",
+                      "A few extraordinary ones, yes. A leading-edge chip may be the hardest thing people manufacture, which is why so few places can do it. That's difficulty more than a cartel. But I'll give you the bridge. Something this narrow and this important is fragile, and fragile plus strategic is exactly what governments start reaching for.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'economist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "And when they reach, the people downstream don't get a say. A small country that wants its own models doesn't just buy chips; it waits to learn what it's allowed to buy. Its hospitals and ministries end up running on infrastructure owned abroad, on someone else's terms.",
                   },
                 ],
               ],
@@ -138,7 +155,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "And before we declare it permanent: concentration like this has a history of cracking. Memory chips, solar panels, displays: all were once choke-pointed and then diffused. I'd bet the same pressure is already building here, with the US, China, and the EU all pouring subsidies into domestic fabs. The chokepoint is real today. Whether it holds for a decade is a much weaker claim than the dramatic version implies.",
+                      "Before we call it permanent, though. I've watched chokepoints like this crack. Memory chips, solar panels, flat-panel displays: each was once dominated by one country's makers, and each time the lead moved. The US, China, and the EU are all pouring subsidies into domestic fabs right now. The chokepoint is real today. Whether it holds for a decade is a much weaker bet than the dramatic version implies.",
                   },
                 ],
               ],
@@ -184,13 +201,13 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The second concentrating force is cost. Training a frontier model has gone from a graduate-student budget to a sovereign-wealth one. The Stanford AI Index estimated the compute to train GPT-4 at around $78 million, and Gemini Ultra at roughly $191 million.',
+                      "Then there's the price of a seat. Training a frontier model used to take a graduate student's budget; now it takes a sovereign-wealth fund's. The Stanford AI Index put the compute to train GPT-4 at around $78 million, and Gemini Ultra at roughly $191 million.",
                   },
                   { type: 'cite', claimId: 'c-viii-training-cost' },
                   {
                     type: 'text',
                     value:
-                      ' That is just the final training run: not the research, the failed runs, the talent, or the data. When the entry ticket is hundreds of millions of dollars, the set of organizations that can sit at the frontier is, by definition, tiny.',
+                      " And that's only the final training run: not the research, the failed runs, the salaries, or the data. When the ticket costs hundreds of millions, the list of who can sit at the frontier is short by definition.",
                   },
                 ],
               ],
@@ -207,7 +224,24 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'll push on the framing. Costs at the frontier are high, but the cost of a given level of capability collapses every year: what cost $191 million to train becomes a cheap open model eighteen months later. The frontier is expensive; the diffusion behind it is breathtakingly cheap. Focusing only on the frontier price tag tells a concentration story while ignoring the democratization happening right behind it.",
+                      "Wrong frame. Frontier costs are high, sure. But the cost of any given level of capability collapses every year: what cost $191 million to train becomes a cheap open model eighteen months later. The frontier's expensive. The diffusion right behind it is absurdly cheap. Stare only at the frontier price tag and you'll tell a concentration story while missing the democratization one step back.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "One step back is where my school district always lived. We got the computers the year after they stopped mattering, and someone always told us how lucky we were. I don't love hearing the hand-me-downs called democracy.",
                   },
                 ],
               ],
@@ -224,7 +258,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That is the most important disagreement in the whole field, and it is genuinely unresolved. You are right that capability diffuses. But the frontier keeps moving, and whoever holds it captures the highest-margin work, sets the standards, and earns the returns that fund the next frontier. Cheap last-generation models are real, and so is a flywheel where the same few players keep paying for the next ticket because they are the only ones who can.',
+                      "That's the disagreement that matters most in this whole field, and nobody's settled it. Capability does diffuse. But the frontier keeps moving, and whoever holds it gets the highest-margin work, sets the standards, and earns the returns that pay for the next ticket. Take a university lab that wants to study how these systems fail. It can download last year's model. It can't afford to build the one everybody's actually deploying. So it ends up auditing the past.",
                   },
                 ],
               ],
@@ -241,7 +275,14 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Both can hold. Open-weight models (Llama, Mistral, and others) have genuinely put strong capability in the hands of startups, researchers, and governments that could never train from scratch. The base layer is more open than the doom narrative admits. The question is whether the frontier layer stays a private club, and on that I'm less sure than I used to be.",
+                      "You're both right, and that's the uncomfortable part. Open-weight models (Llama, Mistral, and others) have put strong capability in the hands of startups, researchers, and governments that could never train from scratch. The base layer is more open than the doom story admits. Whether the frontier stays a private club is another matter, and I'm less sure about that than I used to be.",
+                  },
+                ],
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "I've sat in the meetings where we decide who gets early access to a new model. The list is short: big customers, a few partners, researchers we already know. Nobody in that room is trying to build a club. It's a club anyway.",
                   },
                 ],
               ],
@@ -292,13 +333,13 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Now follow the money geographically. In 2023, private AI investment was overwhelmingly concentrated in the United States (about $67 billion), with China a distant second near $8 billion and the United Kingdom third under $4 billion.',
+                      'Now put the money on a map. In 2023, private AI investment was overwhelmingly concentrated in the United States (about $67 billion), with China a distant second near $8 billion and the United Kingdom third under $4 billion.',
                   },
                   { type: 'cite', claimId: 'c-viii-investment-geo' },
                   {
                     type: 'text',
                     value:
-                      ' Most of the planet does not appear on this chart at all. The Global Majority supplies data, labor, and increasingly the energy and water we documented in Part I. But the capital, the models, and the returns accrue somewhere else.',
+                      " Most of the planet doesn't show up on that chart at all. It supplies the data, the labor, and more and more of the power and water we argued about at the very start. The capital, the models, and the returns land somewhere else.",
                   },
                 ],
               ],
@@ -315,7 +356,24 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'This is the thread back to everything we said about labor. The data annotators in Nairobi, the content moderators in Manila, the cobalt, and the cooling water are all real inputs from the Global South. What comes back is a subscription product priced for the Global North. It is an old pattern wearing a new technology: the value is extracted in one place and captured in another.',
+                      "And I can put faces on that. The annotators in Nairobi we talked about, the moderators in Manila, the cobalt, the cooling water: all inputs from the Global South. What comes back is a subscription priced for the Global North. Plenty of the people who labeled the data couldn't afford the product it went into. Old pattern, new machine. Extracted in one place, captured in another.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "That's what I missed when we talked about the water. I thought it was a local fight, a town arguing with a data center down the road. It's the same thing as the chips, isn't it? The people living next to the pipe aren't the people who own what comes out of it.",
                   },
                 ],
               ],
@@ -332,7 +390,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And this is where concentration stops being an economic curiosity and becomes a governance problem. When a technology that can reshape every economy is owned by a handful of firms in a handful of countries, the rest of the world faces a choice between dependence and exclusion. That is precisely the dynamic (power without matching accountability) that Part IV called one of the two bad attractors. Concentrated capability is how you slide toward it.',
+                      "It's the same problem, yes. And that's where concentration stops being an economics question and becomes a governance one. When a technology that can reshape every economy is owned by a handful of firms in a handful of countries, everyone else chooses between dependence and exclusion. When we talked about the race, I called this one of the two ways it goes badly: lock-in, power nobody can take back. Concentrated capability is the slope that leads there.",
                   },
                 ],
               ],
@@ -349,7 +407,24 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'll add the necessary caution to my own side's story: investment concentration is not the same as benefit concentration. A farmer in Kenya using a free translation model or a crop-disease classifier is capturing real value that shows up in no investment chart. The ledger of who pays is genuinely lopsided. The ledger of who benefits is messier, and more hopeful, than the capital flows alone suggest.",
+                      "I'll complicate my own side's story. Investment concentration isn't benefit concentration. A farmer in Kenya using a free translation model or a crop-disease classifier gets real value that shows up on no investment chart. Who pays is lopsided, no argument. Who benefits is messier, and more hopeful, than the capital flows suggest.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'labor-advocate',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Free until it isn't. That farmer doesn't own the classifier, and gets no say when the price or the terms change.",
                   },
                 ],
               ],
@@ -407,7 +482,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'There are real levers here, and some are already moving. Competition regulators on both sides of the Atlantic are scrutinizing the cloud-and-model partnerships that tie frontier labs to a few hyperscalers. Public-compute initiatives (national AI research resources) aim to give universities and startups access they cannot buy. And open-weight models function as a kind of antitrust by other means: a capable free floor under the market.',
+                      "Some levers are already moving. Competition regulators on both sides of the Atlantic are scrutinizing the cloud-and-model partnerships that tie frontier labs to a few hyperscalers. Public-compute programs (national AI research resources) aim to give universities and startups access they can't buy. And open-weight models work as antitrust by other means: a capable free floor under the market. Scrutiny is the earliest stage, mind you. A study is not a case, and a case is not a remedy.",
                   },
                 ],
               ],
@@ -424,13 +499,13 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Those are the right instruments. I'd add one measurement that should worry us: who actually builds the frontier models. In 2023, industry produced the overwhelming majority of notable AI models: on the order of 51, against roughly 15 from academia.",
+                      "Right instruments. Here's the number that worries me: who actually builds the frontier models. In 2023, industry produced the overwhelming majority of notable AI models: on the order of 51, against roughly 15 from academia.",
                   },
                   { type: 'cite', claimId: 'c-viii-industry-academia' },
                   {
                     type: 'text',
                     value:
-                      ' A decade ago that ratio ran the other way. When the public and academic sphere can no longer afford to build at the frontier, it loses the ability to independently understand, audit, or check what the frontier is doing. That is the concentration that frightens me most.',
+                      " A decade ago it ran the other way. That's the university lab again, at national scale. Once the public side can't afford to build at the frontier, it can't independently understand, audit, or check what the frontier is doing. That's the concentration that frightens me most.",
                   },
                 ],
               ],
@@ -447,7 +522,24 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Then fund the public side rather than only fearing the private one. The fix for academia falling behind is public compute and open models, not pretending the private investment did not also produce the breakthroughs Part III documented. Concentration and progress came from the same engine. The task is to keep the progress while widening the ownership, not to choose between them.',
+                      "Then fund the public side instead of only fearing the private one. The answer to academia falling behind is public compute and open models, not pretending private money didn't also produce the breakthroughs we talked about in medicine and science. Concentration and progress came out of the same engine. Keep the progress; widen the ownership.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'policy-realist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Agreed on the how. But the public resource has to be funded by a legislature every year, and the private one funds itself out of last year's lead. You can guess which one gets cut first.",
                   },
                 ],
               ],
@@ -464,7 +556,7 @@ export const partVIII: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "So the thing I should worry about is not the robots; it is that a handful of companies could end up owning the most important tool of my grandchildren's lifetime, and nobody outside them really knows how it works. When you put it that way, it sounds less like science fiction and more like every other time a few people cornered something that mattered.",
+                      "So it isn't the robots I should worry about. My grandchildren will grow up with this the way I grew up with the telephone, and a handful of companies could end up owning the most important tool of their lifetime, with nobody outside those companies really knowing how it works. Put that way, it isn't science fiction. It's every other time a few people cornered something that mattered. I've lived through enough of those to know they don't hand it back on their own.",
                   },
                 ],
               ],

@@ -82,7 +82,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'My grandson sent me a video of a senator saying something outrageous, and I believed it for a full day before he told me it was fake (made on a phone, apparently). I keep thinking: if I can be fooled that easily, what else have I believed this year that simply was not true?',
+                      "My grandson sent me a video of a senator saying something outrageous, and I believed it for a full day. I'd already repeated it to friends before he told me it was fake, made on a phone, apparently. It wasn't being fooled once that rattled me. It was going back through the year in my head and not knowing where to stop. What else have I believed that simply wasn't true?",
                   },
                 ],
               ],
@@ -99,13 +99,29 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Let me be the one to slow this down, because I have watched this movie before. Yes, deepfakes are real and getting cheaper. But "90% of the internet will be AI-generated" is a projection that gets repeated until it sounds like a measurement.',
+                      "That's a rotten feeling, and you're not the only one who's had it. But I've covered enough tech panics to know where it leads next. Deepfakes are real and getting cheaper, yes. \"90% of the internet will be AI-generated,\" though, is a projection that gets repeated until it sounds like a measurement.",
                   },
                   { type: 'cite', claimId: 'c-v-europol-projection' },
                   {
                     type: 'text',
                     value:
-                      ' It came from a single Europol report, framed as a possibility, and it has been laundered into a fact. Most synthetic content is spam and filler, not a sophisticated plot to deceive you. The volume is the story; the apocalypse is not, at least not yet.',
+                      " It came from a single Europol report, framed as a possibility, and it's been laundered into a fact. Most synthetic content is spam and filler, not a sophisticated plot to deceive you. The volume is the story. The apocalypse isn't, at least not yet.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value: "Spam didn't fool me for a whole day. That video did.",
                   },
                 ],
               ],
@@ -122,7 +138,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I actually agree with the Skeptic on the headline number, and I'd add the optimistic case: the same models that generate fakes are getting good at flagging them, and provenance standards are arriving. The detection rate looks alarming today because almost no one has the tools yet. That changes the moment platforms ship them by default.",
+                      "And one good fake is the case we're building for. I'm with the Skeptic on the headline number, but here's the optimistic part: the same models that generate fakes are getting good at flagging them, and provenance standards are arriving. That detection rate looks alarming because almost no one has the tools yet. It changes the moment platforms ship them by default.",
                   },
                 ],
               ],
@@ -139,7 +155,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "You're both talking about deception. I want to talk about volume, because volume is its own harm. When a model can generate ten thousand images in the style of a living illustrator overnight, it doesn't need to fool anyone. It just floods the channel until the real work (the work a person spent twenty years learning to make) becomes a needle in a haystack the machine built.",
+                      "Wait. You're all arguing about who gets fooled. Volume is its own harm, and it doesn't need to fool anyone. When a model can generate ten thousand images in the style of a living illustrator overnight, it just floods the channel until the real work (the work a person spent twenty years learning to make) becomes a needle in a haystack the machine built.",
                   },
                 ],
               ],
@@ -188,7 +204,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The fraud numbers matter, but the deeper legal problem has a name: the liar's dividend. Once the public knows that any video could be fake, every authentic recording becomes deniable. A politician caught on camera can simply call it a deepfake. The technology doesn't only manufacture false evidence; it corrodes the value of true evidence.",
+                      "The fraud numbers matter. The deeper legal problem, though, has a name: the liar's dividend. Once the public knows that any video could be fake, every authentic recording becomes deniable. A politician caught on camera can simply call it a deepfake. The technology doesn't only manufacture false evidence; it corrodes the value of true evidence.",
                   },
                 ],
               ],
@@ -205,7 +221,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That one I'll grant you completely, and it's the part that actually keeps me up at night: not because it's futuristic, but because it's already here and it costs nothing. You don't need a working deepfake to benefit from the liar's dividend. You just need everyone to believe deepfakes exist. The panic itself is the weapon.",
+                      "That one I'll grant you, all of it. It's the part that keeps me up at night, and not because it's futuristic. It's already here and it costs nothing. You don't need a working deepfake to collect the liar's dividend. You just need everyone to believe deepfakes exist. Even my own debunking columns help: every one tells readers deepfakes exist. The panic itself is the weapon.",
                   },
                 ],
               ],
@@ -222,7 +238,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "So now I'm supposed to disbelieve things that are real AND believe things that are fake? That's exhausting. I used to be able to trust my own eyes. What am I supposed to trust now, a little badge on the corner of a photo?",
+                      "So now I'm supposed to disbelieve things that are real and believe things that are fake? Since that senator video, I watch the evening news and catch myself wondering whether the man talking really said it. I've trusted that broadcast most of my life. I'm not believing the fakes now. I'm doubting everything, and that feels a lot like believing nothing. I used to be able to trust my own eyes. What am I supposed to trust now, a little badge on the corner of a photo?",
                   },
                 ],
               ],
@@ -239,13 +255,30 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Several jurisdictions are trying to answer exactly that. The EU AI Act requires that AI-generated or manipulated content (text, audio, images, video) be clearly labeled as such.',
+                      'More or less, yes: a badge. Several jurisdictions are trying it. The EU AI Act requires that AI-generated or manipulated content (text, audio, images, video) be clearly labeled as such.',
                   },
                   { type: 'cite', claimId: 'c-v-eu-transparency' },
                   {
                     type: 'text',
                     value:
-                      ' Enforcement is uneven and the rules are new, but the principle is now law on a continent of 450 million people: synthetic media must announce itself. The question is whether a label survives contact with a screenshot.',
+                      ' Enforcement is uneven and the rules are new, but the principle is now law on a continent of 450 million people: synthetic media must announce itself. Whether a label survives contact with a screenshot is another matter.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "That senator video had been forwarded who knows how many times before it reached me. I'll believe in the badge when I see it. If I can still say that.",
                   },
                 ],
               ],
@@ -317,13 +350,13 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The phenomenon is real and it has a name: model collapse. A 2024 study in Nature showed that when models are trained recursively on their own generated data, they progressively lose the tails of the distribution and converge toward bland, degraded output.',
+                      '"Poetic justice" is a bit much. But the phenomenon is real, and it has a name: model collapse. A 2024 study in Nature showed that when models are trained recursively on their own generated data, they progressively lose the tails of the distribution and converge toward bland, degraded output.',
                   },
                   { type: 'cite', claimId: 'c-v-nature-collapse' },
                   {
                     type: 'text',
                     value:
-                      " But I'd push back on the fatalism: labs know this now. The response is provenance filtering, curated human data, and synthetic-data pipelines designed to avoid exactly this trap. Knowing the failure mode is half of engineering around it.",
+                      ' Labs know this now. The response is provenance filtering, curated human data, and synthetic-data pipelines built to avoid exactly this trap. Knowing the failure mode is half of engineering around it.',
                   },
                 ],
               ],
@@ -340,7 +373,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And notice what model collapse implies, because it cuts against the doomers too: authentic, verifiably human-made data is about to become extremely valuable. A polluted well makes clean water precious. That is not a civilization-ending dynamic. It is a market, and markets get solved, usually messily.',
+                      "And collapse cuts against the doomers too, if you follow it through: authentic, verifiably human-made data is about to become extremely valuable. A polluted well makes clean water precious. That's not a civilization-ending dynamic. It's a market, and markets get solved. Messily, usually.",
                   },
                 ],
               ],
@@ -357,7 +390,24 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      '"Human data becomes valuable": listen to how that lands for the people who make it. We are the well. And so far the proposal is to keep drawing from us without consent or payment, and then pay a premium to whoever can certify the water came from a human. I want the people, not just the data, to be in that deal.',
+                      '"Extremely valuable." Listen to how that lands for the people who make it. We are the well. And so far the plan is to keep drawing from us without consent or payment, then pay a premium to whoever can certify the water came from a human. I want the people, not just the data, to be in that deal.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'skeptic',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "Fair. I said it's a market. I didn't say who'd get paid, and you're right that it probably wouldn't be you.",
                   },
                 ],
               ],
@@ -412,7 +462,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Here is the constructive turn. Instead of trying to detect every fake after the fact (a losing race), the emerging approach is to certify what is real at the moment of capture. The C2PA standard attaches tamper-evident provenance metadata to media: where it came from, what edited it, whether AI was involved.',
+                      "Certifying the water, though: that part we can build. Chasing every fake after the fact is a losing race. The approach that's emerging is to certify what's real at the moment of capture. The C2PA standard attaches tamper-evident provenance metadata to media: where it came from, what edited it, whether AI was involved.",
                   },
                   { type: 'cite', claimId: 'c-v-c2pa' },
                   {
@@ -435,7 +485,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Provenance is the most promising lever I've seen, precisely because it's infrastructure rather than whack-a-mole. But it only works if it's ubiquitous and hard to strip. A standard adopted by some cameras and ignored by the screenshot button is a partial floor. This needs the boring, durable work of mandates and interoperability, the same way we got seatbelts and food labels.",
+                      "Adopting it isn't the same as requiring it. Provenance is the most promising lever I've seen, because it's infrastructure rather than whack-a-mole. But it only works if it's ubiquitous and hard to strip. A standard adopted by some cameras and ignored by the screenshot button is a partial floor. This needs the boring, durable work of mandates and interoperability, the same way we got seatbelts and food labels.",
                   },
                 ],
               ],
@@ -452,7 +502,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'll end where I'm genuinely torn. The deflationary case is that humans have survived every prior media revolution (the printing press, photography, Photoshop) and developed new literacies each time. The honest worry is speed and scale: those adaptations took decades, and this is moving in months. My bet is that we adapt. My fear is the gap before we do.",
+                      "Seatbelts took a while too, and that's where I'm torn. The deflationary case is that humans have survived every prior media revolution (the printing press, photography, Photoshop) and developed new literacies each time. I mostly believe it. The worry is speed and scale: those adaptations took decades, and this is moving in months. My bet is that we adapt. My fear is the gap before we do.",
                   },
                 ],
               ],
@@ -469,7 +519,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Notice that everything that works here is coordination, not cleverness. Provenance standards are an agreement. Labeling laws are an agreement. The value of human data will only reach humans if we agree to route it there. The reality problem is, at bottom, the same problem as the race: no single actor can restore shared truth alone, and each one defects toward whatever floods the channel fastest.',
+                      "The gap is where I'd look too, and everything that shortens it is coordination, not cleverness. Provenance standards are an agreement. Labeling laws are an agreement. The value of human data will only reach humans if we agree to route it there. The reality problem is, at bottom, the same problem as the race: no single actor can restore shared truth alone, and each one defects toward whatever floods the channel fastest.",
                   },
                 ],
               ],
@@ -486,7 +536,7 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Then tell me the one thing I can actually do. Because I can't read a metadata standard, and I can't audit a model. What does a person like me hold onto?",
+                      "You keep saying \"agreement.\" Nobody asked me to agree to anything. I can't read a metadata standard, and I can't audit a model. When I was teaching, a child couldn't put a fact in a report until they could tell me where they'd read it. Is that the kind of thing you mean, or is there something a person like me can actually hold onto?",
                   },
                 ],
               ],
@@ -503,7 +553,24 @@ export const partV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Hold onto provenance over plausibility. Stop asking "does this look real?" (fakes are designed to win that test) and start asking "where did this come from, and who is accountable for it?" Trust the chain, not the surface. That instinct, multiplied across enough people, is what makes a labeled, sourced internet worth building. The demand has to come from below.',
+                      'That\'s what I mean: your classroom rule. Hold onto provenance over plausibility. Stop asking "does this look real?" (fakes are designed to win that test) and start asking "where did this come from, and who is accountable for it?" Trust the chain, not the surface. Enough people asking that is what makes a labeled, sourced internet worth building.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "I can ask that. I made children ask it for years. What I can't do is unsee the senator. I know it was fake, and part of me still remembers him saying it.",
                   },
                 ],
               ],

@@ -1,0 +1,260 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'part-i' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "environmentalist": [
+    "c-i-aimultiple-grid-carbon",
+    "c-i-ansi-price-surge",
+    "c-i-ansi-rate-increase",
+    "c-i-ansi-stanford-combined",
+    "c-i-iea-projection-2030",
+    "c-i-microsoft-water-increase",
+    "c-i-pew-us-water",
+    "c-i-stanford-water-competition",
+    "c-i-wef-co2-training",
+    "c-i-wef-water-per-day",
+  ],
+  "labor-advocate": [
+    "c-i-data-labelers-association",
+    "c-i-kenya-2-dollars",
+    "c-i-nairobi-open-letter",
+    "c-i-philippines-scale-ai",
+    "c-i-remotasks-shutdown",
+    "c-i-somo-intermediaries",
+    "c-i-us-annotator-wage",
+  ],
+  "policy-realist": [
+    "c-i-eo-14365-dominance",
+    "c-i-eo-14365-innovate",
+    "c-i-eu-act-comprehensive",
+    "c-i-eu-act-transparency",
+    "c-i-mit-disclosure-gap",
+    "c-i-msci-water-scarcity",
+    "c-i-nixon-peabody-water",
+    "c-i-pillsbury-bills",
+    "c-i-squire-global-frameworks",
+  ],
+  "tech-optimist": [
+    "c-i-arxiv-cooling-reduction",
+    "c-i-iea-dc-electricity",
+    "c-i-mit-training-gwh",
+    "c-i-msci-cooling-energy",
+    "c-i-qhala-unemployment",
+  ],
+}
+`;
+
+exports[`'part-ii' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "environmentalist": [
+    "c-ii-brookings-apr-2026",
+    "c-ii-fortune-mar-2026",
+    "c-ii-fortune-mar-2026",
+    "c-ii-fortune-mar-2026",
+    "c-ii-introl-2026",
+    "c-ii-trellis-2025",
+  ],
+  "labor-advocate": [
+    "c-ii-classaction-mar-2026",
+    "c-ii-computer-weekly",
+    "c-ii-computer-weekly",
+    "c-ii-computer-weekly",
+    "c-ii-computer-weekly-feb-2025",
+    "c-ii-time-dec-2024",
+  ],
+  "policy-realist": [
+    "c-ii-baker-botts-jan-2026",
+    "c-ii-dla-piper-genie-2026",
+    "c-ii-drata-baker-botts-2026",
+    "c-ii-eu-ai-act-enforcement-2026",
+    "c-ii-iapp-may-2026",
+    "c-ii-ieee-spectrum-2024",
+    "c-ii-king-spalding-jan-2026",
+    "c-ii-nixon-peabody-sep-2025",
+    "c-ii-secure-privacy-2026",
+    "c-ii-troutman-pepper-2025",
+  ],
+  "tech-optimist": [
+    "c-ii-commonfund-2025",
+    "c-ii-data-centre-magazine-2025",
+    "c-ii-data-centre-magazine-2026",
+    "c-ii-enkiai-2026",
+    "c-ii-enkiai-commonfund-2025",
+    "c-ii-ieee-spectrum-2024",
+    "c-ii-introl-commonfund-2025",
+    "c-ii-introl-dec-2025",
+    "c-ii-net-zero-insights-2025",
+    "c-ii-somo-mar-2026",
+    "c-ii-sp-global-apr-2026",
+    "c-ii-stackcyber-2026",
+    "c-ii-sustainability-dcm-jul-2025",
+    "c-ii-sustainability-mag-2025",
+    "c-ii-ttms-iea-2025",
+  ],
+}
+`;
+
+exports[`'part-iii' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "environmentalist": [
+    "c-iii-brain-mapping",
+    "c-iii-cancer-protein",
+    "c-iii-cyclone-15-days",
+    "c-iii-farmonaut-yields",
+    "c-iii-flood-2b",
+    "c-iii-nature-ungauged",
+    "c-iii-promptbuddy-98b",
+    "c-iii-weathernext-8x",
+  ],
+  "labor-advocate": [
+    "c-iii-elon-faculty",
+    "c-iii-farmonaut-70pct",
+    "c-iii-nhsjs-zhai",
+  ],
+  "policy-realist": [
+    "c-iii-biorxiv-concentration",
+    "c-iii-doj-ada",
+    "c-iii-eaa",
+  ],
+  "tech-optimist": [
+    "c-iii-aira-denver",
+    "c-iii-alation-chemical-space",
+    "c-iii-alphafold-214m",
+    "c-iii-be-my-eyes",
+    "c-iii-brookings",
+    "c-iii-harvard-rct",
+    "c-iii-lifebit-druggable",
+    "c-iii-live-transcribe",
+    "c-iii-mit-antibiotic",
+    "c-iii-nobel-2024",
+    "c-iii-pdb-40pct",
+    "c-iii-promptbuddy-150k",
+    "c-iii-promptbuddy-18pct",
+    "c-iii-promptbuddy-700m",
+    "c-iii-promptbuddy-70pct",
+    "c-iii-seeing-ai",
+  ],
+}
+`;
+
+exports[`'part-iv' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "policy-realist": [
+    "c-iv-eu-ai-act",
+  ],
+  "systems-humanist": [
+    "c-iv-ai-red-lines",
+    "c-iv-jfk-prediction",
+    "c-iv-nuclear-states-2024",
+  ],
+  "tech-optimist": [
+    "c-iv-bletchley-countries",
+    "c-iv-white-house-commitments",
+  ],
+}
+`;
+
+exports[`'part-ix' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "artist": [
+    "c-ix-images-made",
+    "c-ix-laion",
+  ],
+  "economist": [
+    "c-ix-soa",
+  ],
+  "policy-realist": [
+    "c-ix-copyright-office",
+    "c-ix-licensing",
+    "c-ix-nyt-suit",
+  ],
+}
+`;
+
+exports[`'part-v' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "policy-realist": [
+    "c-v-eu-transparency",
+  ],
+  "skeptic": [
+    "c-v-europol-projection",
+  ],
+  "tech-optimist": [
+    "c-v-c2pa",
+    "c-v-nature-collapse",
+  ],
+}
+`;
+
+exports[`'part-vi' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "safety-researcher": [
+    "c-vi-cais-statement",
+    "c-vi-hlmi-shift",
+    "c-vi-median-estimate",
+  ],
+  "systems-humanist": [
+    "c-vi-prioritize-safety",
+  ],
+  "tech-optimist": [
+    "c-vi-compute-trend",
+  ],
+}
+`;
+
+exports[`'part-vii' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "clinician": [
+    "c-vii-satisfaction",
+    "c-vii-surgeon-general",
+  ],
+  "young-person": [
+    "c-vii-real-friends",
+    "c-vii-teen-usage",
+  ],
+}
+`;
+
+exports[`'part-viii' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "economist": [
+    "c-viii-industry-academia",
+    "c-viii-investment-geo",
+    "c-viii-training-cost",
+    "c-viii-tsmc",
+  ],
+}
+`;
+
+exports[`'part-x' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "clinician": [
+    "c-x-obermeyer",
+  ],
+  "equity-researcher": [
+    "c-x-gendershades",
+    "c-x-lending",
+  ],
+  "policy-realist": [
+    "c-x-compas",
+  ],
+}
+`;
+
+exports[`'part-xi' debate citations > each persona keeps exactly its cited claims 1`] = `
+{
+  "economist": [
+    "c-xi-rare-earth",
+  ],
+  "environmentalist": [
+    "c-xi-ewaste",
+  ],
+  "labor-advocate": [
+    "c-xi-lithium-water",
+  ],
+  "land-defender": [
+    "c-xi-child-labor",
+    "c-xi-cobalt",
+  ],
+}
+`;

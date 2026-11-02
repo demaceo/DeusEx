@@ -89,7 +89,7 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I've been in three of these conversations now. I've heard about the energy, the water, the workers, the regulations. And I keep wanting to ask: who decided we're in a race? Did someone sit down and choose this? Because it feels like it just happened.",
+                      "I've sat through three of these now: the power bills, the water, the workers in Kenya, the laws. Everyone keeps calling it a race. Who decided we're in one? Because from my kitchen table it looks like nobody chose it, and somehow that's worse.",
                   },
                 ],
               ],
@@ -106,14 +106,14 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That is exactly the right question. And the answer is: no one decided. That's what makes it so hard to stop. Charlie Munger had a line: \"Show me the incentives and I'll show you the outcome.\" The race wasn't designed by any single actor. It emerged from the interaction of incentives (investment capital, talent markets, user acquisition, regulatory capture) that each make perfect sense to each individual player, and together produce a trajectory no individual player chose.",
+                      "Nobody did, and you've just put your finger on why it's so hard to stop. Charlie Munger had a line: \"Show me the incentives and I'll show you the outcome.\" Investment, talent, users, a friendly regulator: each lab chases them for reasons that make sense on their own, and together they produce a pace no one picked.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "It's not because anyone is evil or has bad intentions. It's because the game is set up so that the only rational move is to run faster. Anyone who tries to slow down does so at their own expense, while the benefits of restraint flow to everyone else.",
+                      'Nobody has to be a villain for this to happen. Whoever slows down alone pays the whole price, and everyone else collects the benefit of their restraint.',
                   },
                 ],
               ],
@@ -130,7 +130,7 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I don't disagree with the framing. But competition is also what produced AlphaFold, the MRSA antibiotic candidates, the diagnostic tools we talked about in Part III. The race isn't only producing bad outcomes. It's producing breakthroughs that wouldn't happen if everyone was moving at the pace of the slowest actor.",
+                      "Careful, though. That same race gave us AlphaFold, the MRSA antibiotic candidates, the diagnostic tools from our conversation about medicine. None of that happens at the pace of the slowest lab. I've watched good work get finished in weeks instead of quarters because a competitor was about to ship.",
                   },
                 ],
               ],
@@ -147,7 +147,24 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Agreed: that's the honest version of the problem. This isn't about stopping the race entirely. It's about distinguishing between the parts of the race that produce genuine value and the parts that produce collective harm. The ozone hole wasn't caused by companies trying to wreck the atmosphere. It was caused by companies competing to produce refrigerants efficiently. The coordination intervention (the Montreal Protocol) didn't eliminate the refrigerant industry. It redirected the race toward alternatives.",
+                      "Fair, and I'll take that. So the job isn't stopping the race; it's sorting the parts worth running from the parts that hurt everyone. The ozone hole didn't come from companies trying to wreck the sky. It came from companies competing to make refrigerants cheaply. The Montreal Protocol didn't shut that industry down. It pointed the competition at substitutes.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "I remember that one. The spray cans changed when I was a young woman, and a few years later I was teaching my class about the hole in the ozone. Nobody missed the old hairspray. So what's the hairspray here? What would you actually swap out?",
                   },
                 ],
               ],
@@ -164,7 +181,7 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "There's an important qualifier here. The Montreal Protocol worked because the problem was relatively well-defined: specific chemicals, measurable ozone depletion, viable substitutes already in development. AI's race dynamics are more diffuse. What exactly are we restricting? Compute thresholds? Deployment speed? Certain use cases? The harder the problem is to define, the harder it is to negotiate.",
+                      "That's exactly where the analogy strains. Montreal worked on a narrow target: named chemicals, a depletion you could measure, substitutes already in the lab. With AI there's no single molecule to swap. Do we restrict compute? Deployment speed? Particular uses? The harder a problem is to define, the harder it is to write into a treaty.",
                   },
                 ],
               ],
@@ -211,7 +228,7 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I want to take the Montreal Protocol example seriously, because I've spent a career fighting for environmental regulation and I know what worked and what didn't. The protocol worked because scientists agreed on what was happening: the ozone hole wasn't politically contested. Governments agreed that the harms were real and cross-border. And the industry alternatives were viable within the regulatory window. That's three conditions. How many of them hold for AI?",
+                      "I've spent a career fighting for environmental rules, and the Protocol is the one everyone cites, so let's be precise about why it held. Three things were true at once. Scientists agreed on what was happening; the ozone hole wasn't politically contested. Governments agreed the harm was real and crossed borders. And industry had workable alternatives inside the regulatory window. How many of those hold for AI?",
                   },
                 ],
               ],
@@ -228,14 +245,14 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The first one holds more than critics admit. There is genuine scientific consensus (inside the labs) about the trajectory. Anonymous AI researchers at frontier labs consistently report beliefs that the systems they\'re building pose non-trivial risks. Whether you agree with those assessments or not, the epistemic situation is not "scientists disagree." It\'s closer to the early ozone debates: contested politically, less contested technically.',
+                      "The first holds better than critics admit. Inside the labs, the researchers building these systems keep reporting that they carry serious risks. Whatever you make of those assessments, that's closer to the early ozone fights (contested politically, much less so technically) than to a genuine scientific split.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "The nuclear case is actually more instructive for AI than the ozone case, because the risks weren't primarily chemical; they were about power and who had it. The Non-Proliferation Treaty didn't work by eliminating nuclear physics. It worked by creating a verification regime: the International Atomic Energy Agency. Independent inspectors. Declared stockpiles. Monitored facilities. You don't have to trust any single state's intentions if you have a credible verification mechanism.",
+                      "But nuclear is the better precedent, because the danger there was about power, not chemistry. The Non-Proliferation Treaty didn't abolish physics. It built a way to check: inspectors from the International Atomic Energy Agency, declared stockpiles, monitored facilities. You don't need to trust a rival's intentions if you can verify what it's doing.",
                   },
                 ],
                 [
@@ -244,25 +261,51 @@ export const partIV: RoundtableDocument = {
                     value:
                       'JFK predicted in 1963 that there would be 15 to 25 nuclear states by 1975.',
                   },
-                  { type: 'cite', claimId: 'c-iv-jfk-prediction' },
+                  {
+                    type: 'cite',
+                    claimId: 'c-iv-jfk-prediction',
+                  },
                   {
                     type: 'text',
                     value:
                       ' There are nine today, after more than fifty years of proliferation risk. Coordination held.',
                   },
-                  { type: 'cite', claimId: 'c-iv-nuclear-states-2024' },
+                  {
+                    type: 'cite',
+                    claimId: 'c-iv-nuclear-states-2024',
+                  },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'And the contemporary version of this argument is already being worked out in detail. Researchers like Tim Fist and Janet Egan argue that the US and China could agree on a narrow set of AI red lines (bioweapons assistance, offensive cyber, recursive self-improvement) but only if verification technology makes compliance checkable, exactly as it was for nuclear material.',
+                      'Tim Fist and Janet Egan make the modern version of this case: the US and China could agree on a narrow set of AI red lines (bioweapons assistance, offensive cyber, recursive self-improvement), but only if verification technology makes compliance checkable, the way it was for nuclear material.',
                   },
-                  { type: 'cite', claimId: 'c-iv-ai-red-lines' },
+                  {
+                    type: 'cite',
+                    claimId: 'c-iv-ai-red-lines',
+                  },
                   {
                     type: 'text',
                     value:
-                      ' The hard part was never the political will alone. It was building the instruments that let adversaries trust each other without having to.',
+                      ' The obstacle was never political will alone. It was building the instruments that let adversaries trust each other without having to.',
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'environmentalist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "That's one of three, and I'll grant it. The second I'd give you half: governments agree the harm crosses borders, but not on which harm, and the two biggest players each think they're winning. The third worries me most. With ozone, the substitute was a different chemical. Nobody at this table has named what the safer substitute product even is.",
                   },
                 ],
               ],
@@ -279,7 +322,7 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Both of those cases (ozone, nuclear) were coordination between governments in a world where the relevant technology was concentrated in a small number of state actors. AI development is global, distributed, and increasingly open-sourced. You can't sign a treaty with Hugging Face. You can't inspect a model trained on someone's personal cluster in a garage.",
+                      "And both of your precedents were deals between governments over technology a handful of states controlled. AI isn't built like that. It's global, it's spread out, and more of it is open-source every month. You can't sign a treaty with Hugging Face. You can't inspect a model somebody trained on a cluster in their garage.",
                   },
                 ],
               ],
@@ -296,7 +339,7 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "That's true for the diffuse tail of AI development, and that tail is a real problem. But the harms we're most worried about (systems capable of autonomous action at large scale, biosecurity risks, infrastructure vulnerabilities) require enormous compute to develop. Compute is physical. It's manufactured in a handful of fabs. It's shipped across borders. It's trackable. The verification problem is hard, not unsolvable.",
+                      "That's true of the long tail, and the tail is a real problem. But the harms we worry about most (systems acting autonomously at scale, help with biological weapons, attacks on infrastructure) take enormous compute. Compute is physical. It's made in a handful of fabs and shipped across borders. You can track it. Hard to verify is not the same as impossible.",
                   },
                 ],
               ],
@@ -313,20 +356,23 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I want to flag something: the voluntary safety commitments that have happened (the Bletchley Declaration, the Seoul AI Safety agreements) are real. They didn't start with a treaty. They started with labs agreeing on a set of red lines and evaluation standards. That's coordination. Imperfect, not binding, but it's not nothing.",
+                      "And we're not starting from zero. At Bletchley Park in November 2023, 28 countries, including the US and China, signed a declaration that frontier AI carries serious risks.",
+                  },
+                  {
+                    type: 'cite',
+                    claimId: 'c-iv-bletchley-countries',
+                  },
+                  {
+                    type: 'text',
+                    value:
+                      " As far as I know, that's the first international statement on AI risk both of them have put their names to.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'The Bletchley Declaration was signed by 28 countries, including the US and China.',
-                  },
-                  { type: 'cite', claimId: 'c-iv-bletchley-countries' },
-                  {
-                    type: 'text',
-                    value:
-                      ' That is the first time the US and China have co-signed any AI governance document. You build from there.',
+                      "Six months later, at the Seoul summit, the labs themselves committed to publishing the risk thresholds at which they'd stop. None of it is binding, I know. But that's how treaties usually start: with the parties agreeing on what they're afraid of.",
                   },
                 ],
               ],
@@ -415,14 +461,14 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I want to name something that rarely gets said directly: there are two bad attractors here, not one. There's chaos: open proliferation of increasingly capable systems, with no accountability structure and bad actors able to access anything. And there's dystopia: a small number of actors, whether corporations or governments, that lock in unprecedented concentrated power using AI as the enforcement mechanism. Both are real risks. The goal isn't simply more regulation or less regulation. It's what I'd call the narrow path: power matched with responsibility at every level.",
+                      "Here's what I'd watch more closely than voluntary versus binding: where the power ends up. There are two ways this goes badly, not one. One is chaos: ever more capable systems spreading with nobody accountable and anyone able to get anything. The other is lock-in: a few companies or governments using AI to hold power nobody can take back. Lean too hard against the first and you slide into the second. The goal isn't more regulation or less. It's what I'd call the narrow path: power matched with responsibility at every level.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      'Every major human tradition has a version of this principle. The right to bear arms comes with rules about who can bear them and how. Nuclear energy comes with the IAEA. Financial markets come with capital requirements and deposit insurance. The pattern is: when technology confers outsized power, accountability must scale with it. Not eliminate it; scale with it.',
+                      "We've done this before. Nuclear energy comes with the IAEA. Banks come with capital requirements and deposit insurance. When a technology hands someone outsized power, accountability has to grow with it, not disappear and not stop the technology.",
                   },
                 ],
               ],
@@ -439,7 +485,7 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The EU AI Act represents the first attempt to do this at scale. It establishes a risk-based framework: low-risk applications face minimal requirements, high-risk applications face conformity assessments and third-party audits, and certain applications (social scoring by public authorities, real-time biometric surveillance in public spaces) are prohibited outright.',
+                      'With respect, voluntary versus binding is most of it, because only one of them can be enforced. The EU AI Act is the first attempt to do this at scale. It sorts systems by risk: low-risk applications face minimal requirements, high-risk ones face conformity assessments and third-party audits, and a few (social scoring by public authorities, real-time biometric surveillance in public spaces) are banned outright.',
                   },
                 ],
                 [
@@ -447,11 +493,14 @@ export const partIV: RoundtableDocument = {
                     type: 'text',
                     value: 'The Act entered into force on 1 August 2024.',
                   },
-                  { type: 'cite', claimId: 'c-iv-eu-ai-act' },
+                  {
+                    type: 'cite',
+                    claimId: 'c-iv-eu-ai-act',
+                  },
                   {
                     type: 'text',
                     value:
-                      ' Enforcement begins in 2026 for most provisions. It applies to any company deploying AI systems within the EU, regardless of where those systems were developed. That extraterritorial reach is what gives it teeth. It\'s imperfect (the definition of "high risk" is contested, and the enforcement capacity of national regulators is uneven) but it establishes a legal floor.',
+                      " Most of its obligations apply from 2026, if Brussels doesn't push the high-risk deadline back, which it's now debating. It covers any company deploying AI in the EU, wherever the system was built, and that reach is what gives it teeth. It's imperfect: what counts as \"high risk\" is contested, and national regulators' capacity to enforce it is uneven. But it's a legal floor, and a floor is more than a declaration.",
                   },
                 ],
               ],
@@ -468,13 +517,23 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to give credit to the voluntary side as well. The frontier AI labs (Anthropic, Google DeepMind, Meta, Microsoft, OpenAI and others) signed the White House voluntary commitments in July 2023.',
+                      'My own lab was among the companies that signed the White House voluntary commitments in July 2023.',
                   },
-                  { type: 'cite', claimId: 'c-iv-white-house-commitments' },
+                  {
+                    type: 'cite',
+                    claimId: 'c-iv-white-house-commitments',
+                  },
                   {
                     type: 'text',
                     value:
-                      ' Those included commitments to red-team new systems before release, share safety information with governments and with each other, and invest in cybersecurity and insider threat safeguards. These are real actions, not just statements.',
+                      " Red-team new systems before release, share safety information with governments and with each other, invest in cybersecurity and insider-threat safeguards. I've sat in those red-team reviews. They're real work, not a press release.",
+                  },
+                ],
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "What I can't tell you is what happens the week a competitor is about to launch and our review isn't finished. Nothing in the commitments answers that.",
                   },
                 ],
               ],
@@ -491,7 +550,24 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I'd feel better about the voluntary commitments if they included anything about the workers. We've spent three conversations establishing that data annotation and content moderation workers, particularly in the Global South, are doing dangerous, traumatic work for wages that don't reflect the value they're creating. That's a policy choice. The voluntary safety frameworks say nothing about it.",
+                      "Then read me the line about the workers. There isn't one. We've spent three conversations on the people labeling data and moderating content, mostly in the Global South, doing traumatic work for wages that don't reflect what they produce. Red-teaming, security, information sharing: the commitments protect the model. They say nothing about the people who made it.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'tech-optimist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "You're right. It isn't in there, and I can't remember anyone in those rooms asking why.",
                   },
                 ],
               ],
@@ -508,7 +584,7 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Can I ask you something directly? You keep talking about coordination and races and narrow paths. What does any of that mean for someone like me? What do I do?',
+                      "Here's what I keep coming back to. When the ozone hole was in the news, people like me knew what a spray can was, and we could stop buying one. I can't stop buying this. It's already in my phone whether I asked for it or not. So what does someone like me actually do?",
                   },
                 ],
               ],
@@ -525,14 +601,31 @@ export const partIV: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Honestly? The most important thing you can do is the same thing that worked for every other coordination problem in history: make it politically salient. The ozone hole got addressed because people understood what it was and demanded action. The nuclear test ban got negotiated because citizens in many countries (not just experts) understood what above-ground nuclear testing was doing to the air and the water and insisted their governments stop.',
+                      "On your own? Not much, and I won't pretend otherwise. But the ozone fight wasn't won at the checkout either. It was won when enough people understood the problem that governments had to act. The atmospheric test ban came the same way: citizens in many countries, not just experts, learned what above-ground testing was doing to the air and the water, and insisted their governments stop.",
                   },
                 ],
                 [
                   {
                     type: 'text',
                     value:
-                      "Technology is never neutral. The choices being made right now about how AI is built, who controls it, and what rules govern it are political choices. They respond to political pressure. The fact that they're being made in laboratories and boardrooms rather than town squares doesn't make them less political; it just makes the public less visible as a stakeholder. You are a stakeholder.",
+                      "The choices about how AI is built and who controls it are political choices, even when they're made in labs and boardrooms instead of town squares. That hides the public. It doesn't remove you. You're a stakeholder.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "In my teaching years, whenever someone from the district called me a stakeholder, the decision had usually already been made. I'd like to be wrong about this one.",
                   },
                 ],
               ],

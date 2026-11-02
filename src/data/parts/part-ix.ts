@@ -82,13 +82,13 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Let me start with the number that ended my naivety. The open dataset behind a lot of image generation, LAION-5B, contains roughly 5.85 billion image–text pairs scraped from the web.',
+                      "Here's the number that ended my naivety. LAION-5B, the open dataset behind a lot of image generation, holds roughly 5.85 billion image-text pairs scraped from the web.",
                   },
                   { type: 'cite', claimId: 'c-ix-laion' },
                   {
                     type: 'text',
                     value:
-                      ' Mine were in there. So were my friends\'. Nobody emailed us. The defense I keep hearing is that it was "publicly available." But publicly visible has never meant free to take. A shop window is public. That does not make the clothes free.',
+                      ' Mine were in there. So were my friends\'. Nobody emailed us. The defense I keep hearing is that it was "publicly available." But publicly visible has never meant free to take. A shop window is public. That doesn\'t make the clothes free.',
                   },
                 ],
               ],
@@ -105,7 +105,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I want to be careful and fair here, because the engineering reality matters. A model does not store your images; it learns statistical patterns from them, the way an art student learns by studying thousands of paintings. We do not say a student who studied Picasso owes the estate when they paint. The scale is unprecedented, I grant that. But "a machine learned from public examples" is not obviously theft, legally or morally.',
+                      "I get why that stings, but the shop window's the wrong picture. Nobody walked off with the clothes. A model doesn't store your images; it learns statistical patterns from them, the way an art student learns by studying thousands of paintings. We don't say a student who studied Picasso owes the estate when they paint. The scale's new, I'll grant you that. But \"a machine learned from public examples\" isn't obviously theft, legally or morally.",
                   },
                 ],
               ],
@@ -122,7 +122,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "The art-student analogy is the most overused sentence in this entire debate, and it breaks on two points. A student cannot study ten thousand of my pieces overnight and then flood the market with a thousand near-substitutes a day, undercutting me on the exact aesthetic I spent twenty years building. And a student is a person taking part in culture. A company ingesting my life's work to build a product that competes with me is not a student. It is a competitor that used my own output as the fuel.",
+                      "I knew the art student was coming. It breaks in two places. A student can't study ten thousand of my pieces overnight and then turn out a thousand near-substitutes a day, undercutting me on the exact look I spent twenty years building. And a student is a person taking part in culture. A company that ingests my life's work to build a product that competes with me isn't a student. It's a competitor, and my own work is what it runs on.",
                   },
                 ],
               ],
@@ -140,7 +140,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'I\'ll concede more here than I usually do. I came in expecting an overblown panic, and the consent problem is real: "it was on the internet" is doing an enormous amount of unearned work. Where I stay skeptical is the leap from "this is unfair" to "this is illegal" to "this can be stopped." Three different claims. The first is strong. The second is being fought in court right now. The third may simply be beyond reach.',
+                      'I\'ll concede more here than I usually do. I came in expecting a panic, and the consent problem is real: "it was on the internet" is doing an enormous amount of unearned work. Where I get off is the slide from "this is unfair" to "this is illegal" to "this can be stopped." Those are three claims. The first is strong. The second is being fought in court right now. The third I wouldn\'t bet on.',
                   },
                 ],
               ],
@@ -188,13 +188,13 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Legally, none of this is settled, and anyone who tells you otherwise is selling something. The central US question is fair use: whether training is a "transformative" use of copyrighted work. That doctrine weighs, among other things, the effect on the market for the original. The New York Times sued OpenAI and Microsoft in December 2023 on exactly this ground.',
+                      'On the second one: nobody knows yet, and anyone who tells you otherwise is selling something. That goes for the shop window and the art student both. The central US question is fair use: whether training is a "transformative" use of copyrighted work. The doctrine weighs, among other things, the effect on the market for the original. The New York Times sued OpenAI and Microsoft in December 2023 on exactly that ground.',
                   },
                   { type: 'cite', claimId: 'c-ix-nyt-suit' },
                   {
                     type: 'text',
                     value:
-                      ' Separately, the US Copyright Office has held that works generated by AI without meaningful human authorship cannot themselves be copyrighted. So the same technology may both infringe on the way in and produce un-ownable output on the way out.',
+                      " Separately, the US Copyright Office has held that works generated by AI without meaningful human authorship can't themselves be copyrighted. So the same technology may infringe on the way in and produce output nobody can own on the way out.",
                   },
                   { type: 'cite', claimId: 'c-ix-copyright-office' },
                 ],
@@ -213,7 +213,24 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And the transformation case is not frivolous. These tools let a teacher illustrate a lesson, a small founder mock up a product, a non-native speaker write clearly. That is real creative capacity handed to people who had none. The market-harm question is genuine, but so is the access gain. Courts are going to have to weigh a real harm to incumbents against a real benefit to a much larger group.',
+                      "Then put the transformation case on the scale too, because it isn't frivolous. These tools let a teacher illustrate a lesson, a small founder mock up a product, a non-native speaker write clearly. That's creative capacity handed to people who had none. The market harm is real. So is the access. Some court is going to have to weigh both.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "The teacher's me, or would have been. I spent years cutting pictures out of magazines for worksheets. I'd have used this in a heartbeat, and I don't think I'd have felt bad about it.",
                   },
                 ],
               ],
@@ -230,13 +247,30 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Notice the move, though: "democratizing creativity." It is generous about access and silent about volume. Within a year of release, people had generated more than fifteen billion AI images.',
+                      "I believe you, and I'd never ask you to feel bad about it. But that's what \"democratizing creativity\" is good at: it's generous about access and silent about volume. Within a year of release, people had generated more than fifteen billion AI images.",
                   },
                   { type: 'cite', claimId: 'c-ix-images-made' },
                   {
                     type: 'text',
                     value:
-                      ' That is more than the entire stock-photo industry produced in decades, made in months, trained on us. Even if every single image is legal, the flood itself is the harm: it collapses the price of the thing we make and buries the human work under an ocean of synthetic near-copies.',
+                      " That's more than the entire stock-photo industry produced in decades, made in months, trained on work like mine. Even if every one of those images turns out to be legal, the flood is the harm. It drags down the price of what my friends and I make and buries it under near-copies.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'policy-realist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      'Not quite. That "even if it\'s legal" may be the legal question. A flood that drags down your prices is market effect, which is one of the things fair use weighs. Whether a court counts images that aren\'t copies of yours as harm to your market is exactly what nobody has decided.',
                   },
                 ],
               ],
@@ -290,13 +324,13 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Let me make the harm concrete, because it is already measurable. A 2024 Society of Authors survey found that about a quarter of illustrators and well over a third of translators had already lost work to generative AI.',
+                      "And that harm is already measurable. In a 2024 Society of Authors survey, about a quarter of illustrators and more than a third of translators said they'd already lost work to generative AI.",
                   },
                   { type: 'cite', claimId: 'c-ix-soa' },
                   {
                     type: 'text',
                     value:
-                      ' These are not abstract future fears. They are the first wave, in precisely the freelance, mid-skill creative jobs that were already economically fragile. The pattern is classic: a new technology captures the routine middle of a market and leaves a thin top and a precarious bottom.',
+                      " That's not a forecast. It's the first wave, and it's landing on freelance, mid-skill creative work that was fragile to begin with. The pattern's a familiar one: a new technology takes the routine middle of a market and leaves a thin top and a precarious bottom.",
                   },
                 ],
               ],
@@ -313,7 +347,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And creative work has always been undervalued precisely because people love doing it: "do it for the exposure" is the oldest wage suppression there is. AI supercharges that. When a client can get a passable logo for free, the floor under the illustrator who needs to eat falls out. The 2023 Hollywood writers\' strike won real guardrails on AI in their contracts. Most creative workers have no union and no contract to negotiate.',
+                      'And creative work\'s always been underpaid because people love doing it. "Do it for the exposure" is the oldest wage suppression there is, and AI puts it on steroids. When a client can get a passable logo for free, the floor drops out from under the illustrator who needs to eat. The Hollywood writers struck in 2023 and won real limits on AI in their contracts. They had a union behind them. Most freelance illustrators have no union and no contract to bargain over.',
                   },
                 ],
               ],
@@ -330,7 +364,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "I have to be honest, because I think I am the customer you are worried about. I used one of these tools to make a card for my granddaughter's birthday, and it was lovely, and it was free. I did not think of it as taking work from anyone. Now I am wondering how many small kindnesses like mine add up to someone losing a living.",
+                      "Then I'm probably the customer you're worried about. I used one of these to make a card for my granddaughter's birthday. It was lovely, and it was free, and I didn't think of it as taking work from anybody. Now I'm wondering how many little kindnesses like mine add up to someone losing a living.",
                   },
                 ],
               ],
@@ -347,7 +381,24 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      "Thank you for saying that, and please don't carry it as guilt. You are not the villain; the card is not the problem. The problem is a system that took our work to build the tool and then routed every cent of the value to the company that made it, with nothing flowing back to the people it learned from. Fix that, and your birthday card and my career can both exist. That is the whole fight: not banning the tool, but reconnecting it to the people it was built on.",
+                      "Thank you for saying that, and please don't carry it as guilt. You're not the villain, and the card isn't the problem. The problem is that a company took my work and my friends' work to build the tool, and every cent it earns goes to the company. Nothing comes back to the people it learned from. Fix that, and your birthday card and my career can both exist.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'everyday-person',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "That's kind of you. But I'm not sure I was anybody's lost sale. If it had cost money, I'd have drawn the card myself, badly, with felt pens.",
                   },
                 ],
               ],
@@ -375,6 +426,23 @@ export const partIX: RoundtableDocument = {
             ],
           },
         },
+        {
+          type: 'debate',
+          data: {
+            personaId: 'economist',
+            bubble: {
+              paragraphs: [
+                [
+                  {
+                    type: 'text',
+                    value:
+                      "You weren't. Your card was never going to an illustrator. The company newsletter that used to commission one is, and so is the book cover, and the manual that used to go to a translator. Those are the jobs I'd watch.",
+                  },
+                ],
+              ],
+            },
+          },
+        },
       ],
     },
 
@@ -396,13 +464,13 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'Here is the constructive turn, and it is already underway: licensing. Rather than fight every case to the Supreme Court, some AI companies are simply paying for data. Through 2024, OpenAI alone signed content deals with a string of major publishers: Axel Springer, the Associated Press, the Financial Times, News Corp, and others.',
+                      'Meanwhile a market is forming, partly so nobody has to fight every case up to the Supreme Court: licensing. Across 2023 and 2024, OpenAI alone signed content deals with a string of major publishers: Axel Springer, the Associated Press, the Financial Times, News Corp, and others.',
                   },
                   { type: 'cite', claimId: 'c-ix-licensing' },
                   {
                     type: 'text',
                     value:
-                      ' That establishes the principle that training data has a price. The danger is that only the largest rights-holders (big publishers, major labels) get to the table, while the individual illustrator and the mid-list author are left out entirely.',
+                      " Don't read a confession into it. OpenAI is paying some publishers while arguing fair use against the Times, so paying isn't an admission that permission was required. What it does show is that training data can carry a price. The danger is that only the largest rights-holders (big publishers, major labels) get to the table, while the individual illustrator and the mid-list author are left out entirely.",
                   },
                 ],
               ],
@@ -419,7 +487,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'The Policy Realist has named the real design problem. Licensing markets reward concentrated rights-holders and bypass the dispersed individual creator, the very people the data mostly came from. The instruments that could fix that are not exotic: collective licensing, the way music royalties are pooled and distributed; an opt-out and a price by default; and provenance standards, the same content-credential plumbing Part V proposed, used here to track whose work trained what.',
+                      "And that's the design problem. Licensing markets reward whoever holds rights in bulk and walk right past the individual creator, who is where most of the data actually came from. The fixes aren't exotic. Collective licensing, the way music royalties are pooled and paid out. An opt-out, and a price by default. And provenance standards, the same content-credential plumbing we talked about for deepfakes, used here to track whose work trained what.",
                   },
                 ],
               ],
@@ -436,7 +504,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'And this is buildable: it is the same provenance technology, pointed at attribution instead of detection. Models trained only on licensed or public-domain data already exist; some image tools now compensate contributors to their training sets. The technical path to a consenting, paying pipeline is real. What is missing is not the capability. It is the will to choose the more expensive, fairer architecture over the free one.',
+                      "That part's buildable. It's the same provenance tech, pointed at attribution instead of detection. Models trained only on licensed or public-domain data already exist, and some image tools now pay contributors to their training sets. So capability isn't what's missing. The licensed route is slower and costs more, and I know how that argument goes in a planning meeting. It usually loses.",
                   },
                 ],
               ],
@@ -453,7 +521,7 @@ export const partIX: RoundtableDocument = {
                   {
                     type: 'text',
                     value:
-                      'That is exactly it. I am not a Luddite; I use these tools too. I want three things, and they are not radical: consent, so we are asked; credit, so the lineage is visible; and compensation, so value flows back to the people it came from. Consent, credit, compensation. Get those and the technology becomes a collaborator. Skip them and it is just the most efficient machine ever built for taking culture from the people who make it and selling it back to them.',
+                      "And I'm not a Luddite. I use these tools. I've fed one my own rough sketches to try out colors, and some of what came back delighted me; I'd never have tried that palette on my own. Then I think about whose paintings taught it that palette, and I still think the deal is rotten. I want three things, and they're not radical: consent, so we're asked; credit, so the lineage is visible; and compensation, so value flows back to the people it came from. Consent, credit, compensation. Will I see any of it? I doubt it, and not in time for friends of mine who've already stopped taking commissions.",
                   },
                 ],
               ],
